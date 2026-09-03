@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-HK">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>关于我 - 海哥</title>
+  <title>關於我 / About - 鄭哥 / Hany</title>
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
     body { font-family: 'Noto Sans SC', -apple-system, sans-serif; background:#f5f5f7; color:#333; line-height:1.8; }
     .container { max-width:700px; margin:0 auto; padding:0 20px; }
     nav { background:#fff; border-bottom:1px solid #e0e0e0; padding:15px 0; position:sticky; top:0; z-index:100; }
-    nav .container { display:flex; justify-content:center; gap:30px; }
+    nav .container { display:flex; justify-content:center; gap:30px; align-items:center; }
     nav a { text-decoration:none; color:#333; font-size:0.95rem; }
     nav a:hover { color:#e94560; }
+    .lang-toggle { cursor:pointer; font-size:0.8rem; background:#1a1a2e; color:#fff; padding:4px 10px; border-radius:4px; border:none; }
     .section { padding:60px 0; }
     h1 { font-size:2rem; margin-bottom:20px; font-weight:400; }
     h2 { font-size:1.4rem; margin:40px 0 20px; color:#1a1a2e; border-left:4px solid #e94560; padding-left:15px; }
@@ -24,78 +25,104 @@
     .timeline-content { color:#555; }
     .timeline-content p { margin-bottom:8px; }
     .highlight { background:#fff; border-radius:12px; padding:25px; margin:30px 0; box-shadow:0 2px 10px rgba(0,0,0,0.05); }
+    .en { display:none; }
+    body.show-en .en { display:block; }
+    body.show-en .cn { display:none; }
     footer { background:#1a1a2e; color:#888; text-align:center; padding:40px 0; margin-top:60px; font-size:0.9rem; }
+    footer .en { display:none; }
+    body.show-en footer .en { display:block; }
+    body.show-en footer .cn { display:none; }
+    @media (max-width:600px) {
+      nav .container { gap:15px; }
+    }
   </style>
 </head>
 <body>
   <nav>
     <div class="container">
-      <a href="index.html">首页</a>
-      <a href="about.html">关于我</a>
-      <a href="blog.html">文章</a>
-      <a href="contact.html">联系</a>
+      <a href="index.html" class="cn">首頁</a><a href="index.html" class="en">Home</a>
+      <a href="about.html" class="cn">關於我</a><a href="about.html" class="en">About</a>
+      <a href="blog.html" class="cn">文章</a><a href="blog.html" class="en">Blog</a>
+      <a href="contact.html" class="cn">聯繫</a><a href="contact.html" class="en">Contact</a>
+      <button class="lang-toggle" onclick="toggleLang()" id="langBtn">EN</button>
     </div>
   </nav>
 
   <div class="section">
     <div class="container">
-      <h1>关于我</h1>
-      <p class="intro">1995年大学毕业。做过中学老师，做过贸易，现在搞AI技术。26年，看过太多生意的起落，知道什么是真的，什么是风。</p>
+      <h1><span class="cn">關於我</span><span class="en">About Me</span></h1>
+      <p class="intro"><span class="cn">1995年大學畢業。做過中學老師，做過貿易，而家搞AI技術。26年，睇過太多生意嘅起落，知道乜嘢係真，乜嘢係風。</span><span class="en">Graduated in 1995. Teacher, trader, now in AI tech. 26 years. Seen too many ups and downs. Know what's real and what's just hype.</span></p>
 
       <div class="timeline">
         <div class="timeline-item">
           <div class="timeline-year">1995</div>
           <div class="timeline-content">
-            <p><strong>大学毕业，分配去当中学老师。</strong></p>
-            <p>（这里写你当年的事...）</p>
+            <p><strong><span class="cn">大學畢業，分配去做中學老師。</span><span class="en">Graduated and assigned to teach middle school.</span></strong></p>
+            <p class="cn">（呢度寫你當年嘅事……）</p>
+            <p class="en">(Write about your early years here...)</p>
           </div>
         </div>
 
         <div class="timeline-item">
-          <div class="timeline-year">2000前后</div>
+          <div class="timeline-year"><span class="cn">2000前後</span><span class="en">Around 2000</span></div>
           <div class="timeline-content">
-            <p><strong>下海做贸易。</strong></p>
-            <p>电子消费品、家电、服装、鞋、珠宝...从华强北到全国各地。</p>
+            <p><strong><span class="cn">下海做貿易。</span><span class="en">Went into trading.</span></strong></p>
+            <p><span class="cn">電子消費品、家電、服裝、鞋、珠寶……從華強北到全國各地。</span><span class="en">Consumer electronics, appliances, garments, shoes, jewelry... from Huaqiangbei to all over the country.</span></p>
           </div>
         </div>
 
         <div class="timeline-item">
-          <div class="timeline-year">2010年代</div>
+          <div class="timeline-year"><span class="cn">2010年代</span><span class="en">2010s</span></div>
           <div class="timeline-content">
-            <p><strong>做过教育培训，也做过其他行业。</strong></p>
-            <p>（这里写你这段时期的故事...）</p>
+            <p><strong><span class="cn">做過教育培訓，都做過其他行業。</span><span class="en">Did education and training, plus other industries.</span></strong></p>
+            <p class="cn">（呢度寫你呢段時期嘅故事……）</p>
+            <p class="en">(Write about this period here...)</p>
           </div>
         </div>
 
         <div class="timeline-item">
-          <div class="timeline-year">2020-2026</div>
+          <div class="timeline-year">2020–2026</div>
           <div class="timeline-content">
-            <p><strong>开始研究软件和技术。</strong></p>
-            <p>API、生图、短视频、直播、亚马逊自动化系统...服务国外客户，邮件加起来几百G。</p>
+            <p><strong><span class="cn">開始研究軟件同技術。</span><span class="en">Started studying software and tech.</span></strong></p>
+            <p><span class="cn">API、生圖、短視頻、直播、亞馬遜自動化系統……服務國外客戶，郵件加起嚟幾百G。</span><span class="en">APIs, image generation, short video, live streaming, Amazon automation... serving foreign clients, hundreds of GBs of emails.</span></p>
           </div>
         </div>
 
         <div class="timeline-item">
-          <div class="timeline-year">现在</div>
+          <div class="timeline-year"><span class="cn">而家</span><span class="en">Now</span></div>
           <div class="timeline-content">
-            <p><strong>卖AI服务器，卖API，帮人做自动化。</strong></p>
-            <p>不是工程师，是帮老板把技术变成钱的人。看过的东西，都在这个网站里。</p>
+            <p><strong><span class="cn">賣AI服務器，賣API，幫人做自動化。</span><span class="en">Selling AI servers, APIs, and automation solutions.</span></strong></p>
+            <p><span class="cn">唔係工程師，係幫老闆將技術變成錢嘅人。睇過嘅嘢，都喺呢個網站入面。</span><span class="en">Not an engineer — the guy who turns tech into money for bosses. Everything I've seen is in this site.</span></p>
           </div>
         </div>
       </div>
 
       <div class="highlight">
-        <h2>我为什么做这个网站</h2>
-        <p>做了26年生意，服务过几百个客户，看过太多人起起落落。现在想把看到的东西写下来，给还在路上的人一点参考。</p>
-        <p>不是技术教程，不是成功学。只是一个做过家电、服装、珠宝、培训，现在卖AI算力的人，说一点真话。</p>
+        <h2><span class="cn">我點解做呢個網站</span><span class="en">Why I Made This Site</span></h2>
+        <p><span class="cn">做咗26年生意，服務過幾百個客戶，睇過太多人起起落落。而家想將睇到嘅嘢寫低，畀仲喺路上嘅人啲參考。</span><span class="en">26 years in business, hundreds of clients, seen too many rise and fall. Now writing it down for those still on the road.</span></p>
+        <p><span class="cn">唔係技術教程，唔係成功學。只係一個做過家電、服裝、珠寶、培訓，而家賣AI算力嘅人，講啲真話。</span><span class="en">Not a tech tutorial, not a success book. Just someone who's done appliances, garments, jewelry, training, now selling AI compute — telling it straight.</span></p>
       </div>
     </div>
   </div>
 
   <footer>
     <div class="container">
-      <p>© 2026 海哥</p>
+      <p class="cn">© 2026 鄭哥 · 從1995年走到而家</p>
+      <p class="en">© 2026 Hany · From 1995 to Now</p>
     </div>
   </footer>
+
+  <script>
+    function toggleLang() {
+      document.body.classList.toggle('show-en');
+      const btn = document.getElementById('langBtn');
+      btn.textContent = document.body.classList.contains('show-en') ? '中' : 'EN';
+      localStorage.setItem('lang', document.body.classList.contains('show-en') ? 'en' : 'cn');
+    }
+    if (localStorage.getItem('lang') === 'en') {
+      document.body.classList.add('show-en');
+      document.getElementById('langBtn').textContent = '中';
+    }
+  </script>
 </body>
 </html>

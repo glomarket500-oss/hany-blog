@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-HK">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>海哥 - 1995 to Now</title>
+  <title>鄭哥 / Hany - From 1995 to Now</title>
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
     body { font-family: 'Noto Sans SC', -apple-system, sans-serif; background:#f5f5f7; color:#333; line-height:1.7; }
@@ -13,9 +13,10 @@
     header .tagline { font-size:1.1rem; color:#aaa; margin-bottom:20px; }
     header .quote { font-size:1.2rem; color:#e0e0e0; max-width:600px; margin:0 auto; font-style:italic; border-left:3px solid #e94560; padding-left:20px; }
     nav { background:#fff; border-bottom:1px solid #e0e0e0; padding:15px 0; position:sticky; top:0; z-index:100; }
-    nav .container { display:flex; justify-content:center; gap:30px; }
+    nav .container { display:flex; justify-content:center; gap:30px; align-items:center; }
     nav a { text-decoration:none; color:#333; font-size:0.95rem; }
     nav a:hover { color:#e94560; }
+    .lang-toggle { cursor:pointer; font-size:0.8rem; background:#1a1a2e; color:#fff; padding:4px 10px; border-radius:4px; border:none; }
     .section { padding:60px 0; }
     .section-title { font-size:1.8rem; margin-bottom:30px; text-align:center; }
     .cards { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:25px; }
@@ -29,49 +30,57 @@
     .post-item h4 { font-size:1.1rem; margin-bottom:8px; color:#1a1a2e; }
     .post-meta { font-size:0.85rem; color:#999; }
     .post-meta span { margin-right:15px; }
+    .en { display:none; }
+    body.show-en .en { display:block; }
+    body.show-en .cn { display:none; }
     footer { background:#1a1a2e; color:#888; text-align:center; padding:40px 0; margin-top:60px; font-size:0.9rem; }
+    footer .en { display:none; }
+    body.show-en footer .en { display:block; }
+    body.show-en footer .cn { display:none; }
     @media (max-width:600px) {
       header h1 { font-size:1.8rem; }
       .cards { grid-template-columns:1fr; }
+      nav .container { gap:15px; }
     }
   </style>
 </head>
 <body>
   <header>
     <div class="container">
-      <h1>海哥</h1>
-      <p class="tagline">1995年大学毕业 → 中学老师 → 贸易商 → AI技术研究者</p>
-      <p class="quote">"做过家电、服装、珠宝、培训，现在卖AI算力。我看的不是技术，是生意怎么被技术改变。"</p>
+      <h1>鄭哥 / Hany</h1>
+      <p class="tagline"><span class="cn">1995年大學畢業 → 中學老師 → 貿易商 → AI技術研究者</span><span class="en">Uni Grad '95 → Teacher → Trader → AI Tech Researcher</span></p>
+      <p class="quote"><span class="cn">「做過家電、服裝、珠寶、培訓，而家賣AI算力。我睇嘅唔係技術，係生意點樣被技術改變。」</span><span class="en">"Done appliances, garments, jewelry, training. Now selling AI compute. I don't look at tech — I look at how tech changes business."</span></p>
     </div>
   </header>
 
   <nav>
     <div class="container">
-      <a href="index.html">首页</a>
-      <a href="about.html">关于我</a>
-      <a href="blog.html">文章</a>
-      <a href="contact.html">联系</a>
+      <a href="index.html" class="cn">首頁</a><a href="index.html" class="en">Home</a>
+      <a href="about.html" class="cn">關於我</a><a href="about.html" class="en">About</a>
+      <a href="blog.html" class="cn">文章</a><a href="blog.html" class="en">Blog</a>
+      <a href="contact.html" class="cn">聯繫</a><a href="contact.html" class="en">Contact</a>
+      <button class="lang-toggle" onclick="toggleLang()" id="langBtn">EN</button>
     </div>
   </nav>
 
   <section class="section">
     <div class="container">
-      <h2 class="section-title">三件事</h2>
+      <h2 class="section-title"><span class="cn">三件事</span><span class="en">Three Things</span></h2>
       <div class="cards">
         <div class="card">
-          <h3>💼 26年贸易经验</h3>
-          <p>消费电子、家电、服装、鞋、珠宝、教育培训...从华强北到亚马逊，看过太多生意的起落。</p>
-          <span class="tag">贸易观察</span>
+          <h3><span class="cn">💼 26年貿易經驗</span><span class="en">💼 26 Years in Trade</span></h3>
+          <p><span class="cn">消費電子、家電、服裝、鞋、珠寶、教育培訓……從華強北到亞馬遜，睇過太多生意嘅起落。</span><span class="en">Consumer electronics, appliances, garments, shoes, jewelry, training... from Huaqiangbei to Amazon. Seen too many businesses rise and fall.</span></p>
+          <span class="tag"><span class="cn">貿易觀察</span><span class="en">Trade</span></span>
         </div>
         <div class="card">
-          <h3>🤖 AI技术实战</h3>
-          <p>API、生图、短视频、直播、服务器销售。不是工程师，是帮老板把技术变成钱的人。</p>
-          <span class="tag">AI实战</span>
+          <h3><span class="cn">🤖 AI技術實戰</span><span class="en">🤖 AI Tech in Practice</span></h3>
+          <p><span class="cn">API、生圖、短視頻、直播、服務器銷售。唔係工程師，係幫老闆將技術變成錢嘅人。</span><span class="en">APIs, image gen, short video, live streaming, server sales. Not an engineer — the guy who turns tech into money for bosses.</span></p>
+          <span class="tag"><span class="cn">AI實戰</span><span class="en">AI Tech</span></span>
         </div>
         <div class="card">
-          <h3>🌍 服务全球客户</h3>
-          <p>亚马逊自动化系统、国外客户邮件几百G。知道中国供应链怎么对接全球需求。</p>
-          <span class="tag">客户故事</span>
+          <h3><span class="cn">🌍 服務全球客戶</span><span class="en">🌍 Serving Global Clients</span></h3>
+          <p><span class="cn">亞馬遜自動化系統、國外客戶郵件幾百G。知道中國供應鏈點樣對接全球需求。</span><span class="en">Amazon automation, hundreds of GBs of foreign client emails. Know how Chinese supply chain connects to global demand.</span></p>
+          <span class="tag"><span class="cn">客戶故事</span><span class="en">Stories</span></span>
         </div>
       </div>
     </div>
@@ -79,35 +88,23 @@
 
   <section class="section" style="background:#fff;">
     <div class="container">
-      <h2 class="section-title">最新文章</h2>
+      <h2 class="section-title"><span class="cn">最新文章</span><span class="en">Latest Posts</span></h2>
       <div class="post-list">
         <div class="post-item">
-          <h4>从家电到AI算力：一个70后的26年生意笔记</h4>
-          <div class="post-meta">
-            <span>2026-08-30</span>
-            <span>关于我</span>
-          </div>
+          <h4><span class="cn">從家電到AI算力：一個70後嘅26年生意筆記</span><span class="en">From Home Appliances to AI Compute: A Gen-Xer's 26-Year Business Notes</span></h4>
+          <div class="post-meta"><span>2026-08-30</span><span class="cn">關於我</span><span class="en">About</span></div>
         </div>
         <div class="post-item">
-          <h4>为什么传统贸易商都在偷偷买AI服务器？</h4>
-          <div class="post-meta">
-            <span>2026-08-25</span>
-            <span>AI实战</span>
-          </div>
+          <h4><span class="cn">點解傳統貿易商都喺度偷偷買AI服務器？</span><span class="en">Why Are Traditional Traders Secretly Buying AI Servers?</span></h4>
+          <div class="post-meta"><span>2026-08-25</span><span class="cn">AI實戰</span><span class="en">AI Tech</span></div>
         </div>
         <div class="post-item">
-          <h4>亚马逊卖家问我最多的三个问题</h4>
-          <div class="post-meta">
-            <span>2026-08-20</span>
-            <span>亚马逊</span>
-          </div>
+          <h4><span class="cn">亞馬遜賣家問我最多嘅三個問題</span><span class="en">The Three Questions Amazon Sellers Ask Me Most</span></h4>
+          <div class="post-meta"><span>2026-08-20</span><span class="cn">亞馬遜</span><span class="en">Amazon</span></div>
         </div>
         <div class="post-item">
-          <h4>1998年我在华强北，2026年我在卖API</h4>
-          <div class="post-meta">
-            <span>2026-08-15</span>
-            <span>贸易观察</span>
-          </div>
+          <h4><span class="cn">1998年我喺華強北，2026年我喺度賣API</span><span class="en">Huaqiangbei in 1998, Selling APIs in 2026</span></h4>
+          <div class="post-meta"><span>2026-08-15</span><span class="cn">貿易觀察</span><span class="en">Trade</span></div>
         </div>
       </div>
     </div>
@@ -115,8 +112,22 @@
 
   <footer>
     <div class="container">
-      <p>© 2026 海哥 · 从1995年走到现在</p>
+      <p class="cn">© 2026 鄭哥 · 從1995年走到而家</p>
+      <p class="en">© 2026 Hany · From 1995 to Now</p>
     </div>
   </footer>
+
+  <script>
+    function toggleLang() {
+      document.body.classList.toggle('show-en');
+      const btn = document.getElementById('langBtn');
+      btn.textContent = document.body.classList.contains('show-en') ? '中' : 'EN';
+      localStorage.setItem('lang', document.body.classList.contains('show-en') ? 'en' : 'cn');
+    }
+    if (localStorage.getItem('lang') === 'en') {
+      document.body.classList.add('show-en');
+      document.getElementById('langBtn').textContent = '中';
+    }
+  </script>
 </body>
 </html>

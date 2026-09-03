@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-HK">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>文章 - 海哥</title>
+  <title>文章 / Blog - 鄭哥 / Hany</title>
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
     body { font-family: 'Noto Sans SC', -apple-system, sans-serif; background:#f5f5f7; color:#333; line-height:1.7; }
     .container { max-width:800px; margin:0 auto; padding:0 20px; }
     nav { background:#fff; border-bottom:1px solid #e0e0e0; padding:15px 0; position:sticky; top:0; z-index:100; }
-    nav .container { display:flex; justify-content:center; gap:30px; }
+    nav .container { display:flex; justify-content:center; gap:30px; align-items:center; }
     nav a { text-decoration:none; color:#333; font-size:0.95rem; }
     nav a:hover { color:#e94560; }
+    .lang-toggle { cursor:pointer; font-size:0.8rem; background:#1a1a2e; color:#fff; padding:4px 10px; border-radius:4px; border:none; }
     .section { padding:60px 0; }
     h1 { font-size:2rem; margin-bottom:30px; font-weight:400; }
     .filter { display:flex; gap:15px; margin-bottom:30px; flex-wrap:wrap; }
@@ -20,72 +21,90 @@
     .post-list { background:#fff; border-radius:12px; padding:30px; }
     .post-item { border-bottom:1px solid #f0f0f5; padding:25px 0; }
     .post-item:last-child { border-bottom:none; }
-    .post-item h3 { font-size:1.2rem; margin-bottom:10px; color:#1a1a2e; }
-    .post-item p { color:#666; font-size:0.95rem; margin-bottom:12px; }
+    .post-item h3 { font-size:1.2rem; margin-bottom:6px; color:#1a1a2e; }
+    .post-item .en-title { font-size:1rem; color:#888; margin-bottom:10px; }
+    .post-item p { color:#666; font-size:0.95rem; margin-bottom:8px; }
+    .post-item .en-desc { color:#999; font-size:0.9rem; margin-bottom:12px; }
     .post-meta { font-size:0.85rem; color:#999; display:flex; gap:15px; flex-wrap:wrap; }
     .post-meta .tag { background:#f0f0f5; padding:3px 10px; border-radius:4px; font-size:0.8rem; color:#555; }
     footer { background:#1a1a2e; color:#888; text-align:center; padding:40px 0; margin-top:60px; font-size:0.9rem; }
+    footer .en { display:none; }
+    body.show-en footer .en { display:block; }
+    body.show-en footer .cn { display:none; }
+    .en { display:none; }
+    body.show-en .en { display:block; }
+    body.show-en .cn { display:none; }
     @media (max-width:600px) {
       h1 { font-size:1.5rem; }
+      nav .container { gap:15px; }
     }
   </style>
 </head>
 <body>
   <nav>
     <div class="container">
-      <a href="index.html">首页</a>
-      <a href="about.html">关于我</a>
-      <a href="blog.html">文章</a>
-      <a href="contact.html">联系</a>
+      <a href="index.html" class="cn">首頁</a><a href="index.html" class="en">Home</a>
+      <a href="about.html" class="cn">關於我</a><a href="about.html" class="en">About</a>
+      <a href="blog.html" class="cn">文章</a><a href="blog.html" class="en">Blog</a>
+      <a href="contact.html" class="cn">聯繫</a><a href="contact.html" class="en">Contact</a>
+      <button class="lang-toggle" onclick="toggleLang()" id="langBtn">EN</button>
     </div>
   </nav>
 
   <div class="section">
     <div class="container">
-      <h1>文章</h1>
+      <h1><span class="cn">文章</span><span class="en">Blog Posts</span></h1>
 
       <div class="filter">
-        <a href="/blog" class="active">全部</a>
-        <a href="/blog/trade">贸易观察</a>
-        <a href="/blog/ai">AI实战</a>
-        <a href="/blog/amazon">亚马逊</a>
-        <a href="/blog/story">客户故事</a>
+        <a href="blog.html" class="active"><span class="cn">全部</span><span class="en">All</span></a>
+        <a href="#"><span class="cn">貿易觀察</span><span class="en">Trade</span></a>
+        <a href="#"><span class="cn">AI實戰</span><span class="en">AI Tech</span></a>
+        <a href="#"><span class="cn">亞馬遜</span><span class="en">Amazon</span></a>
+        <a href="#"><span class="cn">客戶故事</span><span class="en">Stories</span></a>
       </div>
 
       <div class="post-list">
         <div class="post-item">
-          <h3>从家电到AI算力：一个70后的26年生意笔记</h3>
-          <p>1995年大学毕业，做过老师，做过贸易，现在卖AI服务器。不是成功学，是一个看过太多起落的人，说一点真话...</p>
+          <h3><span class="cn">從家電到AI算力：一個70後嘅26年生意筆記</span></h3>
+          <div class="en-title">From Home Appliances to AI Compute: A Gen-Xer's 26-Year Business Notes</div>
+          <p><span class="cn">1995年大學畢業，做過老師，做過貿易，而家賣AI服務器。唔係成功學，係一個睇過太多起落嘅人，講啲真話……</span></p>
+          <div class="en-desc">Graduated in 1995, teacher, trader, now selling AI servers. Not a success story — just someone who's seen too many ups and downs, telling it straight.</div>
           <div class="post-meta">
             <span>2026-08-30</span>
-            <span class="tag">关于我</span>
+            <span class="tag"><span class="cn">關於我</span><span class="en">About</span></span>
           </div>
         </div>
 
         <div class="post-item">
-          <h3>为什么传统贸易商都在偷偷买AI服务器？</h3>
-          <p>一个做服装出口的客户，上个月突然问我买10张A100。我问他做什么，他说：「我现在不是卖货，是卖图。」...</p>
+          <h3><span class="cn">點解傳統貿易商都喺度偷偷買AI服務器？</span></h3>
+          <div class="en-title">Why Are Traditional Traders Secretly Buying AI Servers?</div>
+          <p><span class="cn">一個做服裝出口嘅客戶，上個月突然問我買10張A100。我問佢做乜，佢話：「我而家唔係賣貨，係賣圖。」……</span></p>
+          <div class="en-desc">A clothing export client suddenly asked me for 10 A100s last month. When I asked why, he said: "I'm not selling goods anymore — I'm selling images."</div>
           <div class="post-meta">
             <span>2026-08-25</span>
-            <span class="tag">AI实战</span>
+            <span class="tag"><span class="cn">AI實戰</span><span class="en">AI Tech</span></span>
           </div>
         </div>
 
         <div class="post-item">
-          <h3>亚马逊卖家问我最多的三个问题</h3>
-          <p>做了几年亚马逊自动化系统，几百个卖家问来问去，其实核心问题就三个：怎么省时间、怎么省人工、怎么不被封...</p>
+          <h3><span class="cn">亞馬遜賣家問我最多嘅三個問題</span></h3>
+          <div class="en-title">The Three Questions Amazon Sellers Ask Me Most</div>
+          <p><span class="cn">做咗幾年亞馬遜自動化系統，幾百個賣家問嚟問去，其實核心問題就三個：點慳時間、點慳人工、點唔被封……</span></p>
+          <div class="en-desc">After years of building Amazon automation systems for hundreds of sellers, it all boils down to three things: save time, save labor, don't get banned.</div>
           <div class="post-meta">
             <span>2026-08-20</span>
-            <span class="tag">亚马逊</span>
+            <span class="tag"><span class="cn">亞馬遜</span><span class="en">Amazon</span></span>
           </div>
         </div>
 
         <div class="post-item">
-          <h3>1998年我在华强北，2026年我在卖API</h3>
-          <p>那时候从潮汕进货，坐绿皮火车到深圳，在华强北找个柜台就能卖货。现在不需要柜台了，需要算力...</p>
+          <h3><span class="cn">1998年我喺華強北，2026年我喺度賣API</span></h3>
+          <div class="en-title">Huaqiangbei in 1998, Selling APIs in 2026</div>
+          <p><span class="cn">嗰陣時從潮汕入貨，坐綠皮火車到深圳，喺華強北搵個櫃檯就能夠賣貨。而家唔需要櫃檯了，需要算力……</span></p>
+          <div class="en-desc">Back then we'd source from Chaoshan, take the green-skinned train to Shenzhen, and rent a stall at Huaqiangbei to sell. Now you don't need a stall — you need compute.</div>
           <div class="post-meta">
             <span>2026-08-15</span>
-            <span class="tag">贸易观察</span>
+            <span class="tag"><span class="cn">貿易觀察</span><span class="en">Trade</span></span>
           </div>
         </div>
       </div>
@@ -94,8 +113,22 @@
 
   <footer>
     <div class="container">
-      <p>© 2026 海哥</p>
+      <p class="cn">© 2026 鄭哥 · 從1995年走到而家</p>
+      <p class="en">© 2026 Hany · From 1995 to Now</p>
     </div>
   </footer>
+
+  <script>
+    function toggleLang() {
+      document.body.classList.toggle('show-en');
+      const btn = document.getElementById('langBtn');
+      btn.textContent = document.body.classList.contains('show-en') ? '中' : 'EN';
+      localStorage.setItem('lang', document.body.classList.contains('show-en') ? 'en' : 'cn');
+    }
+    if (localStorage.getItem('lang') === 'en') {
+      document.body.classList.add('show-en');
+      document.getElementById('langBtn').textContent = '中';
+    }
+  </script>
 </body>
 </html>

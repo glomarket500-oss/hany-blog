@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-HK">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>联系 - 海哥</title>
+  <title>聯繫 / Contact - 鄭哥 / Hany</title>
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
     body { font-family: 'Noto Sans SC', -apple-system, sans-serif; background:#f5f5f7; color:#333; line-height:1.7; }
     .container { max-width:600px; margin:0 auto; padding:0 20px; }
     nav { background:#fff; border-bottom:1px solid #e0e0e0; padding:15px 0; position:sticky; top:0; z-index:100; }
-    nav .container { display:flex; justify-content:center; gap:30px; }
+    nav .container { display:flex; justify-content:center; gap:30px; align-items:center; }
     nav a { text-decoration:none; color:#333; font-size:0.95rem; }
     nav a:hover { color:#e94560; }
+    .lang-toggle { cursor:pointer; font-size:0.8rem; background:#1a1a2e; color:#fff; padding:4px 10px; border-radius:4px; border:none; }
     .section { padding:60px 0; }
     h1 { font-size:2rem; margin-bottom:30px; font-weight:400; }
     .contact-card { background:#fff; border-radius:12px; padding:40px; box-shadow:0 2px 10px rgba(0,0,0,0.05); }
@@ -22,41 +23,51 @@
     .contact-item a { color:#e94560; text-decoration:none; }
     .contact-item a:hover { text-decoration:underline; }
     .note { background:#fff8e1; border-left:4px solid #ffc107; padding:15px 20px; border-radius:4px; margin-top:30px; font-size:0.95rem; color:#555; }
+    .en { display:none; }
+    body.show-en .en { display:block; }
+    body.show-en .cn { display:none; }
     footer { background:#1a1a2e; color:#888; text-align:center; padding:40px 0; margin-top:60px; font-size:0.9rem; }
+    footer .en { display:none; }
+    body.show-en footer .en { display:block; }
+    body.show-en footer .cn { display:none; }
+    @media (max-width:600px) {
+      nav .container { gap:15px; }
+    }
   </style>
 </head>
 <body>
   <nav>
     <div class="container">
-      <a href="index.html">首页</a>
-      <a href="about.html">关于我</a>
-      <a href="blog.html">文章</a>
-      <a href="contact.html">联系</a>
+      <a href="index.html" class="cn">首頁</a><a href="index.html" class="en">Home</a>
+      <a href="about.html" class="cn">關於我</a><a href="about.html" class="en">About</a>
+      <a href="blog.html" class="cn">文章</a><a href="blog.html" class="en">Blog</a>
+      <a href="contact.html" class="cn">聯繫</a><a href="contact.html" class="en">Contact</a>
+      <button class="lang-toggle" onclick="toggleLang()" id="langBtn">EN</button>
     </div>
   </nav>
 
   <div class="section">
     <div class="container">
-      <h1>联系</h1>
+      <h1><span class="cn">聯繫</span><span class="en">Contact</span></h1>
 
       <div class="contact-card">
         <div class="contact-item">
-          <h3>💬 微信</h3>
-          <p>请扫描首页二维码或添加微信号（你的微信号）</p>
+          <h3>💬 <span class="cn">微信</span><span class="en">WeChat</span></h3>
+          <p><span class="cn">請掃描首頁二維碼或添加微信號（你嘅微信號）</span><span class="en">Scan the QR code on homepage or add WeChat (your WeChat ID)</span></p>
         </div>
 
         <div class="contact-item">
-          <h3>📧 邮箱</h3>
+          <h3>📧 <span class="cn">電郵</span><span class="en">Email</span></h3>
           <p><a href="mailto:your-email@example.com">your-email@example.com</a></p>
         </div>
 
         <div class="contact-item">
-          <h3>🤝 业务合作</h3>
-          <p>AI服务器销售 · API接入服务 · 亚马逊自动化系统 · 电商运营咨询</p>
+          <h3>🤝 <span class="cn">業務合作</span><span class="en">Business</span></h3>
+          <p><span class="cn">AI服務器銷售 · API接入服務 · 亞馬遜自動化系統 · 電商運營諮詢</span><span class="en">AI Server Sales · API Integration · Amazon Automation · E-commerce Consulting</span></p>
         </div>
 
         <div class="note">
-          <strong>说明：</strong> 这个网站不是商业推广，是我个人记录。如果你有类似经历想交流，或者有业务需求，欢迎联系。看到就会回复，有时候在忙客户的事，回复慢请见谅。
+          <p><span class="cn"><strong>說明：</strong>呢個網站唔係商業推廣，係我個人記錄。如果你有類似經歷想交流，或者有業務需求，歡迎聯繫。睇到就會覆，有時喺度忙緊客戶嘅事，覆得慢請見諒。</span><span class="en"><strong>Note:</strong> This site is not commercial promotion — it's my personal record. If you have similar experiences to share or business needs, feel free to reach out. I'll reply when I see it. Sometimes busy with clients, so slow replies — please understand.</span></p>
         </div>
       </div>
     </div>
@@ -64,8 +75,22 @@
 
   <footer>
     <div class="container">
-      <p>© 2026 海哥 · 从1995年走到现在</p>
+      <p class="cn">© 2026 鄭哥 · 從1995年走到而家</p>
+      <p class="en">© 2026 Hany · From 1995 to Now</p>
     </div>
   </footer>
+
+  <script>
+    function toggleLang() {
+      document.body.classList.toggle('show-en');
+      const btn = document.getElementById('langBtn');
+      btn.textContent = document.body.classList.contains('show-en') ? '中' : 'EN';
+      localStorage.setItem('lang', document.body.classList.contains('show-en') ? 'en' : 'cn');
+    }
+    if (localStorage.getItem('lang') === 'en') {
+      document.body.classList.add('show-en');
+      document.getElementById('langBtn').textContent = '中';
+    }
+  </script>
 </body>
 </html>
