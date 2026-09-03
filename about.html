@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于我 - 海哥</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: 'Noto Sans SC', -apple-system, sans-serif; background:#f5f5f7; color:#333; line-height:1.8; }
+    .container { max-width:700px; margin:0 auto; padding:0 20px; }
+    nav { background:#fff; border-bottom:1px solid #e0e0e0; padding:15px 0; position:sticky; top:0; z-index:100; }
+    nav .container { display:flex; justify-content:center; gap:30px; }
+    nav a { text-decoration:none; color:#333; font-size:0.95rem; }
+    nav a:hover { color:#e94560; }
+    .section { padding:60px 0; }
+    h1 { font-size:2rem; margin-bottom:20px; font-weight:400; }
+    h2 { font-size:1.4rem; margin:40px 0 20px; color:#1a1a2e; border-left:4px solid #e94560; padding-left:15px; }
+    .intro { font-size:1.1rem; color:#555; margin-bottom:30px; }
+    .timeline { position:relative; padding-left:30px; }
+    .timeline::before { content:''; position:absolute; left:8px; top:0; bottom:0; width:2px; background:#e0e0e0; }
+    .timeline-item { position:relative; margin-bottom:40px; }
+    .timeline-item::before { content:''; position:absolute; left:-26px; top:6px; width:12px; height:12px; border-radius:50%; background:#e94560; }
+    .timeline-year { font-size:1.2rem; font-weight:600; color:#1a1a2e; margin-bottom:10px; }
+    .timeline-content { color:#555; }
+    .timeline-content p { margin-bottom:8px; }
+    .highlight { background:#fff; border-radius:12px; padding:25px; margin:30px 0; box-shadow:0 2px 10px rgba(0,0,0,0.05); }
+    footer { background:#1a1a2e; color:#888; text-align:center; padding:40px 0; margin-top:60px; font-size:0.9rem; }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="/">首页</a>
+      <a href="/about">关于我</a>
+      <a href="/blog">文章</a>
+      <a href="/contact">联系</a>
+    </div>
+  </nav>
+
+  <div class="section">
+    <div class="container">
+      <h1>关于我</h1>
+      <p class="intro">1995年大学毕业。做过中学老师，做过贸易，现在搞AI技术。26年，看过太多生意的起落，知道什么是真的，什么是风。</p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">1995</div>
+          <div class="timeline-content">
+            <p><strong>大学毕业，分配去当中学老师。</strong></p>
+            <p>（这里写你当年的事...）</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-year">2000前后</div>
+          <div class="timeline-content">
+            <p><strong>下海做贸易。</strong></p>
+            <p>电子消费品、家电、服装、鞋、珠宝...从华强北到全国各地。</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-year">2010年代</div>
+          <div class="timeline-content">
+            <p><strong>做过教育培训，也做过其他行业。</strong></p>
+            <p>（这里写你这段时期的故事...）</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-year">2020-2026</div>
+          <div class="timeline-content">
+            <p><strong>开始研究软件和技术。</strong></p>
+            <p>API、生图、短视频、直播、亚马逊自动化系统...服务国外客户，邮件加起来几百G。</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-year">现在</div>
+          <div class="timeline-content">
+            <p><strong>卖AI服务器，卖API，帮人做自动化。</strong></p>
+            <p>不是工程师，是帮老板把技术变成钱的人。看过的东西，都在这个网站里。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight">
+        <h2>我为什么做这个网站</h2>
+        <p>做了26年生意，服务过几百个客户，看过太多人起起落落。现在想把看到的东西写下来，给还在路上的人一点参考。</p>
+        <p>不是技术教程，不是成功学。只是一个做过家电、服装、珠宝、培训，现在卖AI算力的人，说一点真话。</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 海哥</p>
+    </div>
+  </footer>
+</body>
+</html>
