@@ -3,117 +3,229 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>鄭哥 / Hany - From 1995 to Now</title>
+  <title>鄭哥 / Hany — 從1995走到而家嘅生意筆記</title>
+  <meta name="description" content="90年代大學畢業，做過教師、翻譯、外貿電子家電、服裝鞋履、珠寶電車、教育培訓。而家喺七善門科技搞光伏賣AI算力，投資00後創新創業。唔係工程師，係幫老闆將技術變成錢嘅人。">
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family: 'Noto Sans SC', -apple-system, sans-serif; background:#f5f5f7; color:#333; line-height:1.7; }
-    .container { max-width:800px; margin:0 auto; padding:0 20px; }
-    header { background:#1a1a2e; color:#fff; padding:80px 0 60px; text-align:center; }
-    header h1 { font-size:2.5rem; font-weight:400; margin-bottom:10px; }
-    header .tagline { font-size:1.1rem; color:#aaa; margin-bottom:20px; }
-    header .quote { font-size:1.2rem; color:#e0e0e0; max-width:600px; margin:0 auto; font-style:italic; border-left:3px solid #e94560; padding-left:20px; }
-    nav { background:#fff; border-bottom:1px solid #e0e0e0; padding:15px 0; position:sticky; top:0; z-index:100; }
-    nav .container { display:flex; justify-content:center; gap:30px; align-items:center; }
-    nav a { text-decoration:none; color:#333; font-size:0.95rem; }
+    body { font-family: 'Noto Sans SC', -apple-system, 'PingFang HK', sans-serif; background:#f5f5f7; color:#1a1a2e; line-height:1.7; }
+    .container { max-width:840px; margin:0 auto; padding:0 24px; }
+    
+    /* === 導航 === */
+    nav { background:#fff; border-bottom:1px solid #e8e8ed; padding:14px 0; position:sticky; top:0; z-index:100; }
+    nav .container { display:flex; justify-content:space-between; align-items:center; }
+    .logo { font-size:1.05rem; font-weight:700; letter-spacing:0.5px; color:#1a1a2e; }
+    .logo span { font-weight:400; font-size:0.75rem; color:#999; margin-left:6px; }
+    .nav-links { display:flex; align-items:center; gap:24px; }
+    nav a { text-decoration:none; color:#444; font-size:0.9rem; transition:color 0.2s; }
     nav a:hover { color:#e94560; }
-    .lang-toggle { cursor:pointer; font-size:0.8rem; background:#1a1a2e; color:#fff; padding:4px 10px; border-radius:4px; border:none; }
-    .section { padding:60px 0; }
-    .section-title { font-size:1.8rem; margin-bottom:30px; text-align:center; }
-    .cards { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:25px; }
-    .card { background:#fff; border-radius:12px; padding:30px; box-shadow:0 2px 10px rgba(0,0,0,0.05); }
-    .card h3 { font-size:1.2rem; margin-bottom:15px; color:#1a1a2e; }
-    .card p { color:#666; font-size:0.95rem; }
-    .card .tag { display:inline-block; background:#f0f0f5; padding:4px 12px; border-radius:20px; font-size:0.8rem; margin-top:15px; color:#555; }
-    .post-list { background:#fff; border-radius:12px; padding:30px; }
-    .post-item { border-bottom:1px solid #f0f0f5; padding:20px 0; }
+    nav a.active { color:#e94560; font-weight:500; }
+    .lang-toggle { cursor:pointer; font-size:0.75rem; background:#1a1a2e; color:#fff; padding:5px 12px; border-radius:4px; border:none; }
+    
+    /* === Hero === */
+    header { background:#1a1a2e; color:#fff; padding:100px 0 80px; position:relative; overflow:hidden; }
+    header::before { content:''; position:absolute; top:-50%; right:-20%; width:500px; height:500px; background:rgba(233,69,96,0.08); border-radius:50%; }
+    header .container { position:relative; z-index:1; }
+    .hero-tag { display:inline-block; font-size:0.75rem; color:#e94560; border:1px solid rgba(233,69,96,0.4); padding:4px 14px; border-radius:20px; margin-bottom:20px; letter-spacing:1px; }
+    .en .hero-tag { font-size:0.7rem; }
+    header h1 { font-size:2.8rem; font-weight:400; margin-bottom:16px; line-height:1.2; }
+    header h1 .en { font-size:1.8rem; display:block; margin-top:8px; }
+    .hero-sub { font-size:1.15rem; color:rgba(255,255,255,0.65); max-width:560px; margin-bottom:28px; line-height:1.6; }
+    .hero-quote { font-size:1.05rem; color:rgba(255,255,255,0.55); border-left:2px solid #e94560; padding-left:18px; max-width:520px; line-height:1.6; }
+    
+    /* === Stats === */
+    .stats { background:#fff; border-bottom:1px solid #e8e8ed; padding:40px 0; }
+    .stats-grid { display:grid; grid-template-columns:repeat(4, 1fr); gap:20px; text-align:center; }
+    .stat-item h3 { font-size:1.6rem; font-weight:600; color:#1a1a2e; margin-bottom:4px; }
+    .stat-item p { font-size:0.8rem; color:#888; }
+    
+    /* === 核心內容 === */
+    .section { padding:72px 0; }
+    .section-alt { background:#fff; }
+    .section-title { font-size:1.6rem; margin-bottom:8px; }
+    .section-sub { color:#888; font-size:0.95rem; margin-bottom:40px; }
+    
+    /* === 三件事 === */
+    .cards { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:24px; }
+    .card { background:#fff; border-radius:12px; padding:32px; border:1px solid #e8e8ed; transition:box-shadow 0.3s, transform 0.2s; }
+    .card:hover { box-shadow:0 8px 30px rgba(0,0,0,0.06); transform:translateY(-2px); }
+    .card-icon { font-size:1.8rem; margin-bottom:16px; }
+    .card h3 { font-size:1.1rem; margin-bottom:12px; color:#1a1a2e; }
+    .card p { color:#666; font-size:0.9rem; line-height:1.7; }
+    .card .tag { display:inline-block; background:#f0f0f5; padding:4px 12px; border-radius:20px; font-size:0.78rem; margin-top:16px; color:#666; }
+    
+    /* === 文章 === */
+    .post-list { background:#fff; border-radius:12px; border:1px solid #e8e8ed; overflow:hidden; }
+    .post-item { display:flex; padding:24px; border-bottom:1px solid #f0f0f5; transition:background 0.2s; }
+    .post-item:hover { background:#fafafa; }
     .post-item:last-child { border-bottom:none; }
-    .post-item h4 { font-size:1.1rem; margin-bottom:8px; color:#1a1a2e; }
-    .post-meta { font-size:0.85rem; color:#999; }
-    .post-meta span { margin-right:15px; }
+    .post-num { font-size:0.75rem; color:#ccc; font-weight:600; min-width:36px; padding-top:4px; }
+    .post-body { flex:1; }
+    .post-body h4 { font-size:1.05rem; margin-bottom:6px; color:#1a1a2e; font-weight:500; }
+    .post-body h4 a { text-decoration:none; color:inherit; }
+    .post-body h4 a:hover { color:#e94560; }
+    .post-body .en-title { font-size:0.9rem; color:#999; margin-bottom:8px; }
+    .post-meta { font-size:0.82rem; color:#aaa; }
+    .post-meta span { margin-right:16px; }
+    .post-meta .tag { background:#f5f5f7; padding:2px 10px; border-radius:4px; font-size:0.75rem; }
+    
+    /* === CTA === */
+    .cta-section { background:#1a1a2e; color:#fff; padding:60px 0; text-align:center; }
+    .cta-section h2 { font-size:1.5rem; margin-bottom:12px; font-weight:400; }
+    .cta-section p { color:rgba(255,255,255,0.5); font-size:0.95rem; margin-bottom:24px; }
+    .cta-btn { display:inline-block; background:#e94560; color:#fff; padding:14px 36px; border-radius:6px; text-decoration:none; font-size:0.95rem; transition:background 0.2s; }
+    .cta-btn:hover { background:#d13a54; }
+    
+    /* === Footer === */
+    footer { background:#f0f0f5; padding:32px 0; text-align:center; }
+    footer p { font-size:0.82rem; color:#999; }
+    footer a { color:#888; text-decoration:none; }
+    
+    /* === 中英文切換 === */
     .en { display:none; }
     body.show-en .en { display:block; }
     body.show-en .cn { display:none; }
-    footer { background:#1a1a2e; color:#888; text-align:center; padding:40px 0; margin-top:60px; font-size:0.9rem; }
-    footer .en { display:none; }
-    body.show-en footer .en { display:block; }
-    body.show-en footer .cn { display:none; }
-    @media (max-width:600px) {
-      header h1 { font-size:1.8rem; }
-      .cards { grid-template-columns:1fr; }
-      nav .container { gap:15px; }
+    body.show-en .en-inline { display:inline; }
+    body.show-en .cn-inline { display:none; }
+    .en-inline, .cn-inline { display:inline; }
+    
+    @media (max-width:640px) {
+      header { padding:60px 0 50px; }
+      header h1 { font-size:2rem; }
+      header h1 .en { font-size:1.3rem; }
+      .stats-grid { grid-template-columns:repeat(2, 1fr); }
+      .nav-links { gap:14px; }
+      nav a { font-size:0.82rem; }
+      .post-item { flex-direction:column; }
+      .post-num { margin-bottom:8px; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>鄭哥 / Hany</h1>
-      <p class="tagline"><span class="cn">1995年大學畢業 → 中學老師 → 貿易商 → AI技術研究者</span><span class="en">Uni Grad '95 → Teacher → Trader → AI Tech Researcher</span></p>
-      <p class="quote"><span class="cn">「做過家電、服裝、珠寶、培訓，而家賣AI算力。我睇嘅唔係技術，係生意點樣被技術改變。」</span><span class="en">"Done appliances, garments, jewelry, training. Now selling AI compute. I don't look at tech — I look at how tech changes business."</span></p>
-    </div>
-  </header>
 
   <nav>
     <div class="container">
-      <a href="index.html" class="cn">首頁</a><a href="index.html" class="en">Home</a>
-      <a href="about.html" class="cn">關於我</a><a href="about.html" class="en">About</a>
-      <a href="blog.html" class="cn">文章</a><a href="blog.html" class="en">Blog</a>
-      <a href="contact.html" class="cn">聯繫</a><a href="contact.html" class="en">Contact</a>
-      <button class="lang-toggle" onclick="toggleLang()" id="langBtn">EN</button>
+      <div class="logo">鄭哥 / Hany</div>
+      <div class="nav-links">
+        <a href="index.html" class="active"><span class="cn">首頁</span><span class="en">Home</span></a>
+        <a href="about.html"><span class="cn">關於我</span><span class="en">About</span></a>
+        <a href="blog.html"><span class="cn">文章</span><span class="en">Blog</span></a>
+        <a href="contact.html"><span class="cn">聯繫</span><span class="en">Contact</span></a>
+        <button class="lang-toggle" onclick="toggleLang()" id="langBtn">EN</button>
+      </div>
     </div>
   </nav>
 
-  <section class="section">
+  <header>
     <div class="container">
-      <h2 class="section-title"><span class="cn">三件事</span><span class="en">Three Things</span></h2>
-      <div class="cards">
-        <div class="card">
-          <h3><span class="cn">💼 26年貿易經驗</span><span class="en">💼 26 Years in Trade</span></h3>
-          <p><span class="cn">消費電子、家電、服裝、鞋、珠寶、教育培訓……從華強北到亞馬遜，睇過太多生意嘅起落。</span><span class="en">Consumer electronics, appliances, garments, shoes, jewelry, training... from Huaqiangbei to Amazon. Seen too many businesses rise and fall.</span></p>
-          <span class="tag"><span class="cn">貿易觀察</span><span class="en">Trade</span></span>
+      <div class="hero-tag"><span class="cn">七善門科技 · 光伏AI算力 · 投資00後創新創業</span><span class="en">QISHANMEN TECH · PV AI COMPUTE · INVESTING GEN-Z STARTUPS</span></div>
+      <h1>
+        <span class="cn">一個睇過太多起落嘅人，<br>講啲真話。</span>
+        <span class="en">Someone who's seen too many<br>ups and downs. Telling it straight.</span>
+      </h1>
+      <p class="hero-sub"><span class="cn">90年代大學畢業，做過教師、翻譯、外貿電子家電、服裝鞋履、珠寶電車、教育培訓。而家喺七善門科技搞光伏賣AI算力，服務器同大模型自建模。唔係工程師，係幫老闆將技術變成錢嘅人。</span><span class="en">Uni grad in the '90s. Teacher, translator, foreign trade electronics, garments, jewelry, e-bikes, training. Now at Qishanmen Tech: PV, AI compute, servers, LLM deployment. Not an engineer — the guy who turns tech into money for bosses.</span></p>
+      <p class="hero-quote"><span class="cn">「我睇嘅唔係技術，係生意點樣被技術改變。仲有，投資00後年輕人嘅創新創業。」</span><span class="en">"I don't look at tech. I look at how tech changes business. And I invest in Gen-Z innovators."</span></p>
+    </div>
+  </header>
+
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <h3>26+</h3>
+          <p><span class="cn">年生意經驗</span><span class="en">Years in Business</span></p>
         </div>
-        <div class="card">
-          <h3><span class="cn">🤖 AI技術實戰</span><span class="en">🤖 AI Tech in Practice</span></h3>
-          <p><span class="cn">API、生圖、短視頻、直播、服務器銷售。唔係工程師，係幫老闆將技術變成錢嘅人。</span><span class="en">APIs, image gen, short video, live streaming, server sales. Not an engineer — the guy who turns tech into money for bosses.</span></p>
-          <span class="tag"><span class="cn">AI實戰</span><span class="en">AI Tech</span></span>
+        <div class="stat-item">
+          <h3>500+</h3>
+          <p><span class="cn">服務過嘅客戶</span><span class="en">Clients Served</span></p>
         </div>
-        <div class="card">
-          <h3><span class="cn">🌍 服務全球客戶</span><span class="en">🌍 Serving Global Clients</span></h3>
-          <p><span class="cn">亞馬遜自動化系統、國外客戶郵件幾百G。知道中國供應鏈點樣對接全球需求。</span><span class="en">Amazon automation, hundreds of GBs of foreign client emails. Know how Chinese supply chain connects to global demand.</span></p>
-          <span class="tag"><span class="cn">客戶故事</span><span class="en">Stories</span></span>
+        <div class="stat-item">
+          <h3>7+</h3>
+          <p><span class="cn">橫跨行業</span><span class="en">Industries</span></p>
+        </div>
+        <div class="stat-item">
+          <h3>4</h3>
+          <p><span class="cn">項全球首創產品</span><span class="en">World First Products</span></p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section" style="background:#fff;">
+  <section class="section">
     <div class="container">
-      <h2 class="section-title"><span class="cn">最新文章</span><span class="en">Latest Posts</span></h2>
-      <div class="post-list">
-        <div class="post-item">
-          <h4><span class="cn">從家電到AI算力：一個70後嘅26年生意筆記</span><span class="en">From Home Appliances to AI Compute: A Gen-Xer's 26-Year Business Notes</span></h4>
-          <div class="post-meta"><span>2026-08-30</span><span class="cn">關於我</span><span class="en">About</span></div>
+      <h2 class="section-title"><span class="cn">我做緊乜</span><span class="en">What I Do</span></h2>
+      <p class="section-sub"><span class="cn">唔係教學，唔係教程，只係一個做過太多行業嘅人，講啲親身經歷。同埋投資有想法嘅00後。</span><span class="en">Not tutorials. Just real stories from someone who's done too many industries. And invests in Gen-Z with ideas.</span></p>
+      <div class="cards">
+        <div class="card">
+          <div class="card-icon">⚡</div>
+          <h3><span class="cn">光伏AI算力</span><span class="en">PV + AI Compute</span></h3>
+          <p><span class="cn">光伏能源結合AI服務器銷售，大模型自建模部署。幫企業降本增效，用技術搵到真錢。</span><span class="en">Solar energy + AI server sales, LLM self-deployment. Helping businesses cut costs and boost revenue with real tech.</span></p>
+          <span class="tag"><span class="cn">七善門科技 · 算力 · 大模型</span><span class="en">Qishanmen Tech · Compute · LLM</span></span>
         </div>
-        <div class="post-item">
-          <h4><span class="cn">點解傳統貿易商都喺度偷偷買AI服務器？</span><span class="en">Why Are Traditional Traders Secretly Buying AI Servers?</span></h4>
-          <div class="post-meta"><span>2026-08-25</span><span class="cn">AI實戰</span><span class="en">AI Tech</span></div>
+        <div class="card">
+          <div class="card-icon">🤖</div>
+          <h3><span class="cn">AI技術落地</span><span class="en">AI Implementation</span></h3>
+          <p><span class="cn">API、生圖、短視頻、直播、自動化系統。唔係講技術點做，係講點用技術搵到錢。</span><span class="en">APIs, image gen, short video, live streaming, automation. Not how — how to monetize.</span></p>
+          <span class="tag"><span class="cn">API · 自動化 · 亞馬遜</span><span class="en">API · Automation · Amazon</span></span>
         </div>
-        <div class="post-item">
-          <h4><span class="cn">亞馬遜賣家問我最多嘅三個問題</span><span class="en">The Three Questions Amazon Sellers Ask Me Most</span></h4>
-          <div class="post-meta"><span>2026-08-20</span><span class="cn">亞馬遜</span><span class="en">Amazon</span></div>
-        </div>
-        <div class="post-item">
-          <h4><span class="cn">1998年我喺華強北，2026年我喺度賣API</span><span class="en">Huaqiangbei in 1998, Selling APIs in 2026</span></h4>
-          <div class="post-meta"><span>2026-08-15</span><span class="cn">貿易觀察</span><span class="en">Trade</span></div>
+        <div class="card">
+          <div class="card-icon">🌱</div>
+          <h3><span class="cn">投資00後創業</span><span class="en">Investing Gen-Z</span></h3>
+          <p><span class="cn">睇過太多起落，知道乜嘢係真乜嘢係風。投資有想法嘅年輕人，幫佢哋將創意變成事業。</span><span class="en">Seen too many ups and downs. Know what's real and what's hype. Investing in young people with ideas, helping turn creativity into business.</span></p>
+          <span class="tag"><span class="cn">創新創業 · 年輕人 ·  mentorship</span><span class="en">Innovation · Youth · Mentorship</span></span>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title"><span class="cn">最新寫嘅</span><span class="en">Latest Writing</span></h2>
+      <p class="section-sub"><span class="cn">唔係日更，有嘢想講先寫。</span><span class="en">Not daily. I write when I have something to say.</span></p>
+      <div class="post-list">
+        <div class="post-item">
+          <div class="post-num">01</div>
+          <div class="post-body">
+            <h4><a href="blog.html"><span class="cn">從手錶手機到AI算力：一個70後嘅26年產品創業筆記</span><span class="en">From Watch Phone to AI Compute: A Gen-Xer's 26-Year Product Journey</span></a></h4>
+            <p class="post-meta"><span>2026-08-30</span><span class="tag"><span class="cn">關於我</span><span class="en">About</span></span></p>
+          </div>
+        </div>
+        <div class="post-item">
+          <div class="post-num">02</div>
+          <div class="post-body">
+            <h4><a href="blog.html"><span class="cn">點解傳統貿易商都喺度偷偷買AI服務器？</span><span class="en">Why Are Traditional Traders Secretly Buying AI Servers?</span></a></h4>
+            <p class="post-meta"><span>2026-08-25</span><span class="tag"><span class="cn">AI實戰</span><span class="en">AI Tech</span></span></p>
+          </div>
+        </div>
+        <div class="post-item">
+          <div class="post-num">03</div>
+          <div class="post-body">
+            <h4><a href="blog.html"><span class="cn">亞馬遜賣家問我最多嘅三個問題</span><span class="en">The Three Questions Amazon Sellers Ask Me Most</span></a></h4>
+            <p class="post-meta"><span>2026-08-20</span><span class="tag"><span class="cn">亞馬遜</span><span class="en">Amazon</span></span></p>
+          </div>
+        </div>
+        <div class="post-item">
+          <div class="post-num">04</div>
+          <div class="post-body">
+            <h4><a href="blog.html"><span class="cn">2005年我發明咗全球第一款手錶手機</span><span class="en">In 2005, I Invented the World's First Watch Phone</span></a></h4>
+            <p class="post-meta"><span>2026-08-15</span><span class="tag"><span class="cn">產品創新</span><span class="en">Innovation</span></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2><span class="cn">想傾偈？歡迎聯繫。</span><span class="en">Want to chat? Reach out.</span></h2>
+      <p><span class="cn">有類似經歷想交流，或者有業務需求，睇到就會覆。WhatsApp 66417912（香港）</span><span class="en">Similar experiences to share or business needs? I'll reply when I see it. WhatsApp 66417912 (Hong Kong)</span></p>
+      <a href="contact.html" class="cta-btn"><span class="cn">聯繫鄭哥 →</span><span class="en">Contact Hany →</span></a>
     </div>
   </section>
 
   <footer>
     <div class="container">
-      <p class="cn">© 2026 鄭哥 · 從1995年走到而家</p>
-      <p class="en">© 2026 Hany · From 1995 to Now</p>
+      <p class="cn">© 2026 鄭哥 / Hany · 七善門科技 · 香港旺角 · 講真話，唔講廢話</p>
+      <p class="en">© 2026 Hany · Qishanmen Tech · Mong Kok, Hong Kong · Straight talk, no BS</span></p>
     </div>
   </footer>
 

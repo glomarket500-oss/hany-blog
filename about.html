@@ -4,111 +4,238 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>關於我 / About - 鄭哥 / Hany</title>
+  <meta name="description" content="90年代大學畢業，做過教師、翻譯、外貿電子家電、服裝鞋履、珠寶電車、教育培訓。發明過全球首款手錶手機、四頻老人機、無線充電、力距傳感電機。而家搞七善門科技AI回憶錄、星辰算力英偉達服務器，投資00後創新創業。">
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family: 'Noto Sans SC', -apple-system, sans-serif; background:#f5f5f7; color:#333; line-height:1.8; }
-    .container { max-width:700px; margin:0 auto; padding:0 20px; }
-    nav { background:#fff; border-bottom:1px solid #e0e0e0; padding:15px 0; position:sticky; top:0; z-index:100; }
-    nav .container { display:flex; justify-content:center; gap:30px; align-items:center; }
-    nav a { text-decoration:none; color:#333; font-size:0.95rem; }
-    nav a:hover { color:#e94560; }
-    .lang-toggle { cursor:pointer; font-size:0.8rem; background:#1a1a2e; color:#fff; padding:4px 10px; border-radius:4px; border:none; }
+    body { font-family: 'Noto Sans SC', -apple-system, 'PingFang HK', sans-serif; background:#f5f5f7; color:#1a1a2e; line-height:1.8; }
+    .container { max-width:780px; margin:0 auto; padding:0 24px; }
+    
+    nav { background:#fff; border-bottom:1px solid #e8e8ed; padding:14px 0; position:sticky; top:0; z-index:100; }
+    nav .container { display:flex; justify-content:space-between; align-items:center; }
+    .logo { font-size:1.05rem; font-weight:700; color:#1a1a2e; }
+    .nav-links { display:flex; align-items:center; gap:24px; }
+    nav a { text-decoration:none; color:#444; font-size:0.9rem; }
+    nav a:hover, nav a.active { color:#e94560; }
+    .lang-toggle { cursor:pointer; font-size:0.75rem; background:#1a1a2e; color:#fff; padding:5px 12px; border-radius:4px; border:none; }
+    
+    header { background:#1a1a2e; color:#fff; padding:80px 0 60px; text-align:center; }
+    header h1 { font-size:2.2rem; font-weight:400; margin-bottom:12px; }
+    header p { color:rgba(255,255,255,0.6); max-width:520px; margin:0 auto; font-size:1.05rem; }
+    
     .section { padding:60px 0; }
-    h1 { font-size:2rem; margin-bottom:20px; font-weight:400; }
-    h2 { font-size:1.4rem; margin:40px 0 20px; color:#1a1a2e; border-left:4px solid #e94560; padding-left:15px; }
-    .intro { font-size:1.1rem; color:#555; margin-bottom:30px; }
-    .timeline { position:relative; padding-left:30px; }
-    .timeline::before { content:''; position:absolute; left:8px; top:0; bottom:0; width:2px; background:#e0e0e0; }
-    .timeline-item { position:relative; margin-bottom:40px; }
-    .timeline-item::before { content:''; position:absolute; left:-26px; top:6px; width:12px; height:12px; border-radius:50%; background:#e94560; }
-    .timeline-year { font-size:1.2rem; font-weight:600; color:#1a1a2e; margin-bottom:10px; }
-    .timeline-content { color:#555; }
-    .timeline-content p { margin-bottom:8px; }
-    .highlight { background:#fff; border-radius:12px; padding:25px; margin:30px 0; box-shadow:0 2px 10px rgba(0,0,0,0.05); }
+    .section-alt { background:#fff; }
+    .section-title { font-size:1.5rem; margin-bottom:8px; font-weight:600; }
+    .section-sub { color:#888; font-size:0.95rem; margin-bottom:36px; }
+    
+    /* === 時間軸 === */
+    .timeline { position:relative; padding-left:32px; }
+    .timeline::before { content:''; position:absolute; left:10px; top:0; bottom:0; width:2px; background:#e8e8ed; }
+    .t-item { position:relative; margin-bottom:48px; }
+    .t-item::before { content:''; position:absolute; left:-28px; top:8px; width:14px; height:14px; border-radius:50%; background:#e94560; border:3px solid #fff; box-shadow:0 0 0 2px #e94560; }
+    .t-year { font-size:1.1rem; font-weight:600; color:#1a1a2e; margin-bottom:10px; }
+    .t-content p { margin-bottom:8px; color:#555; font-size:0.95rem; }
+    .t-content .highlight { background:#fff8e1; padding:12px 16px; border-radius:6px; border-left:3px solid #ffc107; margin:10px 0; }
+    .t-content .tag { display:inline-block; background:#f0f0f5; padding:3px 10px; border-radius:4px; font-size:0.78rem; color:#666; margin-right:6px; margin-top:4px; }
+    
+    /* === 產品成就 === */
+    .achieve-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:20px; }
+    .achieve-card { background:#fff; border-radius:10px; padding:24px; border:1px solid #e8e8ed; text-align:center; transition:box-shadow 0.3s; }
+    .achieve-card:hover { box-shadow:0 6px 24px rgba(0,0,0,0.06); }
+    .achieve-year { font-size:1.4rem; font-weight:600; color:#e94560; margin-bottom:8px; }
+    .achieve-card h4 { font-size:1rem; margin-bottom:8px; color:#1a1a2e; }
+    .achieve-card p { font-size:0.85rem; color:#888; line-height:1.6; }
+    .badge-first { display:inline-block; background:#e94560; color:#fff; font-size:0.7rem; padding:2px 8px; border-radius:10px; margin-top:8px; }
+    
+    /* === 業務版圖 === */
+    .biz-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:20px; }
+    .biz-card { background:#1a1a2e; color:#fff; border-radius:10px; padding:28px; }
+    .biz-card h4 { font-size:1.05rem; margin-bottom:10px; color:#fff; }
+    .biz-card p { font-size:0.88rem; color:rgba(255,255,255,0.65); line-height:1.6; }
+    .biz-card .tag { display:inline-block; background:rgba(255,255,255,0.1); padding:3px 10px; border-radius:4px; font-size:0.75rem; color:rgba(255,255,255,0.8); margin-top:10px; margin-right:4px; }
+    
+    /* === 投資 === */
+    .invest-box { background:linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%); color:#fff; border-radius:12px; padding:40px; text-align:center; }
+    .invest-box h3 { font-size:1.3rem; margin-bottom:12px; }
+    .invest-box p { color:rgba(255,255,255,0.65); max-width:560px; margin:0 auto 20px; }
+    .invest-box .cta { display:inline-block; background:#e94560; color:#fff; padding:12px 32px; border-radius:6px; text-decoration:none; font-size:0.95rem; }
+    
+    footer { background:#f0f0f5; padding:32px 0; text-align:center; }
+    footer p { font-size:0.82rem; color:#999; }
+    
     .en { display:none; }
     body.show-en .en { display:block; }
     body.show-en .cn { display:none; }
-    footer { background:#1a1a2e; color:#888; text-align:center; padding:40px 0; margin-top:60px; font-size:0.9rem; }
-    footer .en { display:none; }
-    body.show-en footer .en { display:block; }
-    body.show-en footer .cn { display:none; }
-    @media (max-width:600px) {
-      nav .container { gap:15px; }
+    body.show-en .en-inline { display:inline; }
+    body.show-en .cn-inline { display:none; }
+    .en-inline, .cn-inline { display:inline; }
+    
+    @media (max-width:640px) {
+      header h1 { font-size:1.7rem; }
+      .nav-links { gap:14px; }
     }
   </style>
 </head>
 <body>
+
   <nav>
     <div class="container">
-      <a href="index.html" class="cn">首頁</a><a href="index.html" class="en">Home</a>
-      <a href="about.html" class="cn">關於我</a><a href="about.html" class="en">About</a>
-      <a href="blog.html" class="cn">文章</a><a href="blog.html" class="en">Blog</a>
-      <a href="contact.html" class="cn">聯繫</a><a href="contact.html" class="en">Contact</a>
-      <button class="lang-toggle" onclick="toggleLang()" id="langBtn">EN</button>
+      <div class="logo">鄭哥 / Hany</div>
+      <div class="nav-links">
+        <a href="index.html"><span class="cn">首頁</span><span class="en">Home</span></a>
+        <a href="about.html" class="active"><span class="cn">關於我</span><span class="en">About</span></a>
+        <a href="blog.html"><span class="cn">文章</span><span class="en">Blog</span></a>
+        <a href="contact.html"><span class="cn">聯繫</span><span class="en">Contact</span></a>
+        <button class="lang-toggle" onclick="toggleLang()" id="langBtn">EN</button>
+      </div>
     </div>
   </nav>
 
-  <div class="section">
+  <header>
     <div class="container">
-      <h1><span class="cn">關於我</span><span class="en">About Me</span></h1>
-      <p class="intro"><span class="cn">1995年大學畢業。做過中學老師，做過貿易，而家搞AI技術。26年，睇過太多生意嘅起落，知道乜嘢係真，乜嘢係風。</span><span class="en">Graduated in 1995. Teacher, trader, now in AI tech. 26 years. Seen too many ups and downs. Know what's real and what's just hype.</span></p>
+      <h1><span class="cn">關於鄭哥</span><span class="en">About Hany</span></h1>
+      <p><span class="cn">唔係工程師，係幫老闆將技術變成錢嘅人。做過教師、翻譯、外貿、產品研發、教育培訓，而家搞AI同投資00後。</span><span class="en">Not an engineer — the guy who turns tech into money. Teacher, translator, trader, product R&D, training. Now in AI and investing in Gen-Z.</span></p>
+    </div>
+  </header>
+
+  <!-- === 時間軸 === -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title"><span class="cn">走過嘅路</span><span class="en">The Journey</span></h2>
+      <p class="section-sub"><span class="cn">26年，7個行業，4項全球首創。睇過太多起落，知道乜嘢係真。</span><span class="en">26 years, 7 industries, 4 world-firsts. Seen too many ups and downs. Know what's real.</span></p>
 
       <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-year">1995</div>
-          <div class="timeline-content">
-            <p><strong><span class="cn">大學畢業，分配去做中學老師。</span><span class="en">Graduated and assigned to teach middle school.</span></strong></p>
-            <p class="cn">（呢度寫你當年嘅事……）</p>
-            <p class="en">(Write about your early years here...)</p>
+        <div class="t-item">
+          <div class="t-year">1990s · <span class="cn">大學畢業</span><span class="en">University Grad</span></div>
+          <div class="t-content">
+            <p><span class="cn"><strong>教師 · 翻譯</strong> — 大學畢業後做過中學教師，做過翻譯。嗰陣時冇諗過會做貿易，更加冇諗過會搞AI。</span><span class="en"><strong>Teacher · Translator</strong> — After graduation, taught middle school and worked as a translator. Never thought I'd go into trade, let alone AI.</span></p>
+            <span class="tag"><span class="cn">教育</span><span class="en">Education</span></span>
+            <span class="tag"><span class="cn">語言</span><span class="en">Language</span></span>
           </div>
         </div>
 
-        <div class="timeline-item">
-          <div class="timeline-year"><span class="cn">2000前後</span><span class="en">Around 2000</span></div>
-          <div class="timeline-content">
-            <p><strong><span class="cn">下海做貿易。</span><span class="en">Went into trading.</span></strong></p>
-            <p><span class="cn">電子消費品、家電、服裝、鞋、珠寶……從華強北到全國各地。</span><span class="en">Consumer electronics, appliances, garments, shoes, jewelry... from Huaqiangbei to all over the country.</span></p>
+        <div class="t-item">
+          <div class="t-year">1998+ · <span class="cn">外貿起家</span><span class="en">Going Global</span></div>
+          <div class="t-content">
+            <p><span class="cn"><strong>電子家電 · 服裝鞋履 · 珠寶電車 · 日用品</strong> — 從華強北到全球，建立廣泛嘅國際客戶網絡。做過團隊建設、生產工藝流程、產品質量控制、企業智能管理。真正由底層做上去。</span><span class="en"><strong>Electronics · Apparel · Jewelry · E-bikes · Daily Goods</strong> — From Huaqiangbei to the world. Built global client networks. Team building, production workflows, quality control, enterprise management. Worked from the ground up.</span></p>
+            <span class="tag"><span class="cn">外貿</span><span class="en">Foreign Trade</span></span>
+            <span class="tag"><span class="cn">供應鏈</span><span class="en">Supply Chain</span></span>
+            <span class="tag"><span class="cn">品控</span><span class="en">Quality Control</span></span>
           </div>
         </div>
 
-        <div class="timeline-item">
-          <div class="timeline-year"><span class="cn">2010年代</span><span class="en">2010s</span></div>
-          <div class="timeline-content">
-            <p><strong><span class="cn">做過教育培訓，都做過其他行業。</span><span class="en">Did education and training, plus other industries.</span></strong></p>
-            <p class="cn">（呢度寫你呢段時期嘅故事……）</p>
-            <p class="en">(Write about this period here...)</p>
+        <div class="t-item">
+          <div class="t-year">2005-2010 · <span class="cn">產品創新黃金期</span><span class="en">Product Innovation Era</span></div>
+          <div class="t-content">
+            <p><span class="cn">呢段時間係我產品研發嘅高峰期。唔係紙上談兵，係真正做出嚟、賣出去嘅產品。</span><span class="en">This was my product R&D peak. Not just ideas — real products that shipped and sold.</span></p>
+            <div class="highlight">
+              <p><strong>2005 · <span class="cn">全球首款手錶手機</span><span class="en">World's First Watch Phone</span></strong></p>
+              <p><strong>2006 · <span class="cn">全球第一台四頻老人機量產</span><span class="en">World's First Quad-band Senior Phone Mass-Produced</span></strong></p>
+              <p><strong>2008 · <span class="cn">手機無線充電技術推廣</span><span class="en">Mobile Wireless Charging Tech Promotion</span></strong></p>
+              <p><strong>2010 · <span class="cn">力距傳感電機發明</span><span class="en">Torque Sensing Motor Invention</span></strong></p>
+            </div>
           </div>
         </div>
 
-        <div class="timeline-item">
-          <div class="timeline-year">2020–2026</div>
-          <div class="timeline-content">
-            <p><strong><span class="cn">開始研究軟件同技術。</span><span class="en">Started studying software and tech.</span></strong></p>
-            <p><span class="cn">API、生圖、短視頻、直播、亞馬遜自動化系統……服務國外客戶，郵件加起嚟幾百G。</span><span class="en">APIs, image generation, short video, live streaming, Amazon automation... serving foreign clients, hundreds of GBs of emails.</span></p>
+        <div class="t-item">
+          <div class="t-year">2010s · <span class="cn">教育培訓 & 地產</span><span class="en">Training & Real Estate</span></div>
+          <div class="t-content">
+            <p><span class="cn"><strong>教育培訓 · 商業地產 · 資金風控</strong> — 跨界做教育培訓，搞商業地產，做資金風控。由實體產品轉到服務同資產管理，視野闊咗好多。</span><span class="en"><strong>Training · Commercial Real Estate · Risk Management</strong> — Crossed into education, real estate, and financial risk control. From physical products to services and asset management. Broadened the view.</span></p>
+            <span class="tag"><span class="cn">跨界</span><span class="en">Cross-industry</span></span>
           </div>
         </div>
 
-        <div class="timeline-item">
-          <div class="timeline-year"><span class="cn">而家</span><span class="en">Now</span></div>
-          <div class="timeline-content">
-            <p><strong><span class="cn">賣AI服務器，賣API，幫人做自動化。</span><span class="en">Selling AI servers, APIs, and automation solutions.</span></strong></p>
-            <p><span class="cn">唔係工程師，係幫老闆將技術變成錢嘅人。睇過嘅嘢，都喺呢個網站入面。</span><span class="en">Not an engineer — the guy who turns tech into money for bosses. Everything I've seen is in this site.</span></p>
+        <div class="t-item">
+          <div class="t-year">2020+ · <span class="cn">AI時代 & 投資</span><span class="en">AI Era & Investing</span></div>
+          <div class="t-content">
+            <p><span class="cn"><strong>七善門科技 · 星辰算力 · 00後投資</strong> — 而家搞七善門科技，做AI回憶錄同人工智能大模型開展活動。星辰算力專做英偉達服務器部署。同時投資00後年輕人嘅創新創業，幫佢哋將創意變成事業。</span><span class="en"><strong>Qishanmen Tech · Star Compute · Gen-Z Investing</strong> — Now running Qishanmen Tech: AI memoirs and LLM deployment. Star Compute focuses on NVIDIA server deployment. Also investing in Gen-Z innovators.</span></p>
+            <span class="tag"><span class="cn">七善門科技</span><span class="en">Qishanmen Tech</span></span>
+            <span class="tag"><span class="cn">星辰算力</span><span class="en">Star Compute</span></span>
+            <span class="tag"><span class="cn">投資</span><span class="en">Investing</span></span>
           </div>
         </div>
-      </div>
-
-      <div class="highlight">
-        <h2><span class="cn">我點解做呢個網站</span><span class="en">Why I Made This Site</span></h2>
-        <p><span class="cn">做咗26年生意，服務過幾百個客戶，睇過太多人起起落落。而家想將睇到嘅嘢寫低，畀仲喺路上嘅人啲參考。</span><span class="en">26 years in business, hundreds of clients, seen too many rise and fall. Now writing it down for those still on the road.</span></p>
-        <p><span class="cn">唔係技術教程，唔係成功學。只係一個做過家電、服裝、珠寶、培訓，而家賣AI算力嘅人，講啲真話。</span><span class="en">Not a tech tutorial, not a success book. Just someone who's done appliances, garments, jewelry, training, now selling AI compute — telling it straight.</span></p>
       </div>
     </div>
-  </div>
+  </section>
+
+  <!-- === 產品成就 === -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title"><span class="cn">四項全球首創</span><span class="en">Four World-Firsts</span></h2>
+      <p class="section-sub"><span class="cn">唔係概念，係真正做出嚟、賣出去嘅產品。</span><span class="en">Not concepts. Real products that shipped and sold.</span></p>
+      <div class="achieve-grid">
+        <div class="achieve-card">
+          <div class="achieve-year">2005</div>
+          <h4><span class="cn">全球首款手錶手機</span><span class="en">Watch Phone</span></h4>
+          <p><span class="cn">將通訊設備同時尚配飾結合，開創全新品類。</span><span class="en">Combined communication device with fashion accessory. Created a new category.</span></p>
+          <span class="badge-first">🌍 <span class="cn">全球首創</span><span class="en">World First</span></span>
+        </div>
+        <div class="achieve-card">
+          <div class="achieve-year">2006</div>
+          <h4><span class="cn">四頻老人機量產</span><span class="en">Quad-band Senior Phone</span></h4>
+          <p><span class="cn">全球第一台四頻老人機量產，讓老年人都有方便易用嘅通訊設備。</span><span class="en">First quad-band senior phone mass-produced. Made communication accessible for elderly.</span></p>
+          <span class="badge-first">🌍 <span class="cn">全球首創</span><span class="en">World First</span></span>
+        </div>
+        <div class="achieve-card">
+          <div class="achieve-year">2008</div>
+          <h4><span class="cn">手機無線充電</span><span class="en">Wireless Charging</span></h4>
+          <p><span class="cn">推廣手機無線充電技術，令充電擺脫電線束縛，提前業界幾年。</span><span class="en">Promoted mobile wireless charging. Freed charging from cables. Years ahead of industry.</span></p>
+          <span class="badge-first">🌍 <span class="cn">全球首創</span><span class="en">World First</span></span>
+        </div>
+        <div class="achieve-card">
+          <div class="achieve-year">2010</div>
+          <h4><span class="cn">力距傳感電機</span><span class="en">Torque Sensing Motor</span></h4>
+          <p><span class="cn">發明力距傳感電機，提高能效同電機性能，技術超前。</span><span class="en">Invented torque sensing motor. Improved efficiency and motor performance. Ahead of its time.</span></p>
+          <span class="badge-first">🌍 <span class="cn">全球首創</span><span class="en">World First</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- === 業務版圖 === -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title"><span class="cn">而家做緊乜</span><span class="en">What I Do Now</span></h2>
+      <p class="section-sub"><span class="cn">七善門科技 · 星辰算力 · 跨境電商 · 投資00後。80%面向國外，20%國內。</span><span class="en">Qishanmen Tech · Star Compute · Cross-border E-commerce · Gen-Z Investing. 80% global, 20% domestic.</span></p>
+      <div class="biz-grid">
+        <div class="biz-card">
+          <h4>🧠 <span class="cn">七善門科技</span><span class="en">Qishanmen Tech</span></h4>
+          <p><span class="cn">AI回憶錄 · 人工智能大模型開展活動。幫企業同個人用AI記錄、整理、呈現故事。</span><span class="en">AI memoirs · LLM deployment activities. Helping businesses and individuals use AI to record, organize, and present stories.</span></p>
+          <span class="tag">AI Memoirs</span><span class="tag">LLM</span>
+        </div>
+        <div class="biz-card">
+          <h4>⚡ <span class="cn">星辰算力</span><span class="en">Star Compute</span></h4>
+          <p><span class="cn">英偉達算力服務器部署。光伏能源結合AI服務器，幫企業降本增效，大模型自建模。</span><span class="en">NVIDIA compute server deployment. Solar energy + AI servers. LLM self-deployment for enterprises.</span></p>
+          <span class="tag">NVIDIA</span><span class="tag">GPU</span><span class="tag">PV</span>
+        </div>
+        <div class="biz-card">
+          <h4>🌐 <span class="cn">跨境電商 & 自媒體</span><span class="en">E-commerce & Social</span></h4>
+          <p><span class="cn">TikTok · Amazon · 阿里巴巴 · 獨立站等電商平台。自媒體社交平台運營。跨境整合，打通國內外。</span><span class="en">TikTok, Amazon, Alibaba, independent sites. Social media operations. Cross-border integration.</span></p>
+          <span class="tag">TikTok</span><span class="tag">Amazon</span><span class="tag">1688</span>
+        </div>
+        <div class="biz-card">
+          <h4>🌱 <span class="cn">投資00後創業</span><span class="en">Gen-Z Investing</span></h4>
+          <p><span class="cn">睇過太多起落，知道乜嘢係真乜嘢係風。投資有想法嘅00後年輕人，幫佢哋將創意變成事業。唔只係錢，係經驗同人脈。</span><span class="en">Seen too many ups and downs. Know what's real and what's hype. Investing in Gen-Z with ideas. Not just money — experience and connections.</span></p>
+          <span class="tag">Mentorship</span><span class="tag">Startup</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- === 投資 CTA === -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="invest-box">
+        <h3><span class="cn">有想法嘅00後，想傾偈？</span><span class="en">Gen-Z with ideas? Let's talk.</span></h3>
+        <p><span class="cn">我唔係投資機構，我係一個做過26年生意嘅人。我投資嘅唔只係錢，係經驗、人脈同埋「點樣將技術變成錢」嘅眼光。如果你有想法，歡迎聯繫。</span><span class="en">I'm not an investment firm. I'm someone who's done 26 years of business. I invest money, experience, connections, and the eye for "how to turn tech into money." If you have ideas, reach out.</span></p>
+        <a href="contact.html" class="cta"><span class="cn">聯繫鄭哥 →</span><span class="en">Contact Hany →</span></a>
+      </div>
+    </div>
+  </section>
 
   <footer>
     <div class="container">
-      <p class="cn">© 2026 鄭哥 · 從1995年走到而家</p>
-      <p class="en">© 2026 Hany · From 1995 to Now</p>
+      <p class="cn">© 2026 鄭哥 / Hany · 七善門科技 · 星辰算力 · 香港旺角 · 講真話，唔講廢話</p>
+      <p class="en">© 2026 Hany · Qishanmen Tech · Star Compute · Mong Kok, HK · Straight talk, no BS</p>
     </div>
   </footer>
 

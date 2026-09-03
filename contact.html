@@ -3,80 +3,182 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>聯繫 / Contact - 鄭哥 / Hany</title>
+  <title>聯繫 / Contact - 鄭哥 / Hany · 七善門科技 · 星辰算力</title>
+  <meta name="description" content="聯繫鄭哥 / Hany。WhatsApp 66417912（香港），電郵 glomarket500@gmail.com。七善門科技AI回憶錄、星辰算力英偉達服務器、投資00後創新創業。">
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family: 'Noto Sans SC', -apple-system, sans-serif; background:#f5f5f7; color:#333; line-height:1.7; }
-    .container { max-width:600px; margin:0 auto; padding:0 20px; }
-    nav { background:#fff; border-bottom:1px solid #e0e0e0; padding:15px 0; position:sticky; top:0; z-index:100; }
-    nav .container { display:flex; justify-content:center; gap:30px; align-items:center; }
-    nav a { text-decoration:none; color:#333; font-size:0.95rem; }
-    nav a:hover { color:#e94560; }
-    .lang-toggle { cursor:pointer; font-size:0.8rem; background:#1a1a2e; color:#fff; padding:4px 10px; border-radius:4px; border:none; }
-    .section { padding:60px 0; }
-    h1 { font-size:2rem; margin-bottom:30px; font-weight:400; }
-    .contact-card { background:#fff; border-radius:12px; padding:40px; box-shadow:0 2px 10px rgba(0,0,0,0.05); }
-    .contact-item { margin-bottom:30px; }
+    body { font-family: 'Noto Sans SC', -apple-system, 'PingFang HK', sans-serif; background:#f5f5f7; color:#1a1a2e; line-height:1.7; }
+    .container { max-width:720px; margin:0 auto; padding:0 24px; }
+    
+    nav { background:#fff; border-bottom:1px solid #e8e8ed; padding:14px 0; position:sticky; top:0; z-index:100; }
+    nav .container { display:flex; justify-content:space-between; align-items:center; }
+    .logo { font-size:1.05rem; font-weight:700; color:#1a1a2e; }
+    .nav-links { display:flex; align-items:center; gap:24px; }
+    nav a { text-decoration:none; color:#444; font-size:0.9rem; }
+    nav a:hover, nav a.active { color:#e94560; }
+    .lang-toggle { cursor:pointer; font-size:0.75rem; background:#1a1a2e; color:#fff; padding:5px 12px; border-radius:4px; border:none; }
+    
+    header { background:#1a1a2e; color:#fff; padding:80px 0 60px; text-align:center; }
+    header h1 { font-size:2rem; font-weight:400; margin-bottom:10px; }
+    header p { color:rgba(255,255,255,0.55); max-width:480px; margin:0 auto; font-size:0.95rem; }
+    
+    .section { padding:56px 0; }
+    .section-alt { background:#fff; }
+    
+    /* === 聯繫卡片 === */
+    .contact-card { background:#fff; border-radius:12px; padding:36px; border:1px solid #e8e8ed; margin-bottom:20px; }
+    .contact-item { display:flex; align-items:flex-start; gap:16px; margin-bottom:28px; }
     .contact-item:last-child { margin-bottom:0; }
-    .contact-item h3 { font-size:1.1rem; color:#1a1a2e; margin-bottom:8px; }
-    .contact-item p { color:#666; }
-    .contact-item a { color:#e94560; text-decoration:none; }
-    .contact-item a:hover { text-decoration:underline; }
-    .note { background:#fff8e1; border-left:4px solid #ffc107; padding:15px 20px; border-radius:4px; margin-top:30px; font-size:0.95rem; color:#555; }
+    .contact-icon { font-size:1.6rem; min-width:40px; text-align:center; }
+    .contact-body h3 { font-size:1.05rem; margin-bottom:4px; color:#1a1a2e; }
+    .contact-body p { color:#666; font-size:0.9rem; }
+    .contact-body a { color:#e94560; text-decoration:none; font-weight:500; }
+    .contact-body a:hover { text-decoration:underline; }
+    .contact-note { font-size:0.82rem; color:#999; margin-top:4px; }
+    
+    /* === 業務卡片 === */
+    .biz-card { background:#1a1a2e; color:#fff; border-radius:12px; padding:32px; margin-bottom:16px; }
+    .biz-card h3 { font-size:1.1rem; margin-bottom:10px; color:#fff; }
+    .biz-card p { color:rgba(255,255,255,0.65); font-size:0.9rem; margin-bottom:8px; }
+    .biz-card .tag { display:inline-block; background:rgba(255,255,255,0.1); padding:4px 12px; border-radius:4px; font-size:0.78rem; color:rgba(255,255,255,0.8); margin-right:6px; margin-top:4px; }
+    
+    /* === 地區 === */
+    .location-box { display:flex; align-items:center; gap:12px; background:#fff; border-radius:12px; padding:24px 36px; border:1px solid #e8e8ed; }
+    .location-icon { font-size:1.5rem; }
+    .location-text p { font-size:0.95rem; color:#555; }
+    .location-text .primary { font-weight:600; color:#1a1a2e; margin-bottom:2px; }
+    
+    /* === 社交 === */
+    .social-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(140px,1fr)); gap:12px; }
+    .social-item { background:#fff; border-radius:8px; padding:16px; text-align:center; border:1px solid #e8e8ed; text-decoration:none; color:#444; transition:box-shadow 0.2s; }
+    .social-item:hover { box-shadow:0 4px 16px rgba(0,0,0,0.06); }
+    .social-item .icon { font-size:1.4rem; margin-bottom:6px; }
+    .social-item .name { font-size:0.85rem; font-weight:500; }
+    .social-item .note { font-size:0.75rem; color:#999; margin-top:2px; }
+    
+    /* === 投資提示 === */
+    .invest-hint { background:#fff8e1; border-left:4px solid #ffc107; padding:16px 20px; border-radius:0 8px 8px 0; margin-top:24px; }
+    .invest-hint p { font-size:0.9rem; color:#555; }
+    
+    footer { background:#f0f0f5; padding:32px 0; text-align:center; }
+    footer p { font-size:0.82rem; color:#999; }
+    
     .en { display:none; }
     body.show-en .en { display:block; }
     body.show-en .cn { display:none; }
-    footer { background:#1a1a2e; color:#888; text-align:center; padding:40px 0; margin-top:60px; font-size:0.9rem; }
-    footer .en { display:none; }
-    body.show-en footer .en { display:block; }
-    body.show-en footer .cn { display:none; }
-    @media (max-width:600px) {
-      nav .container { gap:15px; }
+    body.show-en .en-inline { display:inline; }
+    body.show-en .cn-inline { display:none; }
+    .en-inline, .cn-inline { display:inline; }
+    
+    @media (max-width:640px) {
+      .contact-item { flex-direction:column; gap:8px; }
+      .nav-links { gap:14px; }
     }
   </style>
 </head>
 <body>
+
   <nav>
     <div class="container">
-      <a href="index.html" class="cn">首頁</a><a href="index.html" class="en">Home</a>
-      <a href="about.html" class="cn">關於我</a><a href="about.html" class="en">About</a>
-      <a href="blog.html" class="cn">文章</a><a href="blog.html" class="en">Blog</a>
-      <a href="contact.html" class="cn">聯繫</a><a href="contact.html" class="en">Contact</a>
-      <button class="lang-toggle" onclick="toggleLang()" id="langBtn">EN</button>
+      <div class="logo">鄭哥 / Hany</div>
+      <div class="nav-links">
+        <a href="index.html"><span class="cn">首頁</span><span class="en">Home</span></a>
+        <a href="about.html"><span class="cn">關於我</span><span class="en">About</span></a>
+        <a href="blog.html"><span class="cn">文章</span><span class="en">Blog</span></a>
+        <a href="contact.html" class="active"><span class="cn">聯繫</span><span class="en">Contact</span></a>
+        <button class="lang-toggle" onclick="toggleLang()" id="langBtn">EN</button>
+      </div>
     </div>
   </nav>
 
-  <div class="section">
+  <header>
     <div class="container">
       <h1><span class="cn">聯繫</span><span class="en">Contact</span></h1>
+      <p><span class="cn">有業務需求、想交流經歷、或者係00後有創業想法？歡迎聯繫。睇到就會覆。</span><span class="en">Business needs, experience sharing, or Gen-Z startup ideas? Reach out. I'll reply when I see it.</span></p>
+    </div>
+  </header>
 
+  <!-- === 直接聯繫 === -->
+  <section class="section">
+    <div class="container">
       <div class="contact-card">
         <div class="contact-item">
-          <h3>💬 <span class="cn">微信</span><span class="en">WeChat</span></h3>
-          <p><span class="cn">請掃描首頁二維碼或添加微信號（你嘅微信號）</span><span class="en">Scan the QR code on homepage or add WeChat (your WeChat ID)</span></p>
+          <div class="contact-icon">💬</div>
+          <div class="contact-body">
+            <h3>WhatsApp</h3>
+            <p><a href="https://wa.me/85266417912" target="_blank">+852 6641 7912</a></p>
+            <p class="contact-note"><span class="cn">📍 香港號碼，24小時內回覆。國外客戶首選。</span><span class="en">📍 Hong Kong number. Reply within 24h. Preferred for international clients.</span></p>
+          </div>
         </div>
 
         <div class="contact-item">
-          <h3>📧 <span class="cn">電郵</span><span class="en">Email</span></h3>
-          <p><a href="mailto:your-email@example.com">your-email@example.com</a></p>
+          <div class="contact-icon">📧</div>
+          <div class="contact-body">
+            <h3><span class="cn">電郵</span><span class="en">Email</span></h3>
+            <p><a href="mailto:glomarket500@gmail.com">glomarket500@gmail.com</a></p>
+            <p class="contact-note"><span class="cn">業務合作、投資洽談、技術咨詢。郵件請簡潔說明來意。</span><span class="en">Business, investment, tech consulting. Please keep emails brief and clear.</span></p>
+          </div>
         </div>
 
         <div class="contact-item">
-          <h3>🤝 <span class="cn">業務合作</span><span class="en">Business</span></h3>
-          <p><span class="cn">AI服務器銷售 · API接入服務 · 亞馬遜自動化系統 · 電商運營諮詢</span><span class="en">AI Server Sales · API Integration · Amazon Automation · E-commerce Consulting</span></p>
+          <div class="contact-icon">📞</div>
+          <div class="contact-body">
+            <h3><span class="cn">電話</span><span class="en">Phone</span></h3>
+            <p><span class="cn">00852-6641-7912（香港）</span><span class="en">+852 6641 7912 (Hong Kong)</span></p>
+            <p class="contact-note"><span class="cn">香港旺角。辦公時間內可接聽。</span><span class="en">Mong Kok, Hong Kong. Available during office hours.</span></p>
+          </div>
         </div>
+      </div>
 
-        <div class="note">
-          <p><span class="cn"><strong>說明：</strong>呢個網站唔係商業推廣，係我個人記錄。如果你有類似經歷想交流，或者有業務需求，歡迎聯繫。睇到就會覆，有時喺度忙緊客戶嘅事，覆得慢請見諒。</span><span class="en"><strong>Note:</strong> This site is not commercial promotion — it's my personal record. If you have similar experiences to share or business needs, feel free to reach out. I'll reply when I see it. Sometimes busy with clients, so slow replies — please understand.</span></p>
+      <div class="location-box">
+        <div class="location-icon">📍</div>
+        <div class="location-text">
+          <p class="primary"><span class="cn">香港旺角</span><span class="en">Mong Kok, Hong Kong</span></p>
+          <p><span class="cn">七善門科技 · 星辰算力 · 服務全球客戶（80%國外 · 20%國內）</span><span class="en">Qishanmen Tech · Star Compute · Serving global clients (80% intl · 20% domestic)</span></p>
         </div>
       </div>
     </div>
-  </div>
+  </section>
+
+  <!-- === 業務合作 === -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2 style="font-size:1.4rem; margin-bottom:24px; font-weight:600;"><span class="cn">邊啲業務可以搵我？</span><span class="en">What can I help with?</span></h2>
+
+      <div class="biz-card">
+        <h3>🧠 <span class="cn">七善門科技 — AI回憶錄 & 大模型</span><span class="en">Qishanmen Tech — AI Memoirs & LLM</span></h3>
+        <p><span class="cn">AI回憶錄製作、人工智能大模型開展活動、企業AI部署咨詢。</span><span class="en">AI memoir production, LLM deployment activities, enterprise AI consulting.</span></p>
+        <span class="tag">AI Memoirs</span><span class="tag">LLM</span><span class="tag">Consulting</span>
+      </div>
+
+      <div class="biz-card">
+        <h3>⚡ <span class="cn">星辰算力 — 英偉達服務器部署</span><span class="en">Star Compute — NVIDIA Server Deployment</span></h3>
+        <p><span class="cn">英偉達GPU算力服務器銷售同部署、光伏能源結合AI算力、大模型自建模解決方案。</span><span class="en">NVIDIA GPU compute server sales and deployment, solar + AI compute, LLM self-deployment solutions.</span></p>
+        <span class="tag">NVIDIA</span><span class="tag">GPU Cluster</span><span class="tag">Solar PV</span>
+      </div>
+
+      <div class="biz-card">
+        <h3>🌐 <span class="cn">跨境電商 & 自媒體代運營</span><span class="en">Cross-border E-commerce & Social Media</span></h3>
+        <p><span class="cn">TikTok、Amazon、阿里巴巴、獨立站等電商平台運營。自媒體社交平台內容同變現。跨境整合打法。</span><span class="en">TikTok, Amazon, Alibaba, independent site operations. Social media content and monetization. Cross-border integration strategy.</span></p>
+        <span class="tag">TikTok</span><span class="tag">Amazon</span><span class="tag">1688</span><span class="tag">Social Media</span>
+      </div>
+
+      <div class="biz-card">
+        <h3>🌱 <span class="cn">投資00後創新創業</span><span class="en">Investing in Gen-Z Startups</span></h3>
+        <p><span class="cn">如果你有想法、有團隊、有執行力，缺嘅係資金同人脈，歡迎聯繫。我投資嘅唔只係錢，係26年嘅經驗同埋「點樣將技術變成錢」嘅眼光。</span><span class="en">If you have ideas, a team, execution, but need funding and connections, reach out. I invest money, 26 years of experience, and the eye for "how to turn tech into money."</span></p>
+        <span class="tag">Seed Funding</span><span class="tag">Mentorship</span><span class="tag">Network</span>
+      </div>
+
+      <div class="invest-hint">
+        <p><span class="cn">💡 <strong>溫馨提示：</strong>呢個網站80%面向國外客戶，20%面向國內。小紅書粉絲同步更新內容，歡迎關注。</span><span class="en">💡 <strong>Note:</strong> This site is 80% for international clients, 20% domestic. Xiaohongshu followers get synced content updates. Follow us there.</span></p>
+      </div>
+    </div>
+  </section>
 
   <footer>
     <div class="container">
-      <p class="cn">© 2026 鄭哥 · 從1995年走到而家</p>
-      <p class="en">© 2026 Hany · From 1995 to Now</p>
+      <p class="cn">© 2026 鄭哥 / Hany · 七善門科技 · 星辰算力 · 香港旺角 · 講真話，唔講廢話</p>
+      <p class="en">© 2026 Hany · Qishanmen Tech · Star Compute · Mong Kok, HK · Straight talk, no BS</p>
     </div>
   </footer>
 
