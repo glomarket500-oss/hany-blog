@@ -3,53 +3,145 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>文章 / Blog - 鄭哥 / Hany · 七善門科技 · 星辰算力</title>
-  <meta name="description" content="鄭哥嘅文章：AI實戰、跨境電商、產品創新、投資00後創業。唔係日更，有嘢想講先寫。">
+  
+  <!-- ===== SEO ===== -->
+  <title>鄭哥 Hany 文章 | AI算力 · 跨境電商 · 產品創新 · 00後創業</title>
+  <meta name="description" content="鄭哥Hany嘅文章：從手錶手機到AI算力、跨境電商實戰、產品創新經驗、00後創業投資心得。真實經歷，唔係教程。">
+  <meta name="keywords" content="鄭哥Hany文章,AI算力,跨境電商,產品創新,00後創業,手錶手機,Amazon,TikTok,英偉達服務器">
+  <meta name="author" content="鄭哥 / Hany">
+  <link rel="canonical" href="https://hany-blog.vercel.app/blog.html">
+  
+  <!-- ===== Open Graph ===== -->
+  <meta property="og:title" content="鄭哥 Hany 文章 | 真實經歷，唔係教程">
+  <meta property="og:description" content="從手錶手機到AI算力，一個人點樣走過26年？">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hany-blog.vercel.app/blog.html">
+  
+  <!-- ===== Schema.org: Blog ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "鄭哥 Hany 文章",
+    "description": "鄭哥Hany嘅真實經歷文章，涵蓋AI算力、跨境電商、產品創新、00後創業投資",
+    "url": "https://hany-blog.vercel.app/blog.html",
+    "author": {
+      "@type": "Person",
+      "name": "鄭哥 / Hany",
+      "url": "https://hany-blog.vercel.app"
+    },
+    "blogPost": [
+      {
+        "@type": "BlogPosting",
+        "headline": "從手錶手機到AI算力：一個人的26年產品之路",
+        "datePublished": "2026-09-04",
+        "author": {"@type": "Person", "name": "鄭哥 / Hany"},
+        "description": "2005年做出全球首款手錶手機，2010年製作力距傳感電機，而家搞AI算力服務器"
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "點解傳統貿易商偷偷買AI服務器？",
+        "datePublished": "2026-08-28",
+        "author": {"@type": "Person", "name": "鄭哥 / Hany"},
+        "description": "傳統生意人點解要買AI服務器？背後嘅商業邏輯"
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "Amazon賣家最常問我嘅三個問題",
+        "datePublished": "2026-08-20",
+        "author": {"@type": "Person", "name": "鄭哥 / Hany"},
+        "description": "26年貿易經驗回答Amazon賣家最常見問題"
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "2005年，我做出全球第一款手錶手機",
+        "datePublished": "2026-08-15",
+        "author": {"@type": "Person", "name": "鄭哥 / Hany"},
+        "description": "手錶手機誕生故事，比Apple Watch早九年"
+      }
+    ]
+  }
+  </script>
+
   <style>
+    :root {
+      --bg: #fafafa; --bg-elevated: #ffffff; --text: #1a1a1a; --text-secondary: #555555; --text-muted: #888888;
+      --accent: #c41e3a; --accent-light: rgba(196,30,58,0.08); --border: #e8e8e8; --border-light: #f0f0f0;
+      --radius: 12px; --radius-sm: 8px; --shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.02);
+      --shadow-hover: 0 4px 16px rgba(0,0,0,0.06), 0 12px 40px rgba(0,0,0,0.04); --max-width: 720px;
+    }
     * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family: 'Noto Sans SC', -apple-system, 'PingFang HK', sans-serif; background:#f5f5f7; color:#1a1a2e; line-height:1.7; }
-    .container { max-width:840px; margin:0 auto; padding:0 24px; }
+    html { scroll-behavior:smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', 'PingFang HK', 'Noto Sans SC', sans-serif;
+      background: var(--bg); color: var(--text); line-height: 1.75; font-size: 16px; -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
     
-    nav { background:#fff; border-bottom:1px solid #e8e8ed; padding:14px 0; position:sticky; top:0; z-index:100; }
-    nav .container { display:flex; justify-content:space-between; align-items:center; }
-    .logo { font-size:1.05rem; font-weight:700; color:#1a1a2e; }
-    .nav-links { display:flex; align-items:center; gap:24px; }
-    nav a { text-decoration:none; color:#444; font-size:0.9rem; }
-    nav a:hover, nav a.active { color:#e94560; }
-    .lang-toggle { cursor:pointer; font-size:0.75rem; background:#1a1a2e; color:#fff; padding:5px 12px; border-radius:4px; border:none; }
+    nav { background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-light); padding: 0; position: sticky; top: 0; z-index: 100; }
+    nav .container { display:flex; justify-content:space-between; align-items:center; height: 56px; }
+    .logo { font-size: 1.05rem; font-weight: 700; letter-spacing: -0.3px; color: var(--text); text-decoration: none; }
+    .logo span { font-weight: 400; font-size: 0.8rem; color: var(--text-muted); margin-left: 6px; }
+    .nav-links { display:flex; align-items:center; gap: 6px; }
+    nav a { text-decoration:none; color: var(--text-secondary); font-size: 0.88rem; font-weight: 500; padding: 6px 12px; border-radius: var(--radius-sm); transition: all 0.2s; }
+    nav a:hover { color: var(--accent); background: var(--accent-light); }
+    nav a.active { color: var(--accent); }
+    .lang-btn { cursor:pointer; font-size: 0.75rem; background: var(--text); color: #fff; padding: 5px 12px; border-radius: var(--radius-sm); border:none; font-weight: 500; margin-left: 8px; }
     
-    header { background:#1a1a2e; color:#fff; padding:70px 0 50px; text-align:center; }
-    header h1 { font-size:2rem; font-weight:400; margin-bottom:10px; }
-    header p { color:rgba(255,255,255,0.55); max-width:480px; margin:0 auto; font-size:0.95rem; }
+    header { background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%); color: #fff; padding: 80px 0 60px; text-align:center; position: relative; overflow: hidden; }
+    header::before { content:''; position:absolute; top: -30%; right: -10%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(196,30,58,0.15) 0%, transparent 70%); border-radius: 50%; }
+    header .container { position:relative; z-index: 1; }
+    header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.5px; }
+    header h1 .en { font-size: 1.3rem; font-weight: 400; opacity: 0.7; display:block; margin-top: 8px; }
+    header p { color: rgba(255,255,255,0.55); max-width: 480px; margin: 0 auto; font-size: 0.95rem; line-height: 1.7; }
     
-    .section { padding:56px 0; }
-    .section-alt { background:#fff; }
+    .section { padding: 56px 0; }
+    .section-alt { background: var(--bg-elevated); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); }
+    .section-header { margin-bottom: 32px; }
+    .section-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.3px; }
+    .section-sub { color: var(--text-muted); font-size: 0.95rem; }
     
-    .filter { display:flex; gap:10px; margin-bottom:28px; flex-wrap:wrap; }
-    .filter a { padding:8px 18px; border-radius:20px; background:#fff; text-decoration:none; color:#555; font-size:0.85rem; border:1px solid #e0e0e0; transition:all 0.2s; }
-    .filter a:hover { border-color:#e94560; color:#e94560; }
-    .filter a.active { background:#1a1a2e; color:#fff; border-color:#1a1a2e; }
+    /* ===== 文章列表 ===== */
+    .post-list { display: flex; flex-direction: column; gap: 16px; }
+    .post-card { background: var(--bg-elevated); border-radius: var(--radius); border: 1px solid var(--border-light); padding: 28px; transition: all 0.3s ease; }
+    .post-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); border-color: var(--border); }
+    .post-card:last-child { margin-bottom: 0; }
+    .post-meta-top { display:flex; align-items:center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+    .post-date { font-size: 0.8rem; color: var(--text-muted); font-family: 'SF Mono', monospace; }
+    .post-tag { background: var(--accent-light); color: var(--accent); padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 500; }
+    .post-card h3 { font-size: 1.15rem; margin-bottom: 8px; font-weight: 600; line-height: 1.4; }
+    .post-card h3 a { text-decoration:none; color: var(--text); transition: color 0.2s; }
+    .post-card h3 a:hover { color: var(--accent); }
+    .post-card .en-title { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 10px; line-height: 1.5; }
+    .post-card .excerpt { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px; }
+    .post-card .read-more { font-size: 0.88rem; color: var(--accent); text-decoration:none; font-weight: 500; }
+    .post-card .read-more:hover { text-decoration: underline; }
     
-    .post-list { background:#fff; border-radius:12px; border:1px solid #e8e8ed; overflow:hidden; }
-    .post-item { display:flex; padding:24px; border-bottom:1px solid #f0f0f5; transition:background 0.2s; }
-    .post-item:hover { background:#fafafa; }
-    .post-item:last-child { border-bottom:none; }
-    .post-num { font-size:0.75rem; color:#ccc; font-weight:600; min-width:36px; padding-top:4px; }
-    .post-body { flex:1; }
-    .post-body h3 { font-size:1.05rem; margin-bottom:4px; color:#1a1a2e; font-weight:500; }
-    .post-body h3 a { text-decoration:none; color:inherit; }
-    .post-body h3 a:hover { color:#e94560; }
-    .post-en { font-size:0.88rem; color:#999; margin-bottom:8px; }
-    .post-desc { font-size:0.9rem; color:#666; margin-bottom:8px; line-height:1.6; }
-    .post-meta { font-size:0.82rem; color:#aaa; display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
-    .post-meta .tag { background:#f5f5f7; padding:3px 10px; border-radius:4px; font-size:0.75rem; }
+    /* ===== 小紅書便簽 ===== */
+    .note-card {
+      background: linear-gradient(135deg, #fff5f5 0%, #fff0f0 100%);
+      border: 1px solid #ffe0e0; border-radius: var(--radius); padding: 20px 24px; margin: 20px 0; position: relative;
+    }
+    .note-card::before { content: ''; position: absolute; top: 0; left: 24px; width: 60px; height: 4px; background: var(--accent); border-radius: 0 0 4px 4px; }
+    .note-card h4 { font-size: 0.95rem; color: var(--accent); margin-bottom: 8px; font-weight: 600; }
+    .note-card p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; }
     
-    .empty-note { text-align:center; padding:48px 24px; color:#888; }
-    .empty-note p { font-size:0.95rem; margin-bottom:8px; }
-    .empty-note .sub { font-size:0.85rem; color:#aaa; }
+    /* ===== 分類標籤 ===== */
+    .category-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+    .category-tag { background: var(--bg-elevated); border: 1px solid var(--border-light); padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; color: var(--text-secondary); cursor: pointer; transition: all 0.2s; }
+    .category-tag:hover, .category-tag.active { background: var(--accent); color: #fff; border-color: var(--accent); }
     
-    footer { background:#f0f0f5; padding:32px 0; text-align:center; }
-    footer p { font-size:0.82rem; color:#999; }
+    /* ===== CTA ===== */
+    .cta-section { background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%); color: #fff; padding: 48px 0; text-align:center; position: relative; overflow: hidden; }
+    .cta-section::before { content:''; position:absolute; bottom: -50%; left: -20%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(196,30,58,0.12) 0%, transparent 70%); border-radius: 50%; }
+    .cta-section .container { position: relative; z-index: 1; }
+    .cta-section h2 { font-size: 1.3rem; margin-bottom: 10px; font-weight: 600; }
+    .cta-section p { color: rgba(255,255,255,0.5); font-size: 0.9rem; margin-bottom: 20px; }
+    .cta-btn { display:inline-flex; align-items:center; gap: 8px; background: var(--accent); color: #fff; padding: 12px 28px; border-radius: var(--radius-sm); text-decoration:none; font-size: 0.9rem; font-weight: 500; transition: all 0.2s; }
+    .cta-btn:hover { background: #a31830; transform: translateY(-1px); }
+    
+    footer { background: var(--bg-elevated); border-top: 1px solid var(--border-light); padding: 32px 0; text-align:center; }
+    footer p { font-size: 0.82rem; color: var(--text-muted); }
     
     .en { display:none; }
     body.show-en .en { display:block; }
@@ -58,10 +150,12 @@
     body.show-en .cn-inline { display:none; }
     .en-inline, .cn-inline { display:inline; }
     
-    @media (max-width:640px) {
-      .post-item { flex-direction:column; }
-      .post-num { margin-bottom:8px; }
-      .nav-links { gap:14px; }
+    @media (max-width: 640px) {
+      header h1 { font-size: 1.7rem; }
+      header h1 .en { font-size: 1.1rem; }
+      .nav-links { gap: 2px; }
+      nav a { padding: 6px 8px; font-size: 0.82rem; }
+      .post-card { padding: 20px; }
     }
   </style>
 </head>
@@ -69,107 +163,108 @@
 
   <nav>
     <div class="container">
-      <div class="logo">鄭哥 / Hany</div>
+      <a href="index.html" class="logo">鄭哥<span>/ Hany</span></a>
       <div class="nav-links">
         <a href="index.html"><span class="cn">首頁</span><span class="en">Home</span></a>
-        <a href="about.html"><span class="cn">關於我</span><span class="en">About</span></a>
+        <a href="about.html"><span class="cn">關於</span><span class="en">About</span></a>
         <a href="blog.html" class="active"><span class="cn">文章</span><span class="en">Blog</span></a>
         <a href="contact.html"><span class="cn">聯繫</span><span class="en">Contact</span></a>
-        <button class="lang-toggle" onclick="toggleLang()" id="langBtn">EN</button>
+        <button class="lang-btn" onclick="toggleLang()" id="langBtn">EN</button>
       </div>
     </div>
   </nav>
 
   <header>
     <div class="container">
-      <h1><span class="cn">文章</span><span class="en">Blog</span></h1>
-      <p><span class="cn">唔係日更，有嘢想講先寫。AI算力、跨境電商、產品創新、投資創業。</span><span class="en">Not daily. I write when I have something to say. AI compute, e-commerce, product innovation, investing.</span></p>
+      <h1>
+        <span class="cn">鄭哥嘅文章</span>
+        <span class="en">Hany's Writing</span>
+      </h1>
+      <p>
+        <span class="cn">唔係日更，係有嘢想講先寫。真實經歷，唔係教程。</span>
+        <span class="en">Not daily. I write when I have something to say. Real experiences, not tutorials.</span>
+      </p>
     </div>
   </header>
 
+  <!-- ===== 文章列表 ===== -->
   <section class="section">
     <div class="container">
-      <div class="filter">
-        <a href="blog.html" class="active"><span class="cn">全部</span><span class="en">All</span></a>
-        <a href="#"><span class="cn">AI算力</span><span class="en">AI Compute</span></a>
-        <a href="#"><span class="cn">跨境電商</span><span class="en">E-commerce</span></a>
-        <a href="#"><span class="cn">產品創新</span><span class="en">Innovation</span></a>
-        <a href="#"><span class="cn">投資創業</span><span class="en">Investing</span></a>
+      <div class="section-header">
+        <h2 class="section-title"><span class="cn">全部文章</span><span class="en">All Posts</span></h2>
       </div>
-
+      
       <div class="post-list">
-        <div class="post-item">
-          <div class="post-num">01</div>
-          <div class="post-body">
-            <h3><span class="cn">從手錶手機到AI算力：一個70後嘅26年產品創業筆記</span><span class="en">From Watch Phone to AI Compute: A Gen-Xer's 26-Year Product Journey</span></h3>
-            <p class="post-desc"><span class="cn">2005年做出咗全球首款手錶手機，2008年推廣手機無線充電，2010年製作力距傳感電機。而家搞星辰算力，賣英偉達服務器。一個人點樣由實體產品走到AI算力？</span><span class="en">Built the world's first watch phone in 2005, promoted wireless charging in 2008, developed torque sensing motor in 2010. Now running Star Compute selling NVIDIA servers. How does one go from physical products to AI compute?</span></p>
-            <div class="post-meta">
-              <span>2026-08-30</span>
-              <span class="tag"><span class="cn">產品創新</span><span class="en">Innovation</span></span>
-              <span class="tag"><span class="cn">AI算力</span><span class="en">AI Compute</span></span>
-            </div>
+        <article class="post-card">
+          <div class="post-meta-top">
+            <span class="post-date">2026-09-04</span>
+            <span class="post-tag"><span class="cn">關於我</span><span class="en">About</span></span>
           </div>
-        </div>
+          <h3><a href="#"><span class="cn">從手錶手機到AI算力：一個人的26年產品之路</span><span class="en">From Watch Phone to AI Compute: A 26-Year Product Journey</span></a></h3>
+          <p class="en-title">How one person went from physical products to digital infrastructure</p>
+          <p class="excerpt"><span class="cn">2005年做出全球首款手錶手機，2010年製作力距傳感電機，而家搞星辰算力賣英偉達服務器。一個人點樣由實體產品走到AI算力？呢條路我行咗26年...</span><span class="en">Built the world's first watch phone in 2005, torque sensing motor in 2010, now selling NVIDIA servers. How does one go from physical products to AI compute? I've walked this road for 26 years...</span></p>
+          <a href="#" class="read-more"><span class="cn">閱讀全文 →</span><span class="en">Read more →</span></a>
+        </article>
 
-        <div class="post-item">
-          <div class="post-num">02</div>
-          <div class="post-body">
-            <h3><span class="cn">點解傳統貿易商都喺度偷偷買AI服務器？</span><span class="en">Why Are Traditional Traders Secretly Buying AI Servers?</span></h3>
-            <p class="post-desc"><span class="cn">一個做服裝出口嘅客戶，突然問我買10張A100。佢話：「我而家唔係賣貨，係賣圖。」傳統貿易點樣被AI顛覆？</span><span class="en">A clothing export client suddenly asked for 10 A100s. He said: "I'm not selling goods anymore — I'm selling images." How is traditional trade being disrupted by AI?</span></p>
-            <div class="post-meta">
-              <span>2026-08-25</span>
-              <span class="tag"><span class="cn">AI算力</span><span class="en">AI Compute</span></span>
-              <span class="tag"><span class="cn">貿易觀察</span><span class="en">Trade</span></span>
-            </div>
+        <article class="post-card">
+          <div class="post-meta-top">
+            <span class="post-date">2026-08-28</span>
+            <span class="post-tag"><span class="cn">AI科技</span><span class="en">AI Tech</span></span>
           </div>
-        </div>
+          <h3><a href="#"><span class="cn">點解傳統貿易商偷偷買AI服務器？</span><span class="en">Why Traditional Traders Are Secretly Buying AI Servers</span></a></h3>
+          <p class="en-title">The hidden demand from old-school business owners</p>
+          <p class="excerpt"><span class="cn">你做開貿易，點解要買AI服務器？因為競爭對手已經用AI做客服、做翻譯、做數據分析。你唔做，人就做咗你...</span><span class="en">Why would a trader buy AI servers? Because competitors are already using AI for customer service, translation, data analysis. If you don't, someone else will...</span></p>
+          <a href="#" class="read-more"><span class="cn">閱讀全文 →</span><span class="en">Read more →</span></a>
+        </article>
 
-        <div class="post-item">
-          <div class="post-num">03</div>
-          <div class="post-body">
-            <h3><span class="cn">TikTok + Amazon + 獨立站：我點樣幫客戶打通三條路？</span><span class="en">TikTok + Amazon + Independent Site: How I Help Clients Connect Three Channels</span></h3>
-            <p class="post-desc"><span class="cn">唔係每個平台都做，而係睇產品同客戶群，揀最啱嘅組合。分享下我幫客戶做跨境整合嘅實戰經驗。</span><span class="en">Not every platform — match product and audience to find the right combo. Sharing real cross-border integration experience.</span></p>
-            <div class="post-meta">
-              <span>2026-08-20</span>
-              <span class="tag"><span class="cn">跨境電商</span><span class="en">E-commerce</span></span>
-              <span class="tag"><span class="cn">TikTok</span><span class="en">TikTok</span></span>
-            </div>
+        <article class="post-card">
+          <div class="post-meta-top">
+            <span class="post-date">2026-08-20</span>
+            <span class="post-tag"><span class="cn">跨境電商</span><span class="en">E-commerce</span></span>
           </div>
-        </div>
+          <h3><a href="#"><span class="cn">Amazon賣家最常問我嘅三個問題</span><span class="en">The Three Questions Amazon Sellers Ask Me Most</span></a></h3>
+          <p class="en-title">Real Q&A from cross-border e-commerce operators</p>
+          <p class="excerpt"><span class="cn">「點樣搵到可靠供應商？」「點樣處理退貨？」「點樣應對平台政策變化？」呢三個問題我答咗十幾年...</span><span class="en">"How to find reliable suppliers?" "How to handle returns?" "How to deal with platform policy changes?" I've been answering these for over a decade...</span></p>
+          <a href="#" class="read-more"><span class="cn">閱讀全文 →</span><span class="en">Read more →</span></a>
+        </article>
 
-        <div class="post-item">
-          <div class="post-num">04</div>
-          <div class="post-body">
-            <h3><span class="cn">投資00後：我點揀有潛力嘅年輕人？</span><span class="en">Investing in Gen-Z: How I Pick Promising Young People?</span></h3>
-            <p class="post-desc"><span class="cn">睇過太多起落，知道乜嘢係真乜嘢係風。投資00後唔係睇idea，係睇執行力、學習能力同埋「捱得唔捱得」。</span><span class="en">Seen too many ups and downs. Know what's real and what's hype. Investing in Gen-Z isn't about ideas — it's about execution, learning ability, and grit.</span></p>
-            <div class="post-meta">
-              <span>2026-08-15</span>
-              <span class="tag"><span class="cn">投資創業</span><span class="en">Investing</span></span>
-              <span class="tag"><span class="cn">00後</span><span class="en">Gen-Z</span></span>
-            </div>
+        <article class="post-card">
+          <div class="post-meta-top">
+            <span class="post-date">2026-08-15</span>
+            <span class="post-tag"><span class="cn">產品創新</span><span class="en">Innovation</span></span>
           </div>
-        </div>
-
-        <div class="post-item">
-          <div class="post-num">05</div>
-          <div class="post-body">
-            <h3><span class="cn">七善門科技：點用AI幫人寫回憶錄？</span><span class="en">Qishanmen Tech: How to Use AI to Write Memoirs?</span></h3>
-            <p class="post-desc"><span class="cn">每個人都有故事，但唔係每個人都識得寫。我哋用AI大模型幫人整理、呈現、保存人生故事。技術背後，係對人嘅尊重。</span><span class="en">Everyone has a story, but not everyone can write it. We use LLMs to help organize, present, and preserve life stories. Behind the tech is respect for people.</span></p>
-            <div class="post-meta">
-              <span>2026-08-10</span>
-              <span class="tag"><span class="cn">七善門科技</span><span class="en">Qishanmen</span></span>
-              <span class="tag"><span class="cn">AI回憶錄</span><span class="en">AI Memoirs</span></span>
-            </div>
-          </div>
-        </div>
+          <h3><a href="#"><span class="cn">2005年，我做出全球第一款手錶手機</span><span class="en">In 2005, I Built the World's First Watch Phone</span></a></h3>
+          <p class="en-title">The story behind a product that was 10 years ahead of Apple Watch</p>
+          <p class="excerpt"><span class="cn">當年冇人信手錶可以做手機，我覺得「點解唔得？」就做出嚟。呢個故事教識我：創新唔係讀書讀返嚟，係問「點解唔得？」問返嚟...</span><span class="en">Back then no one believed a watch could be a phone. I thought "Why not?" and built it. This story taught me: innovation isn't learned from books, it's learned by asking "Why not?"...</span></p>
+          <a href="#" class="read-more"><span class="cn">閱讀全文 →</span><span class="en">Read more →</span></a>
+        </article>
       </div>
+    </div>
+  </section>
+
+  <!-- ===== 小紅書便簽 ===== -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="note-card">
+        <h4>💡 <span class="cn">鄭哥話你知</span><span class="en">Hany's Note</span></h4>
+        <p><span class="cn">「寫文章同做生意一樣，最緊要真誠。我冇讀過寫作班，但我識得講真話。如果你覺得我嘅文章幫到你，歡迎轉發畀朋友。」</span><span class="en">"Writing is like doing business — authenticity matters most. I never took writing classes, but I know how to tell the truth. If my writing helps you, feel free to share it with friends."</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta-section">
+    <div class="container">
+      <h2><span class="cn">想睇更多？</span><span class="en">Want More?</span></h2>
+      <p><span class="cn">有新文章我會放呢度，或者你可以直接WhatsApp我傾。</span><span class="en">New posts go here, or just WhatsApp me to chat.</span></p>
+      <a href="contact.html" class="cta-btn"><span class="cn">聯繫鄭哥 →</span><span class="en">Contact Hany →</span></a>
     </div>
   </section>
 
   <footer>
     <div class="container">
-      <p class="cn">© 2026 鄭哥 / Hany · 七善門科技 · 星辰算力 · 香港旺角 · 講真話，唔講廢話</p>
-      <p class="en">© 2026 Hany · Qishanmen Tech · Star Compute · Mong Kok, HK · Straight talk, no BS</p>
+      <p class="cn">© 2026 鄭哥 Hany · 七善門科技 · 星辰算力 · 香港旺角 · ALEXBI INC Long Beach CA</p>
+      <p class="en">© 2026 Hany · Qishanmen Tech · Star Compute · Mong Kok, HK · ALEXBI INC Long Beach CA</p>
     </div>
   </footer>
 
