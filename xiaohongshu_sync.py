@@ -133,7 +133,7 @@ def generate_xhs_image_html(article):
       <div class="footer-line"></div>
       <div class="footer-text">
         📝 鄭哥Hany真實經歷 | ☀️ 七善門科技 · 星辰算力<br>
-        📍 香港旺角 · ALEXBI INC Long Beach CA<br>
+        📍 香港旺角花園街183號 · ALEXBI INC Long Beach CA<br>
         📱 WhatsApp +852 6641 7912<br>
         🔗 https://hany-blog.vercel.app
       </div>
