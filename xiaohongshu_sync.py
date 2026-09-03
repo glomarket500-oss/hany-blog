@@ -67,7 +67,7 @@ def generate_xhs_text(article):
 ━━━━━━━━━━━━━━
 📝 鄭哥Hany真實經歷
 ☀️ 七善門科技 · 星辰算力
-📍 香港旺角 · ALEXBI INC Long Beach CA
+📍 香港旺角花園街183號 · ALEXBI INC Long Beach CA
 📱 WhatsApp +852 6641 7912
 🔗 https://hany-blog.vercel.app
 ━━━━━━━━━━━━━━
