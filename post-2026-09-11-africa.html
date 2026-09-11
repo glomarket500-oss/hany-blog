@@ -72,6 +72,49 @@
       .author-card { flex-direction: column; text-align: center; }
       .author-card img { margin: 0 auto; }
     }
+  
+    /* ===== 小紅書底部便簽 ===== */
+    .xhs-bottom-card{
+      background:linear-gradient(135deg,#fff5f5 0%,#ffe8eb 100%);
+      border:1px solid #ffcdd2;
+      border-left:5px solid #ff2442;
+      border-radius:12px;
+      padding:24px 28px;
+      margin:40px auto;
+      max-width:760px;
+      box-shadow:0 2px 8px rgba(255,36,66,.06);
+    }
+    .xhs-bottom-tag{
+      display:inline-block;
+      background:#ff2442;
+      color:#fff;
+      font-size:.78rem;
+      padding:4px 12px;
+      border-radius:10px;
+      margin-bottom:12px;
+      font-weight:600;
+      letter-spacing:.5px;
+    }
+    .xhs-bottom-card h4{font-size:1.1rem;color:#222;margin-bottom:10px;font-weight:600}
+    .xhs-bottom-card p{font-size:.92rem;color:#555;line-height:1.7;margin-bottom:16px}
+    .xhs-bottom-actions{display:flex;gap:10px;flex-wrap:wrap}
+    .xhs-bottom-btn{
+      padding:10px 18px;
+      border-radius:10px;
+      font-size:.88rem;
+      text-decoration:none;
+      font-weight:500;
+      transition:opacity .2s;
+      display:inline-block;
+    }
+    .xhs-bottom-btn:hover{opacity:.85}
+    .xhs-bottom-btn-primary{background:#ff2442;color:#fff}
+    .xhs-bottom-btn-secondary{background:#fff;color:#ff2442;border:1px solid #ff2442}
+    @media(max-width:640px){
+      .xhs-bottom-card{padding:20px;margin:30px 16px}
+      .xhs-bottom-btn{flex:1;text-align:center}
+    }
+
   </style>
   <script type="application/ld+json">
   {
@@ -128,7 +171,8 @@
     <div class="nav-links">
       <a href="index.html"><span class="cn">首頁</span><span class="en">Home</span></a>
       <a href="about.html"><span class="cn">關於</span><span class="en">About</span></a>
-      <a href="blog.html" class="active"><span class="cn">文章</span><span class="en">Blog</span></a>
+      <a href="xhs.html"><span class="cn">📕小紅書</span><span class="en">📕RED</span></a>
+        <a href="blog.html" class="active"><span class="cn">文章</span><span class="en">Blog</span></a>
       <a href="contact.html"><span class="cn">聯繫</span><span class="en">Contact</span></a>
       <button class="lang-btn" onclick="toggleLang()" id="langBtn">EN</button>
     </div>
