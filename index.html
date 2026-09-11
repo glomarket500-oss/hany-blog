@@ -325,6 +325,14 @@
     .pn-title{display:block;font-size:.92rem;font-weight:600;line-height:1.5;color:var(--text)}
     @media(max-width:640px){.prev-next{grid-template-columns:1fr}.pn-next{text-align:left;grid-column:1;grid-row:2}}
 
+
+    /* ===== 卡片主題小圖 ===== */
+    .card{position:relative;overflow:hidden}
+    .card-img{width:100%;height:160px;object-fit:cover;border-radius:8px;margin-bottom:14px;display:block}
+    .card-img-ai{filter:hue-rotate(180deg) saturate(1.15)}
+    .card-img-ecom{filter:saturate(1.1) contrast(1.05)}
+    .card-img-invest{filter:saturate(1.05)}
+
 </style>
 </head>
 <body>
@@ -396,18 +404,21 @@
       <div class="cards">
         <div class="card">
           <img src="hany-h200-nvl.webp" alt="NVIDIA H200 NVL GPU" style="width:100%; height:120px; object-fit:cover; border-radius:8px; margin-bottom:12px;" loading="lazy">
+          <img src="hany-card-ai-compute.webp" alt="NVIDIA H200 NVL" class="card-img card-img-ai">
           <h3><span class="cn">AI算力 + 大模型</span><span class="en">AI Compute + LLM</span></h3>
           <p><span class="cn">七善門科技：AI回憶錄、大模型活動。星辰算力：英偉達H200 NVL服務器部署，幫企業搭建AI基礎設施。</span><span class="en">Qishanmen Tech: AI memoirs, LLM events. Star Compute: NVIDIA H200 NVL server deployment for enterprise AI infrastructure.</span></p>
           <span class="tag"><span class="cn">七善門科技 · 星辰算力 · H200 NVL</span><span class="en">Qishanmen · Star Compute · H200 NVL</span></span>
         </div>
         <div class="card">
           <span class="card-icon">🛒</span>
+          <img src="hany-card-cross-border.webp" alt="跨境電商" class="card-img card-img-ecom">
           <h3><span class="cn">跨境電商全鏈路</span><span class="en">Cross-border E-commerce</span></h3>
           <p><span class="cn">TikTok、Tumer、Amazon、阿裏巴巴、獨立站。唔係講理論，係講點樣由零開始做到有單。</span><span class="en">TikTok, Tumer, Amazon, Alibaba, independent stores. Not theory — how to go from zero to orders.</span></p>
           <span class="tag"><span class="cn">Amazon · TikTok · 獨立站</span><span class="en">Amazon · TikTok · DTC</span></span>
         </div>
         <div class="card">
           <span class="card-icon">🚀</span>
+          <img src="hany-card-genz-invest.webp" alt="投資00後" class="card-img card-img-invest">
           <h3><span class="cn">投資00後創新創業</span><span class="en">Investing in Gen-Z</span></h3>
           <p><span class="cn">見過太多起落，知道咩係真嘅咩係吹水。投資有想法嘅年輕人，幫佢哋將創意變成生意。</span><span class="en">Seen too many ups and downs. Know what's real and what's hype. Investing in young people with ideas, helping turn creativity into business.</span></p>
           <span class="tag"><span class="cn"> mentorship · seed funding</span><span class="en">mentorship · seed funding</span></span>
