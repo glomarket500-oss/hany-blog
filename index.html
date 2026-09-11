@@ -288,7 +288,44 @@
 
     
     .comments h2 { font-size: 1.3rem; font-weight: 600; margin-bottom: 24px; }
-  </style>
+  
+    /* ===== 精選代表作 + 訂閱區 v2（2026-09-12） ===== */
+    .featured-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:8px}
+    .feat-card{position:relative;background:var(--bg-elevated);border:1px solid var(--border-light);border-radius:14px;padding:28px 24px;color:var(--text);text-decoration:none;transition:all .3s ease;display:block;overflow:hidden}
+    .feat-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 60%,rgba(196,30,58,.06));opacity:0;transition:opacity .3s}
+    .feat-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.08);border-color:var(--accent)}
+    .feat-card:hover::before{opacity:1}
+    .feat-1{border-top:3px solid var(--accent)}
+    .feat-2{border-top:3px solid #d97706}
+    .feat-3{border-top:3px solid #059669}
+    .feat-badge{display:inline-block;background:var(--accent-light);color:var(--accent);padding:3px 12px;border-radius:20px;font-size:.72rem;font-weight:600;margin-bottom:14px;letter-spacing:.3px}
+    .feat-card h3{font-size:1.18rem;font-weight:700;margin-bottom:10px;line-height:1.4}
+    .feat-card p{color:var(--text-secondary);font-size:.9rem;line-height:1.65;margin-bottom:14px}
+    .feat-arrow{position:absolute;right:24px;bottom:24px;font-size:1.4rem;color:var(--accent);opacity:0;transition:all .3s}
+    .feat-card:hover .feat-arrow{opacity:1;transform:translateX(4px)}
+    .subscribe-section{background:linear-gradient(135deg,#1a1a2e 0%,#2d2d44 100%);color:#fff;padding:60px 0;text-align:center;position:relative;overflow:hidden}
+    .subscribe-section::before{content:'';position:absolute;top:-50%;right:-20%;width:400px;height:400px;background:radial-gradient(circle,rgba(196,30,58,.15) 0%,transparent 70%);border-radius:50%}
+    .subscribe-section h2{font-size:1.6rem;font-weight:700;margin-bottom:12px}
+    .subscribe-section p{color:rgba(255,255,255,.65);max-width:540px;margin:0 auto 28px;font-size:.95rem}
+    .sub-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+    .sub-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:10px;text-decoration:none;font-weight:600;font-size:.95rem;transition:all .2s}
+    .sub-wa{background:#25D366;color:#fff}
+    .sub-wa:hover{background:#1ea952;transform:translateY(-1px)}
+    .sub-email{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2)}
+    .sub-email:hover{background:rgba(255,255,255,.18)}
+    
+
+    /* ===== 上一篇/下一篇導航 ===== */
+    .prev-next{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:48px 0 0;padding-top:32px;border-top:1px solid var(--border-light);font-family:-apple-system,'Segoe UI','PingFang HK',sans-serif}
+    .pn-card{display:block;padding:18px 20px;background:var(--bg-elevated);border:1px solid var(--border-light);border-radius:12px;text-decoration:none;color:var(--text);transition:all .25s ease;min-height:90px}
+    .pn-card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.06)}
+    .pn-next{text-align:right;grid-column:2}
+    .pn-prev{text-align:left;grid-column:1}
+    .pn-label{display:block;font-size:.72rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;font-weight:600}
+    .pn-title{display:block;font-size:.92rem;font-weight:600;line-height:1.5;color:var(--text)}
+    @media(max-width:640px){.prev-next{grid-template-columns:1fr}.pn-next{text-align:left;grid-column:1;grid-row:2}}
+
+</style>
 </head>
 <body>
 
@@ -379,8 +416,38 @@
     </div>
   </section>
 
-  <!-- ===== 最新文章 ===== -->
-  <section class="section section-alt">
+  <!-- ===== 精選代表作 ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title"><span class="cn">🏆 精選代表作</span><span class="en">🏆 Featured Stories</span></h2>
+          <p class="section-sub"><span class="cn">26年外貿生涯入面，最值得分享嘅故事。</span><span class="en">The stories that shaped 26 years in trade.</span></p>
+        </div>
+        <div class="featured-grid">
+          <a href="post-2026-09-12-echo.html" class="feat-card feat-1">
+            <span class="feat-badge"><span class="cn">代表作 ①</span><span class="en">Featured ①</span></span>
+            <h3><span class="cn">400粒鋯石手錶手機</span><span class="en">400 Zircons</span></h3>
+            <p><span class="cn">紐約設計師飛嚟廣州，2000台訂單救咗我間公司。</span><span class="en">An NYC designer's 2000-unit order saved my factory.</span></p>
+            <span class="feat-arrow">→</span>
+          </a>
+          <a href="post-2026-09-11-africa.html" class="feat-card feat-2">
+            <span class="feat-badge"><span class="cn">代表作 ②</span><span class="en">Featured ②</span></span>
+            <h3><span class="cn">非洲總統親戚</span><span class="en">Presidential Relative</span></h3>
+            <p><span class="cn">蝕底賠咗一單，點知賠出一個總統親戚——26年做生意最重要嘅一課。</span><span class="en">Losing money on one order won a lifelong friend and a presidential relative.</span></p>
+            <span class="feat-arrow">→</span>
+          </a>
+          <a href="post-2026-09-04-patent.html" class="feat-card feat-3">
+            <span class="feat-badge"><span class="cn">代表作 ③</span><span class="en">Featured ③</span></span>
+            <h3><span class="cn">5000蚊專利</span><span class="en">5000 HKD Patent</span></h3>
+            <p><span class="cn">比Apple Watch早九年嘅入場券——識問識改，就係創新。</span><span class="en">An industry entry ticket 9 years before Apple Watch.</span></p>
+            <span class="feat-arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 最新文章 ===== -->
+    <section class="section section-alt">
     <div class="container">
       <div class="section-header">
         <h2 class="section-title"><span class="cn">最新文章</span><span class="en">Latest Writing</span></h2>
