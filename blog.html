@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文章 - 海哥</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: 'Noto Sans SC', -apple-system, sans-serif; background:#f5f5f7; color:#333; line-height:1.7; }
+    .container { max-width:800px; margin:0 auto; padding:0 20px; }
+    nav { background:#fff; border-bottom:1px solid #e0e0e0; padding:15px 0; position:sticky; top:0; z-index:100; }
+    nav .container { display:flex; justify-content:center; gap:30px; }
+    nav a { text-decoration:none; color:#333; font-size:0.95rem; }
+    nav a:hover { color:#e94560; }
+    .section { padding:60px 0; }
+    h1 { font-size:2rem; margin-bottom:30px; font-weight:400; }
+    .filter { display:flex; gap:15px; margin-bottom:30px; flex-wrap:wrap; }
+    .filter a { padding:8px 20px; border-radius:20px; background:#fff; text-decoration:none; color:#555; font-size:0.9rem; border:1px solid #e0e0e0; }
+    .filter a.active { background:#1a1a2e; color:#fff; border-color:#1a1a2e; }
+    .post-list { background:#fff; border-radius:12px; padding:30px; }
+    .post-item { border-bottom:1px solid #f0f0f5; padding:25px 0; }
+    .post-item:last-child { border-bottom:none; }
+    .post-item h3 { font-size:1.2rem; margin-bottom:10px; color:#1a1a2e; }
+    .post-item p { color:#666; font-size:0.95rem; margin-bottom:12px; }
+    .post-meta { font-size:0.85rem; color:#999; display:flex; gap:15px; flex-wrap:wrap; }
+    .post-meta .tag { background:#f0f0f5; padding:3px 10px; border-radius:4px; font-size:0.8rem; color:#555; }
+    footer { background:#1a1a2e; color:#888; text-align:center; padding:40px 0; margin-top:60px; font-size:0.9rem; }
+    @media (max-width:600px) {
+      h1 { font-size:1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="index.html">首页</a>
+      <a href="about.html">关于我</a>
+      <a href="blog.html">文章</a>
+      <a href="contact.html">联系</a>
+    </div>
+  </nav>
+
+  <div class="section">
+    <div class="container">
+      <h1>文章</h1>
+
+      <div class="filter">
+        <a href="/blog" class="active">全部</a>
+        <a href="/blog/trade">贸易观察</a>
+        <a href="/blog/ai">AI实战</a>
+        <a href="/blog/amazon">亚马逊</a>
+        <a href="/blog/story">客户故事</a>
+      </div>
+
+      <div class="post-list">
+        <div class="post-item">
+          <h3>从家电到AI算力：一个70后的26年生意笔记</h3>
+          <p>1995年大学毕业，做过老师，做过贸易，现在卖AI服务器。不是成功学，是一个看过太多起落的人，说一点真话...</p>
+          <div class="post-meta">
+            <span>2026-08-30</span>
+            <span class="tag">关于我</span>
+          </div>
+        </div>
+
+        <div class="post-item">
+          <h3>为什么传统贸易商都在偷偷买AI服务器？</h3>
+          <p>一个做服装出口的客户，上个月突然问我买10张A100。我问他做什么，他说：「我现在不是卖货，是卖图。」...</p>
+          <div class="post-meta">
+            <span>2026-08-25</span>
+            <span class="tag">AI实战</span>
+          </div>
+        </div>
+
+        <div class="post-item">
+          <h3>亚马逊卖家问我最多的三个问题</h3>
+          <p>做了几年亚马逊自动化系统，几百个卖家问来问去，其实核心问题就三个：怎么省时间、怎么省人工、怎么不被封...</p>
+          <div class="post-meta">
+            <span>2026-08-20</span>
+            <span class="tag">亚马逊</span>
+          </div>
+        </div>
+
+        <div class="post-item">
+          <h3>1998年我在华强北，2026年我在卖API</h3>
+          <p>那时候从潮汕进货，坐绿皮火车到深圳，在华强北找个柜台就能卖货。现在不需要柜台了，需要算力...</p>
+          <div class="post-meta">
+            <span>2026-08-15</span>
+            <span class="tag">贸易观察</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 海哥</p>
+    </div>
+  </footer>
+</body>
+</html>
