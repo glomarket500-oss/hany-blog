@@ -77,6 +77,14 @@
     </div>
   </section>
 
+  <section class="section" style="background:#1a1a2e;color:#fff;">
+    <div class="container" style="text-align:center;">
+      <p style="font-size:1.2rem;color:#e0e0e0;">当前时间</p>
+      <div id="live-clock" style="font-size:2.5rem;font-weight:300;color:#fff;letter-spacing:2px;font-family:'Courier New',monospace;">--</div>
+      <p style="font-size:0.95rem;color:#aaa;" id="live-date">--</p>
+    </div>
+  </section>
+
   <section class="section" style="background:#fff;">
     <div class="container">
       <h2 class="section-title">最新文章</h2>
@@ -118,5 +126,23 @@
       <p>© 2026 海哥 · 从1995年走到现在</p>
     </div>
   </footer>
+
+  <script>
+    function updateClock() {
+      var now = new Date();
+      var h = String(now.getHours()).padStart(2, '0');
+      var m = String(now.getMinutes()).padStart(2, '0');
+      var s = String(now.getSeconds()).padStart(2, '0');
+      var timeStr = h + ':' + m + ':' + s;
+      var days = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+      var dateStr = now.getFullYear() + '年' + (now.getMonth()+1) + '月' + now.getDate() + '日 ' + days[now.getDay()];
+      var clockEl = document.getElementById('live-clock');
+      var dateEl = document.getElementById('live-date');
+      if (clockEl) clockEl.textContent = timeStr;
+      if (dateEl) dateEl.textContent = dateStr;
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+  </script>
 </body>
 </html>
