@@ -68,8 +68,8 @@ def make_html(content, title, date_str, article_id):
         '  <meta property="og:title" content="' + esc(s2t(title)) + '">\n'
         '  <meta property="og:description" content="' + esc(desc) + '">\n'
         '  <meta property="og:type" content="article">\n'
-        '  <meta property="og:url" content="https://glomarket.vercel.app/articles/' + article_id + '.html">\n'
-        '  <link rel="canonical" href="https://glomarket.vercel.app/articles/' + article_id + '.html">\n'
+        '  <meta property="og:url" content="https://hany-blog.vercel.app/articles/' + article_id + '.html">\n'
+        '  <link rel="canonical" href="https://hany-blog.vercel.app/articles/' + article_id + '.html">\n'
         '  <script type="application/ld+json">\n  ' + json.dumps(schema, ensure_ascii=False, indent=2) + '\n  </script>'
     )
 
