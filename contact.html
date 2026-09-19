@@ -63,15 +63,43 @@
     }
     .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
     
-    nav { background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-light); padding: 0; position: sticky; top: 0; z-index: 100; }
-    nav .container { display:flex; justify-content:space-between; align-items:center; height: 56px; }
-    .logo { font-size: 1.05rem; font-weight: 700; letter-spacing: -0.3px; color: var(--text); text-decoration: none; }
-    .logo span { font-weight: 400; font-size: 0.8rem; color: var(--text-muted); margin-left: 6px; }
-    .nav-links { display:flex; align-items:center; gap: 6px; }
-    nav a { text-decoration:none; color: var(--text-secondary); font-size: 0.88rem; font-weight: 500; padding: 6px 12px; border-radius: var(--radius-sm); transition: all 0.2s; }
-    nav a:hover { color: var(--accent); background: var(--accent-light); }
-    nav a.active { color: var(--accent); }
-    .lang-btn { cursor:pointer; font-size: 0.75rem; background: var(--text); color: #fff; padding: 5px 12px; border-radius: var(--radius-sm); border:none; font-weight: 500; margin-left: 8px; }
+    /* ===== 導航 v2（2026-09-20） ===== */
+    nav { background:#fff; border-bottom:1px solid #e8e8ed; padding:14px 0; position:sticky; top:0; z-index:1000; }
+    nav .container { display:flex; justify-content:space-between; align-items:center; position:relative; }
+    .logo { font-size:1.05rem; font-weight:700; color:#1a1a2e; }
+    .hamburger { display:none; background:none; border:none; font-size:1.5rem; cursor:pointer; padding:4px 8px; }
+    .nav-wrapper { display:flex; align-items:center; }
+    .nav-links { display:flex; align-items:center; gap:20px; }
+    nav a { text-decoration:none; color:#444; font-size:0.9rem; transition:color 0.2s; }
+    nav a:hover, nav a.active { color:#e94560; }
+
+    /* Dropdown */
+    .dropdown { position:relative; }
+    .dropdown-toggle { background:none; border:none; color:#444; font-size:0.9rem; cursor:pointer; padding:0; display:flex; align-items:center; gap:4px; font-family:inherit; }
+    .dropdown-toggle:hover { color:#e94560; }
+    .dropdown-toggle .caret { font-size:0.7rem; transition:transform 0.2s; }
+    .dropdown.open .dropdown-toggle .caret { transform:rotate(180deg); }
+    .dropdown-menu { display:none; position:absolute; top:100%; right:0; margin-top:8px; background:#fff; border:1px solid #e8e8ed; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:180px; padding:8px 0; z-index:1001; }
+    .dropdown.open .dropdown-menu { display:block; }
+    .dropdown-menu a { display:block; padding:8px 16px; font-size:0.88rem; color:#444; }
+    .dropdown-menu a:hover { background:#fafafa; color:#e94560; }
+
+    .lang-toggle { cursor:pointer; font-size:0.75rem; background:#1a1a2e; color:#fff; padding:5px 12px; border-radius:4px; border:none; }
+
+    /* Mobile */
+    @media (max-width:768px) {
+      .hamburger { display:block; }
+      .nav-wrapper { display:none; position:absolute; top:100%; left:0; right:0; background:#fff; border-top:1px solid #e8e8ed; box-shadow:0 4px 12px rgba(0,0,0,0.08); }
+      .nav-wrapper.open { display:block; }
+      .nav-links { flex-direction:column; align-items:stretch; gap:0; padding:8px 0; }
+      .nav-links > a, .dropdown, .lang-toggle { padding:12px 24px; border-bottom:1px solid #f0f0f5; width:100%; text-align:left; }
+      .nav-links > a:last-of-type, .dropdown:last-of-type { border-bottom:none; }
+      .dropdown { width:100%; }
+      .dropdown-toggle { width:100%; justify-content:space-between; padding:12px 24px; }
+      .dropdown-menu { position:static; box-shadow:none; border:none; margin-top:0; padding:0; background:#fafafa; }
+      .dropdown.open .dropdown-menu { display:block; }
+      .dropdown-menu a { padding-left:48px; }
+    }
     
     header { background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%); color: #fff; padding: 80px 0 60px; text-align:center; position: relative; overflow: hidden; }
     header::before { content:''; position:absolute; top: -30%; right: -10%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(196,30,58,0.15) 0%, transparent 70%); border-radius: 50%; }
@@ -143,8 +171,6 @@
     
     @media (max-width: 640px) {
       .contact-item { flex-direction: column; gap: 8px; }
-      .nav-links { gap: 2px; }
-      nav a { padding: 6px 8px; font-size: 0.82rem; }
       .location-box { flex-direction: column; align-items: flex-start; }
     }
 
@@ -156,13 +182,28 @@
 
   <nav>
     <div class="container">
-      <a href="index.html" class="logo">鄭哥<span>/ Hany</span></a>
-      <div class="nav-links">
-        <a href="index.html"><span class="cn">首頁</span><span class="en">Home</span></a>
-        <a href="about.html"><span class="cn">關於</span><span class="en">About</span></a>
+      <div class="logo">鄭哥 / Hany</div>
+      <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Open menu">☰</button>
+      <div class="nav-wrapper" id="navWrapper">
+        <div class="nav-links">
+          <a href="index.html"><span class="cn">首頁</span><span class="en">Home</span></a>
+          <a href="about.html"><span class="cn">關於</span><span class="en">About</span></a>
           <a href="blog.html"><span class="cn">點評</span><span class="en">Reviews</span></a>
-        <a href="contact.html" class="active"><span class="cn">聯繫</span><span class="en">Contact</span></a>
-        <button class="lang-btn" onclick="toggleLang()" id="langBtn">EN</button>
+          <a href="contact.html" class="active"><span class="cn">聯繫</span><span class="en">Contact</span></a>
+          <div class="dropdown">
+            <button class="dropdown-toggle" onclick="toggleDropdown(event)">📱 社群 <span class="caret">▾</span></button>
+            <div class="dropdown-menu">
+              <a href="xhs.html"><span class="cn">小紅書</span><span class="en">Xiaohongshu</span></a>
+              <a href="youtube.html"><span class="cn">YouTube</span><span class="en">YouTube</span></a>
+              <a href="linkedin.html"><span class="cn">LinkedIn</span><span class="en">LinkedIn</span></a>
+              <a href="facebook.html"><span class="cn">Facebook</span><span class="en">Facebook</span></a>
+              <a href="instagram.html"><span class="cn">Instagram</span><span class="en">Instagram</span></a>
+              <a href="tiktok.html"><span class="cn">TikTok</span><span class="en">TikTok</span></a>
+              <a href="twitter.html"><span class="cn">Twitter</span><span class="en">Twitter</span></a>
+            </div>
+          </div>
+          <button class="lang-toggle" onclick="toggleLang()" id="langBtn">EN</button>
+        </div>
       </div>
     </div>
   </nav>
@@ -274,9 +315,26 @@
       btn.textContent = document.body.classList.contains('show-en') ? '中' : 'EN';
       localStorage.setItem('lang', document.body.classList.contains('show-en') ? 'en' : 'cn');
     }
+    function toggleMobileMenu() {
+      document.getElementById('navWrapper').classList.toggle('open');
+    }
+    function toggleDropdown(e) {
+      e.stopPropagation();
+      const dropdown = e.currentTarget.closest('.dropdown');
+      document.querySelectorAll('.dropdown.open').forEach(d => {
+        if (d !== dropdown) d.classList.remove('open');
+      });
+      dropdown.classList.toggle('open');
+    }
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.dropdown')) {
+        document.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
+      }
+    });
     if (localStorage.getItem('lang') === 'en') {
       document.body.classList.add('show-en');
-      document.getElementById('langBtn').textContent = '中';
+      const langBtn = document.getElementById('langBtn');
+      if (langBtn) langBtn.textContent = '中';
     }
   </script>
 </body>
