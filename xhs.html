@@ -1,242 +1,482 @@
 <!DOCTYPE html>
+
 <html lang="zh-HK">
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
+
   <!-- ===== SEO ===== -->
+
   <title>小紅書同步 | 鄭哥 Hany 26年外貿故事</title>
+
   <meta name="description" content="鄭哥Hany嘅小紅書帳號同步內容：每篇獨立站文章都會自動生成小紅書版本，含標題選項、封面鉤子、Hook文案、Hashtag。26年外貿真實故事、外貿創業、奢侈品生意、跨境電商。">
+
   <meta name="keywords" content="鄭哥Hany, 小紅書, 外貿故事, 創業, 外貿老兵, 26年外貿, 跨境電商, 紐約設計師, 非洲女客">
+
   <meta name="author" content="鄭哥 Hany">
+
   <link rel="canonical" href="https://hany-blog.vercel.app/xhs.html">
+
   <link rel="alternate" hreflang="zh-HK" href="https://hany-blog.vercel.app/xhs.html">
+
   <link rel="alternate" hreflang="en" href="https://hany-blog.vercel.app/xhs-en.html">
 
+
+
   <!-- Open Graph -->
+
   <meta property="og:type" content="website">
+
   <meta property="og:title" content="小紅書同步 | 鄭哥 Hany 26年外貿故事">
+
   <meta property="og:description" content="每篇獨立站文章都有小紅書版本 — 標題選項、封面鉤子、Hook、Hashtag 一應俱全。">
+
   <meta property="og:url" content="https://hany-blog.vercel.app/xhs.html">
+
   <meta property="og:image" content="https://hany-blog.vercel.app/hany-portrait.webp">
 
+
+
   <!-- Twitter Card -->
+
   <meta name="twitter:card" content="summary_large_image">
+
   <meta name="twitter:title" content="小紅書同步 | 鄭哥 Hany">
+
   <meta name="twitter:description" content="獨立站文章 + 小紅書版本 一體化">
 
+
+
   <!-- Schema.org -->
+
   <script type="application/ld+json">
+
   {
+
     "@context": "https://schema.org",
+
     "@type": "WebPage",
+
     "name": "小紅書同步 | 鄭哥 Hany",
+
     "description": "獨立站文章同小紅書文案嘅對應表，每篇都含標題選項、Hook、Hashtag。",
+
     "url": "https://hany-blog.vercel.app/xhs.html",
+
     "inLanguage": "zh-HK",
+
     "isPartOf": {
+
       "@type": "WebSite",
+
       "name": "鄭哥 Hany 個人網站",
+
       "url": "https://hany-blog.vercel.app"
+
     },
+
     "author": {
+
       "@type": "Person",
+
       "name": "鄭哥 Hany",
+
       "alternateName": "Hany",
+
       "url": "https://hany-blog.vercel.app/about.html"
+
     }
+
   }
+
   </script>
+
+
 
     <link rel="icon" type="image/webp" href="hany-portrait.webp">
 
+
+
   <style>
+
     /* ===== 小紅書頁專用樣式 ===== */
+
     .xhs-hero{
+
       background:linear-gradient(135deg,#ff2442 0%,#ff5860 100%);
+
       color:#fff;
+
       padding:60px 0 50px;
+
       text-align:center;
+
     }
+
     .xhs-hero h1{font-size:2.4rem;font-weight:700;margin-bottom:12px}
+
     .xhs-hero .en{opacity:.85;font-size:1.05rem;margin-bottom:24px}
+
     .xhs-hero .stats{display:flex;justify-content:center;gap:40px;margin-top:32px;flex-wrap:wrap}
+
     .xhs-hero .stat{text-align:center}
+
     .xhs-hero .stat-num{font-size:2rem;font-weight:700;display:block}
+
     .xhs-hero .stat-label{font-size:.85rem;opacity:.9}
 
+
+
     .xhs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;margin:40px 0}
+
     .xhs-card{
+
       background:#fff;
+
       border:1px solid #f0f0f0;
+
       border-radius:16px;
+
       overflow:hidden;
+
       box-shadow:0 4px 16px rgba(0,0,0,.04);
+
       transition:transform .2s,box-shadow .2s;
+
     }
+
     .xhs-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(255,36,66,.12)}
+
     .xhs-card-img{
+
       width:100%;
+
       aspect-ratio:1/1;
+
       object-fit:cover;
+
       background:#f5f5f5;
+
     }
+
     .xhs-card-body{padding:18px 20px}
+
     .xhs-card-tag{
+
       display:inline-block;
+
       background:#ff2442;
+
       color:#fff;
+
       font-size:.7rem;
+
       padding:3px 10px;
+
       border-radius:10px;
+
       margin-bottom:8px;
+
       letter-spacing:.5px;
+
     }
+
     .xhs-card-title{font-size:1.05rem;font-weight:600;color:#222;line-height:1.4;margin-bottom:8px}
+
     .xhs-card-excerpt{font-size:.85rem;color:#666;line-height:1.6;margin-bottom:12px}
+
     .xhs-card-hashtags{font-size:.78rem;color:#ff2442;margin-bottom:14px;line-height:1.6}
+
     .xhs-card-actions{display:flex;gap:8px;flex-wrap:wrap}
+
     .xhs-btn{
+
       flex:1;
+
       min-width:80px;
+
       padding:9px 12px;
+
       border-radius:10px;
+
       font-size:.82rem;
+
       text-align:center;
+
       text-decoration:none;
+
       border:none;
+
       cursor:pointer;
+
       font-weight:500;
+
       transition:opacity .2s;
+
     }
+
     .xhs-btn:hover{opacity:.85}
+
     .xhs-btn-primary{background:#ff2442;color:#fff}
+
     .xhs-btn-secondary{background:#f5f5f5;color:#333;border:1px solid #e0e0e0}
+
     .xhs-btn-wechat{background:#07c160;color:#fff}
 
+
+
     /* 便簽樣式 */
+
     .xhs-note{
+
       background:linear-gradient(135deg,#fff5f5 0%,#fff0f0 100%);
+
       border:1px solid #ffe0e0;
+
       border-left:4px solid #ff2442;
+
       padding:18px 22px;
+
       border-radius:8px;
+
       margin:24px 0;
+
     }
+
     .xhs-note h3{color:#ff2442;font-size:1rem;margin-bottom:8px;font-weight:600}
+
     .xhs-note p{font-size:.88rem;color:#555;line-height:1.7}
+
     .xhs-note ul{margin-left:20px;margin-top:8px}
+
     .xhs-note li{font-size:.85rem;color:#555;line-height:1.8}
 
+
+
     /* 過渡 */
+
     .xhs-tip{
+
       display:inline-block;
+
       background:#fff5f5;
+
       color:#ff2442;
+
       font-size:.8rem;
+
       padding:4px 12px;
+
       border-radius:6px;
+
       margin-bottom:16px;
+
       font-weight:500;
+
     }
+
   </style>
+
 <style>
 
+
+
     :root{--bg:#fafafa;--bg-elevated:#fff;--text:#1a1a1a;--text-secondary:#555;--text-muted:#888;--accent:#c41e3a;--accent-light:#fef2f2;--border-light:#eee;--border:#ddd;--radius:12px;--radius-sm:8px;--shadow:0 1px 3px rgba(0,0,0,0.04);--shadow-hover:0 8px 24px rgba(0,0,0,0.08)}
+
     *{margin:0;padding:0;box-sizing:border-box}
+
     body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans TC','PingFang TC',sans-serif;background:var(--bg);color:var(--text);line-height:1.8}
+
     .container{max-width:720px;margin:0 auto;padding:0 24px}
+
     nav{background:var(--bg-elevated);border-bottom:1px solid var(--border-light);position:sticky;top:0;z-index:100}
+
     nav .container{display:flex;justify-content:space-between;align-items:center;height:56px}
+
     .logo{font-weight:700;color:var(--text);text-decoration:none;font-size:1.1rem}
+
     .nav-links{display:flex;gap:6px;align-items:center}
+
     nav a{color:var(--text-secondary);text-decoration:none;padding:8px 14px;border-radius:6px;font-size:0.88rem;transition:all .2s}
+
     nav a:hover,nav a.active{color:var(--accent);background:var(--accent-light)}
+
     .lang-btn{background:none;border:1px solid var(--border-light);padding:6px 14px;border-radius:6px;cursor:pointer;font-size:0.85rem;margin-left:8px}
+
     .section{padding:48px 0}
+
     .section-alt{background:var(--bg-elevated)}
+
     .section-title{font-size:1.5rem;font-weight:700;margin-bottom:32px;text-align:center}
+
     .en{display:none}
+
     body.show-en .en{display:block}
+
     body.show-en .cn{display:none}
+
     footer{background:var(--bg-elevated);border-top:1px solid var(--border-light);padding:32px 0;text-align:center;margin-top:64px}
+
     footer p{font-size:0.82rem;color:var(--text-muted)}
+
     @media(max-width:640px){.section-title{font-size:1.2rem}.container{padding:0 16px}}
 
+
+
   </style>
+
 </head>
+
 <body>
 
+
+
   <!-- ===== 導航 ===== -->
+
   <nav>
+
     <div class="container">
+
       <a href="index.html" class="logo">鄭哥 Hany</a>
+
       <div class="nav-links">
+
         <a href="index.html"><span class="cn">首頁</span><span class="en">Home</span></a>
+
         <a href="blog.html"><span class="cn">點評</span><span class="en">Reviews</span></a>
+
         <a href="xhs.html" class="active"><span class="cn">小紅書</span><span class="en">RED</span></a>
+
         <a href="about.html"><span class="cn">關於</span><span class="en">About</span></a>
+
         <a href="contact.html"><span class="cn">聯繫</span><span class="en">Contact</span></a>
+
         <button class="lang-btn" onclick="toggleLang()">EN</button>
+
       </div>
+
     </div>
+
   </nav>
 
+
+
   <!-- ===== Hero ===== -->
+
   <header class="xhs-hero">
+
     <div class="container">
+
       <h1>📕 小紅書同步內容</h1>
+
       <p class="en">Xiaohongshu / RED Note Sync · Every story is also on RED</p>
+
       <div class="stats">
+
         <div class="stat">
+
           <span class="stat-num">17</span>
+
           <span class="stat-label">獨立站文章 / Blog Posts</span>
+
         </div>
+
         <div class="stat">
+
           <span class="stat-num">17</span>
+
           <span class="stat-label">小紅書版本 / RED Versions</span>
+
         </div>
+
         <div class="stat">
+
           <span class="stat-num">26+</span>
+
           <span class="stat-label">年外貿經驗 / Years</span>
+
         </div>
+
       </div>
+
     </div>
+
   </header>
 
+
+
   <!-- ===== 簡介便簽 ===== -->
+
   <section class="section">
+
     <div class="container">
+
       <div class="xhs-note">
+
         <h3>📌 點解同步小紅書？</h3>
+
         <p>鄭哥嘅26年外貿故事喺獨立站同小紅書同步發布。每篇獨立站文章都有對應嘅小紅書版本 — 標題選項、封面鉤子、Hook文案、Hashtag 一應俱全，畀你揀鍾意嘅風格直接 Copy & Paste。</p>
+
         <ul>
+
           <li>🌐 <b>獨立站</b>：深度長文 + SEO + 中英對照 + AI 配圖</li>
+
           <li>📕 <b>小紅書</b>：濃縮版 + 鉤子 + Hashtag + 短文案</li>
+
           <li>👤 <b>小紅書暱稱</b>：HANY · <b>小紅書號</b>：1063521362 · <a href="https://xhslink.cn/o/A42YArthEa1" target="_blank" rel="noopener">👉 點我去主頁</a></li>
+
         </ul>
+
         <div style="margin-top:16px;display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+
           <img src="hany-xhs-qrcode.jpg" alt="鄭哥Hany小紅書二維碼 HANY 1063521362" style="width:160px;height:160px;border-radius:12px;border:1px solid #ffe0e0" loading="lazy">
+
           <div style="font-size:.85rem;color:#555;line-height:1.8">掃碼直達 HANY 主頁<br>小紅書號：<b>1063521362</b><br><a href="https://xhslink.cn/o/A42YArthEa1" target="_blank" rel="noopener">https://xhslink.cn/o/A42YArthEa1</a></div>
+
         </div>
+
         <ul style="display:none">
+
         </ul>
+
       </div>
 
+
+
       <span class="xhs-tip">📋 點解會有兩個平台？因為受眾唔同。獨立站畀海外 + 深度閱讀，小紅書畀國內女性 + 創業圈。</span>
+
     </div>
+
   </section>
 
+
+
   <!-- ===== 6篇文章對應 ===== -->
+
   <section class="section section-alt">
+
     <div class="container">
+
       <h2 class="section-title"><span class="cn">📚 文章 ↔ 小紅書對應</span><span class="en">Blog Posts ↔ RED Versions</span></h2>
+
       <p style="text-align:center;color:var(--muted-foreground);margin-bottom:32px">
+
         <span class="cn">每篇文章都有對應嘅小紅書版本，撳「複製文案」即貼得。</span>
+
         <span class="en">Every blog post has a corresponding RED version. Click "Copy Notes" to paste.</span>
+
       </p>
 
+
+
       <div class="xhs-grid">
+
+
 
         <article class="xhs-card">
         <div class="xhs-cover"><img src="hany-saas-cover.webp" alt="小紅書發布版｜外貿B端社媒矩陣SaaS" loading="lazy"></div>
@@ -359,35 +599,51 @@
       </article>
 
       <article class="xhs-card">
+
           <div class="xhs-cover"><img src="hany-ai-phone-war-cover.webp" alt="二代豆包手機" loading="lazy"></div>
+
           <div class="xhs-meta">
+
             <h3 class="xhs-title">二代豆包手機一秒破億——AI 手機大戰，我哋 70 後點睇</h3>
+
             <p class="xhs-date">2026-09-19 · 鄭哥博客點評 · AI手機</p>
+
             <div class="xhs-buttons">
+
               <a href="post-2026-09-19-ai-phone-war.html" class="xhs-btn xhs-btn-primary">📖 獨立站</a>
+
               <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('小红书_2026-09-19-二代豆包手机.md')">📋 複製文案</button>
+
             </div>
+
           </div>
+
         </article>
 
 
 
+
+
+
+
         <!-- 文章 0: 温州女人 -->
-        <div class="xhs-card">
-          <img src="hany-wenzhou-cover.webp" alt="鄭哥Hany 温州女人买工厂" class="xhs-card-img" loading="lazy">
-          <div class="xhs-card-body">
-            <span class="xhs-card-tag">2026-09-12 · 生意格局 · ✅ 已發佈</span>
-            <h3 class="xhs-card-title"><span class="cn">2000万买厂，4000万卖出</span><span class="en">Buy for 20M, Sell for 40M</span></h3>
-            <p class="xhs-card-excerpt"><span class="cn">2006年温州女人揾我，带着20亿电子烟订单唔係落单，係叫我帮佢买起10间工厂。我格局太细，佢为盘棋而做生意。</span></p>
-            <div class="xhs-card-hashtags">#温州商人 #买工厂 #生意格局 #外贸创业 #郑哥Hany</div>
-            <div class="xhs-card-actions">
-              <a href="post-2026-09-12-wenzhou.html" class="xhs-btn xhs-btn-primary">📖 獨立站</a>
-              <a href="https://xhslink.cn/o/A42YArthEa1" target="_blank" class="xhs-btn xhs-btn-secondary">📕 去小紅書主頁</a>
-            </div>
+
+              <article class="xhs-card">
+        <div class="xhs-cover"><img src="hany-wenzhou-cover.webp" alt="鄭哥Hany 温州女人买工厂" loading="lazy"></div>
+        <div class="xhs-meta">
+          <h3 class="xhs-title">《2000万买厂，4000万卖出》</h3>
+          <p class="xhs-date">2026-09-12 · 郑哥博客点评 · 外贸实战</p>
+          <div class="xhs-buttons">
+            <a href="post-2026-09-12-wenzhou.html" class="xhs-btn xhs-btn-primary">📖 独立站</a>
+            <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_温州女人买工厂_发布版.md')">📋 复制文案</button>
           </div>
         </div>
+      </article>
+
+
 
         <!-- 文章 1: Stephanie -->
+
               <article class="xhs-card">
         <div class="xhs-cover"><img src="hany-echo-cover.webp" alt="Stephanie 镶石单" loading="lazy"></div>
         <div class="xhs-meta">
@@ -400,7 +656,10 @@
         </div>
       </article>
 
+
+
         <!-- 文章 2: Fank -->
+
               <article class="xhs-card">
         <div class="xhs-cover"><img src="hany-frank-cover.webp" alt="我的朋友 Fank" loading="lazy"></div>
         <div class="xhs-meta">
@@ -413,221 +672,385 @@
         </div>
       </article>
 
+
+
         <!-- 文章 3: 非洲女客 -->
-        <div class="xhs-card">
-          <img src="hany-africa-president.webp" alt="鄭哥Hany 非洲女客" class="xhs-card-img" loading="lazy">
-          <div class="xhs-card-body">
-            <span class="xhs-card-tag">2026-09-11 · 外貿故事</span>
-            <h3 class="xhs-card-title"><span class="cn">賠咗一單，賠出個總統親戚</span><span class="en">Lost One Order, Won a President</span></h3>
-            <p class="xhs-card-excerpt"><span class="cn">2000年廣州小北，非洲女客手机被偷要我賠。我蝕底赔咗，點知佢哥哥後來做咗非洲總統⋯</span></p>
-            <div class="xhs-card-hashtags">#非洲生意 #外貿故事 #人生奇遇 #廣州外貿</div>
-            <div class="xhs-card-actions">
-              <a href="post-2026-09-11-africa.html" class="xhs-btn xhs-btn-primary">📖 獨立站</a>
-              <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_非洲女客_文案.md')">📋 複製文案</button>
-            </div>
+
+              <article class="xhs-card">
+        <div class="xhs-cover"><img src="hany-africa-president.webp" alt="鄭哥Hany 非洲女客" loading="lazy"></div>
+        <div class="xhs-meta">
+          <h3 class="xhs-title">《賠咗一單，賠出個總統親戚》</h3>
+          <p class="xhs-date">2026-09-11 · 郑哥博客点评 · 外贸故事</p>
+          <div class="xhs-buttons">
+            <a href="post-2026-09-11-africa.html" class="xhs-btn xhs-btn-primary">📖 独立站</a>
+            <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_非洲女客_文案.md')">📋 复制文案</button>
           </div>
         </div>
+      </article>
+
+
 
         <!-- 文章 4: Turkey -->
-        <div class="xhs-card">
-          <img src="hany-turkey-cover.webp" alt="鄭哥Hany 土耳其客" class="xhs-card-img" loading="lazy">
-          <div class="xhs-card-body">
-            <span class="xhs-card-tag">2026-09-04 · 外貿教訓</span>
-            <h3 class="xhs-card-title"><span class="cn">10萬訂金教土耳其客做人</span><span class="en">100K Deposit Taught a Lesson</span></h3>
-            <p class="xhs-card-excerpt"><span class="cn">嗰個土耳其中間商用10萬訂金呃我，點知我將計就計，設咗個局教佢做人⋯</span></p>
-            <div class="xhs-card-hashtags">#外貿教訓 #土耳其生意 #防騙指南</div>
-            <div class="xhs-card-actions">
-              <a href="post-2026-09-04-222803-turkey.html" class="xhs-btn xhs-btn-primary">📖 獨立站</a>
-              <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_我出10万訂金教土耳其客做人_文案.md')">📋 複製文案</button>
-            </div>
+
+              <article class="xhs-card">
+        <div class="xhs-cover"><img src="hany-portrait.webp" alt="鄭哥Hany 土耳其客" loading="lazy"></div>
+        <div class="xhs-meta">
+          <h3 class="xhs-title">《10萬訂金教土耳其客做人》</h3>
+          <p class="xhs-date">2026-09-04 · 郑哥博客点评 · 外贸实战</p>
+          <div class="xhs-buttons">
+            <a href="post-2026-09-04-222803-turkey.html" class="xhs-btn xhs-btn-primary">📖 独立站</a>
+            <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_我出10万訂金教土耳其客做人_文案.md')">📋 复制文案</button>
           </div>
         </div>
+      </article>
+
+
 
         <!-- 文章 5: 海選 -->
-        <div class="xhs-card">
-          <img src="hany-haixuan-cover.webp" alt="鄭哥Hany 點解要搞砸張單" class="xhs-card-img" loading="lazy">
-          <div class="xhs-card-body">
-            <span class="xhs-card-tag">2026-09-04 · 外貿反轉</span>
-            <h3 class="xhs-card-title"><span class="cn">點解要搞砸張單？因為個客玩緊海選</span><span class="en">Why I Sabotaged an Order</span></h3>
-            <p class="xhs-card-excerpt"><span class="cn">澳洲客用5000蚊試勻全中國，識破之後我專登做慢做細做爛，同時關門改技術⋯</span></p>
-            <div class="xhs-card-hashtags">#外貿反轉 #海選對策 #商業智慧</div>
-            <div class="xhs-card-actions">
-              <a href="post-2026-09-04-haixuan.html" class="xhs-btn xhs-btn-primary">📖 獨立站</a>
-              <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_點解要搞砸張單因為個客玩緊海_文案.md')">📋 複製文案</button>
-            </div>
+
+              <article class="xhs-card">
+        <div class="xhs-cover"><img src="hany-haixuan-cover.webp" alt="鄭哥Hany 點解要搞砸張單" loading="lazy"></div>
+        <div class="xhs-meta">
+          <h3 class="xhs-title">《點解要搞砸張單？因為個客玩緊海選》</h3>
+          <p class="xhs-date">2026-09-04 · 郑哥博客点评 · 外贸实战</p>
+          <div class="xhs-buttons">
+            <a href="post-2026-09-04-haixuan.html" class="xhs-btn xhs-btn-primary">📖 独立站</a>
+            <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_點解要搞砸張單因為個客玩緊海_文案.md')">📋 复制文案</button>
           </div>
         </div>
+      </article>
+
+
 
         <!-- 文章 6: 專利 -->
-        <div class="xhs-card">
-          <img src="hany-patent-cover.webp" alt="鄭哥Hany 5000蚊專利" class="xhs-card-img" loading="lazy">
-          <div class="xhs-card-body">
-            <span class="xhs-card-tag">2026-09-04 · 產品創新</span>
-            <h3 class="xhs-card-title"><span class="cn">5000蚊買咗個專利，意外做咗手錶手機</span><span class="en">5000 HKD Bought a Patent</span></h3>
-            <p class="xhs-card-excerpt"><span class="cn">嗰5000蚊買嘅唔止係專利，係成個行業嘅入場券。比Apple Watch早咗九年⋯</span></p>
-            <div class="xhs-card-hashtags">#產品創新 #專利故事 #AppleWatch #手錶手機</div>
-            <div class="xhs-card-actions">
-              <a href="post-2026-09-04-patent.html" class="xhs-btn xhs-btn-primary">📖 獨立站</a>
-              <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_產品創新_文案.md')">📋 複製文案</button>
-            </div>
+
+              <article class="xhs-card">
+        <div class="xhs-cover"><img src="hany-patent-cover.webp" alt="鄭哥Hany 5000蚊專利" loading="lazy"></div>
+        <div class="xhs-meta">
+          <h3 class="xhs-title">《5000蚊買咗個專利，意外做咗手錶手機》</h3>
+          <p class="xhs-date">2026-09-04 · 郑哥博客点评 · 产品创新</p>
+          <div class="xhs-buttons">
+            <a href="post-2026-09-04-patent.html" class="xhs-btn xhs-btn-primary">📖 独立站</a>
+            <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_產品創新_文案.md')">📋 复制文案</button>
           </div>
         </div>
+      </article>
+
+
 
       </div>
+
+
 
       <div class="xhs-note">
+
         <h3>💡 使用說明</h3>
+
         <p><b>獨立站</b>連結去深度長文版（含 SEO、AI 配圖、FAQ、JSON-LD），適合海外讀者 + 搜尋引擎；</p>
+
         <p><b>複製文案</b>會顯示小紅書文案模板（標題選項、Hook、Hashtag），你可以 Copy & Paste 到小紅書後台，配合獨立站嘅配圖直接發布。</p>
+
         <p>建議發布時間：<b>週二至週四 19:30-21:30</b>（小紅書女性活躍高峰）。</p>
+
       </div>
+
     </div>
+
   </section>
 
+
+
   <!-- ===== Footer ===== -->
+
   <footer>
+
     <div class="container">
+
       <p class="cn"><a href="xhs.html" style="color:#ff2442;text-decoration:none;">📕 小紅書同步</a> · © 2026 鄭哥 Hany · 七善門科技 · 星辰算力 · 香港旺角 · ALEXBI INC Long Beach CA</p>
+
       <p class="en"><a href="xhs.html" style="color:#ff2442;text-decoration:none;">📕 RED Sync</a> · © 2026 Hany · Qishanmen Tech · Star Compute · Mong Kok, HK · ALEXBI INC Long Beach CA</p>
+
       <p style="margin-top:12px"><a href="index.html">← <span class="cn">返主頁</span><span class="en">Back to Home</span></a></p>
+
     </div>
+
   </footer>
 
+
+
   <!-- ===== 一鍵複製小紅書文案 ===== -->
+
   <script>
+
     const xhsTexts = {
+
       'xhs_Stephanie篇_文案.md': `【標題】一張400粒鑲石訂單｜2008年紐約設計師飛嚟廣州教識我嘅事
 
+
+
 【Hook（前3秒）】
+
 2008年10月，我公司接到一個 email。
+
 紐約設計師Stephanie飛咗成日由JFK過嚟廣州，落咗一張400萬人仔嘅單。
+
 Stephanie要將我哋嘅手錶手機，鑲滿400粒AAA級鋯石，做紐約時裝周嘅runway accessory。
+
 嗰陣時Apple Watch仲未出，三星Galaxy Gear都未有。呢個產品，全世界未有人做過。
 
+
+
 【故事】
+
 嗰一晚我坐咗兩個鐘。
+
 三個問題一直轉：2000台會唔會接得太盡？佢紐約runway唔成功Cut單點算？400粒鋯石人手鑲嵌良率未知。
+
 第二朝早我覆email：三個條件，全部都要。事後先知——首批200台良率只有87%，174台合格，26台要rework。如果一開波就2000台，我哋肯定蝕到喊。
 
+
+
 【反思】
+
 呢單嘢教識我：硬件本身唔係最大價值，設計敘事先係。客戶唔係ATM，係合作夥伴。雙贏先至走得遠。
+
 26年外貿路，呢個係我學到最重要嘅一課——用心對人，比乜都重要。
 
+
+
 #外貿創業 #奢侈品生意 #紐約時裝周 #手錶手機 #鑲鋯石 #Stephanie故事 #外貿老兵 #26年生意經 #Vertu #藍寶石手機 #設計師 #廣州外貿 #老炮兒真實感 #鄭哥Hany`,
+
       'xhs_我的朋友Fank_文案.md': `【標題】一個烏干達老師嘅廣州漂｜教我個仔英文，做咗大學教授
 
+
+
 【Hook】
+
 2010年廣州小北，我撞到Fank。
+
 佢係烏干達鄉村小學老師，識廣東話、識中文、識睇相。
+
 我請佢教我個仔英文，後來⋯佢做咗廣州大學嘅教授。
 
+
+
 【故事】
+
 Fank係嗰種「真」嘅人。佢每個禮拜日返教會，從來唔呃人，從來唔講大話。
+
 我同佢識咗16年，由陌生人變咗我屋企人嘅朋友。
+
 佢老婆係肯尼亞人，佢哋一家三口住喺廣州，講廣東話多過英文。
 
+
+
 【反思】
+
 做生意26年，我學到最重要嘅嘢：識一個外國朋友唔難，識一個會留低嘅外國朋友好難。
+
 Fank教我：誠實唔係策略，係做人。
 
+
+
 #文化交流 #外國友人 #廣州生活 #教育 #烏干達`,
+
       'xhs_非洲女客_文案.md': `【標題】賠咗一單，賠出個總統親戚
 
+
+
 【Hook】
+
 2000年廣州小北，非洲女客嘅手机喺酒店被偷。
+
 佢call我求救，我蝕底赔咗成300蚊美金。
+
 點知⋯佢哥哥後來做咗非洲一個國家嘅總統。
 
+
+
 【故事】
+
 嗰陣我哋係廣州小北最大嘅手机商之一，非洲客一個禮拜嚟幾轉。
+
 嗰個女客一個人嚟，第一次合作就出咗事。
+
 我蝕底赔咗，仲請佢食飯，安撫佢。
 
+
+
 事後先知——佢屋企人喺當地係望族，佢哥哥後來選上做總統。
+
 我做咗10年非洲生意，靠嘅就係呢份「唔好計到盡」嘅心。
 
+
+
 【反思】
+
 做生意，最怕嘅唔係蝕底，係見到一個可能贏嘅朋友時，揀咗計較。
+
 贏咗一單輸咗一個朋友，得唔償失。
 
+
+
 #非洲生意 #外貿故事 #人生奇遇 #廣州外貿`,
+
       'xhs_我出10万訂金教土耳其客做人_文案.md': `【標題】10萬訂金教土耳其客做人｜海哥26年外貿最解氣一單
 
+
+
 【Hook】
+
 嗰個土耳其中間商用10萬訂金呃我。
+
 我將計就計，設咗個局教佢做人。
+
 結局⋯佢賠咗錢，仲要返嚟搵我。
 
+
+
 【故事】
+
 2000年廣州，我識咗一個土耳其中間人。
+
 佢落咗10萬訂金叫我做一批手機，點知佢收咗貨之後⋯⋯⋯⋯（原文鏈接）
 
+
+
 【反思】
+
 做外貿最緊要唔係識客，係識人。
+
 一個呃得你嘅人，將來一定仲會呃第二個。
 
+
+
 #外貿教訓 #土耳其生意 #防騙指南`,
+
       'xhs_點解要搞砸張單因為個客玩緊海_文案.md': `【標題】點解要搞砸張單？因為個客玩緊海選
 
+
+
 【Hook】
+
 澳洲客用5000蚊試勻全中國，睇邊個接得住。
+
 我識破之後，專登做慢做細做爛，同時關門改技術。
+
 佢玩「海選」，我玩「借種」。
 
+
+
 【故事】
+
 嗰陣時我嗰款產品行業未成熟，澳洲客識破之後⋯⋯⋯⋯（原文鏈接）
 
+
+
 【反思】
+
 做生意最忌「以客為尊」盲從。
+
 有時主動放棄一張單，反而贏得一個長期客戶。
 
+
+
 #外貿反轉 #海選對策 #商業智慧`,
+
       'xhs_產品創新_文案.md': `【標題】5000蚊買咗個專利，意外做咗手錶手機｜比Apple Watch早9年
 
+
+
 【Hook】
+
 2005年我用5000蚊買咗個專利。
+
 嗰個專利唔止係專利，係成個行業嘅入場券。
+
 比Apple Watch早咗九年。
 
+
+
 【故事】
+
 嗰陣時我嘅公司做緊電子產品⋯⋯⋯⋯（原文鏈接）
 
+
+
 【反思】
+
 創新唔係讀書讀返嚟，係問「點解唔得？」問返嚟。
 
+
+
 #產品創新 #專利故事 #AppleWatch #手錶手機`
+
     };
 
+
+
     function copyXhs(name) {
+
       const text = xhsTexts[name];
+
       if (!text) {
+
         alert('呢篇文案模板仲未整好，請聯繫海哥補上。');
+
         return;
+
       }
+
       navigator.clipboard.writeText(text).then(() => {
+
         alert('✓ 已複製到剪貼簿！\n\n直接去小紅書後台貼上即可。');
+
       }).catch(() => {
+
         // fallback
+
         const ta = document.createElement('textarea');
+
         ta.value = text;
+
         document.body.appendChild(ta);
+
         ta.select();
+
         document.execCommand('copy');
+
         document.body.removeChild(ta);
+
         alert('✓ 已複製！');
+
       });
+
     }
+
   </script>
+
+
 
   <!-- ===== 中英切換 ===== -->
+
   
 
+
+
   <script>
+
     function toggleLang(){
+
       document.body.classList.toggle('show-en');
+
       var btn=document.getElementById('langBtn');
+
       if(btn) btn.textContent = document.body.classList.contains('show-en') ? '中' : 'EN';
+
     }
+
   </script>
+
 </body>
+
 </html>
+
