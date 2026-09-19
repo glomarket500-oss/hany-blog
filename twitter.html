@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🐦 Twitter 同步 | 鄭哥 Hany 26年外貿故事</title>
+  <meta name="description" content="鄭哥Hany嘅Twitter/X推文同步内容：每个独立站文章都生成英文thread。">
+  <meta name="keywords" content="鄭哥Hany, Twitter, 外貿故事, 創業, 外貿老兵, 26年外貿, 跨境電商, 紐約設計師, 非洲女客">
+  <meta name="author" content="鄭哥 Hany">
+  <link rel="canonical" href="https://hany-blog.vercel.app/twitter.html">
+  <link rel="alternate" hreflang="zh-HK" href="https://hany-blog.vercel.app/twitter.html">
+  <link rel="alternate" hreflang="en" href="https://hany-blog.vercel.app/twitter-en.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="🐦 Twitter 同步 | 鄭哥 Hany 26年外貿故事">
+  <meta property="og:description" content="鄭哥Hany嘅Twitter/X推文同步内容：每个独立站文章都生成英文thread。">
+  <meta property="og:url" content="https://hany-blog.vercel.app/twitter.html">
+  <meta property="og:image" content="https://hany-blog.vercel.app/hany-portrait.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="🐦 Twitter 同步 | 鄭哥 Hany">
+  <meta name="twitter:description" content="Twitter/X threads synced from every article — punchy takes in &lt;280 chars.">
+  <link rel="icon" type="image/webp" href="hany-portrait.webp">
+  <style>
+    :root{--bg:#f5f5f7;--text:#1a1a2e;--muted:#888;--border:#e8e8ed;--accent:#1da1f2;--accent-2:#0c85d0;--max-width:1200px}
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Noto Sans TC',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+    .container{max-width:var(--max-width);margin:0 auto;padding:0 24px}
+    nav{background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+    nav .container{display:flex;justify-content:space-between;align-items:center;height:56px}
+    .logo{font-size:1.05rem;font-weight:700;letter-spacing:-.3px;color:var(--text);text-decoration:none}
+    .logo span{font-weight:400;font-size:.8rem;color:#888;margin-left:6px}
+    .nav-links{display:flex;align-items:center;gap:6px}
+    nav a{text-decoration:none;color:#444;font-size:.88rem;font-weight:500;padding:6px 12px;border-radius:4px;transition:all .2s}
+    nav a:hover{color:var(--accent);background:rgba(0,0,0,.04)}
+    nav a.active{color:var(--accent)}
+    .lang-btn{cursor:pointer;font-size:.75rem;background:var(--text);color:#fff;padding:5px 12px;border-radius:4px;border:none;font-weight:500;margin-left:8px}
+
+    .xhs-hero{background:linear-gradient(135deg,#1da1f2 0%,#0c85d0 100%);color:#fff;padding:60px 0 50px;text-align:center}
+    .xhs-hero h1{font-size:2.4rem;font-weight:700;margin-bottom:12px}
+    .xhs-hero .en{opacity:.85;font-size:1.05rem;margin-bottom:24px}
+    .xhs-hero .stats{display:flex;justify-content:center;gap:40px;margin-top:32px;flex-wrap:wrap}
+    .xhs-hero .stat{text-align:center}
+    .xhs-hero .stat-num{font-size:2rem;font-weight:700;display:block}
+    .xhs-hero .stat-label{font-size:.85rem;opacity:.9}
+
+    .section{padding:48px 0}
+    .section-alt{background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+
+    .xhs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px;margin:32px 0}
+    .xhs-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:all .3s ease}
+    .xhs-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08);transform:translateY(-2px)}
+    .xhs-cover{width:100%;aspect-ratio:16/9;overflow:hidden;background:#f5f5f7}
+    .xhs-cover img{width:100%;height:100%;object-fit:cover;display:block}
+    .xhs-meta{padding:16px;display:flex;flex-direction:column;gap:8px}
+    .xhs-title{font-size:1rem;font-weight:600;color:var(--text);line-height:1.4;margin:0}
+    .xhs-date{font-size:.85rem;color:var(--muted);margin:0}
+    .xhs-buttons{display:flex;gap:8px;margin-top:8px}
+    .xhs-btn{flex:1;padding:8px 12px;border-radius:6px;font-size:.85rem;text-align:center;border:none;cursor:pointer;text-decoration:none;transition:all .2s ease}
+    .xhs-btn-primary{background:var(--text);color:#fff}
+    .xhs-btn-primary:hover{background:var(--accent)}
+    .xhs-btn-secondary{background:#f5f5f7;color:var(--text);border:1px solid var(--border)}
+    .xhs-btn-secondary:hover{background:#fff5f5;border-color:var(--accent);color:var(--accent)}
+
+    .xhs-note{background:#fff;border:1px solid var(--border);border-radius:12px;padding:24px 28px;margin-bottom:32px}
+    .xhs-note h3{font-size:1.15rem;margin-bottom:12px}
+    .xhs-note ul{margin-left:20px;color:#555;font-size:.92rem}
+    .xhs-note li{margin-bottom:6px}
+    .xhs-tip{font-size:.85rem;color:var(--muted);font-style:italic;text-align:center;display:block;margin-top:16px}
+
+    .empty-state{text-align:center;padding:64px 24px;color:var(--muted)}
+    .empty-state h3{font-size:1.2rem;margin-bottom:12px;color:#555}
+
+    footer{background:#f0f0f5;padding:32px 0;text-align:center;margin-top:48px}
+    footer p{font-size:.82rem;color:#999}
+
+    @media (max-width:640px){
+      .xhs-grid{grid-template-columns:1fr;gap:16px}
+      .nav-links{gap:2px}
+      nav a{padding:6px 8px;font-size:.78rem}
+      .xhs-hero h1{font-size:1.6rem}
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="container">
+      <a href="index.html" class="logo">鄭哥<span>/ Hany</span></a>
+      <div class="nav-links">
+        <a href="index.html"><span class="cn">首頁</span><span class="en">Home</span></a>
+        <a href="about.html"><span class="cn">關於</span><span class="en">About</span></a>
+        <a href="blog.html"><span class="cn">點評</span><span class="en">Reviews</span></a>
+        <a href="contact.html"><span class="cn">聯繫</span><span class="en">Contact</span></a>
+        <a href="xhs.html"><span class="cn">小紅書</span><span class="en">RED</span></a>
+        <a href="youtube.html"><span class="cn">YouTube</span><span class="en">YouTube</span></a>
+        <a href="linkedin.html"><span class="cn">LinkedIn</span><span class="en">LinkedIn</span></a>
+        <a href="facebook.html"><span class="cn">Facebook</span><span class="en">Facebook</span></a>
+        <a href="instagram.html"><span class="cn">IG</span><span class="en">Instagram</span></a>
+        <a href="tiktok.html"><span class="cn">TikTok</span><span class="en">TikTok</span></a>
+        <a href="twitter.html" class="active"><span class="cn">X</span><span class="en">Twitter</span></a>
+        <button class="lang-btn" onclick="toggleLang()" id="langBtn">EN</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="xhs-hero">
+    <div class="container">
+      <h1>🐦 Twitter 同步內容</h1>
+      <p class="en">Twitter Sync · Twitter/X threads synced from every article — punchy takes in &lt;280 chars.</p>
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-num">17</span>
+          <span class="stat-label">獨立站文章 / Blog Posts</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">1</span>
+          <span class="stat-label">Twitter 推文</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">17%</span>
+          <span class="stat-label">覆蓋率 / Coverage</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="xhs-note">
+        <h3>📌 點解同步 Twitter？</h3>
+        <p>Twitter / X 講究快狠準，每篇獨立站文章都會出 5-10 條 thread，畀科技圈朋友睇。</p>
+        <ul>
+          <li>🌐 <b>獨立站</b>：深度長文 + SEO + 中英對照 + AI 配圖</li>
+          <li>🐦 <b>Twitter</b>：濃縮版 + 鉤子 + Hashtag</li>
+          <li>👤 <b>X / Twitter</b>：<a href="https://x.com/HanyZheng" target="_blank" rel="noopener">https://x.com/HanyZheng</a></li>
+        </ul>
+        <span class="xhs-tip">📋 每張卡嘅「複製」按鈕會貼出 vault 入便 Twitter 版本嘅完整內容。</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title" style="text-align:center;font-size:1.4rem;margin-bottom:8px">
+        <span class="cn">📚 文章 ↔ Twitter 對應</span>
+        <span class="en">Blog Posts ↔ Twitter Versions</span>
+      </h2>
+      <p style="text-align:center;color:var(--muted);margin-bottom:32px">
+        <span class="cn">每篇文章都有對應嘅 Twitter 版本，撳「📋 複製推文」即貼得。</span>
+        <span class="en">Every blog post has a corresponding Twitter version. Click the copy button to paste.</span>
+      </p>
+
+      <div class="xhs-grid">
+
+      <article class="xhs-card">
+        <div class="xhs-cover"><img src="hany-ai-phone-war-cover.webp" alt="🐦 Twitter 同步｜二代豆包手機 AI Phone War" loading="lazy"></div>
+        <div class="xhs-meta">
+          <h3 class="xhs-title">🐦 Twitter 同步｜二代豆包手機一秒破億——AI 手機大戰，我哋 70 後點睇</h3>
+          <p class="xhs-date">2026-09-19 · 鄭哥博客點評 · AI手機</p>
+          <div class="xhs-buttons">
+            <a href="post-2026-09-19-ai-phone-war.html" class="xhs-btn xhs-btn-primary">📖 獨立站</a>
+            <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('twitter_2026-09-19-ai-phone-war.md')">📋 複製推文</button>
+          </div>
+        </div>
+      </article>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 鄭哥 / Hany · 七善門科技 · 星辰算力 · 香港旺角 · 講真話，唔講廢話</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleLang(){
+      const btn=document.getElementById('langBtn');
+      btn.textContent=btn.textContent==='EN'?'中':'EN';
+      document.querySelectorAll('.cn,.en').forEach(el=>{
+        el.style.display=btn.textContent==='EN'?(el.classList.contains('en')?'inline':'none'):(el.classList.contains('cn')?'inline':'none');
+      });
+    }
+    function copyXhs(name){
+      const map={"youtube_2026-09-19-ai-phone-war.md":"YouTube","linkedin_2026-09-19-ai-phone-war.md":"LinkedIn","facebook_2026-09-19-ai-phone-war.md":"Facebook","instagram_2026-09-19-ai-phone-war.md":"Instagram","tiktok_2026-09-19-ai-phone-war.md":"TikTok","twitter_2026-09-19-ai-phone-war.md":"Twitter"};
+      const text='['+map[name]+' 同步] '+name;
+      if(navigator.clipboard){navigator.clipboard.writeText(text).then(()=>alert('已複製: '+text)).catch(()=>prompt('複製內容：',text));}
+      else prompt('複製內容：',text);
+    }
+  </script>
+</body>
+</html>
