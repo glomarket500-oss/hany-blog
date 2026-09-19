@@ -1,65 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
+
     <loc>https://hany-blog.vercel.app/</loc>
+
     <lastmod>2026-09-11</lastmod>
+
     <priority>1.0</priority>
+
   </url>
+
   <url>
+
     <loc>https://hany-blog.vercel.app/about.html</loc>
+
     <lastmod>2026-09-11</lastmod>
+
     <priority>0.8</priority>
+
   </url>
+
   <url>
+
     <loc>https://hany-blog.vercel.app/blog.html</loc>
+
     <lastmod>2026-09-11</lastmod>
+
     <priority>0.9</priority>
+
   </url>
+
   <url>
+
     <loc>https://hany-blog.vercel.app/contact.html</loc>
+
     <lastmod>2026-09-11</lastmod>
+
     <priority>0.8</priority>
+
   </url>
+
   <url>
+
     <loc>https://hany-blog.vercel.app/post-2026-09-04-patent.html</loc>
+
     <lastmod>2026-09-04</lastmod>
+
     <priority>0.7</priority>
+
   </url>
+
   <url>
+
     <loc>https://hany-blog.vercel.app/post-2026-09-04-haixuan.html</loc>
+
     <lastmod>2026-09-04</lastmod>
+
     <priority>0.7</priority>
+
   </url>
+
   <url>
+
     <loc>https://hany-blog.vercel.app/post-2026-09-04-222803-turkey.html</loc>
+
     <lastmod>2026-09-04</lastmod>
+
     <priority>0.7</priority>
+
   </url>
+
   <url>
+
     <loc>https://hany-blog.vercel.app/post-2026-09-11-africa.html</loc>
+
     <lastmod>2026-09-11</lastmod>
+
     <priority>0.7</priority>
+
   </url>
+
   <url>
+
     <loc>https://hany-blog.vercel.app/post-2026-09-11-fank.html</loc>
+
     <lastmod>2026-09-11</lastmod>
+
     <priority>0.7</priority>
+
   </url>
-  <url><loc>https://hany-blog.vercel.app/post-2026-09-16-gzport.html</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://hany-blog.vercel.app/post-2026-09-16-mountain-electronics.html</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://hany-blog.vercel.app/post-2026-09-16-b300.html</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://hany-blog.vercel.app/post-2026-09-17-memory.html</loc><lastmod>2026-09-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://hany-blog.vercel.app/post-2026-09-17-solar.html</loc><lastmod>2026-09-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://hany-blog.vercel.app/post-2026-09-15-bus6333.html</loc><lastmod>2026-09-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://hany-blog.vercel.app/post-2026-09-15-flow.html</loc><lastmod>2026-09-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://hany-blog.vercel.app/post-2026-09-15-teapot.html</loc><lastmod>2026-09-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://hany-blog.vercel.app/post-2026-09-17-ai-war.html</loc><lastmod>2026-09-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://hany-blog.vercel.app/post-2026-09-17-saas.html</loc><lastmod>2026-09-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-<url><loc>https://hany-blog.vercel.app/post-2026-09-19-ai-phone-war.html</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://hany-blog.vercel.app/youtube.html</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://hany-blog.vercel.app/linkedin.html</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://hany-blog.vercel.app/facebook.html</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://hany-blog.vercel.app/instagram.html</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://hany-blog.vercel.app/tiktok.html</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://hany-blog.vercel.app/twitter.html</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <url><loc>https://hany-blog.vercel.app/post-2026-09-16-gzport.html</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <url><loc>https://hany-blog.vercel.app/post-2026-09-16-mountain-electronics.html</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <url><loc>https://hany-blog.vercel.app/post-2026-09-16-b300.html</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <url><loc>https://hany-blog.vercel.app/post-2026-09-17-memory.html</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <url><loc>https://hany-blog.vercel.app/post-2026-09-17-solar.html</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <url><loc>https://hany-blog.vercel.app/post-2026-09-15-bus6333.html</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <url><loc>https://hany-blog.vercel.app/post-2026-09-15-flow.html</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <url><loc>https://hany-blog.vercel.app/post-2026-09-15-teapot.html</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <url><loc>https://hany-blog.vercel.app/post-2026-09-17-ai-war.html</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <url><loc>https://hany-blog.vercel.app/post-2026-09-17-saas.html</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+<url><loc>https://hany-blog.vercel.app/post-2026-09-19-ai-phone-war.html</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <url><loc>https://hany-blog.vercel.app/youtube.html</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hany-blog.vercel.app/linkedin.html</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hany-blog.vercel.app/facebook.html</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hany-blog.vercel.app/instagram.html</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hany-blog.vercel.app/tiktok.html</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hany-blog.vercel.app/twitter.html</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
