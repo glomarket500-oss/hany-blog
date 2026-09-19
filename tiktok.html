@@ -3,189 +3,412 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🎵 TikTok 同步 | 鄭哥 Hany 26年外貿故事</title>
-  <meta name="description" content="鄭哥Hany嘅TikTok短片脚本同步内容：每个独立站文章都生成60秒脚本。">
-  <meta name="keywords" content="鄭哥Hany, TikTok, 外貿故事, 創業, 外貿老兵, 26年外貿, 跨境電商, 紐約設計師, 非洲女客">
+  <title>TikTok 同步 | 鄭哥 Hany 26年外貿故事</title>
+  <meta name="description" content="鄭哥Hany嘅TikTok帳號同步内容：每篇独立站文章都有 TikTok 短视频脚本 — 60秒 + hook + 字幕。">
+  <meta name="keywords" content="鄭哥Hany,TikTok,外貿故事,創業,外貿老兵,26年外貿,跨境電商">
   <meta name="author" content="鄭哥 Hany">
   <link rel="canonical" href="https://hany-blog.vercel.app/tiktok.html">
   <link rel="alternate" hreflang="zh-HK" href="https://hany-blog.vercel.app/tiktok.html">
-  <link rel="alternate" hreflang="en" href="https://hany-blog.vercel.app/tiktok-en.html">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="🎵 TikTok 同步 | 鄭哥 Hany 26年外貿故事">
-  <meta property="og:description" content="鄭哥Hany嘅TikTok短片脚本同步内容：每个独立站文章都生成60秒脚本。">
+  <meta property="og:title" content="TikTok 同步 | 鄭哥 Hany 26年外貿故事">
+  <meta property="og:description" content="鄭哥Hany嘅TikTok帳號同步内容：每篇独立站文章都有 TikTok 短视频脚本 — 60秒 + hook + 字幕。">
   <meta property="og:url" content="https://hany-blog.vercel.app/tiktok.html">
   <meta property="og:image" content="https://hany-blog.vercel.app/hany-portrait.webp">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="🎵 TikTok 同步 | 鄭哥 Hany">
-  <meta name="twitter:description" content="TikTok 60-second video scripts synced from every article.">
+  <meta name="twitter:description" content="19 篇獨立站文章嘅 TikTok 同步版本，每篇配封面圖同中英兩版文案。">
   <link rel="icon" type="image/webp" href="hany-portrait.webp">
   <style>
-    :root{--bg:#f5f5f7;--text:#1a1a2e;--muted:#888;--border:#e8e8ed;--accent:#000000;--accent-2:#25f4ee;--max-width:1200px}
+    :root{--bg:#fafafa;--text:#1a1a2e;--muted:#888;--border:#e8e8ed;--accent:#e94560;--max-width:960px}
     *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:'Noto Sans TC',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+    body{font-family:-apple-system,BlinkMacSystemFont,'PingFang HK','Noto Sans SC',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
     .container{max-width:var(--max-width);margin:0 auto;padding:0 24px}
-    nav{background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
-    nav .container{display:flex;justify-content:space-between;align-items:center;height:56px}
-    .logo{font-size:1.05rem;font-weight:700;letter-spacing:-.3px;color:var(--text);text-decoration:none}
+
+    /* ===== 導航 v3 Paul Graham 簡化（2026-09-20） ===== */
+    nav{background:#fff;border-bottom:1px solid #e8e8ed;padding:14px 0;position:sticky;top:0;z-index:1000}
+    nav .container{display:flex;justify-content:space-between;align-items:center;position:relative}
+    .logo{font-size:1.05rem;font-weight:700;color:#1a1a2e;text-decoration:none}
     .logo span{font-weight:400;font-size:.8rem;color:#888;margin-left:6px}
-    .nav-links{display:flex;align-items:center;gap:6px}
-    nav a{text-decoration:none;color:#444;font-size:.88rem;font-weight:500;padding:6px 12px;border-radius:4px;transition:all .2s}
-    nav a:hover{color:var(--accent);background:rgba(0,0,0,.04)}
-    nav a.active{color:var(--accent)}
-    .lang-btn{cursor:pointer;font-size:.75rem;background:var(--text);color:#fff;padding:5px 12px;border-radius:4px;border:none;font-weight:500;margin-left:8px}
+    .hamburger{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;padding:4px 8px;color:#1a1a2e}
+    .nav-wrapper{display:flex;align-items:center}
+    .nav-links{display:flex;align-items:center;gap:24px}
+    nav a{text-decoration:none;color:#444;font-size:0.9rem;transition:color 0.2s}
+    nav a:hover,nav a.active{color:var(--accent)}
+    .lang-toggle{cursor:pointer;font-size:0.75rem;background:#1a1a2e;color:#fff;padding:5px 12px;border-radius:4px;border:none;font-family:inherit}
+    @media (max-width:768px){
+      .hamburger{display:block}
+      .nav-wrapper{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border-top:1px solid #e8e8ed;box-shadow:0 4px 12px rgba(0,0,0,.08)}
+      .nav-wrapper.open{display:block}
+      .nav-links{flex-direction:column;align-items:stretch;gap:0;padding:8px 0}
+      .nav-links>a,.lang-toggle{padding:12px 24px;border-bottom:1px solid #f0f0f5;width:100%;text-align:left;font-size:.95rem}
+      .nav-links>a:last-of-type{border-bottom:none}
+      .lang-toggle{border-radius:0}
+    }
 
-    .xhs-hero{background:linear-gradient(135deg,#000000 0%,#25f4ee 100%);color:#fff;padding:60px 0 50px;text-align:center}
-    .xhs-hero h1{font-size:2.4rem;font-weight:700;margin-bottom:12px}
-    .xhs-hero .en{opacity:.85;font-size:1.05rem;margin-bottom:24px}
-    .xhs-hero .stats{display:flex;justify-content:center;gap:40px;margin-top:32px;flex-wrap:wrap}
-    .xhs-hero .stat{text-align:center}
-    .xhs-hero .stat-num{font-size:2rem;font-weight:700;display:block}
-    .xhs-hero .stat-label{font-size:.85rem;opacity:.9}
+    /* ===== 平台 Hero ===== */
+    .platform-hero{background:linear-gradient(135deg,#000000 0%,#25f4ee 100%);color:#fff;padding:60px 0 40px;text-align:center}
+    .platform-hero h1{font-size:2rem;font-weight:700;margin-bottom:8px}
+    .platform-hero .en{opacity:.85;font-size:1.05rem;margin-bottom:24px}
+    .platform-hero .stats{display:flex;justify-content:center;gap:40px;margin-top:32px;flex-wrap:wrap}
+    .platform-hero .stat{text-align:center}
+    .platform-hero .stat-num{font-size:2rem;font-weight:700;display:block}
+    .platform-hero .stat-label{font-size:.85rem;opacity:.9}
 
-    .section{padding:48px 0}
-    .section-alt{background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    /* ===== 平台簡介便簽 ===== */
+    .platform-note{background:#fff;border:1px solid var(--border);border-radius:12px;padding:24px 28px;margin:32px 0}
+    .platform-note h3{font-size:1.15rem;margin-bottom:12px}
+    .platform-note ul{margin-left:20px;color:#555;font-size:.92rem}
+    .platform-note li{margin-bottom:6px}
+    .platform-tip{font-size:.85rem;color:var(--muted);font-style:italic;text-align:center;display:block;margin-top:16px}
 
-    .xhs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px;margin:32px 0}
-    .xhs-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:all .3s ease}
-    .xhs-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08);transform:translateY(-2px)}
-    .xhs-cover{width:100%;aspect-ratio:16/9;overflow:hidden;background:#f5f5f7}
-    .xhs-cover img{width:100%;height:100%;object-fit:cover;display:block}
-    .xhs-meta{padding:16px;display:flex;flex-direction:column;gap:8px}
-    .xhs-title{font-size:1rem;font-weight:600;color:var(--text);line-height:1.4;margin:0}
-    .xhs-date{font-size:.85rem;color:var(--muted);margin:0}
-    .xhs-buttons{display:flex;gap:8px;margin-top:8px}
-    .xhs-btn{flex:1;padding:8px 12px;border-radius:6px;font-size:.85rem;text-align:center;border:none;cursor:pointer;text-decoration:none;transition:all .2s ease}
-    .xhs-btn-primary{background:var(--text);color:#fff}
-    .xhs-btn-primary:hover{background:var(--accent)}
-    .xhs-btn-secondary{background:#f5f5f7;color:var(--text);border:1px solid var(--border)}
-    .xhs-btn-secondary:hover{background:#fff5f5;border-color:var(--accent);color:var(--accent)}
+    /* ===== 卡片網格 ===== */
+    .platform-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px;margin:32px 0}
+    .platform-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:all .3s ease}
+    .platform-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08);transform:translateY(-2px)}
+    .platform-cover{width:100%;aspect-ratio:16/9;overflow:hidden;background:#f5f5f7}
+    .platform-cover img{width:100%;height:100%;object-fit:cover;display:block}
+    .platform-meta{padding:16px;display:flex;flex-direction:column;gap:8px}
+    .platform-title{font-size:1rem;font-weight:600;color:var(--text);line-height:1.4;margin:0}
+    .platform-date{font-size:.85rem;color:var(--muted);margin:0}
+    .platform-buttons{display:flex;gap:8px;margin-top:8px}
+    .platform-btn{flex:1;padding:8px 12px;border-radius:6px;font-size:.85rem;text-align:center;border:none;cursor:pointer;text-decoration:none;transition:all .2s ease}
+    .platform-btn-primary{background:var(--text);color:#fff}
+    .platform-btn-primary:hover{background:var(--accent);color:#fff}
+    .platform-btn-secondary{background:#f5f5f7;color:var(--text);border:1px solid var(--border)}
+    .platform-btn-secondary:hover{background:#fff5f5;border-color:var(--accent);color:var(--accent)}
 
-    .xhs-note{background:#fff;border:1px solid var(--border);border-radius:12px;padding:24px 28px;margin-bottom:32px}
-    .xhs-note h3{font-size:1.15rem;margin-bottom:12px}
-    .xhs-note ul{margin-left:20px;color:#555;font-size:.92rem}
-    .xhs-note li{margin-bottom:6px}
-    .xhs-tip{font-size:.85rem;color:var(--muted);font-style:italic;text-align:center;display:block;margin-top:16px}
-
-    .empty-state{text-align:center;padding:64px 24px;color:var(--muted)}
-    .empty-state h3{font-size:1.2rem;margin-bottom:12px;color:#555}
-
-    footer{background:#f0f0f5;padding:32px 0;text-align:center;margin-top:48px}
-    footer p{font-size:.82rem;color:#999}
+    /* ===== 社群 Footer ===== */
+    .social-footer{background:#f0f0f5;padding:40px 0 32px;text-align:center;margin-top:48px;border-top:1px solid var(--border)}
+    .social-footer h3{font-size:0.95rem;margin-bottom:18px;color:#444;font-weight:600}
+    .social-links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:18px;padding:0 24px}
+    .social-links a{color:#444;text-decoration:none;font-size:.85rem;padding:8px 14px;border:1px solid #e0e0e0;border-radius:6px;background:#fff;transition:all .2s}
+    .social-links a:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+    .copyright{font-size:.82rem;color:#999;margin-top:8px;padding:0 24px}
 
     @media (max-width:640px){
-      .xhs-grid{grid-template-columns:1fr;gap:16px}
-      .nav-links{gap:2px}
-      nav a{padding:6px 8px;font-size:.78rem}
-      .xhs-hero h1{font-size:1.6rem}
+      .platform-grid{grid-template-columns:1fr;gap:16px}
+      .platform-hero h1{font-size:1.6rem}
+      .platform-hero .stats{gap:24px}
     }
   </style>
 </head>
 <body>
 
+  <!-- ===== 導航 v3 Paul Graham 簡化（2026-09-20） ===== -->
   <nav>
     <div class="container">
       <a href="index.html" class="logo">鄭哥<span>/ Hany</span></a>
-      <div class="nav-links">
-        <a href="index.html"><span class="cn">首頁</span><span class="en">Home</span></a>
-        <a href="about.html"><span class="cn">關於</span><span class="en">About</span></a>
-        <a href="blog.html"><span class="cn">點評</span><span class="en">Reviews</span></a>
-        <a href="contact.html"><span class="cn">聯繫</span><span class="en">Contact</span></a>
-        <a href="xhs.html"><span class="cn">小紅書</span><span class="en">RED</span></a>
-        <a href="youtube.html"><span class="cn">YouTube</span><span class="en">YouTube</span></a>
-        <a href="linkedin.html"><span class="cn">LinkedIn</span><span class="en">LinkedIn</span></a>
-        <a href="facebook.html"><span class="cn">Facebook</span><span class="en">Facebook</span></a>
-        <a href="instagram.html"><span class="cn">IG</span><span class="en">Instagram</span></a>
-        <a href="tiktok.html" class="active"><span class="cn">TikTok</span><span class="en">TikTok</span></a>
-        <a href="twitter.html"><span class="cn">X</span><span class="en">Twitter</span></a>
-        <button class="lang-btn" onclick="toggleLang()" id="langBtn">EN</button>
+      <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Open menu">☰</button>
+      <div class="nav-wrapper" id="navWrapper">
+        <div class="nav-links">
+          <a href="blog.html"><span class="cn">文章</span><span class="en">Articles</span></a>
+          <a href="about.html"><span class="cn">關於</span><span class="en">About</span></a>
+          <a href="xhs.html"><span class="cn">點評</span><span class="en">Reviews</span></a>
+          <a href="contact.html"><span class="cn">聯繫</span><span class="en">Contact</span></a>
+          <button class="lang-toggle" onclick="toggleLang()" id="langBtn">EN</button>
+        </div>
       </div>
     </div>
   </nav>
 
-  <header class="xhs-hero">
+  <header class="platform-hero">
     <div class="container">
-      <h1>🎵 TikTok 同步內容</h1>
-      <p class="en">TikTok Sync · TikTok 60-second video scripts synced from every article.</p>
+      <h1>🎵 TikTok 同步</h1>
+      <p class="en">TikTok Sync · 19 篇文章已同步到 TikTok</p>
       <div class="stats">
         <div class="stat">
-          <span class="stat-num">17</span>
+          <span class="stat-num">19</span>
           <span class="stat-label">獨立站文章 / Blog Posts</span>
         </div>
         <div class="stat">
-          <span class="stat-num">1</span>
-          <span class="stat-label">TikTok 短片</span>
+          <span class="stat-num">38</span>
+          <span class="stat-label">TikTok 短视频脚本（中英）</span>
         </div>
         <div class="stat">
-          <span class="stat-num">17%</span>
-          <span class="stat-label">覆蓋率 / Coverage</span>
+          <span class="stat-num">100%</span>
+          <span class="stat-label">手動發布 / Manual</span>
         </div>
       </div>
     </div>
   </header>
 
-  <section class="section">
-    <div class="container">
-      <div class="xhs-note">
-        <h3>📌 點解同步 TikTok？</h3>
-        <p>TikTok 60 秒黃金時間，每篇獨立站文章都會出鉤子 + 衝突 + 反轉嘅短片腳本。</p>
-        <ul>
-          <li>🌐 <b>獨立站</b>：深度長文 + SEO + 中英對照 + AI 配圖</li>
-          <li>🎵 <b>TikTok</b>：濃縮版 + 鉤子 + Hashtag</li>
-          <li>👤 <b>TikTok 账号</b>：<a href="https://tiktok.com/@hany.zheng" target="_blank" rel="noopener">https://tiktok.com/@hany.zheng</a></li>
-        </ul>
-        <span class="xhs-tip">📋 每張卡嘅「複製」按鈕會貼出 vault 入便 TikTok 版本嘅完整內容。</span>
-      </div>
+  <article class="container">
+    <div class="platform-note">
+      <h3>📌 點解同步 TikTok？</h3>
+      <p>鄭哥嘅 26 年外貿故事喺獨立站同 TikTok 同步發布。每篇獨立站文章都有對應嘅 TikTok 版本 — 中英兩版文案，封面圖已生成。</p>
+      <ul>
+        <li>🌐 <b>獨立站</b>：深度長文 + SEO + 中英對照 + AI 配圖</li>
+        <li>🎵 <b>TikTok</b>：濃縮版 + 鉤子 + Hashtag + 封面圖</li>
+        <li>👤 <b>TikTok Profile</b>：<a href="https://tiktok.com/@hany.zheng" target="_blank" rel="noopener">https://tiktok.com/@hany.zheng</a></li>
+      </ul>
+      <span class="platform-tip">📋 每張卡嘅「複製」按鈕會貼出 vault 入便 tiktok 目錄嘅英文版檔名（另有 _cn 中文版）。</span>
     </div>
-  </section>
 
-  <section class="section section-alt">
-    <div class="container">
-      <h2 class="section-title" style="text-align:center;font-size:1.4rem;margin-bottom:8px">
-        <span class="cn">📚 文章 ↔ TikTok 對應</span>
-        <span class="en">Blog Posts ↔ TikTok Versions</span>
-      </h2>
-      <p style="text-align:center;color:var(--muted);margin-bottom:32px">
-        <span class="cn">每篇文章都有對應嘅 TikTok 版本，撳「📋 複製腳本」即貼得。</span>
-        <span class="en">Every blog post has a corresponding TikTok version. Click the copy button to paste.</span>
-      </p>
-
-      <div class="xhs-grid">
-
-      <article class="xhs-card">
-        <div class="xhs-cover"><img src="hany-ai-phone-war-cover.webp" alt="🎵 TikTok 同步｜二代豆包手機 AI Phone War" loading="lazy"></div>
-        <div class="xhs-meta">
-          <h3 class="xhs-title">🎵 TikTok 同步｜二代豆包手機一秒破億——AI 手機大戰，我哋 70 後點睇</h3>
-          <p class="xhs-date">2026-09-19 · 鄭哥博客點評 · AI手機</p>
-          <div class="xhs-buttons">
-            <a href="post-2026-09-19-ai-phone-war.html" class="xhs-btn xhs-btn-primary">📖 獨立站</a>
-            <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('tiktok_2026-09-19-ai-phone-war.md')">📋 複製腳本</button>
+    <div class="platform-grid">
+        <article class="platform-card">
+          <div class="platform-cover"><img src="hany-ai-phone-war-tiktok-cover.webp" alt="TikTok 同步｜二代豆包手機一秒破億" loading="lazy"></div>
+          <div class="platform-meta">
+            <h3 class="platform-title">🎵 TikTok 同步｜二代豆包手機一秒破億</h3>
+            <p class="platform-date">2026-09-19 · 鄭哥博客點評 · AI手機</p>
+            <div class="platform-buttons">
+              <a href="post-2026-09-19-ai-phone-war.html" class="platform-btn platform-btn-primary">📖 獨立站</a>
+              <button class="platform-btn platform-btn-secondary" onclick="copyPlatform('tiktok_2026-09-19-ai-phone-war.md','ai-phone-war','tiktok','TikTok')">📋 複製腳本</button>
+            </div>
           </div>
-        </div>
-      </article>
-
-      </div>
+        </article>
+        <article class="platform-card">
+          <div class="platform-cover"><img src="hany-solar-tiktok-cover.webp" alt="TikTok 同步｜光伏展會人少 5 個信號" loading="lazy"></div>
+          <div class="platform-meta">
+            <h3 class="platform-title">🎵 TikTok 同步｜光伏展會人少 5 個信號</h3>
+            <p class="platform-date">2026-09-17 · 鄭哥博客點評 · 行業觀察</p>
+            <div class="platform-buttons">
+              <a href="post-2026-09-17-solar.html" class="platform-btn platform-btn-primary">📖 獨立站</a>
+              <button class="platform-btn platform-btn-secondary" onclick="copyPlatform('tiktok_2026-09-17-solar.md','solar','tiktok','TikTok')">📋 複製腳本</button>
+            </div>
+          </div>
+        </article>
+        <article class="platform-card">
+          <div class="platform-cover"><img src="hany-memory-tiktok-cover.webp" alt="TikTok 同步｜內存漲價 5-7 倍" loading="lazy"></div>
+          <div class="platform-meta">
+            <h3 class="platform-title">🎵 TikTok 同步｜內存漲價 5-7 倍</h3>
+            <p class="platform-date">2026-09-17 · 鄭哥博客點評 · 行業觀察</p>
+            <div class="platform-buttons">
+              <a href="post-2026-09-17-memory.html" class="platform-btn platform-btn-primary">📖 獨立站</a>
+              <button class="platform-btn platform-btn-secondary" onclick="copyPlatform('tiktok_2026-09-17-memory.md','memory','tiktok','TikTok')">📋 複製腳本</button>
+            </div>
+          </div>
+        </article>
+        <article class="platform-card">
+          <div class="platform-cover"><img src="hany-saas-tiktok-cover.webp" alt="TikTok 同步｜社媒矩陣 SaaS 撬動印度東南亞" loading="lazy"></div>
+          <div class="platform-meta">
+            <h3 class="platform-title">🎵 TikTok 同步｜社媒矩陣 SaaS 撬動印度東南亞</h3>
+            <p class="platform-date">2026-09-17 · 鄭哥博客點評 · 出海實戰</p>
+            <div class="platform-buttons">
+              <a href="post-2026-09-17-saas.html" class="platform-btn platform-btn-primary">📖 獨立站</a>
+              <button class="platform-btn platform-btn-secondary" onclick="copyPlatform('tiktok_2026-09-17-saas.md','saas','tiktok','TikTok')">📋 複製腳本</button>
+            </div>
+          </div>
+        </article>
+        <article class="platform-card">
+          <div class="platform-cover"><img src="hany-ai-war-tiktok-cover.webp" alt="TikTok 同步｜AI 大戰白熱化" loading="lazy"></div>
+          <div class="platform-meta">
+            <h3 class="platform-title">🎵 TikTok 同步｜AI 大戰白熱化</h3>
+            <p class="platform-date">2026-09-17 · 鄭哥博客點評 · AI 科技</p>
+            <div class="platform-buttons">
+              <a href="post-2026-09-17-ai-war.html" class="platform-btn platform-btn-primary">📖 獨立站</a>
+              <button class="platform-btn platform-btn-secondary" onclick="copyPlatform('tiktok_2026-09-17-ai-war.md','ai-war','tiktok','TikTok')">📋 複製腳本</button>
+            </div>
+          </div>
+        </article>
+        <article class="platform-card">
+          <div class="platform-cover"><img src="hany-gzport-tiktok-cover.webp" alt="TikTok 同步｜廣州的義烏焦慮" loading="lazy"></div>
+          <div class="platform-meta">
+            <h3 class="platform-title">🎵 TikTok 同步｜廣州的義烏焦慮</h3>
+            <p class="platform-date">2026-09-16 · 鄭哥博客點評 · 外貿實戰</p>
+            <div class="platform-buttons">
+              <a href="post-2026-09-16-gzport.html" class="platform-btn platform-btn-primary">📖 獨立站</a>
+              <button class="platform-btn platform-btn-secondary" onclick="copyPlatform('tiktok_2026-09-16-gzport.md','gzport','tiktok','TikTok')">📋 複製腳本</button>
+            </div>
+          </div>
+        </article>
+        <article class="platform-card">
+          <div class="platform-cover"><img src="hany-mountain-electronics-tiktok-cover.webp" alt="TikTok 同步｜一山之隔兩個世界" loading="lazy"></div>
+          <div class="platform-meta">
+            <h3 class="platform-title">🎵 TikTok 同步｜一山之隔兩個世界</h3>
+            <p class="platform-date">2026-09-16 · 鄭哥博客點評 · 行業觀察</p>
+            <div class="platform-buttons">
+              <a href="post-2026-09-16-mountain-electronics.html" class="platform-btn platform-btn-primary">📖 獨立站</a>
+              <button class="platform-btn platform-btn-secondary" onclick="copyPlatform('tiktok_2026-09-16-mountain-electronics.md','mountain-electronics','tiktok','TikTok')">📋 複製腳本</button>
+            </div>
+          </div>
+        </article>
+        <article class="platform-card">
+          <div class="platform-cover"><img src="hany-b300-tiktok-cover.webp" alt="TikTok 同步｜B300 賣 1450 萬 AI 算力" loading="lazy"></div>
+          <div class="platform-meta">
+            <h3 class="platform-title">🎵 TikTok 同步｜B300 賣 1450 萬 AI 算力</h3>
+            <p class="platform-date">2026-09-16 · 鄭哥博客點評 · AI 科技</p>
+            <div class="platform-buttons">
+              <a href="post-2026-09-16-b300.html" class="platform-btn platform-btn-primary">📖 獨立站</a>
+              <button class="platform-btn platform-btn-secondary" onclick="copyPlatform('tiktok_2026-09-16-b300.md','b300','tiktok','TikTok')">📋 複製腳本</button>
+            </div>
+          </div>
+        </article>
+        <article class="platform-card">
+          <div class="platform-cover"><img src="hany-flow-tiktok-cover.webp" alt="TikTok 同步｜太子道城巴同出入境新規" loading="lazy"></div>
+          <div class="platform-meta">
+            <h3 class="platform-title">🎵 TikTok 同步｜太子道城巴同出入境新規</h3>
+            <p class="platform-date">2026-09-15 · 鄭哥博客點評 · 香港觀察</p>
+            <div class="platform-buttons">
+              <a href="post-2026-09-15-flow.html" class="platform-btn platform-btn-primary">📖 獨立站</a>
+              <button class="platform-btn platform-btn-secondary" onclick="copyPlatform('tiktok_2026-09-15-flow.md','flow','tiktok','TikTok')">📋 複製腳本</button>
+            </div>
+          </div>
+        </article>
+        <article class="platform-card">
+          <div class="platform-cover"><img src="hany-teapot-tiktok-cover.webp" alt="TikTok 同步｜紫砂壺 AI 時代" loading="lazy"></div>
+          <div class="platform-meta">
+            <h3 class="platform-title">🎵 TikTok 同步｜紫砂壺 AI 時代</h3>
+            <p class="platform-date">2026-09-15 · 鄭哥博客點評 · AI 時代觀察</p>
+            <div class="platform-buttons">
+              <a href="post-2026-09-15-teapot.html" class="platform-btn platform-btn-primary">📖 獨立站</a>
+              <button class="platform-btn platform-btn-secondary" onclick="copyPlatform('tiktok_2026-09-15-teapot.md','teapot','tiktok','TikTok')">📋 複製腳本</button>
+            </div>
+          </div>
+        </article>
+        <article class="platform-card">
+          <div class="platform-cover"><img src="hany-bus6333-tiktok-cover.webp" alt="TikTok 同步｜九龍太子道城巴 6333" loading="lazy"></div>
+          <div class="platform-meta">
+            <h3 class="platform-title">🎵 TikTok 同步｜九龍太子道城巴 6333</h3>
+            <p class="platform-date">2026-09-15 · 鄭哥博客點評 · 香港觀察</p>
+            <div class="platform-buttons">
+              <a href="post-2026-09-15-bus6333.html" class="platform-btn platform-btn-primary">📖 獨立站</a>
+              <button class="platform-btn platform-btn-secondary" onclick="copyPlatform('tiktok_2026-09-15-bus6333.md','bus6333','tiktok','TikTok')">📋 複製腳本</button>
+            </div>
+          </div>
+        </article>
+        <article class="platform-card">
+          <div class="platform-cover"><img src="hany-xianyu-tiktok-cover.webp" alt="TikTok 同步｜閒魚取電器" loading="lazy"></div>
+          <div class="platform-meta">
+            <h3 class="platform-title">🎵 TikTok 同步｜閒魚取電器</h3>
+            <p class="platform-date">2026-09-14 · 鄭哥博客點評 · 香港觀察</p>
+            <div class="platform-buttons">
+              <a href="post-2026-09-14-xianyu.html" class="platform-btn platform-btn-primary">📖 獨立站</a>
+              <button class="platform-btn platform-btn-secondary" onclick="copyPlatform('tiktok_2026-09-14-xianyu.md','xianyu','tiktok','TikTok')">📋 複製腳本</button>
+            </div>
+          </div>
+        </article>
+        <article class="platform-card">
+          <div class="platform-cover"><img src="hany-wenzhou-tiktok-cover.webp" alt="TikTok 同步｜溫州女人買工廠" loading="lazy"></div>
+          <div class="platform-meta">
+            <h3 class="platform-title">🎵 TikTok 同步｜溫州女人買工廠</h3>
+            <p class="platform-date">2026-09-12 · 鄭哥博客點評 · 外貿實戰</p>
+            <div class="platform-buttons">
+              <a href="post-2026-09-12-wenzhou.html" class="platform-btn platform-btn-primary">📖 獨立站</a>
+              <button class="platform-btn platform-btn-secondary" onclick="copyPlatform('tiktok_2026-09-12-wenzhou.md','wenzhou','tiktok','TikTok')">📋 複製腳本</button>
+            </div>
+          </div>
+        </article>
+        <article class="platform-card">
+          <div class="platform-cover"><img src="hany-echo-tiktok-cover.webp" alt="TikTok 同步｜Stephanie 鑲石單" loading="lazy"></div>
+          <div class="platform-meta">
+            <h3 class="platform-title">🎵 TikTok 同步｜Stephanie 鑲石單</h3>
+            <p class="platform-date">2026-09-12 · 鄭哥博客點評 · 外貿實戰</p>
+            <div class="platform-buttons">
+              <a href="post-2026-09-12-echo.html" class="platform-btn platform-btn-primary">📖 獨立站</a>
+              <button class="platform-btn platform-btn-secondary" onclick="copyPlatform('tiktok_2026-09-12-echo.md','echo','tiktok','TikTok')">📋 複製腳本</button>
+            </div>
+          </div>
+        </article>
+        <article class="platform-card">
+          <div class="platform-cover"><img src="hany-fank-tiktok-cover.webp" alt="TikTok 同步｜朋友 Fank" loading="lazy"></div>
+          <div class="platform-meta">
+            <h3 class="platform-title">🎵 TikTok 同步｜朋友 Fank</h3>
+            <p class="platform-date">2026-09-11 · 鄭哥博客點評 · 外貿故事</p>
+            <div class="platform-buttons">
+              <a href="post-2026-09-11-fank.html" class="platform-btn platform-btn-primary">📖 獨立站</a>
+              <button class="platform-btn platform-btn-secondary" onclick="copyPlatform('tiktok_2026-09-11-fank.md','fank','tiktok','TikTok')">📋 複製腳本</button>
+            </div>
+          </div>
+        </article>
+        <article class="platform-card">
+          <div class="platform-cover"><img src="hany-africa-tiktok-cover.webp" alt="TikTok 同步｜非洲女客" loading="lazy"></div>
+          <div class="platform-meta">
+            <h3 class="platform-title">🎵 TikTok 同步｜非洲女客</h3>
+            <p class="platform-date">2026-09-11 · 鄭哥博客點評 · 外貿故事</p>
+            <div class="platform-buttons">
+              <a href="post-2026-09-11-africa.html" class="platform-btn platform-btn-primary">📖 獨立站</a>
+              <button class="platform-btn platform-btn-secondary" onclick="copyPlatform('tiktok_2026-09-11-africa.md','africa','tiktok','TikTok')">📋 複製腳本</button>
+            </div>
+          </div>
+        </article>
+        <article class="platform-card">
+          <div class="platform-cover"><img src="hany-patent-tiktok-cover.webp" alt="TikTok 同步｜5000蚊專利" loading="lazy"></div>
+          <div class="platform-meta">
+            <h3 class="platform-title">🎵 TikTok 同步｜5000蚊專利</h3>
+            <p class="platform-date">2026-09-04 · 鄭哥博客點評 · 產品創新</p>
+            <div class="platform-buttons">
+              <a href="post-2026-09-04-patent.html" class="platform-btn platform-btn-primary">📖 獨立站</a>
+              <button class="platform-btn platform-btn-secondary" onclick="copyPlatform('tiktok_2026-09-04-patent.md','patent','tiktok','TikTok')">📋 複製腳本</button>
+            </div>
+          </div>
+        </article>
+        <article class="platform-card">
+          <div class="platform-cover"><img src="hany-haixuan-tiktok-cover.webp" alt="TikTok 同步｜澳洲客海選" loading="lazy"></div>
+          <div class="platform-meta">
+            <h3 class="platform-title">🎵 TikTok 同步｜澳洲客海選</h3>
+            <p class="platform-date">2026-09-04 · 鄭哥博客點評 · 外貿實戰</p>
+            <div class="platform-buttons">
+              <a href="post-2026-09-04-haixuan.html" class="platform-btn platform-btn-primary">📖 獨立站</a>
+              <button class="platform-btn platform-btn-secondary" onclick="copyPlatform('tiktok_2026-09-04-haixuan.md','haixuan','tiktok','TikTok')">📋 複製腳本</button>
+            </div>
+          </div>
+        </article>
+        <article class="platform-card">
+          <div class="platform-cover"><img src="hany-222803-turkey-tiktok-cover.webp" alt="TikTok 同步｜土耳其客 100K" loading="lazy"></div>
+          <div class="platform-meta">
+            <h3 class="platform-title">🎵 TikTok 同步｜土耳其客 100K</h3>
+            <p class="platform-date">2026-09-04 · 鄭哥博客點評 · 外貿實戰</p>
+            <div class="platform-buttons">
+              <a href="post-2026-09-04-222803-turkey.html" class="platform-btn platform-btn-primary">📖 獨立站</a>
+              <button class="platform-btn platform-btn-secondary" onclick="copyPlatform('tiktok_2026-09-04-222803-turkey.md','222803-turkey','tiktok','TikTok')">📋 複製腳本</button>
+            </div>
+          </div>
+        </article>
     </div>
-  </section>
 
-  <footer>
+    <div class="platform-note" style="margin-top:32px">
+      <h3>💡 使用說明</h3>
+      <p><b>獨立站</b>連結去深度長文版（含 SEO、AI 配圖、FAQ、JSON-LD），適合海外讀者 + 搜尋引擎；</p>
+      <p><b>複製文案</b>會顯示 vault 檔名，喺 <code>C:\Users\a\Desktop\MianAI知識庫\MianAI知識庫\vault\hany博主\tiktok\</code> 目錄打開對應 <code>tiktok_YYYY-MM-DD-slug.md</code>（英文）或 <code>tiktok_YYYY-MM-DD-slug_cn.md</code>（中文）檔案，複製內容貼到 TikTok 後台。</p>
+      <p>建議發布時間：<b>週二至週四 19:30-21:30</b>（TikTok 用戶活躍高峰）。</p>
+    </div>
+  </article>
+
+  <!-- ===== 社群 Footer ===== -->
+  <footer class="social-footer">
     <div class="container">
-      <p>© 2026 鄭哥 / Hany · 七善門科技 · 星辰算力 · 香港旺角 · 講真話，唔講廢話</p>
+      <h3><span class="cn">鄭哥社群 / Follow on Social</span><span class="en">Follow Hany on Social</span></h3>
+      <div class="social-links">
+        <a href="xhs.html">📕 小紅書 Xiaohongshu</a>
+        <a href="youtube.html">📺 YouTube</a>
+        <a href="linkedin.html">💼 LinkedIn</a>
+        <a href="facebook.html">📘 Facebook</a>
+        <a href="instagram.html">📸 Instagram</a>
+        <a href="tiktok.html">🎵 TikTok</a>
+        <a href="twitter.html">🐦 Twitter / X</a>
+      </div>
+      <p class="copyright">© 2026 鄭哥 / Hany · 七善門科技 · 星辰算力 · 香港旺角</p>
     </div>
   </footer>
 
   <script>
     function toggleLang(){
-      const btn=document.getElementById('langBtn');
-      btn.textContent=btn.textContent==='EN'?'中':'EN';
-      document.querySelectorAll('.cn,.en').forEach(el=>{
-        el.style.display=btn.textContent==='EN'?(el.classList.contains('en')?'inline':'none'):(el.classList.contains('cn')?'inline':'none');
+      const btn = document.getElementById('langBtn');
+      const showingEn = btn.textContent.trim() === '中';
+      btn.textContent = showingEn ? 'EN' : '中';
+      document.querySelectorAll('.cn,.en').forEach(el => {
+        el.style.display = showingEn ? (el.classList.contains('cn') ? 'inline' : 'none') : (el.classList.contains('en') ? 'inline' : 'none');
       });
     }
-    function copyXhs(name){
-      const map={"youtube_2026-09-19-ai-phone-war.md":"YouTube","linkedin_2026-09-19-ai-phone-war.md":"LinkedIn","facebook_2026-09-19-ai-phone-war.md":"Facebook","instagram_2026-09-19-ai-phone-war.md":"Instagram","tiktok_2026-09-19-ai-phone-war.md":"TikTok","twitter_2026-09-19-ai-phone-war.md":"Twitter"};
-      const text='['+map[name]+' 同步] '+name;
-      if(navigator.clipboard){navigator.clipboard.writeText(text).then(()=>alert('已複製: '+text)).catch(()=>prompt('複製內容：',text));}
-      else prompt('複製內容：',text);
+    function toggleMobileMenu(){
+      document.getElementById('navWrapper').classList.toggle('open');
+    }
+    function copyPlatform(enFile, slug, prefix, platformName){
+      const cnFile = enFile.replace(/\.md$/, '_cn.md');
+      let dirNote;
+      if (prefix === 'youtube') {
+        dirNote = 'YouTube封面/ 同 YouTube/';
+      } else if (prefix === 'tiktok') {
+        dirNote = 'TikTok封面/ 同 TikTok/';
+      } else {
+        dirNote = '框架/ 同 ' + prefix + '/';
+      }
+      const msg = '【英文版】vault\\hany博主\\' + dirNote + enFile + '\\n【中文版】vault\\hany博主\\' + dirNote + cnFile + '\\n\\n去呢兩個檔案複製內容貼到 ' + platformName + ' 後台。';
+      if (navigator.clipboard){
+        navigator.clipboard.writeText(enFile).then(() => alert('已複製英文版檔名：\\n' + enFile + '\\n\\n' + msg)).catch(() => prompt('複製內容：', enFile));
+      } else {
+        prompt('複製內容：', enFile);
+      }
     }
   </script>
 </body>
