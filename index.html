@@ -171,32 +171,15 @@
     nav a { text-decoration:none; color:#444; font-size:0.9rem; transition:color 0.2s; }
     nav a:hover, nav a.active { color:#e94560; }
 
-    /* Dropdown */
-    .dropdown { position:relative; }
-    .dropdown-toggle { background:none; border:none; color:#444; font-size:0.9rem; cursor:pointer; padding:0; display:flex; align-items:center; gap:4px; font-family:inherit; }
-    .dropdown-toggle:hover { color:#e94560; }
-    .dropdown-toggle .caret { font-size:0.7rem; transition:transform 0.2s; }
-    .dropdown.open .dropdown-toggle .caret { transform:rotate(180deg); }
-    .dropdown-menu { display:none; position:absolute; top:100%; right:0; margin-top:8px; background:#fff; border:1px solid #e8e8ed; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:180px; padding:8px 0; z-index:1001; }
-    .dropdown.open .dropdown-menu { display:block; }
-    .dropdown-menu a { display:block; padding:8px 16px; font-size:0.88rem; color:#444; }
-    .dropdown-menu a:hover { background:#fafafa; color:#e94560; }
-
-    .lang-toggle { cursor:pointer; font-size:0.75rem; background:#1a1a2e; color:#fff; padding:5px 12px; border-radius:4px; border:none; }
-
-    /* Mobile */
+        /* Mobile */
     @media (max-width:768px) {
       .hamburger { display:block; }
-      .nav-wrapper { display:none; position:absolute; top:100%; left:0; right:0; background:#fff; border-top:1px solid #e8e8ed; box-shadow:0 4px 12px rgba(0,0,0,0.08); }
+      .nav-wrapper { display:none; position:absolute; top:100%; left:0; right:0; background:#fff; border-top:1px solid #e8e8ed; box-shadow:0 4px 12px rgba(0,0,0,.08); }
       .nav-wrapper.open { display:block; }
       .nav-links { flex-direction:column; align-items:stretch; gap:0; padding:8px 0; }
-      .nav-links > a, .dropdown, .lang-toggle { padding:12px 24px; border-bottom:1px solid #f0f0f5; width:100%; text-align:left; }
-      .nav-links > a:last-of-type, .dropdown:last-of-type { border-bottom:none; }
-      .dropdown { width:100%; }
-      .dropdown-toggle { width:100%; justify-content:space-between; padding:12px 24px; }
-      .dropdown-menu { position:static; box-shadow:none; border:none; margin-top:0; padding:0; background:#fafafa; }
-      .dropdown.open .dropdown-menu { display:block; }
-      .dropdown-menu a { padding-left:48px; }
+      .nav-links > a, .lang-toggle { padding:12px 24px; border-bottom:1px solid #f0f0f5; width:100%; text-align:left; }
+      .nav-links > a:last-of-type { border-bottom:none; }
+      .lang-toggle { border-radius:0; }
     }
     
     /* ===== Hero ===== */
@@ -368,22 +351,10 @@
       <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Open menu">☰</button>
       <div class="nav-wrapper" id="navWrapper">
         <div class="nav-links">
-          <a href="index.html" class="active"><span class="cn">首頁</span><span class="en">Home</span></a>
+          <a href="blog.html"><span class="cn">文章</span><span class="en">Articles</span></a>
           <a href="about.html"><span class="cn">關於</span><span class="en">About</span></a>
-          <a href="blog.html"><span class="cn">點評</span><span class="en">Reviews</span></a>
+          <a href="xhs.html"><span class="cn">點評</span><span class="en">Reviews</span></a>
           <a href="contact.html"><span class="cn">聯繫</span><span class="en">Contact</span></a>
-          <div class="dropdown">
-            <button class="dropdown-toggle" onclick="toggleDropdown(event)">📱 社群 <span class="caret">▾</span></button>
-            <div class="dropdown-menu">
-              <a href="xhs.html"><span class="cn">小紅書</span><span class="en">Xiaohongshu</span></a>
-              <a href="youtube.html"><span class="cn">YouTube</span><span class="en">YouTube</span></a>
-              <a href="linkedin.html"><span class="cn">LinkedIn</span><span class="en">LinkedIn</span></a>
-              <a href="facebook.html"><span class="cn">Facebook</span><span class="en">Facebook</span></a>
-              <a href="instagram.html"><span class="cn">Instagram</span><span class="en">Instagram</span></a>
-              <a href="tiktok.html"><span class="cn">TikTok</span><span class="en">TikTok</span></a>
-              <a href="twitter.html"><span class="cn">Twitter</span><span class="en">Twitter</span></a>
-            </div>
-          </div>
           <button class="lang-toggle" onclick="toggleLang()" id="langBtn">EN</button>
         </div>
       </div>
@@ -526,10 +497,20 @@
   </section>
 
   <!-- ===== Footer ===== -->
-  <footer>
+    <!-- ===== 社群 Footer（2026-09-20） ===== -->
+  <footer class="social-footer">
     <div class="container">
-      <p class="cn"><a href="xhs.html" style="color:#ff2442;text-decoration:none;">📕 小紅書同步</a> · © 2026 鄭哥 Hany · 七善門科技 · 星辰算力 · 香港旺角 · ALEXBI INC Long Beach CA</p>
-      <p class="en"><a href="xhs.html" style="color:#ff2442;text-decoration:none;">📕 RED Sync</a> · © 2026 Hany · Qishanmen Tech · Star Compute · Mong Kok, HK · ALEXBI INC Long Beach CA</p>
+      <h3><span class="cn">鄭哥社群 / Follow on Social</span><span class="en">Follow Hany on Social</span></h3>
+      <div class="social-links">
+        <a href="xhs.html">📕 小紅書 Xiaohongshu</a>
+        <a href="youtube.html">📺 YouTube</a>
+        <a href="linkedin.html">💼 LinkedIn</a>
+        <a href="facebook.html">📘 Facebook</a>
+        <a href="instagram.html">📸 Instagram</a>
+        <a href="tiktok.html">🎵 TikTok</a>
+        <a href="twitter.html">🐦 Twitter / X</a>
+      </div>
+      <p class="copyright">© 2026 鄭哥 / Hany · 七善門科技 · 星辰算力 · 香港旺角</p>
     </div>
   </footer>
 
@@ -543,19 +524,6 @@
     function toggleMobileMenu() {
       document.getElementById('navWrapper').classList.toggle('open');
     }
-    function toggleDropdown(e) {
-      e.stopPropagation();
-      const dropdown = e.currentTarget.closest('.dropdown');
-      document.querySelectorAll('.dropdown.open').forEach(d => {
-        if (d !== dropdown) d.classList.remove('open');
-      });
-      dropdown.classList.toggle('open');
-    }
-    document.addEventListener('click', (e) => {
-      if (!e.target.closest('.dropdown')) {
-        document.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
-      }
-    });
     if (localStorage.getItem('lang') === 'en') {
       document.body.classList.add('show-en');
       const langBtn = document.getElementById('langBtn');
