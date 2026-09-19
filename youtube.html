@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>文章 - 海哥</title>
+  <title>YouTube - 海哥</title>
   <style>
-        nav { background:#fff; border-bottom:1px solid #e8e8ed; padding:14px 0; position:sticky; top:0; z-index:1000; }
+    nav { background:#fff; border-bottom:1px solid #e8e8ed; padding:14px 0; position:sticky; top:0; z-index:1000; }
     nav .container { display:flex; justify-content:space-between; align-items:center; position:relative; max-width:960px; margin:0 auto; padding:0 24px; }
     .logo { font-size:1.05rem; font-weight:700; color:#1a1a2e; text-decoration:none; }
     .hamburger { display:none; background:none; border:none; font-size:1.5rem; cursor:pointer; padding:4px 8px; color:#1a1a2e; line-height:1; }
@@ -45,36 +45,31 @@
       .nav-links > button.lang-toggle { color:#fff; background:#1a1a2e; margin:8px 24px 0; width:auto; text-align:center; border-bottom:none; }
       .social-links { margin-top:8px; padding:14px 24px 4px; }
     }
-* { margin:0; padding:0; box-sizing:border-box; }
     body { font-family: 'Noto Sans SC', -apple-system, sans-serif; background:#f5f5f7; color:#333; line-height:1.7; }
     .container { max-width:800px; margin:0 auto; padding:0 20px; }
     .section { padding:60px 0; }
-    h1 { font-size:2rem; margin-bottom:30px; font-weight:400; }
-    .filter { display:flex; gap:15px; margin-bottom:30px; flex-wrap:wrap; }
-    .filter a { padding:8px 20px; border-radius:20px; background:#fff; text-decoration:none; color:#555; font-size:0.9rem; border:1px solid #e0e0e0; }
-    .filter a.active { background:#1a1a2e; color:#fff; border-color:#1a1a2e; }
-    .post-list { background:#fff; border-radius:12px; padding:30px; }
-    .post-item { border-bottom:1px solid #f0f0f5; padding:25px 0; }
-    .post-item:last-child { border-bottom:none; }
-    .post-item h3 { font-size:1.2rem; margin-bottom:10px; color:#1a1a2e; }
-    .post-item p { color:#666; font-size:0.95rem; margin-bottom:12px; }
-    .post-meta { font-size:0.85rem; color:#999; display:flex; gap:15px; flex-wrap:wrap; }
-    .post-meta .tag { background:#f0f0f5; padding:3px 10px; border-radius:4px; font-size:0.8rem; color:#555; }
+    .profile-card { background:#fff; border-radius:12px; padding:40px; box-shadow:0 2px 10px rgba(0,0,0,0.05); text-align:center; }
+    .profile-icon { font-size:3rem; margin-bottom:16px; }
+    .profile-card h1 { font-size:1.8rem; color:#1a1a2e; margin-bottom:12px; font-weight:500; }
+    .profile-card p { color:#666; margin-bottom:24px; }
+    .profile-card .cta { display:inline-block; background:#e94560; color:#fff; text-decoration:none; padding:12px 32px; border-radius:6px; font-size:0.95rem; }
+    .profile-card .cta:hover { background:#c93550; }
     footer { background:#1a1a2e; color:#888; text-align:center; padding:40px 0; margin-top:60px; font-size:0.9rem; }
     @media (max-width:600px) {
-      h1 { font-size:1.5rem; }
+      .profile-card { padding:30px 20px; }
+      .profile-card h1 { font-size:1.4rem; }
     }
   </style>
 </head>
 <body>
-    <nav>
+  <nav>
     <div class="container">
       <a href="index.html" class="logo">鄭哥 / Hany</a>
       <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">☰</button>
       <div class="nav-wrapper" id="navWrapper">
         <div class="nav-links">
       <a href="index.html"><span class="cn">首頁</span><span class="en">Home</span></a>
-      <a href="blog.html" class="active"><span class="cn">文章</span><span class="en">Articles</span></a>
+      <a href="blog.html"><span class="cn">文章</span><span class="en">Articles</span></a>
       <a href="about.html"><span class="cn">關於</span><span class="en">About</span></a>
       <a href="xhs.html"><span class="cn">點評</span><span class="en">Reviews</span></a>
       <a href="contact.html"><span class="cn">聯繫</span><span class="en">Contact</span></a>
@@ -95,59 +90,18 @@
 
   <div class="section">
     <div class="container">
-      <h1>文章</h1>
-
-      <div class="filter">
-        <a href="/blog" class="active">全部</a>
-        <a href="/blog/trade">贸易观察</a>
-        <a href="/blog/ai">AI实战</a>
-        <a href="/blog/amazon">亚马逊</a>
-        <a href="/blog/story">客户故事</a>
-      </div>
-
-      <div class="post-list">
-        <div class="post-item">
-          <h3>从家电到AI算力：一个70后的26年生意笔记</h3>
-          <p>1995年大学毕业，做过老师，做过贸易，现在卖AI服务器。不是成功学，是一个看过太多起落的人，说一点真话...</p>
-          <div class="post-meta">
-            <span>2026-08-30</span>
-            <span class="tag">关于我</span>
-          </div>
-        </div>
-
-        <div class="post-item">
-          <h3>为什么传统贸易商都在偷偷买AI服务器？</h3>
-          <p>一个做服装出口的客户，上个月突然问我买10张A100。我问他做什么，他说：「我现在不是卖货，是卖图。」...</p>
-          <div class="post-meta">
-            <span>2026-08-25</span>
-            <span class="tag">AI实战</span>
-          </div>
-        </div>
-
-        <div class="post-item">
-          <h3>亚马逊卖家问我最多的三个问题</h3>
-          <p>做了几年亚马逊自动化系统，几百个卖家问来问去，其实核心问题就三个：怎么省时间、怎么省人工、怎么不被封...</p>
-          <div class="post-meta">
-            <span>2026-08-20</span>
-            <span class="tag">亚马逊</span>
-          </div>
-        </div>
-
-        <div class="post-item">
-          <h3>1998年我在华强北，2026年我在卖API</h3>
-          <p>那时候从潮汕进货，坐绿皮火车到深圳，在华强北找个柜台就能卖货。现在不需要柜台了，需要算力...</p>
-          <div class="post-meta">
-            <span>2026-08-15</span>
-            <span class="tag">贸易观察</span>
-          </div>
-        </div>
+      <div class="profile-card">
+        <div class="profile-icon">📱</div>
+        <h1>YouTube <span class="en">/ YouTube</span></h1>
+        <p>欢迎在 YouTube 找到我。跨境贸易、AI实战、亚马逊自动化的日常分享。</p>
+        <a href="https://www.youtube.com/" class="cta" target="_blank" rel="noopener">前往 YouTube</a>
       </div>
     </div>
   </div>
 
   <footer>
     <div class="container">
-      <p>© 2026 海哥</p>
+      <p>© 2026 海哥 · 从1995年走到现在</p>
     </div>
   </footer>
   <script>

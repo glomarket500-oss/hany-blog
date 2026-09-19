@@ -5,13 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>联系 - 海哥</title>
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
+        nav { background:#fff; border-bottom:1px solid #e8e8ed; padding:14px 0; position:sticky; top:0; z-index:1000; }
+    nav .container { display:flex; justify-content:space-between; align-items:center; position:relative; max-width:960px; margin:0 auto; padding:0 24px; }
+    .logo { font-size:1.05rem; font-weight:700; color:#1a1a2e; text-decoration:none; }
+    .hamburger { display:none; background:none; border:none; font-size:1.5rem; cursor:pointer; padding:4px 8px; color:#1a1a2e; line-height:1; }
+    .nav-wrapper { display:flex; align-items:center; }
+    .nav-links { display:flex; align-items:center; gap:24px; }
+    nav a { text-decoration:none; color:#444; font-size:0.9rem; transition:color 0.2s; }
+    nav a:hover, nav a.active { color:#e94560; }
+    .lang-toggle { cursor:pointer; font-size:0.75rem; background:#1a1a2e; color:#fff; padding:5px 12px; border-radius:4px; border:none; font-family:inherit; }
+    .social-links { display:flex; gap:16px; padding:14px 24px 4px; border-top:1px solid #f0f0f5; margin-top:8px; flex-wrap:wrap; }
+    .social-links a { color:#888; font-size:0.85rem; }
+    .social-links a:hover { color:#e94560; }
+    @media (max-width:768px) {
+      .hamburger { display:block; }
+      .nav-wrapper {
+        display:none;
+        position:absolute;
+        top:100%;
+        left:0;
+        right:0;
+        background:#fff;
+        border-top:1px solid #e8e8ed;
+        box-shadow:0 4px 12px rgba(0,0,0,0.08);
+        padding:8px 0 16px;
+        z-index:999;
+      }
+      .nav-wrapper.open { display:block; }
+      .nav-links { flex-direction:column; align-items:stretch; gap:0; }
+      .nav-links > a, .nav-links > button.lang-toggle {
+        padding:14px 24px;
+        border-bottom:1px solid #f0f0f5;
+        width:100%;
+        text-align:left;
+        display:block;
+        background:none;
+        border-radius:0;
+      }
+      .nav-links > button.lang-toggle { color:#fff; background:#1a1a2e; margin:8px 24px 0; width:auto; text-align:center; border-bottom:none; }
+      .social-links { margin-top:8px; padding:14px 24px 4px; }
+    }
+* { margin:0; padding:0; box-sizing:border-box; }
     body { font-family: 'Noto Sans SC', -apple-system, sans-serif; background:#f5f5f7; color:#333; line-height:1.7; }
     .container { max-width:600px; margin:0 auto; padding:0 20px; }
-    nav { background:#fff; border-bottom:1px solid #e0e0e0; padding:15px 0; position:sticky; top:0; z-index:100; }
-    nav .container { display:flex; justify-content:center; gap:30px; }
-    nav a { text-decoration:none; color:#333; font-size:0.95rem; }
-    nav a:hover { color:#e94560; }
     .section { padding:60px 0; }
     h1 { font-size:2rem; margin-bottom:30px; font-weight:400; }
     .contact-card { background:#fff; border-radius:12px; padding:40px; box-shadow:0 2px 10px rgba(0,0,0,0.05); }
@@ -26,12 +62,29 @@
   </style>
 </head>
 <body>
-  <nav>
+    <nav>
     <div class="container">
-      <a href="index.html">首页</a>
-      <a href="about.html">关于我</a>
-      <a href="blog.html">文章</a>
-      <a href="contact.html">联系</a>
+      <a href="index.html" class="logo">鄭哥 / Hany</a>
+      <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">☰</button>
+      <div class="nav-wrapper" id="navWrapper">
+        <div class="nav-links">
+      <a href="index.html"><span class="cn">首頁</span><span class="en">Home</span></a>
+      <a href="blog.html"><span class="cn">文章</span><span class="en">Articles</span></a>
+      <a href="about.html"><span class="cn">關於</span><span class="en">About</span></a>
+      <a href="xhs.html"><span class="cn">點評</span><span class="en">Reviews</span></a>
+      <a href="contact.html" class="active"><span class="cn">聯繫</span><span class="en">Contact</span></a>
+          <button class="lang-toggle" onclick="toggleLang()" id="langBtn">EN</button>
+        </div>
+        <div class="social-links">
+      <a href="xhs.html">小红书</a>
+      <a href="youtube.html">YouTube</a>
+      <a href="linkedin.html">LinkedIn</a>
+      <a href="facebook.html">Facebook</a>
+      <a href="instagram.html">Instagram</a>
+      <a href="tiktok.html">TikTok</a>
+      <a href="twitter.html">Twitter</a>
+        </div>
+      </div>
     </div>
   </nav>
 
@@ -67,5 +120,26 @@
       <p>© 2026 海哥 · 从1995年走到现在</p>
     </div>
   </footer>
+  <script>
+    function toggleMobileMenu() {
+      var w = document.getElementById('navWrapper');
+      if (w) w.classList.toggle('open');
+    }
+    function toggleLang() {
+      document.body.classList.toggle('show-en');
+      var btn = document.getElementById('langBtn');
+      if (btn) btn.textContent = document.body.classList.contains('show-en') ? '中' : 'EN';
+      try { localStorage.setItem('lang', document.body.classList.contains('show-en') ? 'en' : 'cn'); } catch(e){}
+    }
+    (function(){
+      try {
+        if (localStorage.getItem('lang') === 'en') {
+          document.body.classList.add('show-en');
+          var b = document.getElementById('langBtn');
+          if (b) b.textContent = '中';
+        }
+      } catch(e){}
+    })();
+  </script>
 </body>
 </html>
