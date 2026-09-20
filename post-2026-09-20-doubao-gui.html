@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>豆包手機「轉正」——GUI 兜底 + AI 辦公養家，70 後點睇呢場變革 | Doubao Phone "Goes Official": GUI Fallback and AI-Office — A Gen-Xer's Read</title>
+  <meta name="description" content="豆包手機「轉正」：GUI 兜底、AI 辦公養家。9.5 個月從工程樣機到消費者版本（5999元起），SAEP 協議落地。70 後老炮兒三個機會：傳統行業加 GUI Agent、AI 辦公訂閱、AI 終端出海。">
+  <meta name="keywords" content="豆包手機,轉正,GUI兜底,AI辦公,SAEP協議,字節跳動,努比亞NavixUltra,智能體手機元年,訂閱模式,70後,跨境電商,星辰算力,七善門科技,Doubao phone,ByteDance,GUI Agent,subscription model">
+  <meta name="author" content="鄭哥 / Hany">
+
+  <link rel="canonical" href="https://hany-blog.vercel.app/post-2026-09-20-doubao-gui.html">
+
+  <meta property="og:title" content="豆包手機「轉正」——GUI 兜底 + AI 辦公養家">
+  <meta property="og:description" content="9.5 個月從工程樣機到消費者版本，GUI 兜底 + SAEP 協議 + AI 辦公訂閱，70 後三個新機會。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://hany-blog.vercel.app/post-2026-09-20-doubao-gui.html">
+  <meta property="og:image" content="https://hany-blog.vercel.app/hany-doubao-gui-cover.webp">
+  <meta property="og:locale" content="zh_HK">
+  <meta property="og:site_name" content="鄭哥 Hany">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="豆包手機「轉正」——GUI 兜底 + AI 辦公養家">
+  <meta name="twitter:description" content="9.5 個月從工程樣機到消費者版本，GUI 兜底 + SAEP 協議 + AI 辦公訂閱。">
+  <meta name="twitter:image" content="https://hany-blog.vercel.app/hany-doubao-gui-cover.webp">
+
+  <meta property="article:published_time" content="2026-09-20T14:00:00+08:00">
+  <meta property="article:modified_time" content="2026-09-20T14:00:00+08:00">
+  <meta property="article:author" content="鄭哥 Hany">
+  <meta property="article:section" content="AI科技">
+  <meta property="article:tag" content="豆包手機">
+  <meta property="article:tag" content="轉正">
+  <meta property="article:tag" content="GUI兜底">
+  <meta property="article:tag" content="AI辦公養家">
+  <meta property="article:tag" content="SAEP協議">
+  <meta property="article:tag" content="字節跳動">
+  <meta property="article:tag" content="智能體手機元年">
+  <meta property="article:tag" content="訂閱模式">
+
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: 'Noto Sans TC', -apple-system, 'PingFang HK', 'Microsoft JhengHei', sans-serif; background:#f5f5f7; color:#1a1a2e; line-height:1.75; }
+    .container { max-width:880px; margin:0 auto; padding:0 24px; }
+
+    nav { background:#fff; border-bottom:1px solid #e8e8ed; padding:14px 0; position:sticky; top:0; z-index:100; }
+    nav .container { display:flex; justify-content:space-between; align-items:center; }
+    .logo { font-size:1.05rem; font-weight:700; color:#1a1a2e; }
+    .nav-links { display:flex; align-items:center; gap:24px; }
+    nav a { text-decoration:none; color:#444; font-size:0.9rem; }
+    nav a:hover, nav a.active { color:#e94560; }
+    .lang-toggle { cursor:pointer; font-size:0.75rem; background:#1a1a2e; color:#fff; padding:5px 12px; border-radius:4px; border:none; }
+
+    article { background:#fff; padding:48px 32px; margin:32px 0; border-radius:12px; border:1px solid #e8e8ed; }
+    article h1 { font-size:1.8rem; margin-bottom:16px; line-height:1.4; color:#1a1a2e; }
+    article h2 { font-size:1.4rem; margin:36px 0 16px; padding-bottom:8px; border-bottom:2px solid #f0f0f5; color:#1a1a2e; }
+    article h3 { font-size:1.1rem; margin:24px 0 12px; color:#444; }
+    article p { margin-bottom:14px; font-size:0.98rem; }
+    article strong { color:#1a1a2e; font-weight:600; }
+    article ul { margin:12px 0 18px 24px; }
+    article li { margin-bottom:6px; font-size:0.95rem; }
+    article hr { border:none; border-top:1px solid #e8e8ed; margin:32px 0; }
+    article blockquote { background:#fafafa; border-left:4px solid #e94560; padding:14px 18px; margin:18px 0; color:#444; font-size:0.95rem; }
+    article blockquote.zhengge-pingdian { background:#fff5f5; border-left:4px solid #e94560; font-weight:600; color:#1a1a2e; }
+    article pre { background:#1a1a2e; color:#e8e8ed; padding:16px 20px; border-radius:8px; overflow-x:auto; margin:18px 0; font-size:0.88rem; line-height:1.6; }
+    article code { font-family:'SF Mono', Consolas, monospace; }
+    article table.data-table { width:100%; border-collapse:collapse; margin:18px 0; font-size:0.9rem; }
+    article table.data-table th { background:#1a1a2e; color:#fff; padding:10px 12px; text-align:left; font-weight:500; }
+    article table.data-table td { padding:10px 12px; border-bottom:1px solid #f0f0f5; }
+    article table.data-table tbody tr:hover { background:#fafafa; }
+
+    .post-figure { margin:28px 0; }
+    .post-figure img { width:100%; height:auto; border-radius:8px; display:block; }
+    .post-figure figcaption { text-align:center; font-size:0.85rem; color:#888; margin-top:10px; line-height:1.5; }
+
+    .ok { color:#27ae60; font-weight:bold; }
+    .warn { color:#e67e22; font-weight:bold; }
+
+    footer { background:#f0f0f5; padding:32px 0; text-align:center; margin-top:32px; }
+    footer p { font-size:0.82rem; color:#999; }
+
+    .en { display:none; }
+    body.show-en .en { display:block; }
+    body.show-en .cn { display:none; }
+    .en-inline { display:none; }
+    body.show-en .en-inline { display:inline; }
+    body.show-en .cn-inline { display:none; }
+
+    @media (max-width:640px) {
+      article { padding:32px 20px; }
+      article h1 { font-size:1.5rem; }
+      article h2 { font-size:1.2rem; }
+      .nav-links { gap:14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="container">
+      <div class="logo">鄭哥 / Hany</div>
+      <div class="nav-links">
+        <a href="index.html"><span class="cn">首頁</span><span class="en">Home</span></a>
+        <a href="about.html"><span class="cn">關於我</span><span class="en">About</span></a>
+        <a href="blog.html" class="active"><span class="cn">點評</span><span class="en">Blog</span></a>
+        <a href="contact.html"><span class="cn">聯繫</span><span class="en">Contact</span></a>
+        <button class="lang-toggle" onclick="toggleLang()" id="langBtn">EN</button>
+      </div>
+    </div>
+  </nav>
+
+  <article class="container">
+    <div class="cn">
+      <blockquote class="zhengge-pingdian"><strong>【鄭哥點評】</strong> 欄目：鄭哥博客點評</blockquote>
+      <h1>《豆包手機「轉正」——GUI 兜底 + AI 辦公養家，70 後點睇呢場變革》</h1>
+<figure class="post-figure">
+  <img src="hany-doubao-gui-cover.webp" alt="封面：豆包手機轉正 GUI 兜底 AI 辦公養家 / Cover: Doubao phone GUI fallback AI office" loading="lazy" width="1024" height="576">
+  <figcaption><span class="cn">封面：豆包手機「轉正」GUI 兜底 AI 辦公養家</span><span class="en">Cover: Doubao phone "goes official" — GUI fallback plus AI office</span><br><em>圖片由 AI輔助創作（Z-Image-Turbo）</em></figcaption>
+</figure>
+<p><strong>鄭哥 Hany · 2026年9月20日</strong></p>
+<hr>
+<p>今日睇到一個新聞，<strong>耐人尋味</strong>：</p>
+<blockquote><strong>豆包手機「轉正」：GUI 兜底、AI 辦公養家</strong></blockquote>
+<blockquote><strong>2026年9月14日發布，9月16日努比亞 NaviX Ultra 開售，5999元起。</strong></blockquote>
+<blockquote><strong>京東預約 38 萬人，備貨僅 20 萬台。</strong></blockquote>
+<p><strong>9.5 個月嘅等待</strong>，<strong>從「工程樣機」到「消費者版本」</strong>——<strong>豆包手機背後嘅 3 個真相</strong>，70 後點睇？</p>
+<hr>
+<h2>一、真相 1：豆包手機「轉正」= 9.5 個月嘅成長</h2>
+<figure class="post-figure">
+  <img src="hany-doubao-gui-scene1.webp" alt="場景一：豆包手機 GUI 兜底屏幕識別示意 / Scene 1: Doubao phone GUI fallback screen recognition" loading="lazy" width="1024" height="576">
+  <figcaption><span class="cn">場景一：豆包手機 GUI 兜底屏幕識別示意</span><span class="en">Scene 1: Doubao phone GUI fallback — screen recognition</span><br><em>圖片由 AI輔助創作（Z-Image-Turbo）</em></figcaption>
+</figure>
+
+<h3>時間表</h3>
+<table class="data-table">
+<thead><tr><th>時間</th><th>事件</th></tr></thead>
+<tbody>
+<tr><td><strong>2025.12.1</strong></td><td>豆包手機技術預覽版首次亮相（努比亞 M153 工程機）</td></tr>
+<tr><td><strong>2025.12 末</strong></td><td>工程機 3499 元開售，3 萬台當日售罄，閒魚炒到 3.6 萬元</td></tr>
+<tr><td><strong>2026.1</strong></td><td>與主流應用廠商談判（曹操出行、地圖）</td></tr>
+<tr><td><strong>2026.5</strong></td><td>工信部《人工智能終端智能化分級》（GB/Z 177—2026）</td></tr>
+<tr><td><strong>2026.6</strong></td><td>豆包推出專業版（68/200/500 元套餐）</td></tr>
+<tr><td><strong>2026.9.14</strong></td><td><strong>消費者版本正式發布 + SAEP 協議</strong></td></tr>
+<tr><td><strong>2026.9.16</strong></td><td><strong>努比亞 NaviX Ultra 開售</strong></td></tr>
+</tbody>
+</table>
+
+<h3>「轉正」嘅含義</h3>
+<pre><code>
+工程樣機（3499 元，3 萬台）
+   ↓
+消費者版本（5999 元，20 萬台）
+   ↓
+京東預約 38 萬人
+   ↓
+正式發售
+   ↓
+「轉正」= 從極客玩具 → 普通用戶產品
+</code></pre>
+
+<hr>
+<h2>二、真相 2：兩條腿走路（GUI 兜底）</h2>
+<figure class="post-figure">
+  <img src="hany-doubao-gui-scene2.webp" alt="場景二：豆包手機用戶辦公場景 / Scene 2: Doubao phone user in office" loading="lazy" width="1024" height="576">
+  <figcaption><span class="cn">場景二：豆包手機用戶辦公場景</span><span class="en">Scene 2: Doubao phone user in office</span><br><em>圖片由 AI輔助創作（Z-Image-Turbo）</em></figcaption>
+</figure>
+
+<h3>「兩條腿」嘅技術路線</h3>
+<table class="data-table">
+<thead><tr><th>路線</th><th>現狀</th><th>適用</th></tr></thead>
+<tbody>
+<tr><td><strong>官方 API 接口</strong></td><td>已接入曹操出行、地圖</td><td>標準化服務</td></tr>
+<tr><td><strong>GUI Agent 兜底</strong></td><td>屏幕識別 + 模擬點擊</td><td>複雜任務</td></tr>
+</tbody>
+</table>
+
+<h3>「兩條腿」嘅原因</h3>
+<pre><code>
+2026 年，AI 行業競爭焦點從「大模型」轉向「Agent」
+   ↓
+可執行任務的 Agent 比 Chatbot 更有想像空間
+   ↓
+僅靠有限開發者提供 API，難以實現真正嘅「一句話操作手機」
+   ↓
+GUI Agent 兜底 = 解決 API 適配不足
+</code></pre>
+
+<h3>榮耀嘅前車之鑑</h3>
+<blockquote><strong>「榮耀一直著力推動 MCP、A2A 等協議適配，但由於開發者積極性不高，生態擴張速度十分緩慢。」</strong></blockquote>
+<p><strong>字節學到嘅教訓</strong>：</p>
+<ul>
+<li><span class="ok">✅</span> 唔可以被動等待 API 適配</li>
+<li><span class="ok">✅</span> GUI 兜底 = 現實選擇</li>
+<li><span class="ok">✅</span> <strong>「主動權留給開發者」</strong></li>
+</ul>
+
+<hr>
+<h2>三、真相 3：SAEP 協議（新秩序）</h2>
+<figure class="post-figure">
+  <img src="hany-doubao-gui-scene3.webp" alt="場景三：雙軌系統 API 接口加 GUI Agent 兜底抽象圖 / Scene 3: Dual-track API plus GUI Agent fallback" loading="lazy" width="1024" height="576">
+  <figcaption><span class="cn">場景三：雙軌系統 API 接口加 GUI Agent 兜底</span><span class="en">Scene 3: Dual-track API plus GUI Agent fallback</span><br><em>圖片由 AI輔助創作（Z-Image-Turbo）</em></figcaption>
+</figure>
+
+<h3>協議名稱</h3>
+<p><strong>SAEP（屏幕自動化操作聲明協議）</strong></p>
+
+<h3>協議核心規則</h3>
+<table class="data-table">
+<thead><tr><th>規則</th><th>說明</th></tr></thead>
+<tbody>
+<tr><td><strong>第三方應用自主聲明</strong></td><td>可拒絕全部屏幕自動化</td></tr>
+<tr><td><strong>限制具體操作</strong></td><td>可限制內容發布、刪除、簽到抽獎</td></tr>
+<tr><td><strong>拒絕即時生效</strong></td><td>被拒應用列入不可操作清單</td></tr>
+<tr><td><strong>30 天規則公示期</strong></td><td>期內只操作自帶應用 / 字節應用 / 明確同意嘅第三方</td></tr>
+</tbody>
+</table>
+
+<h3>SAEP 協議嘅意義</h3>
+<blockquote><strong>「用協議換空間，用開放換規模」</strong></blockquote>
+<p><strong>字節嘅野心</strong>：</p>
+<ul>
+<li><span class="ok">✅</span> 唔做手機硬件</li>
+<li><span class="ok">✅</span> 唔重做操作系統</li>
+<li><span class="ok">✅</span> <strong>做 Android 之上嘅「AI 操作層」</strong></li>
+</ul>
+<blockquote><strong>「如果豆包助手能成為用戶默認的系統級 AI，那它就有機會站到所有 App 的前面，成為用戶意圖的第一個入口。」</strong></blockquote>
+
+<hr>
+<h2>四、真相 4：AI 辦公養家（商業模式）</h2>
+<figure class="post-figure">
+  <img src="hany-doubao-gui-scene4.webp" alt="場景四：豆包專業版訂閱套餐示意 / Scene 4: Doubao Pro subscription tiers" loading="lazy" width="1024" height="576">
+  <figcaption><span class="cn">場景四：豆包專業版訂閱套餐示意</span><span class="en">Scene 4: Doubao Pro subscription tiers</span><br><em>圖片由 AI輔助創作（Z-Image-Turbo）</em></figcaption>
+</figure>
+
+<h3>「Agent 難以收費」嘅困境</h3>
+<blockquote><strong>「GUI Agent 需要持續識別屏幕、規劃操作路徑，每一步執行後重新判斷界面狀態，有效降低了系統延遲，但成本（Token / 算力）遠高於普通 Chatbot。」</strong></blockquote>
+<blockquote><strong>「由於用戶沒有迫切嘅提效需求，GUI Agent 難以通過向用戶收費打通商業閉環。」</strong></blockquote>
+
+<h3>「AI 辦公養家」嘅思路</h3>
+<table class="data-table">
+<thead><tr><th>維度</th><th>策略</th></tr></thead>
+<tbody>
+<tr><td><strong>技術</strong></td><td>Agent 能力</td></tr>
+<tr><td><strong>場景</strong></td><td>辦公場景（錄音 / 數據 / 內容）</td></tr>
+<tr><td><strong>收費</strong></td><td>訂閱模式（專業版）</td></tr>
+</tbody>
+</table>
+
+<h3>豆包專業版（2026.6）</h3>
+<table class="data-table">
+<thead><tr><th>套餐</th><th>價格（月）</th></tr></thead>
+<tbody>
+<tr><td><strong>標準版</strong></td><td><strong>¥68</strong></td></tr>
+<tr><td><strong>加強版</strong></td><td><strong>¥200</strong></td></tr>
+<tr><td><strong>高級版</strong></td><td><strong>¥500</strong></td></tr>
+</tbody>
+</table>
+
+<h3>「AI 辦公養家」嘅含義</h3>
+<pre><code>
+Agent 能力（GUI 兜底）
+   ↓
+辦公場景（剛需）
+   ↓
+訂閱模式（68-500 元/月）
+   ↓
+商業閉環
+   ↓
+「養家」= 可持續收入
+</code></pre>
+
+<hr>
+<h2>五、行業現狀（2026 年 = 智能體手機元年）</h2>
+
+<h3>AI 手機標準（GB/Z 177—2026）</h3>
+<table class="data-table">
+<thead><tr><th>等級</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td><strong>L1</strong></td><td>響應級</td></tr>
+<tr><td><strong>L2</strong></td><td>工具級</td></tr>
+<tr><td><strong>L3</strong></td><td>輔助級</td></tr>
+<tr><td><strong>L4</strong></td><td>協同級</td></tr>
+</tbody>
+</table>
+<p><strong>發布部門</strong>：工信部、商務部、市場監管總局</p>
+
+<h3>「全球首款」三家</h3>
+<table class="data-table">
+<thead><tr><th>公司</th><th>產品</th></tr></thead>
+<tbody>
+<tr><td><strong>榮耀</strong></td><td>智能體手機</td></tr>
+<tr><td><strong>努比亞</strong></td><td>NaviX Ultra</td></tr>
+<tr><td><strong>階躍星辰</strong></td><td>智能體手機</td></tr>
+</tbody>
+</table>
+<blockquote><strong>「三個『全球首款』同時出現，恰恰說明這個賽道，誰都能定義首款。但也說明了，行業仍處於早期。」</strong></blockquote>
+
+<h3>Counterpoint + IDC 預測</h3>
+<table class="data-table">
+<thead><tr><th>機構</th><th>預測</th></tr></thead>
+<tbody>
+<tr><td><strong>Counterpoint</strong></td><td>2026 年具備 GenAI 功能嘅智能手機將佔全球出貨量 <strong>45%</strong></td></tr>
+<tr><td><strong>IDC</strong></td><td>2026 年中國 AI 手機出貨量 <strong>1.47 億台</strong>，佔中國市場 <strong>53%</strong></td></tr>
+</tbody>
+</table>
+<blockquote><strong>業內普遍將 2026 年視為「智能體手機元年」</strong></blockquote>
+
+<hr>
+<h2>六、過去嘅「生態封殺」與今日嘅「新秩序」</h2>
+
+<h3>2025.12：一代嘅碰壁</h3>
+<pre><code>
+一代豆包手機發布
+   ↓
+AI 直接讀屏、模擬點擊操作各大 App
+   ↓
+微信 / 淘寶 / 銀行類應用集體「拉黑」
+   ↓
+核心功能被迫下線
+</code></pre>
+
+<h3>2026.9：二代嘅「敲門」</h3>
+<pre><code>
+SAEP 協議發布
+   ↓
+「先敲門，App 同意開放什麼，AI 才能做什麼」
+   ↓
+MCP / A2A 協議驅動
+   ↓
+App 選擇按標準開放能力
+   ↓
+「用協議換空間，用開放換規模」
+</code></pre>
+
+<h3>超級 App 嘅反擊</h3>
+<table class="data-table">
+<thead><tr><th>公司</th><th>產品</th></tr></thead>
+<tbody>
+<tr><td><strong>騰訊</strong></td><td>微信測試「小微」</td></tr>
+<tr><td><strong>阿里</strong></td><td>支付寶推出「阿寶」</td></tr>
+</tbody>
+</table>
+<p><strong>目的</strong>：</p>
+<ul>
+<li><span class="warn">⚠️</span> 防御性布局</li>
+<li><span class="warn">⚠️</span> 防止外部 AI 智能體架空自己嘅核心入口</li>
+</ul>
+
+<hr>
+<h2>七、用戶數據（QuestMobile 2026.6）</h2>
+<table class="data-table">
+<thead><tr><th>維度</th><th>終端廠商 AI 應用</th><th>AI 原生 App</th></tr></thead>
+<tbody>
+<tr><td><strong>月活</strong></td><td><strong>7.55 億</strong>（+14%）</td><td>4.99 億（+85.4%）</td></tr>
+<tr><td><strong>月人均使用次數</strong></td><td>51.4 次</td><td><strong>92.7 次</strong></td></tr>
+<tr><td><strong>月人均使用時長</strong></td><td>9.8 分鐘</td><td><strong>183 分鐘</strong>（+40%）</td></tr>
+<tr><td><strong>使用時長差距</strong></td><td>—</td><td><strong>18.7 倍</strong></td></tr>
+</tbody>
+</table>
+
+<h3>關鍵洞察</h3>
+<blockquote><strong>「手機廠商靠硬件預裝贏了體量，卻在使用深度上被甩開了身位。」</strong></blockquote>
+
+<hr>
+<h2>八、對鄭哥 4 大業務嘅啟示</h2>
+
+<h3>1. 電子消費品（音箱 / AI 終端）</h3>
+<p><strong>啟示</strong>：</p>
+<ul>
+<li><span class="ok">✅</span> <strong>AI 終端 = 軟件 + 協議 + 商業模式</strong></li>
+<li><span class="ok">✅</span> <strong>GUI Agent</strong> = 兜底方案</li>
+<li><span class="ok">✅</span> <strong>專業版訂閱</strong> = 商業模式</li>
+</ul>
+<p><strong>行動</strong>：</p>
+<ul>
+<li><span class="ok">✅</span> 關注 AI 終端訂閱模式</li>
+<li><span class="ok">✅</span> 準備 AI 音箱 + 大模型 + 訂閱服務</li>
+<li><span class="ok">✅</span> 印度 / 東南亞推 AI 終端 + 訂閱</li>
+</ul>
+
+<h3>2. AI 算力</h3>
+<p><strong>啟示</strong>：</p>
+<ul>
+<li><span class="ok">✅</span> <strong>端側 + 雲端</strong> = 主流</li>
+<li><span class="ok">✅</span> <strong>GUI Agent</strong> = 高算力消耗</li>
+<li><span class="ok">✅</span> <strong>混合方案</strong> = 性價比</li>
+</ul>
+<p><strong>行動</strong>：</p>
+<ul>
+<li><span class="ok">✅</span> 提供端雲混合算力</li>
+<li><span class="ok">✅</span> 關注 GUI Agent 算力需求</li>
+<li><span class="ok">✅</span> 拓展 AI Native 應用算力客戶</li>
+</ul>
+
+<h3>3. 跨境電商</h3>
+<p><strong>啟示</strong>：</p>
+<ul>
+<li><span class="ok">✅</span> <strong>AI 手機出海</strong> = 趨勢</li>
+<li><span class="ok">✅</span> <strong>訂閱服務出海</strong> = 長期</li>
+<li><span class="ok">✅</span> <strong>5999 vs 3499</strong> = 海外空間</li>
+</ul>
+<p><strong>行動</strong>：</p>
+<ul>
+<li><span class="ok">✅</span> 關注 AI 終端 + 訂閱出海</li>
+<li><span class="ok">✅</span> 印度 / 東南亞 AI 終端供應</li>
+</ul>
+
+<h3>4. 年輕人投資</h3>
+<p><strong>啟示</strong>：</p>
+<ul>
+<li><span class="ok">✅</span> <strong>字節跳動</strong> = AI 操作系統層</li>
+<li><span class="ok">✅</span> <strong>訂閱模式</strong> = 長期賽道</li>
+<li><span class="ok">✅</span> <strong>AI Native App</strong> = 月活 4.99 億</li>
+</ul>
+<p><strong>行動</strong>：</p>
+<ul>
+<li><span class="ok">✅</span> 關注字節 + 智能體手機概念股</li>
+<li><span class="ok">✅</span> 投資訂閱模式公司</li>
+<li><span class="ok">✅</span> 投資 AI Native App</li>
+</ul>
+
+<hr>
+<h2>九、70 後嘅 3 個判斷</h2>
+
+<h3>判斷 1：GUI 兜底 = 現實選擇</h3>
+<p><strong>事實</strong>：</p>
+<ul>
+<li><span class="ok">✅</span> 大模型 → Agent → GUI Agent → 落地</li>
+<li><span class="warn">⚠️</span> API 生態唔夠成熟</li>
+<li><span class="ok">✅</span> GUI = 現實路徑</li>
+</ul>
+<p><strong>70 後嘅機會</strong>：</p>
+<ul>
+<li><span class="ok">✅</span> <strong>傳統行業 + GUI Agent</strong> = 改造機會</li>
+<li><span class="ok">✅</span> <strong>傳統 App + AI</strong> = 升級機會</li>
+</ul>
+
+<h3>判斷 2：AI 辦公 = 商業化路徑</h3>
+<p><strong>事實</strong>：</p>
+<ul>
+<li><span class="ok">✅</span> Agent 難以向用戶收費</li>
+<li><span class="ok">✅</span> 辦公場景 = 剛需</li>
+<li><span class="ok">✅</span> <strong>訂閱模式</strong> = 長期</li>
+</ul>
+<p><strong>70 後嘅機會</strong>：</p>
+<ul>
+<li><span class="ok">✅</span> <strong>AI 辦公</strong> = 長期賽道</li>
+<li><span class="ok">✅</span> <strong>專業版訂閱</strong> = 商業模式</li>
+<li><span class="ok">✅</span> <strong>B 端 AI 辦公</strong> = 大客戶</li>
+</ul>
+
+<h3>判斷 3：智能體手機元年 = 2026</h3>
+<p><strong>事實</strong>：</p>
+<ul>
+<li><span class="ok">✅</span> 2026 = 「智能體手機元年」</li>
+<li><span class="ok">✅</span> 45% 全球 AI 手機佔比</li>
+<li><span class="ok">✅</span> 53% 中國 AI 手機佔比</li>
+</ul>
+<p><strong>70 後嘅機會</strong>：</p>
+<ul>
+<li><span class="ok">✅</span> <strong>AI 終端供應鏈</strong> = 長期機會</li>
+<li><span class="ok">✅</span> <strong>訂閱模式出海</strong> = 長期賽道</li>
+<li><span class="ok">✅</span> <strong>AI 辦公 B 端</strong> = 大客戶市場</li>
+</ul>
+
+<hr>
+<h2>十、結語</h2>
+<p><strong>豆包手機「轉正」嘅故事</strong>：</p>
+<pre><code>
+工程樣機（3499 元）
+   ↓
+「轉正」到消費者版本（5999 元）
+   ↓
+GUI 兜底（技術）
+   ↓
+SAEP 協議（秩序）
+   ↓
+AI 辦公養家（商業模式）
+   ↓
+智能體手機元年（2026）
+</code></pre>
+
+<p><strong>70 後嘅 3 個機會</strong>：</p>
+<blockquote><strong>1. 傳統行業 + GUI Agent</strong>（改造）</blockquote>
+<blockquote><strong>2. AI 辦公 + 訂閱模式</strong>（商業模式）</blockquote>
+<blockquote><strong>3. AI 終端 + 訂閱出海</strong>（長期）</blockquote>
+
+<p>你呢，準備好未？</p>
+
+<hr>
+
+<p>📞 <strong>合作聯繫</strong><br>
+WhatsApp: +852 6641 7912<br>
+七善門科技 · 星辰算力</p>
+
+<hr>
+
+<p><em>#豆包手機 #轉正 #GUI兜底 #AI辦公養家 #SAEP協議 #字節跳動 #努比亞NavixUltra #智能體手機元年 #訂閱模式 #70後 #跨境電商 #星辰算力 #七善門科技</em></p>
+
+    </div>
+
+    <div class="en">
+      <blockquote class="zhengge-pingdian"><strong>[ZHENG GE REVIEW]</strong> Column: Hany Blog Review</blockquote>
+      <h1>"Doubao Phone Goes Official" — GUI Fallback + AI-Office Subscriptions. A Gen-Xer's Take.</h1>
+<figure class="post-figure">
+  <img src="hany-doubao-gui-cover.webp" alt="Cover: Doubao phone GUI fallback AI office" loading="lazy" width="1024" height="576">
+  <figcaption><span class="cn">封面：豆包手機「轉正」GUI 兜底 AI 辦公養家</span><span class="en">Cover: Doubao phone "goes official" — GUI fallback plus AI office</span><br><em>Image AI-assisted (Z-Image-Turbo)</em></figcaption>
+</figure>
+<p><strong>Hany Zheng Ge · September 20, 2026</strong></p>
+<hr>
+<p>Today's news is <strong>worth a second look</strong>:</p>
+<blockquote><strong>Doubao phone "goes official": GUI fallback, AI-office as the cash cow</strong></blockquote>
+<blockquote><strong>Announced September 14; Nubia NaviX Ultra on sale September 16, starting at ¥5,999.</strong></blockquote>
+<blockquote><strong>380,000 JD reservations vs. only 200,000 units in stock.</strong></blockquote>
+<p><strong>9.5 months of waiting</strong>, <strong>from engineering prototype to consumer release</strong> — <strong>3 truths behind the Doubao phone</strong>, viewed by a Gen-X trader.</p>
+<hr>
+<h2>1. Truth 1: "Going Official" = 9.5 Months of Growth</h2>
+<figure class="post-figure">
+  <img src="hany-doubao-gui-scene1.webp" alt="Scene 1: Doubao phone GUI fallback screen recognition" loading="lazy" width="1024" height="576">
+  <figcaption><span class="cn">場景一：豆包手機 GUI 兜底屏幕識別示意</span><span class="en">Scene 1: Doubao phone GUI fallback — screen recognition</span><br><em>Image AI-assisted (Z-Image-Turbo)</em></figcaption>
+</figure>
+
+<h3>Timeline</h3>
+<table class="data-table">
+<thead><tr><th>Date</th><th>Event</th></tr></thead>
+<tbody>
+<tr><td><strong>2025-12-01</strong></td><td>Tech preview (Nubia M153 prototype)</td></tr>
+<tr><td><strong>Late 2025.12</strong></td><td>Prototype ¥3,499 — 30k sold out; resale hit ¥36k</td></tr>
+<tr><td><strong>2026.1</strong></td><td>Talks with Cao Cao Mobility, Maps</td></tr>
+<tr><td><strong>2026.5</strong></td><td>MIIT GB/Z 177—2026 (AI terminal grading)</td></tr>
+<tr><td><strong>2026.6</strong></td><td>Doubao Pro launched (¥68/¥200/¥500 tiers)</td></tr>
+<tr><td><strong>2026-09-14</strong></td><td><strong>Consumer release + SAEP protocol</strong></td></tr>
+<tr><td><strong>2026-09-16</strong></td><td><strong>Nubia NaviX Ultra on sale</strong></td></tr>
+</tbody>
+</table>
+
+<h3>What "Going Official" Means</h3>
+<pre><code>
+Prototype (¥3,499, 30k units)
+   ↓
+Consumer (¥5,999, 200k units)
+   ↓
+380k JD reservations
+   ↓
+Official sale
+   ↓
+"Official" = from geek toy → regular-user product
+</code></pre>
+
+<hr>
+<h2>2. Truth 2: Two Legs (GUI Fallback)</h2>
+<figure class="post-figure">
+  <img src="hany-doubao-gui-scene2.webp" alt="Scene 2: Doubao phone user in office" loading="lazy" width="1024" height="576">
+  <figcaption><span class="cn">場景二：豆包手機用戶辦公場景</span><span class="en">Scene 2: Doubao phone user in office</span><br><em>Image AI-assisted (Z-Image-Turbo)</em></figcaption>
+</figure>
+
+<h3>The "Two-Legged" Path</h3>
+<table class="data-table">
+<thead><tr><th>Track</th><th>State</th><th>Use</th></tr></thead>
+<tbody>
+<tr><td><strong>Official APIs</strong></td><td>Cao Cao Mobility, Maps</td><td>Standard services</td></tr>
+<tr><td><strong>GUI Agent fallback</strong></td><td>Screen recognition + simulated clicks</td><td>Complex tasks</td></tr>
+</tbody>
+</table>
+
+<h3>Why Two Legs</h3>
+<pre><code>
+2026: AI focus shifted from "LLMs" → "Agents"
+   ↓
+Action-capable Agents beat chatbots
+   ↓
+Relying on a handful of dev-provided APIs can't deliver "one sentence runs your phone"
+   ↓
+GUI Agent fallback = solves the API coverage gap
+</code></pre>
+
+<h3>Honor as Cautionary Tale</h3>
+<blockquote><strong>"Honor pushed MCP/A2A hard but the dev community didn't bite, so the ecosystem grew slowly."</strong></blockquote>
+<p><strong>ByteDance's lesson</strong>:</p>
+<ul>
+<li><span class="ok">✅</span> Don't wait passively for APIs</li>
+<li><span class="ok">✅</span> GUI fallback = pragmatic choice</li>
+<li><span class="ok">✅</span> <strong>Leave the initiative to developers</strong></li>
+</ul>
+
+<hr>
+<h2>3. Truth 3: SAEP Protocol (The New Order)</h2>
+<figure class="post-figure">
+  <img src="hany-doubao-gui-scene3.webp" alt="Scene 3: Dual-track API plus GUI Agent fallback" loading="lazy" width="1024" height="576">
+  <figcaption><span class="cn">場景三：雙軌系統 API 接口加 GUI Agent 兜底</span><span class="en">Scene 3: Dual-track API plus GUI Agent fallback</span><br><em>Image AI-assisted (Z-Image-Turbo)</em></figcaption>
+</figure>
+
+<h3>Protocol Name</h3>
+<p><strong>SAEP (Screen Automation Execution Protocol)</strong></p>
+
+<h3>Core Rules</h3>
+<table class="data-table">
+<thead><tr><th>Rule</th><th>Detail</th></tr></thead>
+<tbody>
+<tr><td><strong>Self-declaration</strong></td><td>3rd-party apps can refuse all screen automation</td></tr>
+<tr><td><strong>Restrict operations</strong></td><td>Can block publishing, deletion, check-in draws</td></tr>
+<tr><td><strong>Immediate effect</strong></td><td>Refused apps go on the no-go list</td></tr>
+<tr><td><strong>30-day notice</strong></td><td>Only pre-installed / ByteDance / opt-in apps operable</td></tr>
+</tbody>
+</table>
+
+<h3>Why SAEP Matters</h3>
+<blockquote><strong>"Trade protocols for space, trade openness for scale."</strong></blockquote>
+<p><strong>ByteDance's ambition</strong>:</p>
+<ul>
+<li><span class="ok">✅</span> No phone hardware</li>
+<li><span class="ok">✅</span> No new OS</li>
+<li><span class="ok">✅</span> <strong>Be the "AI operating layer" on top of Android</strong></li>
+</ul>
+<blockquote><strong>"If Doubao becomes the default system-level AI, it stands in front of every app — the first entry to user intent."</strong></blockquote>
+
+<hr>
+<h2>4. Truth 4: AI-Office as Cash Cow (Business Model)</h2>
+<figure class="post-figure">
+  <img src="hany-doubao-gui-scene4.webp" alt="Scene 4: Doubao Pro subscription tiers" loading="lazy" width="1024" height="576">
+  <figcaption><span class="cn">場景四：豆包專業版訂閱套餐示意</span><span class="en">Scene 4: Doubao Pro subscription tiers</span><br><em>Image AI-assisted (Z-Image-Turbo)</em></figcaption>
+</figure>
+
+<h3>The "Agent Monetization" Trap</h3>
+<blockquote><strong>"GUI Agents keep recognizing, planning, and re-evaluating screens — every step adds reasoning tokens and compute, far more than a normal chatbot."</strong></blockquote>
+<blockquote><strong>"Without urgent efficiency pressure on users, GUI Agents struggle to monetize end-user fees alone."</strong></blockquote>
+
+<h3>AI-Office Logic</h3>
+<table class="data-table">
+<thead><tr><th>Pillar</th><th>Strategy</th></tr></thead>
+<tbody>
+<tr><td><strong>Tech</strong></td><td>Agent capabilities</td></tr>
+<tr><td><strong>Scene</strong></td><td>Office (recording / data / content)</td></tr>
+<tr><td><strong>Revenue</strong></td><td>Subscriptions (Pro)</td></tr>
+</tbody>
+</table>
+
+<h3>Doubao Pro (2026.6)</h3>
+<table class="data-table">
+<thead><tr><th>Tier</th><th>Price / month</th></tr></thead>
+<tbody>
+<tr><td><strong>Standard</strong></td><td><strong>¥68</strong></td></tr>
+<tr><td><strong>Plus</strong></td><td><strong>¥200</strong></td></tr>
+<tr><td><strong>Premium</strong></td><td><strong>¥500</strong></td></tr>
+</tbody>
+</table>
+
+<h3>"AI-Office = Family Income"</h3>
+<pre><code>
+Agent capability (GUI fallback)
+   ↓
+Office scene (real demand)
+   ↓
+Subscription model (¥68–500/month)
+   ↓
+Business loop closed
+   ↓
+"Sustains the family" = durable revenue
+</code></pre>
+
+<hr>
+<h2>5. Industry State: 2026 = Year-One of Agent Phones</h2>
+
+<h3>AI Phone Standard (GB/Z 177—2026)</h3>
+<table class="data-table">
+<thead><tr><th>Level</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td><strong>L1</strong></td><td>Reactive</td></tr>
+<tr><td><strong>L2</strong></td><td>Tool-using</td></tr>
+<tr><td><strong>L3</strong></td><td>Assistive</td></tr>
+<tr><td><strong>L4</strong></td><td>Collaborative</td></tr>
+</tbody>
+</table>
+<p><strong>Issuers</strong>: MIIT, MOFCOM, SAMR</p>
+
+<h3>Three "World-Firsts"</h3>
+<table class="data-table">
+<thead><tr><th>Company</th><th>Product</th></tr></thead>
+<tbody>
+<tr><td><strong>Honor</strong></td><td>Agent phone</td></tr>
+<tr><td><strong>Nubia</strong></td><td>NaviX Ultra</td></tr>
+<tr><td><strong>Stepfun</strong></td><td>Agent phone</td></tr>
+</tbody>
+</table>
+<blockquote><strong>"Three 'world-firsts' at once means anyone can claim first — and the industry is still early."</strong></blockquote>
+
+<h3>Forecasts: Counterpoint + IDC</h3>
+<table class="data-table">
+<thead><tr><th>Source</th><th>Forecast</th></tr></thead>
+<tbody>
+<tr><td><strong>Counterpoint</strong></td><td>2026 GenAI-capable phones: <strong>45%</strong> of global shipments</td></tr>
+<tr><td><strong>IDC</strong></td><td>2026 China AI phone shipments: <strong>147M units (53% share)</strong></td></tr>
+</tbody>
+</table>
+<blockquote><strong>2026 is widely seen as Year-One of agent phones</strong></blockquote>
+
+<hr>
+<h2>6. Yesterday's "Ecosystem Blacklist" vs Today's New Order</h2>
+
+<h3>2025.12: Gen-1's Crash</h3>
+<pre><code>
+Gen-1 Doubao phone launches
+   ↓
+AI reads screens + simulates clicks across major apps
+   ↓
+WeChat / Taobao / banking apps blacklist it
+   ↓
+Core functions forced offline
+</code></pre>
+
+<h3>2026.9: Gen-2's "Knock Before Entering"</h3>
+<pre><code>
+SAEP protocol published
+   ↓
+"Knock first; what apps open is what AI can do"
+   ↓
+MCP / A2A driving the bus
+   ↓
+Apps choose what to open per the standard
+   ↓
+"Trade protocols for space, trade openness for scale"
+</code></pre>
+
+<h3>Super-Apps Strike Back</h3>
+<table class="data-table">
+<thead><tr><th>Company</th><th>Product</th></tr></thead>
+<tbody>
+<tr><td><strong>Tencent</strong></td><td>WeChat tests "Xiaowei"</td></tr>
+<tr><td><strong>Alibaba</strong></td><td>Alipay launches "Abao"</td></tr>
+</tbody>
+</table>
+<p><strong>Goal</strong>:</p>
+<ul>
+<li><span class="warn">⚠️</span> Defensive posture</li>
+<li><span class="warn">⚠️</span> Don't let external AI agents hollow out their entry points</li>
+</ul>
+
+<hr>
+<h2>7. User Data (QuestMobile, June 2026)</h2>
+<table class="data-table">
+<thead><tr><th>Metric</th><th>OEM AI apps</th><th>AI-native apps</th></tr></thead>
+<tbody>
+<tr><td><strong>MAU</strong></td><td><strong>755M</strong> (+14%)</td><td>499M (+85.4%)</td></tr>
+<tr><td><strong>Uses / user / month</strong></td><td>51.4</td><td><strong>92.7</strong></td></tr>
+<tr><td><strong>Time / user / month</strong></td><td>9.8 min</td><td><strong>183 min</strong> (+40%)</td></tr>
+<tr><td><strong>Time gap</strong></td><td>—</td><td><strong>18.7×</strong></td></tr>
+</tbody>
+</table>
+
+<h3>Key Insight</h3>
+<blockquote><strong>"OEMs won the install war but lost the engagement war."</strong></blockquote>
+
+<hr>
+<h2>8. Implications for My Four Businesses</h2>
+
+<h3>1. Consumer Electronics (speaker / AI terminal)</h3>
+<p><strong>Implications</strong>:</p>
+<ul>
+<li><span class="ok">✅</span> <strong>AI terminal = software + protocol + business model</strong></li>
+<li><span class="ok">✅</span> <strong>GUI Agent</strong> = fallback</li>
+<li><span class="ok">✅</span> <strong>Pro subscription</strong> = business model</li>
+</ul>
+<p><strong>Actions</strong>:</p>
+<ul>
+<li><span class="ok">✅</span> Track AI-terminal subscription patterns</li>
+<li><span class="ok">✅</span> Prep AI speaker + LLM + subscription</li>
+<li><span class="ok">✅</span> India / SEA push AI terminals + subs</li>
+</ul>
+
+<h3>2. AI Compute</h3>
+<p><strong>Implications</strong>:</p>
+<ul>
+<li><span class="ok">✅</span> <strong>Edge + cloud</strong> = mainstream</li>
+<li><span class="ok">✅</span> <strong>GUI Agent</strong> = high compute load</li>
+<li><span class="ok">✅</span> <strong>Hybrid</strong> = best $/perf</li>
+</ul>
+<p><strong>Actions</strong>:</p>
+<ul>
+<li><span class="ok">✅</span> Offer edge-cloud hybrid compute</li>
+<li><span class="ok">✅</span> Watch GUI Agent compute demand</li>
+<li><span class="ok">✅</span> Grow AI-native compute customers</li>
+</ul>
+
+<h3>3. Cross-Border E-Com</h3>
+<p><strong>Implications</strong>:</p>
+<ul>
+<li><span class="ok">✅</span> <strong>AI phone overseas</strong> = trend</li>
+<li><span class="ok">✅</span> <strong>Subscriptions overseas</strong> = long-term</li>
+<li><span class="ok">✅</span> <strong>¥5,999 vs ¥3,499</strong> = overseas margin room</li>
+</ul>
+<p><strong>Actions</strong>:</p>
+<ul>
+<li><span class="ok">✅</span> Track AI terminal + sub for export</li>
+<li><span class="ok">✅</span> Supply AI terminals to India / SEA</li>
+</ul>
+
+<h3>4. Young-Person Investing</h3>
+<p><strong>Implications</strong>:</p>
+<ul>
+<li><span class="ok">✅</span> <strong>ByteDance</strong> = AI OS layer</li>
+<li><span class="ok">✅</span> <strong>Subscription models</strong> = long-term</li>
+<li><span class="ok">✅</span> <strong>AI-native apps</strong> = 499M MAU</li>
+</ul>
+<p><strong>Actions</strong>:</p>
+<ul>
+<li><span class="ok">✅</span> Watch ByteDance + agent phone plays</li>
+<li><span class="ok">✅</span> Back subscription-model companies</li>
+<li><span class="ok">✅</span> Back AI-native apps</li>
+</ul>
+
+<hr>
+<h2>9. Three Gen-X Calls</h2>
+
+<h3>Call 1: GUI Fallback = The Realistic Choice</h3>
+<p><strong>Facts</strong>:</p>
+<ul>
+<li><span class="ok">✅</span> LLM → Agent → GUI Agent → ships</li>
+<li><span class="warn">⚠️</span> API ecosystem not mature</li>
+<li><span class="ok">✅</span> GUI = real-world path</li>
+</ul>
+<p><strong>Gen-X edge</strong>:</p>
+<ul>
+<li><span class="ok">✅</span> <strong>Traditional industries + GUI Agent</strong> = upgrade</li>
+<li><span class="ok">✅</span> <strong>Legacy apps + AI</strong> = lift</li>
+</ul>
+
+<h3>Call 2: AI-Office = The Monetization Path</h3>
+<p><strong>Facts</strong>:</p>
+<ul>
+<li><span class="ok">✅</span> Agents hard to charge end users</li>
+<li><span class="ok">✅</span> Office = real demand</li>
+<li><span class="ok">✅</span> <strong>Subscription</strong> = long-term</li>
+</ul>
+<p><strong>Gen-X edge</strong>:</p>
+<ul>
+<li><span class="ok">✅</span> <strong>AI-office</strong> = long-term play</li>
+<li><span class="ok">✅</span> <strong>Pro subscriptions</strong> = business model</li>
+<li><span class="ok">✅</span> <strong>B2B AI office</strong> = big accounts</li>
+</ul>
+
+<h3>Call 3: Year-One of Agent Phones = 2026</h3>
+<p><strong>Facts</strong>:</p>
+<ul>
+<li><span class="ok">✅</span> 2026 = Year-One</li>
+<li><span class="ok">✅</span> 45% global AI phone share</li>
+<li><span class="ok">✅</span> 53% China AI phone share</li>
+</ul>
+<p><strong>Gen-X edge</strong>:</p>
+<ul>
+<li><span class="ok">✅</span> <strong>AI terminal supply chain</strong> = long game</li>
+<li><span class="ok">✅</span> <strong>Subscriptions overseas</strong> = long track</li>
+<li><span class="ok">✅</span> <strong>B2B AI office</strong> = enterprise market</li>
+</ul>
+
+<hr>
+<h2>10. Closing</h2>
+<p><strong>The "Doubao Goes Official" story</strong>:</p>
+<pre><code>
+Prototype (¥3,499)
+   ↓
+Consumer (¥5,999)
+   ↓
+GUI fallback (engineering)
+   ↓
+SAEP protocol (order)
+   ↓
+AI-office subscriptions (business model)
+   ↓
+Year-One of agent phones (2026)
+</code></pre>
+
+<p><strong>Three Gen-X opportunities</strong>:</p>
+<blockquote><strong>1. Traditional industries + GUI Agent</strong> (upgrade)</blockquote>
+<blockquote><strong>2. AI-office + subscriptions</strong> (monetization)</blockquote>
+<blockquote><strong>3. AI terminals + subscriptions abroad</strong> (long game)</blockquote>
+
+<p>Are you ready?</p>
+
+<hr>
+
+<p>📞 <strong>Get in touch</strong><br>
+WhatsApp: +852 6641 7912<br>
+Qishanmen Tech · Star Compute</p>
+
+<hr>
+
+<p><em>#DoubaoPhone #GUIFallback #AIOfficeSubscriptions #SAEP #ByteDance #NubiaNavixUltra #AgentPhoneYearOne #Subscriptions #GenXer #CrossBorderEcom #StarCompute #QishanmenTech</em></p>
+
+    </div>
+  </article>
+
+  <footer>
+    <div class="container">
+      <p class="cn">© 2026 鄭哥 / Hany · 七善門科技 · 星辰算力 · 香港旺角 · 講真話，唔講廢話</p>
+      <p class="en">© 2026 Hany · Qishanmen Tech · Star Compute · Mong Kok, HK · Straight talk, no BS</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleLang() {
+      document.body.classList.toggle('show-en');
+      const btn = document.getElementById('langBtn');
+      btn.textContent = document.body.classList.contains('show-en') ? '中' : 'EN';
+      localStorage.setItem('lang', document.body.classList.contains('show-en') ? 'en' : 'cn');
+    }
+    if (localStorage.getItem('lang') === 'en') {
+      document.body.classList.add('show-en');
+      document.getElementById('langBtn').textContent = '中';
+    }
+  </script>
+</body>
+</html>
