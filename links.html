@@ -16,7 +16,7 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang HK", "Microsoft YaHei", sans-serif; color: #333; background: #f8f9fa; line-height: 1.6; }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
 
     /* 导航 */
     nav { background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.08); position: sticky; top: 0; z-index: 100; }
@@ -29,46 +29,54 @@
 
     /* Hero */
     .hero { background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%); color: #fff; padding: 80px 0 60px; text-align: center; }
-    .hero h1 { font-size: 2.4rem; margin-bottom: 16px; font-weight: 700; }
-    .hero p { font-size: 1.1rem; opacity: 0.75; max-width: 560px; margin: 0 auto; }
+    .hero h1 { font-size: 2.4rem; margin-bottom: 12px; font-weight: 700; }
+    .hero .hero-sub { font-size: 1.05rem; opacity: 0.7; margin-bottom: 24px; }
+    .hero p { font-size: 1rem; opacity: 0.65; max-width: 600px; margin: 0 auto; line-height: 1.8; }
 
     /* 区块 */
     .section { padding: 60px 0; }
-    .section-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 12px; text-align: center; }
-    .section-sub { text-align: center; color: #888; margin-bottom: 40px; font-size: 0.95rem; }
+    .section-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; color: #1a1a2e; }
+    .section-desc { color: #888; font-size: 0.92rem; margin-bottom: 32px; line-height: 1.7; }
 
     /* Email 订阅 */
-    .email-card { max-width: 560px; margin: 0 auto; background: #fff; border-radius: 16px; padding: 40px; box-shadow: 0 4px 20px rgba(0,0,0,.06); text-align: center; }
-    .email-card h3 { font-size: 1.2rem; margin-bottom: 8px; }
-    .email-card p { color: #888; font-size: 0.9rem; margin-bottom: 24px; }
-    .email-form { display: flex; gap: 12px; }
-    .email-form input { flex: 1; padding: 12px 16px; border: 1px solid #e0e0e0; border-radius: 8px; font-size: 0.95rem; outline: none; transition: border-color .2s; }
-    .email-form input:focus { border-color: #c41e3a; }
-    .email-form button { padding: 12px 28px; background: #c41e3a; color: #fff; border: none; border-radius: 8px; font-size: 0.95rem; cursor: pointer; transition: background .2s; }
-    .email-form button:hover { background: #a31830; }
+    .email-card { background: #fff; border-radius: 16px; padding: 40px; box-shadow: 0 2px 12px rgba(0,0,0,.05); text-align: center; }
+    .email-card p { color: #666; font-size: 0.95rem; margin-bottom: 24px; line-height: 1.7; }
+    .email-input { width: 100%; padding: 14px 18px; border: 1px solid #e0e0e0; border-radius: 10px; font-size: 0.95rem; outline: none; transition: border-color .2s; margin-bottom: 16px; }
+    .email-input:focus { border-color: #c41e3a; }
+    .subscribe-btn { width: 100%; padding: 14px; background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%); color: #fff; border: none; border-radius: 10px; font-size: 1rem; cursor: pointer; transition: all .2s; font-weight: 500; }
+    .subscribe-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(26,26,46,.3); }
+    .email-note { font-size: 0.82rem; color: #999; margin-top: 16px; }
 
     /* 社媒卡片 */
-    .social-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
-    .social-card { background: #fff; border-radius: 12px; padding: 32px 28px; box-shadow: 0 2px 8px rgba(0,0,0,.04); transition: all .3s ease; text-decoration: none; color: inherit; display: block; }
-    .social-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,.1); }
-    .social-icon { font-size: 2.5rem; margin-bottom: 16px; }
-    .social-card h3 { font-size: 1.1rem; margin-bottom: 8px; color: #1a1a2e; }
-    .social-card p { font-size: 0.88rem; color: #888; line-height: 1.6; }
+    .social-list { display: flex; flex-direction: column; gap: 20px; }
+    .social-card { background: #fff; border-radius: 16px; padding: 28px; box-shadow: 0 2px 8px rgba(0,0,0,.04); transition: all .3s ease; display: flex; gap: 20px; align-items: flex-start; }
+    .social-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.08); }
+    .social-icon { font-size: 2.5rem; flex-shrink: 0; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; background: #f8f9fa; border-radius: 12px; }
+    .social-content { flex: 1; }
+    .social-name { font-size: 1.15rem; font-weight: 700; color: #1a1a2e; margin-bottom: 2px; }
+    .social-name-en { font-size: 0.85rem; color: #aaa; margin-bottom: 10px; }
+    .social-desc { font-size: 0.9rem; color: #666; line-height: 1.7; margin-bottom: 16px; }
+    .social-buttons { display: flex; gap: 10px; }
+    .btn { padding: 10px 20px; border-radius: 8px; font-size: 0.88rem; text-decoration: none; transition: all .2s; font-weight: 500; }
+    .btn-primary { background: #c41e3a; color: #fff; }
+    .btn-primary:hover { background: #a31830; }
+    .btn-secondary { background: #f5f5f7; color: #333; border: 1px solid #e0e0e0; }
+    .btn-secondary:hover { background: #eee; }
 
     /* 联系邮箱 */
-    .contact-box { text-align: center; padding: 40px; background: #fff; border-radius: 16px; margin-top: 40px; }
-    .contact-box h3 { font-size: 1.1rem; margin-bottom: 12px; }
+    .contact-box { text-align: center; padding: 40px; background: #fff; border-radius: 16px; margin-top: 40px; box-shadow: 0 2px 8px rgba(0,0,0,.04); }
+    .contact-box h3 { font-size: 1.1rem; margin-bottom: 12px; color: #1a1a2e; }
     .contact-box a { color: #c41e3a; text-decoration: none; font-size: 1.05rem; }
     .contact-box a:hover { text-decoration: underline; }
 
     /* Footer */
-    footer { background: #1a1a2e; color: rgba(255,255,255,0.6); padding: 32px 0; text-align: center; font-size: 0.85rem; }
+    footer { background: #1a1a2e; color: rgba(255,255,255,0.6); padding: 32px 0; text-align: center; font-size: 0.85rem; margin-top: 60px; }
 
     /* 响应式 */
     @media (max-width: 768px) {
         .hero h1 { font-size: 1.8rem; }
-        .email-form { flex-direction: column; }
-        .social-grid { grid-template-columns: 1fr; }
+        .social-card { flex-direction: column; gap: 12px; }
+        .social-buttons { flex-direction: column; }
         .nav-links { gap: 16px; font-size: 0.85rem; }
     }
   </style>
@@ -91,72 +99,110 @@
 
   <section class="hero">
     <div class="container">
-      <h1>連結與訂閱</h1>
-      <p>外貿老炮兒點評、跨境電商乾貨——26 年行業經驗，真實案例，唔講空話。</p>
+      <h1>🔗 連結與訂閱</h1>
+      <p class="hero-sub">Links & Subscribe · Stay Connected with Hany</p>
+      <p>每週一封 Email，整理本週外貿點評、跨境電商乾貨、行業動向。<br>唔會轟炸，只揀最值得睇嘅。</p>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <h2 class="section-title">Email 訂閱</h2>
-      <p class="section-sub">收到新文章第一時間通知你</p>
-
       <div class="email-card">
-        <h3>訂閱鄭哥博客</h3>
-        <p>每週 2-3 篇，外貿、跨境電商、AI 工具點評</p>
-        <form class="email-form">
-          <input type="email" placeholder="輸入你的 Email 地址">
-          <button type="submit">訂閱</button>
-        </form>
+        <p>每週一封 email，整理本週外貿點評、跨境電商乾貨、行業動向。<br>唔會轟炸，只揀最值得睇嘅。</p>
+        <input type="email" class="email-input" placeholder="你嘅 email">
+        <button class="subscribe-btn">訂閱</button>
+        <p class="email-note">🔒 唔會出售你嘅 email，可以隨時退訂</p>
       </div>
     </div>
   </section>
 
   <section class="section" style="background: #fff;">
     <div class="container">
-      <h2 class="section-title">社媒平台</h2>
-      <p class="section-sub">跟住鄭哥，多平台睇唔同角度</p>
+      <h2 class="section-title">📌 按轉化價值排序</h2>
+      <p class="section-desc">Email 最直接（直達收件箱，唔受演算法影響）；小紅書同 YouTube 適合睇圖文同視頻；LinkedIn 界 B2B 行業；Facebook/Instagram 適合海外華人；X 即時熱點。</p>
 
-      <div class="social-grid">
-        <a href="xhs.html" class="social-card">
+      <div class="social-list">
+        <div class="social-card">
           <div class="social-icon">📕</div>
-          <h3>小紅書</h3>
-          <p>短版精華——圖文筆記、乾貨總結，手機隨手睇。</p>
-        </a>
+          <div class="social-content">
+            <div class="social-name">小紅書</div>
+            <div class="social-name-en">Xiaohongshu / RED</div>
+            <div class="social-desc">短版精華——圖文筆記、乾貨總結，手機隨手睇。</div>
+            <div class="social-buttons">
+              <a href="xhs.html" class="btn btn-primary">查看同步頁</a>
+              <a href="https://xiaohongshu.com" class="btn btn-secondary" target="_blank">去主頁</a>
+            </div>
+          </div>
+        </div>
 
-        <a href="https://youtube.com/@hany" class="social-card" target="_blank">
+        <div class="social-card">
           <div class="social-icon">📺</div>
-          <h3>YouTube</h3>
-          <p>視頻版點評——行業事件深度分析，廣東話為主。</p>
-        </a>
+          <div class="social-content">
+            <div class="social-name">YouTube</div>
+            <div class="social-name-en">YouTube</div>
+            <div class="social-desc">5-15 分鐘中長視頻——行業點評、案例分析，廣東話為主。</div>
+            <div class="social-buttons">
+              <a href="https://youtube.com/@hany" class="btn btn-primary" target="_blank">查看同步頁</a>
+              <a href="https://youtube.com" class="btn btn-secondary" target="_blank">去主頁</a>
+            </div>
+          </div>
+        </div>
 
-        <a href="https://linkedin.com/in/hany" class="social-card" target="_blank">
+        <div class="social-card">
           <div class="social-icon">💼</div>
-          <h3>LinkedIn</h3>
-          <p>職場版——外貿人脈、行業觀察，國際化視角。</p>
-        </a>
+          <div class="social-content">
+            <div class="social-name">LinkedIn</div>
+            <div class="social-name-en">LinkedIn</div>
+            <div class="social-desc">B2B 行業——外貿人脈、職場觀察，國際化視角。</div>
+            <div class="social-buttons">
+              <a href="https://linkedin.com/in/hany" class="btn btn-primary" target="_blank">查看同步頁</a>
+              <a href="https://linkedin.com" class="btn btn-secondary" target="_blank">去主頁</a>
+            </div>
+          </div>
+        </div>
 
-        <a href="https://facebook.com/hany" class="social-card" target="_blank">
+        <div class="social-card">
           <div class="social-icon">📘</div>
-          <h3>Facebook</h3>
-          <p>海外版——跨文化交流、國際客戶互動。</p>
-        </a>
+          <div class="social-content">
+            <div class="social-name">Facebook</div>
+            <div class="social-name-en">Facebook</div>
+            <div class="social-desc">海外華人——跨文化交流、國際客戶互動。</div>
+            <div class="social-buttons">
+              <a href="https://facebook.com/hany" class="btn btn-primary" target="_blank">查看同步頁</a>
+              <a href="https://facebook.com" class="btn btn-secondary" target="_blank">去主頁</a>
+            </div>
+          </div>
+        </div>
 
-        <a href="https://x.com/hany" class="social-card" target="_blank">
+        <div class="social-card">
           <div class="social-icon">🐦</div>
-          <h3>X (Twitter)</h3>
-          <p>即時點評——熱點事件快評，實時行業動態。</p>
-        </a>
+          <div class="social-content">
+            <div class="social-name">X (Twitter)</div>
+            <div class="social-name-en">X / Twitter</div>
+            <div class="social-desc">即時熱點——行業事件快評，實時動態。</div>
+            <div class="social-buttons">
+              <a href="https://x.com/hany" class="btn btn-primary" target="_blank">查看同步頁</a>
+              <a href="https://x.com" class="btn btn-secondary" target="_blank">去主頁</a>
+            </div>
+          </div>
+        </div>
 
-        <a href="https://instagram.com/hany" class="social-card" target="_blank">
+        <div class="social-card">
           <div class="social-icon">📸</div>
-          <h3>Instagram</h3>
-          <p>生活版——工作日常、出差所見，真實外貿人生。</p>
-        </a>
+          <div class="social-content">
+            <div class="social-name">Instagram</div>
+            <div class="social-name-en">Instagram</div>
+            <div class="social-desc">生活版——工作日常、出差所見，真實外貿人生。</div>
+            <div class="social-buttons">
+              <a href="https://instagram.com/hany" class="btn btn-primary" target="_blank">查看同步頁</a>
+              <a href="https://instagram.com" class="btn btn-secondary" target="_blank">去主頁</a>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="contact-box">
-        <h3>直接聯絡鄭哥</h3>
+        <h3>📧 直接聯絡鄭哥</h3>
         <p style="margin-bottom:12px; color:#888; font-size:0.9rem;">有合作、諮詢、交流，隨時 Email</p>
         <a href="mailto:glomarket@agent.qq.com">glomarket@agent.qq.com</a>
       </div>
