@@ -1,1016 +1,1012 @@
 <!DOCTYPE html>
+
 <html lang="zh-HK">
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
+
   <!-- ===== SEO ===== -->
+
   <title>小紅書同步 | 鄭哥 Hany 26年外貿故事</title>
+
   <meta name="description" content="鄭哥Hany嘅小紅書帳號同步內容：每篇獨立站文章都會自動生成小紅書版本，含標題選項、封面鉤子、Hook文案、Hashtag。26年外貿真實故事、外貿創業、奢侈品生意、跨境電商。">
+
   <meta name="keywords" content="鄭哥Hany, 小紅書, 外貿故事, 創業, 外貿老兵, 26年外貿, 跨境電商, 紐約設計師, 非洲女客">
+
   <meta name="author" content="鄭哥 Hany">
+
   <link rel="canonical" href="https://hany-blog.vercel.app/xhs.html">
+
   <link rel="alternate" hreflang="zh-HK" href="https://hany-blog.vercel.app/xhs.html">
+
   <link rel="alternate" hreflang="en" href="https://hany-blog.vercel.app/xhs-en.html">
 
+
+
   <!-- Open Graph -->
+
   <meta property="og:type" content="website">
+
   <meta property="og:title" content="小紅書同步 | 鄭哥 Hany 26年外貿故事">
+
   <meta property="og:description" content="每篇獨立站文章都有小紅書版本 — 標題選項、封面鉤子、Hook、Hashtag 一應俱全。">
+
   <meta property="og:url" content="https://hany-blog.vercel.app/xhs.html">
+
   <meta property="og:image" content="https://hany-blog.vercel.app/hany-portrait.webp">
 
+
+
   <!-- Twitter Card -->
+
   <meta name="twitter:card" content="summary_large_image">
+
   <meta name="twitter:title" content="小紅書同步 | 鄭哥 Hany">
+
   <meta name="twitter:description" content="獨立站文章 + 小紅書版本 一體化">
 
+
+
   <!-- Schema.org -->
+
   <script type="application/ld+json">
+
   {
+
     "@context": "https://schema.org",
+
     "@type": "WebPage",
+
     "name": "小紅書同步 | 鄭哥 Hany",
+
     "description": "獨立站文章同小紅書文案嘅對應表，每篇都含標題選項、Hook、Hashtag。",
+
     "url": "https://hany-blog.vercel.app/xhs.html",
+
     "inLanguage": "zh-HK",
+
     "isPartOf": {
+
       "@type": "WebSite",
+
       "name": "鄭哥 Hany 個人網站",
+
       "url": "https://hany-blog.vercel.app"
+
     },
+
     "author": {
+
       "@type": "Person",
+
       "name": "鄭哥 Hany",
+
       "alternateName": "Hany",
+
       "url": "https://hany-blog.vercel.app/about.html"
+
     }
+
   }
+
   </script>
+
+
 
     <link rel="icon" type="image/webp" href="hany-portrait.webp">
 
-  <style>
-:root {
-  --bg: #ffffff;
-  --fg: #1a1a1a;
-  --muted: #555;
-  --soft: #888;
-  --border: #e8e8e8;
-  --bg-soft: #fafafa;
-  --accent: #1e6bb8;
-  --accent-light: #eef3fa;
-  --accent-hover: #14518c;
-  --green: #25d366;
-  --gold: #f0c040;
-  --gold-bg: #fffbf0;
-  --font-zh: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: var(--font-zh);
-  background: var(--bg);
-  color: var(--fg);
-  line-height: 1.6;
-  font-size: 15px;
-  -webkit-font-smoothing: antialiased;
-}
-a { color: var(--accent); text-decoration: none; transition: color 0.15s; }
-a:hover { color: var(--accent-hover); }
-img { max-width: 100%; height: auto; display: block; }
 
-/* ===== 顶部导航（紧凑） ===== */
-.nav {
-  border-bottom: 1px solid var(--border);
-  padding: 10px 4vw;
-  background: rgba(255,255,255,0.96);
-  backdrop-filter: blur(12px);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-.nav-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-.brand {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--fg);
-  flex-shrink: 0;
-}
-.brand:hover { color: var(--accent); text-decoration: none; }
-.nav-search {
-  flex: 1;
-  max-width: 220px;
-  margin: 0 6px;
-}
-.nav-search input {
-  width: 100%;
-  padding: 5px 12px;
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  font-family: inherit;
-  font-size: 0.85rem;
-  background: var(--bg-soft);
-}
-.nav-search input:focus {
-  outline: none;
-  border-color: var(--accent);
-  background: #fff;
-}
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 14px;
-}
-.nav-links a {
-  color: var(--muted);
-  font-size: 0.88rem;
-  white-space: nowrap;
-}
-.nav-links a:hover, .nav-links a.active {
-  color: var(--accent);
-  font-weight: 600;
-  text-decoration: none;
-}
 
-/* ===== Container（紧凑） ===== */
-.container {
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 0 4vw;
-}
+      /* ===== 小紅書頁專用樣式 ===== */
+    .xhs-hero{
+      background:linear-gradient(135deg,#ff2442 0%,#ff5860 100%);
+      color:#fff;
+      padding:60px 0 50px;
+      text-align:center;
+    }
+    .xhs-hero h1{font-size:2.4rem;font-weight:700;margin-bottom:12px}
+    .xhs-hero .en{opacity:.85;font-size:1.05rem;margin-bottom:24px}
+    .xhs-hero .stats{display:flex;justify-content:center;gap:40px;margin-top:32px;flex-wrap:wrap}
+    .xhs-hero .stat{text-align:center}
+    .xhs-hero .stat-num{font-size:2rem;font-weight:700;display:block}
+    .xhs-hero .stat-label{font-size:.85rem;opacity:.9}
 
-/* ===== Hero（紧凑） ===== */
-.hero {
-  padding: 24px 0 20px;
-  text-align: center;
-  background: linear-gradient(180deg, var(--bg-soft) 0%, #fff 100%);
-  border-bottom: 1px solid var(--border);
-}
-.hero-tag {
-  display: inline-block;
-  font-size: 0.8rem;
-  color: var(--muted);
-  background: #fff;
-  padding: 3px 12px;
-  border-radius: 14px;
-  margin-bottom: 10px;
-  border: 1px solid var(--border);
-}
-.hero h1 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-  letter-spacing: -0.3px;
-}
-.hero .tagline {
-  font-size: 0.95rem;
-  color: var(--muted);
-  max-width: 580px;
-  margin: 0 auto 16px;
-  line-height: 1.6;
-}
-.hero-quote {
-  font-size: 0.92rem;
-  color: var(--fg);
-  max-width: 540px;
-  margin: 0 auto 16px;
-  padding: 10px 18px;
-  background: var(--accent-light);
-  border-left: 3px solid var(--accent);
-  border-radius: 0 6px 6px 0;
-}
-.hero-cta {
-  display: inline-flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.cta-primary, .cta-secondary {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  padding: 8px 18px;
-  border-radius: 18px;
-  font-weight: 600;
-  font-size: 0.88rem;
-}
-.cta-primary {
-  background: var(--accent);
-  color: #fff !important;
-}
-.cta-primary:hover {
-  background: var(--accent-hover);
-  text-decoration: none;
-  color: #fff !important;
-}
-.cta-secondary {
-  background: #fff;
-  color: var(--accent) !important;
-  border: 1px solid var(--accent);
-}
-.cta-secondary:hover {
-  background: var(--accent-light);
-  text-decoration: none;
-}
+    .xhs-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+      gap:24px;
+      margin:32px 0;
+    }
 
-/* ===== About Header（紧凑 + 小头像） ===== */
-header.about-hero {
-  background: linear-gradient(180deg, var(--bg-soft) 0%, #fff 100%);
-  border-bottom: 1px solid var(--border);
-}
-header.about-hero .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 24px 4vw 20px;
-}
-.portrait {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-bottom: 14px;
-  border: 2px solid #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-}
-.portrait img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-header.about-hero h1 {
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-header.about-hero .container > p {
-  font-size: 0.92rem;
-  color: var(--muted);
-  max-width: 540px;
-  line-height: 1.6;
-}
+    .xhs-card{
+      display:flex;
+      flex-direction:column;
+      background:#fff;
+      border:1px solid #e8e8ed;
+      border-radius:12px;
+      overflow:hidden;
+      transition:all .3s ease;
+    }
+    .xhs-card:hover{
+      box-shadow:0 4px 12px rgba(0,0,0,.08);
+      transform:translateY(-2px);
+    }
 
-/* ===== Stats 区（紧凑 4 列） ===== */
-.stats-section {
-  padding: 22px 0;
-  border-bottom: 1px solid var(--border);
-}
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-}
-.stat-item {
-  text-align: center;
-  padding: 14px 8px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: #fff;
-  transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
-}
-.stat-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-  border-color: var(--accent);
-}
-.stat-item h3 {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: var(--accent);
-  margin-bottom: 3px;
-  line-height: 1;
-}
-.stat-label {
-  font-size: 0.82rem;
-  color: var(--muted);
-}
+    .xhs-cover{
+      width:100%;
+      aspect-ratio:16/9;
+      overflow:hidden;
+      background:#f5f5f7;
+    }
+    .xhs-cover img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
 
-/* ===== Section（紧凑） ===== */
-.section {
-  padding: 32px 0;
-  border-bottom: 1px solid var(--border);
-}
-.section-alt { background: var(--bg-soft); }
-.section-header {
-  text-align: center;
-  margin-bottom: 20px;
-}
-.section-header h2 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-.section-header p {
-  color: var(--muted);
-  font-size: 0.88rem;
-}
+    .xhs-meta{
+      padding:16px;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
 
-/* ===== 3 列卡片（紧凑） ===== */
-.cards-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-}
-.card {
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  overflow: hidden;
-  background: #fff;
-  transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
-}
-.card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
-  border-color: var(--accent);
-}
-.card-img {
-  width: 100%;
-  height: 130px;
-  object-fit: cover;
-  background: var(--bg-soft);
-}
-.card-body {
-  padding: 12px 16px 16px;
-}
-.card-body h3 {
-  font-size: 0.98rem;
-  font-weight: 600;
-  margin-bottom: 4px;
-}
-.card-body p {
-  font-size: 0.85rem;
-  color: var(--muted);
-  line-height: 1.5;
-}
+    .xhs-title{
+      font-size:1rem;
+      font-weight:600;
+      color:#1a1a2e;
+      line-height:1.4;
+      margin:0;
+    }
 
-/* ===== Timeline（紧凑） ===== */
-.timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  max-width: 700px;
-  margin: 0 auto;
-}
-.t-item {
-  padding: 10px 0;
-  border-bottom: 1px solid var(--border);
-}
-.t-item:last-child { border-bottom: none; }
-.t-year {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--accent);
-  margin-bottom: 4px;
-}
-.t-content p {
-  margin-bottom: 6px;
-  line-height: 1.6;
-  font-size: 0.92rem;
-}
-.highlight {
-  background: var(--accent-light);
-  border-left: 3px solid var(--accent);
-  padding: 8px 12px;
-  margin: 8px 0;
-  border-radius: 0 4px 4px 0;
-  font-size: 0.9rem;
-}
-.tag {
-  display: inline-block;
-  font-size: 0.75rem;
-  background: #f5f5f5;
-  color: var(--muted);
-  padding: 2px 8px;
-  border-radius: 4px;
-  margin: 2px 4px 2px 0;
-}
+    .xhs-date{
+      font-size:.85rem;
+      color:#888;
+      margin:0;
+    }
 
-/* ===== Achieve Grid（紧凑） ===== */
-.achieve-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 14px;
-}
-.achieve-card {
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  overflow: hidden;
-  background: #fff;
-  transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
-}
-.achieve-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.05);
-  border-color: var(--accent);
-}
-.achieve-year {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--accent);
-  padding: 8px 12px 0;
-}
-.achieve-card img {
-  width: 100%;
-  height: 130px;
-  object-fit: cover;
-}
-.img-caption {
-  font-size: 0.75rem;
-  color: var(--soft);
-  padding: 4px 12px 0;
-  text-align: center;
-}
-.achieve-card h4 {
-  font-size: 0.95rem;
-  font-weight: 600;
-  padding: 6px 12px 0;
-}
-.achieve-card p {
-  font-size: 0.85rem;
-  color: var(--muted);
-  padding: 4px 12px 10px;
-  line-height: 1.5;
-}
-.badge-first {
-  display: inline-block;
-  font-size: 0.72rem;
-  background: var(--accent-light);
-  color: var(--accent);
-  font-weight: 600;
-  padding: 2px 8px;
-  margin: 0 12px 12px;
-  border-radius: 4px;
-}
+    .xhs-buttons{
+      display:flex;
+      gap:8px;
+      margin-top:8px;
+    }
 
-/* ===== Note Card ===== */
-.note-card {
-  background: var(--gold-bg);
-  border: 1px solid #f5e6c5;
-  border-left: 4px solid var(--gold);
-  border-radius: 6px;
-  padding: 14px 18px;
-  margin: 16px 0;
-}
-.note-card h4 {
-  font-size: 0.92rem;
-  font-weight: 700;
-  margin-bottom: 4px;
-}
-.note-card p {
-  color: var(--muted);
-  font-size: 0.88rem;
-  line-height: 1.6;
-}
+    .xhs-btn{
+      flex:1;
+      padding:8px 12px;
+      border-radius:6px;
+      font-size:.85rem;
+      text-align:center;
+      border:none;
+      cursor:pointer;
+      text-decoration:none;
+      transition:all .2s ease;
+    }
+    .xhs-btn-primary{background:#1a1a2e;color:#fff}
+    .xhs-btn-primary:hover{background:#e94560}
+    .xhs-btn-secondary{background:#f5f5f7;color:#1a1a2e;border:1px solid #e8e8ed}
+    .xhs-btn-secondary:hover{background:#fff5f5;border-color:#e94560;color:#e94560}
 
-/* ===== Post List（紧凑） ===== */
-.post-list {
-  display: flex;
-  flex-direction: column;
-}
-.post-card {
-  border-bottom: 1px solid var(--border);
-  padding: 16px 0;
-  transition: background 0.15s;
-}
-.post-card:hover { background: var(--bg-soft); }
-.post-card:first-child { padding-top: 0; }
-.post-card:last-child { border-bottom: none; }
-.post-meta-top {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 6px;
-  font-size: 0.78rem;
-  flex-wrap: wrap;
-}
-.post-date { color: var(--soft); }
-.post-tag {
-  background: var(--accent-light);
-  color: var(--accent);
-  padding: 1px 8px;
-  border-radius: 4px;
-  font-weight: 500;
-}
-.post-card h2 {
-  font-size: 1.05rem;
-  font-weight: 700;
-  line-height: 1.4;
-  margin-bottom: 6px;
-}
-.post-card h2 a { color: var(--fg); }
-.post-card h2 a:hover { color: var(--accent); text-decoration: none; }
-.post-excerpt {
-  color: var(--muted);
-  font-size: 0.88rem;
-  line-height: 1.5;
-  margin-bottom: 6px;
-}
-.read-more {
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--accent);
-}
+    @media (max-width:640px){
+      .xhs-grid{grid-template-columns:1fr;gap:16px}
+    }
 
-/* ===== CTA Section ===== */
-.cta-section {
-  background: linear-gradient(135deg, var(--accent-light) 0%, #fff 100%);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 24px 20px;
-  text-align: center;
-  margin: 20px 0;
-}
-.cta-section h2 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-.cta-section p {
-  color: var(--muted);
-  font-size: 0.9rem;
-  margin: 0 auto 14px;
-  max-width: 480px;
-}
+    /* ===== 小紅書頁專用樣式 ===== */
+    .xhs-hero{
+      background:linear-gradient(135deg,#ff2442 0%,#ff5860 100%);
+      color:#fff;
+      padding:60px 0 50px;
+      text-align:center;
+    }
+    .xhs-hero h1{font-size:2.4rem;font-weight:700;margin-bottom:12px}
+    .xhs-hero .en{opacity:.85;font-size:1.05rem;margin-bottom:24px}
+    .xhs-hero .stats{display:flex;justify-content:center;gap:40px;margin-top:32px;flex-wrap:wrap}
+    .xhs-hero .stat{text-align:center}
+    .xhs-hero .stat-num{font-size:2rem;font-weight:700;display:block}
+    .xhs-hero .stat-label{font-size:.85rem;opacity:.9}
 
-/* ===== WhatsApp 按钮 ===== */
-.wa-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: var(--green);
-  color: #fff !important;
-  padding: 8px 20px;
-  border-radius: 18px;
-  font-weight: 600;
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: background 0.18s;
-}
-.wa-btn:hover {
-  background: #128c4f;
-  text-decoration: none;
-}
+    .xhs-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+      gap:24px;
+      margin:32px 0;
+    }
 
-/* ===== Links Page（紧凑） ===== */
-.links-page {
-  max-width: 560px;
-  margin: 0 auto;
-  padding: 24px 4vw;
-}
-.links-hero {
-  text-align: center;
-  margin-bottom: 20px;
-}
-.links-hero h1 {
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-.links-sub {
-  font-size: 0.88rem;
-  color: var(--muted);
-}
-.links-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.links-card {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 12px 14px;
-  text-decoration: none;
-  color: inherit;
-  transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
-}
-.links-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(0,0,0,0.05);
-  border-color: var(--accent);
-}
-.links-icon {
-  flex-shrink: 0;
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  color: #fff;
-  font-weight: 700;
-}
-.links-body { flex: 1; min-width: 0; }
-.links-card h3 {
-  font-size: 0.95rem;
-  font-weight: 600;
-  margin-bottom: 1px;
-}
-.links-en {
-  font-size: 0.75rem;
-  color: var(--soft);
-  margin-bottom: 1px;
-}
-.links-desc {
-  font-size: 0.82rem;
-  color: var(--muted);
-}
-.links-arrow {
-  color: var(--soft);
-  font-size: 1rem;
-  transition: transform 0.18s, color 0.18s;
-}
-.links-card:hover .links-arrow {
-  transform: translateX(3px);
-  color: var(--accent);
-}
-.links-cta {
-  text-align: center;
-  margin-top: 20px;
-  padding: 14px;
-  background: var(--bg-soft);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-}
-.links-cta p { font-size: 0.88rem; color: var(--muted); }
-.links-cta a { color: var(--accent); font-weight: 600; }
+    .xhs-card{
+      display:flex;
+      flex-direction:column;
+      background:#fff;
+      border:1px solid #e8e8ed;
+      border-radius:12px;
+      overflow:hidden;
+      transition:all .3s ease;
+    }
+    .xhs-card:hover{
+      box-shadow:0 4px 12px rgba(0,0,0,.08);
+      transform:translateY(-2px);
+    }
 
-/* ===== Footer ===== */
-.footer {
-  border-top: 1px solid var(--border);
-  padding: 18px 4vw;
-  background: var(--bg-soft);
-  text-align: center;
-  color: var(--soft);
-  font-size: 0.82rem;
-}
-.footer p { margin: 3px 0; }
-.footer a { color: var(--accent); }
+    .xhs-cover{
+      width:100%;
+      aspect-ratio:16/9;
+      overflow:hidden;
+      background:#f5f5f7;
+    }
+    .xhs-cover img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
 
-/* ===== 隐藏双语 ===== */
-.cn, .en { display: none !important; }
+    .xhs-meta{
+      padding:16px;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
 
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-  .nav-search { display: none; }
-  .nav-links { display: none; }
-  .hero h1 { font-size: 1.3rem; }
-  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
-  .stat-item h3 { font-size: 1.4rem; }
-  .cards-3 { grid-template-columns: 1fr; }
-  .post-card h2 { font-size: 0.98rem; }
-  .portrait { width: 90px; height: 90px; }
-  .achieve-grid { grid-template-columns: 1fr; }
-}
-</style>
+    .xhs-title{
+      font-size:1rem;
+      font-weight:600;
+      color:#1a1a2e;
+      line-height:1.4;
+      margin:0;
+    }
+
+    .xhs-date{
+      font-size:.85rem;
+      color:#888;
+      margin:0;
+    }
+
+    .xhs-buttons{
+      display:flex;
+      gap:8px;
+      margin-top:8px;
+    }
+
+    .xhs-btn{
+      flex:1;
+      padding:8px 12px;
+      border-radius:6px;
+      font-size:.85rem;
+      text-align:center;
+      border:none;
+      cursor:pointer;
+      text-decoration:none;
+      transition:all .2s ease;
+    }
+    .xhs-btn-primary{background:#1a1a2e;color:#fff}
+    .xhs-btn-primary:hover{background:#e94560}
+    .xhs-btn-secondary{background:#f5f5f7;color:#1a1a2e;border:1px solid #e8e8ed}
+    .xhs-btn-secondary:hover{background:#fff5f5;border-color:#e94560;color:#e94560}
+
+    @media (max-width:640px){
+      .xhs-grid{grid-template-columns:1fr;gap:16px}
+    }
+
 </head>
+
 <body>
 
+
+
   <!-- ===== 導航 ===== -->
-                          <nav class="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="brand">[鄭哥博客]</a>
-      <div class="nav-search">
-        <input type="search" placeholder="搜索文章..." aria-label="搜索">
+
+  <nav>
+    <div class="container">
+      <a href="index.html" class="logo">鄭哥<span>/ Hany</span></a>
+      <div class="nav-links">
+        <a href="index.html"><span class="cn">首頁</span><span class="en">Home</span></a>
+        <a href="about.html"><span class="cn">關於</span><span class="en">About</span></a>
+        <a href="blog.html"><span class="cn">點評</span><span class="en">Reviews</span></a>
+        <a href="contact.html"><span class="cn">聯繫</span><span class="en">Contact</span></a>
+        <a href="xhs.html" class="active"><span class="cn">小紅書</span><span class="en">RED</span></a>
+        <a href="youtube.html"><span class="cn">YouTube</span><span class="en">YouTube</span></a>
+        <a href="linkedin.html"><span class="cn">LinkedIn</span><span class="en">LinkedIn</span></a>
+        <a href="facebook.html"><span class="cn">Facebook</span><span class="en">Facebook</span></a>
+        <a href="instagram.html"><span class="cn">IG</span><span class="en">Instagram</span></a>
+        <a href="tiktok.html"><span class="cn">TikTok</span><span class="en">TikTok</span></a>
+        <a href="twitter.html"><span class="cn">X</span><span class="en">Twitter</span></a>
+        <button class="lang-btn" onclick="toggleLang()" id="langBtn">EN</button>
       </div>
-      <ul class="nav-links">
-        <li><a href="index.html">首頁</a></li>
-        <li><a href="xhs.html" class="active">小紅書</a></li>
-        <li><a href="about.html">關於</a></li>
-        <li><a href="links.html">連結</a></li>
-        <li><a href="contact.html">聯絡</a></li>
-      </ul>
     </div>
   </nav>
 
+
+
   <!-- ===== Hero ===== -->
+
   <header class="xhs-hero">
+
     <div class="container">
+
       <h1>📕 小紅書同步內容</h1>
+
       <p class="en">Xiaohongshu / RED Note Sync · Every story is also on RED</p>
+
       <div class="stats">
+
         <div class="stat">
-          <span class="stat-num">6</span>
+
+          <span class="stat-num">17</span>
+
           <span class="stat-label">獨立站文章 / Blog Posts</span>
+
         </div>
+
         <div class="stat">
-          <span class="stat-num">6</span>
+
+          <span class="stat-num">17</span>
+
           <span class="stat-label">小紅書版本 / RED Versions</span>
+
         </div>
+
         <div class="stat">
+
           <span class="stat-num">26+</span>
+
           <span class="stat-label">年外貿經驗 / Years</span>
+
         </div>
+
       </div>
+
     </div>
+
   </header>
 
+
+
   <!-- ===== 簡介便簽 ===== -->
+
   <section class="section">
+
     <div class="container">
+
       <div class="xhs-note">
+
         <h3>📌 點解同步小紅書？</h3>
+
         <p>鄭哥嘅26年外貿故事喺獨立站同小紅書同步發布。每篇獨立站文章都有對應嘅小紅書版本 — 標題選項、封面鉤子、Hook文案、Hashtag 一應俱全，畀你揀鍾意嘅風格直接 Copy & Paste。</p>
+
         <ul>
+
           <li>🌐 <b>獨立站</b>：深度長文 + SEO + 中英對照 + AI 配圖</li>
+
           <li>📕 <b>小紅書</b>：濃縮版 + 鉤子 + Hashtag + 短文案</li>
+
           <li>👤 <b>小紅書暱稱</b>：HANY · <b>小紅書號</b>：1063521362 · <a href="https://xhslink.cn/o/A42YArthEa1" target="_blank" rel="noopener">👉 點我去主頁</a></li>
+
         </ul>
+
         <div style="margin-top:16px;display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+
           <img src="hany-xhs-qrcode.jpg" alt="鄭哥Hany小紅書二維碼 HANY 1063521362" style="width:160px;height:160px;border-radius:12px;border:1px solid #ffe0e0" loading="lazy">
+
           <div style="font-size:.85rem;color:#555;line-height:1.8">掃碼直達 HANY 主頁<br>小紅書號：<b>1063521362</b><br><a href="https://xhslink.cn/o/A42YArthEa1" target="_blank" rel="noopener">https://xhslink.cn/o/A42YArthEa1</a></div>
+
         </div>
+
         <ul style="display:none">
+
         </ul>
+
       </div>
 
+
+
       <span class="xhs-tip">📋 點解會有兩個平台？因為受眾唔同。獨立站畀海外 + 深度閱讀，小紅書畀國內女性 + 創業圈。</span>
+
     </div>
+
   </section>
 
+
+
   <!-- ===== 6篇文章對應 ===== -->
+
   <section class="section section-alt">
+
     <div class="container">
-      <h2 class="section-title">📚 文章 ↔ 小紅書對應</h2>
+
+      <h2 class="section-title"><span class="cn">📚 文章 ↔ 小紅書對應</span><span class="en">Blog Posts ↔ RED Versions</span></h2>
+
       <p style="text-align:center;color:var(--muted-foreground);margin-bottom:32px">
-        每篇文章都有對應嘅小紅書版本，撳「複製文案」即貼得。
-        
+
+        <span class="cn">每篇文章都有對應嘅小紅書版本，撳「複製文案」即貼得。</span>
+
+        <span class="en">Every blog post has a corresponding RED version. Click "Copy Notes" to paste.</span>
+
       </p>
+
+
 
       <div class="xhs-grid">
 
-        <!-- 文章 0: 温州女人 -->
-        <div class="xhs-card">
-          <img src="hany-wenzhou-cover.webp" alt="鄭哥Hany 温州女人买工厂" class="xhs-card-img" loading="lazy">
-          <div class="xhs-card-body">
-            <span class="xhs-card-tag">2026-09-12 · 生意格局 · ✅ 已發佈</span>
-            <h3 class="xhs-card-title">2000万买厂，4000万卖出</h3>
-            <p class="xhs-card-excerpt">2006年温州女人揾我，带着20亿电子烟订单唔係落单，係叫我帮佢买起10间工厂。我格局太细，佢为盘棋而做生意。</p>
-            <div class="xhs-card-hashtags">#温州商人 #买工厂 #生意格局 #外贸创业 #郑哥Hany</div>
-            <div class="xhs-card-actions">
-              <a href="post-2026-09-12-wenzhou.html" class="xhs-btn xhs-btn-primary">📖 獨立站</a>
-              <a href="https://xhslink.cn/o/A42YArthEa1" target="_blank" class="xhs-btn xhs-btn-secondary">📕 去小紅書主頁</a>
-            </div>
+
+
+        <article class="xhs-card">
+        <div class="xhs-cover"><img src="hany-saas-cover.webp" alt="小紅書發布版｜外貿B端社媒矩陣SaaS" loading="lazy"></div>
+        <div class="xhs-meta">
+          <h3 class="xhs-title">小紅書發布版｜外貿B端社媒矩陣SaaS</h3>
+          <p class="xhs-date">2026-09-17 · 郑哥博客点评 · 出海实战</p>
+          <div class="xhs-buttons">
+            <a href="post-2026-09-17-saas.html" class="xhs-btn xhs-btn-primary">📖 独立站</a>
+            <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_社媒矩阵SaaS撬动印度东南亚_发布版.md')">📋 复制文案</button>
           </div>
         </div>
+      </article>
+
+      <article class="xhs-card">
+        <div class="xhs-cover"><img src="hany-memory-cover.webp" alt="小紅書發布版｜内存涨价5-7倍" loading="lazy"></div>
+        <div class="xhs-meta">
+          <h3 class="xhs-title">小紅書發布版｜内存涨价5-7倍</h3>
+          <p class="xhs-date">2026-09-17 · 郑哥博客点评 · 行业观察</p>
+          <div class="xhs-buttons">
+            <a href="post-2026-09-17-memory.html" class="xhs-btn xhs-btn-primary">📖 独立站</a>
+            <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_内存涨价5-7倍_发布版.md')">📋 复制文案</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="xhs-card">
+        <div class="xhs-cover"><img src="hany-solar-cover.webp" alt="小紅書發布版｜光伏展會人少5個信號" loading="lazy"></div>
+        <div class="xhs-meta">
+          <h3 class="xhs-title">小紅書發布版｜光伏展會人少5個信號</h3>
+          <p class="xhs-date">2026-09-17 · 郑哥博客点评 · 行业观察</p>
+          <div class="xhs-buttons">
+            <a href="post-2026-09-17-solar.html" class="xhs-btn xhs-btn-primary">📖 独立站</a>
+            <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_光伏展会人少5个信号_发布版.md')">📋 复制文案</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="xhs-card">
+        <div class="xhs-cover"><img src="hany-ai-war-cover.webp" alt="小紅書發布版｜AI大戰白熱化" loading="lazy"></div>
+        <div class="xhs-meta">
+          <h3 class="xhs-title">小紅書發布版｜AI大戰白熱化</h3>
+          <p class="xhs-date">2026-09-17 · 郑哥博客点评 · AI科技</p>
+          <div class="xhs-buttons">
+            <a href="post-2026-09-17-ai-war.html" class="xhs-btn xhs-btn-primary">📖 独立站</a>
+            <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_AI大战白热化_发布版.md')">📋 复制文案</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="xhs-card">
+        <div class="xhs-cover"><img src="hany-gzport-cover.webp" alt="小紅書發布版｜廣州的「義烏焦慮」" loading="lazy"></div>
+        <div class="xhs-meta">
+          <h3 class="xhs-title">小紅書發布版｜廣州的「義烏焦慮」</h3>
+          <p class="xhs-date">2026-09-16 · 郑哥博客点评 · 外贸实战</p>
+          <div class="xhs-buttons">
+            <a href="post-2026-09-16-gzport.html" class="xhs-btn xhs-btn-primary">📖 独立站</a>
+            <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_广州的义乌焦虑_发布版.md')">📋 复制文案</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="xhs-card">
+        <div class="xhs-cover"><img src="hany-mountain-electronics-cover.webp" alt="小紅書發布版｜一山之隔两个世界，从诺基亚走到AI算力" loading="lazy"></div>
+        <div class="xhs-meta">
+          <h3 class="xhs-title">小紅書發布版｜一山之隔两个世界，从诺基亚走到AI算力</h3>
+          <p class="xhs-date">2026-09-16 · 郑哥博客点评 · 行业观察</p>
+          <div class="xhs-buttons">
+            <a href="post-2026-09-16-mountain-electronics.html" class="xhs-btn xhs-btn-primary">📖 独立站</a>
+            <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_一山之隔两个世界_发布版.md')">📋 复制文案</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="xhs-card">
+        <div class="xhs-cover"><img src="hany-b300-cover.webp" alt="小紅書發布版｜B300賣1450萬嘅背後" loading="lazy"></div>
+        <div class="xhs-meta">
+          <h3 class="xhs-title">小紅書發布版｜B300賣1450萬嘅背後</h3>
+          <p class="xhs-date">2026-09-16 · 郑哥博客点评 · AI科技</p>
+          <div class="xhs-buttons">
+            <a href="post-2026-09-16-b300.html" class="xhs-btn xhs-btn-primary">📖 独立站</a>
+            <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_B300卖1450万_发布版.md')">📋 复制文案</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="xhs-card">
+        <div class="xhs-cover"><img src="hany-teapot-cover.webp" alt="小紅書發布版｜紫砂壺同AI時代嘅慢" loading="lazy"></div>
+        <div class="xhs-meta">
+          <h3 class="xhs-title">小紅書發布版｜紫砂壺同AI時代嘅慢</h3>
+          <p class="xhs-date">2026-09-15 · 郑哥博客点评 · AI时代观察</p>
+          <div class="xhs-buttons">
+            <a href="post-2026-09-15-teapot.html" class="xhs-btn xhs-btn-primary">📖 独立站</a>
+            <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_紫砂壶AI时代_发布版.md')">📋 复制文案</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="xhs-card">
+        <div class="xhs-cover"><img src="hany-flow-cover.webp" alt="小紅書發布版｜太子道城巴同出入境新規" loading="lazy"></div>
+        <div class="xhs-meta">
+          <h3 class="xhs-title">小紅書發布版｜太子道城巴同出入境新規</h3>
+          <p class="xhs-date">2026-09-15 · 郑哥博客点评 · 香港观察</p>
+          <div class="xhs-buttons">
+            <a href="post-2026-09-15-flow.html" class="xhs-btn xhs-btn-primary">📖 独立站</a>
+            <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_太子道城巴同出入境新规_发布版.md')">📋 复制文案</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="xhs-card">
+        <div class="xhs-cover"><img src="hany-bus-cover.webp" alt="小紅書發布版｜九龍太子道嘅城巴6333" loading="lazy"></div>
+        <div class="xhs-meta">
+          <h3 class="xhs-title">小紅書發布版｜九龍太子道嘅城巴6333</h3>
+          <p class="xhs-date">2026-09-15 · 郑哥博客点评 · 香港观察</p>
+          <div class="xhs-buttons">
+            <a href="post-2026-09-15-bus6333.html" class="xhs-btn xhs-btn-primary">📖 独立站</a>
+            <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_太子道城巴6333_发布版.md')">📋 复制文案</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="xhs-card">
+
+          <div class="xhs-cover"><img src="hany-ai-phone-war-cover.webp" alt="二代豆包手機" loading="lazy"></div>
+
+          <div class="xhs-meta">
+
+            <h3 class="xhs-title">二代豆包手機一秒破億——AI 手機大戰，我哋 70 後點睇</h3>
+
+            <p class="xhs-date">2026-09-19 · 鄭哥博客點評 · AI手機</p>
+
+            <div class="xhs-buttons">
+
+              <a href="post-2026-09-19-ai-phone-war.html" class="xhs-btn xhs-btn-primary">📖 獨立站</a>
+
+              <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('小红书_2026-09-19-二代豆包手机.md')">📋 複製文案</button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+
+
+
+
+
+        <!-- 文章 0: 温州女人 -->
+
+              <article class="xhs-card">
+        <div class="xhs-cover"><img src="hany-wenzhou-cover.webp" alt="鄭哥Hany 温州女人买工厂" loading="lazy"></div>
+        <div class="xhs-meta">
+          <h3 class="xhs-title">《2000万买厂，4000万卖出》</h3>
+          <p class="xhs-date">2026-09-12 · 郑哥博客点评 · 外贸实战</p>
+          <div class="xhs-buttons">
+            <a href="post-2026-09-12-wenzhou.html" class="xhs-btn xhs-btn-primary">📖 独立站</a>
+            <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_温州女人买工厂_发布版.md')">📋 复制文案</button>
+          </div>
+        </div>
+      </article>
+
+
 
         <!-- 文章 1: Stephanie -->
-        <div class="xhs-card">
-          <img src="hany-echo-cover.webp" alt="鄭哥Hany Stephanie 400顆鋯石手錶手機" class="xhs-card-img" loading="lazy">
-          <div class="xhs-card-body">
-            <span class="xhs-card-tag">2026-09-12 · 外貿創業 · ✅ 已發佈</span>
-            <h3 class="xhs-card-title">一張400粒鑲石訂單</h3>
-            <p class="xhs-card-excerpt">2008年紐約設計師Stephanie飛嚟廣州，要我將手錶手機鑲滿400粒鋯石。嗰陣時Apple Watch仲未出，我哋係全世界第一個做呢樣嘢嘅人⋯</p>
-            <div class="xhs-card-hashtags">#外貿創業 #奢侈品生意 #紐約時裝周 #手錶手機 #鑲鋯石</div>
-            <div class="xhs-card-actions">
-              <a href="post-2026-09-12-echo.html" class="xhs-btn xhs-btn-primary">📖 獨立站</a>
-              <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_Stephanie篇_文案.md')">📋 複製文案</button>
-            </div>
+
+              <article class="xhs-card">
+        <div class="xhs-cover"><img src="hany-echo-cover.webp" alt="Stephanie 镶石单" loading="lazy"></div>
+        <div class="xhs-meta">
+          <h3 class="xhs-title">一張400粒鑲石訂單400 Zircons Order</h3>
+          <p class="xhs-date">2026-09-12 · 郑哥博客点评 · 外贸实战</p>
+          <div class="xhs-buttons">
+            <a href="post-2026-09-12-echo.html" class="xhs-btn xhs-btn-primary">📖 独立站</a>
+            <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_Stephanie_鑲石單_發布版.md')">📋 复制文案</button>
           </div>
         </div>
+      </article>
+
+
 
         <!-- 文章 2: Fank -->
-        <div class="xhs-card">
-          <img src="hany-frank-cover.webp" alt="鄭哥Hany 我的朋友Fank" class="xhs-card-img" loading="lazy">
-          <div class="xhs-card-body">
-            <span class="xhs-card-tag">2026-09-11 · 文化交流 · ✅ 已發佈</span>
-            <h3 class="xhs-card-title">一個烏干達老師嘅廣州漂</h3>
-            <p class="xhs-card-excerpt">Fank係我喺廣州小北撞到嘅烏干達老師，本來請佢教我個仔英文，後來佢做咗廣州大學嘅教授⋯</p>
-            <div class="xhs-card-hashtags">#文化交流 #外國友人 #廣州生活 #教育</div>
-            <div class="xhs-card-actions">
-              <a href="post-2026-09-11-fank.html" class="xhs-btn xhs-btn-primary">📖 獨立站</a>
-              <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_我的朋友Fank_文案.md')">📋 複製文案</button>
-            </div>
+
+              <article class="xhs-card">
+        <div class="xhs-cover"><img src="hany-frank-cover.webp" alt="我的朋友 Fank" loading="lazy"></div>
+        <div class="xhs-meta">
+          <h3 class="xhs-title">一個烏干達老師嘅廣州漂A Ugandan Teacher's GZ Story</h3>
+          <p class="xhs-date">2026-09-11 · 郑哥博客点评 · 外贸故事</p>
+          <div class="xhs-buttons">
+            <a href="post-2026-09-11-fank.html" class="xhs-btn xhs-btn-primary">📖 独立站</a>
+            <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_我的朋友Fank_發布版.md')">📋 复制文案</button>
           </div>
         </div>
+      </article>
+
+
 
         <!-- 文章 3: 非洲女客 -->
-        <div class="xhs-card">
-          <img src="hany-africa-president.webp" alt="鄭哥Hany 非洲女客" class="xhs-card-img" loading="lazy">
-          <div class="xhs-card-body">
-            <span class="xhs-card-tag">2026-09-11 · 外貿故事</span>
-            <h3 class="xhs-card-title">賠咗一單，賠出個總統親戚</h3>
-            <p class="xhs-card-excerpt">2000年廣州小北，非洲女客手机被偷要我賠。我蝕底赔咗，點知佢哥哥後來做咗非洲總統⋯</p>
-            <div class="xhs-card-hashtags">#非洲生意 #外貿故事 #人生奇遇 #廣州外貿</div>
-            <div class="xhs-card-actions">
-              <a href="post-2026-09-11-africa.html" class="xhs-btn xhs-btn-primary">📖 獨立站</a>
-              <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_非洲女客_文案.md')">📋 複製文案</button>
-            </div>
+
+              <article class="xhs-card">
+        <div class="xhs-cover"><img src="hany-africa-president.webp" alt="鄭哥Hany 非洲女客" loading="lazy"></div>
+        <div class="xhs-meta">
+          <h3 class="xhs-title">《賠咗一單，賠出個總統親戚》</h3>
+          <p class="xhs-date">2026-09-11 · 郑哥博客点评 · 外贸故事</p>
+          <div class="xhs-buttons">
+            <a href="post-2026-09-11-africa.html" class="xhs-btn xhs-btn-primary">📖 独立站</a>
+            <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_非洲女客_文案.md')">📋 复制文案</button>
           </div>
         </div>
+      </article>
+
+
 
         <!-- 文章 4: Turkey -->
-        <div class="xhs-card">
-          <img src="hany-turkey-cover.webp" alt="鄭哥Hany 土耳其客" class="xhs-card-img" loading="lazy">
-          <div class="xhs-card-body">
-            <span class="xhs-card-tag">2026-09-04 · 外貿教訓</span>
-            <h3 class="xhs-card-title">10萬訂金教土耳其客做人</h3>
-            <p class="xhs-card-excerpt">嗰個土耳其中間商用10萬訂金呃我，點知我將計就計，設咗個局教佢做人⋯</p>
-            <div class="xhs-card-hashtags">#外貿教訓 #土耳其生意 #防騙指南</div>
-            <div class="xhs-card-actions">
-              <a href="post-2026-09-04-222803-turkey.html" class="xhs-btn xhs-btn-primary">📖 獨立站</a>
-              <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_我出10万訂金教土耳其客做人_文案.md')">📋 複製文案</button>
-            </div>
+
+              <article class="xhs-card">
+        <div class="xhs-cover"><img src="hany-portrait.webp" alt="鄭哥Hany 土耳其客" loading="lazy"></div>
+        <div class="xhs-meta">
+          <h3 class="xhs-title">《10萬訂金教土耳其客做人》</h3>
+          <p class="xhs-date">2026-09-04 · 郑哥博客点评 · 外贸实战</p>
+          <div class="xhs-buttons">
+            <a href="post-2026-09-04-222803-turkey.html" class="xhs-btn xhs-btn-primary">📖 独立站</a>
+            <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_我出10万訂金教土耳其客做人_文案.md')">📋 复制文案</button>
           </div>
         </div>
+      </article>
+
+
 
         <!-- 文章 5: 海選 -->
-        <div class="xhs-card">
-          <img src="hany-haixuan-cover.webp" alt="鄭哥Hany 點解要搞砸張單" class="xhs-card-img" loading="lazy">
-          <div class="xhs-card-body">
-            <span class="xhs-card-tag">2026-09-04 · 外貿反轉</span>
-            <h3 class="xhs-card-title">點解要搞砸張單？因為個客玩緊海選</h3>
-            <p class="xhs-card-excerpt">澳洲客用5000蚊試勻全中國，識破之後我專登做慢做細做爛，同時關門改技術⋯</p>
-            <div class="xhs-card-hashtags">#外貿反轉 #海選對策 #商業智慧</div>
-            <div class="xhs-card-actions">
-              <a href="post-2026-09-04-haixuan.html" class="xhs-btn xhs-btn-primary">📖 獨立站</a>
-              <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_點解要搞砸張單因為個客玩緊海_文案.md')">📋 複製文案</button>
-            </div>
+
+              <article class="xhs-card">
+        <div class="xhs-cover"><img src="hany-haixuan-cover.webp" alt="鄭哥Hany 點解要搞砸張單" loading="lazy"></div>
+        <div class="xhs-meta">
+          <h3 class="xhs-title">《點解要搞砸張單？因為個客玩緊海選》</h3>
+          <p class="xhs-date">2026-09-04 · 郑哥博客点评 · 外贸实战</p>
+          <div class="xhs-buttons">
+            <a href="post-2026-09-04-haixuan.html" class="xhs-btn xhs-btn-primary">📖 独立站</a>
+            <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_點解要搞砸張單因為個客玩緊海_文案.md')">📋 复制文案</button>
           </div>
         </div>
+      </article>
+
+
 
         <!-- 文章 6: 專利 -->
-        <div class="xhs-card">
-          <img src="hany-patent-cover.webp" alt="鄭哥Hany 5000蚊專利" class="xhs-card-img" loading="lazy">
-          <div class="xhs-card-body">
-            <span class="xhs-card-tag">2026-09-04 · 產品創新</span>
-            <h3 class="xhs-card-title">5000蚊買咗個專利，意外做咗手錶手機</h3>
-            <p class="xhs-card-excerpt">嗰5000蚊買嘅唔止係專利，係成個行業嘅入場券。比Apple Watch早咗九年⋯</p>
-            <div class="xhs-card-hashtags">#產品創新 #專利故事 #AppleWatch #手錶手機</div>
-            <div class="xhs-card-actions">
-              <a href="post-2026-09-04-patent.html" class="xhs-btn xhs-btn-primary">📖 獨立站</a>
-              <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_產品創新_文案.md')">📋 複製文案</button>
-            </div>
+
+              <article class="xhs-card">
+        <div class="xhs-cover"><img src="hany-patent-cover.webp" alt="鄭哥Hany 5000蚊專利" loading="lazy"></div>
+        <div class="xhs-meta">
+          <h3 class="xhs-title">《5000蚊買咗個專利，意外做咗手錶手機》</h3>
+          <p class="xhs-date">2026-09-04 · 郑哥博客点评 · 产品创新</p>
+          <div class="xhs-buttons">
+            <a href="post-2026-09-04-patent.html" class="xhs-btn xhs-btn-primary">📖 独立站</a>
+            <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_產品創新_文案.md')">📋 复制文案</button>
           </div>
         </div>
+      </article>
+
+
 
       </div>
+
+
 
       <div class="xhs-note">
+
         <h3>💡 使用說明</h3>
+
         <p><b>獨立站</b>連結去深度長文版（含 SEO、AI 配圖、FAQ、JSON-LD），適合海外讀者 + 搜尋引擎；</p>
+
         <p><b>複製文案</b>會顯示小紅書文案模板（標題選項、Hook、Hashtag），你可以 Copy & Paste 到小紅書後台，配合獨立站嘅配圖直接發布。</p>
+
         <p>建議發布時間：<b>週二至週四 19:30-21:30</b>（小紅書女性活躍高峰）。</p>
+
       </div>
+
     </div>
+
   </section>
 
+
+
   <!-- ===== Footer ===== -->
-    <footer class="footer">
-    <div class="footer-inner">
-      <p>© 2026 鄭哥 / Hany · 七善門科技 · 星辰算力 · 香港旺角</p>
-      <p>All stories are also on <a href="links.html">6 大平台</a></p>
+
+  <footer>
+
+    <div class="container">
+
+      <p class="cn"><a href="xhs.html" style="color:#ff2442;text-decoration:none;">📕 小紅書同步</a> · © 2026 鄭哥 Hany · 七善門科技 · 星辰算力 · 香港旺角 · ALEXBI INC Long Beach CA</p>
+
+      <p class="en"><a href="xhs.html" style="color:#ff2442;text-decoration:none;">📕 RED Sync</a> · © 2026 Hany · Qishanmen Tech · Star Compute · Mong Kok, HK · ALEXBI INC Long Beach CA</p>
+
+      <p style="margin-top:12px"><a href="index.html">← <span class="cn">返主頁</span><span class="en">Back to Home</span></a></p>
+
     </div>
+
   </footer>
 
+
+
   <!-- ===== 一鍵複製小紅書文案 ===== -->
+
   <script>
+
     const xhsTexts = {
+
       'xhs_Stephanie篇_文案.md': `【標題】一張400粒鑲石訂單｜2008年紐約設計師飛嚟廣州教識我嘅事
 
+
+
 【Hook（前3秒）】
+
 2008年10月，我公司接到一個 email。
+
 紐約設計師Stephanie飛咗成日由JFK過嚟廣州，落咗一張400萬人仔嘅單。
+
 Stephanie要將我哋嘅手錶手機，鑲滿400粒AAA級鋯石，做紐約時裝周嘅runway accessory。
+
 嗰陣時Apple Watch仲未出，三星Galaxy Gear都未有。呢個產品，全世界未有人做過。
 
+
+
 【故事】
+
 嗰一晚我坐咗兩個鐘。
+
 三個問題一直轉：2000台會唔會接得太盡？佢紐約runway唔成功Cut單點算？400粒鋯石人手鑲嵌良率未知。
+
 第二朝早我覆email：三個條件，全部都要。事後先知——首批200台良率只有87%，174台合格，26台要rework。如果一開波就2000台，我哋肯定蝕到喊。
 
+
+
 【反思】
+
 呢單嘢教識我：硬件本身唔係最大價值，設計敘事先係。客戶唔係ATM，係合作夥伴。雙贏先至走得遠。
+
 26年外貿路，呢個係我學到最重要嘅一課——用心對人，比乜都重要。
 
+
+
 #外貿創業 #奢侈品生意 #紐約時裝周 #手錶手機 #鑲鋯石 #Stephanie故事 #外貿老兵 #26年生意經 #Vertu #藍寶石手機 #設計師 #廣州外貿 #老炮兒真實感 #鄭哥Hany`,
+
       'xhs_我的朋友Fank_文案.md': `【標題】一個烏干達老師嘅廣州漂｜教我個仔英文，做咗大學教授
 
+
+
 【Hook】
+
 2010年廣州小北，我撞到Fank。
+
 佢係烏干達鄉村小學老師，識廣東話、識中文、識睇相。
+
 我請佢教我個仔英文，後來⋯佢做咗廣州大學嘅教授。
 
+
+
 【故事】
+
 Fank係嗰種「真」嘅人。佢每個禮拜日返教會，從來唔呃人，從來唔講大話。
+
 我同佢識咗16年，由陌生人變咗我屋企人嘅朋友。
+
 佢老婆係肯尼亞人，佢哋一家三口住喺廣州，講廣東話多過英文。
 
+
+
 【反思】
+
 做生意26年，我學到最重要嘅嘢：識一個外國朋友唔難，識一個會留低嘅外國朋友好難。
+
 Fank教我：誠實唔係策略，係做人。
 
+
+
 #文化交流 #外國友人 #廣州生活 #教育 #烏干達`,
+
       'xhs_非洲女客_文案.md': `【標題】賠咗一單，賠出個總統親戚
 
+
+
 【Hook】
+
 2000年廣州小北，非洲女客嘅手机喺酒店被偷。
+
 佢call我求救，我蝕底赔咗成300蚊美金。
+
 點知⋯佢哥哥後來做咗非洲一個國家嘅總統。
 
+
+
 【故事】
+
 嗰陣我哋係廣州小北最大嘅手机商之一，非洲客一個禮拜嚟幾轉。
+
 嗰個女客一個人嚟，第一次合作就出咗事。
+
 我蝕底赔咗，仲請佢食飯，安撫佢。
 
+
+
 事後先知——佢屋企人喺當地係望族，佢哥哥後來選上做總統。
+
 我做咗10年非洲生意，靠嘅就係呢份「唔好計到盡」嘅心。
 
+
+
 【反思】
+
 做生意，最怕嘅唔係蝕底，係見到一個可能贏嘅朋友時，揀咗計較。
+
 贏咗一單輸咗一個朋友，得唔償失。
 
+
+
 #非洲生意 #外貿故事 #人生奇遇 #廣州外貿`,
+
       'xhs_我出10万訂金教土耳其客做人_文案.md': `【標題】10萬訂金教土耳其客做人｜海哥26年外貿最解氣一單
 
+
+
 【Hook】
+
 嗰個土耳其中間商用10萬訂金呃我。
+
 我將計就計，設咗個局教佢做人。
+
 結局⋯佢賠咗錢，仲要返嚟搵我。
 
+
+
 【故事】
+
 2000年廣州，我識咗一個土耳其中間人。
+
 佢落咗10萬訂金叫我做一批手機，點知佢收咗貨之後⋯⋯⋯⋯（原文鏈接）
 
+
+
 【反思】
+
 做外貿最緊要唔係識客，係識人。
+
 一個呃得你嘅人，將來一定仲會呃第二個。
 
+
+
 #外貿教訓 #土耳其生意 #防騙指南`,
+
       'xhs_點解要搞砸張單因為個客玩緊海_文案.md': `【標題】點解要搞砸張單？因為個客玩緊海選
 
+
+
 【Hook】
+
 澳洲客用5000蚊試勻全中國，睇邊個接得住。
+
 我識破之後，專登做慢做細做爛，同時關門改技術。
+
 佢玩「海選」，我玩「借種」。
 
+
+
 【故事】
+
 嗰陣時我嗰款產品行業未成熟，澳洲客識破之後⋯⋯⋯⋯（原文鏈接）
 
+
+
 【反思】
+
 做生意最忌「以客為尊」盲從。
+
 有時主動放棄一張單，反而贏得一個長期客戶。
 
+
+
 #外貿反轉 #海選對策 #商業智慧`,
+
       'xhs_產品創新_文案.md': `【標題】5000蚊買咗個專利，意外做咗手錶手機｜比Apple Watch早9年
 
+
+
 【Hook】
+
 2005年我用5000蚊買咗個專利。
+
 嗰個專利唔止係專利，係成個行業嘅入場券。
+
 比Apple Watch早咗九年。
 
+
+
 【故事】
+
 嗰陣時我嘅公司做緊電子產品⋯⋯⋯⋯（原文鏈接）
 
+
+
 【反思】
+
 創新唔係讀書讀返嚟，係問「點解唔得？」問返嚟。
 
+
+
 #產品創新 #專利故事 #AppleWatch #手錶手機`
+
     };
 
+
+
     function copyXhs(name) {
+
       const text = xhsTexts[name];
+
       if (!text) {
+
         alert('呢篇文案模板仲未整好，請聯繫海哥補上。');
+
         return;
+
       }
+
       navigator.clipboard.writeText(text).then(() => {
+
         alert('✓ 已複製到剪貼簿！\n\n直接去小紅書後台貼上即可。');
+
       }).catch(() => {
+
         // fallback
+
         const ta = document.createElement('textarea');
+
         ta.value = text;
+
         document.body.appendChild(ta);
+
         ta.select();
+
         document.execCommand('copy');
+
         document.body.removeChild(ta);
+
         alert('✓ 已複製！');
+
       });
+
     }
+
   </script>
+
+
 
   <!-- ===== 中英切換 ===== -->
+
   
 
+
+
   <script>
+
     function toggleLang(){
+
       document.body.classList.toggle('show-en');
+
       var btn=document.getElementById('langBtn');
+
       if(btn) btn.textContent = document.body.classList.contains('show-en') ? '中' : 'EN';
+
     }
+
   </script>
+
 </body>
+
 </html>
+
