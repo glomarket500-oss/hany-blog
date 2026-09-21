@@ -146,6 +146,21 @@ body {
   .nav-inner { gap: 12px; }
   .mobile-toggle { display: inline-block; }
 }
+
+/* 中英双语显示规则（修复粘连） */
+.cn { 
+  display: inline-block; 
+  margin-right: 6px;
+}
+.en { 
+  display: inline-block; 
+  margin-left: 0;
+  color: var(--muted); 
+  font-size: 0.92em;
+}
+.en::before { content: "· "; }
+.stat-label .en::before { content: " · "; }
+
 </style>
 </head>
 <body>
