@@ -57,6 +57,8 @@
   --border: #e8e8e8;
   --accent: #c9302c;
   --accent-light: #fdf2f2;
+  --highlight-bg: #fffbf0;
+  --highlight-border: #f5e6c5;
   --font-zh: "PingFang HK", "Microsoft JhengHei", -apple-system, sans-serif;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -150,29 +152,202 @@ body {
   color: var(--accent);
 }
 
-/* ===== Page Header ===== */
-.page-header {
+/* ===== Container 居中（修偏左问题） ===== */
+.container {
   max-width: 1180px;
   margin: 0 auto;
-  padding: 60px 5vw 40px;
+  padding: 60px 5vw;
 }
-.page-header h1 {
+
+/* ===== Header (about 头像 + 简介) ===== */
+header {
+  padding: 0;
+  background: linear-gradient(180deg, #fafafa 0%, #ffffff 100%);
+  border-bottom: 1px solid var(--border);
+}
+header .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 60px 5vw;
+}
+.portrait {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 28px;
+  border: 4px solid #fff;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+.portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+header h1 {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 16px;
   letter-spacing: -0.5px;
 }
-.page-header .subtitle {
+header > .container > p {
   font-size: 1.05rem;
   color: var(--muted);
-  max-width: 720px;
+  max-width: 640px;
   line-height: 1.7;
 }
 
-/* ===== Post List ===== */
-.post-list {
-  max-width: 1180px;
+/* ===== Section ===== */
+.section {
+  padding: 0;
+  border-bottom: 1px solid var(--border);
+}
+.section.section-alt {
+  background: #fafafa;
+}
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 0;
+  border: none;
+}
+.section-title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.section-sub {
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+/* ===== Timeline ===== */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 800px;
   margin: 0 auto;
+}
+.t-item {
+  border-left: 3px solid var(--accent);
+  padding: 16px 24px;
+  background: #fff;
+  border-radius: 0 12px 12px 0;
+  border-top: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.t-year {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.t-content p {
+  margin-bottom: 12px;
+  line-height: 1.7;
+}
+.highlight {
+  background: var(--highlight-bg);
+  border-left: 3px solid #f0c040;
+  padding: 12px 16px;
+  margin: 12px 0;
+  border-radius: 4px;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  background: #f5f5f5;
+  color: var(--muted);
+  padding: 2px 10px;
+  border-radius: 4px;
+  margin: 4px 4px 4px 0;
+}
+
+/* ===== Achieve Grid (产品成就) ===== */
+.achieve-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+.achieve-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+.achieve-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  border-color: var(--accent);
+}
+.achieve-year {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--accent);
+  padding: 8px 16px;
+  display: inline-block;
+  margin: 16px 0 0 16px;
+  border-radius: 6px;
+}
+.achieve-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+.img-caption {
+  font-size: 0.78rem;
+  color: #999;
+  padding: 8px 16px 0;
+  text-align: center;
+}
+.achieve-card h4 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  padding: 12px 16px 4px;
+  margin: 0;
+}
+.achieve-card p {
+  font-size: 0.92rem;
+  color: var(--muted);
+  padding: 0 16px 12px;
+  line-height: 1.6;
+}
+.badge-first {
+  display: inline-block;
+  font-size: 0.75rem;
+  background: var(--accent-light);
+  color: var(--accent);
+  font-weight: 600;
+  padding: 4px 10px;
+  margin: 0 16px 16px;
+  border-radius: 4px;
+}
+
+/* ===== Page Header (blog / other) ===== */
+.page-header {
+  text-align: center;
+  padding: 60px 5vw 30px;
+}
+.page-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.page-header .subtitle {
+  font-size: 1.05rem;
+  color: var(--muted);
+}
+
+/* ===== Post List (blog.html) ===== */
+.post-list {
   padding: 20px 5vw 60px;
 }
 .post-card {
@@ -222,9 +397,7 @@ body {
   text-decoration: none;
   transition: color 0.15s;
 }
-.post-card h3 a:hover {
-  color: var(--accent);
-}
+.post-card h3 a:hover { color: var(--accent); }
 .post-excerpt {
   color: var(--muted);
   font-size: 0.95rem;
@@ -240,11 +413,9 @@ body {
   border-bottom: 1px solid transparent;
   transition: border-color 0.15s;
 }
-.read-more:hover {
-  border-bottom-color: var(--accent);
-}
+.read-more:hover { border-bottom-color: var(--accent); }
 
-/* ===== Hero ===== */
+/* ===== Hero (index.html) ===== */
 .hero {
   padding: 80px 5vw 60px;
   text-align: center;
@@ -266,7 +437,10 @@ body {
 }
 
 /* ===== Stats ===== */
-.stats { border-bottom: 1px solid var(--border); background: #fafafa; }
+.stats {
+  border-bottom: 1px solid var(--border);
+  background: #fafafa;
+}
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -282,21 +456,12 @@ body {
   color: var(--accent);
   margin-bottom: 8px;
 }
-.stat-label { color: var(--muted); font-size: 0.95rem; }
-
-/* ===== Section Header ===== */
-.section-header {
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 60px 5vw 24px;
-  border-bottom: 1px solid var(--border);
-}
-.section-header h2 {
-  font-size: 1.6rem;
-  font-weight: 700;
+.stat-label {
+  color: var(--muted);
+  font-size: 0.95rem;
 }
 
-/* ===== Cards ===== */
+/* ===== Cards (index.html) ===== */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -334,7 +499,7 @@ body {
 .footer-inner { max-width: 1180px; margin: 0 auto; }
 .footer a { color: var(--accent); text-decoration: none; }
 
-/* ===== 移除所有双语 class ===== */
+/* ===== 隐藏所有双语 class ===== */
 .cn, .en { display: none !important; }
 
 /* ===== Responsive ===== */
@@ -343,15 +508,17 @@ body {
   .nav-links { display: none; }
   .hero h1 { font-size: 1.6rem; }
   .post-card { padding: 20px; }
-  .post-card h3 { font-size: 1.05rem; }
+  .portrait { width: 150px; height: 150px; }
   .stats-grid { gap: 20px; padding: 24px 5vw; }
   .stat-item h3 { font-size: 1.8rem; }
+  .timeline { padding: 0; }
+  .achieve-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
 <body>
 
-              <nav class="nav">
+                <nav class="nav">
     <div class="nav-inner">
       <a href="index.html" class="brand">[鄭哥博客]</a>
       <div class="nav-search">
@@ -359,10 +526,11 @@ body {
       </div>
       <div class="nav-actions">
         <ul class="nav-links">
+          <li><a href="index.html">首頁</a></li>
           <li><a href="blog.html">文章</a></li>
-          <li><a href="about.html">关于</a></li>
-          <li><a href="links.html">链接</a></li>
-          <li><a href="contact.html">联系</a></li>
+          <li><a href="about.html">關於</a></li>
+          <li><a href="links.html">連結</a></li>
+          <li><a href="contact.html">聯絡</a></li>
         </ul>
         <button class="theme-toggle" title="切換主題">🌙</button>
       </div>
