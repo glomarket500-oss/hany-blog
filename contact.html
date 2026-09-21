@@ -50,659 +50,152 @@
   </script>
 
   <style>
-:root {
-  --bg: #ffffff;
-  --fg: #1a1a1a;
-  --muted: #555;
-  --soft: #888;
-  --border: #e8e8e8;
-  --bg-soft: #fafafa;
-  --accent: #1e6bb8;
-  --accent-light: #eef3fa;
-  --accent-hover: #14518c;
-  --green: #25d366;
-  --gold: #f0c040;
-  --gold-bg: #fffbf0;
-  --font-zh: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: var(--font-zh);
-  background: var(--bg);
-  color: var(--fg);
-  line-height: 1.6;
-  font-size: 15px;
-  -webkit-font-smoothing: antialiased;
-}
-a { color: var(--accent); text-decoration: none; transition: color 0.15s; }
-a:hover { color: var(--accent-hover); }
-img { max-width: 100%; height: auto; display: block; }
+    :root {
+      --bg: #fafafa; --bg-elevated: #ffffff; --text: #1a1a1a; --text-secondary: #555555; --text-muted: #888888;
+      --accent: #c41e3a; --accent-light: rgba(196,30,58,0.08); --border: #e8e8e8; --border-light: #f0f0f0;
+      --radius: 12px; --radius-sm: 8px; --shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.02);
+      --shadow-hover: 0 4px 16px rgba(0,0,0,0.06), 0 12px 40px rgba(0,0,0,0.04); --max-width: 720px;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', 'PingFang HK', 'Noto Sans SC', sans-serif;
+      background: var(--bg); color: var(--text); line-height: 1.7; font-size: 16px; -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+    
+    /* ===== 導航 v2（2026-09-20） ===== */
+    nav { background:#fff; border-bottom:1px solid #e8e8ed; padding:14px 0; position:sticky; top:0; z-index:1000; }
+    nav .container { display:flex; justify-content:space-between; align-items:center; position:relative; }
+    .logo { font-size:1.05rem; font-weight:700; color:#1a1a2e; }
+    .hamburger { display:none; background:none; border:none; font-size:1.5rem; cursor:pointer; padding:4px 8px; }
+    .nav-wrapper { display:flex; align-items:center; }
+    .nav-links { display:flex; align-items:center; gap:20px; }
+    nav a { text-decoration:none; color:#444; font-size:0.9rem; transition:color 0.2s; }
+    nav a:hover, nav a.active { color:#e94560; }
 
-/* ===== 顶部导航（紧凑） ===== */
-.nav {
-  border-bottom: 1px solid var(--border);
-  padding: 10px 4vw;
-  background: rgba(255,255,255,0.96);
-  backdrop-filter: blur(12px);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-.nav-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-.brand {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--fg);
-  flex-shrink: 0;
-}
-.brand:hover { color: var(--accent); text-decoration: none; }
-.nav-search {
-  flex: 1;
-  max-width: 220px;
-  margin: 0 6px;
-}
-.nav-search input {
-  width: 100%;
-  padding: 5px 12px;
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  font-family: inherit;
-  font-size: 0.85rem;
-  background: var(--bg-soft);
-}
-.nav-search input:focus {
-  outline: none;
-  border-color: var(--accent);
-  background: #fff;
-}
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 14px;
-}
-.nav-links a {
-  color: var(--muted);
-  font-size: 0.88rem;
-  white-space: nowrap;
-}
-.nav-links a:hover, .nav-links a.active {
-  color: var(--accent);
-  font-weight: 600;
-  text-decoration: none;
-}
+        /* Mobile */
+    @media (max-width:768px) {
+      .hamburger { display:block; }
+      .nav-wrapper { display:none; position:absolute; top:100%; left:0; right:0; background:#fff; border-top:1px solid #e8e8ed; box-shadow:0 4px 12px rgba(0,0,0,.08); }
+      .nav-wrapper.open { display:block; }
+      .nav-links { flex-direction:column; align-items:stretch; gap:0; padding:8px 0; }
+      .nav-links > a, .lang-toggle { padding:12px 24px; border-bottom:1px solid #f0f0f5; width:100%; text-align:left; }
+      .nav-links > a:last-of-type { border-bottom:none; }
+      .lang-toggle { border-radius:0; }
+    }
+    
+    header { background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%); color: #fff; padding: 80px 0 60px; text-align:center; position: relative; overflow: hidden; }
+    header::before { content:''; position:absolute; top: -30%; right: -10%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(196,30,58,0.15) 0%, transparent 70%); border-radius: 50%; }
+    header .container { position:relative; z-index: 1; }
+    header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.5px; }
+    header h1 .en { font-size: 1.3rem; font-weight: 400; opacity: 0.7; display:block; margin-top: 8px; }
+    header p { color: rgba(255,255,255,0.55); max-width: 480px; margin: 0 auto; font-size: 0.95rem; line-height: 1.7; }
+    
+    .section { padding: 56px 0; }
+    .section-alt { background: var(--bg-elevated); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); }
+    .section-header { margin-bottom: 32px; }
+    .section-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.3px; }
+    .section-sub { color: var(--text-muted); font-size: 0.95rem; }
+    
+    /* ===== 聯繫卡片 ===== */
+    .contact-card { background: var(--bg-elevated); border-radius: var(--radius); padding: 32px; border: 1px solid var(--border-light); margin-bottom: 20px; }
+    .contact-item { display:flex; align-items:flex-start; gap: 16px; margin-bottom: 28px; }
+    .contact-item:last-child { margin-bottom: 0; }
+    .contact-icon { font-size: 1.6rem; min-width: 40px; text-align:center; }
+    .contact-body h3 { font-size: 1rem; margin-bottom: 4px; color: var(--text); font-weight: 600; }
+    .contact-body p { color: var(--text-secondary); font-size: 0.9rem; }
+    .contact-body a { color: var(--accent); text-decoration:none; font-weight: 500; }
+    .contact-body a:hover { text-decoration:underline; }
+    .contact-note { font-size: 0.82rem; color: var(--text-muted); margin-top: 4px; }
+    
+    /* ===== 業務卡片 ===== */
+    .biz-card { background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%); color: #fff; border-radius: var(--radius); padding: 28px; margin-bottom: 16px; }
+    .biz-card h3 { font-size: 1.05rem; margin-bottom: 10px; color: #fff; font-weight: 600; }
+    .biz-card p { color: rgba(255,255,255,0.65); font-size: 0.9rem; margin-bottom: 8px; line-height: 1.6; }
+    .biz-card .tag { display:inline-block; background: rgba(255,255,255,0.1); padding: 4px 12px; border-radius: 4px; font-size: 0.78rem; color: rgba(255,255,255,0.8); margin-right: 6px; margin-top: 4px; }
+    
+    /* ===== 地區 ===== */
+    .location-box { display:flex; align-items:center; gap: 12px; background: var(--bg-elevated); border-radius: var(--radius); padding: 24px 32px; border: 1px solid var(--border-light); margin-bottom: 16px; transition: all 0.2s; }
+    .location-box:hover { box-shadow: var(--shadow-hover); border-color: var(--border); }
+    .location-icon { font-size: 1.5rem; }
+    .location-text p { font-size: 0.95rem; color: var(--text-secondary); }
+    .location-text .primary { font-weight: 600; color: var(--text); margin-bottom: 2px; }
+    
+    /* ===== 社交 ===== */
+    .social-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; }
+    .social-item { background: var(--bg-elevated); border-radius: var(--radius-sm); padding: 16px; text-align:center; border: 1px solid var(--border-light); text-decoration:none; color: var(--text-secondary); transition: all 0.2s; }
+    .social-item:hover { box-shadow: var(--shadow); border-color: var(--border); transform: translateY(-1px); }
+    .social-item .icon { font-size: 1.4rem; margin-bottom: 6px; }
+    .social-item .name { font-size: 0.85rem; font-weight: 500; color: var(--text); }
+    .social-item .note { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; }
+    
+    /* ===== 小紅書便簽 ===== */
+    .note-card {
+      background: linear-gradient(135deg, #fff5f5 0%, #fff0f0 100%);
+      border: 1px solid #ffe0e0; border-radius: var(--radius); padding: 20px 24px; margin: 20px 0; position: relative;
+    }
+    .note-card::before { content: ''; position: absolute; top: 0; left: 24px; width: 60px; height: 4px; background: var(--accent); border-radius: 0 0 4px 4px; }
+    .note-card h4 { font-size: 0.95rem; color: var(--accent); margin-bottom: 8px; font-weight: 600; }
+    .note-card p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; }
+    
+    /* ===== 投資提示 ===== */
+    .invest-hint { background: linear-gradient(135deg, #fff8e1 0%, #fff5d6 100%); border-left: 4px solid #ffc107; padding: 16px 20px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; margin-top: 24px; }
+    .invest-hint p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; }
+    
+    footer { background: var(--bg-elevated); border-top: 1px solid var(--border-light); padding: 32px 0; text-align:center; }
+    footer p { font-size: 0.82rem; color: var(--text-muted); }
+    
+    .en { display:none; }
+    body.show-en .en { display:block; }
+    body.show-en .cn { display:none; }
+    body.show-en .en-inline { display:inline; }
+    body.show-en .cn-inline { display:none; }
+    .en-inline, .cn-inline { display:inline; }
+    
+    @media (max-width: 640px) {
+      .contact-item { flex-direction: column; gap: 8px; }
+      .location-box { flex-direction: column; align-items: flex-start; }
+    }
 
-/* ===== Container（紧凑） ===== */
-.container {
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 0 4vw;
-}
+    .comments { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--border-light); }
+    .comments h2 { font-size: 1.3rem; font-weight: 600; margin-bottom: 24px; }
 
-/* ===== Hero（紧凑） ===== */
-.hero {
-  padding: 24px 0 20px;
-  text-align: center;
-  background: linear-gradient(180deg, var(--bg-soft) 0%, #fff 100%);
-  border-bottom: 1px solid var(--border);
-}
-.hero-tag {
-  display: inline-block;
-  font-size: 0.8rem;
-  color: var(--muted);
-  background: #fff;
-  padding: 3px 12px;
-  border-radius: 14px;
-  margin-bottom: 10px;
-  border: 1px solid var(--border);
-}
-.hero h1 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-  letter-spacing: -0.3px;
-}
-.hero .tagline {
-  font-size: 0.95rem;
-  color: var(--muted);
-  max-width: 580px;
-  margin: 0 auto 16px;
-  line-height: 1.6;
-}
-.hero-quote {
-  font-size: 0.92rem;
-  color: var(--fg);
-  max-width: 540px;
-  margin: 0 auto 16px;
-  padding: 10px 18px;
-  background: var(--accent-light);
-  border-left: 3px solid var(--accent);
-  border-radius: 0 6px 6px 0;
-}
-.hero-cta {
-  display: inline-flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.cta-primary, .cta-secondary {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  padding: 8px 18px;
-  border-radius: 18px;
-  font-weight: 600;
-  font-size: 0.88rem;
-}
-.cta-primary {
-  background: var(--accent);
-  color: #fff !important;
-}
-.cta-primary:hover {
-  background: var(--accent-hover);
-  text-decoration: none;
-  color: #fff !important;
-}
-.cta-secondary {
-  background: #fff;
-  color: var(--accent) !important;
-  border: 1px solid var(--accent);
-}
-.cta-secondary:hover {
-  background: var(--accent-light);
-  text-decoration: none;
-}
-
-/* ===== About Header（紧凑 + 小头像） ===== */
-header.about-hero {
-  background: linear-gradient(180deg, var(--bg-soft) 0%, #fff 100%);
-  border-bottom: 1px solid var(--border);
-}
-header.about-hero .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 24px 4vw 20px;
-}
-.portrait {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-bottom: 14px;
-  border: 2px solid #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-}
-.portrait img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-header.about-hero h1 {
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-header.about-hero .container > p {
-  font-size: 0.92rem;
-  color: var(--muted);
-  max-width: 540px;
-  line-height: 1.6;
-}
-
-/* ===== Stats 区（紧凑 4 列） ===== */
-.stats-section {
-  padding: 22px 0;
-  border-bottom: 1px solid var(--border);
-}
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-}
-.stat-item {
-  text-align: center;
-  padding: 14px 8px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: #fff;
-  transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
-}
-.stat-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-  border-color: var(--accent);
-}
-.stat-item h3 {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: var(--accent);
-  margin-bottom: 3px;
-  line-height: 1;
-}
-.stat-label {
-  font-size: 0.82rem;
-  color: var(--muted);
-}
-
-/* ===== Section（紧凑） ===== */
-.section {
-  padding: 32px 0;
-  border-bottom: 1px solid var(--border);
-}
-.section-alt { background: var(--bg-soft); }
-.section-header {
-  text-align: center;
-  margin-bottom: 20px;
-}
-.section-header h2 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-.section-header p {
-  color: var(--muted);
-  font-size: 0.88rem;
-}
-
-/* ===== 3 列卡片（紧凑） ===== */
-.cards-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-}
-.card {
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  overflow: hidden;
-  background: #fff;
-  transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
-}
-.card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
-  border-color: var(--accent);
-}
-.card-img {
-  width: 100%;
-  height: 130px;
-  object-fit: cover;
-  background: var(--bg-soft);
-}
-.card-body {
-  padding: 12px 16px 16px;
-}
-.card-body h3 {
-  font-size: 0.98rem;
-  font-weight: 600;
-  margin-bottom: 4px;
-}
-.card-body p {
-  font-size: 0.85rem;
-  color: var(--muted);
-  line-height: 1.5;
-}
-
-/* ===== Timeline（紧凑） ===== */
-.timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  max-width: 700px;
-  margin: 0 auto;
-}
-.t-item {
-  padding: 10px 0;
-  border-bottom: 1px solid var(--border);
-}
-.t-item:last-child { border-bottom: none; }
-.t-year {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--accent);
-  margin-bottom: 4px;
-}
-.t-content p {
-  margin-bottom: 6px;
-  line-height: 1.6;
-  font-size: 0.92rem;
-}
-.highlight {
-  background: var(--accent-light);
-  border-left: 3px solid var(--accent);
-  padding: 8px 12px;
-  margin: 8px 0;
-  border-radius: 0 4px 4px 0;
-  font-size: 0.9rem;
-}
-.tag {
-  display: inline-block;
-  font-size: 0.75rem;
-  background: #f5f5f5;
-  color: var(--muted);
-  padding: 2px 8px;
-  border-radius: 4px;
-  margin: 2px 4px 2px 0;
-}
-
-/* ===== Achieve Grid（紧凑） ===== */
-.achieve-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 14px;
-}
-.achieve-card {
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  overflow: hidden;
-  background: #fff;
-  transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
-}
-.achieve-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.05);
-  border-color: var(--accent);
-}
-.achieve-year {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--accent);
-  padding: 8px 12px 0;
-}
-.achieve-card img {
-  width: 100%;
-  height: 130px;
-  object-fit: cover;
-}
-.img-caption {
-  font-size: 0.75rem;
-  color: var(--soft);
-  padding: 4px 12px 0;
-  text-align: center;
-}
-.achieve-card h4 {
-  font-size: 0.95rem;
-  font-weight: 600;
-  padding: 6px 12px 0;
-}
-.achieve-card p {
-  font-size: 0.85rem;
-  color: var(--muted);
-  padding: 4px 12px 10px;
-  line-height: 1.5;
-}
-.badge-first {
-  display: inline-block;
-  font-size: 0.72rem;
-  background: var(--accent-light);
-  color: var(--accent);
-  font-weight: 600;
-  padding: 2px 8px;
-  margin: 0 12px 12px;
-  border-radius: 4px;
-}
-
-/* ===== Note Card ===== */
-.note-card {
-  background: var(--gold-bg);
-  border: 1px solid #f5e6c5;
-  border-left: 4px solid var(--gold);
-  border-radius: 6px;
-  padding: 14px 18px;
-  margin: 16px 0;
-}
-.note-card h4 {
-  font-size: 0.92rem;
-  font-weight: 700;
-  margin-bottom: 4px;
-}
-.note-card p {
-  color: var(--muted);
-  font-size: 0.88rem;
-  line-height: 1.6;
-}
-
-/* ===== Post List（紧凑） ===== */
-.post-list {
-  display: flex;
-  flex-direction: column;
-}
-.post-card {
-  border-bottom: 1px solid var(--border);
-  padding: 16px 0;
-  transition: background 0.15s;
-}
-.post-card:hover { background: var(--bg-soft); }
-.post-card:first-child { padding-top: 0; }
-.post-card:last-child { border-bottom: none; }
-.post-meta-top {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 6px;
-  font-size: 0.78rem;
-  flex-wrap: wrap;
-}
-.post-date { color: var(--soft); }
-.post-tag {
-  background: var(--accent-light);
-  color: var(--accent);
-  padding: 1px 8px;
-  border-radius: 4px;
-  font-weight: 500;
-}
-.post-card h2 {
-  font-size: 1.05rem;
-  font-weight: 700;
-  line-height: 1.4;
-  margin-bottom: 6px;
-}
-.post-card h2 a { color: var(--fg); }
-.post-card h2 a:hover { color: var(--accent); text-decoration: none; }
-.post-excerpt {
-  color: var(--muted);
-  font-size: 0.88rem;
-  line-height: 1.5;
-  margin-bottom: 6px;
-}
-.read-more {
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--accent);
-}
-
-/* ===== CTA Section ===== */
-.cta-section {
-  background: linear-gradient(135deg, var(--accent-light) 0%, #fff 100%);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 24px 20px;
-  text-align: center;
-  margin: 20px 0;
-}
-.cta-section h2 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-.cta-section p {
-  color: var(--muted);
-  font-size: 0.9rem;
-  margin: 0 auto 14px;
-  max-width: 480px;
-}
-
-/* ===== WhatsApp 按钮 ===== */
-.wa-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: var(--green);
-  color: #fff !important;
-  padding: 8px 20px;
-  border-radius: 18px;
-  font-weight: 600;
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: background 0.18s;
-}
-.wa-btn:hover {
-  background: #128c4f;
-  text-decoration: none;
-}
-
-/* ===== Links Page（紧凑） ===== */
-.links-page {
-  max-width: 560px;
-  margin: 0 auto;
-  padding: 24px 4vw;
-}
-.links-hero {
-  text-align: center;
-  margin-bottom: 20px;
-}
-.links-hero h1 {
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-.links-sub {
-  font-size: 0.88rem;
-  color: var(--muted);
-}
-.links-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.links-card {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 12px 14px;
-  text-decoration: none;
-  color: inherit;
-  transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
-}
-.links-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(0,0,0,0.05);
-  border-color: var(--accent);
-}
-.links-icon {
-  flex-shrink: 0;
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  color: #fff;
-  font-weight: 700;
-}
-.links-body { flex: 1; min-width: 0; }
-.links-card h3 {
-  font-size: 0.95rem;
-  font-weight: 600;
-  margin-bottom: 1px;
-}
-.links-en {
-  font-size: 0.75rem;
-  color: var(--soft);
-  margin-bottom: 1px;
-}
-.links-desc {
-  font-size: 0.82rem;
-  color: var(--muted);
-}
-.links-arrow {
-  color: var(--soft);
-  font-size: 1rem;
-  transition: transform 0.18s, color 0.18s;
-}
-.links-card:hover .links-arrow {
-  transform: translateX(3px);
-  color: var(--accent);
-}
-.links-cta {
-  text-align: center;
-  margin-top: 20px;
-  padding: 14px;
-  background: var(--bg-soft);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-}
-.links-cta p { font-size: 0.88rem; color: var(--muted); }
-.links-cta a { color: var(--accent); font-weight: 600; }
-
-/* ===== Footer ===== */
-.footer {
-  border-top: 1px solid var(--border);
-  padding: 18px 4vw;
-  background: var(--bg-soft);
-  text-align: center;
-  color: var(--soft);
-  font-size: 0.82rem;
-}
-.footer p { margin: 3px 0; }
-.footer a { color: var(--accent); }
-
-/* ===== 隐藏双语 ===== */
-.cn, .en { display: none !important; }
-
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-  .nav-search { display: none; }
-  .nav-links { display: none; }
-  .hero h1 { font-size: 1.3rem; }
-  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
-  .stat-item h3 { font-size: 1.4rem; }
-  .cards-3 { grid-template-columns: 1fr; }
-  .post-card h2 { font-size: 0.98rem; }
-  .portrait { width: 90px; height: 90px; }
-  .achieve-grid { grid-template-columns: 1fr; }
-}
-</style>
+    /* ===== 社群 Footer（2026-09-20） ===== */
+    .social-footer{background:#f0f0f5;padding:40px 0 32px;text-align:center;margin-top:48px;border-top:1px solid var(--border)}
+    .social-footer h3{font-size:0.95rem;margin-bottom:18px;color:#444;font-weight:600}
+    .social-links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:18px;padding:0 24px}
+    .social-links a{color:#444;text-decoration:none;font-size:.85rem;padding:8px 14px;border:1px solid #e0e0e0;border-radius:6px;background:#fff;transition:all .2s}
+    .social-links a:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+    .copyright{font-size:.82rem;color:#999;margin-top:8px;padding:0 24px}
+  </style>
 </head>
 <body>
 
-                          <nav class="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="brand">[鄭哥博客]</a>
-      <div class="nav-search">
-        <input type="search" placeholder="搜索文章..." aria-label="搜索">
+  <nav>
+    <div class="container">
+      <div class="logo">鄭哥 / Hany</div>
+      <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Open menu">☰</button>
+      <div class="nav-wrapper" id="navWrapper">
+        <div class="nav-links">
+          <a href="blog.html"><span class="cn">文章</span><span class="en">Articles</span></a>
+          <a href="about.html"><span class="cn">關於</span><span class="en">About</span></a>
+          <a href="xhs.html"><span class="cn">點評</span><span class="en">Reviews</span></a>
+          <a href="contact.html" class="active"><span class="cn">聯繫</span><span class="en">Contact</span></a>
+          <button class="lang-toggle" onclick="toggleLang()" id="langBtn">EN</button>
+        </div>
       </div>
-      <ul class="nav-links">
-        <li><a href="index.html">首頁</a></li>
-        <li><a href="blog.html">文章</a></li>
-        <li><a href="about.html">關於</a></li>
-        <li><a href="links.html">連結</a></li>
-        <li><a href="contact.html" class="active">聯絡</a></li>
-      </ul>
     </div>
   </nav>
 
   <header>
     <div class="container">
       <h1>
-        聯繫鄭哥
-        
+        <span class="cn">聯繫鄭哥</span>
+        <span class="en">Contact Hany</span>
       </h1>
       <p>
-        有嘢想傾？直接搵我。我見到就覆。
-        
+        <span class="cn">有嘢想傾？直接搵我。我見到就覆。</span>
+        <span class="en">Something to discuss? Reach out. I'll reply when I see it.</span>
       </p>
     </div>
   </header>
@@ -711,39 +204,39 @@ header.about-hero .container > p {
   <section class="section">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">直接聯繫</h2>
+        <h2 class="section-title"><span class="cn">直接聯繫</span><span class="en">Direct Contact</span></h2>
       </div>
       <div class="contact-card">
         <div class="contact-item">
           <div class="contact-icon">📱</div>
           <div class="contact-body">
-            <h3>WhatsApp（香港）</h3>
+            <h3><span class="cn">WhatsApp（香港）</span><span class="en">WhatsApp (Hong Kong)</span></h3>
             <p><a href="https://wa.me/85266417912" target="_blank">+852 6641 7912</a></p>
-            <p class="contact-note">最快覆，通常即日回覆</p>
+            <p class="contact-note"><span class="cn">最快覆，通常即日回覆</span><span class="en">Fastest response, usually same day</span></p>
           </div>
         </div>
         <div class="contact-item">
           <div class="contact-icon">📞</div>
           <div class="contact-body">
-            <h3>電話（美國）</h3>
+            <h3><span class="cn">電話（美國）</span><span class="en">Phone (US)</span></h3>
             <p><a href="tel:+15625509968">+1 (562) 550-9968</a></p>
-            <p class="contact-note">ALEXBI INC 美國辦事處</p>
+            <p class="contact-note"><span class="cn">ALEXBI INC 美國辦事處</span><span class="en">ALEXBI INC US Office</span></p>
           </div>
         </div>
         <div class="contact-item">
           <div class="contact-icon">✉️</div>
           <div class="contact-body">
-            <h3>電郵</h3>
+            <h3><span class="cn">電郵</span><span class="en">Email</span></h3>
             <p><a href="mailto:glomarket500@gmail.com">glomarket500@gmail.com</a></p>
-            <p class="contact-note">商業合作、投資諮詢</p>
+            <p class="contact-note"><span class="cn">商業合作、投資諮詢</span><span class="en">Business collaboration, investment inquiry</span></p>
           </div>
         </div>
         <div class="contact-item">
           <div class="contact-icon">📍</div>
           <div class="contact-body">
-            <h3>地址</h3>
-            <p>香港：旺角花園街183號</p>
-            <p>美國：ALEXBI INC, 1603 E LUARY ST, LONG BEACH, CA 90807</p>
+            <h3><span class="cn">地址</span><span class="en">Address</span></h3>
+            <p><span class="cn">香港：旺角花園街183號</span><span class="en">Hong Kong: 183 Fa Yuen Street, Mong Kok</span></p>
+            <p><span class="cn">美國：ALEXBI INC, 1603 E LUARY ST, LONG BEACH, CA 90807</span><span class="en">US: ALEXBI INC, 1603 E LUARY ST, LONG BEACH, CA 90807</span></p>
           </div>
         </div>
       </div>
@@ -754,24 +247,24 @@ header.about-hero .container > p {
   <section class="section section-alt">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">搵我傾咩？</h2>
+        <h2 class="section-title"><span class="cn">搵我傾咩？</span><span class="en">What to Talk About?</span></h2>
       </div>
       <div class="biz-card">
-        <h3>☀️ 七善門科技 — AI回憶錄、大模型活動</h3>
-        <p>想瞭解AI回憶錄點樣幫你留住最珍貴嘅記憶？或者想參加我哋嘅大模型交流活動？</p>
+        <h3>☀️ <span class="cn">七善門科技 — AI回憶錄、大模型活動</span><span class="en">Qishanmen Tech — AI Memoirs, LLM Events</span></h3>
+        <p><span class="cn">想瞭解AI回憶錄點樣幫你留住最珍貴嘅記憶？或者想參加我哋嘅大模型交流活動？</span><span class="en">Want to know how AI memoirs preserve your precious memories? Or join our LLM exchange events?</span></p>
         <span class="tag">AI</span>
         <span class="tag">LLM</span>
       </div>
       <div class="biz-card">
-        <h3>⚡ 星辰算力 — 英偉達服務器部署</h3>
-        <p>企業需要AI算力基礎設施？我哋提供英偉達服務器一站式部署方案。</p>
+        <h3>⚡ <span class="cn">星辰算力 — 英偉達服務器部署</span><span class="en">Star Compute — NVIDIA Server Deployment</span></h3>
+        <p><span class="cn">企業需要AI算力基礎設施？我哋提供英偉達服務器一站式部署方案。</span><span class="en">Enterprise needs AI compute infrastructure? We provide one-stop NVIDIA server deployment.</span></p>
         <span class="tag">NVIDIA</span>
-        <span class="tag">服務器</span>
+        <span class="tag"><span class="cn">服務器</span><span class="en">Servers</span></span>
       </div>
       <div class="biz-card">
-        <h3>🚀 00後創業投資</h3>
-        <p>你有想法、有膽識、肯做？我願意傾。資金、經驗、人脈，一齊傾。</p>
-        <span class="tag">種子輪</span>
+        <h3>🚀 <span class="cn">00後創業投資</span><span class="en">Gen-Z Startup Investment</span></h3>
+        <p><span class="cn">你有想法、有膽識、肯做？我願意傾。資金、經驗、人脈，一齊傾。</span><span class="en">Got ideas, guts, and willingness to work? Let's talk. Capital, experience, connections.</span></p>
+        <span class="tag"><span class="cn">種子輪</span><span class="en">Seed</span></span>
         <span class="tag">mentorship</span>
       </div>
     </div>
@@ -781,17 +274,26 @@ header.about-hero .container > p {
   <section class="section">
     <div class="container">
       <div class="note-card">
-        <h4>💡 鄭哥話你知</h4>
-        <p>「我唔係咩專家，我只係做咗26年，見過太多人起起跌跌。如果你真係想傾，直接WhatsApp我，唔使客氣。」</p>
+        <h4>💡 <span class="cn">鄭哥話你知</span><span class="en">Hany's Note</span></h4>
+        <p><span class="cn">「我唔係咩專家，我只係做咗26年，見過太多人起起跌跌。如果你真係想傾，直接WhatsApp我，唔使客氣。」</span><span class="en">"I'm not some expert. I've just done this for 26 years and seen too many rises and falls. If you really want to talk, just WhatsApp me. No need to be polite."</span></p>
       </div>
     </div>
   </section>
 
     <!-- ===== 社群 Footer（2026-09-20） ===== -->
-    <footer class="footer">
-    <div class="footer-inner">
-      <p>© 2026 鄭哥 / Hany · 七善門科技 · 星辰算力 · 香港旺角</p>
-      <p>All stories are also on <a href="links.html">6 大平台</a></p>
+  <footer class="social-footer">
+    <div class="container">
+      <h3><span class="cn">鄭哥社群 / Follow on Social</span><span class="en">Follow Hany on Social</span></h3>
+      <div class="social-links">
+        <a href="xhs.html">📕 小紅書 Xiaohongshu</a>
+        <a href="youtube.html">📺 YouTube</a>
+        <a href="linkedin.html">💼 LinkedIn</a>
+        <a href="facebook.html">📘 Facebook</a>
+        <a href="instagram.html">📸 Instagram</a>
+        <a href="tiktok.html">🎵 TikTok</a>
+        <a href="twitter.html">🐦 Twitter / X</a>
+      </div>
+      <p class="copyright">© 2026 鄭哥 / Hany · 七善門科技 · 星辰算力 · 香港旺角</p>
     </div>
   </footer>
 
