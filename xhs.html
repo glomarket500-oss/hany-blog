@@ -58,17 +58,16 @@
   --border: #e8e8e8;
   --accent: #c9302c;
   --accent-light: #fdf2f2;
-  --font-mono: "JetBrains Mono", "Fira Code", "SFMono-Regular", Consolas, "Courier New", monospace;
   --font-zh: "PingFang HK", "Microsoft JhengHei", -apple-system, sans-serif;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
-  font-family: var(--font-mono), var(--font-zh);
+  font-family: var(--font-zh);
   background: var(--bg);
   color: var(--fg);
-  line-height: 1.6;
-  font-size: 15px;
+  line-height: 1.7;
+  font-size: 16px;
 }
 
 /* ===== 顶部导航 ===== */
@@ -85,11 +84,11 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  max-width: 1280px;
+  max-width: 1180px;
   margin: 0 auto;
 }
 .brand {
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--fg);
   text-decoration: none;
@@ -102,11 +101,11 @@ body {
 }
 .nav-search input {
   width: 100%;
-  padding: 6px 12px;
+  padding: 7px 14px;
   border: 1px solid var(--border);
   border-radius: 6px;
-  font-family: var(--font-mono), var(--font-zh);
-  font-size: 0.85rem;
+  font-family: var(--font-zh);
+  font-size: 0.9rem;
   background: #fafafa;
   color: var(--fg);
 }
@@ -123,14 +122,14 @@ body {
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 20px;
+  gap: 24px;
   margin: 0;
   padding: 0;
 }
 .nav-links a {
   color: var(--muted);
   text-decoration: none;
-  font-size: 0.88rem;
+  font-size: 0.95rem;
   white-space: nowrap;
   transition: color 0.15s;
 }
@@ -138,17 +137,16 @@ body {
   color: var(--accent);
   font-weight: 600;
 }
-.lang-toggle, .theme-toggle {
+.theme-toggle {
   background: transparent;
   border: 1px solid var(--border);
-  padding: 4px 10px;
+  padding: 5px 12px;
   border-radius: 4px;
   cursor: pointer;
-  font-family: var(--font-mono), var(--font-zh);
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   color: var(--muted);
 }
-.lang-toggle:hover, .theme-toggle:hover {
+.theme-toggle:hover {
   border-color: var(--accent);
   color: var(--accent);
 }
@@ -158,36 +156,21 @@ body {
   max-width: 1180px;
   margin: 0 auto;
   padding: 60px 5vw 40px;
-  text-align: center;
 }
 .page-header h1 {
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 700;
   margin-bottom: 16px;
   letter-spacing: -0.5px;
-}
-.page-header h1 .en {
-  display: block;
-  font-size: 1.2rem;
-  color: var(--muted);
-  font-weight: 400;
-  margin-top: 8px;
 }
 .page-header .subtitle {
   font-size: 1.05rem;
   color: var(--muted);
   max-width: 720px;
-  margin: 0 auto;
   line-height: 1.7;
 }
-.page-header .subtitle .en {
-  display: block;
-  margin-top: 6px;
-  font-size: 0.92rem;
-  color: #999;
-}
 
-/* ===== Post List (blog.html 核心) ===== */
+/* ===== Post List ===== */
 .post-list {
   max-width: 1180px;
   margin: 0 auto;
@@ -197,7 +180,7 @@ body {
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 28px 32px;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   background: #fff;
   transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
 }
@@ -214,28 +197,23 @@ body {
   flex-wrap: wrap;
 }
 .post-date {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   color: #888;
   background: #fafafa;
-  padding: 3px 10px;
+  padding: 4px 10px;
   border-radius: 4px;
   border: 1px solid var(--border);
-  white-space: nowrap;
 }
 .post-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 500;
   background: var(--accent-light);
   color: var(--accent);
-  padding: 3px 10px;
+  padding: 4px 10px;
   border-radius: 4px;
 }
 .post-card h3 {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.5;
   margin-bottom: 12px;
@@ -248,30 +226,17 @@ body {
 .post-card h3 a:hover {
   color: var(--accent);
 }
-.post-card h3 .en {
-  display: block;
-  font-size: 0.95rem;
-  color: var(--muted);
-  font-weight: 400;
-  margin-top: 4px;
-}
 .post-excerpt {
   color: var(--muted);
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   line-height: 1.7;
   margin-bottom: 16px;
-}
-.post-excerpt .en {
-  display: block;
-  margin-top: 6px;
-  font-size: 0.85rem;
-  color: #888;
 }
 .read-more {
   display: inline-block;
   color: var(--accent);
   text-decoration: none;
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   font-weight: 500;
   border-bottom: 1px solid transparent;
   transition: border-color 0.15s;
@@ -279,23 +244,8 @@ body {
 .read-more:hover {
   border-bottom-color: var(--accent);
 }
-.read-more .en {
-  display: inline;
-  margin-left: 8px;
-  color: var(--muted);
-  font-size: 0.82rem;
-}
 
-/* ===== 中英双语分隔 ===== */
-.cn { display: inline; }
-.en { 
-  display: inline; 
-  color: var(--muted); 
-  font-size: 0.92em;
-}
-.en::before { content: " · "; }
-
-/* ===== Hero (index.html) ===== */
+/* ===== Hero ===== */
 .hero {
   padding: 80px 5vw 60px;
   text-align: center;
@@ -305,31 +255,18 @@ body {
 .hero h1 {
   font-size: 2.2rem;
   font-weight: 700;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   letter-spacing: -0.5px;
-}
-.hero h1 .en {
-  display: block;
-  font-size: 1.3rem;
-  color: var(--muted);
-  font-weight: 400;
-  margin-top: 8px;
 }
 .hero .tagline {
   font-size: 1.05rem;
   color: var(--muted);
   max-width: 720px;
   margin: 0 auto;
-  line-height: 1.7;
-}
-.hero .tagline .en {
-  display: block;
-  margin-top: 6px;
-  font-size: 0.92rem;
-  color: #999;
+  line-height: 1.8;
 }
 
-/* ===== Stats (index.html) ===== */
+/* ===== Stats ===== */
 .stats { border-bottom: 1px solid var(--border); background: #fafafa; }
 .stats-grid {
   display: grid;
@@ -345,15 +282,8 @@ body {
   font-weight: 700;
   color: var(--accent);
   margin-bottom: 8px;
-  font-family: var(--font-mono);
 }
 .stat-label { color: var(--muted); font-size: 0.95rem; }
-.stat-label .en {
-  display: block;
-  margin-top: 4px;
-  font-size: 0.82rem;
-  color: #999;
-}
 
 /* ===== Section Header ===== */
 .section-header {
@@ -365,13 +295,6 @@ body {
 .section-header h2 {
   font-size: 1.6rem;
   font-weight: 700;
-}
-.section-header .en {
-  display: block;
-  color: var(--muted);
-  font-size: 0.92rem;
-  font-weight: 400;
-  margin-top: 4px;
 }
 
 /* ===== Cards ===== */
@@ -412,6 +335,9 @@ body {
 .footer-inner { max-width: 1180px; margin: 0 auto; }
 .footer a { color: var(--accent); text-decoration: none; }
 
+/* ===== 移除所有双语 class ===== */
+.cn, .en { display: none !important; }
+
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
   .nav-search { display: none; }
@@ -419,28 +345,27 @@ body {
   .hero h1 { font-size: 1.6rem; }
   .post-card { padding: 20px; }
   .post-card h3 { font-size: 1.05rem; }
-  .post-card h3 .en { font-size: 0.85rem; }
   .stats-grid { gap: 20px; padding: 24px 5vw; }
+  .stat-item h3 { font-size: 1.8rem; }
 }
 </style>
 </head>
 <body>
 
   <!-- ===== 導航 ===== -->
-            <nav class="nav">
+              <nav class="nav">
     <div class="nav-inner">
-      <a href="index.html" class="brand">[鄭哥 / Hany]</a>
+      <a href="index.html" class="brand">[鄭哥博客]</a>
       <div class="nav-search">
         <input type="search" placeholder="搜索文章..." aria-label="搜索">
       </div>
       <div class="nav-actions">
         <ul class="nav-links">
-          <li><a href="blog.html">Articles · 文章</a></li>
-          <li><a href="about.html">About · 关于</a></li>
-          <li><a href="links.html">Links · 链接</a></li>
-          <li><a href="contact.html">Contact · 联系</a></li>
+          <li><a href="blog.html">文章</a></li>
+          <li><a href="about.html">关于</a></li>
+          <li><a href="links.html">链接</a></li>
+          <li><a href="contact.html">联系</a></li>
         </ul>
-        <button class="lang-toggle" title="切換語言">中 / EN</button>
         <button class="theme-toggle" title="切換主題">🌙</button>
       </div>
     </div>
@@ -494,10 +419,10 @@ body {
   <!-- ===== 6篇文章對應 ===== -->
   <section class="section section-alt">
     <div class="container">
-      <h2 class="section-title"><span class="cn">📚 文章 ↔ 小紅書對應</span><span class="en">Blog Posts ↔ RED Versions</span></h2>
+      <h2 class="section-title">📚 文章 ↔ 小紅書對應</h2>
       <p style="text-align:center;color:var(--muted-foreground);margin-bottom:32px">
-        <span class="cn">每篇文章都有對應嘅小紅書版本，撳「複製文案」即貼得。</span>
-        <span class="en">Every blog post has a corresponding RED version. Click "Copy Notes" to paste.</span>
+        每篇文章都有對應嘅小紅書版本，撳「複製文案」即貼得。
+        
       </p>
 
       <div class="xhs-grid">
@@ -507,8 +432,8 @@ body {
           <img src="hany-wenzhou-cover.webp" alt="鄭哥Hany 温州女人买工厂" class="xhs-card-img" loading="lazy">
           <div class="xhs-card-body">
             <span class="xhs-card-tag">2026-09-12 · 生意格局 · ✅ 已發佈</span>
-            <h3 class="xhs-card-title"><span class="cn">2000万买厂，4000万卖出</span><span class="en">Buy for 20M, Sell for 40M</span></h3>
-            <p class="xhs-card-excerpt"><span class="cn">2006年温州女人揾我，带着20亿电子烟订单唔係落单，係叫我帮佢买起10间工厂。我格局太细，佢为盘棋而做生意。</span></p>
+            <h3 class="xhs-card-title">2000万买厂，4000万卖出</h3>
+            <p class="xhs-card-excerpt">2006年温州女人揾我，带着20亿电子烟订单唔係落单，係叫我帮佢买起10间工厂。我格局太细，佢为盘棋而做生意。</p>
             <div class="xhs-card-hashtags">#温州商人 #买工厂 #生意格局 #外贸创业 #郑哥Hany</div>
             <div class="xhs-card-actions">
               <a href="post-2026-09-12-wenzhou.html" class="xhs-btn xhs-btn-primary">📖 獨立站</a>
@@ -522,8 +447,8 @@ body {
           <img src="hany-echo-cover.webp" alt="鄭哥Hany Stephanie 400顆鋯石手錶手機" class="xhs-card-img" loading="lazy">
           <div class="xhs-card-body">
             <span class="xhs-card-tag">2026-09-12 · 外貿創業 · ✅ 已發佈</span>
-            <h3 class="xhs-card-title"><span class="cn">一張400粒鑲石訂單</span><span class="en">400 Zircons Order</span></h3>
-            <p class="xhs-card-excerpt"><span class="cn">2008年紐約設計師Stephanie飛嚟廣州，要我將手錶手機鑲滿400粒鋯石。嗰陣時Apple Watch仲未出，我哋係全世界第一個做呢樣嘢嘅人⋯</span></p>
+            <h3 class="xhs-card-title">一張400粒鑲石訂單</h3>
+            <p class="xhs-card-excerpt">2008年紐約設計師Stephanie飛嚟廣州，要我將手錶手機鑲滿400粒鋯石。嗰陣時Apple Watch仲未出，我哋係全世界第一個做呢樣嘢嘅人⋯</p>
             <div class="xhs-card-hashtags">#外貿創業 #奢侈品生意 #紐約時裝周 #手錶手機 #鑲鋯石</div>
             <div class="xhs-card-actions">
               <a href="post-2026-09-12-echo.html" class="xhs-btn xhs-btn-primary">📖 獨立站</a>
@@ -537,8 +462,8 @@ body {
           <img src="hany-frank-cover.webp" alt="鄭哥Hany 我的朋友Fank" class="xhs-card-img" loading="lazy">
           <div class="xhs-card-body">
             <span class="xhs-card-tag">2026-09-11 · 文化交流 · ✅ 已發佈</span>
-            <h3 class="xhs-card-title"><span class="cn">一個烏干達老師嘅廣州漂</span><span class="en">A Ugandan Teacher's GZ Story</span></h3>
-            <p class="xhs-card-excerpt"><span class="cn">Fank係我喺廣州小北撞到嘅烏干達老師，本來請佢教我個仔英文，後來佢做咗廣州大學嘅教授⋯</span></p>
+            <h3 class="xhs-card-title">一個烏干達老師嘅廣州漂</h3>
+            <p class="xhs-card-excerpt">Fank係我喺廣州小北撞到嘅烏干達老師，本來請佢教我個仔英文，後來佢做咗廣州大學嘅教授⋯</p>
             <div class="xhs-card-hashtags">#文化交流 #外國友人 #廣州生活 #教育</div>
             <div class="xhs-card-actions">
               <a href="post-2026-09-11-fank.html" class="xhs-btn xhs-btn-primary">📖 獨立站</a>
@@ -552,8 +477,8 @@ body {
           <img src="hany-africa-president.webp" alt="鄭哥Hany 非洲女客" class="xhs-card-img" loading="lazy">
           <div class="xhs-card-body">
             <span class="xhs-card-tag">2026-09-11 · 外貿故事</span>
-            <h3 class="xhs-card-title"><span class="cn">賠咗一單，賠出個總統親戚</span><span class="en">Lost One Order, Won a President</span></h3>
-            <p class="xhs-card-excerpt"><span class="cn">2000年廣州小北，非洲女客手机被偷要我賠。我蝕底赔咗，點知佢哥哥後來做咗非洲總統⋯</span></p>
+            <h3 class="xhs-card-title">賠咗一單，賠出個總統親戚</h3>
+            <p class="xhs-card-excerpt">2000年廣州小北，非洲女客手机被偷要我賠。我蝕底赔咗，點知佢哥哥後來做咗非洲總統⋯</p>
             <div class="xhs-card-hashtags">#非洲生意 #外貿故事 #人生奇遇 #廣州外貿</div>
             <div class="xhs-card-actions">
               <a href="post-2026-09-11-africa.html" class="xhs-btn xhs-btn-primary">📖 獨立站</a>
@@ -567,8 +492,8 @@ body {
           <img src="hany-turkey-cover.webp" alt="鄭哥Hany 土耳其客" class="xhs-card-img" loading="lazy">
           <div class="xhs-card-body">
             <span class="xhs-card-tag">2026-09-04 · 外貿教訓</span>
-            <h3 class="xhs-card-title"><span class="cn">10萬訂金教土耳其客做人</span><span class="en">100K Deposit Taught a Lesson</span></h3>
-            <p class="xhs-card-excerpt"><span class="cn">嗰個土耳其中間商用10萬訂金呃我，點知我將計就計，設咗個局教佢做人⋯</span></p>
+            <h3 class="xhs-card-title">10萬訂金教土耳其客做人</h3>
+            <p class="xhs-card-excerpt">嗰個土耳其中間商用10萬訂金呃我，點知我將計就計，設咗個局教佢做人⋯</p>
             <div class="xhs-card-hashtags">#外貿教訓 #土耳其生意 #防騙指南</div>
             <div class="xhs-card-actions">
               <a href="post-2026-09-04-222803-turkey.html" class="xhs-btn xhs-btn-primary">📖 獨立站</a>
@@ -582,8 +507,8 @@ body {
           <img src="hany-haixuan-cover.webp" alt="鄭哥Hany 點解要搞砸張單" class="xhs-card-img" loading="lazy">
           <div class="xhs-card-body">
             <span class="xhs-card-tag">2026-09-04 · 外貿反轉</span>
-            <h3 class="xhs-card-title"><span class="cn">點解要搞砸張單？因為個客玩緊海選</span><span class="en">Why I Sabotaged an Order</span></h3>
-            <p class="xhs-card-excerpt"><span class="cn">澳洲客用5000蚊試勻全中國，識破之後我專登做慢做細做爛，同時關門改技術⋯</span></p>
+            <h3 class="xhs-card-title">點解要搞砸張單？因為個客玩緊海選</h3>
+            <p class="xhs-card-excerpt">澳洲客用5000蚊試勻全中國，識破之後我專登做慢做細做爛，同時關門改技術⋯</p>
             <div class="xhs-card-hashtags">#外貿反轉 #海選對策 #商業智慧</div>
             <div class="xhs-card-actions">
               <a href="post-2026-09-04-haixuan.html" class="xhs-btn xhs-btn-primary">📖 獨立站</a>
@@ -597,8 +522,8 @@ body {
           <img src="hany-patent-cover.webp" alt="鄭哥Hany 5000蚊專利" class="xhs-card-img" loading="lazy">
           <div class="xhs-card-body">
             <span class="xhs-card-tag">2026-09-04 · 產品創新</span>
-            <h3 class="xhs-card-title"><span class="cn">5000蚊買咗個專利，意外做咗手錶手機</span><span class="en">5000 HKD Bought a Patent</span></h3>
-            <p class="xhs-card-excerpt"><span class="cn">嗰5000蚊買嘅唔止係專利，係成個行業嘅入場券。比Apple Watch早咗九年⋯</span></p>
+            <h3 class="xhs-card-title">5000蚊買咗個專利，意外做咗手錶手機</h3>
+            <p class="xhs-card-excerpt">嗰5000蚊買嘅唔止係專利，係成個行業嘅入場券。比Apple Watch早咗九年⋯</p>
             <div class="xhs-card-hashtags">#產品創新 #專利故事 #AppleWatch #手錶手機</div>
             <div class="xhs-card-actions">
               <a href="post-2026-09-04-patent.html" class="xhs-btn xhs-btn-primary">📖 獨立站</a>
