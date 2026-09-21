@@ -78,659 +78,149 @@
   </script>
 
   <style>
-:root {
-  --bg: #ffffff;
-  --fg: #1a1a1a;
-  --muted: #555;
-  --soft: #888;
-  --border: #e8e8e8;
-  --bg-soft: #fafafa;
-  --accent: #1e6bb8;
-  --accent-light: #eef3fa;
-  --accent-hover: #14518c;
-  --green: #25d366;
-  --gold: #f0c040;
-  --gold-bg: #fffbf0;
-  --font-zh: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: var(--font-zh);
-  background: var(--bg);
-  color: var(--fg);
-  line-height: 1.6;
-  font-size: 15px;
-  -webkit-font-smoothing: antialiased;
-}
-a { color: var(--accent); text-decoration: none; transition: color 0.15s; }
-a:hover { color: var(--accent-hover); }
-img { max-width: 100%; height: auto; display: block; }
+    :root {
+      --bg: #fafafa; --bg-elevated: #ffffff; --text: #1a1a1a; --text-secondary: #555555; --text-muted: #888888;
+      --accent: #c41e3a; --accent-light: rgba(196,30,58,0.08); --border: #e8e8e8; --border-light: #f0f0f0;
+      --radius: 12px; --radius-sm: 8px; --shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.02);
+      --shadow-hover: 0 4px 16px rgba(0,0,0,0.06), 0 12px 40px rgba(0,0,0,0.04); --max-width: 720px;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', 'PingFang HK', 'Noto Sans SC', sans-serif;
+      background: var(--bg); color: var(--text); line-height: 1.75; font-size: 16px; -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+    
+    /* ===== 導航 v2（2026-09-20） ===== */
+    nav { background:#fff; border-bottom:1px solid #e8e8ed; padding:14px 0; position:sticky; top:0; z-index:1000; }
+    nav .container { display:flex; justify-content:space-between; align-items:center; position:relative; }
+    .logo { font-size:1.05rem; font-weight:700; color:#1a1a2e; }
+    .hamburger { display:none; background:none; border:none; font-size:1.5rem; cursor:pointer; padding:4px 8px; }
+    .nav-wrapper { display:flex; align-items:center; }
+    .nav-links { display:flex; align-items:center; gap:20px; }
+    nav a { text-decoration:none; color:#444; font-size:0.9rem; transition:color 0.2s; }
+    nav a:hover, nav a.active { color:#e94560; }
 
-/* ===== 顶部导航（紧凑） ===== */
-.nav {
-  border-bottom: 1px solid var(--border);
-  padding: 10px 4vw;
-  background: rgba(255,255,255,0.96);
-  backdrop-filter: blur(12px);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-.nav-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-.brand {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--fg);
-  flex-shrink: 0;
-}
-.brand:hover { color: var(--accent); text-decoration: none; }
-.nav-search {
-  flex: 1;
-  max-width: 220px;
-  margin: 0 6px;
-}
-.nav-search input {
-  width: 100%;
-  padding: 5px 12px;
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  font-family: inherit;
-  font-size: 0.85rem;
-  background: var(--bg-soft);
-}
-.nav-search input:focus {
-  outline: none;
-  border-color: var(--accent);
-  background: #fff;
-}
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 14px;
-}
-.nav-links a {
-  color: var(--muted);
-  font-size: 0.88rem;
-  white-space: nowrap;
-}
-.nav-links a:hover, .nav-links a.active {
-  color: var(--accent);
-  font-weight: 600;
-  text-decoration: none;
-}
+        /* Mobile */
+    @media (max-width:768px) {
+      .hamburger { display:block; }
+      .nav-wrapper { display:none; position:absolute; top:100%; left:0; right:0; background:#fff; border-top:1px solid #e8e8ed; box-shadow:0 4px 12px rgba(0,0,0,.08); }
+      .nav-wrapper.open { display:block; }
+      .nav-links { flex-direction:column; align-items:stretch; gap:0; padding:8px 0; }
+      .nav-links > a, .lang-toggle { padding:12px 24px; border-bottom:1px solid #f0f0f5; width:100%; text-align:left; }
+      .nav-links > a:last-of-type { border-bottom:none; }
+      .lang-toggle { border-radius:0; }
+    }
+    
+    header { background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%); color: #fff; padding: 80px 0 60px; text-align:center; position: relative; overflow: hidden; }
+    header::before { content:''; position:absolute; top: -30%; right: -10%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(196,30,58,0.15) 0%, transparent 70%); border-radius: 50%; }
+    header .container { position:relative; z-index: 1; }
+    header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.5px; }
+    header h1 .en { font-size: 1.3rem; font-weight: 400; opacity: 0.7; display:block; margin-top: 8px; }
+    header p { color: rgba(255,255,255,0.55); max-width: 480px; margin: 0 auto; font-size: 0.95rem; line-height: 1.7; }
+    
+    .section { padding: 56px 0; }
+    .section-alt { background: var(--bg-elevated); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); }
+    .section-header { margin-bottom: 32px; }
+    .section-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.3px; }
+    .section-sub { color: var(--text-muted); font-size: 0.95rem; }
+    
+    /* ===== 文章列表 ===== */
+    .post-list { display: flex; flex-direction: column; gap: 16px; }
+    .post-card { background: var(--bg-elevated); border-radius: var(--radius); border: 1px solid var(--border-light); padding: 28px; transition: all 0.3s ease; }
+    .post-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); border-color: var(--border); }
+    .post-card:last-child { margin-bottom: 0; }
+    .post-meta-top { display:flex; align-items:center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+    .post-date { font-size: 0.8rem; color: var(--text-muted); font-family: 'SF Mono', monospace; }
+    .post-tag { background: var(--accent-light); color: var(--accent); padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 500; }
+    .post-card h3 { font-size: 1.15rem; margin-bottom: 8px; font-weight: 600; line-height: 1.4; }
+    .post-card h3 a { text-decoration:none; color: var(--text); transition: color 0.2s; }
+    .post-card h3 a:hover { color: var(--accent); }
+    .post-card .en-title { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 10px; line-height: 1.5; }
+    .post-card .excerpt { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px; }
+    .post-card .read-more { font-size: 0.88rem; color: var(--accent); text-decoration:none; font-weight: 500; }
+    .post-card .read-more:hover { text-decoration: underline; }
+    
+    /* ===== 小紅書便簽 ===== */
+    .note-card {
+      background: linear-gradient(135deg, #fff5f5 0%, #fff0f0 100%);
+      border: 1px solid #ffe0e0; border-radius: var(--radius); padding: 20px 24px; margin: 20px 0; position: relative;
+    }
+    .note-card::before { content: ''; position: absolute; top: 0; left: 24px; width: 60px; height: 4px; background: var(--accent); border-radius: 0 0 4px 4px; }
+    .note-card h4 { font-size: 0.95rem; color: var(--accent); margin-bottom: 8px; font-weight: 600; }
+    .note-card p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; }
+    
+    /* ===== 分類標籤 ===== */
+    .category-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+    .category-tag { background: var(--bg-elevated); border: 1px solid var(--border-light); padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; color: var(--text-secondary); cursor: pointer; transition: all 0.2s; }
+    .category-tag:hover, .category-tag.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+    
+    /* ===== CTA ===== */
+    .cta-section { background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%); color: #fff; padding: 48px 0; text-align:center; position: relative; overflow: hidden; }
+    .cta-section::before { content:''; position:absolute; bottom: -50%; left: -20%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(196,30,58,0.12) 0%, transparent 70%); border-radius: 50%; }
+    .cta-section .container { position: relative; z-index: 1; }
+    .cta-section h2 { font-size: 1.3rem; margin-bottom: 10px; font-weight: 600; }
+    .cta-section p { color: rgba(255,255,255,0.5); font-size: 0.9rem; margin-bottom: 20px; }
+    .cta-btn { display:inline-flex; align-items:center; gap: 8px; background: var(--accent); color: #fff; padding: 12px 28px; border-radius: var(--radius-sm); text-decoration:none; font-size: 0.9rem; font-weight: 500; transition: all 0.2s; }
+    .cta-btn:hover { background: #a31830; transform: translateY(-1px); }
+    
+    footer { background: var(--bg-elevated); border-top: 1px solid var(--border-light); padding: 32px 0; text-align:center; }
+    footer p { font-size: 0.82rem; color: var(--text-muted); }
+    
+    .en { display:none; }
+    body.show-en .en { display:block; }
+    body.show-en .cn { display:none; }
+    body.show-en .en-inline { display:inline; }
+    body.show-en .cn-inline { display:none; }
+    .en-inline, .cn-inline { display:inline; }
+    
+    @media (max-width: 640px) {
+      header h1 { font-size: 1.7rem; }
+      header h1 .en { font-size: 1.1rem; }
+      .post-card { padding: 20px; }
+    }
 
-/* ===== Container（紧凑） ===== */
-.container {
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 0 4vw;
-}
+    
+    .comments h2 { font-size: 1.3rem; font-weight: 600; margin-bottom: 24px; }
 
-/* ===== Hero（紧凑） ===== */
-.hero {
-  padding: 24px 0 20px;
-  text-align: center;
-  background: linear-gradient(180deg, var(--bg-soft) 0%, #fff 100%);
-  border-bottom: 1px solid var(--border);
-}
-.hero-tag {
-  display: inline-block;
-  font-size: 0.8rem;
-  color: var(--muted);
-  background: #fff;
-  padding: 3px 12px;
-  border-radius: 14px;
-  margin-bottom: 10px;
-  border: 1px solid var(--border);
-}
-.hero h1 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-  letter-spacing: -0.3px;
-}
-.hero .tagline {
-  font-size: 0.95rem;
-  color: var(--muted);
-  max-width: 580px;
-  margin: 0 auto 16px;
-  line-height: 1.6;
-}
-.hero-quote {
-  font-size: 0.92rem;
-  color: var(--fg);
-  max-width: 540px;
-  margin: 0 auto 16px;
-  padding: 10px 18px;
-  background: var(--accent-light);
-  border-left: 3px solid var(--accent);
-  border-radius: 0 6px 6px 0;
-}
-.hero-cta {
-  display: inline-flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.cta-primary, .cta-secondary {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  padding: 8px 18px;
-  border-radius: 18px;
-  font-weight: 600;
-  font-size: 0.88rem;
-}
-.cta-primary {
-  background: var(--accent);
-  color: #fff !important;
-}
-.cta-primary:hover {
-  background: var(--accent-hover);
-  text-decoration: none;
-  color: #fff !important;
-}
-.cta-secondary {
-  background: #fff;
-  color: var(--accent) !important;
-  border: 1px solid var(--accent);
-}
-.cta-secondary:hover {
-  background: var(--accent-light);
-  text-decoration: none;
-}
-
-/* ===== About Header（紧凑 + 小头像） ===== */
-header.about-hero {
-  background: linear-gradient(180deg, var(--bg-soft) 0%, #fff 100%);
-  border-bottom: 1px solid var(--border);
-}
-header.about-hero .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 24px 4vw 20px;
-}
-.portrait {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-bottom: 14px;
-  border: 2px solid #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-}
-.portrait img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-header.about-hero h1 {
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-header.about-hero .container > p {
-  font-size: 0.92rem;
-  color: var(--muted);
-  max-width: 540px;
-  line-height: 1.6;
-}
-
-/* ===== Stats 区（紧凑 4 列） ===== */
-.stats-section {
-  padding: 22px 0;
-  border-bottom: 1px solid var(--border);
-}
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-}
-.stat-item {
-  text-align: center;
-  padding: 14px 8px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: #fff;
-  transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
-}
-.stat-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-  border-color: var(--accent);
-}
-.stat-item h3 {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: var(--accent);
-  margin-bottom: 3px;
-  line-height: 1;
-}
-.stat-label {
-  font-size: 0.82rem;
-  color: var(--muted);
-}
-
-/* ===== Section（紧凑） ===== */
-.section {
-  padding: 32px 0;
-  border-bottom: 1px solid var(--border);
-}
-.section-alt { background: var(--bg-soft); }
-.section-header {
-  text-align: center;
-  margin-bottom: 20px;
-}
-.section-header h2 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-.section-header p {
-  color: var(--muted);
-  font-size: 0.88rem;
-}
-
-/* ===== 3 列卡片（紧凑） ===== */
-.cards-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-}
-.card {
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  overflow: hidden;
-  background: #fff;
-  transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
-}
-.card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
-  border-color: var(--accent);
-}
-.card-img {
-  width: 100%;
-  height: 130px;
-  object-fit: cover;
-  background: var(--bg-soft);
-}
-.card-body {
-  padding: 12px 16px 16px;
-}
-.card-body h3 {
-  font-size: 0.98rem;
-  font-weight: 600;
-  margin-bottom: 4px;
-}
-.card-body p {
-  font-size: 0.85rem;
-  color: var(--muted);
-  line-height: 1.5;
-}
-
-/* ===== Timeline（紧凑） ===== */
-.timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  max-width: 700px;
-  margin: 0 auto;
-}
-.t-item {
-  padding: 10px 0;
-  border-bottom: 1px solid var(--border);
-}
-.t-item:last-child { border-bottom: none; }
-.t-year {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--accent);
-  margin-bottom: 4px;
-}
-.t-content p {
-  margin-bottom: 6px;
-  line-height: 1.6;
-  font-size: 0.92rem;
-}
-.highlight {
-  background: var(--accent-light);
-  border-left: 3px solid var(--accent);
-  padding: 8px 12px;
-  margin: 8px 0;
-  border-radius: 0 4px 4px 0;
-  font-size: 0.9rem;
-}
-.tag {
-  display: inline-block;
-  font-size: 0.75rem;
-  background: #f5f5f5;
-  color: var(--muted);
-  padding: 2px 8px;
-  border-radius: 4px;
-  margin: 2px 4px 2px 0;
-}
-
-/* ===== Achieve Grid（紧凑） ===== */
-.achieve-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 14px;
-}
-.achieve-card {
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  overflow: hidden;
-  background: #fff;
-  transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
-}
-.achieve-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.05);
-  border-color: var(--accent);
-}
-.achieve-year {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--accent);
-  padding: 8px 12px 0;
-}
-.achieve-card img {
-  width: 100%;
-  height: 130px;
-  object-fit: cover;
-}
-.img-caption {
-  font-size: 0.75rem;
-  color: var(--soft);
-  padding: 4px 12px 0;
-  text-align: center;
-}
-.achieve-card h4 {
-  font-size: 0.95rem;
-  font-weight: 600;
-  padding: 6px 12px 0;
-}
-.achieve-card p {
-  font-size: 0.85rem;
-  color: var(--muted);
-  padding: 4px 12px 10px;
-  line-height: 1.5;
-}
-.badge-first {
-  display: inline-block;
-  font-size: 0.72rem;
-  background: var(--accent-light);
-  color: var(--accent);
-  font-weight: 600;
-  padding: 2px 8px;
-  margin: 0 12px 12px;
-  border-radius: 4px;
-}
-
-/* ===== Note Card ===== */
-.note-card {
-  background: var(--gold-bg);
-  border: 1px solid #f5e6c5;
-  border-left: 4px solid var(--gold);
-  border-radius: 6px;
-  padding: 14px 18px;
-  margin: 16px 0;
-}
-.note-card h4 {
-  font-size: 0.92rem;
-  font-weight: 700;
-  margin-bottom: 4px;
-}
-.note-card p {
-  color: var(--muted);
-  font-size: 0.88rem;
-  line-height: 1.6;
-}
-
-/* ===== Post List（紧凑） ===== */
-.post-list {
-  display: flex;
-  flex-direction: column;
-}
-.post-card {
-  border-bottom: 1px solid var(--border);
-  padding: 16px 0;
-  transition: background 0.15s;
-}
-.post-card:hover { background: var(--bg-soft); }
-.post-card:first-child { padding-top: 0; }
-.post-card:last-child { border-bottom: none; }
-.post-meta-top {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 6px;
-  font-size: 0.78rem;
-  flex-wrap: wrap;
-}
-.post-date { color: var(--soft); }
-.post-tag {
-  background: var(--accent-light);
-  color: var(--accent);
-  padding: 1px 8px;
-  border-radius: 4px;
-  font-weight: 500;
-}
-.post-card h2 {
-  font-size: 1.05rem;
-  font-weight: 700;
-  line-height: 1.4;
-  margin-bottom: 6px;
-}
-.post-card h2 a { color: var(--fg); }
-.post-card h2 a:hover { color: var(--accent); text-decoration: none; }
-.post-excerpt {
-  color: var(--muted);
-  font-size: 0.88rem;
-  line-height: 1.5;
-  margin-bottom: 6px;
-}
-.read-more {
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--accent);
-}
-
-/* ===== CTA Section ===== */
-.cta-section {
-  background: linear-gradient(135deg, var(--accent-light) 0%, #fff 100%);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 24px 20px;
-  text-align: center;
-  margin: 20px 0;
-}
-.cta-section h2 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-.cta-section p {
-  color: var(--muted);
-  font-size: 0.9rem;
-  margin: 0 auto 14px;
-  max-width: 480px;
-}
-
-/* ===== WhatsApp 按钮 ===== */
-.wa-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: var(--green);
-  color: #fff !important;
-  padding: 8px 20px;
-  border-radius: 18px;
-  font-weight: 600;
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: background 0.18s;
-}
-.wa-btn:hover {
-  background: #128c4f;
-  text-decoration: none;
-}
-
-/* ===== Links Page（紧凑） ===== */
-.links-page {
-  max-width: 560px;
-  margin: 0 auto;
-  padding: 24px 4vw;
-}
-.links-hero {
-  text-align: center;
-  margin-bottom: 20px;
-}
-.links-hero h1 {
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-.links-sub {
-  font-size: 0.88rem;
-  color: var(--muted);
-}
-.links-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.links-card {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 12px 14px;
-  text-decoration: none;
-  color: inherit;
-  transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
-}
-.links-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(0,0,0,0.05);
-  border-color: var(--accent);
-}
-.links-icon {
-  flex-shrink: 0;
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  color: #fff;
-  font-weight: 700;
-}
-.links-body { flex: 1; min-width: 0; }
-.links-card h3 {
-  font-size: 0.95rem;
-  font-weight: 600;
-  margin-bottom: 1px;
-}
-.links-en {
-  font-size: 0.75rem;
-  color: var(--soft);
-  margin-bottom: 1px;
-}
-.links-desc {
-  font-size: 0.82rem;
-  color: var(--muted);
-}
-.links-arrow {
-  color: var(--soft);
-  font-size: 1rem;
-  transition: transform 0.18s, color 0.18s;
-}
-.links-card:hover .links-arrow {
-  transform: translateX(3px);
-  color: var(--accent);
-}
-.links-cta {
-  text-align: center;
-  margin-top: 20px;
-  padding: 14px;
-  background: var(--bg-soft);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-}
-.links-cta p { font-size: 0.88rem; color: var(--muted); }
-.links-cta a { color: var(--accent); font-weight: 600; }
-
-/* ===== Footer ===== */
-.footer {
-  border-top: 1px solid var(--border);
-  padding: 18px 4vw;
-  background: var(--bg-soft);
-  text-align: center;
-  color: var(--soft);
-  font-size: 0.82rem;
-}
-.footer p { margin: 3px 0; }
-.footer a { color: var(--accent); }
-
-/* ===== 隐藏双语 ===== */
-.cn, .en { display: none !important; }
-
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-  .nav-search { display: none; }
-  .nav-links { display: none; }
-  .hero h1 { font-size: 1.3rem; }
-  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
-  .stat-item h3 { font-size: 1.4rem; }
-  .cards-3 { grid-template-columns: 1fr; }
-  .post-card h2 { font-size: 0.98rem; }
-  .portrait { width: 90px; height: 90px; }
-  .achieve-grid { grid-template-columns: 1fr; }
-}
-</style>
+    /* ===== 社群 Footer（2026-09-20） ===== */
+    .social-footer{background:#f0f0f5;padding:40px 0 32px;text-align:center;margin-top:48px;border-top:1px solid var(--border)}
+    .social-footer h3{font-size:0.95rem;margin-bottom:18px;color:#444;font-weight:600}
+    .social-links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:18px;padding:0 24px}
+    .social-links a{color:#444;text-decoration:none;font-size:.85rem;padding:8px 14px;border:1px solid #e0e0e0;border-radius:6px;background:#fff;transition:all .2s}
+    .social-links a:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+    .copyright{font-size:.82rem;color:#999;margin-top:8px;padding:0 24px}
+  </style>
 </head>
 <body>
 
-                          <nav class="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="brand">[鄭哥博客]</a>
-      <div class="nav-search">
-        <input type="search" placeholder="搜索文章..." aria-label="搜索">
+  <nav>
+    <div class="container">
+      <a href="index.html" class="logo">鄭哥 / Hany</a>
+      <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Open menu">☰</button>
+      <div class="nav-wrapper" id="navWrapper">
+        <div class="nav-links">
+          <a href="index.html"><span class="cn">首頁</span><span class="en">Home</span></a>
+          <a href="blog.html" class="active"><span class="cn">文章</span><span class="en">Articles</span></a>
+          <a href="about.html"><span class="cn">關於</span><span class="en">About</span></a>
+          <a href="xhs.html"><span class="cn">點評</span><span class="en">Reviews</span></a>
+          <a href="contact.html"><span class="cn">聯繫</span><span class="en">Contact</span></a>
+          <button class="lang-toggle" onclick="toggleLang()" id="langBtn">EN</button>
+        </div>
       </div>
-      <ul class="nav-links">
-        <li><a href="index.html">首頁</a></li>
-        <li><a href="blog.html" class="active">文章</a></li>
-        <li><a href="about.html">關於</a></li>
-        <li><a href="links.html">連結</a></li>
-        <li><a href="contact.html">聯絡</a></li>
-      </ul>
     </div>
   </nav>
 
   <header>
     <div class="container">
       <h1>
-        鄭哥嘅文章
-        
+        <span class="cn">鄭哥嘅文章</span>
+        <span class="en">Hany's Writing</span>
       </h1>
       <p>
-        唔係日更，係有嘢想講先寫。真實經歷，唔係教程。
-        
+        <span class="cn">唔係日更，係有嘢想講先寫。真實經歷，唔係教程。</span>
+        <span class="en">Not daily. I write when I have something to say. Real experiences, not tutorials.</span>
       </p>
     </div>
   </header>
@@ -739,192 +229,182 @@ header.about-hero .container > p {
   <section class="section">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">全部文章</h2>
+        <h2 class="section-title"><span class="cn">全部文章</span><span class="en">All Posts</span></h2>
       </div>
       
       <div class="post-list">
         <article class="post-card">
           <div class="post-meta-top">
             <span class="post-date">2026年9月19日 08:00:00</span>
-            <span class="post-tag">AI科技 · 博客点评</span>
+            <span class="post-tag"><span class="cn">AI科技 · 博客点评</span><span class="en">AI Phone · Review</span></span>
           </div>
-          <h3><a href="post-2026-09-19-ai-phone-war.html">《二代豆包手機一秒破億——AI 手機大戰，我哋 70 後點睇》</a></h3>
-          <p class="post-excerpt">二代豆包手機銷售額「一秒破億」！9月16日努比亞 NaviX Ultra 開售，加上蘋果、華為嘅 AI 終端戰略——AI 手機大戰一觸即發。70 後老炮兒點睇呢場入口之爭？</p>
-          <a href="post-2026-09-19-ai-phone-war.html" class="read-more">閱讀全文 →</a>
-                  </article>
+          <h3><a href="post-2026-09-19-ai-phone-war.html"><span class="cn">《二代豆包手機一秒破億——AI 手機大戰，我哋 70 後點睇》</span><span class="en">Second-Gen Doubao Phone Hits ¥100M in One Second — The AI Phone War, Viewed by a Gen-Xer</span></a></h3>
+          <p class="post-excerpt"><span class="cn">二代豆包手機銷售額「一秒破億」！9月16日努比亞 NaviX Ultra 開售，加上蘋果、華為嘅 AI 終端戰略——AI 手機大戰一觸即發。70 後老炮兒點睇呢場入口之爭？</span><span class="en">Second-gen Doubao phone hit ¥100M in one second. Nubia NaviX Ultra launched Sep 16. Apple and Huawei join — the AI phone war is on. A Gen-X trader's read.</span></p>
+          <a href="post-2026-09-19-ai-phone-war.html" class="read-more"><span class="cn">閱讀全文 →</span><span class="en">Read more →</span></a>
+        </article>
 
-                  <article class="post-card">
-                    <div class="post-meta-top">
-                      <span class="post-date">2026年9月20日 14:00:00</span>
-                      <span class="post-tag">AI科技 · 博客点评</span>
-                    </div>
-                    <h3><a href="post-2026-09-20-doubao-gui.html">《豆包手機「轉正」——GUI 兜底 + AI 辦公養家，70 後點睇呢場變革》</a></h3>
-                    <p class="post-excerpt">9.5 個月從工程樣機到消費者版本（5999元起），京東預約 38 萬 vs 備貨 20 萬。GUI 兜底 + SAEP 協議 + AI 辦公訂閱——70 後三個新機會：傳統行業加 GUI Agent、AI 辦公訂閱、AI 終端出海。</p>
-                    <a href="post-2026-09-20-doubao-gui.html" class="read-more">閱讀全文 →</a>
-                  </article>
-
-                  <article class="post-card">
-                    <div class="post-meta-top">
-                      <span class="post-date">2026年9月17日 22:00:00</span>
-                      <span class="post-tag">外貿實戰 · 博客点评</span>
+        <article class="post-card">
+          <div class="post-meta-top">
+            <span class="post-date">2026年9月17日 22:00:00</span>
+            <span class="post-tag"><span class="cn">外貿實戰 · 博客点评</span><span class="en">B2B · Review</span></span>
           </div>
-          <h3><a href="post-2026-09-17-saas.html">《外贸B端社媒矩阵——一个70后点用SaaS系统撬动印度/东南亚市场》</a></h3>
-          <p class="post-excerpt">5+品牌、5+市场、15+账号？AI内容生产加SaaS分发加客户承接，系印度东南亚B端新机遇。</p>
-          <a href="post-2026-09-17-saas.html" class="read-more">閱讀全文 →</a>
+          <h3><a href="post-2026-09-17-saas.html"><span class="cn">《外贸B端社媒矩阵——一个70后点用SaaS系统撬动印度/东南亚市场》</span><span class="en">B2B Social Media Matrix SaaS</span></a></h3>
+          <p class="post-excerpt"><span class="cn">5+品牌、5+市场、15+账号？AI内容生产加SaaS分发加客户承接，系印度东南亚B端新机遇。</span><span class="en">5 brands, 5 markets, 15+ accounts. AI plus SaaS plus CRM is the new B2B formula.</span></p>
+          <a href="post-2026-09-17-saas.html" class="read-more"><span class="cn">閱讀全文 →</span><span class="en">Read more →</span></a>
         </article>
 
         <article class="post-card">
           <div class="post-meta-top">
             <span class="post-date">2026年9月17日 23:00:00</span>
-            <span class="post-tag">AI科技 · 博客点评</span>
+            <span class="post-tag"><span class="cn">AI科技 · 博客点评</span><span class="en">AI · Review</span></span>
           </div>
-          <h3><a href="post-2026-09-17-ai-war.html">《AI大战白热化+国产崛起+安全争议——一个70后睇到嘅2026 AI真相》</a></h3>
-          <p class="post-excerpt">Meta反击、国产崛起、安全争议。AI嘅权力从闭源巨头转向开源生态加中国力量。</p>
-          <a href="post-2026-09-17-ai-war.html" class="read-more">閱讀全文 →</a>
+          <h3><a href="post-2026-09-17-ai-war.html"><span class="cn">《AI大战白热化+国产崛起+安全争议——一个70后睇到嘅2026 AI真相》</span><span class="en">AI War 2026: Power Shifts</span></a></h3>
+          <p class="post-excerpt"><span class="cn">Meta反击、国产崛起、安全争议。AI嘅权力从闭源巨头转向开源生态加中国力量。</span><span class="en">Meta fights back, China rises, safety enters the chat. AI power is shifting.</span></p>
+          <a href="post-2026-09-17-ai-war.html" class="read-more"><span class="cn">閱讀全文 →</span><span class="en">Read more →</span></a>
         </article>
 
         <article class="post-card">
           <div class="post-meta-top">
             <span class="post-date">2026年9月17日 18:00:00</span>
-            <span class="post-tag">行业观察 · 博客点评</span>
+            <span class="post-tag"><span class="cn">行业观察 · 博客点评</span><span class="en">Industry · Review</span></span>
           </div>
-          <h3><a href="post-2026-09-17-solar.html">《光伏展会「人少」——一个70后睇到嘅5个信号》</a></h3>
-          <p class="post-excerpt">装机跌61%，亏损104亿，连续11个季度亏损。短期避开制造端，中期睇储能加AI，识避风险比抓机会更重要。</p>
-          <a href="post-2026-09-17-solar.html" class="read-more">閱讀全文 →</a>
+          <h3><a href="post-2026-09-17-solar.html"><span class="cn">《光伏展会「人少」——一个70后睇到嘅5个信号》</span><span class="en">Fewer Crowds at the Solar Fair: 5 Signals</span></a></h3>
+          <p class="post-excerpt"><span class="cn">装机跌61%，亏损104亿，连续11个季度亏损。短期避开制造端，中期睇储能加AI，识避风险比抓机会更重要。</span><span class="en">Installations down 61%, 10.4B losses. Avoid manufacturing short-term; storage plus AI is the mid-term play.</span></p>
+          <a href="post-2026-09-17-solar.html" class="read-more"><span class="cn">閱讀全文 →</span><span class="en">Read more →</span></a>
         </article>
 
         <article class="post-card">
           <div class="post-meta-top">
             <span class="post-date">2026年9月17日 12:00:00</span>
-            <span class="post-tag">芯片存储 · 博客点评</span>
+            <span class="post-tag"><span class="cn">芯片存储 · 博客点评</span><span class="en">Chips · Review</span></span>
           </div>
-          <h3><a href="post-2026-09-17-memory.html">《内存涨价5-7倍，一个做AI算力嘅人点睇》</a></h3>
-          <p class="post-excerpt">内存涨5到7倍，缺货讲到2028年。B300卖1450万嘅故事会继续，有货源同长约先系护城河。</p>
-          <a href="post-2026-09-17-memory.html" class="read-more">閱讀全文 →</a>
+          <h3><a href="post-2026-09-17-memory.html"><span class="cn">《内存涨价5-7倍，一个做AI算力嘅人点睇》</span><span class="en">Memory Up 5-7x: Notes from an AI Compute Insider</span></a></h3>
+          <p class="post-excerpt"><span class="cn">内存涨5到7倍，缺货讲到2028年。B300卖1450万嘅故事会继续，有货源同长约先系护城河。</span><span class="en">Memory prices up 5-7x, shortages to 2028. The 14.5M B300 story continues; supply and contracts are the moat.</span></p>
+          <a href="post-2026-09-17-memory.html" class="read-more"><span class="cn">閱讀全文 →</span><span class="en">Read more →</span></a>
         </article>
 
         <article class="post-card">
           <div class="post-meta-top">
             <span class="post-date">2026年9月15日 22:00:00</span>
-            <span class="post-tag">文化反思 · 博客点评</span>
+            <span class="post-tag"><span class="cn">文化反思 · 博客点评</span><span class="en">Culture · Review</span></span>
           </div>
-          <h3><a href="post-2026-09-15-teapot.html">《一只100-200年嘅日本古杯——同AI时代嘅时间价值反思》</a></h3>
-          <p class="post-excerpt">紫砂壶要养十年，AI一月迭代一次。能穿越时间嘅嘢先系真正价值。</p>
-          <a href="post-2026-09-15-teapot.html" class="read-more">閱讀全文 →</a>
+          <h3><a href="post-2026-09-15-teapot.html"><span class="cn">《一只100-200年嘅日本古杯——同AI时代嘅时间价值反思》</span><span class="en">A 100-Year-Old Cup: Rethinking Time</span></a></h3>
+          <p class="post-excerpt"><span class="cn">紫砂壶要养十年，AI一月迭代一次。能穿越时间嘅嘢先系真正价值。</span><span class="en">Teapots take a decade; AI iterates monthly. What survives time is true value.</span></p>
+          <a href="post-2026-09-15-teapot.html" class="read-more"><span class="cn">閱讀全文 →</span><span class="en">Read more →</span></a>
         </article>
 
         <article class="post-card">
           <div class="post-meta-top">
             <span class="post-date">2026年9月15日 20:00:00</span>
-            <span class="post-tag">时事点评 · 博客点评</span>
+            <span class="post-tag"><span class="cn">时事点评 · 博客点评</span><span class="en">Current Affairs · Review</span></span>
           </div>
-          <h3><a href="post-2026-09-15-flow.html">《太子道嘅城巴，同中国出入境新规——9月15日嘅两件小事》</a></h3>
-          <p class="post-excerpt">一个促进流动，一个限制流动。货物可以走，人唔可以走。未来30年胜负关键就系流动。</p>
-          <a href="post-2026-09-15-flow.html" class="read-more">閱讀全文 →</a>
+          <h3><a href="post-2026-09-15-flow.html"><span class="cn">《太子道嘅城巴，同中国出入境新规——9月15日嘅两件小事》</span><span class="en">Bus 6333 and New Exit Rules</span></a></h3>
+          <p class="post-excerpt"><span class="cn">一个促进流动，一个限制流动。货物可以走，人唔可以走。未来30年胜负关键就系流动。</span><span class="en">One promotes flow, one restricts it. Goods move, people cannot. Flow decides the next 30 years.</span></p>
+          <a href="post-2026-09-15-flow.html" class="read-more"><span class="cn">閱讀全文 →</span><span class="en">Read more →</span></a>
         </article>
 
         <article class="post-card">
           <div class="post-meta-top">
             <span class="post-date">2026年9月15日 18:00:00</span>
-            <span class="post-tag">城市记忆 · 博客点评</span>
+            <span class="post-tag"><span class="cn">城市记忆 · 博客点评</span><span class="en">City Memory · Review</span></span>
           </div>
-          <h3><a href="post-2026-09-15-bus6333.html">《九龙太子道嘅城巴6333——我喺呢个城市见证嘅26年》</a></h3>
-          <p class="post-excerpt">城巴仲喺度，但太子道已经唔同咗。编号就系承诺，连接就系价值。</p>
-          <a href="post-2026-09-15-bus6333.html" class="read-more">閱讀全文 →</a>
+          <h3><a href="post-2026-09-15-bus6333.html"><span class="cn">《九龙太子道嘅城巴6333——我喺呢个城市见证嘅26年》</span><span class="en">Bus 6333 on Prince Edward Road: 26 Years</span></a></h3>
+          <p class="post-excerpt"><span class="cn">城巴仲喺度，但太子道已经唔同咗。编号就系承诺，连接就系价值。</span><span class="en">The bus remains, but the road has changed. Numbers are promises; connection is value.</span></p>
+          <a href="post-2026-09-15-bus6333.html" class="read-more"><span class="cn">閱讀全文 →</span><span class="en">Read more →</span></a>
         </article>
 
         <article class="post-card">
           <div class="post-meta-top">
             <span class="post-date">2026年9月16日 20:00:00</span>
-            <span class="post-tag">AI算力 · 博客点评</span>
+            <span class="post-tag"><span class="cn">AI算力 · 博客点评</span><span class="en">AI Compute · Review</span></span>
           </div>
-          <h3><a href="post-2026-09-16-b300.html">《B300卖1450万嘅背后——一个做AI算力嘅人嘅深度点评》</a></h3>
-          <p class="post-excerpt">美国400万，国内1450万。多出嚟嘅一千万系买家自己加上去嘅。算力由成本变成营收，租赁同垂直应用先系大机会。</p>
-          <a href="post-2026-09-16-b300.html" class="read-more">閱讀全文 →</a>
+          <h3><a href="post-2026-09-16-b300.html"><span class="cn">《B300卖1450万嘅背后——一个做AI算力嘅人嘅深度点评》</span><span class="en">Behind the 14.5M B300: Notes from an AI Compute Insider</span></a></h3>
+          <p class="post-excerpt"><span class="cn">美国400万，国内1450万。多出嚟嘅一千万系买家自己加上去嘅。算力由成本变成营收，租赁同垂直应用先系大机会。</span><span class="en">400M in the US, 14.5M in China. Compute turned from cost into revenue; rental and vertical apps are the real play.</span></p>
+          <a href="post-2026-09-16-b300.html" class="read-more"><span class="cn">閱讀全文 →</span><span class="en">Read more →</span></a>
         </article>
 
         <article class="post-card">
           <div class="post-meta-top">
             <span class="post-date">2026年9月16日 21:00:00</span>
-            <span class="post-tag">产品回忆 · 城市观察</span>
+            <span class="post-tag"><span class="cn">产品回忆 · 城市观察</span><span class="en">Product Memory · City Notes</span></span>
           </div>
-          <h3><a href="post-2026-09-16-mountain-electronics.html">《一山之隔两个世界，从诺基亚走到AI算力》</a></h3>
-          <p class="post-excerpt">一张航拍图，一边棚屋一边别墅。由1998年电子贸易讲起，产品变咗廿几年，由外置电池到手表手机，再到跨境电商同AI算力。</p>
-          <a href="post-2026-09-16-mountain-electronics.html" class="read-more">閱讀全文 →</a>
+          <h3><a href="post-2026-09-16-mountain-electronics.html"><span class="cn">《一山之隔两个世界，从诺基亚走到AI算力》</span><span class="en">Two Worlds Across One Hill: From Nokia to AI Compute</span></a></h3>
+          <p class="post-excerpt"><span class="cn">一张航拍图，一边棚屋一边别墅。由1998年电子贸易讲起，产品变咗廿几年，由外置电池到手表手机，再到跨境电商同AI算力。</span><span class="en">One aerial photo, two worlds. From 1998 electronics trade to AI compute, the products changed but the mission stayed.</span></p>
+          <a href="post-2026-09-16-mountain-electronics.html" class="read-more"><span class="cn">閱讀全文 →</span><span class="en">Read more →</span></a>
         </article>
 
         <article class="post-card">
           <div class="post-meta-top">
             <span class="post-date">2026年9月16日 18:30:00</span>
-            <span class="post-tag">外貿觀察 · 城市商業</span>
+            <span class="post-tag"><span class="cn">外貿觀察 · 城市商業</span><span class="en">Trade · City Commerce</span></span>
           </div>
-          <h3><a href="post-2026-09-16-gzport.html">《广州的“义乌焦虑”：一场不得不打的商贸翻身仗》</a></h3>
-          <p class="post-excerpt">广州国际商业港首开区挂牌，不只是花都多了一个大项目。它背后是广州对“义乌模式”的正面回应，也是千年商都补服务链、抢外贸话语权的一场硬仗。</p>
-          <a href="post-2026-09-16-gzport.html" class="read-more">閱讀全文 →</a>
+          <h3><a href="post-2026-09-16-gzport.html"><span class="cn">《广州的“义乌焦虑”：一场不得不打的商贸翻身仗》</span><span class="en">Guangzhou's “Yiwu Anxiety”: A Trade Battle It Must Fight</span></a></h3>
+          <p class="post-excerpt"><span class="cn">广州国际商业港首开区挂牌，不只是花都多了一个大项目。它背后是广州对“义乌模式”的正面回应，也是千年商都补服务链、抢外贸话语权的一场硬仗。</span><span class="en">The Guangzhou International Trade Port is more than a new project: it is Guangzhou's answer to Yiwu and a battle to rebuild its trade-service chain.</span></p>
+          <a href="post-2026-09-16-gzport.html" class="read-more"><span class="cn">閱讀全文 →</span><span class="en">Read more →</span></a>
         </article>
 
         <article class="post-card">
           <div class="post-meta-top">
             <span class="post-date">2026年9月14日 18:30:00</span>
-            <span class="post-tag">创业观察</span>
+            <span class="post-tag"><span class="cn">创业观察</span><span class="en">Business Insight</span></span>
           </div>
-          <h3><a href="post-2026-09-14-xianyu.html">《闲鱼上一件¥500嘅「救命神器》，畀我睇到2026年最稳阵嘅创业机会》</a></h3>
-          <p class="post-excerpt">外卖骑手半路冇电点算？呢件¥500嘅便携取电器，填补咗巨头服务唔到嘅空白。背后嘅市场逻辑同创业机会，值得深思。</p>
-          <a href="post-2026-09-14-xianyu.html" class="read-more">阅读全文 →</a>
+          <h3><a href="post-2026-09-14-xianyu.html"><span class="cn">《闲鱼上一件¥500嘅「救命神器》，畀我睇到2026年最稳阵嘅创业机会》</span><span class="en">A ¥500 "Lifesaver" on Xianyu: 2026's Steadiest Opportunity</span></a></h3>
+          <p class="post-excerpt"><span class="cn">外卖骑手半路冇电点算？呢件¥500嘅便携取电器，填补咗巨头服务唔到嘅空白。背后嘅市场逻辑同创业机会，值得深思。</span><span class="en">What happens when a delivery rider runs out of battery? This ¥500 portable charger fills the gap that giants can't serve.</span></p>
+          <a href="post-2026-09-14-xianyu.html" class="read-more"><span class="cn">阅读全文 →</span><span class="en">Read more →</span></a>
         </article>
 
     <article class="post-card">
           <div class="post-meta-top">
             <span class="post-date">2026年9月12日 12:00:00</span>
-            <span class="post-tag">生意格局</span>
+            <span class="post-tag"><span class="cn">生意格局</span><span class="en">Business Vision</span></span>
           </div>
-          <h3><a href="post-2026-09-12-wenzhou.html">《2006年，一个温州女人揾我，唔係落单，係叫我帮佢买起10间工厂》</a></h3>
-          <p class="post-excerpt">20亿订单唔落单，买起间厂先至系真高手。2000万买，4000万卖，一年赚两倍。我格局太细。</p>
-          <a href="post-2026-09-12-wenzhou.html" class="read-more">閱讀全文 →</a>
+          <h3><a href="post-2026-09-12-wenzhou.html"><span class="cn">《2006年，一个温州女人揾我，唔係落单，係叫我帮佢买起10间工厂》</span><span class="en">2006: A Wenzhou Woman Asked Me to Buy 10 Factories</span></a></h3>
+          <p class="post-excerpt"><span class="cn">20亿订单唔落单，买起间厂先至系真高手。2000万买，4000万卖，一年赚两倍。我格局太细。</span><span class="en">A 2-billion RMB order — but she bought the factory instead. Doubled her money in a year.</span></p>
+          <a href="post-2026-09-12-wenzhou.html" class="read-more"><span class="cn">閱讀全文 →</span><span class="en">Read more →</span></a>
         </article>
 
         <article class="post-card">
           <div class="post-meta-top">
             <span class="post-date">2026年9月12日 01:20:49</span>
-            <span class="post-tag">人物故事</span>
+            <span class="post-tag"><span class="cn">人物故事</span><span class="en">People Story</span></span>
           </div>
-          <h3><a href="post-2026-09-12-echo.html">《2008年，一个美国女设计师飞来广州，要我把手表镶满400颗锆石》</a></h3>
+          <h3><a href="post-2026-09-12-echo.html"><span class="cn">《2008年，一个美国女设计师飞来广州，要我把手表镶满400颗锆石》</span><span class="en">2008: A NYC Designer Flew to Guangzhou — Set 400 Zircons on a Watch Phone</span></a></h3>
           <p class="en-title">2000 custom watch phones from a Guangzhou factory to the New York runway — a 4-million RMB order</p>
-          <p class="post-excerpt">2008年10月，紐約時裝設計師Stephanie飛嚟廣州，要喺手錶手機鑲400粒鋯石做奢侈品。2000台、400萬，仲有我嗰晚喺辦公室猶豫嘅兩個鐘...</p>
-          <a href="post-2026-09-12-echo.html" class="read-more">閱讀全文 →</a>
+          <p class="post-excerpt"><span class="cn">2008年10月，紐約時裝設計師Stephanie飛嚟廣州，要喺手錶手機鑲400粒鋯石做奢侈品。2000台、400萬，仲有我嗰晚喺辦公室猶豫嘅兩個鐘...</span><span class="en">In October 2008, NYC designer Stephanie flew to Guangzhou and asked for 400 zircons on a watch phone. 2000 units, 4 million RMB — and the two hours I sat hesitating in my office...</span></p>
+          <a href="post-2026-09-12-echo.html" class="read-more"><span class="cn">閱讀全文 →</span><span class="en">Read more →</span></a>
         </article>
 
         <article class="post-card">
           <div class="post-meta-top">
             <span class="post-date">2026年9月11日 18:38:22</span>
-            <span class="post-tag">人物故事</span>
+            <span class="post-tag"><span class="cn">人物故事</span><span class="en">People Story</span></span>
           </div>
-          <h3><a href="post-2026-09-11-fank.html">《我的朋友Fank》</a></h3>
+          <h3><a href="post-2026-09-11-fank.html"><span class="cn">《我的朋友Fank》</span><span class="en">My Friend Fank</span></a></h3>
           <p class="en-title">An honest Ugandan teacher who became my son's tutor, then a Guangzhou university professor</p>
-          <p class="post-excerpt">08、09年廣州外貿熱鬧，Fank從烏干達嚟搵工。佢唔啱做外貿，但係好老師。後來做咗廣州大學教授，一家人安居樂業...</p>
-          <a href="post-2026-09-11-fank.html" class="read-more">閱讀全文 →</a>
+          <p class="post-excerpt"><span class="cn">08、09年廣州外貿熱鬧，Fank從烏干達嚟搵工。佢唔啱做外貿，但係好老師。後來做咗廣州大學教授，一家人安居樂業...</span><span class="en">During Guangzhou's booming trade era, Fank came from Uganda looking for work. He wasn't cut out for trade, but he was a great teacher. Now he's a professor at a Guangzhou university...</span></p>
+          <a href="post-2026-09-11-fank.html" class="read-more"><span class="cn">閱讀全文 →</span><span class="en">Read more →</span></a>
         </article>
 
         <article class="post-card">
           <div class="post-meta-top">
             <span class="post-date">2026年9月11日</span>
-            <span class="post-tag">外貿經驗</span>
+            <span class="post-tag"><span class="cn">外貿經驗</span><span class="en">Trade</span></span>
           </div>
-          <h3><a href="post-2026-09-11-africa.html">《非洲女客手机被偷，我赔咗一单，点知赔出个总统亲戚》</a></h3>
+          <h3><a href="post-2026-09-11-africa.html"><span class="cn">《非洲女客手机被偷，我赔咗一单，点知赔出个总统亲戚》</span><span class="en">The African Client Whose Stolen Phones Cost Me a Fortune — And Won Me a Presidential Relative</span></a></h3>
           <p class="en-title">A Guangzhou street market story: how losing money on one order won a lifelong friend — and a presidential relative</p>
-          <p class="post-excerpt">2000幾年廣州小北，非洲女客手机被偷要我赔。我蝕底赔咗，点知佢后来做咗非洲总统嘅亲人。做生意唔好吓吓计到尽...</p>
-          <a href="post-2026-09-11-africa.html" class="read-more">閱讀全文 →</a>
+          <p class="post-excerpt"><span class="cn">2000幾年廣州小北，非洲女客手机被偷要我赔。我蝕底赔咗，点知佢后来做咗非洲总统嘅亲人。做生意唔好吓吓计到尽...</span><span class="en">In the 2000s at Guangzhou's Xiaobei, an African client's phones were stolen at her hotel. I took the loss and compensated her. Turns out her brother later became president...</span></p>
+          <a href="post-2026-09-11-africa.html" class="read-more"><span class="cn">閱讀全文 →</span><span class="en">Read more →</span></a>
         </article>
 
         <article class="post-card">
           <div class="post-meta-top">
             <span class="post-date">2026年9月4日 22:28:03</span>
-            <span class="post-tag">外貿經驗</span>
+            <span class="post-tag"><span class="cn">外貿經驗</span><span class="en">Trade</span></span>
           </div>
-          <h3><a href="post-2026-09-04-222803-turkey.html">《我出10万訂金，買個機会教土耳其客做人》</a></h3>
+          <h3><a href="post-2026-09-04-222803-turkey.html"><span class="cn">《我出10万訂金，買個機会教土耳其客做人》</span><span class="en">The 100K Deposit That Taught a Turkish Client a Lesson</span></a></h3>
           <p class="en-title">The 100K deposit that set a trap for a Turkish middleman — Guangzhou, 2000</p>
-          <p class="post-excerpt">你呃得一個，但呃唔到一條巷。你以为自己好醒，其實人哋只係未出手。</p>
-          <a href="post-2026-09-04-222803-turkey.html" class="read-more">閱讀全文 →</a>
+          <p class="post-excerpt"><span class="cn">你呃得一個，但呃唔到一條巷。你以为自己好醒，其實人哋只係未出手。</span><span class="en">You can fool one person, but not the whole neighborhood. You think you're clever, but others just haven't struck yet.</span></p>
+          <a href="post-2026-09-04-222803-turkey.html" class="read-more"><span class="cn">閱讀全文 →</span><span class="en">Read more →</span></a>
         
     
 
@@ -933,60 +413,60 @@ header.about-hero .container > p {
         <article class="post-card">
           <div class="post-meta-top">
             <span class="post-date">2026年9月4日 12:53:13</span>
-            <span class="post-tag">外貿經驗</span>
+            <span class="post-tag"><span class="cn">外貿經驗</span><span class="en">Trade</span></span>
           </div>
-          <h3><a href="post-2026-09-04-haixuan.html">點解我要搞砸張單？因為個客玩緊"海選"</a></h3>
+          <h3><a href="post-2026-09-04-haixuan.html"><span class="cn">點解我要搞砸張單？因為個客玩緊"海選"</span><span class="en">Why I Sabotaged the Order: The Client Was "Sea-Selecting"</span></a></h3>
           <p class="en-title">The Australian client's 5000 HKD "audition" across all of China — and how I turned the tables</p>
-          <p class="post-excerpt">佢用5000蚊試勻全中國，睇邊個接得住。我識破之後，專登做慢做細做爛，同時關門改技術。佢玩"海選"，我玩"借種"...</p>
-          <a href="post-2026-09-04-haixuan.html" class="read-more">閱讀全文 →</a>
+          <p class="post-excerpt"><span class="cn">佢用5000蚊試勻全中國，睇邊個接得住。我識破之後，專登做慢做細做爛，同時關門改技術。佢玩"海選"，我玩"借種"...</span><span class="en">He used 5000 HKD to audition factories all over China. Once I saw through it, I deliberately botched the order while secretly developing my own version. He played "sea-selection", I played "borrowing seeds"...</span></p>
+          <a href="post-2026-09-04-haixuan.html" class="read-more"><span class="cn">閱讀全文 →</span><span class="en">Read more →</span></a>
 
 </article>
 
         <article class="post-card">
           <div class="post-meta-top">
             <span class="post-date">2026年9月4日 09:12:52</span>
-            <span class="post-tag">產品創新</span>
+            <span class="post-tag"><span class="cn">產品創新</span><span class="en">Innovation</span></span>
           </div>
-          <h3><a href="post-2026-09-04-patent.html">《2005年，5000蚊買咗個專利，我留咗一手》</a></h3>
+          <h3><a href="post-2026-09-04-patent.html"><span class="cn">《2005年，5000蚊買咗個專利，我留咗一手》</span><span class="en">The 5000 HKD Patent That Changed Everything</span></a></h3>
           <p class="en-title">How I bought a concept for 5000 HKD and turned it into an industry entry ticket</p>
-          <p class="post-excerpt">嗰5000蚊買嘅唔止係專利，係成個行業嘅入場券。比Apple Watch早咗九年。</p>
-          <a href="post-2026-09-04-patent.html" class="read-more">閱讀全文 →</a>
+          <p class="post-excerpt"><span class="cn">嗰5000蚊買嘅唔止係專利，係成個行業嘅入場券。比Apple Watch早咗九年。</span><span class="en">That 5000 HKD bought more than a patent — it bought an industry entry ticket. Nine years before Apple Watch.</span></p>
+          <a href="post-2026-09-04-patent.html" class="read-more"><span class="cn">閱讀全文 →</span><span class="en">Read more →</span></a>
 
 </article>
 
         <article class="post-card">
           <div class="post-meta-top">
             <span class="post-date">2026-08-28</span>
-            <span class="post-tag">AI科技</span>
+            <span class="post-tag"><span class="cn">AI科技</span><span class="en">AI Tech</span></span>
           </div>
-          <h3><a href="#">點解傳統貿易商偷偷買AI服務器？</a></h3>
+          <h3><a href="#"><span class="cn">點解傳統貿易商偷偷買AI服務器？</span><span class="en">Why Traditional Traders Are Secretly Buying AI Servers</span></a></h3>
           <p class="en-title">The hidden demand from old-school business owners</p>
-          <p class="post-excerpt">你做開貿易，點解要買AI服務器？因為競爭對手已經用AI做客服、做翻譯、做數據分析。你唔做，人就做咗你...</p>
-          <a href="#" class="read-more">閱讀全文 →</a>
+          <p class="post-excerpt"><span class="cn">你做開貿易，點解要買AI服務器？因為競爭對手已經用AI做客服、做翻譯、做數據分析。你唔做，人就做咗你...</span><span class="en">Why would a trader buy AI servers? Because competitors are already using AI for customer service, translation, data analysis. If you don't, someone else will...</span></p>
+          <a href="#" class="read-more"><span class="cn">閱讀全文 →</span><span class="en">Read more →</span></a>
 
 </article>
 
         <article class="post-card">
           <div class="post-meta-top">
             <span class="post-date">2026-08-20</span>
-            <span class="post-tag">跨境電商</span>
+            <span class="post-tag"><span class="cn">跨境電商</span><span class="en">E-commerce</span></span>
           </div>
-          <h3><a href="#">Amazon賣家最常問我嘅三個問題</a></h3>
+          <h3><a href="#"><span class="cn">Amazon賣家最常問我嘅三個問題</span><span class="en">The Three Questions Amazon Sellers Ask Me Most</span></a></h3>
           <p class="en-title">Real Q&A from cross-border e-commerce operators</p>
-          <p class="post-excerpt">「點樣搵到可靠供應商？」「點樣處理退貨？」「點樣應對平台政策變化？」呢三個問題我答咗十幾年...</p>
-          <a href="#" class="read-more">閱讀全文 →</a>
+          <p class="post-excerpt"><span class="cn">「點樣搵到可靠供應商？」「點樣處理退貨？」「點樣應對平台政策變化？」呢三個問題我答咗十幾年...</span><span class="en">"How to find reliable suppliers?" "How to handle returns?" "How to deal with platform policy changes?" I've been answering these for over a decade...</span></p>
+          <a href="#" class="read-more"><span class="cn">閱讀全文 →</span><span class="en">Read more →</span></a>
 
 </article>
 
         <article class="post-card">
           <div class="post-meta-top">
             <span class="post-date">2026-08-15</span>
-            <span class="post-tag">產品創新</span>
+            <span class="post-tag"><span class="cn">產品創新</span><span class="en">Innovation</span></span>
           </div>
-          <h3><a href="#">2005年，我做出全球第一款手錶手機</a></h3>
+          <h3><a href="#"><span class="cn">2005年，我做出全球第一款手錶手機</span><span class="en">In 2005, I Built the World's First Watch Phone</span></a></h3>
           <p class="en-title">The story behind a product that was 10 years ahead of Apple Watch</p>
-          <p class="post-excerpt">當年冇人信手錶可以做手機，我覺得「點解唔得？」就做出嚟。呢個故事教識我：創新唔係讀書讀返嚟，係問「點解唔得？」問返嚟...</p>
-          <a href="#" class="read-more">閱讀全文 →</a>
+          <p class="post-excerpt"><span class="cn">當年冇人信手錶可以做手機，我覺得「點解唔得？」就做出嚟。呢個故事教識我：創新唔係讀書讀返嚟，係問「點解唔得？」問返嚟...</span><span class="en">Back then no one believed a watch could be a phone. I thought "Why not?" and built it. This story taught me: innovation isn't learned from books, it's learned by asking "Why not?"...</span></p>
+          <a href="#" class="read-more"><span class="cn">閱讀全文 →</span><span class="en">Read more →</span></a>
 
 </article>
       </div>
@@ -997,8 +477,8 @@ header.about-hero .container > p {
   <section class="section section-alt">
     <div class="container">
       <div class="note-card">
-        <h4>💡 鄭哥話你知</h4>
-        <p>「寫文章同做生意一樣，最緊要真誠。我冇讀過寫作班，但我識得講真話。如果你覺得我嘅文章幫到你，歡迎轉發畀朋友。」</p>
+        <h4>💡 <span class="cn">鄭哥話你知</span><span class="en">Hany's Note</span></h4>
+        <p><span class="cn">「寫文章同做生意一樣，最緊要真誠。我冇讀過寫作班，但我識得講真話。如果你覺得我嘅文章幫到你，歡迎轉發畀朋友。」</span><span class="en">"Writing is like doing business — authenticity matters most. I never took writing classes, but I know how to tell the truth. If my writing helps you, feel free to share it with friends."</span></p>
       </div>
     </div>
   </section>
@@ -1006,17 +486,26 @@ header.about-hero .container > p {
   <!-- ===== CTA ===== -->
   <section class="cta-section">
     <div class="container">
-      <h2>想睇更多？</h2>
-      <p>有新文章我會放呢度，或者你可以直接WhatsApp我傾。</p>
-      <a href="contact.html" class="cta-btn">聯繫鄭哥 →</a>
+      <h2><span class="cn">想睇更多？</span><span class="en">Want More?</span></h2>
+      <p><span class="cn">有新文章我會放呢度，或者你可以直接WhatsApp我傾。</span><span class="en">New posts go here, or just WhatsApp me to chat.</span></p>
+      <a href="contact.html" class="cta-btn"><span class="cn">聯繫鄭哥 →</span><span class="en">Contact Hany →</span></a>
     </div>
   </section>
 
     <!-- ===== 社群 Footer（2026-09-20） ===== -->
-    <footer class="footer">
-    <div class="footer-inner">
-      <p>© 2026 鄭哥 / Hany · 七善門科技 · 星辰算力 · 香港旺角</p>
-      <p>All stories are also on <a href="links.html">6 大平台</a></p>
+  <footer class="social-footer">
+    <div class="container">
+      <h3><span class="cn">鄭哥社群 / Follow on Social</span><span class="en">Follow Hany on Social</span></h3>
+      <div class="social-links">
+        <a href="xhs.html">📕 小紅書 Xiaohongshu</a>
+        <a href="youtube.html">📺 YouTube</a>
+        <a href="linkedin.html">💼 LinkedIn</a>
+        <a href="facebook.html">📘 Facebook</a>
+        <a href="instagram.html">📸 Instagram</a>
+        <a href="tiktok.html">🎵 TikTok</a>
+        <a href="twitter.html">🐦 Twitter / X</a>
+      </div>
+      <p class="copyright">© 2026 鄭哥 / Hany · 七善門科技 · 星辰算力 · 香港旺角</p>
     </div>
   </footer>
 
