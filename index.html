@@ -140,17 +140,16 @@
   --border: #e8e8e8;
   --accent: #c9302c;
   --accent-light: #fdf2f2;
-  --font-mono: "JetBrains Mono", "Fira Code", "SFMono-Regular", Consolas, "Courier New", monospace;
   --font-zh: "PingFang HK", "Microsoft JhengHei", -apple-system, sans-serif;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
-  font-family: var(--font-mono), var(--font-zh);
+  font-family: var(--font-zh);
   background: var(--bg);
   color: var(--fg);
-  line-height: 1.6;
-  font-size: 15px;
+  line-height: 1.7;
+  font-size: 16px;
 }
 
 /* ===== 顶部导航 ===== */
@@ -167,11 +166,11 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  max-width: 1280px;
+  max-width: 1180px;
   margin: 0 auto;
 }
 .brand {
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--fg);
   text-decoration: none;
@@ -184,11 +183,11 @@ body {
 }
 .nav-search input {
   width: 100%;
-  padding: 6px 12px;
+  padding: 7px 14px;
   border: 1px solid var(--border);
   border-radius: 6px;
-  font-family: var(--font-mono), var(--font-zh);
-  font-size: 0.85rem;
+  font-family: var(--font-zh);
+  font-size: 0.9rem;
   background: #fafafa;
   color: var(--fg);
 }
@@ -205,14 +204,14 @@ body {
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 20px;
+  gap: 24px;
   margin: 0;
   padding: 0;
 }
 .nav-links a {
   color: var(--muted);
   text-decoration: none;
-  font-size: 0.88rem;
+  font-size: 0.95rem;
   white-space: nowrap;
   transition: color 0.15s;
 }
@@ -220,17 +219,16 @@ body {
   color: var(--accent);
   font-weight: 600;
 }
-.lang-toggle, .theme-toggle {
+.theme-toggle {
   background: transparent;
   border: 1px solid var(--border);
-  padding: 4px 10px;
+  padding: 5px 12px;
   border-radius: 4px;
   cursor: pointer;
-  font-family: var(--font-mono), var(--font-zh);
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   color: var(--muted);
 }
-.lang-toggle:hover, .theme-toggle:hover {
+.theme-toggle:hover {
   border-color: var(--accent);
   color: var(--accent);
 }
@@ -240,36 +238,21 @@ body {
   max-width: 1180px;
   margin: 0 auto;
   padding: 60px 5vw 40px;
-  text-align: center;
 }
 .page-header h1 {
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 700;
   margin-bottom: 16px;
   letter-spacing: -0.5px;
-}
-.page-header h1 .en {
-  display: block;
-  font-size: 1.2rem;
-  color: var(--muted);
-  font-weight: 400;
-  margin-top: 8px;
 }
 .page-header .subtitle {
   font-size: 1.05rem;
   color: var(--muted);
   max-width: 720px;
-  margin: 0 auto;
   line-height: 1.7;
 }
-.page-header .subtitle .en {
-  display: block;
-  margin-top: 6px;
-  font-size: 0.92rem;
-  color: #999;
-}
 
-/* ===== Post List (blog.html 核心) ===== */
+/* ===== Post List ===== */
 .post-list {
   max-width: 1180px;
   margin: 0 auto;
@@ -279,7 +262,7 @@ body {
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 28px 32px;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   background: #fff;
   transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
 }
@@ -296,28 +279,23 @@ body {
   flex-wrap: wrap;
 }
 .post-date {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   color: #888;
   background: #fafafa;
-  padding: 3px 10px;
+  padding: 4px 10px;
   border-radius: 4px;
   border: 1px solid var(--border);
-  white-space: nowrap;
 }
 .post-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 500;
   background: var(--accent-light);
   color: var(--accent);
-  padding: 3px 10px;
+  padding: 4px 10px;
   border-radius: 4px;
 }
 .post-card h3 {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.5;
   margin-bottom: 12px;
@@ -330,30 +308,17 @@ body {
 .post-card h3 a:hover {
   color: var(--accent);
 }
-.post-card h3 .en {
-  display: block;
-  font-size: 0.95rem;
-  color: var(--muted);
-  font-weight: 400;
-  margin-top: 4px;
-}
 .post-excerpt {
   color: var(--muted);
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   line-height: 1.7;
   margin-bottom: 16px;
-}
-.post-excerpt .en {
-  display: block;
-  margin-top: 6px;
-  font-size: 0.85rem;
-  color: #888;
 }
 .read-more {
   display: inline-block;
   color: var(--accent);
   text-decoration: none;
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   font-weight: 500;
   border-bottom: 1px solid transparent;
   transition: border-color 0.15s;
@@ -361,23 +326,8 @@ body {
 .read-more:hover {
   border-bottom-color: var(--accent);
 }
-.read-more .en {
-  display: inline;
-  margin-left: 8px;
-  color: var(--muted);
-  font-size: 0.82rem;
-}
 
-/* ===== 中英双语分隔 ===== */
-.cn { display: inline; }
-.en { 
-  display: inline; 
-  color: var(--muted); 
-  font-size: 0.92em;
-}
-.en::before { content: " · "; }
-
-/* ===== Hero (index.html) ===== */
+/* ===== Hero ===== */
 .hero {
   padding: 80px 5vw 60px;
   text-align: center;
@@ -387,31 +337,18 @@ body {
 .hero h1 {
   font-size: 2.2rem;
   font-weight: 700;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   letter-spacing: -0.5px;
-}
-.hero h1 .en {
-  display: block;
-  font-size: 1.3rem;
-  color: var(--muted);
-  font-weight: 400;
-  margin-top: 8px;
 }
 .hero .tagline {
   font-size: 1.05rem;
   color: var(--muted);
   max-width: 720px;
   margin: 0 auto;
-  line-height: 1.7;
-}
-.hero .tagline .en {
-  display: block;
-  margin-top: 6px;
-  font-size: 0.92rem;
-  color: #999;
+  line-height: 1.8;
 }
 
-/* ===== Stats (index.html) ===== */
+/* ===== Stats ===== */
 .stats { border-bottom: 1px solid var(--border); background: #fafafa; }
 .stats-grid {
   display: grid;
@@ -427,15 +364,8 @@ body {
   font-weight: 700;
   color: var(--accent);
   margin-bottom: 8px;
-  font-family: var(--font-mono);
 }
 .stat-label { color: var(--muted); font-size: 0.95rem; }
-.stat-label .en {
-  display: block;
-  margin-top: 4px;
-  font-size: 0.82rem;
-  color: #999;
-}
 
 /* ===== Section Header ===== */
 .section-header {
@@ -447,13 +377,6 @@ body {
 .section-header h2 {
   font-size: 1.6rem;
   font-weight: 700;
-}
-.section-header .en {
-  display: block;
-  color: var(--muted);
-  font-size: 0.92rem;
-  font-weight: 400;
-  margin-top: 4px;
 }
 
 /* ===== Cards ===== */
@@ -494,6 +417,9 @@ body {
 .footer-inner { max-width: 1180px; margin: 0 auto; }
 .footer a { color: var(--accent); text-decoration: none; }
 
+/* ===== 移除所有双语 class ===== */
+.cn, .en { display: none !important; }
+
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
   .nav-search { display: none; }
@@ -501,28 +427,27 @@ body {
   .hero h1 { font-size: 1.6rem; }
   .post-card { padding: 20px; }
   .post-card h3 { font-size: 1.05rem; }
-  .post-card h3 .en { font-size: 0.85rem; }
   .stats-grid { gap: 20px; padding: 24px 5vw; }
+  .stat-item h3 { font-size: 1.8rem; }
 }
 </style>
 </head>
 <body>
 
   <!-- ===== 導航 ===== -->
-            <nav class="nav">
+              <nav class="nav">
     <div class="nav-inner">
-      <a href="index.html" class="brand">[鄭哥 / Hany]</a>
+      <a href="index.html" class="brand">[鄭哥博客]</a>
       <div class="nav-search">
         <input type="search" placeholder="搜索文章..." aria-label="搜索">
       </div>
       <div class="nav-actions">
         <ul class="nav-links">
-          <li><a href="blog.html">Articles · 文章</a></li>
-          <li><a href="about.html">About · 关于</a></li>
-          <li><a href="links.html">Links · 链接</a></li>
-          <li><a href="contact.html">Contact · 联系</a></li>
+          <li><a href="blog.html">文章</a></li>
+          <li><a href="about.html">关于</a></li>
+          <li><a href="links.html">链接</a></li>
+          <li><a href="contact.html">联系</a></li>
         </ul>
-        <button class="lang-toggle" title="切換語言">中 / EN</button>
         <button class="theme-toggle" title="切換主題">🌙</button>
       </div>
     </div>
@@ -531,18 +456,18 @@ body {
   <!-- ===== Hero ===== -->
   <header>
     <div class="container">
-      <div class="hero-tag"><span class="cn">七善門科技 · 星辰算力 · 投資年輕</span><span class="en">Qishanmen Tech · Star Compute · Young Investor</span></div>
+      <div class="hero-tag">七善門科技 · 星辰算力 · 投資年輕</div>
       <h1>
         <span class="cn">一個人點樣由教書先生<br>做到AI算力老闆？</span>
-        <span class="en">From Teacher to<br>AI Compute Entrepreneur</span>
+        
       </h1>
       <p class="hero-sub">
-        <span class="cn">90年代大學畢業，做過中學教師、翻譯、外貿電子家電、服裝鞋履、珠寶電車、教育培訓。唔係工程師，係幫老闆將技術變成錢嘅人。而家搞AI算力服務器，投資年輕年輕人創新創業。</span>
-        <span class="en">Uni grad in the 90s. Teacher, translator, foreign trade across electronics, garments, jewelry, e-bikes, training. Not an engineer — the guy who turns tech into money for bosses. Now doing AI compute and investing in Young innovators.</span>
+        90年代大學畢業，做過中學教師、翻譯、外貿電子家電、服裝鞋履、珠寶電車、教育培訓。唔係工程師，係幫老闆將技術變成錢嘅人。而家搞AI算力服務器，投資年輕年輕人創新創業。
+        
       </p>
       <p class="hero-quote">
-        <span class="cn">「我唔睇技術，我睇技術點樣改變生意。同我投資年輕年輕人，因為佢哋有膽識。」</span>
-        <span class="en">"I don't look at tech. I look at how tech changes business. And I invest in Young because they have guts."</span>
+        「我唔睇技術，我睇技術點樣改變生意。同我投資年輕年輕人，因為佢哋有膽識。」
+        
       </p>
     </div>
   </header>
@@ -553,19 +478,19 @@ body {
       <div class="stats-grid">
         <div class="stat-item">
           <h3>26+</h3>
-          <p><span class="cn">年商業經驗</span><span class="en">Years in Business</span></p>
+          <p>年商業經驗</p>
         </div>
         <div class="stat-item">
           <h3>500+</h3>
-          <p><span class="cn">全球客戶服務</span><span class="en">Clients Served</span></p>
+          <p>全球客戶服務</p>
         </div>
         <div class="stat-item">
           <h3>7+</h3>
-          <p><span class="cn">行業跨域</span><span class="en">Industries</span></p>
+          <p>行業跨域</p>
         </div>
         <div class="stat-item">
           <h3>4</h3>
-          <p><span class="cn">全球首創產品</span><span class="en">World Firsts</span></p>
+          <p>全球首創產品</p>
         </div>
       </div>
     </div>
@@ -575,29 +500,29 @@ body {
   <section class="section">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title"><span class="cn">我而家做乜</span><span class="en">What I Do Now</span></h2>
-        <p class="section-sub"><span class="cn">唔係教程，係真實經歷。一個人點樣由實體產品走到數碼時代。</span><span class="en">Not tutorials. Real stories from someone who's been through too many industries.</span></p>
+        <h2 class="section-title">我而家做乜</h2>
+        <p class="section-sub">唔係教程，係真實經歷。一個人點樣由實體產品走到數碼時代。</p>
       </div>
       <div class="cards">
         <div class="card">
           <img src="hany-h200-nvl.webp" alt="NVIDIA H200 NVL GPU" style="width:100%; height:120px; object-fit:cover; border-radius:8px; margin-bottom:12px;" loading="lazy">
           <img src="hany-card-ai-compute.webp" alt="NVIDIA H200 NVL" class="card-img card-img-ai">
-          <h3><span class="cn">AI算力 + 大模型</span><span class="en">AI Compute + LLM</span></h3>
-          <p><span class="cn">七善門科技：AI回憶錄、大模型活動。星辰算力：英偉達H200 NVL服務器部署，幫企業搭建AI基礎設施。</span><span class="en">Qishanmen Tech: AI memoirs, LLM events. Star Compute: NVIDIA H200 NVL server deployment for enterprise AI infrastructure.</span></p>
-          <span class="tag"><span class="cn">七善門科技 · 星辰算力 · H200 NVL · H100 · A100 · L40S · RTX 4090 · 國產昇騰 · 寒武紀 · 壁仞 · 摩爾線程 · 大模型微調</span><span class="en">Qishanmen · Star Compute · H200 NVL · H100 · A100 · L40S · RTX 4090 · Ascend · Cambricon · Biren · Moore Threads · LLM fine-tuning</span></span>
+          <h3>AI算力 + 大模型</h3>
+          <p>七善門科技：AI回憶錄、大模型活動。星辰算力：英偉達H200 NVL服務器部署，幫企業搭建AI基礎設施。</p>
+          <span class="tag">七善門科技 · 星辰算力 · H200 NVL · H100 · A100 · L40S · RTX 4090 · 國產昇騰 · 寒武紀 · 壁仞 · 摩爾線程 · 大模型微調</span>
         </div>
         <div class="card">
           <span class="card-icon">🛒</span>
           <img src="hany-card-cross-border.webp" alt="跨境電商" class="card-img card-img-ecom">
-          <h3><span class="cn">跨境電商全鏈路</span><span class="en">Cross-border E-commerce</span></h3>
-          <p><span class="cn">TikTok、Tumer、Amazon、阿裏巴巴、獨立站。唔係講理論，係講點樣由零開始做到有單。</span><span class="en">TikTok, Tumer, Amazon, Alibaba, independent stores. Not theory — how to go from zero to orders.</span></p>
-          <span class="tag"><span class="cn">Amazon · TikTok · Tumer · 阿裏巴巴 · 速賣通 · 獨立站 · Shopify · Walmart · eBay · Etsy</span><span class="en">Amazon · TikTok · Tumer · Alibaba · AliExpress · DTC · Shopify · Walmart · eBay · Etsy</span></span>
+          <h3>跨境電商全鏈路</h3>
+          <p>TikTok、Tumer、Amazon、阿裏巴巴、獨立站。唔係講理論，係講點樣由零開始做到有單。</p>
+          <span class="tag">Amazon · TikTok · Tumer · 阿裏巴巴 · 速賣通 · 獨立站 · Shopify · Walmart · eBay · Etsy</span>
         </div>
         <div class="card">
           <span class="card-icon">🚀</span>
           <img src="hany-card-genz-invest.webp" alt="創新技術投資" class="card-img card-img-invest">
-          <h3><span class="cn">創新技術早期投資</span><span class="en">Early-Stage Tech Investing</span></h3>
-          <p><span class="cn">睇過太多項目起落，識分真技術同吹水。專投有技術門檻、有落地能力嘅早期項目，由概念到首筆訂單全程陪跑。</span><span class="en">After decades in business, I know real tech from hot air. I back early-stage projects with technical depth and execution power — from idea to first revenue.</span></p>
+          <h3>創新技術早期投資</h3>
+          <p>睇過太多項目起落，識分真技術同吹水。專投有技術門檻、有落地能力嘅早期項目，由概念到首筆訂單全程陪跑。</p>
           <span class="tag">mentorship · seed funding · AI · 跨境電商 · 智能硬件</span>
         </div>
       </div>
@@ -608,26 +533,26 @@ body {
     <section class="section">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title"><span class="cn">🏆 精選代表作</span><span class="en">🏆 Featured Stories</span></h2>
-          <p class="section-sub"><span class="cn">26年外貿生涯入面，最值得分享嘅故事。</span><span class="en">The stories that shaped 26 years in trade.</span></p>
+          <h2 class="section-title">🏆 精選代表作</h2>
+          <p class="section-sub">26年外貿生涯入面，最值得分享嘅故事。</p>
         </div>
         <div class="featured-grid">
           <a href="post-2026-09-12-echo.html" class="feat-card feat-1">
-            <span class="feat-badge"><span class="cn">代表作 ①</span><span class="en">Featured ①</span></span>
-            <h3><span class="cn">400粒鋯石手錶手機</span><span class="en">400 Zircons</span></h3>
-            <p><span class="cn">紐約設計師飛嚟廣州，2000台訂單救咗我間公司。</span><span class="en">An NYC designer's 2000-unit order saved my factory.</span></p>
+            <span class="feat-badge">代表作 ①</span>
+            <h3>400粒鋯石手錶手機</h3>
+            <p>紐約設計師飛嚟廣州，2000台訂單救咗我間公司。</p>
             <span class="feat-arrow">→</span>
           </a>
           <a href="post-2026-09-11-africa.html" class="feat-card feat-2">
-            <span class="feat-badge"><span class="cn">代表作 ②</span><span class="en">Featured ②</span></span>
-            <h3><span class="cn">非洲總統親戚</span><span class="en">Presidential Relative</span></h3>
-            <p><span class="cn">蝕底賠咗一單，點知賠出一個總統親戚——26年做生意最重要嘅一課。</span><span class="en">Losing money on one order won a lifelong friend and a presidential relative.</span></p>
+            <span class="feat-badge">代表作 ②</span>
+            <h3>非洲總統親戚</h3>
+            <p>蝕底賠咗一單，點知賠出一個總統親戚——26年做生意最重要嘅一課。</p>
             <span class="feat-arrow">→</span>
           </a>
           <a href="post-2026-09-04-patent.html" class="feat-card feat-3">
-            <span class="feat-badge"><span class="cn">代表作 ③</span><span class="en">Featured ③</span></span>
-            <h3><span class="cn">5000蚊專利</span><span class="en">5000 HKD Patent</span></h3>
-            <p><span class="cn">比Apple Watch早九年嘅入場券——識問識改，就係創新。</span><span class="en">An industry entry ticket 9 years before Apple Watch.</span></p>
+            <span class="feat-badge">代表作 ③</span>
+            <h3>5000蚊專利</h3>
+            <p>比Apple Watch早九年嘅入場券——識問識改，就係創新。</p>
             <span class="feat-arrow">→</span>
           </a>
         </div>
@@ -635,22 +560,22 @@ body {
     </section>
 
     <!-- ===== 最新文章 ===== -->
-  <section class="section section-alt"><div class="container"><div class="section-header"><h2 class="section-title"><span class="cn">最新文章</span><span class="en">Latest Writing</span></h2><p class="section-sub"><span class="cn">鄭哥博客點評：由城市、科技到生意，睇現實先講方法。</span><span class="en">Hany's reviews on cities, technology, and business.</span></p></div><div class="post-list">
-        <article class="post-item"><div class="post-num">01</div><div class="post-body"><h4><a href="post-2026-09-16-gzport.html"><span class="cn">《廣州的「義烏焦慮」：一場不得不打的商貿翻身仗》</span><span class="en">廣州的「義烏焦慮」：一場不得不打的商貿翻身仗</span></a></h4><p class="post-excerpt"><span class="cn">廣州國際商業港係千年商都補服務鏈、搶外貿話語權嘅硬仗。</span><span class="en">廣州國際商業港係千年商都補服務鏈、搶外貿話語權嘅硬仗。</span></p><div class="post-meta"><span class="cn">2026年9月16日 18:30:00</span><span class="en">2026年9月16日 18:30:00</span><span class="tag"><span class="cn">外貿觀察</span><span class="en">外貿觀察</span></span></div></div></article>
-        <article class="post-item"><div class="post-num">02</div><div class="post-body"><h4><a href="post-2026-09-16-b300.html"><span class="cn">《B300賣1450萬嘅背後——一個做AI算力嘅人嘅深度點評》</span><span class="en">B300賣1450萬嘅背後——一個做AI算力嘅人嘅深度點評</span></a></h4><p class="post-excerpt"><span class="cn">算力由成本變營收，租賃同垂直應用先係真正大機會。</span><span class="en">算力由成本變營收，租賃同垂直應用先係真正大機會。</span></p><div class="post-meta"><span class="cn">2026年9月16日 20:00:00</span><span class="en">2026年9月16日 20:00:00</span><span class="tag"><span class="cn">AI算力</span><span class="en">AI算力</span></span></div></div></article>
-        <article class="post-item"><div class="post-num">03</div><div class="post-body"><h4><a href="post-2026-09-17-memory.html"><span class="cn">《內存漲價5-7倍，一個做AI算力嘅人點睇》</span><span class="en">內存漲價5-7倍，一個做AI算力嘅人點睇</span></a></h4><p class="post-excerpt"><span class="cn">缺貨講到2028年，有貨源同長約先係護城河。</span><span class="en">缺貨講到2028年，有貨源同長約先係護城河。</span></p><div class="post-meta"><span class="cn">2026年9月17日 12:00:00</span><span class="en">2026年9月17日 12:00:00</span><span class="tag"><span class="cn">芯片存儲</span><span class="en">芯片存儲</span></span></div></div></article>
-        <article class="post-item"><div class="post-num">04</div><div class="post-body"><h4><a href="post-2026-09-17-solar.html"><span class="cn">《光伏展會「人少」——一個70後睇到嘅5個信號》</span><span class="en">光伏展會「人少」——一個70後睇到嘅5個信號</span></a></h4><p class="post-excerpt"><span class="cn">短期避開製造端，中期睇儲能加AI，識避風險比識抓機會更重要。</span><span class="en">短期避開製造端，中期睇儲能加AI，識避風險比識抓機會更重要。</span></p><div class="post-meta"><span class="cn">2026年9月17日 18:00:00</span><span class="en">2026年9月17日 18:00:00</span><span class="tag"><span class="cn">行業觀察</span><span class="en">行業觀察</span></span></div></div></article>
-        <article class="post-item"><div class="post-num">05</div><div class="post-body"><h4><a href="post-2026-09-16-mountain-electronics.html"><span class="cn">《一山之隔兩個世界，從諾基亞走到AI算力》</span><span class="en">一山之隔兩個世界，從諾基亞走到AI算力</span></a></h4><p class="post-excerpt"><span class="cn">由1998年電子貿易講起，產品變咗廿幾年，但連接用家嘅本質冇變。</span><span class="en">由1998年電子貿易講起，產品變咗廿幾年，但連接用家嘅本質冇變。</span></p><div class="post-meta"><span class="cn">2026年9月16日 21:00:00</span><span class="en">2026年9月16日 21:00:00</span><span class="tag"><span class="cn">產品回憶</span><span class="en">產品回憶</span></span></div></div></article>
-        <article class="post-item"><div class="post-num">06</div><div class="post-body"><h4><a href="post-2026-09-15-bus6333.html"><span class="cn">《九龍太子道嘅城巴6333——我喺呢個城市見證嘅26年》</span><span class="en">九龍太子道嘅城巴6333——我喺呢個城市見證嘅26年</span></a></h4><p class="post-excerpt"><span class="cn">城巴仲喺度，但太子道已經唔同咗。編號係承諾，連接係價值。</span><span class="en">城巴仲喺度，但太子道已經唔同咗。編號係承諾，連接係價值。</span></p><div class="post-meta"><span class="cn">2026年9月15日 18:00:00</span><span class="en">2026年9月15日 18:00:00</span><span class="tag"><span class="cn">城市記憶</span><span class="en">城市記憶</span></span></div></div></article>
-                <article class="post-item"><div class="post-num">07</div><div class="post-body"><h4><a href="post-2026-09-20-doubao-gui.html"><span class="cn">《豆包手機「轉正」——GUI 兜底 + AI 辦公養家，70 後點睇呢場變革》</span><span class="en">Doubao Phone "Goes Official" — GUI Fallback + AI-Office</span></a></h4><p class="post-excerpt"><span class="cn">9.5 個月從工程樣機到消費者版本，GUI 兜底加 SAEP 協議加 AI 辦公訂閱。70 後三個新機會：傳統行業加 GUI Agent、AI 辦公訂閱、AI 終端出海。</span><span class="en">9.5 months from prototype to official launch. GUI fallback + SAEP + AI-office subs. Three Gen-X plays.</span></p><div class="post-meta"><span class="cn">2026年9月20日 14:00:00</span><span class="en">2026年9月20日 14:00:00</span><span class="tag"><span class="cn">AI科技</span><span class="en">AI Tech</span></span></div></div></article>
+  <section class="section section-alt"><div class="container"><div class="section-header"><h2 class="section-title">最新文章</h2><p class="section-sub">鄭哥博客點評：由城市、科技到生意，睇現實先講方法。</p></div><div class="post-list">
+        <article class="post-item"><div class="post-num">01</div><div class="post-body"><h4><a href="post-2026-09-16-gzport.html">《廣州的「義烏焦慮」：一場不得不打的商貿翻身仗》</a></h4><p class="post-excerpt">廣州國際商業港係千年商都補服務鏈、搶外貿話語權嘅硬仗。</p><div class="post-meta">2026年9月16日 18:30:00<span class="tag">外貿觀察</span></div></div></article>
+        <article class="post-item"><div class="post-num">02</div><div class="post-body"><h4><a href="post-2026-09-16-b300.html">《B300賣1450萬嘅背後——一個做AI算力嘅人嘅深度點評》</a></h4><p class="post-excerpt">算力由成本變營收，租賃同垂直應用先係真正大機會。</p><div class="post-meta">2026年9月16日 20:00:00<span class="tag">AI算力</span></div></div></article>
+        <article class="post-item"><div class="post-num">03</div><div class="post-body"><h4><a href="post-2026-09-17-memory.html">《內存漲價5-7倍，一個做AI算力嘅人點睇》</a></h4><p class="post-excerpt">缺貨講到2028年，有貨源同長約先係護城河。</p><div class="post-meta">2026年9月17日 12:00:00<span class="tag">芯片存儲</span></div></div></article>
+        <article class="post-item"><div class="post-num">04</div><div class="post-body"><h4><a href="post-2026-09-17-solar.html">《光伏展會「人少」——一個70後睇到嘅5個信號》</a></h4><p class="post-excerpt">短期避開製造端，中期睇儲能加AI，識避風險比識抓機會更重要。</p><div class="post-meta">2026年9月17日 18:00:00<span class="tag">行業觀察</span></div></div></article>
+        <article class="post-item"><div class="post-num">05</div><div class="post-body"><h4><a href="post-2026-09-16-mountain-electronics.html">《一山之隔兩個世界，從諾基亞走到AI算力》</a></h4><p class="post-excerpt">由1998年電子貿易講起，產品變咗廿幾年，但連接用家嘅本質冇變。</p><div class="post-meta">2026年9月16日 21:00:00<span class="tag">產品回憶</span></div></div></article>
+        <article class="post-item"><div class="post-num">06</div><div class="post-body"><h4><a href="post-2026-09-15-bus6333.html">《九龍太子道嘅城巴6333——我喺呢個城市見證嘅26年》</a></h4><p class="post-excerpt">城巴仲喺度，但太子道已經唔同咗。編號係承諾，連接係價值。</p><div class="post-meta">2026年9月15日 18:00:00<span class="tag">城市記憶</span></div></div></article>
+                <article class="post-item"><div class="post-num">07</div><div class="post-body"><h4><a href="post-2026-09-20-doubao-gui.html">《豆包手機「轉正」——GUI 兜底 + AI 辦公養家，70 後點睇呢場變革》</a></h4><p class="post-excerpt">9.5 個月從工程樣機到消費者版本，GUI 兜底加 SAEP 協議加 AI 辦公訂閱。70 後三個新機會：傳統行業加 GUI Agent、AI 辦公訂閱、AI 終端出海。</p><div class="post-meta">2026年9月20日 14:00:00<span class="tag">AI科技</span></div></div></article>
               </div></div></section>
 
   <!-- ===== 小紅書風格便簽 ===== -->
   <section class="section">
     <div class="container">
       <div class="note-card">
-        <h4>💡 <span class="cn">鄭哥話你知</span><span class="en">Hany's Note</span></h4>
-        <p><span class="cn">「做貿易最緊要唔係搵客，係留住客。我做咗26年，500幾個客戶，靠嘅就係一句——答應咗嘅嘢，死都要做到。」</span><span class="en">"In trade, finding customers isn't the hardest part. Keeping them is. 26 years, 500+ clients — the secret is simple: do what you promised, no matter what."</span></p>
+        <h4>💡 鄭哥話你知</h4>
+        <p>「做貿易最緊要唔係搵客，係留住客。我做咗26年，500幾個客戶，靠嘅就係一句——答應咗嘅嘢，死都要做到。」</p>
       </div>
     </div>
   </section>
@@ -658,9 +583,9 @@ body {
   <!-- ===== CTA ===== -->
   <section class="cta-section">
     <div class="container">
-      <h2><span class="cn">想傾偈？直接搵我。</span><span class="en">Want to chat? Reach out.</span></h2>
-      <p><span class="cn">有類似經歷想分享，或者有生意上嘅問題？我見到就覆。WhatsApp 66417912（香港）</span><span class="en">Similar experiences to share or business questions? I'll reply when I see it. WhatsApp 66417912 (Hong Kong)</span></p>
-      <a href="contact.html" class="cta-btn"><span class="cn">聯繫鄭哥 →</span><span class="en">Contact Hany →</span></a>
+      <h2>想傾偈？直接搵我。</h2>
+      <p>有類似經歷想分享，或者有生意上嘅問題？我見到就覆。WhatsApp 66417912（香港）</p>
+      <a href="contact.html" class="cta-btn">聯繫鄭哥 →</a>
     </div>
   </section>
 
