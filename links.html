@@ -3,234 +3,171 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>鄭哥社群 · 7 大平台連結 | 鄭哥 Hany</title>
-  <meta name="description" content="鄭哥 Hany 7 大社群平台：小紅書、YouTube、LinkedIn、Facebook、Instagram、TikTok、Twitter/X 一頁直達。">
-  <meta name="author" content="鄭哥 / Hany">
-  <link rel="canonical" href="https://hany-blog.vercel.app/links.html">
-<style>
-    :root {
-      --bg: #fafafa; --bg-elevated: #ffffff; --text: #1a1a1a; --text-secondary: #555555; --text-muted: #888888;
-      --accent: #c41e3a; --accent-light: rgba(196,30,58,0.08); --border: #e8e8e8; --border-light: #f0f0f0;
-      --radius: 12px; --radius-sm: 8px; --shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.02);
-      --shadow-hover: 0 4px 16px rgba(0,0,0,0.06), 0 12px 40px rgba(0,0,0,0.04); --max-width: 720px;
-    }
-    * { margin:0; padding:0; box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', 'PingFang HK', 'Noto Sans SC', sans-serif;
-      background: var(--bg); color: var(--text); line-height: 1.75; font-size: 16px; -webkit-font-smoothing: antialiased;
-    }
-    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
-    
-    /* ===== 導航 v2（2026-09-20） ===== */
-    nav { background:#fff; border-bottom:1px solid #e8e8ed; padding:14px 0; position:sticky; top:0; z-index:1000; }
-    nav .container { display:flex; justify-content:space-between; align-items:center; position:relative; }
-    .logo { font-size:1.05rem; font-weight:700; color:#1a1a2e; }
-    .hamburger { display:none; background:none; border:none; font-size:1.5rem; cursor:pointer; padding:4px 8px; }
-    .nav-wrapper { display:flex; align-items:center; }
-    .nav-links { display:flex; align-items:center; gap:20px; }
-    nav a { text-decoration:none; color:#444; font-size:0.9rem; transition:color 0.2s; }
-    nav a:hover, nav a.active { color:#e94560; }
+  <title>連結與訂閱 | 鄭哥 Hany</title>
+  <meta name="description" content="鄭哥博客點評——外貿老炮兒點評、跨境電商乾貨。訂閱 Email，關注社媒平台。">
+  <meta name="author" content="鄭哥博客點評">
+  <link rel="canonical" href="https://glomarket.online/links.html">
+  <meta property="og:title" content="連結與訂閱 | 鄭哥 Hany">
+  <meta property="og:description" content="外貿老炮兒點評、跨境電商乾貨">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://glomarket.online/links.html">
+  <meta property="og:site_name" content="鄭哥 Hany">
+  <meta name="twitter:card" content="summary_large_image">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang HK", "Microsoft YaHei", sans-serif; color: #333; background: #f8f9fa; line-height: 1.6; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 
-        /* Mobile */
-    @media (max-width:768px) {
-      .hamburger { display:block; }
-      .nav-wrapper { display:none; position:absolute; top:100%; left:0; right:0; background:#fff; border-top:1px solid #e8e8ed; box-shadow:0 4px 12px rgba(0,0,0,.08); }
-      .nav-wrapper.open { display:block; }
-      .nav-links { flex-direction:column; align-items:stretch; gap:0; padding:8px 0; }
-      .nav-links > a, .lang-toggle { padding:12px 24px; border-bottom:1px solid #f0f0f5; width:100%; text-align:left; }
-      .nav-links > a:last-of-type { border-bottom:none; }
-      .lang-toggle { border-radius:0; }
-    }
-    
-    header { background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%); color: #fff; padding: 80px 0 60px; text-align:center; position: relative; overflow: hidden; }
-    header::before { content:''; position:absolute; top: -30%; right: -10%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(196,30,58,0.15) 0%, transparent 70%); border-radius: 50%; }
-    header .container { position:relative; z-index: 1; }
-    header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.5px; }
-    header h1 .en { font-size: 1.3rem; font-weight: 400; opacity: 0.7; display:block; margin-top: 8px; }
-    header p { color: rgba(255,255,255,0.55); max-width: 480px; margin: 0 auto; font-size: 0.95rem; line-height: 1.7; }
-    
-    .section { padding: 56px 0; }
-    .section-alt { background: var(--bg-elevated); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); }
-    .section-header { margin-bottom: 32px; }
-    .section-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.3px; }
-    .section-sub { color: var(--text-muted); font-size: 0.95rem; }
-    
-    /* ===== 文章列表 ===== */
-    .post-list { display: flex; flex-direction: column; gap: 16px; }
-    .post-card { background: var(--bg-elevated); border-radius: var(--radius); border: 1px solid var(--border-light); padding: 28px; transition: all 0.3s ease; }
-    .post-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); border-color: var(--border); }
-    .post-card:last-child { margin-bottom: 0; }
-    .post-meta-top { display:flex; align-items:center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
-    .post-date { font-size: 0.8rem; color: var(--text-muted); font-family: 'SF Mono', monospace; }
-    .post-tag { background: var(--accent-light); color: var(--accent); padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 500; }
-    .post-card h3 { font-size: 1.15rem; margin-bottom: 8px; font-weight: 600; line-height: 1.4; }
-    .post-card h3 a { text-decoration:none; color: var(--text); transition: color 0.2s; }
-    .post-card h3 a:hover { color: var(--accent); }
-    .post-card .en-title { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 10px; line-height: 1.5; }
-    .post-card .excerpt { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px; }
-    .post-card .read-more { font-size: 0.88rem; color: var(--accent); text-decoration:none; font-weight: 500; }
-    .post-card .read-more:hover { text-decoration: underline; }
-    
-    /* ===== 小紅書便簽 ===== */
-    .note-card {
-      background: linear-gradient(135deg, #fff5f5 0%, #fff0f0 100%);
-      border: 1px solid #ffe0e0; border-radius: var(--radius); padding: 20px 24px; margin: 20px 0; position: relative;
-    }
-    .note-card::before { content: ''; position: absolute; top: 0; left: 24px; width: 60px; height: 4px; background: var(--accent); border-radius: 0 0 4px 4px; }
-    .note-card h4 { font-size: 0.95rem; color: var(--accent); margin-bottom: 8px; font-weight: 600; }
-    .note-card p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; }
-    
-    /* ===== 分類標籤 ===== */
-    .category-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
-    .category-tag { background: var(--bg-elevated); border: 1px solid var(--border-light); padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; color: var(--text-secondary); cursor: pointer; transition: all 0.2s; }
-    .category-tag:hover, .category-tag.active { background: var(--accent); color: #fff; border-color: var(--accent); }
-    
-    /* ===== CTA ===== */
-    .cta-section { background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%); color: #fff; padding: 48px 0; text-align:center; position: relative; overflow: hidden; }
-    .cta-section::before { content:''; position:absolute; bottom: -50%; left: -20%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(196,30,58,0.12) 0%, transparent 70%); border-radius: 50%; }
-    .cta-section .container { position: relative; z-index: 1; }
-    .cta-section h2 { font-size: 1.3rem; margin-bottom: 10px; font-weight: 600; }
-    .cta-section p { color: rgba(255,255,255,0.5); font-size: 0.9rem; margin-bottom: 20px; }
-    .cta-btn { display:inline-flex; align-items:center; gap: 8px; background: var(--accent); color: #fff; padding: 12px 28px; border-radius: var(--radius-sm); text-decoration:none; font-size: 0.9rem; font-weight: 500; transition: all 0.2s; }
-    .cta-btn:hover { background: #a31830; transform: translateY(-1px); }
-    
-    footer { background: var(--bg-elevated); border-top: 1px solid var(--border-light); padding: 32px 0; text-align:center; }
-    footer p { font-size: 0.82rem; color: var(--text-muted); }
-    
-    .en { display:none; }
-    body.show-en .en { display:block; }
-    body.show-en .cn { display:none; }
-    body.show-en .en-inline { display:inline; }
-    body.show-en .cn-inline { display:none; }
-    .en-inline, .cn-inline { display:inline; }
-    
-    @media (max-width: 640px) {
-      header h1 { font-size: 1.7rem; }
-      header h1 .en { font-size: 1.1rem; }
-      .post-card { padding: 20px; }
-    }
+    /* 导航 */
+    nav { background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.08); position: sticky; top: 0; z-index: 100; }
+    nav .container { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .logo { font-weight: 700; font-size: 1.15rem; color: #1a1a2e; text-decoration: none; }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { text-decoration: none; color: #555; font-size: 0.95rem; transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: #c41e3a; }
+    .lang-btn { border: 1px solid #ddd; background: #fff; padding: 4px 12px; border-radius: 4px; cursor: pointer; font-size: 0.85rem; }
 
-    
-    .comments h2 { font-size: 1.3rem; font-weight: 600; margin-bottom: 24px; }
+    /* Hero */
+    .hero { background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%); color: #fff; padding: 80px 0 60px; text-align: center; }
+    .hero h1 { font-size: 2.4rem; margin-bottom: 16px; font-weight: 700; }
+    .hero p { font-size: 1.1rem; opacity: 0.75; max-width: 560px; margin: 0 auto; }
 
-    /* ===== 社群 Footer（2026-09-20） ===== */
-    .social-footer{background:#f0f0f5;padding:40px 0 32px;text-align:center;margin-top:48px;border-top:1px solid var(--border)}
-    .social-footer h3{font-size:0.95rem;margin-bottom:18px;color:#444;font-weight:600}
-    .social-links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:18px;padding:0 24px}
-    .social-links a{color:#444;text-decoration:none;font-size:.85rem;padding:8px 14px;border:1px solid #e0e0e0;border-radius:6px;background:#fff;transition:all .2s}
-    .social-links a:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
-    .copyright{font-size:.82rem;color:#999;margin-top:8px;padding:0 24px}
+    /* 区块 */
+    .section { padding: 60px 0; }
+    .section-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 12px; text-align: center; }
+    .section-sub { text-align: center; color: #888; margin-bottom: 40px; font-size: 0.95rem; }
+
+    /* Email 订阅 */
+    .email-card { max-width: 560px; margin: 0 auto; background: #fff; border-radius: 16px; padding: 40px; box-shadow: 0 4px 20px rgba(0,0,0,.06); text-align: center; }
+    .email-card h3 { font-size: 1.2rem; margin-bottom: 8px; }
+    .email-card p { color: #888; font-size: 0.9rem; margin-bottom: 24px; }
+    .email-form { display: flex; gap: 12px; }
+    .email-form input { flex: 1; padding: 12px 16px; border: 1px solid #e0e0e0; border-radius: 8px; font-size: 0.95rem; outline: none; transition: border-color .2s; }
+    .email-form input:focus { border-color: #c41e3a; }
+    .email-form button { padding: 12px 28px; background: #c41e3a; color: #fff; border: none; border-radius: 8px; font-size: 0.95rem; cursor: pointer; transition: background .2s; }
+    .email-form button:hover { background: #a31830; }
+
+    /* 社媒卡片 */
+    .social-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
+    .social-card { background: #fff; border-radius: 12px; padding: 32px 28px; box-shadow: 0 2px 8px rgba(0,0,0,.04); transition: all .3s ease; text-decoration: none; color: inherit; display: block; }
+    .social-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,.1); }
+    .social-icon { font-size: 2.5rem; margin-bottom: 16px; }
+    .social-card h3 { font-size: 1.1rem; margin-bottom: 8px; color: #1a1a2e; }
+    .social-card p { font-size: 0.88rem; color: #888; line-height: 1.6; }
+
+    /* 联系邮箱 */
+    .contact-box { text-align: center; padding: 40px; background: #fff; border-radius: 16px; margin-top: 40px; }
+    .contact-box h3 { font-size: 1.1rem; margin-bottom: 12px; }
+    .contact-box a { color: #c41e3a; text-decoration: none; font-size: 1.05rem; }
+    .contact-box a:hover { text-decoration: underline; }
+
+    /* Footer */
+    footer { background: #1a1a2e; color: rgba(255,255,255,0.6); padding: 32px 0; text-align: center; font-size: 0.85rem; }
+
+    /* 响应式 */
+    @media (max-width: 768px) {
+        .hero h1 { font-size: 1.8rem; }
+        .email-form { flex-direction: column; }
+        .social-grid { grid-template-columns: 1fr; }
+        .nav-links { gap: 16px; font-size: 0.85rem; }
+    }
   </style>
 </head>
 <body>
-<nav>
+
+  <nav>
     <div class="container">
       <a href="index.html" class="logo">鄭哥 / Hany</a>
-      <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Open menu">☰</button>
-      <div class="nav-wrapper" id="navWrapper">
-        <div class="nav-links">
-          <a href="index.html"><span class="cn">首頁</span><span class="en">Home</span></a>
-          <a href="blog.html" class="active"><span class="cn">文章</span><span class="en">Articles</span></a>
-          <a href="about.html"><span class="cn">關於</span><span class="en">About</span></a>
-          <a href="xhs.html"><span class="cn">點評</span><span class="en">Reviews</span></a>
-          <a href="contact.html"><span class="cn">聯繫</span><span class="en">Contact</span></a>
-          <button class="lang-toggle" onclick="toggleLang()" id="langBtn">EN</button>
-        </div>
+      <div class="nav-links">
+        <a href="index.html">首頁</a>
+        <a href="blog.html">點評</a>
+        <a href="about.html">關於</a>
+        <a href="contact.html">聯繫</a>
+        <a href="links.html" class="active">🔗 連結</a>
+        <button class="lang-btn">EN</button>
       </div>
     </div>
   </nav>
 
-  <main class="links-page">
-    <section class="links-hero">
-      <h1>鄭哥社群</h1>
-      <p>7 大平台 · 一頁直達 · 全部原創同步</p>
-    </section>
-
-    <section class="links-grid">
-      <a href="xhs.html" class="links-card">
-        <div class="links-icon" style="background:#ff2442">紅</div>
-        <div class="links-body">
-          <h3>小紅書</h3>
-          <p class="links-desc">每日茶湯實拍、凤凰山茶園直播</p>
-        </div>
-        <div class="links-arrow">→</div>
-      </a>
-
-      <a href="https://youtube.com" class="links-card">
-        <div class="links-icon" style="background:#FF0000">▶</div>
-        <div class="links-body">
-          <h3>YouTube</h3>
-          <p class="links-desc">26 年外貿故事影片版</p>
-        </div>
-        <div class="links-arrow">→</div>
-      </a>
-
-      <a href="https://linkedin.com" class="links-card">
-        <div class="links-icon" style="background:#0A66C2">in</div>
-        <div class="links-body">
-          <h3>LinkedIn</h3>
-          <p class="links-desc">B2B 外貿 B 端人脈</p>
-        </div>
-        <div class="links-arrow">→</div>
-      </a>
-
-      <a href="https://facebook.com" class="links-card">
-        <div class="links-icon" style="background:#1877F2">f</div>
-        <div class="links-body">
-          <h3>Facebook</h3>
-          <p class="links-desc">香港外貿群組</p>
-        </div>
-        <div class="links-arrow">→</div>
-      </a>
-
-      <a href="https://instagram.com" class="links-card">
-        <div class="links-icon" style="background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)">◎</div>
-        <div class="links-body">
-          <h3>Instagram</h3>
-          <p class="links-desc">外貿生活視覺</p>
-        </div>
-        <div class="links-arrow">→</div>
-      </a>
-
-      <a href="https://tiktok.com" class="links-card">
-        <div class="links-icon" style="background:#000">♪</div>
-        <div class="links-body">
-          <h3>TikTok</h3>
-          <p class="links-desc">15-30 秒短影片</p>
-        </div>
-        <div class="links-arrow">→</div>
-      </a>
-
-      <a href="https://twitter.com" class="links-card">
-        <div class="links-icon" style="background:#000">𝕏</div>
-        <div class="links-body">
-          <h3>Twitter / X</h3>
-          <p class="links-desc">280 字推文</p>
-        </div>
-        <div class="links-arrow">→</div>
-      </a>
-    </section>
-
-    <section class="links-cta">
-      <p>📧 Email 訂閱：<a href="mailto:hany@glomarket.online">hany@glomarket.online</a></p>
-    </section>
-  </main>
-
-<footer
+  <section class="hero">
     <div class="container">
-      <h3><span class="cn">鄭哥社群 / Follow on Social</span><span class="en">Follow Hany on Social</span></h3>
-      <div class="social-links">
-        <a href="xhs.html">📕 小紅書 Xiaohongshu</a>
-        <a href="youtube.html">📺 YouTube</a>
-        <a href="linkedin.html">💼 LinkedIn</a>
-        <a href="facebook.html">📘 Facebook</a>
-        <a href="instagram.html">📸 Instagram</a>
-        <a href="tiktok.html">🎵 TikTok</a>
-        <a href="twitter.html">🐦 Twitter / X</a>
+      <h1>連結與訂閱</h1>
+      <p>外貿老炮兒點評、跨境電商乾貨——26 年行業經驗，真實案例，唔講空話。</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Email 訂閱</h2>
+      <p class="section-sub">收到新文章第一時間通知你</p>
+
+      <div class="email-card">
+        <h3>訂閱鄭哥博客</h3>
+        <p>每週 2-3 篇，外貿、跨境電商、AI 工具點評</p>
+        <form class="email-form">
+          <input type="email" placeholder="輸入你的 Email 地址">
+          <button type="submit">訂閱</button>
+        </form>
       </div>
-      <p class="copyright">© 2026 鄭哥 / Hany · 七善門科技 · 星辰算力 · 香港旺角</p>
+    </div>
+  </section>
+
+  <section class="section" style="background: #fff;">
+    <div class="container">
+      <h2 class="section-title">社媒平台</h2>
+      <p class="section-sub">跟住鄭哥，多平台睇唔同角度</p>
+
+      <div class="social-grid">
+        <a href="xhs.html" class="social-card">
+          <div class="social-icon">📕</div>
+          <h3>小紅書</h3>
+          <p>短版精華——圖文筆記、乾貨總結，手機隨手睇。</p>
+        </a>
+
+        <a href="https://youtube.com/@hany" class="social-card" target="_blank">
+          <div class="social-icon">📺</div>
+          <h3>YouTube</h3>
+          <p>視頻版點評——行業事件深度分析，廣東話為主。</p>
+        </a>
+
+        <a href="https://linkedin.com/in/hany" class="social-card" target="_blank">
+          <div class="social-icon">💼</div>
+          <h3>LinkedIn</h3>
+          <p>職場版——外貿人脈、行業觀察，國際化視角。</p>
+        </a>
+
+        <a href="https://facebook.com/hany" class="social-card" target="_blank">
+          <div class="social-icon">📘</div>
+          <h3>Facebook</h3>
+          <p>海外版——跨文化交流、國際客戶互動。</p>
+        </a>
+
+        <a href="https://x.com/hany" class="social-card" target="_blank">
+          <div class="social-icon">🐦</div>
+          <h3>X (Twitter)</h3>
+          <p>即時點評——熱點事件快評，實時行業動態。</p>
+        </a>
+
+        <a href="https://instagram.com/hany" class="social-card" target="_blank">
+          <div class="social-icon">📸</div>
+          <h3>Instagram</h3>
+          <p>生活版——工作日常、出差所見，真實外貿人生。</p>
+        </a>
+      </div>
+
+      <div class="contact-box">
+        <h3>直接聯絡鄭哥</h3>
+        <p style="margin-bottom:12px; color:#888; font-size:0.9rem;">有合作、諮詢、交流，隨時 Email</p>
+        <a href="mailto:glomarket@agent.qq.com">glomarket@agent.qq.com</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 鄭哥 Hany · 外貿老炮兒點評 · 保留所有權利</p>
     </div>
   </footer>
+
 </body>
 </html>
