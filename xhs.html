@@ -51,95 +51,111 @@
     <link rel="icon" type="image/webp" href="hany-portrait.webp">
 
   <style>
-    /* ===== 小紅書頁專用樣式 ===== */
-    .xhs-hero{
-      background:linear-gradient(135deg,#ff2442 0%,#ff5860 100%);
-      color:#fff;
-      padding:60px 0 50px;
-      text-align:center;
-    }
-    .xhs-hero h1{font-size:2.4rem;font-weight:700;margin-bottom:12px}
-    .xhs-hero .en{opacity:.85;font-size:1.05rem;margin-bottom:24px}
-    .xhs-hero .stats{display:flex;justify-content:center;gap:40px;margin-top:32px;flex-wrap:wrap}
-    .xhs-hero .stat{text-align:center}
-    .xhs-hero .stat-num{font-size:2rem;font-weight:700;display:block}
-    .xhs-hero .stat-label{font-size:.85rem;opacity:.9}
-
-    .xhs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;margin:40px 0}
-    .xhs-card{
-      background:#fff;
-      border:1px solid #f0f0f0;
-      border-radius:16px;
-      overflow:hidden;
-      box-shadow:0 4px 16px rgba(0,0,0,.04);
-      transition:transform .2s,box-shadow .2s;
-    }
-    .xhs-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(255,36,66,.12)}
-    .xhs-card-img{
-      width:100%;
-      aspect-ratio:1/1;
-      object-fit:cover;
-      background:#f5f5f5;
-    }
-    .xhs-card-body{padding:18px 20px}
-    .xhs-card-tag{
-      display:inline-block;
-      background:#ff2442;
-      color:#fff;
-      font-size:.7rem;
-      padding:3px 10px;
-      border-radius:10px;
-      margin-bottom:8px;
-      letter-spacing:.5px;
-    }
-    .xhs-card-title{font-size:1.05rem;font-weight:600;color:#222;line-height:1.4;margin-bottom:8px}
-    .xhs-card-excerpt{font-size:.85rem;color:#666;line-height:1.6;margin-bottom:12px}
-    .xhs-card-hashtags{font-size:.78rem;color:#ff2442;margin-bottom:14px;line-height:1.6}
-    .xhs-card-actions{display:flex;gap:8px;flex-wrap:wrap}
-    .xhs-btn{
-      flex:1;
-      min-width:80px;
-      padding:9px 12px;
-      border-radius:10px;
-      font-size:.82rem;
-      text-align:center;
-      text-decoration:none;
-      border:none;
-      cursor:pointer;
-      font-weight:500;
-      transition:opacity .2s;
-    }
-    .xhs-btn:hover{opacity:.85}
-    .xhs-btn-primary{background:#ff2442;color:#fff}
-    .xhs-btn-secondary{background:#f5f5f5;color:#333;border:1px solid #e0e0e0}
-    .xhs-btn-wechat{background:#07c160;color:#fff}
-
-    /* 便簽樣式 */
-    .xhs-note{
-      background:linear-gradient(135deg,#fff5f5 0%,#fff0f0 100%);
-      border:1px solid #ffe0e0;
-      border-left:4px solid #ff2442;
-      padding:18px 22px;
-      border-radius:8px;
-      margin:24px 0;
-    }
-    .xhs-note h3{color:#ff2442;font-size:1rem;margin-bottom:8px;font-weight:600}
-    .xhs-note p{font-size:.88rem;color:#555;line-height:1.7}
-    .xhs-note ul{margin-left:20px;margin-top:8px}
-    .xhs-note li{font-size:.85rem;color:#555;line-height:1.8}
-
-    /* 過渡 */
-    .xhs-tip{
-      display:inline-block;
-      background:#fff5f5;
-      color:#ff2442;
-      font-size:.8rem;
-      padding:4px 12px;
-      border-radius:6px;
-      margin-bottom:16px;
-      font-weight:500;
-    }
-  </style>
+:root {
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --muted: #5c5c5c;
+  --border: #e8e8e8;
+  --accent: #c9302c;
+  --font-mono: "JetBrains Mono", "Fira Code", "SFMono-Regular", Consolas, "Courier New", monospace;
+  --font-zh: "PingFang HK", "Microsoft JhengHei", -apple-system, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: var(--font-mono), var(--font-zh);
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.6;
+}
+.nav {
+  border-bottom: 1px solid var(--border);
+  padding: 18px 5vw;
+  background: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.brand {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--fg);
+  text-decoration: none;
+  white-space: nowrap;
+  font-family: var(--font-mono), var(--font-zh);
+  letter-spacing: 0.5px;
+}
+.nav-search {
+  flex: 1;
+  max-width: 360px;
+  margin: 0 24px;
+}
+.nav-search input {
+  width: 100%;
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-family: var(--font-mono), var(--font-zh);
+  font-size: 0.85rem;
+  background: #fafafa;
+  color: var(--fg);
+}
+.nav-search input:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: #ffffff;
+}
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.88rem;
+  white-space: nowrap;
+  transition: color 0.15s;
+}
+.nav-links a:hover, .nav-links a.active {
+  color: var(--accent);
+  font-weight: 600;
+}
+.lang-toggle, .theme-toggle {
+  background: transparent;
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: var(--font-mono), var(--font-zh);
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.lang-toggle:hover, .theme-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+@media (max-width: 768px) {
+  .nav-search { display: none; }
+  .nav-links { display: none; }
+  .nav-inner { gap: 12px; }
+  .mobile-toggle { display: inline-block; }
+}
+</style>
 <style>
 
     :root{--bg:#fafafa;--bg-elevated:#fff;--text:#1a1a1a;--text-secondary:#555;--text-muted:#888;--accent:#c41e3a;--accent-light:#fef2f2;--border-light:#eee;--border:#ddd;--radius:12px;--radius-sm:8px;--shadow:0 1px 3px rgba(0,0,0,0.04);--shadow-hover:0 8px 24px rgba(0,0,0,0.08)}
@@ -168,21 +184,24 @@
 <body>
 
   <!-- ===== 導航 ===== -->
-          <nav class="nav">
-      <div class="nav-inner">
-        <a href="index.html" class="brand">
-          <span class="brand-name">鄭哥 / Hany</span>
-        </a>
-        <ul class="nav-links">
-          <li><a href="blog.html">Articles</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="links.html">Links</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <button class="lang-toggle">EN ▾</button>
-        <button class="mobile-toggle">☰</button>
+            <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">[鄭哥 / Hany]</a>
+      <div class="nav-search">
+        <input type="search" placeholder="搜索文章..." aria-label="搜索">
       </div>
-    </nav>
+      <div class="nav-actions">
+        <ul class="nav-links">
+          <li><a href="blog.html">Articles · 文章</a></li>
+          <li><a href="about.html">About · 关于</a></li>
+          <li><a href="links.html">Links · 链接</a></li>
+          <li><a href="contact.html">Contact · 联系</a></li>
+        </ul>
+        <button class="lang-toggle" title="切換語言">中 / EN</button>
+        <button class="theme-toggle" title="切換主題">🌙</button>
+      </div>
+    </div>
+  </nav>
 
   <!-- ===== Hero ===== -->
   <header class="xhs-hero">
