@@ -3,129 +3,348 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>鄭哥社群 · Follow on Social - 鄭哥 Hany</title>
-  <meta name="description" content="鄭哥 Hany 26 年外貿故事 — 7 大平台同步入口">
-  <link rel="canonical" href="https://glomarket.online/links.html">
-  <link rel="stylesheet" href="css/style.css">
+  <title>鄭哥社群 · 7 大平台連結 | 鄭哥 Hany</title>
+  <meta name="description" content="鄭哥 Hany 7 大社群平台：小紅書、YouTube、LinkedIn、Facebook、Instagram、TikTok、Twitter/X 一頁直達。">
+  <meta name="author" content="鄭哥 / Hany">
+  <link rel="canonical" href="https://hany-blog.vercel.app/links.html">
+<style>
+:root {
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --muted: #5c5c5c;
+  --border: #e8e8e8;
+  --accent: #c9302c;
+  --font-zh: "PingFang HK", "Microsoft JhengHei", -apple-system, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-zh);
+  background: linear-gradient(180deg, #fafafa 0%, #ffffff 100%);
+  color: var(--fg);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ===== 顶部导航（繁中版） ===== */
+.nav {
+  border-bottom: 1px solid var(--border);
+  padding: 18px 5vw;
+  background: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+.brand {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--fg);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.nav-search {
+  flex: 1;
+  max-width: 360px;
+  margin: 0 24px;
+}
+.nav-search input {
+  width: 100%;
+  padding: 7px 14px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-family: var(--font-zh);
+  font-size: 0.9rem;
+  background: #fafafa;
+  color: var(--fg);
+}
+.nav-search input:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: #ffffff;
+}
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  transition: color 0.15s;
+}
+.nav-links a:hover, .nav-links a.active {
+  color: var(--accent);
+  font-weight: 600;
+}
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--border);
+  padding: 5px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.theme-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ===== Links Page 主体（linktree 风格） ===== */
+.links-page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 60px 24px;
+}
+.links-hero {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.links-hero h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+.links-sub {
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+/* ===== 链接卡片 ===== */
+.links-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.links-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px 20px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
+  cursor: pointer;
+}
+.links-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  border-color: var(--accent);
+}
+.links-icon {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  color: #fff;
+  font-weight: 700;
+}
+.links-body {
+  flex: 1;
+  min-width: 0;
+}
+.links-card h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.links-en {
+  font-size: 0.82rem;
+  color: #999;
+  margin-bottom: 4px;
+}
+.links-desc {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.links-arrow {
+  flex-shrink: 0;
+  color: var(--muted);
+  font-size: 1.2rem;
+  transition: transform 0.18s, color 0.18s;
+}
+.links-card:hover .links-arrow {
+  transform: translateX(4px);
+  color: var(--accent);
+}
+
+/* ===== Email 订阅 CTA ===== */
+.links-cta {
+  text-align: center;
+  margin-top: 48px;
+  padding: 24px;
+  background: #fafafa;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.links-cta p {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+.links-cta a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+.links-cta a:hover { text-decoration: underline; }
+
+/* ===== Footer ===== */
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 5vw;
+  background: #fafafa;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-top: 60px;
+}
+.footer p { margin: 4px 0; }
+
+/* ===== 隐藏所有双语 ===== */
+.cn, .en { display: none !important; }
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .nav-search { display: none; }
+  .nav-links { display: none; }
+  .links-page { padding: 32px 16px; }
+  .links-card { padding: 14px 16px; gap: 12px; }
+  .links-icon { width: 44px; height: 44px; font-size: 1.3rem; }
+  .links-card h3 { font-size: 0.98rem; }
+  .links-en { font-size: 0.78rem; }
+  .links-desc { font-size: 0.82rem; }
+}
+</style>
 </head>
 <body>
   <nav class="nav">
     <div class="nav-inner">
-      <a href="index.html" class="brand"><span class="brand-name">鄭哥 / Hany</span></a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="blog.html">Articles</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="links.html" class="active">Links</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <button class="lang-toggle">EN</button>
-      <button class="mobile-toggle">☰</button>
+      <a href="index.html" class="brand">[鄭哥博客]</a>
+      <div class="nav-search">
+        <input type="search" placeholder="搜索文章..." aria-label="搜索">
+      </div>
+      <div class="nav-actions">
+        <ul class="nav-links">
+          <li><a href="index.html">首頁</a></li>
+          <li><a href="blog.html">文章</a></li>
+          <li><a href="about.html">關於</a></li>
+          <li><a href="links.html" class="active">連結</a></li>
+          <li><a href="contact.html">聯絡</a></li>
+        </ul>
+        <button class="theme-toggle" title="切換主題">🌙</button>
+      </div>
     </div>
-  </nav>
-
-  <main class="links-page">
+  </nav>  <main class="links-page">
     <section class="links-hero">
-      <h1>🔗 鄭哥社群 · Follow on Social</h1>
-      <p class="links-sub">Every story is also on RED · 26 年外貿故事同步 7 大平台</p>
+      <h1>🔗 鄭哥社群</h1>
+      <p class="links-sub">7 大平台 · 一頁直達 · 全部原創同步</p>
     </section>
 
     <section class="links-grid">
-      <article class="links-card" data-platform="xiaohongshu">
-        <div class="links-icon" style="background:#ff2442">📕</div>
-        <h3>小紅書</h3>
-        <p class="links-en">Xiaohongshu / RED</p>
-        <p class="links-desc">每日茶汤实拍、凤凰山茶园直播</p>
-        <a href="xhs.html" class="links-btn">立即跳转</a>
-        <button class="links-copy" onclick="copyLink('xiaohongshu')">复制链接</button>
-      </article>
+      <a href="xhs.html" class="links-card" data-platform="xiaohongshu">
+        <div class="links-icon" style="background:#ff2442">紅</div>
+        <div class="links-body">
+          <h3>小紅書</h3>
+          <p class="links-en">Xiaohongshu / RED</p>
+          <p class="links-desc">每日茶湯實拍、凤凰山茶園直播</p>
+        </div>
+        <div class="links-arrow">→</div>
+      </a>
 
-      <article class="links-card" data-platform="youtube">
-        <div class="links-icon" style="background:#FF0000">📺</div>
-        <h3>YouTube</h3>
-        <p class="links-en">YouTube</p>
-        <p class="links-desc">26年外貿故事视频版</p>
-        <a href="youtube.html" class="links-btn">立即跳转</a>
-        <button class="links-copy" onclick="copyLink('youtube')">复制链接</button>
-      </article>
+      <a href="youtube.html" class="links-card" data-platform="youtube">
+        <div class="links-icon" style="background:#FF0000">▶</div>
+        <div class="links-body">
+          <h3>YouTube</h3>
+          <p class="links-en">YouTube</p>
+          <p class="links-desc">26 年外貿故事影片版</p>
+        </div>
+        <div class="links-arrow">→</div>
+      </a>
 
-      <article class="links-card" data-platform="linkedin">
-        <div class="links-icon" style="background:#0A66C2">💼</div>
-        <h3>LinkedIn</h3>
-        <p class="links-en">LinkedIn</p>
-        <p class="links-desc">B2B 外贸 B 端人脉</p>
-        <a href="linkedin.html" class="links-btn">立即跳转</a>
-        <button class="links-copy" onclick="copyLink('linkedin')">复制链接</button>
-      </article>
+      <a href="linkedin.html" class="links-card" data-platform="linkedin">
+        <div class="links-icon" style="background:#0A66C2">in</div>
+        <div class="links-body">
+          <h3>LinkedIn</h3>
+          <p class="links-en">LinkedIn</p>
+          <p class="links-desc">B2B 外貿 B 端人脈</p>
+        </div>
+        <div class="links-arrow">→</div>
+      </a>
 
-      <article class="links-card" data-platform="facebook">
-        <div class="links-icon" style="background:#1877F2">📘</div>
-        <h3>Facebook</h3>
-        <p class="links-en">Facebook</p>
-        <p class="links-desc">香港外贸群组</p>
-        <a href="facebook.html" class="links-btn">立即跳转</a>
-        <button class="links-copy" onclick="copyLink('facebook')">复制链接</button>
-      </article>
+      <a href="facebook.html" class="links-card" data-platform="facebook">
+        <div class="links-icon" style="background:#1877F2">f</div>
+        <div class="links-body">
+          <h3>Facebook</h3>
+          <p class="links-en">Facebook</p>
+          <p class="links-desc">香港外貿群組</p>
+        </div>
+        <div class="links-arrow">→</div>
+      </a>
 
-      <article class="links-card" data-platform="instagram">
-        <div class="links-icon" style="background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)">📸</div>
-        <h3>Instagram</h3>
-        <p class="links-en">Instagram</p>
-        <p class="links-desc">外贸生活视觉</p>
-        <a href="instagram.html" class="links-btn">立即跳转</a>
-        <button class="links-copy" onclick="copyLink('instagram')">复制链接</button>
-      </article>
+      <a href="instagram.html" class="links-card" data-platform="instagram">
+        <div class="links-icon" style="background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)">◎</div>
+        <div class="links-body">
+          <h3>Instagram</h3>
+          <p class="links-en">Instagram</p>
+          <p class="links-desc">外貿生活視覺</p>
+        </div>
+        <div class="links-arrow">→</div>
+      </a>
 
-      <article class="links-card" data-platform="tiktok">
-        <div class="links-icon" style="background:#000">🎵</div>
-        <h3>TikTok</h3>
-        <p class="links-en">TikTok</p>
-        <p class="links-desc">15-30秒短视频</p>
-        <a href="tiktok.html" class="links-btn">立即跳转</a>
-        <button class="links-copy" onclick="copyLink('tiktok')">复制链接</button>
-      </article>
+      <a href="tiktok.html" class="links-card" data-platform="tiktok">
+        <div class="links-icon" style="background:#000">♪</div>
+        <div class="links-body">
+          <h3>TikTok</h3>
+          <p class="links-en">TikTok</p>
+          <p class="links-desc">15-30 秒短影片</p>
+        </div>
+        <div class="links-arrow">→</div>
+      </a>
 
-      <article class="links-card" data-platform="twitter">
-        <div class="links-icon" style="background:#000">🐦</div>
-        <h3>Twitter/X</h3>
-        <p class="links-en">Twitter / X</p>
-        <p class="links-desc">280字推文</p>
-        <a href="twitter.html" class="links-btn">立即跳转</a>
-        <button class="links-copy" onclick="copyLink('twitter')">复制链接</button>
-      </article>
+      <a href="twitter.html" class="links-card" data-platform="twitter">
+        <div class="links-icon" style="background:#000">𝕏</div>
+        <div class="links-body">
+          <h3>Twitter / X</h3>
+          <p class="links-en">Twitter / X</p>
+          <p class="links-desc">280 字推文</p>
+        </div>
+        <div class="links-arrow">→</div>
+      </a>
     </section>
 
     <section class="links-cta">
-      <p>📧 Email 订阅：<a href="mailto:hany@glomarket.online">hany@glomarket.online</a></p>
+      <p>📧 Email 訂閱：<a href="mailto:hany@glomarket.online">hany@glomarket.online</a></p>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="footer-socials">
-      <a href="https://twitter.com" title="X">🐦</a>
-      <a href="https://linkedin.com" title="LinkedIn">💼</a>
-      <a href="https://youtube.com" title="YouTube">📺</a>
-      <a href="mailto:hany@glomarket.online" title="Email">📧</a>
-    </div>
     <p>© 2026 鄭哥 / Hany · 七善門科技 · 星辰算力 · 香港旺角</p>
   </footer>
-
-  <script>
-    function copyLink(platform) {
-      const map = {
-        'xiaohongshu': 'vault\\hany博主\\小紅書同步\\小红书_2026-09-19-二代豆包手机.md',
-        'youtube': 'vault\\hany博主\\YouTube同步\\youtube_2026-09-19-ai-phone-war.md',
-        'linkedin': 'vault\\hany博主\\LinkedIn同步\\linkedin_2026-09-19-ai-phone-war.md',
-        'facebook': 'vault\\hany博主\\Facebook同步\\facebook_2026-09-19-ai-phone-war.md',
-        'instagram': 'vault\\hany博主\\Instagram同步\\instagram_2026-09-19-ai-phone-war.md',
-        'tiktok': 'vault\\hany博主\\TikTok同步\\tiktok_2026-09-19-ai-phone-war.md',
-        'twitter': 'vault\\hany博主\\Twitter同步\\twitter_2026-09-19-ai-phone-war.md',
-      };
-      const text = map[platform] || platform;
-      navigator.clipboard.writeText(text).then(() => {
-        alert('已复制：' + text);
-      });
-    }
-  </script>
 </body>
 </html>
