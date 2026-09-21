@@ -57,17 +57,16 @@
   --border: #e8e8e8;
   --accent: #c9302c;
   --accent-light: #fdf2f2;
-  --font-mono: "JetBrains Mono", "Fira Code", "SFMono-Regular", Consolas, "Courier New", monospace;
   --font-zh: "PingFang HK", "Microsoft JhengHei", -apple-system, sans-serif;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
-  font-family: var(--font-mono), var(--font-zh);
+  font-family: var(--font-zh);
   background: var(--bg);
   color: var(--fg);
-  line-height: 1.6;
-  font-size: 15px;
+  line-height: 1.7;
+  font-size: 16px;
 }
 
 /* ===== 顶部导航 ===== */
@@ -84,11 +83,11 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  max-width: 1280px;
+  max-width: 1180px;
   margin: 0 auto;
 }
 .brand {
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--fg);
   text-decoration: none;
@@ -101,11 +100,11 @@ body {
 }
 .nav-search input {
   width: 100%;
-  padding: 6px 12px;
+  padding: 7px 14px;
   border: 1px solid var(--border);
   border-radius: 6px;
-  font-family: var(--font-mono), var(--font-zh);
-  font-size: 0.85rem;
+  font-family: var(--font-zh);
+  font-size: 0.9rem;
   background: #fafafa;
   color: var(--fg);
 }
@@ -122,14 +121,14 @@ body {
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 20px;
+  gap: 24px;
   margin: 0;
   padding: 0;
 }
 .nav-links a {
   color: var(--muted);
   text-decoration: none;
-  font-size: 0.88rem;
+  font-size: 0.95rem;
   white-space: nowrap;
   transition: color 0.15s;
 }
@@ -137,17 +136,16 @@ body {
   color: var(--accent);
   font-weight: 600;
 }
-.lang-toggle, .theme-toggle {
+.theme-toggle {
   background: transparent;
   border: 1px solid var(--border);
-  padding: 4px 10px;
+  padding: 5px 12px;
   border-radius: 4px;
   cursor: pointer;
-  font-family: var(--font-mono), var(--font-zh);
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   color: var(--muted);
 }
-.lang-toggle:hover, .theme-toggle:hover {
+.theme-toggle:hover {
   border-color: var(--accent);
   color: var(--accent);
 }
@@ -157,36 +155,21 @@ body {
   max-width: 1180px;
   margin: 0 auto;
   padding: 60px 5vw 40px;
-  text-align: center;
 }
 .page-header h1 {
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 700;
   margin-bottom: 16px;
   letter-spacing: -0.5px;
-}
-.page-header h1 .en {
-  display: block;
-  font-size: 1.2rem;
-  color: var(--muted);
-  font-weight: 400;
-  margin-top: 8px;
 }
 .page-header .subtitle {
   font-size: 1.05rem;
   color: var(--muted);
   max-width: 720px;
-  margin: 0 auto;
   line-height: 1.7;
 }
-.page-header .subtitle .en {
-  display: block;
-  margin-top: 6px;
-  font-size: 0.92rem;
-  color: #999;
-}
 
-/* ===== Post List (blog.html 核心) ===== */
+/* ===== Post List ===== */
 .post-list {
   max-width: 1180px;
   margin: 0 auto;
@@ -196,7 +179,7 @@ body {
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 28px 32px;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   background: #fff;
   transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
 }
@@ -213,28 +196,23 @@ body {
   flex-wrap: wrap;
 }
 .post-date {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   color: #888;
   background: #fafafa;
-  padding: 3px 10px;
+  padding: 4px 10px;
   border-radius: 4px;
   border: 1px solid var(--border);
-  white-space: nowrap;
 }
 .post-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 500;
   background: var(--accent-light);
   color: var(--accent);
-  padding: 3px 10px;
+  padding: 4px 10px;
   border-radius: 4px;
 }
 .post-card h3 {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.5;
   margin-bottom: 12px;
@@ -247,30 +225,17 @@ body {
 .post-card h3 a:hover {
   color: var(--accent);
 }
-.post-card h3 .en {
-  display: block;
-  font-size: 0.95rem;
-  color: var(--muted);
-  font-weight: 400;
-  margin-top: 4px;
-}
 .post-excerpt {
   color: var(--muted);
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   line-height: 1.7;
   margin-bottom: 16px;
-}
-.post-excerpt .en {
-  display: block;
-  margin-top: 6px;
-  font-size: 0.85rem;
-  color: #888;
 }
 .read-more {
   display: inline-block;
   color: var(--accent);
   text-decoration: none;
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   font-weight: 500;
   border-bottom: 1px solid transparent;
   transition: border-color 0.15s;
@@ -278,23 +243,8 @@ body {
 .read-more:hover {
   border-bottom-color: var(--accent);
 }
-.read-more .en {
-  display: inline;
-  margin-left: 8px;
-  color: var(--muted);
-  font-size: 0.82rem;
-}
 
-/* ===== 中英双语分隔 ===== */
-.cn { display: inline; }
-.en { 
-  display: inline; 
-  color: var(--muted); 
-  font-size: 0.92em;
-}
-.en::before { content: " · "; }
-
-/* ===== Hero (index.html) ===== */
+/* ===== Hero ===== */
 .hero {
   padding: 80px 5vw 60px;
   text-align: center;
@@ -304,31 +254,18 @@ body {
 .hero h1 {
   font-size: 2.2rem;
   font-weight: 700;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   letter-spacing: -0.5px;
-}
-.hero h1 .en {
-  display: block;
-  font-size: 1.3rem;
-  color: var(--muted);
-  font-weight: 400;
-  margin-top: 8px;
 }
 .hero .tagline {
   font-size: 1.05rem;
   color: var(--muted);
   max-width: 720px;
   margin: 0 auto;
-  line-height: 1.7;
-}
-.hero .tagline .en {
-  display: block;
-  margin-top: 6px;
-  font-size: 0.92rem;
-  color: #999;
+  line-height: 1.8;
 }
 
-/* ===== Stats (index.html) ===== */
+/* ===== Stats ===== */
 .stats { border-bottom: 1px solid var(--border); background: #fafafa; }
 .stats-grid {
   display: grid;
@@ -344,15 +281,8 @@ body {
   font-weight: 700;
   color: var(--accent);
   margin-bottom: 8px;
-  font-family: var(--font-mono);
 }
 .stat-label { color: var(--muted); font-size: 0.95rem; }
-.stat-label .en {
-  display: block;
-  margin-top: 4px;
-  font-size: 0.82rem;
-  color: #999;
-}
 
 /* ===== Section Header ===== */
 .section-header {
@@ -364,13 +294,6 @@ body {
 .section-header h2 {
   font-size: 1.6rem;
   font-weight: 700;
-}
-.section-header .en {
-  display: block;
-  color: var(--muted);
-  font-size: 0.92rem;
-  font-weight: 400;
-  margin-top: 4px;
 }
 
 /* ===== Cards ===== */
@@ -411,6 +334,9 @@ body {
 .footer-inner { max-width: 1180px; margin: 0 auto; }
 .footer a { color: var(--accent); text-decoration: none; }
 
+/* ===== 移除所有双语 class ===== */
+.cn, .en { display: none !important; }
+
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
   .nav-search { display: none; }
@@ -418,27 +344,26 @@ body {
   .hero h1 { font-size: 1.6rem; }
   .post-card { padding: 20px; }
   .post-card h3 { font-size: 1.05rem; }
-  .post-card h3 .en { font-size: 0.85rem; }
   .stats-grid { gap: 20px; padding: 24px 5vw; }
+  .stat-item h3 { font-size: 1.8rem; }
 }
 </style>
 </head>
 <body>
 
-            <nav class="nav">
+              <nav class="nav">
     <div class="nav-inner">
-      <a href="index.html" class="brand">[鄭哥 / Hany]</a>
+      <a href="index.html" class="brand">[鄭哥博客]</a>
       <div class="nav-search">
         <input type="search" placeholder="搜索文章..." aria-label="搜索">
       </div>
       <div class="nav-actions">
         <ul class="nav-links">
-          <li><a href="blog.html">Articles · 文章</a></li>
-          <li><a href="about.html">About · 关于</a></li>
-          <li><a href="links.html">Links · 链接</a></li>
-          <li><a href="contact.html">Contact · 联系</a></li>
+          <li><a href="blog.html">文章</a></li>
+          <li><a href="about.html">关于</a></li>
+          <li><a href="links.html">链接</a></li>
+          <li><a href="contact.html">联系</a></li>
         </ul>
-        <button class="lang-toggle" title="切換語言">中 / EN</button>
         <button class="theme-toggle" title="切換主題">🌙</button>
       </div>
     </div>
@@ -447,12 +372,12 @@ body {
   <header>
     <div class="container">
       <h1>
-        <span class="cn">聯繫鄭哥</span>
-        <span class="en">Contact Hany</span>
+        聯繫鄭哥
+        
       </h1>
       <p>
-        <span class="cn">有嘢想傾？直接搵我。我見到就覆。</span>
-        <span class="en">Something to discuss? Reach out. I'll reply when I see it.</span>
+        有嘢想傾？直接搵我。我見到就覆。
+        
       </p>
     </div>
   </header>
@@ -461,39 +386,39 @@ body {
   <section class="section">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title"><span class="cn">直接聯繫</span><span class="en">Direct Contact</span></h2>
+        <h2 class="section-title">直接聯繫</h2>
       </div>
       <div class="contact-card">
         <div class="contact-item">
           <div class="contact-icon">📱</div>
           <div class="contact-body">
-            <h3><span class="cn">WhatsApp（香港）</span><span class="en">WhatsApp (Hong Kong)</span></h3>
+            <h3>WhatsApp（香港）</h3>
             <p><a href="https://wa.me/85266417912" target="_blank">+852 6641 7912</a></p>
-            <p class="contact-note"><span class="cn">最快覆，通常即日回覆</span><span class="en">Fastest response, usually same day</span></p>
+            <p class="contact-note">最快覆，通常即日回覆</p>
           </div>
         </div>
         <div class="contact-item">
           <div class="contact-icon">📞</div>
           <div class="contact-body">
-            <h3><span class="cn">電話（美國）</span><span class="en">Phone (US)</span></h3>
+            <h3>電話（美國）</h3>
             <p><a href="tel:+15625509968">+1 (562) 550-9968</a></p>
-            <p class="contact-note"><span class="cn">ALEXBI INC 美國辦事處</span><span class="en">ALEXBI INC US Office</span></p>
+            <p class="contact-note">ALEXBI INC 美國辦事處</p>
           </div>
         </div>
         <div class="contact-item">
           <div class="contact-icon">✉️</div>
           <div class="contact-body">
-            <h3><span class="cn">電郵</span><span class="en">Email</span></h3>
+            <h3>電郵</h3>
             <p><a href="mailto:glomarket500@gmail.com">glomarket500@gmail.com</a></p>
-            <p class="contact-note"><span class="cn">商業合作、投資諮詢</span><span class="en">Business collaboration, investment inquiry</span></p>
+            <p class="contact-note">商業合作、投資諮詢</p>
           </div>
         </div>
         <div class="contact-item">
           <div class="contact-icon">📍</div>
           <div class="contact-body">
-            <h3><span class="cn">地址</span><span class="en">Address</span></h3>
-            <p><span class="cn">香港：旺角花園街183號</span><span class="en">Hong Kong: 183 Fa Yuen Street, Mong Kok</span></p>
-            <p><span class="cn">美國：ALEXBI INC, 1603 E LUARY ST, LONG BEACH, CA 90807</span><span class="en">US: ALEXBI INC, 1603 E LUARY ST, LONG BEACH, CA 90807</span></p>
+            <h3>地址</h3>
+            <p>香港：旺角花園街183號</p>
+            <p>美國：ALEXBI INC, 1603 E LUARY ST, LONG BEACH, CA 90807</p>
           </div>
         </div>
       </div>
@@ -504,24 +429,24 @@ body {
   <section class="section section-alt">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title"><span class="cn">搵我傾咩？</span><span class="en">What to Talk About?</span></h2>
+        <h2 class="section-title">搵我傾咩？</h2>
       </div>
       <div class="biz-card">
-        <h3>☀️ <span class="cn">七善門科技 — AI回憶錄、大模型活動</span><span class="en">Qishanmen Tech — AI Memoirs, LLM Events</span></h3>
-        <p><span class="cn">想瞭解AI回憶錄點樣幫你留住最珍貴嘅記憶？或者想參加我哋嘅大模型交流活動？</span><span class="en">Want to know how AI memoirs preserve your precious memories? Or join our LLM exchange events?</span></p>
+        <h3>☀️ 七善門科技 — AI回憶錄、大模型活動</h3>
+        <p>想瞭解AI回憶錄點樣幫你留住最珍貴嘅記憶？或者想參加我哋嘅大模型交流活動？</p>
         <span class="tag">AI</span>
         <span class="tag">LLM</span>
       </div>
       <div class="biz-card">
-        <h3>⚡ <span class="cn">星辰算力 — 英偉達服務器部署</span><span class="en">Star Compute — NVIDIA Server Deployment</span></h3>
-        <p><span class="cn">企業需要AI算力基礎設施？我哋提供英偉達服務器一站式部署方案。</span><span class="en">Enterprise needs AI compute infrastructure? We provide one-stop NVIDIA server deployment.</span></p>
+        <h3>⚡ 星辰算力 — 英偉達服務器部署</h3>
+        <p>企業需要AI算力基礎設施？我哋提供英偉達服務器一站式部署方案。</p>
         <span class="tag">NVIDIA</span>
-        <span class="tag"><span class="cn">服務器</span><span class="en">Servers</span></span>
+        <span class="tag">服務器</span>
       </div>
       <div class="biz-card">
-        <h3>🚀 <span class="cn">00後創業投資</span><span class="en">Gen-Z Startup Investment</span></h3>
-        <p><span class="cn">你有想法、有膽識、肯做？我願意傾。資金、經驗、人脈，一齊傾。</span><span class="en">Got ideas, guts, and willingness to work? Let's talk. Capital, experience, connections.</span></p>
-        <span class="tag"><span class="cn">種子輪</span><span class="en">Seed</span></span>
+        <h3>🚀 00後創業投資</h3>
+        <p>你有想法、有膽識、肯做？我願意傾。資金、經驗、人脈，一齊傾。</p>
+        <span class="tag">種子輪</span>
         <span class="tag">mentorship</span>
       </div>
     </div>
@@ -531,8 +456,8 @@ body {
   <section class="section">
     <div class="container">
       <div class="note-card">
-        <h4>💡 <span class="cn">鄭哥話你知</span><span class="en">Hany's Note</span></h4>
-        <p><span class="cn">「我唔係咩專家，我只係做咗26年，見過太多人起起跌跌。如果你真係想傾，直接WhatsApp我，唔使客氣。」</span><span class="en">"I'm not some expert. I've just done this for 26 years and seen too many rises and falls. If you really want to talk, just WhatsApp me. No need to be polite."</span></p>
+        <h4>💡 鄭哥話你知</h4>
+        <p>「我唔係咩專家，我只係做咗26年，見過太多人起起跌跌。如果你真係想傾，直接WhatsApp我，唔使客氣。」</p>
       </div>
     </div>
   </section>
