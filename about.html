@@ -49,17 +49,16 @@
   --border: #e8e8e8;
   --accent: #c9302c;
   --accent-light: #fdf2f2;
-  --font-mono: "JetBrains Mono", "Fira Code", "SFMono-Regular", Consolas, "Courier New", monospace;
   --font-zh: "PingFang HK", "Microsoft JhengHei", -apple-system, sans-serif;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
-  font-family: var(--font-mono), var(--font-zh);
+  font-family: var(--font-zh);
   background: var(--bg);
   color: var(--fg);
-  line-height: 1.6;
-  font-size: 15px;
+  line-height: 1.7;
+  font-size: 16px;
 }
 
 /* ===== 顶部导航 ===== */
@@ -76,11 +75,11 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  max-width: 1280px;
+  max-width: 1180px;
   margin: 0 auto;
 }
 .brand {
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--fg);
   text-decoration: none;
@@ -93,11 +92,11 @@ body {
 }
 .nav-search input {
   width: 100%;
-  padding: 6px 12px;
+  padding: 7px 14px;
   border: 1px solid var(--border);
   border-radius: 6px;
-  font-family: var(--font-mono), var(--font-zh);
-  font-size: 0.85rem;
+  font-family: var(--font-zh);
+  font-size: 0.9rem;
   background: #fafafa;
   color: var(--fg);
 }
@@ -114,14 +113,14 @@ body {
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 20px;
+  gap: 24px;
   margin: 0;
   padding: 0;
 }
 .nav-links a {
   color: var(--muted);
   text-decoration: none;
-  font-size: 0.88rem;
+  font-size: 0.95rem;
   white-space: nowrap;
   transition: color 0.15s;
 }
@@ -129,17 +128,16 @@ body {
   color: var(--accent);
   font-weight: 600;
 }
-.lang-toggle, .theme-toggle {
+.theme-toggle {
   background: transparent;
   border: 1px solid var(--border);
-  padding: 4px 10px;
+  padding: 5px 12px;
   border-radius: 4px;
   cursor: pointer;
-  font-family: var(--font-mono), var(--font-zh);
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   color: var(--muted);
 }
-.lang-toggle:hover, .theme-toggle:hover {
+.theme-toggle:hover {
   border-color: var(--accent);
   color: var(--accent);
 }
@@ -149,36 +147,21 @@ body {
   max-width: 1180px;
   margin: 0 auto;
   padding: 60px 5vw 40px;
-  text-align: center;
 }
 .page-header h1 {
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 700;
   margin-bottom: 16px;
   letter-spacing: -0.5px;
-}
-.page-header h1 .en {
-  display: block;
-  font-size: 1.2rem;
-  color: var(--muted);
-  font-weight: 400;
-  margin-top: 8px;
 }
 .page-header .subtitle {
   font-size: 1.05rem;
   color: var(--muted);
   max-width: 720px;
-  margin: 0 auto;
   line-height: 1.7;
 }
-.page-header .subtitle .en {
-  display: block;
-  margin-top: 6px;
-  font-size: 0.92rem;
-  color: #999;
-}
 
-/* ===== Post List (blog.html 核心) ===== */
+/* ===== Post List ===== */
 .post-list {
   max-width: 1180px;
   margin: 0 auto;
@@ -188,7 +171,7 @@ body {
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 28px 32px;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   background: #fff;
   transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
 }
@@ -205,28 +188,23 @@ body {
   flex-wrap: wrap;
 }
 .post-date {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   color: #888;
   background: #fafafa;
-  padding: 3px 10px;
+  padding: 4px 10px;
   border-radius: 4px;
   border: 1px solid var(--border);
-  white-space: nowrap;
 }
 .post-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 500;
   background: var(--accent-light);
   color: var(--accent);
-  padding: 3px 10px;
+  padding: 4px 10px;
   border-radius: 4px;
 }
 .post-card h3 {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.5;
   margin-bottom: 12px;
@@ -239,30 +217,17 @@ body {
 .post-card h3 a:hover {
   color: var(--accent);
 }
-.post-card h3 .en {
-  display: block;
-  font-size: 0.95rem;
-  color: var(--muted);
-  font-weight: 400;
-  margin-top: 4px;
-}
 .post-excerpt {
   color: var(--muted);
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   line-height: 1.7;
   margin-bottom: 16px;
-}
-.post-excerpt .en {
-  display: block;
-  margin-top: 6px;
-  font-size: 0.85rem;
-  color: #888;
 }
 .read-more {
   display: inline-block;
   color: var(--accent);
   text-decoration: none;
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   font-weight: 500;
   border-bottom: 1px solid transparent;
   transition: border-color 0.15s;
@@ -270,23 +235,8 @@ body {
 .read-more:hover {
   border-bottom-color: var(--accent);
 }
-.read-more .en {
-  display: inline;
-  margin-left: 8px;
-  color: var(--muted);
-  font-size: 0.82rem;
-}
 
-/* ===== 中英双语分隔 ===== */
-.cn { display: inline; }
-.en { 
-  display: inline; 
-  color: var(--muted); 
-  font-size: 0.92em;
-}
-.en::before { content: " · "; }
-
-/* ===== Hero (index.html) ===== */
+/* ===== Hero ===== */
 .hero {
   padding: 80px 5vw 60px;
   text-align: center;
@@ -296,31 +246,18 @@ body {
 .hero h1 {
   font-size: 2.2rem;
   font-weight: 700;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   letter-spacing: -0.5px;
-}
-.hero h1 .en {
-  display: block;
-  font-size: 1.3rem;
-  color: var(--muted);
-  font-weight: 400;
-  margin-top: 8px;
 }
 .hero .tagline {
   font-size: 1.05rem;
   color: var(--muted);
   max-width: 720px;
   margin: 0 auto;
-  line-height: 1.7;
-}
-.hero .tagline .en {
-  display: block;
-  margin-top: 6px;
-  font-size: 0.92rem;
-  color: #999;
+  line-height: 1.8;
 }
 
-/* ===== Stats (index.html) ===== */
+/* ===== Stats ===== */
 .stats { border-bottom: 1px solid var(--border); background: #fafafa; }
 .stats-grid {
   display: grid;
@@ -336,15 +273,8 @@ body {
   font-weight: 700;
   color: var(--accent);
   margin-bottom: 8px;
-  font-family: var(--font-mono);
 }
 .stat-label { color: var(--muted); font-size: 0.95rem; }
-.stat-label .en {
-  display: block;
-  margin-top: 4px;
-  font-size: 0.82rem;
-  color: #999;
-}
 
 /* ===== Section Header ===== */
 .section-header {
@@ -356,13 +286,6 @@ body {
 .section-header h2 {
   font-size: 1.6rem;
   font-weight: 700;
-}
-.section-header .en {
-  display: block;
-  color: var(--muted);
-  font-size: 0.92rem;
-  font-weight: 400;
-  margin-top: 4px;
 }
 
 /* ===== Cards ===== */
@@ -403,6 +326,9 @@ body {
 .footer-inner { max-width: 1180px; margin: 0 auto; }
 .footer a { color: var(--accent); text-decoration: none; }
 
+/* ===== 移除所有双语 class ===== */
+.cn, .en { display: none !important; }
+
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
   .nav-search { display: none; }
@@ -410,27 +336,26 @@ body {
   .hero h1 { font-size: 1.6rem; }
   .post-card { padding: 20px; }
   .post-card h3 { font-size: 1.05rem; }
-  .post-card h3 .en { font-size: 0.85rem; }
   .stats-grid { gap: 20px; padding: 24px 5vw; }
+  .stat-item h3 { font-size: 1.8rem; }
 }
 </style>
 </head>
 <body>
 
-            <nav class="nav">
+              <nav class="nav">
     <div class="nav-inner">
-      <a href="index.html" class="brand">[鄭哥 / Hany]</a>
+      <a href="index.html" class="brand">[鄭哥博客]</a>
       <div class="nav-search">
         <input type="search" placeholder="搜索文章..." aria-label="搜索">
       </div>
       <div class="nav-actions">
         <ul class="nav-links">
-          <li><a href="blog.html">Articles · 文章</a></li>
-          <li><a href="about.html">About · 关于</a></li>
-          <li><a href="links.html">Links · 链接</a></li>
-          <li><a href="contact.html">Contact · 联系</a></li>
+          <li><a href="blog.html">文章</a></li>
+          <li><a href="about.html">关于</a></li>
+          <li><a href="links.html">链接</a></li>
+          <li><a href="contact.html">联系</a></li>
         </ul>
-        <button class="lang-toggle" title="切換語言">中 / EN</button>
         <button class="theme-toggle" title="切換主題">🌙</button>
       </div>
     </div>
@@ -440,12 +365,12 @@ body {
     <div class="container">
       <div class="portrait"><img src="hany-portrait.webp" alt="鄭哥 Hany 香港維多利亞港頭像" loading="lazy"></div>
       <h1>
-        <span class="cn">關於鄭哥</span>
-        <span class="en">About Hany</span>
+        關於鄭哥
+        
       </h1>
       <p>
-        <span class="cn">唔係工程師，係幫老闆將技術變成錢嘅人。做過教師、翻譯、外貿、產品創新，而家搞AI算力，投資年輕創業者。</span>
-        <span class="en">Not an engineer — the guy who turns tech into money for bosses. Teacher, translator, trader, product innovator, now AI compute and Young investor.</span>
+        唔係工程師，係幫老闆將技術變成錢嘅人。做過教師、翻譯、外貿、產品創新，而家搞AI算力，投資年輕創業者。
+        
       </p>
     </div>
   </header>
@@ -454,54 +379,54 @@ body {
   <section class="section">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title"><span class="cn">我走過嘅路</span><span class="en">The Journey</span></h2>
-        <p class="section-sub"><span class="cn">由讀書人到生意人，一步一腳印。</span><span class="en">From scholar to businessman, one step at a time.</span></p>
+        <h2 class="section-title">我走過嘅路</h2>
+        <p class="section-sub">由讀書人到生意人，一步一腳印。</p>
       </div>
       <div class="timeline">
         <div class="t-item">
-          <div class="t-year"><span class="cn">1990年代 · 讀書人</span><span class="en">1990s · The Scholar</span></div>
+          <div class="t-year">1990年代 · 讀書人</div>
           <div class="t-content">
-            <p><span class="cn">大學畢業，做過中學教師、翻譯。以為自己會教一世書，點知命運另有安排。</span><span class="en">Uni grad. Taught secondary school, worked as translator. Thought I'd teach forever. Life had other plans.</span></p>
-            <span class="tag"><span class="cn">教師</span><span class="en">Teacher</span></span>
-            <span class="tag"><span class="cn">翻譯</span><span class="en">Translator</span></span>
+            <p>大學畢業，做過中學教師、翻譯。以為自己會教一世書，點知命運另有安排。</p>
+            <span class="tag">教師</span>
+            <span class="tag">翻譯</span>
           </div>
         </div>
         <div class="t-item">
-          <div class="t-year"><span class="cn">1998 · 入行貿易</span><span class="en">1998 · Entering Trade</span></div>
+          <div class="t-year">1998 · 入行貿易</div>
           <div class="t-content">
-            <p><span class="cn">正式投身國際貿易。電子家電、服裝鞋履、珠寶電車、教育培訓——邊做邊學，邊學邊做。</span><span class="en">Officially entered international trade. Electronics, garments, jewelry, e-bikes, training — learned by doing.</span></p>
+            <p>正式投身國際貿易。電子家電、服裝鞋履、珠寶電車、教育培訓——邊做邊學，邊學邊做。</p>
             <div class="highlight">
-              <p><span class="cn">💡 學到嘅第一課：客戶要嘅唔係平，係可靠。</span><span class="en">First lesson: Customers don't want cheap. They want reliable.</span></p>
+              <p>💡 學到嘅第一課：客戶要嘅唔係平，係可靠。</p>
             </div>
-            <span class="tag"><span class="cn">電子家電</span><span class="en">Electronics</span></span>
-            <span class="tag"><span class="cn">服裝鞋履</span><span class="en">Garments</span></span>
-            <span class="tag"><span class="cn">珠寶電車</span><span class="en">Jewelry</span></span>
+            <span class="tag">電子家電</span>
+            <span class="tag">服裝鞋履</span>
+            <span class="tag">珠寶電車</span>
           </div>
         </div>
         <div class="t-item">
-          <div class="t-year"><span class="cn">2005-2010 · 產品創新黃金期</span><span class="en">2005-2010 · Innovation Peak</span></div>
+          <div class="t-year">2005-2010 · 產品創新黃金期</div>
           <div class="t-content">
-            <p><span class="cn">呢五年做咗四樣全球首創嘅產品。唔係為咗出名，係因為見到市場需要，就做咗出嚟。</span><span class="en">Five years, four world-first products. Not for fame — saw market needs, built them.</span></p>
+            <p>呢五年做咗四樣全球首創嘅產品。唔係為咗出名，係因為見到市場需要，就做咗出嚟。</p>
             <div class="highlight">
               <p><span class="cn">🔥 <strong>2005</strong> 做出全球首款手錶手機｜<strong>2006</strong> 全球第一台四頻老人機｜<strong>2008</strong> 推廣手機無線充電｜<strong>2010</strong> 製作力距傳感電機</span></p>
             </div>
           </div>
         </div>
         <div class="t-item">
-          <div class="t-year"><span class="cn">2010-2020 · 深耕跨境</span><span class="en">2010-2020 · Deep Dive</span></div>
+          <div class="t-year">2010-2020 · 深耕跨境</div>
           <div class="t-content">
-            <p><span class="cn">跨境電商興起，Amazon、阿裡巴巴、獨立站、TikTok——平台換咗一輪又一輪，但貿易嘅本質冇變：搵到客，留住客，做好貨。</span><span class="en">Cross-border e-commerce rose. Amazon, Alibaba, DTC, TikTok — platforms changed, but trade stayed the same: find customers, keep them, deliver quality.</span></p>
+            <p>跨境電商興起，Amazon、阿裡巴巴、獨立站、TikTok——平台換咗一輪又一輪，但貿易嘅本質冇變：搵到客，留住客，做好貨。</p>
             <span class="tag">Amazon</span>
             <span class="tag">TikTok</span>
-            <span class="tag"><span class="cn">獨立站</span><span class="en">DTC</span></span>
+            <span class="tag">獨立站</span>
           </div>
         </div>
         <div class="t-item">
-          <div class="t-year"><span class="cn">2020-現在 · AI時代</span><span class="en">2020-Present · AI Era</span></div>
+          <div class="t-year">2020-現在 · AI時代</div>
           <div class="t-content">
-            <p><span class="cn">七善門科技做AI回憶錄同大模型活動，星辰算力賣英偉達服務器。同時有技術門檻嘅早期項目——因為見到當年自己嘅影子。</span><span class="en">Qishanmen Tech does AI memoirs and LLM events. Star Compute sells NVIDIA servers. Also investing in tech innovators — because I see myself in them.</span></p>
+            <p>七善門科技做AI回憶錄同大模型活動，星辰算力賣英偉達服務器。同時有技術門檻嘅早期項目——因為見到當年自己嘅影子。</p>
             <div class="highlight">
-              <p><span class="cn">🎯 而家嘅目標：幫多啲老闆將技術變成錢，幫多啲年輕人將想法變成生意。</span><span class="en">Current goal: Help more bosses turn tech into money, help more young people turn ideas into business.</span></p>
+              <p>🎯 而家嘅目標：幫多啲老闆將技術變成錢，幫多啲年輕人將想法變成生意。</p>
             </div>
           </div>
         </div>
@@ -513,41 +438,41 @@ body {
   <section class="section section-alt">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title"><span class="cn">我做過嘅產品</span><span class="en">Products I've Built</span></h2>
-        <p class="section-sub"><span class="cn">唔係為咗專利，係為咗解決問題。</span><span class="en">Not for patents. For solving problems.</span></p>
+        <h2 class="section-title">我做過嘅產品</h2>
+        <p class="section-sub">唔係為咗專利，係為咗解決問題。</p>
       </div>
       <div class="achieve-grid">
         <div class="achieve-card">
           <div class="achieve-year">2005</div>
           <img src="hany-watch-phone-2005.jpg" alt="鄭哥Hany 2005年全球首款手錶手機實物">
-          <p class="img-caption"><span class="cn">📷 2005年展覽現場實拍</span><span class="en">Exhibition photo, 2005</span></p>
-          <h4><span class="cn">全球首款手錶手機</span><span class="en">World's First Watch Phone</span></h4>
-          <p><span class="cn">將通訊設備同時尚配飾結合，比 Apple Watch 早咗九年。</span><span class="en">Combined communication device with fashion accessory. Nine years before Apple Watch.</span></p>
-          <span class="badge-first"><span class="cn">全球首創</span><span class="en">World First</span></span>
+          <p class="img-caption">📷 2005年展覽現場實拍</p>
+          <h4>全球首款手錶手機</h4>
+          <p>將通訊設備同時尚配飾結合，比 Apple Watch 早咗九年。</p>
+          <span class="badge-first">全球首創</span>
         </div>
         <div class="achieve-card">
           <div class="achieve-year">2006</div>
           <img src="hany-senior-phone-expo.jpg" alt="鄭哥Hany 2006年全球第一台四頻老人機 - 廣交會展示" loading="lazy">
-          <p class="img-caption"><span class="cn">📷 2006年廣交會展示老人機</span><span class="en">Canton Fair 2006 - senior phone demo</span></p>
-          <h4><span class="cn">全球第一台四頻老人機</span><span class="en">First Quad-Band Senior Phone</span></h4>
-          <p><span class="cn">專為長者設計，大字、大聲、大按鈕，全球通用頻段。</span><span class="en">Designed for seniors: large text, loud sound, big buttons, global frequency bands.</span></p>
-          <span class="badge-first"><span class="cn">全球首創</span><span class="en">World First</span></span>
+          <p class="img-caption">📷 2006年廣交會展示老人機</p>
+          <h4>全球第一台四頻老人機</h4>
+          <p>專為長者設計，大字、大聲、大按鈕，全球通用頻段。</p>
+          <span class="badge-first">全球首創</span>
         </div>
         <div class="achieve-card">
           <div class="achieve-year">2008</div>
           <img src="hany-card-wireless-charge.webp" alt="鄭哥Hany 2008年推廣手機無線充電技術" loading="lazy">
-          <p class="img-caption"><span class="cn">📷 2008年推廣手機無線充電技術</span><span class="en">📷 2008: Wireless charging promotion</span></p>
-          <h4><span class="cn">手機無線充電技術</span><span class="en">Wireless Charging for Phones</span></h4>
-          <p><span class="cn">推廣無線充電技術，令手機充電更便捷，減少對電線依賴。</span><span class="en">Promoted wireless charging technology, making phone charging more convenient.</span></p>
-          <span class="badge-first"><span class="cn">領先推廣</span><span class="en">Early Adopter</span></span>
+          <p class="img-caption">📷 2008年推廣手機無線充電技術</p>
+          <h4>手機無線充電技術</h4>
+          <p>推廣無線充電技術，令手機充電更便捷，減少對電線依賴。</p>
+          <span class="badge-first">領先推廣</span>
         </div>
         <div class="achieve-card">
           <div class="achieve-year">2010</div>
           <img src="hany-card-torque-motor.webp" alt="鄭哥Hany 2010年力距傳感電機" loading="lazy">
-          <p class="img-caption"><span class="cn">📷 2010年力距傳感電機製作</span><span class="en">2010 Torque Sensing Motor prototype</span></p>
-          <h4><span class="cn">力距傳感電機製作</span><span class="en">Torque Sensing Motor</span></h4>
-          <p><span class="cn">製作力距傳感電機，提高能效同電機性能，技術超前。</span><span class="en">Developed torque sensing motor. Improved efficiency and motor performance. Ahead of its time.</span></p>
-          <span class="badge-first"><span class="cn">技術超前</span><span class="en">Ahead of Time</span></span>
+          <p class="img-caption">📷 2010年力距傳感電機製作</p>
+          <h4>力距傳感電機製作</h4>
+          <p>製作力距傳感電機，提高能效同電機性能，技術超前。</p>
+          <span class="badge-first">技術超前</span>
         </div>
       </div>
     </div>
@@ -557,8 +482,8 @@ body {
   <section class="section">
     <div class="container">
       <div class="note-card">
-        <h4>💡 <span class="cn">鄭哥話你知</span><span class="en">Hany's Note</span></h4>
-        <p><span class="cn">「好多人以為做產品要讀好多書，其實最緊要係睇到問題。我冇讀過工程，但我識得問客戶『你想要咩』，然後搵人做出嚟。呢個就叫生意。」</span><span class="en">"People think you need degrees to build products. What you need is to see problems. I never studied engineering, but I know to ask customers what they want, then find people to build it. That's business."</span></p>
+        <h4>💡 鄭哥話你知</h4>
+        <p>「好多人以為做產品要讀好多書，其實最緊要係睇到問題。我冇讀過工程，但我識得問客戶『你想要咩』，然後搵人做出嚟。呢個就叫生意。」</p>
       </div>
     </div>
   </section>
@@ -567,17 +492,17 @@ body {
   <section class="section">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title"><span class="cn">我嘅工作環境</span><span class="en">The Office</span></h2>
-        <p class="section-sub"><span class="cn">26年貿易，由細攤位做到大辦公室。</span><span class="en">26 years of trade, from a small stall to a real office.</span></p>
+        <h2 class="section-title">我嘅工作環境</h2>
+        <p class="section-sub">26年貿易，由細攤位做到大辦公室。</p>
       </div>
       <div class="office-gallery">
         <div class="office-img">
           <img src="hany-office-showroom.jpg" alt="鄭哥Hany 產品展示間 - 電子產品貿易辦公室" loading="lazy">
-          <div class="caption"><span class="cn">📷 產品展示間 - 接待全球客戶</span><span class="en">Product showroom - serving global clients</span></div>
+          <div class="caption">📷 產品展示間 - 接待全球客戶</div>
         </div>
         <div class="office-img">
           <img src="hany-office-global-market.jpg" alt="鄭哥Hany 辦公室環境 - GLOBAL MARKET 海報" loading="lazy">
-          <div class="caption"><span class="cn">📷 GLOBAL MARKET 辦公環境</span><span class="en">Office with GLOBAL MARKET branding</span></div>
+          <div class="caption">📷 GLOBAL MARKET 辦公環境</div>
         </div>
       </div>
     </div>
@@ -587,34 +512,34 @@ body {
   <section class="section section-alt">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title"><span class="cn">我而家嘅業務</span><span class="en">Current Business</span></h2>
-        <p class="section-sub"><span class="cn">三條腿走路，穩陣。</span><span class="en">Three pillars, stable growth.</span></p>
+        <h2 class="section-title">我而家嘅業務</h2>
+        <p class="section-sub">三條腿走路，穩陣。</p>
       </div>
       <div class="biz-grid">
         <div class="biz-card">
-          <h4>🏢 <span class="cn">七善門科技</span><span class="en">Qishanmen Tech</span></h4>
-          <p><span class="cn">AI回憶錄、大模型活動。用AI技術幫人留住最珍貴嘅回憶，舉辦行業大模型交流活動。</span><span class="en">AI memoirs and LLM events. Using AI to preserve precious memories, hosting industry LLM exchange events.</span></p>
+          <h4>🏢 七善門科技</h4>
+          <p>AI回憶錄、大模型活動。用AI技術幫人留住最珍貴嘅回憶，舉辦行業大模型交流活動。</p>
           <span class="tag">AI</span>
           <span class="tag">LLM</span>
         </div>
         <div class="biz-card">
           <img src="hany-h200-nvl.jpg" alt="NVIDIA H200 NVL GPU - 星辰算力" style="width:100%; height:160px; object-fit:cover; border-radius:8px; margin-bottom:16px;" loading="lazy">
-          <h4>⚡ <span class="cn">星辰算力</span><span class="en">Star Compute</span></h4>
-          <p><span class="cn">英偉達算力服務器部署。幫企業搭建AI基礎設施，從硬件到軟件一站式解決。</span><span class="en">NVIDIA compute server deployment. Helping businesses build AI infrastructure, from hardware to software.</span></p>
+          <h4>⚡ 星辰算力</h4>
+          <p>英偉達算力服務器部署。幫企業搭建AI基礎設施，從硬件到軟件一站式解決。</p>
           <span class="tag">NVIDIA</span>
-          <span class="tag"><span class="cn">服務器</span><span class="en">Servers</span></span>
+          <span class="tag">服務器</span>
         </div>
         <div class="biz-card">
-          <h4>🌐 <span class="cn">跨境電商</span><span class="en">Cross-border E-commerce</span></h4>
-          <p><span class="cn">TikTok、Tumer、Amazon、阿裡巴巴、獨立站。26年貿易經驗，幫你避開啲坑。</span><span class="en">TikTok, Tumer, Amazon, Alibaba, independent stores. 26 years of trade experience, helping you avoid pitfalls.</span></p>
+          <h4>🌐 跨境電商</h4>
+          <p>TikTok、Tumer、Amazon、阿裡巴巴、獨立站。26年貿易經驗，幫你避開啲坑。</p>
           <span class="tag">Amazon</span>
           <span class="tag">TikTok</span>
         </div>
         <div class="biz-card">
-          <h4>🚀 <span class="cn">年輕投資</span><span class="en">Young Investment</span></h4>
-          <p><span class="cn">投資有想法嘅年輕人，提供資金、經驗、人脈，幫佢哋將創意變成生意。</span><span class="en">Investing in tech innovators with ideas. Providing capital, experience, and connections to turn creativity into business.</span></p>
-          <span class="tag"><span class="cn">種子投資</span><span class="en">Seed</span></span>
-          <span class="tag"><span class="cn"> mentorship</span></span>
+          <h4>🚀 年輕投資</h4>
+          <p>投資有想法嘅年輕人，提供資金、經驗、人脈，幫佢哋將創意變成生意。</p>
+          <span class="tag">種子投資</span>
+          <span class="tag"> mentorship</span>
         </div>
       </div>
     </div>
@@ -625,9 +550,9 @@ body {
     <div class="container">
       <div class="invest-box">
         <div class="content">
-          <h3>🤝 <span class="cn">我投資年輕創業者</span><span class="en">I Invest in Young</span></h3>
-          <p><span class="cn">見過太多起落，知道咩係真嘅咩係吹水。如果你有想法、有膽識、肯做，我願意傾。唔係淨係錢，仲有26年嘅經驗同人脈。</span><span class="en">Seen too many ups and downs. Know what's real and what's hype. If you have ideas, guts, and willingness to work — let's talk. Not just money, but 26 years of experience and connections.</span></p>
-          <a href="contact.html" class="cta"><span class="cn">傾偈 →</span><span class="en">Let's Talk →</span></a>
+          <h3>🤝 我投資年輕創業者</h3>
+          <p>見過太多起落，知道咩係真嘅咩係吹水。如果你有想法、有膽識、肯做，我願意傾。唔係淨係錢，仲有26年嘅經驗同人脈。</p>
+          <a href="contact.html" class="cta">傾偈 →</a>
         </div>
       </div>
     </div>
