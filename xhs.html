@@ -16,120 +16,120 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="小紅書同步 | 鄭哥 Hany">
   
-<style>
-    :root {
-      --bg: #fafafa; --bg-elevated: #ffffff; --text: #1a1a1a; --text-secondary: #555555; --text-muted: #888888;
-      --accent: #c41e3a; --accent-light: rgba(196,30,58,0.08); --border: #e8e8e8; --border-light: #f0f0f0;
-      --radius: 12px; --radius-sm: 8px; --shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.02);
-      --shadow-hover: 0 4px 16px rgba(0,0,0,0.06), 0 12px 40px rgba(0,0,0,0.04); --max-width: 720px;
-    }
-    * { margin:0; padding:0; box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', 'PingFang HK', 'Noto Sans SC', sans-serif;
-      background: var(--bg); color: var(--text); line-height: 1.75; font-size: 16px; -webkit-font-smoothing: antialiased;
-    }
-    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
-    
-    /* ===== 導航 v2（2026-09-20） ===== */
-    nav { background:#fff; border-bottom:1px solid #e8e8ed; padding:14px 0; position:sticky; top:0; z-index:1000; }
-    nav .container { display:flex; justify-content:space-between; align-items:center; position:relative; }
-    .logo { font-size:1.05rem; font-weight:700; color:#1a1a2e; }
-    .hamburger { display:none; background:none; border:none; font-size:1.5rem; cursor:pointer; padding:4px 8px; }
-    .nav-wrapper { display:flex; align-items:center; }
-    .nav-links { display:flex; align-items:center; gap:20px; }
-    nav a { text-decoration:none; color:#444; font-size:0.9rem; transition:color 0.2s; }
-    nav a:hover, nav a.active { color:#e94560; }
-
-        /* Mobile */
-    @media (max-width:768px) {
-      .hamburger { display:block; }
-      .nav-wrapper { display:none; position:absolute; top:100%; left:0; right:0; background:#fff; border-top:1px solid #e8e8ed; box-shadow:0 4px 12px rgba(0,0,0,.08); }
-      .nav-wrapper.open { display:block; }
-      .nav-links { flex-direction:column; align-items:stretch; gap:0; padding:8px 0; }
-      .nav-links > a, .lang-toggle { padding:12px 24px; border-bottom:1px solid #f0f0f5; width:100%; text-align:left; }
-      .nav-links > a:last-of-type { border-bottom:none; }
-      .lang-toggle { border-radius:0; }
-    }
-    
-    header { background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%); color: #fff; padding: 80px 0 60px; text-align:center; position: relative; overflow: hidden; }
-    header::before { content:''; position:absolute; top: -30%; right: -10%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(196,30,58,0.15) 0%, transparent 70%); border-radius: 50%; }
-    header .container { position:relative; z-index: 1; }
-    header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.5px; }
-    header h1 .en { font-size: 1.3rem; font-weight: 400; opacity: 0.7; display:block; margin-top: 8px; }
-    header p { color: rgba(255,255,255,0.55); max-width: 480px; margin: 0 auto; font-size: 0.95rem; line-height: 1.7; }
-    
-    .section { padding: 56px 0; }
-    .section-alt { background: var(--bg-elevated); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); }
-    .section-header { margin-bottom: 32px; }
-    .section-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.3px; }
-    .section-sub { color: var(--text-muted); font-size: 0.95rem; }
-    
-    /* ===== 文章列表 ===== */
-    .post-list { display: flex; flex-direction: column; gap: 16px; }
-    .post-card { background: var(--bg-elevated); border-radius: var(--radius); border: 1px solid var(--border-light); padding: 28px; transition: all 0.3s ease; }
-    .post-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); border-color: var(--border); }
-    .post-card:last-child { margin-bottom: 0; }
-    .post-meta-top { display:flex; align-items:center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
-    .post-date { font-size: 0.8rem; color: var(--text-muted); font-family: 'SF Mono', monospace; }
-    .post-tag { background: var(--accent-light); color: var(--accent); padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 500; }
-    .post-card h3 { font-size: 1.15rem; margin-bottom: 8px; font-weight: 600; line-height: 1.4; }
-    .post-card h3 a { text-decoration:none; color: var(--text); transition: color 0.2s; }
-    .post-card h3 a:hover { color: var(--accent); }
-    .post-card .en-title { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 10px; line-height: 1.5; }
-    .post-card .excerpt { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px; }
-    .post-card .read-more { font-size: 0.88rem; color: var(--accent); text-decoration:none; font-weight: 500; }
-    .post-card .read-more:hover { text-decoration: underline; }
-    
-    /* ===== 小紅書便簽 ===== */
-    .note-card {
-      background: linear-gradient(135deg, #fff5f5 0%, #fff0f0 100%);
-      border: 1px solid #ffe0e0; border-radius: var(--radius); padding: 20px 24px; margin: 20px 0; position: relative;
-    }
-    .note-card::before { content: ''; position: absolute; top: 0; left: 24px; width: 60px; height: 4px; background: var(--accent); border-radius: 0 0 4px 4px; }
-    .note-card h4 { font-size: 0.95rem; color: var(--accent); margin-bottom: 8px; font-weight: 600; }
-    .note-card p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; }
-    
-    /* ===== 分類標籤 ===== */
-    .category-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
-    .category-tag { background: var(--bg-elevated); border: 1px solid var(--border-light); padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; color: var(--text-secondary); cursor: pointer; transition: all 0.2s; }
-    .category-tag:hover, .category-tag.active { background: var(--accent); color: #fff; border-color: var(--accent); }
-    
-    /* ===== CTA ===== */
-    .cta-section { background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%); color: #fff; padding: 48px 0; text-align:center; position: relative; overflow: hidden; }
-    .cta-section::before { content:''; position:absolute; bottom: -50%; left: -20%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(196,30,58,0.12) 0%, transparent 70%); border-radius: 50%; }
-    .cta-section .container { position: relative; z-index: 1; }
-    .cta-section h2 { font-size: 1.3rem; margin-bottom: 10px; font-weight: 600; }
-    .cta-section p { color: rgba(255,255,255,0.5); font-size: 0.9rem; margin-bottom: 20px; }
-    .cta-btn { display:inline-flex; align-items:center; gap: 8px; background: var(--accent); color: #fff; padding: 12px 28px; border-radius: var(--radius-sm); text-decoration:none; font-size: 0.9rem; font-weight: 500; transition: all 0.2s; }
-    .cta-btn:hover { background: #a31830; transform: translateY(-1px); }
-    
-    footer { background: var(--bg-elevated); border-top: 1px solid var(--border-light); padding: 32px 0; text-align:center; }
-    footer p { font-size: 0.82rem; color: var(--text-muted); }
-    
-    .en { display:none; }
-    body.show-en .en { display:block; }
-    body.show-en .cn { display:none; }
-    body.show-en .en-inline { display:inline; }
-    body.show-en .cn-inline { display:none; }
-    .en-inline, .cn-inline { display:inline; }
-    
-    @media (max-width: 640px) {
-      header h1 { font-size: 1.7rem; }
-      header h1 .en { font-size: 1.1rem; }
-      .post-card { padding: 20px; }
-    }
-
-    
-    .comments h2 { font-size: 1.3rem; font-weight: 600; margin-bottom: 24px; }
-
-    /* ===== 社群 Footer（2026-09-20） ===== */
-    .social-footer{background:#f0f0f5;padding:40px 0 32px;text-align:center;margin-top:48px;border-top:1px solid var(--border)}
-    .social-footer h3{font-size:0.95rem;margin-bottom:18px;color:#444;font-weight:600}
-    .social-links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:18px;padding:0 24px}
-    .social-links a{color:#444;text-decoration:none;font-size:.85rem;padding:8px 14px;border:1px solid #e0e0e0;border-radius:6px;background:#fff;transition:all .2s}
-    .social-links a:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
-    .copyright{font-size:.82rem;color:#999;margin-top:8px;padding:0 24px}
+<style>
+    :root {
+      --bg: #fafafa; --bg-elevated: #ffffff; --text: #1a1a1a; --text-secondary: #555555; --text-muted: #888888;
+      --accent: #c41e3a; --accent-light: rgba(196,30,58,0.08); --border: #e8e8e8; --border-light: #f0f0f0;
+      --radius: 12px; --radius-sm: 8px; --shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.02);
+      --shadow-hover: 0 4px 16px rgba(0,0,0,0.06), 0 12px 40px rgba(0,0,0,0.04); --max-width: 720px;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', 'PingFang HK', 'Noto Sans SC', sans-serif;
+      background: var(--bg); color: var(--text); line-height: 1.75; font-size: 16px; -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+    
+    /* ===== 導航 v2（2026-09-20） ===== */
+    nav { background:#fff; border-bottom:1px solid #e8e8ed; padding:14px 0; position:sticky; top:0; z-index:1000; }
+    nav .container { display:flex; justify-content:space-between; align-items:center; position:relative; }
+    .logo { font-size:1.05rem; font-weight:700; color:#1a1a2e; }
+    .hamburger { display:none; background:none; border:none; font-size:1.5rem; cursor:pointer; padding:4px 8px; }
+    .nav-wrapper { display:flex; align-items:center; }
+    .nav-links { display:flex; align-items:center; gap:20px; }
+    nav a { text-decoration:none; color:#444; font-size:0.9rem; transition:color 0.2s; }
+    nav a:hover, nav a.active { color:#e94560; }
+
+        /* Mobile */
+    @media (max-width:768px) {
+      .hamburger { display:block; }
+      .nav-wrapper { display:none; position:absolute; top:100%; left:0; right:0; background:#fff; border-top:1px solid #e8e8ed; box-shadow:0 4px 12px rgba(0,0,0,.08); }
+      .nav-wrapper.open { display:block; }
+      .nav-links { flex-direction:column; align-items:stretch; gap:0; padding:8px 0; }
+      .nav-links > a, .lang-toggle { padding:12px 24px; border-bottom:1px solid #f0f0f5; width:100%; text-align:left; }
+      .nav-links > a:last-of-type { border-bottom:none; }
+      .lang-toggle { border-radius:0; }
+    }
+    
+    header { background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%); color: #fff; padding: 80px 0 60px; text-align:center; position: relative; overflow: hidden; }
+    header::before { content:''; position:absolute; top: -30%; right: -10%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(196,30,58,0.15) 0%, transparent 70%); border-radius: 50%; }
+    header .container { position:relative; z-index: 1; }
+    header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.5px; }
+    header h1 .en { font-size: 1.3rem; font-weight: 400; opacity: 0.7; display:block; margin-top: 8px; }
+    header p { color: rgba(255,255,255,0.55); max-width: 480px; margin: 0 auto; font-size: 0.95rem; line-height: 1.7; }
+    
+    .section { padding: 56px 0; }
+    .section-alt { background: var(--bg-elevated); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); }
+    .section-header { margin-bottom: 32px; }
+    .section-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.3px; }
+    .section-sub { color: var(--text-muted); font-size: 0.95rem; }
+    
+    /* ===== 文章列表 ===== */
+    .post-list { display: flex; flex-direction: column; gap: 16px; }
+    .post-card { background: var(--bg-elevated); border-radius: var(--radius); border: 1px solid var(--border-light); padding: 28px; transition: all 0.3s ease; }
+    .post-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); border-color: var(--border); }
+    .post-card:last-child { margin-bottom: 0; }
+    .post-meta-top { display:flex; align-items:center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+    .post-date { font-size: 0.8rem; color: var(--text-muted); font-family: 'SF Mono', monospace; }
+    .post-tag { background: var(--accent-light); color: var(--accent); padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 500; }
+    .post-card h3 { font-size: 1.15rem; margin-bottom: 8px; font-weight: 600; line-height: 1.4; }
+    .post-card h3 a { text-decoration:none; color: var(--text); transition: color 0.2s; }
+    .post-card h3 a:hover { color: var(--accent); }
+    .post-card .en-title { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 10px; line-height: 1.5; }
+    .post-card .excerpt { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px; }
+    .post-card .read-more { font-size: 0.88rem; color: var(--accent); text-decoration:none; font-weight: 500; }
+    .post-card .read-more:hover { text-decoration: underline; }
+    
+    /* ===== 小紅書便簽 ===== */
+    .note-card {
+      background: linear-gradient(135deg, #fff5f5 0%, #fff0f0 100%);
+      border: 1px solid #ffe0e0; border-radius: var(--radius); padding: 20px 24px; margin: 20px 0; position: relative;
+    }
+    .note-card::before { content: ''; position: absolute; top: 0; left: 24px; width: 60px; height: 4px; background: var(--accent); border-radius: 0 0 4px 4px; }
+    .note-card h4 { font-size: 0.95rem; color: var(--accent); margin-bottom: 8px; font-weight: 600; }
+    .note-card p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; }
+    
+    /* ===== 分類標籤 ===== */
+    .category-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+    .category-tag { background: var(--bg-elevated); border: 1px solid var(--border-light); padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; color: var(--text-secondary); cursor: pointer; transition: all 0.2s; }
+    .category-tag:hover, .category-tag.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+    
+    /* ===== CTA ===== */
+    .cta-section { background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%); color: #fff; padding: 48px 0; text-align:center; position: relative; overflow: hidden; }
+    .cta-section::before { content:''; position:absolute; bottom: -50%; left: -20%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(196,30,58,0.12) 0%, transparent 70%); border-radius: 50%; }
+    .cta-section .container { position: relative; z-index: 1; }
+    .cta-section h2 { font-size: 1.3rem; margin-bottom: 10px; font-weight: 600; }
+    .cta-section p { color: rgba(255,255,255,0.5); font-size: 0.9rem; margin-bottom: 20px; }
+    .cta-btn { display:inline-flex; align-items:center; gap: 8px; background: var(--accent); color: #fff; padding: 12px 28px; border-radius: var(--radius-sm); text-decoration:none; font-size: 0.9rem; font-weight: 500; transition: all 0.2s; }
+    .cta-btn:hover { background: #a31830; transform: translateY(-1px); }
+    
+    footer { background: var(--bg-elevated); border-top: 1px solid var(--border-light); padding: 32px 0; text-align:center; }
+    footer p { font-size: 0.82rem; color: var(--text-muted); }
+    
+    .en { display:none; }
+    body.show-en .en { display:block; }
+    body.show-en .cn { display:none; }
+    body.show-en .en-inline { display:inline; }
+    body.show-en .cn-inline { display:none; }
+    .en-inline, .cn-inline { display:inline; }
+    
+    @media (max-width: 640px) {
+      header h1 { font-size: 1.7rem; }
+      header h1 .en { font-size: 1.1rem; }
+      .post-card { padding: 20px; }
+    }
+
+    
+    .comments h2 { font-size: 1.3rem; font-weight: 600; margin-bottom: 24px; }
+
+    /* ===== 社群 Footer（2026-09-20） ===== */
+    .social-footer{background:#f0f0f5;padding:40px 0 32px;text-align:center;margin-top:48px;border-top:1px solid var(--border)}
+    .social-footer h3{font-size:0.95rem;margin-bottom:18px;color:#444;font-weight:600}
+    .social-links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:18px;padding:0 24px}
+    .social-links a{color:#444;text-decoration:none;font-size:.85rem;padding:8px 14px;border:1px solid #e0e0e0;border-radius:6px;background:#fff;transition:all .2s}
+    .social-links a:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+    .copyright{font-size:.82rem;color:#999;margin-top:8px;padding:0 24px}
   </style>
   
   <style>
@@ -226,11 +226,11 @@
   </style>
 </head>
 <body>
-<nav>
-    <div class="container">
-      <a href="index.html" class="logo">鄭哥 / Hany</a>
-      <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Open menu">☰</button>
-      <div class="nav-wrapper" id="navWrapper">
+<nav>
+    <div class="container">
+      <a href="index.html" class="logo">鄭哥 / Hany</a>
+      <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Open menu">☰</button>
+      <div class="nav-wrapper" id="navWrapper">
         <div class="nav-links">
           <a href="index.html"><span class="cn">首頁</span><span class="en">Home</span></a>
           <a href="blog.html"><span class="cn">點評</span><span class="en">Reviews</span></a>
@@ -238,9 +238,9 @@
           <a href="contact.html"><span class="cn">聯繫</span><span class="en">Contact</span></a>
           <a href="links.html"><span class="cn">🔗 連結</span><span class="en">Links</span></a>
           <button class="lang-toggle" onclick="toggleLang()" id="langBtn">EN</button>
-        </div>
-      </div>
-    </div>
+        </div>
+      </div>
+    </div>
   </nav>
 
   <main class="xhs-page">
@@ -249,7 +249,7 @@
       <p class="en">Xiaohongshu / RED Note Sync · Every story is also on RED</p>
       <div class="stats">
         <div class="stat">
-          <span class="stat-num">23</span>
+          <span class="stat-num">24</span>
           <span class="stat-label">已同步文章</span>
         </div>
         <div class="stat">
@@ -267,7 +267,19 @@
 
 
 
-        <article class="xhs-card">
+                <article class="xhs-card">
+        <div class="xhs-cover"><img src="hany-beijing-daily-geo-cover.webp" alt="北京日報GEO封面" loading="lazy"></div>
+        <div class="xhs-meta">
+          <h3 class="xhs-title">《當主流媒體認真回答「AI 時代我憑什麼存在」——北京日報 GEO 服務》</h3>
+          <p class="xhs-date">2026-09-22 · 鄭哥博客點評 · 時事點評</p>
+          <div class="xhs-buttons">
+            <a href="post-2026-09-22-beijing-daily-geo.html" class="xhs-btn xhs-btn-primary">📖 獨立站</a>
+            <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('小红书_beijing-daily-geo.md')">📋 複製文案</button>
+          </div>
+        </div>
+      </article>
+
+<article class="xhs-card">
         <div class="xhs-cover"><img src="hany-saas-cover.webp" alt="小紅書發布版｜外貿B端社媒矩陣SaaS" loading="lazy"></div>
         <div class="xhs-meta">
           <h3 class="xhs-title">小紅書發布版｜外貿B端社媒矩陣SaaS</h3>
@@ -554,20 +566,20 @@
   
   </main>
 
-<footer class="social-footer">
-    <div class="container">
-      <h3><span class="cn">鄭哥社群 / Follow on Social</span><span class="en">Follow Hany on Social</span></h3>
-      <div class="social-links">
-        <a href="xhs.html">📕 小紅書 Xiaohongshu</a>
-        <a href="youtube.html">📺 YouTube</a>
-        <a href="linkedin.html">💼 LinkedIn</a>
-        <a href="facebook.html">📘 Facebook</a>
-        <a href="instagram.html">📸 Instagram</a>
-        <a href="tiktok.html">🎵 TikTok</a>
-        <a href="twitter.html">🐦 Twitter / X</a>
-      </div>
-      <p class="copyright">© 2026 鄭哥 / Hany · 七善門科技 · 星辰算力 · 香港旺角</p>
-    </div>
+<footer class="social-footer">
+    <div class="container">
+      <h3><span class="cn">鄭哥社群 / Follow on Social</span><span class="en">Follow Hany on Social</span></h3>
+      <div class="social-links">
+        <a href="xhs.html">📕 小紅書 Xiaohongshu</a>
+        <a href="youtube.html">📺 YouTube</a>
+        <a href="linkedin.html">💼 LinkedIn</a>
+        <a href="facebook.html">📘 Facebook</a>
+        <a href="instagram.html">📸 Instagram</a>
+        <a href="tiktok.html">🎵 TikTok</a>
+        <a href="twitter.html">🐦 Twitter / X</a>
+      </div>
+      <p class="copyright">© 2026 鄭哥 / Hany · 七善門科技 · 星辰算力 · 香港旺角</p>
+    </div>
   </footer>
 </body>
 </html>
