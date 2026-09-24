@@ -9,107 +9,212 @@
 </article>
 <!DOCTYPE html>
 
+
+
 <html lang="zh-HK">
+
+
 
 <head>
 
+
+
   <meta charset="UTF-8">
+
+
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
+
   
+
+
 
   <title>小紅書同步 | 鄭哥 Hany 26年外貿故事</title>
 
+
+
   <meta name="description" content="鄭哥Hany嘅小紅書帳號同步內容：每篇獨立站文章都會自動生成小紅書版本，含標題選項、封面鉤子、Hook文案、Hashtag。">
+
+
 
   <meta name="keywords" content="鄭哥Hany, 小紅書, 外貿故事, 創業, 外貿老兵, 26年外貿, 跨境電商">
 
+
+
   <meta name="author" content="鄭哥 Hany">
+
+
 
   <link rel="canonical" href="https://hany-blog.vercel.app/xhs.html">
 
+
+
   <link rel="icon" type="image/webp" href="hany-portrait.webp">
+
+
 
   <meta property="og:title" content="小紅書同步 | 鄭哥 Hany">
 
+
+
   <meta property="og:type" content="website">
+
+
 
   <meta property="og:url" content="https://hany-blog.vercel.app/xhs.html">
 
+
+
   <meta name="twitter:card" content="summary_large_image">
+
+
 
   <meta name="twitter:title" content="小紅書同步 | 鄭哥 Hany">
 
+
+
   
 
+
+
 <style>
+
+
+
 
 
     :root {
 
 
+
+
+
       --bg: #fafafa; --bg-elevated: #ffffff; --text: #1a1a1a; --text-secondary: #555555; --text-muted: #888888;
+
+
+
 
 
       --accent: #c41e3a; --accent-light: rgba(196,30,58,0.08); --border: #e8e8e8; --border-light: #f0f0f0;
 
 
+
+
+
       --radius: 12px; --radius-sm: 8px; --shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.02);
+
+
+
 
 
       --shadow-hover: 0 4px 16px rgba(0,0,0,0.06), 0 12px 40px rgba(0,0,0,0.04); --max-width: 720px;
 
 
+
+
+
     }
+
+
+
 
 
     * { margin:0; padding:0; box-sizing:border-box; }
 
 
+
+
+
     html { scroll-behavior:smooth; }
+
+
+
 
 
     body {
 
 
+
+
+
       font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', 'PingFang HK', 'Noto Sans SC', sans-serif;
+
+
+
 
 
       background: var(--bg); color: var(--text); line-height: 1.75; font-size: 16px; -webkit-font-smoothing: antialiased;
 
 
+
+
+
     }
+
+
+
 
 
     .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
 
 
+
+
+
     
+
+
+
 
 
     /* ===== 導航 v2（2026-09-20） ===== */
 
 
+
+
+
     nav { background:#fff; border-bottom:1px solid #e8e8ed; padding:14px 0; position:sticky; top:0; z-index:1000; }
+
+
+
 
 
     nav .container { display:flex; justify-content:space-between; align-items:center; position:relative; }
 
 
+
+
+
     .logo { font-size:1.05rem; font-weight:700; color:#1a1a2e; }
+
+
+
 
 
     .hamburger { display:none; background:none; border:none; font-size:1.5rem; cursor:pointer; padding:4px 8px; }
 
 
+
+
+
     .nav-wrapper { display:flex; align-items:center; }
+
+
+
 
 
     .nav-links { display:flex; align-items:center; gap:20px; }
 
 
+
+
+
     nav a { text-decoration:none; color:#444; font-size:0.9rem; transition:color 0.2s; }
+
+
+
 
 
     nav a:hover, nav a.active { color:#e94560; }
@@ -118,235 +223,472 @@
 
 
 
+
+
+
+
+
+
         /* Mobile */
+
+
+
 
 
     @media (max-width:768px) {
 
 
+
+
+
       .hamburger { display:block; }
+
+
+
 
 
       .nav-wrapper { display:none; position:absolute; top:100%; left:0; right:0; background:#fff; border-top:1px solid #e8e8ed; box-shadow:0 4px 12px rgba(0,0,0,.08); }
 
 
+
+
+
       .nav-wrapper.open { display:block; }
+
+
+
 
 
       .nav-links { flex-direction:column; align-items:stretch; gap:0; padding:8px 0; }
 
 
+
+
+
       .nav-links > a, .lang-toggle { padding:12px 24px; border-bottom:1px solid #f0f0f5; width:100%; text-align:left; }
+
+
+
 
 
       .nav-links > a:last-of-type { border-bottom:none; }
 
 
+
+
+
       .lang-toggle { border-radius:0; }
+
+
+
 
 
     }
 
 
+
+
+
     
+
+
+
 
 
     header { background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%); color: #fff; padding: 80px 0 60px; text-align:center; position: relative; overflow: hidden; }
 
 
+
+
+
     header::before { content:''; position:absolute; top: -30%; right: -10%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(196,30,58,0.15) 0%, transparent 70%); border-radius: 50%; }
+
+
+
 
 
     header .container { position:relative; z-index: 1; }
 
 
+
+
+
     header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.5px; }
+
+
+
 
 
     header h1 .en { font-size: 1.3rem; font-weight: 400; opacity: 0.7; display:block; margin-top: 8px; }
 
 
+
+
+
     header p { color: rgba(255,255,255,0.55); max-width: 480px; margin: 0 auto; font-size: 0.95rem; line-height: 1.7; }
 
 
+
+
+
     
+
+
+
 
 
     .section { padding: 56px 0; }
 
 
+
+
+
     .section-alt { background: var(--bg-elevated); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); }
+
+
+
 
 
     .section-header { margin-bottom: 32px; }
 
 
+
+
+
     .section-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.3px; }
+
+
+
 
 
     .section-sub { color: var(--text-muted); font-size: 0.95rem; }
 
 
+
+
+
     
+
+
+
 
 
     /* ===== 文章列表 ===== */
 
 
+
+
+
     .post-list { display: flex; flex-direction: column; gap: 16px; }
+
+
+
 
 
     .post-card { background: var(--bg-elevated); border-radius: var(--radius); border: 1px solid var(--border-light); padding: 28px; transition: all 0.3s ease; }
 
 
+
+
+
     .post-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); border-color: var(--border); }
+
+
+
 
 
     .post-card:last-child { margin-bottom: 0; }
 
 
+
+
+
     .post-meta-top { display:flex; align-items:center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+
+
+
 
 
     .post-date { font-size: 0.8rem; color: var(--text-muted); font-family: 'SF Mono', monospace; }
 
 
+
+
+
     .post-tag { background: var(--accent-light); color: var(--accent); padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 500; }
+
+
+
 
 
     .post-card h3 { font-size: 1.15rem; margin-bottom: 8px; font-weight: 600; line-height: 1.4; }
 
 
+
+
+
     .post-card h3 a { text-decoration:none; color: var(--text); transition: color 0.2s; }
+
+
+
 
 
     .post-card h3 a:hover { color: var(--accent); }
 
 
+
+
+
     .post-card .en-title { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 10px; line-height: 1.5; }
+
+
+
 
 
     .post-card .excerpt { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px; }
 
 
+
+
+
     .post-card .read-more { font-size: 0.88rem; color: var(--accent); text-decoration:none; font-weight: 500; }
+
+
+
 
 
     .post-card .read-more:hover { text-decoration: underline; }
 
 
+
+
+
     
+
+
+
 
 
     /* ===== 小紅書便簽 ===== */
 
 
+
+
+
     .note-card {
+
+
+
 
 
       background: linear-gradient(135deg, #fff5f5 0%, #fff0f0 100%);
 
 
+
+
+
       border: 1px solid #ffe0e0; border-radius: var(--radius); padding: 20px 24px; margin: 20px 0; position: relative;
 
 
+
+
+
     }
+
+
+
 
 
     .note-card::before { content: ''; position: absolute; top: 0; left: 24px; width: 60px; height: 4px; background: var(--accent); border-radius: 0 0 4px 4px; }
 
 
+
+
+
     .note-card h4 { font-size: 0.95rem; color: var(--accent); margin-bottom: 8px; font-weight: 600; }
+
+
+
 
 
     .note-card p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; }
 
 
+
+
+
     
+
+
+
 
 
     /* ===== 分類標籤 ===== */
 
 
+
+
+
     .category-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+
+
+
 
 
     .category-tag { background: var(--bg-elevated); border: 1px solid var(--border-light); padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; color: var(--text-secondary); cursor: pointer; transition: all 0.2s; }
 
 
+
+
+
     .category-tag:hover, .category-tag.active { background: var(--accent); color: #fff; border-color: var(--accent); }
 
 
+
+
+
     
+
+
+
 
 
     /* ===== CTA ===== */
 
 
+
+
+
     .cta-section { background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%); color: #fff; padding: 48px 0; text-align:center; position: relative; overflow: hidden; }
+
+
+
 
 
     .cta-section::before { content:''; position:absolute; bottom: -50%; left: -20%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(196,30,58,0.12) 0%, transparent 70%); border-radius: 50%; }
 
 
+
+
+
     .cta-section .container { position: relative; z-index: 1; }
+
+
+
 
 
     .cta-section h2 { font-size: 1.3rem; margin-bottom: 10px; font-weight: 600; }
 
 
+
+
+
     .cta-section p { color: rgba(255,255,255,0.5); font-size: 0.9rem; margin-bottom: 20px; }
+
+
+
 
 
     .cta-btn { display:inline-flex; align-items:center; gap: 8px; background: var(--accent); color: #fff; padding: 12px 28px; border-radius: var(--radius-sm); text-decoration:none; font-size: 0.9rem; font-weight: 500; transition: all 0.2s; }
 
 
+
+
+
     .cta-btn:hover { background: #a31830; transform: translateY(-1px); }
 
 
+
+
+
     
+
+
+
 
 
     footer { background: var(--bg-elevated); border-top: 1px solid var(--border-light); padding: 32px 0; text-align:center; }
 
 
+
+
+
     footer p { font-size: 0.82rem; color: var(--text-muted); }
 
 
+
+
+
     
+
+
+
 
 
     .en { display:none; }
 
 
+
+
+
     body.show-en .en { display:block; }
+
+
+
 
 
     body.show-en .cn { display:none; }
 
 
+
+
+
     body.show-en .en-inline { display:inline; }
+
+
+
 
 
     body.show-en .cn-inline { display:none; }
 
 
+
+
+
     .en-inline, .cn-inline { display:inline; }
+
+
+
 
 
     
 
 
+
+
+
     @media (max-width: 640px) {
+
+
+
 
 
       header h1 { font-size: 1.7rem; }
 
 
+
+
+
       header h1 .en { font-size: 1.1rem; }
 
 
+
+
+
       .post-card { padding: 20px; }
+
+
+
 
 
     }
@@ -355,7 +697,16 @@
 
 
 
+
+
+
+
+
+
     
+
+
+
 
 
     .comments h2 { font-size: 1.3rem; font-weight: 600; margin-bottom: 24px; }
@@ -364,298 +715,599 @@
 
 
 
+
+
+
+
+
+
     /* ===== 社群 Footer（2026-09-20） ===== */
+
+
+
 
 
     .social-footer{background:#f0f0f5;padding:40px 0 32px;text-align:center;margin-top:48px;border-top:1px solid var(--border)}
 
 
+
+
+
     .social-footer h3{font-size:0.95rem;margin-bottom:18px;color:#444;font-weight:600}
+
+
+
 
 
     .social-links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:18px;padding:0 24px}
 
 
+
+
+
     .social-links a{color:#444;text-decoration:none;font-size:.85rem;padding:8px 14px;border:1px solid #e0e0e0;border-radius:6px;background:#fff;transition:all .2s}
+
+
+
 
 
     .social-links a:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
 
 
+
+
+
     .copyright{font-size:.82rem;color:#999;margin-top:8px;padding:0 24px}
 
 
+
+
+
   </style>
+
+
 
   
 
+
+
   <style>
+
+
 
     /* ===== 小紅書頁專用樣式 ===== */
 
+
+
     .xhs-hero {
+
+
 
       background: linear-gradient(135deg, #ff2442 0%, #ff5860 100%);
 
+
+
       color: #fff;
+
+
 
       padding: 40px 0 32px;
 
+
+
       text-align: center;
 
+
+
     }
+
+
 
     .xhs-hero h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 10px; }
 
+
+
     .xhs-hero .en { opacity: 0.85; font-size: 0.95rem; margin-bottom: 16px; }
+
+
 
     .xhs-hero .stats { display: flex; justify-content: center; gap: 32px; margin-top: 24px; flex-wrap: wrap; }
 
+
+
     .xhs-hero .stat { text-align: center; }
+
+
 
     .xhs-hero .stat-num { font-size: 1.6rem; font-weight: 700; display: block; }
 
+
+
     .xhs-hero .stat-label { font-size: 0.82rem; opacity: 0.9; }
 
+
+
     
+
+
 
     .xhs-grid {
 
+
+
       display: grid;
+
+
 
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
 
+
+
       gap: 20px;
+
+
 
       margin: 24px 0;
 
+
+
     }
+
+
 
     .xhs-card {
 
+
+
       display: flex;
+
+
 
       flex-direction: column;
 
+
+
       background: #fff;
 
+
+
       border: 1px solid #e8e8ed;
+
+
 
       border-radius: 12px;
 
+
+
       overflow: hidden;
+
+
 
       transition: all 0.3s ease;
 
+
+
     }
+
+
 
     .xhs-card:hover {
 
+
+
       box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+
+
 
       transform: translateY(-2px);
 
+
+
     }
+
+
 
     .xhs-cover {
 
+
+
       width: 100%;
+
+
 
       aspect-ratio: 16/9;
 
+
+
       object-fit: cover;
 
+
+
     }
+
+
 
     .xhs-meta {
 
+
+
       padding: 14px 16px;
 
+
+
       display: flex;
+
+
 
       flex-direction: column;
 
+
+
       gap: 6px;
 
+
+
     }
+
+
 
     .xhs-title {
 
+
+
       font-size: 1rem;
+
+
 
       font-weight: 600;
 
+
+
       color: #1a1a2e;
+
+
 
       line-height: 1.4;
 
+
+
     }
+
+
 
     .xhs-date {
 
+
+
       font-size: 0.82rem;
+
+
 
       color: #888;
 
+
+
     }
+
+
 
     .xhs-buttons {
 
+
+
       display: flex;
+
+
 
       gap: 8px;
 
+
+
       margin-top: 8px;
 
+
+
     }
+
+
 
     .xhs-btn {
 
+
+
       flex: 1;
+
+
 
       padding: 7px 12px;
 
+
+
       border-radius: 6px;
+
+
 
       font-size: 0.82rem;
 
+
+
       text-align: center;
+
+
 
       text-decoration: none;
 
+
+
       transition: all 0.18s;
 
+
+
     }
+
+
 
     .xhs-btn-primary {
 
+
+
       background: #1a1a2e;
+
+
 
       color: #fff !important;
 
+
+
     }
+
+
 
     .xhs-btn-primary:hover { background: #e94560; }
 
+
+
     .xhs-btn-secondary {
+
+
 
       background: #fff;
 
+
+
       color: #1a1a2e !important;
+
+
 
       border: 1px solid #e8e8ed;
 
+
+
     }
+
+
 
     .xhs-btn-secondary:hover { border-color: #e94560; color: #e94560 !important; }
 
+
+
     
+
+
 
     /* 小紅書頁 容器 */
 
+
+
     .xhs-page {
+
+
 
       max-width: 1100px;
 
+
+
       margin: 0 auto;
+
+
 
       padding: 0 4vw;
 
+
+
     }
+
+
 
     
 
+
+
     @media (max-width: 640px) {
+
+
 
       .xhs-grid { grid-template-columns: 1fr; }
 
+
+
     }
+
+
 
   </style>
 
+
+
 </head>
+
+
 
 <body>
 
+
+
 <nav>
+
+
+
 
 
     <div class="container">
 
 
+
+
+
       <a href="index.html" class="logo">鄭哥 / Hany</a>
+
+
+
 
 
       <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Open menu">☰</button>
 
 
+
+
+
       <div class="nav-wrapper" id="navWrapper">
+
+
+
 
 
         <div class="nav-links">
 
+
+
           <a href="index.html"><span class="cn">首頁</span><span class="en">Home</span></a>
+
+
 
           <a href="blog.html"><span class="cn">點評</span><span class="en">Reviews</span></a>
 
+
+
           <a href="about.html"><span class="cn">關於</span><span class="en">About</span></a>
+
+
 
           <a href="contact.html"><span class="cn">聯繫</span><span class="en">Contact</span></a>
 
+
+
           <a href="links.html"><span class="cn">🔗 連結</span><span class="en">Links</span></a>
+
+
 
           <button class="lang-toggle" onclick="toggleLang()" id="langBtn">EN</button>
 
+
+
         </div>
+
+
+
 
 
       </div>
 
 
+
+
+
     </div>
+
+
+
 
 
   </nav>
 
 
 
+
+
+
+
   <main class="xhs-page">
+
+
 
     <section class="xhs-hero">
 
+
+
       <h1>小紅書同步</h1>
+
+
 
       <p class="en">Xiaohongshu / RED Note Sync · Every story is also on RED</p>
 
+
+
       <div class="stats">
 
-        <div class="stat">
 
-          <span class="stat-num">25</span>
-
-          <span class="stat-label">已同步文章</span>
-
-        </div>
 
         <div class="stat">
+
+
 
           <span class="stat-num">26</span>
 
-          <span class="stat-label">年外貿經歷</span>
+
+
+          <span class="stat-label">已同步文章</span>
+
+
 
         </div>
+
+
 
         <div class="stat">
 
-          <span class="stat-num">7</span>
 
-          <span class="stat-label">大平台同步</span>
+
+          <span class="stat-num">26</span>
+
+
+
+          <span class="stat-label">年外貿經歷</span>
+
+
 
         </div>
 
+
+
+        <div class="stat">
+
+
+
+          <span class="stat-num">7</span>
+
+
+
+          <span class="stat-label">大平台同步</span>
+
+
+
+        </div>
+
+
+
       </div>
 
+
+
     </section>
+
+
+
+
 
 
 
@@ -667,283 +1319,583 @@
 
 
 
-                        <article class="xhs-card">
-        <div class="xhs-cover"><img src="hany-shqiu-coffee-cover.webp" alt="沙丘咖啡封面" loading="lazy"></div>
+
+
+
+
+
+
+
+
+                                <article class="xhs-card">
+        <div class="xhs-cover"><img src="hany-token-relay-station-cover.webp" alt="Token中轉站封面" loading="lazy"></div>
         <div class="xhs-meta">
-          <h3 class="xhs-title">《沙丘咖啡、中午河粉、福田電子批發市場嘅「冇人」—— 9月20日深圳三件事》</h3>
-          <p class="xhs-date">2026-09-22 · 鄭哥博客點評 · 城市觀察</p>
+          <h3 class="xhs-title">《Token中轉站：AI時代嘅「水貨檔」，月流水千萬背後係咩價錢》</h3>
+          <p class="xhs-date">2026-09-25 · 鄭哥博客點評 · 行業觀察</p>
           <div class="xhs-buttons">
-            <a href="post-2026-09-20-shqiu-coffee.html" class="xhs-btn xhs-btn-primary">📖 獨立站</a>
-            <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('小红书_shqiu-coffee.md')">📋 複製文案</button>
+            <a href="post-2026-09-25-token-relay-station.html" class="xhs-btn xhs-btn-primary">📖 獨立站</a>
+            <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('小红书_token-relay-station.md')">📋 複製文案</button>
           </div>
         </div>
       </article>
 
 <article class="xhs-card">
+
+        <div class="xhs-cover"><img src="hany-shqiu-coffee-cover.webp" alt="沙丘咖啡封面" loading="lazy"></div>
+
+        <div class="xhs-meta">
+
+          <h3 class="xhs-title">《沙丘咖啡、中午河粉、福田電子批發市場嘅「冇人」—— 9月20日深圳三件事》</h3>
+
+          <p class="xhs-date">2026-09-22 · 鄭哥博客點評 · 城市觀察</p>
+
+          <div class="xhs-buttons">
+
+            <a href="post-2026-09-20-shqiu-coffee.html" class="xhs-btn xhs-btn-primary">📖 獨立站</a>
+
+            <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('小红书_shqiu-coffee.md')">📋 複製文案</button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+<article class="xhs-card">
+
+
 
         <div class="xhs-cover"><img src="hany-beijing-daily-geo-cover.webp" alt="北京日報GEO封面" loading="lazy"></div>
 
+
+
         <div class="xhs-meta">
+
+
 
           <h3 class="xhs-title">《當主流媒體認真回答「AI 時代我憑什麼存在」——北京日報 GEO 服務》</h3>
 
+
+
           <p class="xhs-date">2026-09-22 · 鄭哥博客點評 · 時事點評</p>
+
+
 
           <div class="xhs-buttons">
 
+
+
             <a href="post-2026-09-22-beijing-daily-geo.html" class="xhs-btn xhs-btn-primary">📖 獨立站</a>
+
+
 
             <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('小红书_beijing-daily-geo.md')">📋 複製文案</button>
 
+
+
           </div>
+
+
 
         </div>
 
+
+
       </article>
+
+
+
+
 
 
 
 <article class="xhs-card">
 
+
+
         <div class="xhs-cover"><img src="hany-saas-cover.webp" alt="小紅書發布版｜外貿B端社媒矩陣SaaS" loading="lazy"></div>
 
+
+
         <div class="xhs-meta">
+
+
 
           <h3 class="xhs-title">小紅書發布版｜外貿B端社媒矩陣SaaS</h3>
 
+
+
           <p class="xhs-date">2026-09-17 · 郑哥博客点评 · 出海实战</p>
 
+
+
           <div class="xhs-buttons">
+
+
 
             <a href="post-2026-09-17-saas.html" class="xhs-btn xhs-btn-primary">📖 独立站</a>
 
+
+
             <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_社媒矩阵SaaS撬动印度东南亚_发布版.md')">📋 复制文案</button>
+
+
 
           </div>
 
+
+
         </div>
+
+
 
       </article>
 
 
 
+
+
+
+
       <article class="xhs-card">
+
+
 
         <div class="xhs-cover"><img src="hany-memory-cover.webp" alt="小紅書發布版｜内存涨价5-7倍" loading="lazy"></div>
 
+
+
         <div class="xhs-meta">
+
+
 
           <h3 class="xhs-title">小紅書發布版｜内存涨价5-7倍</h3>
 
+
+
           <p class="xhs-date">2026-09-17 · 郑哥博客点评 · 行业观察</p>
 
+
+
           <div class="xhs-buttons">
+
+
 
             <a href="post-2026-09-17-memory.html" class="xhs-btn xhs-btn-primary">📖 独立站</a>
 
+
+
             <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_内存涨价5-7倍_发布版.md')">📋 复制文案</button>
+
+
 
           </div>
 
+
+
         </div>
+
+
 
       </article>
 
 
 
+
+
+
+
       <article class="xhs-card">
+
+
 
         <div class="xhs-cover"><img src="hany-solar-cover.webp" alt="小紅書發布版｜光伏展會人少5個信號" loading="lazy"></div>
 
+
+
         <div class="xhs-meta">
+
+
 
           <h3 class="xhs-title">小紅書發布版｜光伏展會人少5個信號</h3>
 
+
+
           <p class="xhs-date">2026-09-17 · 郑哥博客点评 · 行业观察</p>
 
+
+
           <div class="xhs-buttons">
+
+
 
             <a href="post-2026-09-17-solar.html" class="xhs-btn xhs-btn-primary">📖 独立站</a>
 
+
+
             <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_光伏展会人少5个信号_发布版.md')">📋 复制文案</button>
+
+
 
           </div>
 
+
+
         </div>
+
+
 
       </article>
 
 
 
+
+
+
+
       <article class="xhs-card">
+
+
 
         <div class="xhs-cover"><img src="hany-ai-war-cover.webp" alt="小紅書發布版｜AI大戰白熱化" loading="lazy"></div>
 
+
+
         <div class="xhs-meta">
+
+
 
           <h3 class="xhs-title">小紅書發布版｜AI大戰白熱化</h3>
 
+
+
           <p class="xhs-date">2026-09-17 · 郑哥博客点评 · AI科技</p>
 
+
+
           <div class="xhs-buttons">
+
+
 
             <a href="post-2026-09-17-ai-war.html" class="xhs-btn xhs-btn-primary">📖 独立站</a>
 
+
+
             <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_AI大战白热化_发布版.md')">📋 复制文案</button>
+
+
 
           </div>
 
+
+
         </div>
+
+
 
       </article>
 
 
 
+
+
+
+
       <article class="xhs-card">
+
+
 
         <div class="xhs-cover"><img src="hany-gzport-cover.webp" alt="小紅書發布版｜廣州的「義烏焦慮」" loading="lazy"></div>
 
+
+
         <div class="xhs-meta">
+
+
 
           <h3 class="xhs-title">小紅書發布版｜廣州的「義烏焦慮」</h3>
 
+
+
           <p class="xhs-date">2026-09-16 · 郑哥博客点评 · 外贸实战</p>
 
+
+
           <div class="xhs-buttons">
+
+
 
             <a href="post-2026-09-16-gzport.html" class="xhs-btn xhs-btn-primary">📖 独立站</a>
 
+
+
             <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_广州的义乌焦虑_发布版.md')">📋 复制文案</button>
+
+
 
           </div>
 
+
+
         </div>
+
+
 
       </article>
 
 
 
+
+
+
+
       <article class="xhs-card">
+
+
 
         <div class="xhs-cover"><img src="hany-mountain-electronics-cover.webp" alt="小紅書發布版｜一山之隔两个世界，从诺基亚走到AI算力" loading="lazy"></div>
 
+
+
         <div class="xhs-meta">
+
+
 
           <h3 class="xhs-title">小紅書發布版｜一山之隔两个世界，从诺基亚走到AI算力</h3>
 
+
+
           <p class="xhs-date">2026-09-16 · 郑哥博客点评 · 行业观察</p>
 
+
+
           <div class="xhs-buttons">
+
+
 
             <a href="post-2026-09-16-mountain-electronics.html" class="xhs-btn xhs-btn-primary">📖 独立站</a>
 
+
+
             <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_一山之隔两个世界_发布版.md')">📋 复制文案</button>
+
+
 
           </div>
 
+
+
         </div>
+
+
 
       </article>
 
 
 
+
+
+
+
       <article class="xhs-card">
+
+
 
         <div class="xhs-cover"><img src="hany-b300-cover.webp" alt="小紅書發布版｜B300賣1450萬嘅背後" loading="lazy"></div>
 
+
+
         <div class="xhs-meta">
+
+
 
           <h3 class="xhs-title">小紅書發布版｜B300賣1450萬嘅背後</h3>
 
+
+
           <p class="xhs-date">2026-09-16 · 郑哥博客点评 · AI科技</p>
 
+
+
           <div class="xhs-buttons">
+
+
 
             <a href="post-2026-09-16-b300.html" class="xhs-btn xhs-btn-primary">📖 独立站</a>
 
+
+
             <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_B300卖1450万_发布版.md')">📋 复制文案</button>
+
+
 
           </div>
 
+
+
         </div>
+
+
 
       </article>
 
 
 
+
+
+
+
       <article class="xhs-card">
+
+
 
         <div class="xhs-cover"><img src="hany-teapot-cover.webp" alt="小紅書發布版｜紫砂壺同AI時代嘅慢" loading="lazy"></div>
 
+
+
         <div class="xhs-meta">
+
+
 
           <h3 class="xhs-title">小紅書發布版｜紫砂壺同AI時代嘅慢</h3>
 
+
+
           <p class="xhs-date">2026-09-15 · 郑哥博客点评 · AI时代观察</p>
 
+
+
           <div class="xhs-buttons">
+
+
 
             <a href="post-2026-09-15-teapot.html" class="xhs-btn xhs-btn-primary">📖 独立站</a>
 
+
+
             <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_紫砂壶AI时代_发布版.md')">📋 复制文案</button>
+
+
 
           </div>
 
+
+
         </div>
+
+
 
       </article>
 
 
 
+
+
+
+
       <article class="xhs-card">
+
+
 
         <div class="xhs-cover"><img src="hany-flow-cover.webp" alt="小紅書發布版｜太子道城巴同出入境新規" loading="lazy"></div>
 
+
+
         <div class="xhs-meta">
+
+
 
           <h3 class="xhs-title">小紅書發布版｜太子道城巴同出入境新規</h3>
 
+
+
           <p class="xhs-date">2026-09-15 · 郑哥博客点评 · 香港观察</p>
 
+
+
           <div class="xhs-buttons">
+
+
 
             <a href="post-2026-09-15-flow.html" class="xhs-btn xhs-btn-primary">📖 独立站</a>
 
+
+
             <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_太子道城巴同出入境新规_发布版.md')">📋 复制文案</button>
+
+
 
           </div>
 
+
+
         </div>
+
+
 
       </article>
 
 
 
+
+
+
+
       <article class="xhs-card">
+
+
 
         <div class="xhs-cover"><img src="hany-bus-cover.webp" alt="小紅書發布版｜九龍太子道嘅城巴6333" loading="lazy"></div>
 
+
+
         <div class="xhs-meta">
+
+
 
           <h3 class="xhs-title">小紅書發布版｜九龍太子道嘅城巴6333</h3>
 
+
+
           <p class="xhs-date">2026-09-15 · 郑哥博客点评 · 香港观察</p>
+
+
 
           <div class="xhs-buttons">
 
+
+
             <a href="post-2026-09-15-bus6333.html" class="xhs-btn xhs-btn-primary">📖 独立站</a>
+
+
 
             <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_太子道城巴6333_发布版.md')">📋 复制文案</button>
 
+
+
           </div>
 
+
+
         </div>
+
+
 
       </article>
 
 
 
+
+
+
+
       <article class="xhs-card">
+
+
+
+
 
 
 
@@ -951,7 +1903,15 @@
 
 
 
+
+
+
+
           <div class="xhs-meta">
+
+
+
+
 
 
 
@@ -959,7 +1919,15 @@
 
 
 
+
+
+
+
             <p class="xhs-date">2026-09-19 · 鄭哥博客點評 · AI手機</p>
+
+
+
+
 
 
 
@@ -967,7 +1935,15 @@
 
 
 
+
+
+
+
               <a href="post-2026-09-19-ai-phone-war.html" class="xhs-btn xhs-btn-primary">📖 獨立站</a>
+
+
+
+
 
 
 
@@ -975,11 +1951,23 @@
 
 
 
+
+
+
+
             </div>
 
 
 
+
+
+
+
           </div>
+
+
+
+
 
 
 
@@ -999,31 +1987,79 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <!-- 文章 0: 温州女人 -->
+
+
+
+
 
 
 
               <article class="xhs-card">
 
+
+
         <div class="xhs-cover"><img src="hany-wenzhou-cover.webp" alt="鄭哥Hany 温州女人买工厂" loading="lazy"></div>
+
+
 
         <div class="xhs-meta">
 
+
+
           <h3 class="xhs-title">《2000万买厂，4000万卖出》</h3>
+
+
 
           <p class="xhs-date">2026-09-12 · 郑哥博客点评 · 外贸实战</p>
 
+
+
           <div class="xhs-buttons">
+
+
 
             <a href="post-2026-09-12-wenzhou.html" class="xhs-btn xhs-btn-primary">📖 独立站</a>
 
+
+
             <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_温州女人买工厂_发布版.md')">📋 复制文案</button>
+
+
 
           </div>
 
+
+
         </div>
 
+
+
       </article>
+
+
+
+
+
+
+
+
 
 
 
@@ -1035,27 +2071,59 @@
 
 
 
+
+
+
+
               <article class="xhs-card">
+
+
 
         <div class="xhs-cover"><img src="hany-echo-cover.webp" alt="Stephanie 镶石单" loading="lazy"></div>
 
+
+
         <div class="xhs-meta">
+
+
 
           <h3 class="xhs-title">一張400粒鑲石訂單400 Zircons Order</h3>
 
+
+
           <p class="xhs-date">2026-09-12 · 郑哥博客点评 · 外贸实战</p>
+
+
 
           <div class="xhs-buttons">
 
+
+
             <a href="post-2026-09-12-echo.html" class="xhs-btn xhs-btn-primary">📖 独立站</a>
+
+
 
             <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_Stephanie_鑲石單_發布版.md')">📋 复制文案</button>
 
+
+
           </div>
+
+
 
         </div>
 
+
+
       </article>
+
+
+
+
+
+
+
+
 
 
 
@@ -1067,27 +2135,59 @@
 
 
 
+
+
+
+
               <article class="xhs-card">
+
+
 
         <div class="xhs-cover"><img src="hany-frank-cover.webp" alt="我的朋友 Fank" loading="lazy"></div>
 
+
+
         <div class="xhs-meta">
+
+
 
           <h3 class="xhs-title">一個烏干達老師嘅廣州漂A Ugandan Teacher's GZ Story</h3>
 
+
+
           <p class="xhs-date">2026-09-11 · 郑哥博客点评 · 外贸故事</p>
+
+
 
           <div class="xhs-buttons">
 
+
+
             <a href="post-2026-09-11-fank.html" class="xhs-btn xhs-btn-primary">📖 独立站</a>
+
+
 
             <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_我的朋友Fank_發布版.md')">📋 复制文案</button>
 
+
+
           </div>
+
+
 
         </div>
 
+
+
       </article>
+
+
+
+
+
+
+
+
 
 
 
@@ -1099,27 +2199,59 @@
 
 
 
+
+
+
+
               <article class="xhs-card">
+
+
 
         <div class="xhs-cover"><img src="hany-africa-president.webp" alt="鄭哥Hany 非洲女客" loading="lazy"></div>
 
+
+
         <div class="xhs-meta">
+
+
 
           <h3 class="xhs-title">《賠咗一單，賠出個總統親戚》</h3>
 
+
+
           <p class="xhs-date">2026-09-11 · 郑哥博客点评 · 外贸故事</p>
+
+
 
           <div class="xhs-buttons">
 
+
+
             <a href="post-2026-09-11-africa.html" class="xhs-btn xhs-btn-primary">📖 独立站</a>
+
+
 
             <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_非洲女客_文案.md')">📋 复制文案</button>
 
+
+
           </div>
+
+
 
         </div>
 
+
+
       </article>
+
+
+
+
+
+
+
+
 
 
 
@@ -1131,27 +2263,59 @@
 
 
 
+
+
+
+
               <article class="xhs-card">
+
+
 
         <div class="xhs-cover"><img src="hany-portrait.webp" alt="鄭哥Hany 土耳其客" loading="lazy"></div>
 
+
+
         <div class="xhs-meta">
+
+
 
           <h3 class="xhs-title">《10萬訂金教土耳其客做人》</h3>
 
+
+
           <p class="xhs-date">2026-09-04 · 郑哥博客点评 · 外贸实战</p>
+
+
 
           <div class="xhs-buttons">
 
+
+
             <a href="post-2026-09-04-222803-turkey.html" class="xhs-btn xhs-btn-primary">📖 独立站</a>
+
+
 
             <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_我出10万訂金教土耳其客做人_文案.md')">📋 复制文案</button>
 
+
+
           </div>
+
+
 
         </div>
 
+
+
       </article>
+
+
+
+
+
+
+
+
 
 
 
@@ -1163,27 +2327,59 @@
 
 
 
+
+
+
+
               <article class="xhs-card">
+
+
 
         <div class="xhs-cover"><img src="hany-haixuan-cover.webp" alt="鄭哥Hany 點解要搞砸張單" loading="lazy"></div>
 
+
+
         <div class="xhs-meta">
+
+
 
           <h3 class="xhs-title">《點解要搞砸張單？因為個客玩緊海選》</h3>
 
+
+
           <p class="xhs-date">2026-09-04 · 郑哥博客点评 · 外贸实战</p>
+
+
 
           <div class="xhs-buttons">
 
+
+
             <a href="post-2026-09-04-haixuan.html" class="xhs-btn xhs-btn-primary">📖 独立站</a>
+
+
 
             <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_點解要搞砸張單因為個客玩緊海_文案.md')">📋 复制文案</button>
 
+
+
           </div>
+
+
 
         </div>
 
+
+
       </article>
+
+
+
+
+
+
+
+
 
 
 
@@ -1195,25 +2391,49 @@
 
 
 
+
+
+
+
               <article class="xhs-card">
+
+
 
         <div class="xhs-cover"><img src="hany-patent-cover.webp" alt="鄭哥Hany 5000蚊專利" loading="lazy"></div>
 
+
+
         <div class="xhs-meta">
+
+
 
           <h3 class="xhs-title">《5000蚊買咗個專利，意外做咗手錶手機》</h3>
 
+
+
           <p class="xhs-date">2026-09-04 · 郑哥博客点评 · 产品创新</p>
+
+
 
           <div class="xhs-buttons">
 
+
+
             <a href="post-2026-09-04-patent.html" class="xhs-btn xhs-btn-primary">📖 独立站</a>
+
+
 
             <button class="xhs-btn xhs-btn-secondary" onclick="copyXhs('xhs_產品創新_文案.md')">📋 复制文案</button>
 
+
+
           </div>
 
+
+
         </div>
+
+
 
       </article>
 
@@ -1223,7 +2443,23 @@
 
 
 
+
+
+
+
+
+
+
+
       </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -1235,7 +2471,15 @@
 
 
 
+
+
+
+
         <h3>💡 使用說明</h3>
+
+
+
+
 
 
 
@@ -1243,7 +2487,15 @@
 
 
 
+
+
+
+
         <p><b>複製文案</b>會顯示小紅書文案模板（標題選項、Hook、Hashtag），你可以 Copy & Paste 到小紅書後台，配合獨立站嘅配圖直接發布。</p>
+
+
+
+
 
 
 
@@ -1251,11 +2503,23 @@
 
 
 
+
+
+
+
       </div>
 
 
 
+
+
+
+
     </div>
+
+
+
+
 
 
 
@@ -1267,60 +2531,124 @@
 
 
 
+
+
+
+
+
+
+
+
   <!-- ===== Footer ===== -->
+
+
+
+
 
 
 
   
 
+
+
   </main>
+
+
+
+
 
 
 
 <footer class="social-footer">
 
 
+
+
+
     <div class="container">
+
+
+
 
 
       <h3><span class="cn">鄭哥社群 / Follow on Social</span><span class="en">Follow Hany on Social</span></h3>
 
 
+
+
+
       <div class="social-links">
+
+
+
 
 
         <a href="xhs.html">📕 小紅書 Xiaohongshu</a>
 
 
+
+
+
         <a href="youtube.html">📺 YouTube</a>
+
+
+
 
 
         <a href="linkedin.html">💼 LinkedIn</a>
 
 
+
+
+
         <a href="facebook.html">📘 Facebook</a>
+
+
+
 
 
         <a href="instagram.html">📸 Instagram</a>
 
 
+
+
+
         <a href="tiktok.html">🎵 TikTok</a>
+
+
+
 
 
         <a href="twitter.html">🐦 Twitter / X</a>
 
 
+
+
+
       </div>
+
+
+
 
 
       <p class="copyright">© 2026 鄭哥 / Hany · 七善門科技 · 星辰算力 · 香港旺角</p>
 
 
+
+
+
     </div>
+
+
+
 
 
   </footer>
 
+
+
 </body>
+
+
 
 </html>
