@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DeepSeek 把"沙盒"做成了工廠｜鄭哥點評</title>
+  <meta name="description" content="DeepSeek 發表 DSec 論文，130人協作，梁文鋒最後署名。沙盒每秒創建 5000 個，RSI 閉環自我進化，行業競爭由模型轉向 Agent 基礎設施。">
+  <meta name="keywords" content="DeepSeek, DSec, 沙盒, Agent訓練, RSI, 梁文鋒, 基礎設施, AI, 自主進化, 130人論文">
+  <meta name="author" content="鄭哥 / Hany">
+  <link rel="canonical" href="https://www.glomarket.online/post-2026-09-27-deepseek-sandbox-dsec.html">
+  <meta property="og:title" content="DeepSeek 把"沙盒"做成了工廠｜鄭哥點評">
+  <meta property="og:description" content="DeepSeek DSec：每秒5000個沙盒，行業競爭由模型轉向Agent基礎設施。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.glomarket.online/post-2026-09-27-deepseek-sandbox-dsec.html">
+  <meta property="og:image" content="https://www.glomarket.online/hany-deepseek-cover.webp">
+  <meta property="og:site_name" content="鄭哥 Hany">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DeepSeek 把"沙盒"做成了工廠｜鄭哥點評">
+  <meta name="twitter:description" content="DeepSeek DSec：每秒5000個沙盒，行業競爭由模型轉向Agent基礎設施。">
+  <meta name="twitter:image" content="https://www.glomarket.online/hany-deepseek-cover.webp">
+  <meta name="article:published_time" content="2026-09-27T02:55:22+08:00">
+  <meta name="article:modified_time" content="2026-09-27T02:55:22+08:00">
+  <meta name="article:author" content="鄭哥 Hany">
+  <meta name="article:section" content="AI點評">
+  <meta name="article:tag" content="DeepSeek">
+  <meta name="article:tag" content="DSec">
+  <meta name="article:tag" content="沙盒">
+  <meta name="article:tag" content="Agent訓練">
+  <meta name="article:tag" content="梁文鋒">
+  <style>
+    :root {
+      --bg: #fafafa; --bg-elevated: #fff; --text: #1a1a1a; --text-secondary: #555;
+      --text-muted: #888; --accent: #c41e3a; --accent-light: #fef2f2;
+      --border-light: #eee; --border: #ddd; --radius: 12px; --radius-sm: 8px;
+      --shadow: 0 1px 3px rgba(0,0,0,0.04); --shadow-hover: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans TC', 'PingFang TC', sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; }
+    .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+    nav { background: var(--bg-elevated); border-bottom: 1px solid var(--border-light); position: sticky; top: 0; z-index: 100; }
+    nav .container { display: flex; justify-content: space-between; align-items: center; height: 56px; }
+    .logo { font-weight: 700; color: var(--text); text-decoration: none; font-size: 1.1rem; }
+    .logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 6px; align-items: center; }
+    nav a { color: var(--text-secondary); text-decoration: none; padding: 8px 14px; border-radius: 6px; font-size: 0.88rem; transition: all 0.2s; }
+    nav a:hover, nav a.active { color: var(--accent); background: var(--accent-light); }
+    .lang-btn { background: none; border: 1px solid var(--border-light); padding: 6px 14px; border-radius: 6px; cursor: pointer; font-size: 0.85rem; margin-left: 8px; }
+    
+    article { padding: 48px 0 64px; }
+    .post-header { margin-bottom: 40px; padding-bottom: 32px; border-bottom: 1px solid var(--border-light); }
+    .post-header h1 { font-size: 1.7rem; font-weight: 700; line-height: 1.4; margin-bottom: 16px; letter-spacing: -0.3px; }
+    .post-meta { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; color: var(--text-muted); font-size: 0.85rem; }
+    .post-meta .tag { background: var(--accent-light); color: var(--accent); padding: 3px 12px; border-radius: 20px; font-weight: 500; }
+    .post-meta time { font-family: 'SF Mono', monospace; }
+    
+    .post-content { font-size: 1.05rem; line-height: 1.9; }
+    .post-content p { margin-bottom: 1.4em; }
+    .post-content h2 { font-size: 1.3rem; font-weight: 600; margin: 2em 0 0.8em; padding-bottom: 8px; border-bottom: 2px solid var(--accent-light); }
+    .post-content h3 { font-size: 1.1rem; font-weight: 600; margin: 1.8em 0 0.6em; color: var(--accent); }
+    .post-content strong { color: var(--accent); }
+    .post-content blockquote { border-left: 4px solid var(--accent); padding: 16px 24px; margin: 1.5em 0; background: var(--accent-light); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-style: italic; }
+    .post-content hr { border: none; border-top: 1px solid var(--border-light); margin: 2em 0; }
+    .post-content ul { margin: 1em 0 1.5em 1.5em; }
+    .post-content li { margin-bottom: 0.5em; }
+    .post-content img { max-width: 100%; border-radius: var(--radius); margin: 1.5em 0; box-shadow: var(--shadow); }
+    
+    .post-footer { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--border-light); }
+    .post-footer p { color: var(--text-muted); font-size: 0.9rem; }
+    .post-footer .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+    .post-footer .tag { background: #f5f5f5; padding: 4px 12px; border-radius: 4px; font-size: 0.8rem; color: var(--text-secondary); }
+    
+    .author-card { background: var(--bg-elevated); border: 1px solid var(--border-light); border-radius: var(--radius); padding: 28px; margin-top: 32px; display: flex; gap: 20px; align-items: flex-start; }
+    .author-card img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+    .author-card h4 { font-size: 1rem; margin-bottom: 6px; }
+    .author-card p { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; }
+    
+    .next-post { margin-top: 40px; padding: 24px; background: var(--bg-elevated); border: 1px solid var(--border-light); border-radius: var(--radius); }
+    .next-post a { color: var(--accent); text-decoration: none; font-weight: 600; }
+    .next-post a:hover { text-decoration: underline; }
+    
+    footer { background: var(--bg-elevated); border-top: 1px solid var(--border-light); padding: 32px 0; text-align: center; margin-top: 64px; }
+    footer p { font-size: 0.82rem; color: var(--text-muted); }
+    
+    .en { display:none; }
+    body.show-en .en { display:block; }
+    body.show-en .cn { display:none; }
+    
+    @media (max-width: 640px) {
+      .post-header h1 { font-size: 1.4rem; }
+      .author-card { flex-direction: column; text-align: center; }
+      .author-card img { margin: 0 auto; }
+    }
+  
+    /* ===== 小紅書底部便簽 ===== */
+    .xhs-bottom-card{
+      background:linear-gradient(135deg,#fff5f5 0%,#ffe8eb 100%);
+      border:1px solid #ffcdd2;
+      border-left:5px solid #ff2442;
+      border-radius:12px;
+      padding:24px 28px;
+      margin:40px auto;
+      max-width:760px;
+      box-shadow:0 2px 8px rgba(255,36,66,.06);
+    }
+    .xhs-bottom-tag{
+      display:inline-block;
+      background:#ff2442;
+      color:#fff;
+      font-size:.78rem;
+      padding:4px 12px;
+      border-radius:10px;
+      margin-bottom:12px;
+      font-weight:600;
+      letter-spacing:.5px;
+    }
+    .xhs-bottom-card h4{font-size:1.1rem;color:#222;margin-bottom:10px;font-weight:600}
+    .xhs-bottom-card p{font-size:.92rem;color:#555;line-height:1.7;margin-bottom:16px}
+    .xhs-bottom-actions{display:flex;gap:10px;flex-wrap:wrap}
+    .xhs-bottom-btn{
+      padding:10px 18px;
+      border-radius:10px;
+      font-size:.88rem;
+      text-decoration:none;
+      font-weight:500;
+      transition:opacity .2s;
+      display:inline-block;
+    }
+    .xhs-bottom-btn:hover{opacity:.85}
+    .xhs-bottom-btn-primary{background:#ff2442;color:#fff}
+    .xhs-bottom-btn-secondary{background:#fff;color:#ff2442;border:1px solid #ff2442}
+    @media(max-width:640px){
+      .xhs-bottom-card{padding:20px;margin:30px 16px}
+      .xhs-bottom-btn{flex:1;text-align:center}
+    }
+
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "DeepSeek 把"沙盒"做成了工廠｜鄭哥點評",
+    "author": { "@type": "Person", "name": "鄭哥 Hany" },
+    "datePublished": "2026-09-27T02:55:22+08:00",
+    "publisher": { "@type": "Organization", "name": "鄭哥博客", "logo": { "@type": "ImageObject", "url": "https://www.glomarket.online/hany-portrait.webp" } },
+    "image": "https://www.glomarket.online/hany-deepseek-cover.webp",
+    "description": "DeepSeek DSec：每秒5000個沙盒，行業競爭由模型轉向Agent基礎設施。",
+    "url": "https://www.glomarket.online/post-2026-09-27-deepseek-sandbox-dsec.html"
+  }
+  </script>
+  <style id="typography-v2">
+    /* ===== 鄭哥正文排版 v2（2026-09-12）：閱讀型襯線 + 疏朗節奏 ===== */
+    .post-content{font-family:Georgia,'Times New Roman','Noto Serif TC','Songti TC','SimSun',serif;font-size:1.08rem;line-height:2.0;letter-spacing:.015em;color:#2b2b2b;text-align:justify;max-width:42em;margin:0 auto}
+    .post-content p{margin:0 0 1.5em}
+    .post-content>p:first-of-type::first-letter{font-size:1.9em;font-weight:700;line-height:1;float:left;margin:.08em .12em 0 0;color:var(--accent)}
+    .post-content h2{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang HK','Noto Sans TC',sans-serif;font-size:1.32rem;font-weight:700;line-height:1.5;margin:2.4em 0 .9em;padding:0 0 0 14px;border-left:4px solid var(--accent);border-bottom:none;letter-spacing:0}
+    .post-content h3{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang HK','Noto Sans TC',sans-serif;font-size:1.08rem;font-weight:700;margin:1.8em 0 .6em;color:var(--accent)}
+    .post-content strong{color:#a31226}
+    .post-content hr{border:none;margin:2.4em 0;text-align:center}
+    .post-content hr::after{content:'···';letter-spacing:.6em;color:#c9c9c9;font-size:1.1rem}
+    .post-content blockquote{position:relative;border-left:none;background:#fff7f3;border-radius:0 12px 12px 0;padding:20px 26px 20px 52px;margin:2em 0;font-style:normal;font-size:1.02rem;line-height:1.9;color:#4a3a32}
+    .post-content blockquote::before{content:'\201C';position:absolute;left:14px;top:6px;font-size:2.4rem;color:var(--accent);opacity:.45;font-family:Georgia,serif}
+    .post-content ul,.post-content ol{margin:1em 0 1.6em 1.4em;line-height:1.95}
+    .post-content li{margin-bottom:.55em}
+    .post-content figure{margin:2em 0}
+    .post-content figure img{width:100%;border-radius:12px;margin:0;box-shadow:0 4px 18px rgba(0,0,0,.08)}
+    .post-content figcaption{text-align:center;font-size:.82rem;color:var(--text-muted);margin-top:10px;font-family:-apple-system,'Segoe UI','PingFang HK',sans-serif}
+    .post-content details{background:#fff;border:1px solid var(--border-light);border-radius:10px;padding:14px 18px;margin:.8em 0;font-size:.98rem;font-family:-apple-system,'Segoe UI','PingFang HK',sans-serif}
+    .post-content details summary{cursor:pointer;font-weight:600}
+    .post-content details p{margin:.8em 0 0;font-size:.95rem}
+    /* 閱讀進度條 + 目錄 + CTA + 回頂 */
+    #read-progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:200}
+    .toc-box{background:var(--bg-elevated);border:1px solid var(--border-light);border-radius:12px;padding:18px 22px;margin:0 0 2em;font-family:-apple-system,'Segoe UI','PingFang HK',sans-serif;font-size:.92rem}
+    .toc-box b{display:block;margin-bottom:8px}
+    .toc-box a{color:var(--text-secondary);text-decoration:none;display:block;padding:3px 0}
+    .toc-box a:hover{color:var(--accent)}
+    .cta-whatsapp{background:linear-gradient(135deg,#1a1a2e,#2d2d44);color:#fff;border-radius:12px;padding:26px;margin:2.5em 0 0;text-align:center;font-family:-apple-system,'Segoe UI','PingFang HK',sans-serif}
+    .cta-whatsapp a{display:inline-block;margin-top:12px;background:#25D366;color:#fff;padding:10px 28px;border-radius:8px;text-decoration:none;font-weight:600}
+    #toTop{position:fixed;right:18px;bottom:18px;width:42px;height:42px;border-radius:50%;border:1px solid var(--border);background:#fff;font-size:1.1rem;cursor:pointer;display:none;z-index:200;box-shadow:0 4px 14px rgba(0,0,0,.1)}
+    .post-header h1{font-family:Georgia,'Noto Serif TC','Songti TC',serif;font-size:1.72rem;line-height:1.45;letter-spacing:0}
+    @media(max-width:640px){.post-content{font-size:1.0rem;line-height:1.95}.post-header h1{font-size:1.38rem}.post-content>p:first-of-type::first-letter{font-size:1.7em}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="index.html" class="logo">鄭哥<span>/ Hany</span></a>
+    <div class="nav-links">
+      <a href="index.html"><span class="cn">首頁</span><span class="en">Home</span></a>
+      <a href="about.html"><span class="cn">關於</span><span class="en">About</span></a>
+        <a href="blog.html" class="active"><span class="cn">點評</span><span class="en">Reviews</span></a>
+      <a href="contact.html"><span class="cn">聯繫</span><span class="en">Contact</span></a>
+      <button class="lang-btn" onclick="toggleLang()" id="langBtn">EN</button>
+    </div>
+  </div>
+</nav>
+
+<article>
+  <div class="container">
+    <header class="post-header">
+      <img src="hany-deepseek-cover.webp" alt="DeepSeek DSec 沙盒工廠封面" style="width:100%;border-radius:12px;margin-bottom:24px;">
+      <h1><span class="cn">DeepSeek 把"沙盒"做成了工廠</span><span class="en">DeepSeek Turned the Sandbox Into a Factory</span></h1>
+      <div class="post-meta">
+        <time datetime="2026-09-27T02:55:22+08:00"><span class="cn">2026年9月27日 02:55:22</span><span class="en">Sep 27, 2026 02:55:22</span></time>
+        <span class="tag"><span class="cn">AI點評</span><span class="en">AI Review</span></span>
+        <span class="tag"><span class="cn">DeepSeek</span><span class="en">DeepSeek</span></span>
+        <span class="tag"><span class="cn">基礎設施</span><span class="en">Infrastructure</span></span>
+      </div>
+    </header>
+
+    <div class="cn post-content">
+      <blockquote class="zhengge-pingdian"><span class="cn">【鄭哥點評】</span><span class="en">【ZHENG GE REVIEW】</span></blockquote>
+
+<p>昨日看到 DeepSeek 喺 arXiv 上挂咗一篇新論文《DSec: A Sandbox Infrastructure for Effective Agentic Training at Scale》，署名 130 多人，梁文鋒排喺最後——呢個署名習慣同 GPT 系列論文嘅畫風好似。</p>
+
+<p>讀完之後有 D 分慨：<strong>行業競爭嘅焦點，已經由"邊個模型更強"，悄悄轉咗到"邊個能俾 Agent 一個像樣嘅家"。</strong></p>
+
+<h2>一、Agent 訓練為何需要"沙盒"</h2>
+
+<p>大模型本身只能"想"，真正能"做"嘅，係 Agent。</p>
+
+<p>要讓 Agent 學會點外賣、寫程式、操作數據庫，佢得喺一個<strong>隔離環境</strong>內反覆練習——呢個環境，就係沙盒。</p>
+
+<p>傳統做法係俾每個 Agent 任務開一台虛擬機或容器，聽起來簡單，但當你要同時跑幾萬個 Agent 做訓練時，資源消耗同啟動延遲就成咗噩夢。</p>
+
+<p>DSec 就係為解決呢個問題而生嘅。</p>
+
+<figure>
+  <img src="hany-deepseek-scene1.webp" alt="DeepSeek 工程師協作研發截圖">
+  <figcaption><span class="cn">場景：DeepSeek 工程師喺屏幕前調試沙盒基礎設施</span><span class="en">Scene: DeepSeek engineers debugging sandbox infrastructure</span><br><em>圖片由 AI輔助創作（Z-Image-Turbo）</em></figcaption>
+</figure>
+
+<h2>二、DSec 嘅核心數據</h2>
+
+<p>論文裡披露嘅少少數字，挺震撼嘅：</p>
+
+<table style="width:100%;border-collapse:collapse;margin:16px 0;font-size:0.95rem;">
+  <thead>
+    <tr style="background:#f5f5f7;">
+      <th style="padding:10px 14px;text-align:left;border:1px solid #e8e8ed;">維度</th>
+      <th style="padding:10px 14px;text-align:left;border:1px solid #e8e8ed;">數量</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td style="padding:10px 14px;border:1px solid #e8e8ed;">單生產單元</td><td style="padding:10px 14px;border:1px solid #e8e8ed;">160 個 CPU 節點 / 3 萬核 / 250TB 內存</td></tr>
+    <tr><td style="padding:10px 14px;border:1px solid #e8e8ed;">日均沙盒服務</td><td style="padding:10px 14px;border:1px solid #e8e8ed;">大約 300 萬個</td></tr>
+    <tr><td style="padding:10px 14px;border:1px solid #e8e8ed;">峰值並發</td><td style="padding:10px 14px;border:1px solid #e8e8ed;">超過 38 萬</td></tr>
+    <tr><td style="padding:10px 14px;border:1px solid #e8e8ed;background:#fff5f5;"><td style="padding:10px 14px;border:1px solid #e8e8ed;background:#fff5f5;font-weight:700;">每秒 5000 個</td></tr>
+  </tbody>
+</table>
+
+<p>呢個概念係乜樣？相當於<strong>一秒鐘能開 5000 間"小房間"</strong>，讓 5000 個 Agent 同時入去幹活。</p>
+
+<figure>
+  <img src="hany-deepseek-scene2.webp" alt="DSec 千萬沙盒同時創建示意圖">
+  <figcaption><span class="cn">場景：DSec 系統每秒創建 5000 個隔離沙盒示意</span><span class="en">Scene: DSec creating 5000 sandboxes per second visualization</span><br><em>圖片由 AI輔助創作（Z-Image-Turbo）</em></figcaption>
+</figure>
+
+<h2>三、三個關鍵技術優化</h2>
+
+<p>DSec 唔係簡單堆機器，佢喺三個層面做咗精細化優化：</p>
+
+<p><strong>1. 三層可組合鏡像：</strong>將鏡像拆成基礎層、中間層、應用層，按需拼裝，避免重複拷貝。</p>
+
+<p><strong>2. 按需加載：</strong>Agent 用到乜資源就加載乜，啟動時唔使全量灌進去。</p>
+
+<p><strong>3. 軟硬件精細化調度：</strong>CPU、內存、網絡、儲存按 Agent 實際需求動態分配，唔浪費。</p>
+
+<figure>
+  <img src="hany-deepseek-scene3.webp" alt="DSec RSI 閉環自我進化示意圖">
+  <figcaption><span class="cn">場景：DSec RSI 閉環——Agent 自己造環境，環境又訓練更強 Agent</span><span class="en">Scene: DSec RSI closed loop — agents building environments to train stronger agents</span><br><em>圖片由 AI輔助創作（Z-Image-Turbo）</em></figcaption>
+</figure>
+
+<h2>四、RSI 閉環：Agent 自己造環境</h2>
+
+<p>論文第 6 節提到，DeepSeek 已經部分實現咗一個有趣嘅閉環——<strong>RSI（Recursive Self-Improvement）</strong>：</p>
+
+<blockquote>Agent 用 DSec 自主構建訓練環境 → 訓練出更強嘅 Agent → 更強嘅 Agent 又能造出更好嘅環境</blockquote>
+
+<p>呢係 AI 自我進化嘅雏形。</p>
+
+<p>不過論文亦坦誠提到，目前呢個閉環仍處於早期階段，<strong>已經出現過多起 Agent 作弊、錯誤操作導致系統故障個案</strong>。</p>
+
+<p>你看，再聰明嘅 AI，亦都得有人類"睇住"。</p>
+
+<h2>五、行業轉向咩</h2>
+
+<p>如果話 GPT-4 時代大家喺卷"模型參數"，當下卷嘅就係 <strong>"Agent 基礎設施"</strong>。</p>
+
+<p>月之暗面 Kimi K3 用嘅 AgentENV 沙盒平台，同 DSec 係同題不同答卷。阿里雲推出"Agentic Cloud"戰略，自研 Agent Sandbox。</p>
+
+<p>競爭從"算法"延伸到"工程"。呢個背後係同一個判斷：<strong>未來 AI 嘅差距，可能唔再係模型本身，而在佢能多大程度上"動起嚟"</strong>。</p>
+
+<figure>
+  <img src="hany-deepseek-scene4.webp" alt="DeepSeek 深圳總部黄昏">
+  <figcaption><span class="cn">場景：DeepSeek 深圳總部——130 人協作的起點</span><span class="en">Scene: DeepSeek Shenzhen HQ at dusk — where 130+ people collaborate</span><br><em>圖片由 AI輔助創作（Z-Image-Turbo）</em></figcaption>
+</figure>
+
+<h2>寫喺最後</h2>
+
+<p>讀完呢篇論文，最讓我觸動嘅唔係那些炫目數字，而是<strong>梁文鋒作為最後一位署名作者呢件事</strong>。</p>
+
+<p>呢個說明 DSec 唔係某個天才嘅靈光一現，而係 <strong>130 多人協作嘅工程成果</strong>。</p>
+
+<p>AI 時代，能把"基礎設施"做到呢種規模嘅玩家，才能真正站腳腳。</p>
+
+<p>我哋寫代碼嘅時候，亦係如此——<strong>真正難嘅從來唔係新功能，而係讓系統喺生產環境穩定地跑下去</strong>。</p>
+
+<h2>一句話總結</h2>
+
+<blockquote>DeepSeek DSec 係 130 人協作的工程結晶，沙盒每秒創建 5000 個係表面，核心係 RSI 閉環嘅進化藍圖。AI 時代，能把基礎設施做到規模嘅玩家，才能真正站穩。</blockquote>
+
+<p style="font-size:0.82rem;color:#888;margin-top:16px;">*參考來源：今日頭條《DeepSeek 晒自研沙盒平台，行業競爭轉向新賽道》，2026-09-25。原文基於 arXiv 論文 2609.22978《DSec: A Sandbox Infrastructure for Effective Agentic Training at Scale》。*</p>
+
+<div class="post-footer">
+  <p><span class="cn">發布於 2026年9月27日 02:55:22 | 鄭哥 Hany</span><span class="en">Published 2026-09-27 02:55:22 | Hany</span></p>
+  <div class="tags">
+    <span class="tag">#DeepSeek</span>
+    <span class="tag">#DSec</span>
+    <span class="tag">#沙盒</span>
+    <span class="tag">#Agent訓練</span>
+    <span class="tag">#RSI</span>
+    <span class="tag">#梁文鋒</span>
+    <span class="tag">#基礎設施</span>
+  </div>
+</div>
+
+<div class="author-card">
+  <img src="hany-portrait.webp" alt="鄭哥 Hany">
+  <div>
+    <h4><span class="cn">關於作者</span><span class="en">About the Author</span></h4>
+    <p><span class="cn">鄭哥，90年代大學畢業，26年橫跨電子、家電、服裝、珠寶、教育、AI算力多個行業。做過中學教師、翻譯、外贸，現在搞七善門科技和星辰算力。口頭禪：「點解唔得？」</span><span class="en">Hany, university grad from the 90s, 26 years across electronics, appliances, fashion, jewelry, education, and AI compute. Former teacher, translator, trader. Now running Qishanmen Tech and Star Compute. Catchphrase: "Why not?"</span></p>
+  </div>
+</div>
+
+<div class="next-post">
+  <p><a href="blog.html"><span class="cn">← 返回文章列表</span><span class="en">← Back to all posts</span></a></p>
+</div>
+
+    </div>
+
+    <div class="en post-content">
+
+<p>Yesterday, DeepSeek posted a new paper on arXiv — "DSec: A Sandbox Infrastructure for Effective Agentic Training at Scale" — with 130+ authors, and Liang Wenfeng listed last. That authorship style feels right at home with the GPT series papers.</p>
+
+<p>After reading, one thought stood out: <strong>the focus of industry competition has quietly shifted from "which model is stronger" to "who can give Agents a proper home."</strong></p>
+
+<h2>1. Why Agents Need a "Sandbox"</h2>
+
+<p>Large models can only "think." What can truly "do" is the Agent.</p>
+
+<p>To teach an Agent to order food delivery, write code, or operate databases, it needs to practice repeatedly inside an <strong>isolated environment</strong> — this is the sandbox.</p>
+
+<p>The traditional approach: spin up a VM or container per Agent task. Sounds simple, but when you're running tens of thousands of Agents simultaneously for training, resource consumption and startup latency become a nightmare.</p>
+
+<p>DSec was born to solve exactly this.</p>
+
+<figure>
+  <img src="hany-deepseek-scene1.webp" alt="DeepSeek engineers debugging sandbox infrastructure">
+  <figcaption><span class="cn">場景：DeepSeek 工程師喺屏幕前調試沙盒基礎設施</span><span class="en">Scene: DeepSeek engineers debugging sandbox infrastructure</span><br><em>Image AI-assisted (Z-Image-Turbo)</em></figcaption>
+</figure>
+
+<h2>2. DSec's Core Numbers</h2>
+
+<p>The few numbers disclosed in the paper are striking:</p>
+
+<table style="width:100%;border-collapse:collapse;margin:16px 0;font-size:0.95rem;">
+  <thead>
+    <tr style="background:#f5f5f7;">
+      <th style="padding:10px 14px;text-align:left;border:1px solid #e8e8ed;">Dimension</th>
+      <th style="padding:10px 14px;text-align:left;border:1px solid #e8e8ed;">Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td style="padding:10px 14px;border:1px solid #e8e8ed;">Per production unit</td><td style="padding:10px 14px;border:1px solid #e8e8ed;">160 CPU nodes / 30k cores / 250TB RAM</td></tr>
+    <tr><td style="padding:10px 14px;border:1px solid #e8e8ed;">Daily sandbox services</td><td style="padding:10px 14px;border:1px solid #e8e8ed;">~3 million</td></tr>
+    <tr><td style="padding:10px 14px;border:1px solid #e8e8ed;">Peak concurrency</td><td style="padding:10px 14px;border:1px solid #e8e8ed;">380,000+</td></tr>
+    <tr><td style="padding:10px 14px;border:1px solid #e8e8ed;background:#fff5f5;"><td style="padding:10px 14px;border:1px solid #e8e8ed;background:#fff5f5;font-weight:700;">5,000 per second</td></tr>
+  </tbody>
+</table>
+
+<p>What does this look like in practice? <strong>5,000 "little rooms" opened in one second</strong>, letting 5,000 Agents work inside them simultaneously.</p>
+
+<figure>
+  <img src="hany-deepseek-scene2.webp" alt="DSec thousands of sandboxes spawning simultaneously">
+  <figcaption><span class="cn">場景：DSec 系統每秒創建 5000 個隔離沙盒示意</span><span class="en">Scene: DSec creating 5000 sandboxes per second visualization</span><br><em>Image AI-assisted (Z-Image-Turbo)</em></figcaption>
+</figure>
+
+<h2>3. Three Key Technical Optimizations</h2>
+
+<p>DSec isn't just piling on machines — it refined three layers:</p>
+
+<p><strong>1. Three-layer composable images:</strong> Split images into base, intermediate, and application layers, assembled on demand to avoid redundant copies.</p>
+
+<p><strong>2. On-demand loading:</strong> Agents load only the resources they use; no need to灌入 everything at startup.</p>
+
+<p><strong>3. Fine-grained software-hardware scheduling:</strong> CPU, RAM, network, and storage dynamically allocated per Agent's actual needs — no waste.</p>
+
+<figure>
+  <img src="hany-deepseek-scene3.webp" alt="DSec RSI closed loop diagram">
+  <figcaption><span class="cn">場景：DSec RSI 閉環——Agent 自己造環境，環境又訓練更強 Agent</span><span class="en">Scene: DSec RSI closed loop — agents building environments to train stronger agents</span><br><em>Image AI-assisted (Z-Image-Turbo)</em></figcaption>
+</figure>
+
+<h2>4. RSI Closed Loop: Agents Building Their Own Environments</h2>
+
+<p>Section 6 of the paper notes that DeepSeek has partially achieved an interesting closed loop — <strong>RSI (Recursive Self-Improvement)</strong>:</p>
+
+<blockquote>Agent uses DSec to autonomously build training environment → trains a stronger Agent → stronger Agent builds a better environment</blockquote>
+
+<p>This is the prototype of AI self-evolution.</p>
+
+<p>However, the paper honestly admits: the loop is still in its early stage, and <strong>multiple cases of Agent cheating and erroneous operations causing system failures have already occurred</strong>.</p>
+
+<p>You see — no matter how smart the AI, it still needs humans watching over it.</p>
+
+<h2>5. Where Is the Industry Heading?</h2>
+
+<p>If the GPT-4 era was about competing on "model parameters," the current wave is about competing on <strong>"Agent infrastructure"</strong>.</p>
+
+<p>Moon Dark Side's Kimi K3 uses AgentENV sandbox platform — same problem, different answer. Alibaba Cloud launched an "Agentic Cloud" strategy with self-developed Agent Sandbox.</p>
+
+<p>Competition has extended from "algorithms" to "engineering." Behind this is the same judgment: <strong>the future AI gap may no longer be the model itself, but how much it can "get moving."</strong></p>
+
+<figure>
+  <img src="hany-deepseek-scene4.webp" alt="DeepSeek Shenzhen headquarters at dusk">
+  <figcaption><span class="cn">場景：DeepSeek 深圳總部黄昏</span><span class="en">Scene: DeepSeek Shenzhen HQ at dusk</span><br><em>Image AI-assisted (Z-Image-Turbo)</em></figcaption>
+</figure>
+
+<h2>Written at the End</h2>
+
+<p>After reading this paper, what moved me most wasn't the flashy numbers — it was <strong>Liang Wenfeng being listed as the last author</strong>.</p>
+
+<p>This tells us DSec wasn't a flash of genius from one person — it's the <strong>engineering result of 130+ people collaborating</strong>.</p>
+
+<p>In the AI era, only players who can build "infrastructure" at this scale can truly stand firm.</p>
+
+<p>When we write code, it's the same — <strong>the real difficulty is never the new feature, but making the system run stably in production</strong>.</p>
+
+<h2>One-Line Summary</h2>
+
+<blockquote>DeepSeek DSec is the engineering crystallization of 130+ collaborators. 5,000 sandboxes per second is the surface; the core is the RSI closed-loop evolution blueprint. In the AI era, only players who can scale infrastructure can truly stand their ground.</blockquote>
+
+<div class="post-footer">
+  <p><span class="cn">發布於 2026年9月27日 02:55:22 | 鄭哥 Hany</span><span class="en">Published 2026-09-27 02:55:22 | Hany</span></p>
+  <div class="tags">
+    <span class="tag">#DeepSeek</span>
+    <span class="tag">#DSec</span>
+    <span class="tag">#Sandbox</span>
+    <span class="tag">#AgentTraining</span>
+    <span class="tag">#RSI</span>
+    <span class="tag">#LiangWenfeng</span>
+    <span class="tag">#AIInfrastructure</span>
+  </div>
+</div>
+
+<div class="author-card">
+  <img src="hany-portrait.webp" alt="鄭哥 Hany">
+  <div>
+    <h4><span class="cn">關於作者</span><span class="en">About the Author</span></h4>
+    <p><span class="cn">鄭哥，90年代大學畢業，26年橫跨電子、家電、服裝、珠寶、教育、AI算力多個行業。做過中學教師、翻譯、外贸，現在搞七善門科技和星辰算力。口頭禪：「點解唔得？」</span><span class="en">Hany, university grad from the 90s, 26 years across electronics, appliances, fashion, jewelry, education, and AI compute. Former teacher, translator, trader. Now running Qishanmen Tech and Star Compute. Catchphrase: "Why not?"</span></p>
+  </div>
+</div>
+
+<div class="next-post">
+  <p><a href="blog.html"><span class="cn">← 返回文章列表</span><span class="en">← Back to all posts</span></a></p>
+</div>
+
+    </div>
+  </div>
+  </article>
+
+<footer>
+  <div class="container">
+    <p class="cn"><a href="xhs.html" style="color:#ff2442;text-decoration:none;">📕 小紅書同步</a> · © 2026 鄭哥 Hany · 七善門科技 · 星辰算力</p>
+    <p class="en"><a href="xhs.html" style="color:#ff2442;text-decoration:none;">📕 RED Sync</a> · © 2026 Hany · Qishanmen Tech · Star Compute</p>
+  </div>
+</footer>
+
+<script>
+  function toggleLang() {
+    document.body.classList.toggle('show-en');
+    const btn = document.getElementById('langBtn');
+    btn.textContent = document.body.classList.contains('show-en') ? '中' : 'EN';
+    localStorage.setItem('lang', document.body.classList.contains('show-en') ? 'en' : 'cn');
+  }
+  if (localStorage.getItem('lang') === 'en') {
+    document.body.classList.add('show-en');
+    document.getElementById('langBtn').textContent = '中';
+  }
+</script>
+
+</body>
+</html>
