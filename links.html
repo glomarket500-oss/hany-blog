@@ -222,5 +222,16 @@
     </div>
   </footer>
 
+
+<script>
+function toggleLang(){
+      const btn = document.getElementById('langBtn');
+      const showingEn = btn.textContent.trim() === '中';
+      btn.textContent = showingEn ? 'EN' : '中';
+      document.querySelectorAll('.cn,.en').forEach(el => {
+        el.style.display = showingEn ? (el.classList.contains('cn') ? 'inline' : 'none') : (el.classList.contains('en') ? 'inline' : 'none');
+      });
+    }
+</script>
 </body>
 </html>
