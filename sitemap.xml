@@ -1,125 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <url>
-
-    <loc>https://hany-blog.vercel.app/</loc>
-
-    <lastmod>2026-09-11</lastmod>
-
-    <priority>1.0</priority>
-
-  </url>
-
-  <url>
-
-    <loc>https://hany-blog.vercel.app/about.html</loc>
-
-    <lastmod>2026-09-11</lastmod>
-
-    <priority>0.8</priority>
-
-  </url>
-
-  <url>
-
-    <loc>https://hany-blog.vercel.app/blog.html</loc>
-
-    <lastmod>2026-09-11</lastmod>
-
-    <priority>0.9</priority>
-
-  </url>
-
-  <url>
-
-    <loc>https://hany-blog.vercel.app/contact.html</loc>
-
-    <lastmod>2026-09-11</lastmod>
-
-    <priority>0.8</priority>
-
-  </url>
-
-  <url>
-
-    <loc>https://hany-blog.vercel.app/post-2026-09-04-patent.html</loc>
-
-    <lastmod>2026-09-04</lastmod>
-
-    <priority>0.7</priority>
-
-  </url>
-
-  <url>
-
-    <loc>https://hany-blog.vercel.app/post-2026-09-04-haixuan.html</loc>
-
-    <lastmod>2026-09-04</lastmod>
-
-    <priority>0.7</priority>
-
-  </url>
-
-  <url>
-
-    <loc>https://hany-blog.vercel.app/post-2026-09-04-222803-turkey.html</loc>
-
-    <lastmod>2026-09-04</lastmod>
-
-    <priority>0.7</priority>
-
-  </url>
-
-  <url>
-
-    <loc>https://hany-blog.vercel.app/post-2026-09-11-africa.html</loc>
-
-    <lastmod>2026-09-11</lastmod>
-
-    <priority>0.7</priority>
-
-  </url>
-
-  <url>
-
-    <loc>https://hany-blog.vercel.app/post-2026-09-11-fank.html</loc>
-
-    <lastmod>2026-09-11</lastmod>
-
-    <priority>0.7</priority>
-
-  </url>
-
-  <url><loc>https://hany-blog.vercel.app/post-2026-09-16-gzport.html</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-  <url><loc>https://hany-blog.vercel.app/post-2026-09-16-mountain-electronics.html</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-  <url><loc>https://hany-blog.vercel.app/post-2026-09-16-b300.html</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-  <url><loc>https://hany-blog.vercel.app/post-2026-09-17-memory.html</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-  <url><loc>https://hany-blog.vercel.app/post-2026-09-17-solar.html</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-  <url><loc>https://hany-blog.vercel.app/post-2026-09-15-bus6333.html</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-  <url><loc>https://hany-blog.vercel.app/post-2026-09-15-flow.html</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-  <url><loc>https://hany-blog.vercel.app/post-2026-09-15-teapot.html</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-  <url><loc>https://hany-blog.vercel.app/post-2026-09-17-ai-war.html</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-  <url><loc>https://hany-blog.vercel.app/post-2026-09-17-saas.html</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-<url><loc>https://hany-blog.vercel.app/post-2026-09-19-ai-phone-war.html</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-<url><loc>https://hany-blog.vercel.app/post-2026-09-20-doubao-gui.html</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-<url><loc>https://hany-blog.vercel.app/post-2026-09-21-moon-germany.html</loc><lastmod>2026-09-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-  <url><loc>https://hany-blog.vercel.app/youtube.html</loc><lastmod>2026-09-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://hany-blog.vercel.app/linkedin.html</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://hany-blog.vercel.app/facebook.html</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://hany-blog.vercel.app/instagram.html</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://hany-blog.vercel.app/tiktok.html</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://hany-blog.vercel.app/twitter.html</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/</loc><lastmod>2026-10-07</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.glomarket.online/about.html</loc><lastmod>2026-10-07</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.glomarket.online/blog.html</loc><lastmod>2026-10-07</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.glomarket.online/contact.html</loc><lastmod>2026-10-07</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.glomarket.online/xhs.html</loc><lastmod>2026-10-07</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.glomarket.online/links.html</loc><lastmod>2026-10-07</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.glomarket.online/youtube.html</loc><lastmod>2026-10-07</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/linkedin.html</loc><lastmod>2026-10-07</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/facebook.html</loc><lastmod>2026-10-07</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/instagram.html</loc><lastmod>2026-10-07</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/tiktok.html</loc><lastmod>2026-10-07</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/twitter.html</loc><lastmod>2026-10-07</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/post-2026-10-04-ai-esim-token.html</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/post-2026-10-02-trump-xi-summit-2026.html</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/post-2026-10-01-ai-safety-crisis.html</loc><lastmod>2026-10-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/post-2026-09-29-shanwei-hakka-professor.html</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/post-2026-09-29-amd-worldlabs.html</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/post-2026-09-28-fate-life.html</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/post-2026-09-28-gpu-sucker.html</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/post-2026-09-28-muse-ai-agent.html</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/post-2026-09-28-1943-chaoshan-famine.html</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/post-2026-09-27-ai-daily-2026.html</loc><lastmod>2026-09-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/post-2026-09-27-cantonfair-70anniversary.html</loc><lastmod>2026-09-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/post-2026-09-27-european-professor-shanwei-danmin.html</loc><lastmod>2026-09-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/post-2026-09-27-deepseek-sandbox-dsec.html</loc><lastmod>2026-09-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/post-2026-09-26-ice-mountain-longzhu.html</loc><lastmod>2026-09-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/post-2026-09-25-token-relay-station.html</loc><lastmod>2026-09-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/post-2026-09-23-jiancai-shichang-2026.html</loc><lastmod>2026-09-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/post-2026-09-20-shqiu-coffee.html</loc><lastmod>2026-09-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/post-2026-09-22-beijing-daily-geo.html</loc><lastmod>2026-09-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/post-2026-09-22-hk-ai-export-boom-2026.html</loc><lastmod>2026-09-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/post-2026-09-22-friendship-first-order-2009.html</loc><lastmod>2026-09-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/post-2026-09-21-moon-germany.html</loc><lastmod>2026-09-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/post-2026-09-20-doubao-gui.html</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/post-2026-09-19-ai-phone-war.html</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/post-2026-09-17-ai-war.html</loc><lastmod>2026-09-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/post-2026-09-17-saas.html</loc><lastmod>2026-09-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/post-2026-09-17-solar.html</loc><lastmod>2026-09-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/post-2026-09-17-memory.html</loc><lastmod>2026-09-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/post-2026-09-16-mountain-electronics.html</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/post-2026-09-16-b300.html</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/post-2026-09-16-gzport.html</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/post-2026-09-15-teapot.html</loc><lastmod>2026-09-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/post-2026-09-15-flow.html</loc><lastmod>2026-09-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/post-2026-09-15-bus6333.html</loc><lastmod>2026-09-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/post-2026-09-14-xianyu.html</loc><lastmod>2026-09-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/post-2026-09-12-wenzhou.html</loc><lastmod>2026-09-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/post-2026-09-12-echo.html</loc><lastmod>2026-09-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/post-2026-09-11-fank.html</loc><lastmod>2026-09-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/post-2026-09-11-africa.html</loc><lastmod>2026-09-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/post-2026-09-04-222803-turkey.html</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/post-2026-09-04-haixuan.html</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.glomarket.online/post-2026-09-04-patent.html</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
