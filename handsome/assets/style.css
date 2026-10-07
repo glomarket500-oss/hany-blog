@@ -24,13 +24,17 @@ body.lang-cn .t-cn.block{display:block}
 body.lang-cn .t-en.block{display:none}
 
 /* ---------- nav ---------- */
+/* 導覽有 10 個項目（加入工匠、工作室、直播之後）。--nav-fs / --nav-pad 係為此降下來的，
+   目的：在 1120px 容器、品牌 + 語言鍵同行的情況下仍然單行不折行，無需下拉選單。 */
+:root{--nav-fs:.78rem;--nav-pad:6px}
 header.top{position:sticky;top:0;z-index:50;background:rgba(247,246,243,.88);
   backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
-.brand{font-weight:800;letter-spacing:.16em;font-size:.95rem}
+.brand{font-weight:800;letter-spacing:.16em;font-size:.95rem;white-space:nowrap}
 .brand em{font-style:normal;color:var(--accent)}
-nav.main{display:flex;gap:2px;flex-wrap:wrap;align-items:center}
-nav.main a{padding:8px 12px;border-radius:8px;font-size:.88rem;color:var(--muted);transition:.18s}
+nav.main{display:flex;gap:1px;flex-wrap:nowrap;align-items:center}
+nav.main a{padding:8px var(--nav-pad);border-radius:8px;font-size:var(--nav-fs);
+  white-space:nowrap;color:var(--muted);transition:.18s}
 nav.main a:hover{color:var(--ink);background:#fff}
 nav.main a.on{color:var(--ink);font-weight:600}
 .langbtn{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 14px;
@@ -153,7 +157,113 @@ footer a:hover{color:var(--accent)}
 .crumb{font-size:.82rem;color:var(--muted);padding-top:28px}
 .crumb a:hover{color:var(--accent)}
 @media(max-width:900px){.g3,.g4,.g2{grid-template-columns:1fr 1fr}.fgrid{grid-template-columns:1fr 1fr}}
+/* 10 個導覽項目：窄桌面再收一級，仍然保持單行 */
+@media(max-width:1180px){:root{--nav-fs:.74rem;--nav-pad:5px}}
+@media(max-width:1040px){:root{--nav-fs:.7rem;--nav-pad:4px}}
+@media(max-width:880px){header.top .brand{display:none}}
 @media(max-width:640px){.g3,.g4,.g2,.fgrid{grid-template-columns:1fr}
-  nav.main{width:100%;order:3;justify-content:flex-start}
+  nav.main{width:100%;order:3;justify-content:flex-start;flex-wrap:wrap;gap:2px}
   .top .wrap{height:auto;padding-top:12px;padding-bottom:12px;flex-wrap:wrap}
   h1{font-size:1.85rem}}
+
+/* ---------- 材料帶 / 工匠帶（首頁）---------- */
+.strip{display:grid;gap:18px}
+.strip.s3{grid-template-columns:repeat(3,1fr)}
+.strip.s4{grid-template-columns:repeat(4,1fr)}
+.strip-card{display:flex;flex-direction:column;gap:8px;padding:20px;background:var(--surface);
+  border:1px solid var(--line);border-radius:var(--radius);transition:.22s}
+.strip-card:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+.strip-card h3{font-size:1rem}
+.strip-card .spec{font-size:.82rem;letter-spacing:.04em;color:var(--accent);font-weight:650;
+  font-variant-numeric:tabular-nums}
+.strip-card p{font-size:.86rem;color:var(--muted);margin:0}
+.strip-card .lim{font-size:.82rem;color:var(--muted);border-top:1px dashed var(--line);padding-top:8px}
+.strip-card .lim b{color:var(--ink);font-weight:600}
+.strip-links{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;font-size:.84rem}
+.strip-links a{color:var(--accent);border-bottom:1px solid transparent}
+.strip-links a:hover{border-bottom-color:var(--accent)}
+.maker-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.maker-thumb{display:flex;flex-direction:column;gap:10px}
+.maker-thumb img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:var(--radius);
+  background:#eceae5;filter:saturate(.92)}
+.maker-thumb .who{font-size:.9rem;font-weight:600}
+.maker-thumb .what{font-size:.78rem;color:var(--muted);letter-spacing:.02em}
+.ph-note{background:var(--surface);border:1px dashed var(--accent);border-radius:var(--radius);
+  padding:20px 22px;font-size:.9rem;color:var(--muted);margin-bottom:28px}
+.ph-note strong{color:var(--ink)}
+
+/* ---------- 論證段落 ---------- */
+.arg{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px 24px;margin-top:20px}
+.arg h3{font-size:1.02rem}
+.arg p{color:var(--muted);font-size:.92rem;margin-top:8px;max-width:72ch}
+.arg p .fail{color:#b91c1c;font-weight:600}
+.arg p .win{color:#15803d;font-weight:600}
+
+/* ---------- 工匠卡 ---------- */
+.maker-card{display:flex;flex-direction:column;background:var(--surface);
+  border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.22s}
+.maker-card:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+.maker-card img{width:100%;aspect-ratio:1/1;object-fit:cover;background:#eceae5;
+  filter:saturate(.92)}
+.maker-card .body{padding:20px 20px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
+.maker-card .who{font-size:1.02rem;font-weight:700}
+.maker-card .where{font-size:.82rem;color:var(--accent);font-weight:650;letter-spacing:.03em}
+.maker-card .disc{font-size:.86rem;color:var(--ink);font-weight:600}
+.maker-card p.intro{font-size:.88rem;color:var(--muted)}
+.maker-card .slots{list-style:none;margin-top:4px;border-top:1px dashed var(--line);
+  padding-top:10px;display:grid;gap:6px}
+.maker-card .slots li{display:flex;gap:10px;font-size:.82rem;color:var(--muted)}
+.maker-card .slots li span:first-child{min-width:104px;color:var(--ink)}
+.maker-card .slots li span:last-child{border-bottom:1px dotted var(--line);flex:1}
+
+/* ---------- 工作室分區 ---------- */
+.region{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+  background:var(--surface);margin-bottom:20px}
+.region-h{display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+  padding:14px 20px;background:#fbfaf8;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.region-h h3{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.region-h span{font-size:.78rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.region table{width:100%}
+.pill{display:inline-block;padding:2px 10px;border-radius:999px;font-size:.74rem;
+  font-weight:650;letter-spacing:.04em;white-space:nowrap}
+.pill.op{background:#e7f6ec;color:#15803d;border:1px solid #bfe6cc}
+.pill.prep{background:var(--accent-soft);color:#9a3412;border:1px solid #f2d3c2}
+.pill.plan{background:#f1f0ec;color:var(--muted);border:1px solid var(--line)}
+@media(max-width:900px){.strip.s3,.strip.s4{grid-template-columns:1fr 1fr}
+  .maker-strip{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.strip.s3,.strip.s4,.maker-strip{grid-template-columns:1fr}}
+
+/* ---------- 直播 / 短片 ---------- */
+.slot-box{position:relative;aspect-ratio:16/9;width:100%;border-radius:var(--radius);
+  overflow:hidden;background:#e9e7e2;border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center}
+.slot-box iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.slot-box.is-empty{border-style:dashed;background:#f2f0ec}
+.slot-mini{position:relative;aspect-ratio:16/9;width:100%;border-radius:var(--radius-sm);
+  overflow:hidden;background:#f2f0ec;border:1px dashed var(--line);
+  display:flex;align-items:center;justify-content:center}
+.slot-mini iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.slot-state{font-size:.78rem;font-weight:650;letter-spacing:.04em;color:var(--ink);
+  display:flex;align-items:center;justify-content:center;gap:7px;text-align:center;padding:0 10px}
+.slot-dot{width:7px;height:7px;border-radius:50%;background:#b9b5ad;flex:none}
+.slot-sub{font-size:.72rem;color:var(--muted);text-align:center;margin-top:4px;padding:0 10px}
+.slot-mini .slot-sub{font-size:.68rem}
+.slot-mini .slot-state{font-size:.7rem}
+.slot-cap{display:flex;flex-direction:column;gap:2px;margin-top:14px}
+.slot-cap .who{font-size:.95rem;font-weight:650}
+.slot-cap .what{font-size:.82rem;color:var(--muted)}
+.slot-cap .when{font-size:.78rem;color:var(--accent);font-weight:600;
+  font-variant-numeric:tabular-nums}
+.clips{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.clip{display:flex;flex-direction:column}
+.clip video,.clip .clip-empty{width:100%;aspect-ratio:16/9;border-radius:var(--radius);
+  background:#e9e7e2;object-fit:cover;border:1px solid var(--line)}
+.clip .clip-empty{display:flex;align-items:center;justify-content:center;
+  border-style:dashed;background:#f2f0ec;font-size:.78rem;color:var(--muted);
+  text-align:center;padding:0 12px;font-weight:600;letter-spacing:.04em}
+.clip .who{font-size:.9rem;font-weight:600;margin-top:10px}
+.clip .what{font-size:.8rem;color:var(--muted)}
+.tbl td.tz{font-variant-numeric:tabular-nums;white-space:nowrap}
+@media(max-width:900px){.clips{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.clips{grid-template-columns:1fr}}
