@@ -24,7 +24,7 @@ body.lang-cn .t-cn.block{display:block}
 body.lang-cn .t-en.block{display:none}
 
 /* ---------- nav ---------- */
-/* 導覽有 10 個項目（加入工匠、工作室、直播之後）。--nav-fs / --nav-pad 係為此降下來的，
+/* 導覽有 7 個項目。--nav-fs / --nav-pad 係為此降下來的，
    目的：在 1120px 容器、品牌 + 語言鍵同行的情況下仍然單行不折行，無需下拉選單。 */
 :root{--nav-fs:.78rem;--nav-pad:6px}
 header.top{position:sticky;top:0;z-index:50;background:rgba(247,246,243,.88);
@@ -245,7 +245,7 @@ footer a:hover{color:var(--accent)}
 .maker-card .slots li:last-child span:last-child{color:var(--accent);font-weight:650;
   border-bottom:0}
 
-/* ---------- 工作室分區 ---------- */
+/* ---------- 分區（未使用；保留以便日後復用）---------- */
 .region{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
   background:var(--surface);margin-bottom:20px}
 .region-h{display:flex;justify-content:space-between;align-items:baseline;gap:16px;
@@ -284,8 +284,8 @@ footer a:hover{color:var(--accent)}
 .slot-cap .when{font-size:.78rem;color:var(--accent);font-weight:600;
   font-variant-numeric:tabular-nums}
 
-/* ---------- 緊湊合夥人卡 / 工作室卡（2026-10 版面改版）----------
-   創辦人指示：呢一欄同工作室嗰邊資訊太多，要做細。
+/* ---------- 緊湊合夥人卡（2026-10 版面改版）----------
+   創辦人指示：師傅呢一欄資訊太多，要做細。
    原則：一屏睇晒 → 詳情收進卡內 <details>，一按即見。
    頭像顯示 ~72–96px（原圖 160px = 2× retina），所以設硬上限唔會撐大。 */
 .maker-grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
@@ -333,7 +333,7 @@ footer a:hover{color:var(--accent)}
 .region{border:0;background:transparent;margin-bottom:26px}
 .region-h{background:transparent;border-bottom:1px solid var(--line)}
 
-/* ---------- 工作室卡縮圖（2026-10 創辦人指示：加濃縮圖）----------
+/* ---------- 卡縮圖（未使用；保留以便日後復用）----------
    縮圖只係一個細磚，唔係主視覺：3:2、中央裁切、唔會撐高張卡。
    合夥人肖像用圓形，站內配圖用方角，字磚用最克制嘅排版處理 ——
    三種都佔同一個位、同一個高度，所以格仔睇落一致。 */
