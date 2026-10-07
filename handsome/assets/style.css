@@ -184,7 +184,14 @@ footer a:hover{color:var(--accent)}
 .strip-links a:hover{border-bottom-color:var(--accent)}
 .maker-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .maker-thumb{display:flex;flex-direction:column;gap:10px}
-.maker-thumb img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:var(--radius);
+/* 肖像原圖只有 215–384px（見 scripts/make_partners.py，永不放大），
+   而 `make_partners.py` 已經把每張肖像切成圓形並補上卡片底色，
+   所以呢處只負責尺寸：唔可以用 width:100% 撐大，
+   設 max-width 等於原圖上限，窄螢幕先縮、闊螢幕維持原生尺寸置中。
+   border-radius:50% 係第二重保證——就算日後換咗方形新圖，
+   圓形都會一致（創辦人指示：所有肖像同第一張一樣，一個圓形）。 */
+.maker-thumb img{width:auto;max-width:min(100%,384px);height:auto;margin:0 auto;
+  aspect-ratio:1/1;object-fit:cover;border-radius:50%;
   background:#eceae5;filter:saturate(.92)}
 .maker-thumb .who{font-size:.9rem;font-weight:600}
 .maker-thumb .what{font-size:.78rem;color:var(--muted);letter-spacing:.02em}
@@ -204,7 +211,8 @@ footer a:hover{color:var(--accent)}
 .maker-card{display:flex;flex-direction:column;background:var(--surface);
   border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.22s}
 .maker-card:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
-.maker-card img{width:100%;aspect-ratio:1/1;object-fit:cover;background:#eceae5;
+.maker-card img{width:auto;max-width:min(100%,384px);height:auto;margin:0 auto;display:block;
+  aspect-ratio:1/1;object-fit:cover;border-radius:50%;background:#eceae5;
   filter:saturate(.92)}
 .maker-card .body{padding:20px 20px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
 .maker-card .who{font-size:1.02rem;font-weight:700}
@@ -225,6 +233,7 @@ footer a:hover{color:var(--accent)}
 .tag .tbcmark{font-size:.64rem;font-weight:700;color:var(--accent);
   letter-spacing:.08em;text-transform:uppercase}
 .tag.on{background:#e7f6ec;color:#15803d;border-color:#bfe6cc}
+.tag.off{background:#f1f0ec;color:var(--muted);border-style:dashed}
 .tag.tbc{border-style:dashed}
 .maker-card .countrylist{border-top:1px dashed var(--line);padding-top:10px;margin-top:4px;
   display:flex;flex-direction:column;gap:2px;font-size:.78rem;color:var(--muted)}
