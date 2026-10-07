@@ -66,7 +66,7 @@ header h1 .en { font-size:1.8rem; display:block; margin-top:8px; }
 .section-alt { background:#fff; }
 .section-title { font-size:1.6rem; margin-bottom:8px; }
 .section-sub { color:#888; font-size:0.95rem; margin-bottom:40px; }
-.cards { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:24px; }
+
 .card { background:#fff; border-radius:12px; padding:32px; border:1px solid #e8e8ed; transition:box-shadow 0.3s, transform 0.2s; }
 .card:hover { box-shadow:0 8px 30px rgba(0,0,0,0.06); transform:translateY(-2px); }
 .card-icon { font-size:1.8rem; margin-bottom:16px; }
@@ -144,6 +144,24 @@ img { max-width: 100%; height: auto; }
       .nav-links { flex-wrap: nowrap; }
       .nav-links > a, .nav-links .nav-parent, .nav-links .lang-toggle {
         white-space: nowrap; flex: 0 0 auto; }
+    }
+
+    /* ===== 我做緊乜：4 張卡一排（2026-10-07） ===== */
+    .cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px; }
+    .card { padding: 24px 20px; }
+    .card-icon { font-size: 1.6rem; margin-bottom: 12px; }
+    .card h3 { font-size: 1rem; margin-bottom: 10px; line-height: 1.4; }
+    .card p { font-size: .85rem; line-height: 1.68; }
+    .card .tag { font-size: .72rem; padding: 3px 10px; margin-top: 14px; }
+    @media (max-width: 1000px) {
+      .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+      .card { padding: 28px 24px; }
+      .card h3 { font-size: 1.05rem; }
+      .card p { font-size: .88rem; }
+    }
+    @media (max-width: 620px) {
+      .cards { grid-template-columns: 1fr; }
     }
 </style>
 </head>
