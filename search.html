@@ -365,5 +365,71 @@ function toggleNavPanel(btn){
   }
 }
 </script>
+<script>
+var IDX = null;
+
+function loadIndex(){
+  fetch('/search-index.json')
+    .then(function(r){ if(!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(function(j){
+      IDX = j;
+      var q = document.getElementById('q');
+      if(q) q.focus();
+      var n = document.getElementById('count');
+      if(n) n.textContent = '共 ' + j.length + ' 篇文章可搜尋';
+      var m = location.search.match(/[?&]q=([^&]*)/);
+      if(m && m[1] && q){ q.value = decodeURIComponent(m[1].replace(/\+/g,' ')); run(); }
+    })
+    .catch(function(e){
+      var n = document.getElementById('count');
+      if(n) n.textContent = '索引載入失敗（' + e.message + '）。請重新載入頁面，或直接去文章列表。';
+    });
+}
+
+function esc2(s){
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+                  .replace(/"/g,'&quot;');
+}
+
+function run(){
+  var box = document.getElementById('results');
+  if(!box) return;
+  var q = document.getElementById('q');
+  var v = q ? q.value.trim().toLowerCase() : '';
+  if(!IDX || !v){ box.innerHTML = ''; return; }
+  var terms = v.split(/\s+/).filter(Boolean);
+  var hits = IDX.map(function(a){
+    var title = (a.t || '').toLowerCase();
+    var hay = (a.t + ' ' + a.e + ' ' + a.s + ' ' + a.x + ' ' + a.b).toLowerCase();
+    var score = 0;
+    terms.forEach(function(term){
+      if(title.indexOf(term) >= 0) score += 10;
+      else if(hay.indexOf(term) >= 0) score += 1;
+    });
+    return { a: a, s: score };
+  }).filter(function(h){ return h.s > 0; })
+    .sort(function(x, y){ return y.s - x.s; })
+    .slice(0, 40);
+
+  if(!hits.length){
+    box.innerHTML = '<p style="color:var(--text-muted);padding:8px 0">冇搵到相關文章，試下其他關鍵字。</p>';
+    return;
+  }
+  box.innerHTML = hits.map(function(h){
+    var a = h.a;
+    return '<article class="post-card">'
+      + '<div class="post-meta-top">'
+      + (a.d ? '<span class="post-date">' + esc2(a.d) + '</span>' : '')
+      + (a.s ? '<span class="post-tag">' + esc2(a.s) + '</span>' : '')
+      + '</div>'
+      + '<h3><a href="' + esc2(a.f) + '">' + esc2(a.t) + '</a></h3>'
+      + (a.x ? '<p class="post-excerpt">' + esc2(a.x) + '</p>' : '')
+      + '<a class="read-more" href="' + esc2(a.f) + '">閱讀全文 →</a>'
+      + '</article>';
+  }).join('');
+}
+
+loadIndex();
+</script>
 </body>
 </html>
