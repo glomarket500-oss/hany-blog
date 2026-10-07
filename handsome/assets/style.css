@@ -217,6 +217,23 @@ footer a:hover{color:var(--accent)}
 .maker-card .slots li span:first-child{min-width:104px;color:var(--ink)}
 .maker-card .slots li span:last-child{border-bottom:1px dotted var(--line);flex:1}
 
+/* ---------- 合夥人卡：雙身份標籤 ---------- */
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:2px 0 2px}
+.tag{display:inline-flex;align-items:baseline;gap:5px;padding:3px 10px;border-radius:999px;
+  font-size:.72rem;font-weight:650;letter-spacing:.03em;border:1px solid var(--line);
+  background:#fbfaf8;color:var(--muted)}
+.tag .tbcmark{font-size:.64rem;font-weight:700;color:var(--accent);
+  letter-spacing:.08em;text-transform:uppercase}
+.tag.on{background:#e7f6ec;color:#15803d;border-color:#bfe6cc}
+.tag.tbc{border-style:dashed}
+.maker-card .countrylist{border-top:1px dashed var(--line);padding-top:10px;margin-top:4px;
+  display:flex;flex-direction:column;gap:2px;font-size:.78rem;color:var(--muted)}
+.maker-card .countrylist span{font-size:.72rem;letter-spacing:.04em;text-transform:uppercase}
+.maker-card .countrylist strong{font-size:.82rem;color:var(--ink);font-weight:650}
+.maker-card .slots li span:first-child{min-width:120px}
+.maker-card .slots li:last-child span:last-child{color:var(--accent);font-weight:650;
+  border-bottom:0}
+
 /* ---------- 工作室分區 ---------- */
 .region{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
   background:var(--surface);margin-bottom:20px}
