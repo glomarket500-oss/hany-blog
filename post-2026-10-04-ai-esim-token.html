@@ -93,7 +93,9 @@ img { max-width: 100%; height: auto; }
 
 <body>
 
-<nav><div class="container"><a href="/" class="logo">鄭哥<span>Hany</span></a><div class="nav-links">
+<nav><div class="container"><a href="/" class="logo">鄭哥<span>Hany</span></a><button class="hamburger" type="button" aria-label="選單" aria-expanded="false" onclick="var w=document.getElementById('navWrapper');var o=w.classList.toggle('open');this.setAttribute('aria-expanded',o?'true':'false');">☰</button>
+<div class="nav-wrapper" id="navWrapper">
+  <div class="nav-links">
 
           <a href="index.html"><span class="cn">首頁</span><span class="en">Home</span></a>
 
@@ -110,7 +112,8 @@ img { max-width: 100%; height: auto; }
 
           <button class="lang-btn" onclick="toggleLang()">EN</button>
 
-        </div></div><div class="nav-panels" id="navPanels" data-open="">
+        </div>
+</div></div><div class="nav-panels" id="navPanels" data-open="">
   <div class="nav-panel" data-id="articles" style="display:none">
     <div class="inner">
       <div class="panel-title"><span class="cn">文章</span><span class="en">Articles</span></div>

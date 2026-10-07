@@ -247,7 +247,9 @@
 
     <a href="index.html" class="logo">鄭哥<span>/ Hany</span></a>
 
-    <div class="nav-links">
+    <button class="hamburger" type="button" aria-label="選單" aria-expanded="false" onclick="var w=document.getElementById('navWrapper');var o=w.classList.toggle('open');this.setAttribute('aria-expanded',o?'true':'false');">☰</button>
+    <div class="nav-wrapper" id="navWrapper">
+      <div class="nav-links">
 
           <a href="index.html"><span class="cn">首頁</span><span class="en">Home</span></a>
 
@@ -265,6 +267,7 @@
           <button class="lang-btn" onclick="toggleLang()" id="langBtn">EN</button>
 
         </div>
+    </div>
 
   </div>
 

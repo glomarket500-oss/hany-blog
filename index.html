@@ -176,7 +176,9 @@ img { max-width: 100%; height: auto; }
 
       <div class="logo">鄭哥 / Hany</div>
 
-      <div class="nav-links">
+      <button class="hamburger" type="button" aria-label="選單" aria-expanded="false" onclick="var w=document.getElementById('navWrapper');var o=w.classList.toggle('open');this.setAttribute('aria-expanded',o?'true':'false');">☰</button>
+      <div class="nav-wrapper" id="navWrapper">
+        <div class="nav-links">
 
           <a href="index.html" class="active"><span class="cn">首頁</span><span class="en">Home</span></a>
 
@@ -194,6 +196,7 @@ img { max-width: 100%; height: auto; }
           <button class="lang-toggle" onclick="toggleLang()" id="langBtn">EN</button>
 
         </div>
+      </div>
 
     </div>
 

@@ -182,7 +182,9 @@ body.show-en .cn-inline { display:none; }
 
       <div class="logo">鄭哥 / Hany</div>
 
-      <div class="nav-links">
+      <button class="hamburger" type="button" aria-label="選單" aria-expanded="false" onclick="var w=document.getElementById('navWrapper');var o=w.classList.toggle('open');this.setAttribute('aria-expanded',o?'true':'false');">☰</button>
+      <div class="nav-wrapper" id="navWrapper">
+        <div class="nav-links">
 
           <a href="index.html"><span class="cn">首頁</span><span class="en">Home</span></a>
 
@@ -200,6 +202,7 @@ body.show-en .cn-inline { display:none; }
           <button class="lang-toggle" onclick="toggleLang()" id="langBtn">EN</button>
 
         </div>
+      </div>
 
     </div>
 
@@ -335,7 +338,7 @@ body.show-en .cn-inline { display:none; }
 
 <p><strong>今日嘅現狀</strong>：</p>
 
-<table>
+<div class="table-scroll"><table>
 
 <thead><tr><th>現象</th><th>描述</th></tr></thead>
 
@@ -353,7 +356,7 @@ body.show-en .cn-inline { display:none; }
 
 </tbody>
 
-</table>
+</table></div>
 
 <blockquote>
 
@@ -553,7 +556,7 @@ WhatsApp（美國）：+1 (562) 550-9968<br>
 
 <p><strong>Today's reality</strong>:</p>
 
-<table>
+<div class="table-scroll"><table>
 
 <thead><tr><th>Phenomenon</th><th>Description</th></tr></thead>
 
@@ -571,7 +574,7 @@ WhatsApp（美國）：+1 (562) 550-9968<br>
 
 </tbody>
 
-</table>
+</table></div>
 
 <blockquote>
 

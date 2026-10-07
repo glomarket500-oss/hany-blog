@@ -176,7 +176,9 @@ body.show-en .cn-inline { display:none; }
 
       <div class="logo">鄭哥 / Hany</div>
 
-      <div class="nav-links">
+      <button class="hamburger" type="button" aria-label="選單" aria-expanded="false" onclick="var w=document.getElementById('navWrapper');var o=w.classList.toggle('open');this.setAttribute('aria-expanded',o?'true':'false');">☰</button>
+      <div class="nav-wrapper" id="navWrapper">
+        <div class="nav-links">
 
           <a href="index.html"><span class="cn">首頁</span><span class="en">Home</span></a>
 
@@ -194,6 +196,7 @@ body.show-en .cn-inline { display:none; }
           <button class="lang-toggle" onclick="toggleLang()" id="langBtn">EN</button>
 
         </div>
+      </div>
 
     </div>
 
@@ -285,7 +288,7 @@ body.show-en .cn-inline { display:none; }
 
 <h3>數據</h3>
 
-<table class="data-table">
+<div class="table-scroll"><table class="data-table">
 
 <thead><tr>
 
@@ -323,11 +326,11 @@ body.show-en .cn-inline { display:none; }
 
 </tbody>
 
-</table>
+</table></div>
 
 <h3>價格</h3>
 
-<table class="data-table">
+<div class="table-scroll"><table class="data-table">
 
 <thead><tr>
 
@@ -365,7 +368,7 @@ body.show-en .cn-inline { display:none; }
 
 </tbody>
 
-</table>
+</table></div>
 
 <h3>賣點</h3>
 
@@ -461,7 +464,7 @@ body.show-en .cn-inline { display:none; }
 
 <h3>豆包嘅優勢</h3>
 
-<table class="data-table">
+<div class="table-scroll"><table class="data-table">
 
 <thead><tr>
 
@@ -537,7 +540,7 @@ body.show-en .cn-inline { display:none; }
 
 </tbody>
 
-</table>
+</table></div>
 
 <h3>「隔空打破防」</h3>
 
@@ -687,7 +690,7 @@ Android 陣營全部接入
 
 <h3>2026 年 5 月</h3>
 
-<table class="data-table">
+<div class="table-scroll"><table class="data-table">
 
 <thead><tr>
 
@@ -733,7 +736,7 @@ Android 陣營全部接入
 
 </tbody>
 
-</table>
+</table></div>
 
 <h3>關鍵洞察</h3>
 
@@ -753,7 +756,7 @@ Android 陣營全部接入
 
 <h2>七、IDC 預測</h2>
 
-<table class="data-table">
+<div class="table-scroll"><table class="data-table">
 
 <thead><tr>
 
@@ -791,7 +794,7 @@ Android 陣營全部接入
 
 </tbody>
 
-</table>
+</table></div>
 
 <blockquote><strong>「2026 年系 AI 手機嘅爆發年，超過一半嘅新手機都系 AI 手機。」</strong></blockquote>
 
@@ -933,7 +936,7 @@ Android 陣營全部接入
 
 <h3>判斷 2：合作模式 vs 自研模式</h3>
 
-<table class="data-table">
+<div class="table-scroll"><table class="data-table">
 
 <thead><tr>
 
@@ -969,7 +972,7 @@ Android 陣營全部接入
 
 </tbody>
 
-</table>
+</table></div>
 
 <p><strong>70 後嘅機會</strong>：</p>
 
@@ -1119,7 +1122,7 @@ AI 終端嘅「iPhone 時刻」
 
 
 
-<table class="data-table">
+<div class="table-scroll"><table class="data-table">
 
 <thead><tr><th>Metric</th><th>Value</th></tr></thead>
 
@@ -1133,7 +1136,7 @@ AI 終端嘅「iPhone 時刻」
 
 </tbody>
 
-</table>
+</table></div>
 
 
 
@@ -1141,7 +1144,7 @@ AI 終端嘅「iPhone 時刻」
 
 
 
-<table class="data-table">
+<div class="table-scroll"><table class="data-table">
 
 <thead><tr><th>Version</th><th>Price</th></tr></thead>
 
@@ -1155,7 +1158,7 @@ AI 終端嘅「iPhone 時刻」
 
 </tbody>
 
-</table>
+</table></div>
 
 
 
@@ -1289,7 +1292,7 @@ AI 終端嘅「iPhone 時刻」
 
 
 
-<table class="data-table">
+<div class="table-scroll"><table class="data-table">
 
 <thead><tr><th>Dimension</th><th>Apple</th><th>Doubao</th></tr></thead>
 
@@ -1309,7 +1312,7 @@ AI 終端嘅「iPhone 時刻」
 
 </tbody>
 
-</table>
+</table></div>
 
 
 
@@ -1513,7 +1516,7 @@ Apple's walled garden hit "at range"</code></pre>
 
 
 
-<table class="data-table">
+<div class="table-scroll"><table class="data-table">
 
 <thead><tr><th>Metric</th><th>OEM AI Apps</th><th>Native AI Apps</th></tr></thead>
 
@@ -1527,7 +1530,7 @@ Apple's walled garden hit "at range"</code></pre>
 
 </tbody>
 
-</table>
+</table></div>
 
 
 
@@ -1559,7 +1562,7 @@ Apple's walled garden hit "at range"</code></pre>
 
 
 
-<table class="data-table">
+<div class="table-scroll"><table class="data-table">
 
 <thead><tr><th>Metric</th><th>2026</th></tr></thead>
 
@@ -1573,7 +1576,7 @@ Apple's walled garden hit "at range"</code></pre>
 
 </tbody>
 
-</table>
+</table></div>
 
 
 
@@ -1777,7 +1780,7 @@ Apple's walled garden hit "at range"</code></pre>
 
 
 
-<table class="data-table">
+<div class="table-scroll"><table class="data-table">
 
 <thead><tr><th>Model</th><th>Rep</th><th>Future</th></tr></thead>
 
@@ -1789,7 +1792,7 @@ Apple's walled garden hit "at range"</code></pre>
 
 </tbody>
 
-</table>
+</table></div>
 
 
 

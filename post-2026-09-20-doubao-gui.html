@@ -182,7 +182,9 @@ article h2.post-title-en { font-size:1.8rem; margin-bottom:16px; line-height:1.4
 
       <div class="logo">鄭哥 / Hany</div>
 
-      <div class="nav-links">
+      <button class="hamburger" type="button" aria-label="選單" aria-expanded="false" onclick="var w=document.getElementById('navWrapper');var o=w.classList.toggle('open');this.setAttribute('aria-expanded',o?'true':'false');">☰</button>
+      <div class="nav-wrapper" id="navWrapper">
+        <div class="nav-links">
 
           <a href="index.html"><span class="cn">首頁</span><span class="en">Home</span></a>
 
@@ -200,6 +202,7 @@ article h2.post-title-en { font-size:1.8rem; margin-bottom:16px; line-height:1.4
           <button class="lang-toggle" onclick="toggleLang()" id="langBtn">EN</button>
 
         </div>
+      </div>
 
     </div>
 
@@ -291,7 +294,7 @@ article h2.post-title-en { font-size:1.8rem; margin-bottom:16px; line-height:1.4
 
 <h3>時間表</h3>
 
-<table class="data-table">
+<div class="table-scroll"><table class="data-table">
 
 <thead><tr><th>時間</th><th>事件</th></tr></thead>
 
@@ -313,7 +316,7 @@ article h2.post-title-en { font-size:1.8rem; margin-bottom:16px; line-height:1.4
 
 </tbody>
 
-</table>
+</table></div>
 
 
 
@@ -359,7 +362,7 @@ article h2.post-title-en { font-size:1.8rem; margin-bottom:16px; line-height:1.4
 
 <h3>「兩條腿」嘅技術路線</h3>
 
-<table class="data-table">
+<div class="table-scroll"><table class="data-table">
 
 <thead><tr><th>路線</th><th>現狀</th><th>適用</th></tr></thead>
 
@@ -371,7 +374,7 @@ article h2.post-title-en { font-size:1.8rem; margin-bottom:16px; line-height:1.4
 
 </tbody>
 
-</table>
+</table></div>
 
 
 
@@ -437,7 +440,7 @@ GUI Agent 兜底 = 解決 API 適配不足
 
 <h3>協議核心規則</h3>
 
-<table class="data-table">
+<div class="table-scroll"><table class="data-table">
 
 <thead><tr><th>規則</th><th>說明</th></tr></thead>
 
@@ -453,7 +456,7 @@ GUI Agent 兜底 = 解決 API 適配不足
 
 </tbody>
 
-</table>
+</table></div>
 
 
 
@@ -501,7 +504,7 @@ GUI Agent 兜底 = 解決 API 適配不足
 
 <h3>「AI 辦公養家」嘅思路</h3>
 
-<table class="data-table">
+<div class="table-scroll"><table class="data-table">
 
 <thead><tr><th>維度</th><th>策略</th></tr></thead>
 
@@ -515,13 +518,13 @@ GUI Agent 兜底 = 解決 API 適配不足
 
 </tbody>
 
-</table>
+</table></div>
 
 
 
 <h3>豆包專業版（2026.6）</h3>
 
-<table class="data-table">
+<div class="table-scroll"><table class="data-table">
 
 <thead><tr><th>套餐</th><th>價格（月）</th></tr></thead>
 
@@ -535,7 +538,7 @@ GUI Agent 兜底 = 解決 API 適配不足
 
 </tbody>
 
-</table>
+</table></div>
 
 
 
@@ -573,7 +576,7 @@ Agent 能力（GUI 兜底）
 
 <h3>AI 手機標準（GB/Z 177—2026）</h3>
 
-<table class="data-table">
+<div class="table-scroll"><table class="data-table">
 
 <thead><tr><th>等級</th><th>描述</th></tr></thead>
 
@@ -589,7 +592,7 @@ Agent 能力（GUI 兜底）
 
 </tbody>
 
-</table>
+</table></div>
 
 <p><strong>發布部門</strong>：工信部、商務部、市場監管總局</p>
 
@@ -597,7 +600,7 @@ Agent 能力（GUI 兜底）
 
 <h3>「全球首款」三家</h3>
 
-<table class="data-table">
+<div class="table-scroll"><table class="data-table">
 
 <thead><tr><th>公司</th><th>產品</th></tr></thead>
 
@@ -611,7 +614,7 @@ Agent 能力（GUI 兜底）
 
 </tbody>
 
-</table>
+</table></div>
 
 <blockquote><strong>「三個『全球首款』同時出現，恰恰說明這個賽道，誰都能定義首款。但也說明了，行業仍處於早期。」</strong></blockquote>
 
@@ -619,7 +622,7 @@ Agent 能力（GUI 兜底）
 
 <h3>Counterpoint + IDC 預測</h3>
 
-<table class="data-table">
+<div class="table-scroll"><table class="data-table">
 
 <thead><tr><th>機構</th><th>預測</th></tr></thead>
 
@@ -631,7 +634,7 @@ Agent 能力（GUI 兜底）
 
 </tbody>
 
-</table>
+</table></div>
 
 <blockquote><strong>業內普遍將 2026 年視為「智能體手機元年」</strong></blockquote>
 
@@ -693,7 +696,7 @@ App 選擇按標準開放能力
 
 <h3>超級 App 嘅反擊</h3>
 
-<table class="data-table">
+<div class="table-scroll"><table class="data-table">
 
 <thead><tr><th>公司</th><th>產品</th></tr></thead>
 
@@ -705,7 +708,7 @@ App 選擇按標準開放能力
 
 </tbody>
 
-</table>
+</table></div>
 
 <p><strong>目的</strong>：</p>
 
@@ -723,7 +726,7 @@ App 選擇按標準開放能力
 
 <h2>七、用戶數據（QuestMobile 2026.6）</h2>
 
-<table class="data-table">
+<div class="table-scroll"><table class="data-table">
 
 <thead><tr><th>維度</th><th>終端廠商 AI 應用</th><th>AI 原生 App</th></tr></thead>
 
@@ -739,7 +742,7 @@ App 選擇按標準開放能力
 
 </tbody>
 
-</table>
+</table></div>
 
 
 
@@ -1069,7 +1072,7 @@ WhatsApp: +852 6641 7912<br>
 
 <h3>Timeline</h3>
 
-<table class="data-table">
+<div class="table-scroll"><table class="data-table">
 
 <thead><tr><th>Date</th><th>Event</th></tr></thead>
 
@@ -1091,7 +1094,7 @@ WhatsApp: +852 6641 7912<br>
 
 </tbody>
 
-</table>
+</table></div>
 
 
 
@@ -1137,7 +1140,7 @@ Official sale
 
 <h3>The "Two-Legged" Path</h3>
 
-<table class="data-table">
+<div class="table-scroll"><table class="data-table">
 
 <thead><tr><th>Track</th><th>State</th><th>Use</th></tr></thead>
 
@@ -1149,7 +1152,7 @@ Official sale
 
 </tbody>
 
-</table>
+</table></div>
 
 
 
@@ -1215,7 +1218,7 @@ GUI Agent fallback = solves the API coverage gap
 
 <h3>Core Rules</h3>
 
-<table class="data-table">
+<div class="table-scroll"><table class="data-table">
 
 <thead><tr><th>Rule</th><th>Detail</th></tr></thead>
 
@@ -1231,7 +1234,7 @@ GUI Agent fallback = solves the API coverage gap
 
 </tbody>
 
-</table>
+</table></div>
 
 
 
@@ -1279,7 +1282,7 @@ GUI Agent fallback = solves the API coverage gap
 
 <h3>AI-Office Logic</h3>
 
-<table class="data-table">
+<div class="table-scroll"><table class="data-table">
 
 <thead><tr><th>Pillar</th><th>Strategy</th></tr></thead>
 
@@ -1293,13 +1296,13 @@ GUI Agent fallback = solves the API coverage gap
 
 </tbody>
 
-</table>
+</table></div>
 
 
 
 <h3>Doubao Pro (2026.6)</h3>
 
-<table class="data-table">
+<div class="table-scroll"><table class="data-table">
 
 <thead><tr><th>Tier</th><th>Price / month</th></tr></thead>
 
@@ -1313,7 +1316,7 @@ GUI Agent fallback = solves the API coverage gap
 
 </tbody>
 
-</table>
+</table></div>
 
 
 
@@ -1351,7 +1354,7 @@ Business loop closed
 
 <h3>AI Phone Standard (GB/Z 177—2026)</h3>
 
-<table class="data-table">
+<div class="table-scroll"><table class="data-table">
 
 <thead><tr><th>Level</th><th>Description</th></tr></thead>
 
@@ -1367,7 +1370,7 @@ Business loop closed
 
 </tbody>
 
-</table>
+</table></div>
 
 <p><strong>Issuers</strong>: MIIT, MOFCOM, SAMR</p>
 
@@ -1375,7 +1378,7 @@ Business loop closed
 
 <h3>Three "World-Firsts"</h3>
 
-<table class="data-table">
+<div class="table-scroll"><table class="data-table">
 
 <thead><tr><th>Company</th><th>Product</th></tr></thead>
 
@@ -1389,7 +1392,7 @@ Business loop closed
 
 </tbody>
 
-</table>
+</table></div>
 
 <blockquote><strong>"Three 'world-firsts' at once means anyone can claim first — and the industry is still early."</strong></blockquote>
 
@@ -1397,7 +1400,7 @@ Business loop closed
 
 <h3>Forecasts: Counterpoint + IDC</h3>
 
-<table class="data-table">
+<div class="table-scroll"><table class="data-table">
 
 <thead><tr><th>Source</th><th>Forecast</th></tr></thead>
 
@@ -1409,7 +1412,7 @@ Business loop closed
 
 </tbody>
 
-</table>
+</table></div>
 
 <blockquote><strong>2026 is widely seen as Year-One of agent phones</strong></blockquote>
 
@@ -1471,7 +1474,7 @@ Apps choose what to open per the standard
 
 <h3>Super-Apps Strike Back</h3>
 
-<table class="data-table">
+<div class="table-scroll"><table class="data-table">
 
 <thead><tr><th>Company</th><th>Product</th></tr></thead>
 
@@ -1483,7 +1486,7 @@ Apps choose what to open per the standard
 
 </tbody>
 
-</table>
+</table></div>
 
 <p><strong>Goal</strong>:</p>
 
@@ -1501,7 +1504,7 @@ Apps choose what to open per the standard
 
 <h2>7. User Data (QuestMobile, June 2026)</h2>
 
-<table class="data-table">
+<div class="table-scroll"><table class="data-table">
 
 <thead><tr><th>Metric</th><th>OEM AI apps</th><th>AI-native apps</th></tr></thead>
 
@@ -1517,7 +1520,7 @@ Apps choose what to open per the standard
 
 </tbody>
 
-</table>
+</table></div>
 
 
 

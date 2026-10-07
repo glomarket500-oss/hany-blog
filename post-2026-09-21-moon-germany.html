@@ -178,7 +178,9 @@ article h2.post-title-en { font-size:1.8rem; margin-bottom:16px; line-height:1.4
 
       <div class="logo">鄭哥 / Hany</div>
 
-      <div class="nav-links">
+      <button class="hamburger" type="button" aria-label="選單" aria-expanded="false" onclick="var w=document.getElementById('navWrapper');var o=w.classList.toggle('open');this.setAttribute('aria-expanded',o?'true':'false');">☰</button>
+      <div class="nav-wrapper" id="navWrapper">
+        <div class="nav-links">
 
           <a href="index.html"><span class="cn">首頁</span><span class="en">Home</span></a>
 
@@ -196,6 +198,7 @@ article h2.post-title-en { font-size:1.8rem; margin-bottom:16px; line-height:1.4
           <button class="lang-toggle" onclick="toggleLang()" id="langBtn">EN</button>
 
         </div>
+      </div>
 
     </div>
 
@@ -389,7 +392,7 @@ article h2.post-title-en { font-size:1.8rem; margin-bottom:16px; line-height:1.4
 
 <p>2026 年嘅外貿環境，唔同 2009 年。</p>
 
-<table class="data-table">
+<div class="table-scroll"><table class="data-table">
 
 <thead><tr><th>維度</th><th>2009</th><th>2026</th></tr></thead>
 
@@ -407,7 +410,7 @@ article h2.post-title-en { font-size:1.8rem; margin-bottom:16px; line-height:1.4
 
 </tbody>
 
-</table>
+</table></div>
 
 <p>工具進步咗，但「人同人嘅連結」，<strong>本質冇變</strong>。</p>
 
@@ -643,7 +646,7 @@ WhatsApp: +852 6641 7912<br>
 
 <p>The 2026 trade environment isn't 2009.</p>
 
-<table class="data-table">
+<div class="table-scroll"><table class="data-table">
 
 <thead><tr><th>Dimension</th><th>2009</th><th>2026</th></tr></thead>
 
@@ -661,7 +664,7 @@ WhatsApp: +852 6641 7912<br>
 
 </tbody>
 
-</table>
+</table></div>
 
 <p>Tools have improved, but the link between people <strong>hasn't changed</strong>.</p>
 

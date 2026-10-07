@@ -130,18 +130,55 @@
     "url": "https://www.glomarket.online/post-2026-10-07-premium-phone-case-business.html"
   }
   </script>
+<style>
+/* ===== 手機版面修復（2026-10-08）=====
+   本頁係唯一一頁冇 <link rel="stylesheet" href="/site.css"> 的文章頁
+   （它把 site.css 整份複製在 inline <style> 裡面），所以 site.css 的修復
+   到唔到呢一頁，要在這裡補一份同 site.css 完全相同的規則：
+   1) 漢堡選單（≤768px）：原本 9 個 white-space:nowrap 項目塞唔落 320px，
+      整頁會橫向捲動；2) .table-scroll：表格本身係 display:table，縮唔到
+      比 min-content 窄，要靠外層 block 自己橫向捲動。 */
+img{max-width:100%;height:auto;}
+.post-content{overflow-wrap:break-word;}
+.table-scroll{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1.2em 0;}
+.table-scroll>table{margin:0 !important;}
+.hamburger{display:none;background:none;border:none;font:inherit;font-size:1.4rem;line-height:1;cursor:pointer;padding:6px 10px;color:var(--text);border-radius:8px;}
+.hamburger:hover{background:var(--accent-light);color:var(--accent);}
+.nav-wrapper{display:flex;align-items:center;}
+nav .container{position:relative;}
+@media (max-width:768px){
+  nav .container{height:auto;min-height:56px;}
+  .hamburger{display:block;flex:0 0 auto;padding:11px 12px;min-height:44px;}
+  .nav-wrapper{display:none;position:absolute;top:100%;left:0;right:0;
+    max-height:calc(100vh - 56px);overflow-x:hidden;overflow-y:auto;
+    -webkit-overflow-scrolling:touch;
+    background:var(--bg-elevated);border-top:1px solid var(--border-light);
+    box-shadow:0 6px 18px rgba(0,0,0,.10);z-index:20;}
+  .nav-wrapper.open{display:block;}
+  nav .nav-links{flex-direction:column;align-items:stretch;gap:0;padding:6px 0;flex-wrap:nowrap;}
+  nav .nav-links>a,nav .nav-links .lang-btn{
+    display:flex;align-items:center;width:100%;min-height:48px;box-sizing:border-box;
+    padding:12px 24px;margin:0;border-radius:0;text-align:left;font-size:.95rem;
+    border-bottom:1px solid var(--border-light);white-space:nowrap;}
+  nav .nav-links>*:last-child{border-bottom:none;}
+  input,select,textarea{font-size:16px !important;}
+}
+</style>
 </head>
 <body>
 
 <nav>
   <div class="container">
     <a href="index.html" class="logo">鄭哥<span>/ Hany</span></a>
-    <div class="nav-links">
+    <button class="hamburger" type="button" aria-label="選單" aria-expanded="false" onclick="var w=document.getElementById('navWrapper');var o=w.classList.toggle('open');this.setAttribute('aria-expanded',o?'true':'false');">☰</button>
+    <div class="nav-wrapper" id="navWrapper">
+      <div class="nav-links">
       <a href="index.html"><span class="cn">首頁</span><span class="en">Home</span></a>
       <a href="about.html"><span class="cn">關於</span><span class="en">About</span></a>
       <a href="blog.html" class="active"><span class="cn">文章</span><span class="en">Articles</span></a>
       <a href="contact.html"><span class="cn">聯繫</span><span class="en">Contact</span></a>
       <button class="lang-btn" onclick="toggleLang()" id="langBtn">EN</button>
+    </div>
     </div>
   </div>
 </nav>
@@ -197,14 +234,14 @@
 
         <p>官網自己講嘅規模：<strong>3 萬幾個設計、30 萬個以上 SKU、超過 100 個合作 IP</strong>。價錢分層係呢個樣：</p>
 
-        <table>
+        <div class="table-scroll"><table>
           <tr><th><span class="cn">層級</span><span class="en">Tier</span></th><th><span class="cn">價錢</span><span class="en">Price</span></th></tr>
           <tr><td><span class="cn">入門（天貓最低）</span><span class="en">Entry (Tmall floor)</span></td><td>¥179</td></tr>
           <tr><td><span class="cn">常規主力</span><span class="en">Core range</span></td><td>¥300–500</td></tr>
           <tr><td><span class="cn">高端／材質款</span><span class="en">Premium / material</span></td><td>¥500–729</td></tr>
           <tr><td><span class="cn">聯名限量</span><span class="en">Limited collab</span></td><td><span class="cn">¥1000+（DIESEL ¥4000+，蝙蝠俠 ¥10000+）</span><span class="en">¥1,000+ (DIESEL ¥4,000+, Batman ¥10,000+)</span></td></tr>
           <tr><td><span class="cn">二手炒作</span><span class="en">Resale</span></td><td><span class="cn">村上隆「波漾」盲盒官方 ¥549 → 二手 ¥3000+</span><span class="en">Murakami blind box ¥549 official → ¥3,000+ resale</span></td></tr>
-        </table>
+        </table></div>
 
         <p>我睇完呢張表，最大嘅感受唔係「貴」，係<strong>節奏</strong>。</p>
 
@@ -753,7 +790,7 @@
 
         <p>我睇咗六個地方，得出一張表：</p>
 
-        <table>
+        <div class="table-scroll"><table>
           <tr>
             <th><span class="cn">模型</span><span class="en">Model</span></th>
             <th><span class="cn">做得最好嘅</span><span class="en">Best at</span></th>
@@ -796,7 +833,7 @@
             <td><span class="cn">有品無牌，市場風險前移</span><span class="en">No name, risk pushed upstream</span></td>
             <td><span class="cn">通用嘅先做好，剩低嘅才客製</span><span class="en">Pre-build the common 80%</span></td>
           </tr>
-        </table>
+        </table></div>
 
         <p>睇完呢張表，我有兩個結論。</p>
 
@@ -1057,14 +1094,14 @@
 
         <p>Its own site claims: <strong>30,000+ designs, 300,000+ SKUs, more than 100 licensed IPs</strong>. The price ladder looks like this:</p>
 
-        <table>
+        <div class="table-scroll"><table>
           <tr><th><span class="cn">層級</span><span class="en">Tier</span></th><th><span class="cn">價錢</span><span class="en">Price</span></th></tr>
           <tr><td><span class="cn">入門（天貓最低）</span><span class="en">Entry (Tmall floor)</span></td><td>¥179</td></tr>
           <tr><td><span class="cn">常規主力</span><span class="en">Core range</span></td><td>¥300–500</td></tr>
           <tr><td><span class="cn">高端／材質款</span><span class="en">Premium / material</span></td><td>¥500–729</td></tr>
           <tr><td><span class="cn">聯名限量</span><span class="en">Limited collab</span></td><td><span class="cn">¥1000+（DIESEL ¥4000+，蝙蝠俠 ¥10000+）</span><span class="en">¥1,000+ (DIESEL ¥4,000+, Batman ¥10,000+)</span></td></tr>
           <tr><td><span class="cn">二手炒作</span><span class="en">Resale</span></td><td><span class="cn">村上隆「波漾」盲盒官方 ¥549 → 二手 ¥3000+</span><span class="en">Murakami blind box ¥549 official → ¥3,000+ resale</span></td></tr>
-        </table>
+        </table></div>
 
         <p>What struck me wasn't the price. It was the <strong>cadence</strong>.</p>
 
@@ -1613,7 +1650,7 @@
 
         <p>Six places, one table:</p>
 
-        <table>
+        <div class="table-scroll"><table>
           <tr>
             <th><span class="cn">模型</span><span class="en">Model</span></th>
             <th><span class="cn">做得最好嘅</span><span class="en">Best at</span></th>
@@ -1656,7 +1693,7 @@
             <td><span class="cn">有品無牌，市場風險前移</span><span class="en">No name, risk pushed upstream</span></td>
             <td><span class="cn">通用嘅先做好，剩低嘅才客製</span><span class="en">Pre-build the common 80%</span></td>
           </tr>
-        </table>
+        </table></div>
 
         <p>Two conclusions from that table.</p>
 

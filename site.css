@@ -55,3 +55,80 @@ nav .container{display:flex;justify-content:space-between;align-items:center;hei
 nav a:hover,nav a.active{color:var(--accent);background:var(--accent-light);}
 nav a{color:var(--text-secondary);text-decoration:none;padding:8px 14px;border-radius:6px;font-size:0.88rem;transition:all 0.2s;}
 nav{background:var(--bg-elevated);border-bottom:1px solid var(--border-light);position:sticky;top:0;z-index:100;}
+nav .container{position:relative;}
+
+/* ==========================================================================
+   手機版面修復（2026-10-08）— 只修破版，唔改設計、唔改色、唔改文案
+   --------------------------------------------------------------------------
+   主問題：全站 59 頁之中只有 16 頁（about / blog / contact / xhs / topics /
+   products / search / 6 個社交頁 / 3 篇最新文章）的 <nav> 裡面有
+   <div class="nav-wrapper">；其餘 43 頁的 <div class="nav-links"> 直接掛在
+   nav .container（display:flex; height:56px）之下，而所有「唔准換行」的保險
+   規則全部包在「min-width: 769px」的 media query 裡面 —— 即係手機（≤768px）
+   完全冇任何後備方案，連 .nav-wrapper 這個選擇器都揀唔到任何元素。
+   算一算 320px：內容區 320-24-24=272px；9 個 white-space:nowrap 的項目
+   約 612px + 8 個 6px gap = 660px，加 logo 83px = 743px 想塞入 272px，
+   於是整頁橫向捲動 470px。修法：把 16 頁已經用開的漢堡選單模式搬入
+   site.css，令全部 59 頁共用同一套手機導航。
+   ========================================================================== */
+
+/* 1. 圖片任何情況下都唔可以撐爆容器。height:auto 同時修掉 <img width height>
+      在 width:100% 之下高度仍然被鎖死而造成的比例失真。 */
+img{max-width:100%;height:auto;}
+
+/* 2. 內文的長網址／長英文字唔會撐爆版面（只在需要斷行時才生效）。 */
+.post-content{overflow-wrap:break-word;}
+
+/* 3. 表格橫向捲動容器（HTML 已為每張 <table> 包上 .table-scroll）。
+      表格係 display:table，無法縮到比 min-content 更窄，所以一定要外面
+      有一層可以橫向捲動的 block，否則整頁會多一條橫向 scrollbar。 */
+.table-scroll{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1.2em 0;}
+.table-scroll>table{margin:0 !important;}
+
+/* 4. 漢堡選單（桌面隱藏，同 about.html 等 16 頁本來嘅寫法一致）。 */
+.hamburger{display:none;background:none;border:none;font:inherit;font-size:1.4rem;line-height:1;cursor:pointer;padding:6px 10px;color:var(--text);border-radius:8px;}
+.hamburger:hover{background:var(--accent-light);color:var(--accent);}
+.nav-wrapper{display:flex;align-items:center;}
+
+@media (max-width:768px){
+  /* 5. nav 唔再鎖死 56px 高；選單變成絕對定位下拉，唔會影響文流。 */
+  nav .container{height:auto;min-height:56px;}
+  .hamburger{display:block;flex:0 0 auto;padding:11px 12px;min-height:44px;}
+  .nav-wrapper{display:none;position:absolute;top:100%;left:0;right:0;
+    max-height:calc(100vh - 56px);overflow-x:hidden;overflow-y:auto;
+    -webkit-overflow-scrolling:touch;
+    background:var(--bg-elevated);border-top:1px solid var(--border-light);
+    box-shadow:0 6px 18px rgba(0,0,0,.10);z-index:20;}
+  .nav-wrapper.open{display:block;}
+
+  /* 6. 選單一列一項，48px 高。呢兩條用 nav 提高 specificity，
+        以蓋過各頁 inline <style> 冇 media query 的 .nav-links{gap:24px}
+        同 white-space:nowrap。 */
+  nav .nav-links{flex-direction:column;align-items:stretch;gap:0;padding:6px 0;flex-wrap:nowrap;}
+  nav .nav-links>a,
+  nav .nav-links .nav-parent,
+  nav .nav-links .lang-btn,
+  nav .nav-links .lang-toggle{
+    display:flex;align-items:center;width:100%;min-height:48px;box-sizing:border-box;
+    padding:12px 24px;margin:0;border-radius:0;text-align:left;font-size:.95rem;
+    border-bottom:1px solid var(--border-light);white-space:nowrap;}
+  nav .nav-links .nav-parent{justify-content:flex-start;gap:6px;}
+  nav .nav-links>*:last-child{border-bottom:none;}
+
+  /* 7. 下拉面板同社交列的點擊區域 ≥44px。 */
+  nav .nav-panels a{display:block;padding:9px 0;min-height:44px;line-height:1.5;}
+  .social-links a{min-height:44px;}
+
+  /* 8. iOS Safari 一聚焦就會因為輸入框字級 <16px 而自動放大整頁（版面即刻
+        走位、要手動縮返）。輸入框字級寫在 inline style（.88rem），
+        所以這裡一定要用 !important 才蓋得過。 */
+  input,select,textarea{font-size:16px !important;}
+
+  /* 9. 內文目錄連結的點擊區域。 */
+  .toc-box a{display:block;padding:9px 0;min-height:44px;}
+
+  /* 10. 漢堡選單同「文章／點評／專題」下拉面板唔會互相蓋住
+        （面板係在文流之內，會被絕對定位的選單蓋住）。
+        瀏覽器唔支援 :has() 時自動忽略，行為同修復前一樣。 */
+  nav:has(.nav-panels.open) .nav-wrapper.open{display:none;}
+}
