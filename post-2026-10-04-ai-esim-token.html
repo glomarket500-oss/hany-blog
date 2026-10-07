@@ -991,8 +991,176 @@ function toggleLang() {
 </script>
 
 
+
+<script>
+/* ===== 手機導航內聯手風琴（2026-10-08）=====
+   修復三件事：
+   1) 手機點一級項目（文章／點評／專題／搜尋／關於／連結）時，toggleNavPanel() 會開
+      .nav-panels，而 site.css 的 nav:has(.nav-panels.open) .nav-wrapper.open{display:none}
+      會連整個漢堡選單一齊隱藏 —— 二級連結就變成一個脫離選單、被 flex 壓到只剩
+      58px 闊的長面板（實測 320px／375px）。該規則已移除。
+   2) 16 頁（about / blog / contact / 6 個社交頁 / products / search / topics / xhs）
+      的漢堡按鈕 onclick="toggleMobileMenu()"，但呢個 function 從來冇定義過，
+      點一下直接 ReferenceError，選單完全開唔到。下面的 navInit() 會直接綁定
+      點擊事件（唔再靠 inline onclick），所以全部頁面都由同一段程式控制。
+   3) 鍵盤：Escape 同時收埋選單同手風琴，焦點交返漢堡按鈕。
+
+   注意：呢段註解唔可以出現 HTML 標籤寫法（例如 script 的開標籤），
+   否則 HTML parser 會提早結束呢個 inline script，後面全部程式都唔會執行。
+
+   手機（≤768px）：一級項目在選單內、按鈕正下方展開自己的二級連結，再點收埋。
+   桌面（≥769px）：完全保留原本 .nav-panels 面板機制，一行都唔改。 */
+function navIsMobile(){
+  return window.matchMedia && window.matchMedia('(max-width:768px)').matches;
+}
+function navWrapperEl(){ return document.getElementById('navWrapper'); }
+function navHamburgerEl(){ return document.querySelector('.hamburger'); }
+function navMenuOpen(){
+  var w=navWrapperEl();
+  return !!(w && (' '+w.className+' ').indexOf(' open ')>-1);
+}
+/* 由選單推導漢堡按鈕狀態：即使頁面自己的 inline onclick 中途干預，最後都一致。 */
+function navSyncMenu(){
+  var h=navHamburgerEl();
+  if(h && h.getAttribute('aria-expanded')!==null){
+    h.setAttribute('aria-expanded', navMenuOpen()?'true':'false');
+  }
+}
+/* 取得（首次會建立）某個一級項目對應的內聯手風琴容器。 */
+function navAccordionFor(btn){
+  var panel=btn.parentNode;
+  while(panel && !(panel.className||'').match(/(^|\s)nav-links(\s|$)/)) panel=panel.parentNode;
+  if(!panel) return null;
+  var id=btn.getAttribute('data-panel');
+  var acc=panel.querySelector('.nav-accordion[data-panel="'+id+'"]');
+  if(!acc){
+    var src=document.querySelector('.nav-panel[data-id="'+id+'"]');
+    if(!src) return null;
+    acc=document.createElement('div');
+    acc.className='nav-accordion';
+    acc.setAttribute('data-panel',id);
+    if(btn.nextSibling) panel.insertBefore(acc,btn.nextSibling);
+    else panel.appendChild(acc);
+    /* 面板裡的 .panel-title 會重複一級項目名稱，抽走。 */
+    var tmp=document.createElement('div');
+    tmp.innerHTML=src.innerHTML;
+    var titles=tmp.querySelectorAll('.panel-title');
+    for(var t=0;t<titles.length;t++) titles[t].parentNode.removeChild(titles[t]);
+    while(tmp.firstChild) acc.appendChild(tmp.firstChild);
+  }
+  return acc;
+}
+function navSetExpanded(btn,on){
+  btn.setAttribute('aria-expanded', on?'true':'false');
+  var acc=navAccordionFor(btn);
+  if(acc){ if(on) acc.classList.add('open'); else acc.classList.remove('open'); }
+}
+/* 手機：切換單一項目的內聯展開。 */
+function navToggleAccordion(btn){
+  var acc=navAccordionFor(btn);
+  if(!acc) return;
+  var on=!acc.classList.contains('open');
+  navSetExpanded(btn,on);
+  try{ acc.scrollIntoView({block:'nearest'}); }catch(e){}
+}
+function navCloseAll(){
+  var bs=document.querySelectorAll('.nav-links .nav-parent');
+  for(var i=0;i<bs.length;i++) navSetExpanded(bs[i],false);
+}
+function navCloseMenu(){
+  var w=navWrapperEl(), h=navHamburgerEl();
+  if(w) w.className=(' '+w.className+' ').replace(' open ',' ').replace(/\s+/g,' ').replace(/^ | $/g,'');
+  navSyncMenu();
+  navCloseAll();
+}
+function navOpenMenu(){
+  var w=navWrapperEl();
+  if(w && (' '+w.className+' ').indexOf(' open ')<0) w.className=(w.className+' open').replace(/\s+/g,' ').replace(/^ | $/g,'');
+  navSyncMenu();
+}
+/* 漢堡按鈕：由本程式獨佔。
+   用 capture 階段攔截，順序係 capture -> target，所以頁面自己那個
+   onclick="toggleMobileMenu()"（或者 inline onclick）永遠唔會執行，
+   亦唔會被重複 toggle 兩次。唔需要等 DOMContentLoaded，就算某頁面有語法
+   錯誤令後面整段 script 唔執行，只要呢段跑到就得。
+   （實情：facebook / instagram / linkedin / tiktok / twitter 五頁的主要
+   inline script 有一句 `function copyXhs(this){` 語法錯誤，令成段 script 由頭
+   到尾都唔執行 -> toggleMobileMenu 從未定義 -> 點漢堡按鈕完全冇反應。） */
+function navToggleMenu(){
+  if(navMenuOpen()) navCloseMenu(); else navOpenMenu();
+}
+function navBindMenu(){
+  if(document.__navMenuBound) return;
+  document.__navMenuBound=1;
+  document.addEventListener('click',function(e){
+    var h=e.target && e.target.closest ? e.target.closest('.hamburger') : null;
+    if(!h) return;
+    e.preventDefault();
+    if(e.stopPropagation) e.stopPropagation();
+    navToggleMenu();
+  },true);
+}
+/* 兜底：個別頁面自己仲會叫 toggleMobileMenu()（inline onclick、舊快取），
+   定義一個同名 function，令佢哋指向同一套邏輯而唔係 ReferenceError。 */
+function toggleMobileMenu(){ navToggleMenu(); }
+function navCloseMenuIfOpen(){
+  if(navMenuOpen()) navCloseMenu();
+}
+/* 轉桌面：徹底清理手機狀態。手風琴容器要拆走，唔可以只係靠 CSS 收埋 ——
+   桌面 .nav-links 係 flex row，多一個 100% 闊的 flex item 會撐散整個導航條。 */
+function navDropAccordions(){
+  var accs=document.querySelectorAll('.nav-accordion');
+  for(var i=0;i<accs.length;i++){
+    if(accs[i].parentNode) accs[i].parentNode.removeChild(accs[i]);
+  }
+}
+function navInit(){
+  navBindMenu();                        /* 唔加 media guard：桌面按鈕本身係隱藏 */
+  if(!navIsMobile()){ navDropAccordions(); return; }   /* 桌面：面板機制照舊，唔建手風琴 */
+  var bs=document.querySelectorAll('.nav-links .nav-parent');
+  for(var i=0;i<bs.length;i++) navAccordionFor(bs[i]);
+  /* 點任何真正的連結就跟住收起選單，唔會困住用戶。
+     注意一：手風琴容器裡的二級連結唔會被綁，否則一開手風琴就會連選單一齊消失。
+     注意二：一級項目係 button.nav-parent，佢哋唔可以被綁 ——
+     佢哋係 .nav-links 的直接子項，用 `.nav-links > *` 之類的寫法會連按鈕一齊中，
+     結果點「文章」即刻又被 navCloseMenu() 收埋（實測過，手風琴永遠開唔到）。 */
+  var links=document.querySelectorAll('.nav-links > a, .nav-links .lang-btn, .nav-links .lang-toggle, .nav-panels a');
+  for(var j=0;j<links.length;j++){
+    if(links[j].getAttribute('data-nav-close')) continue;
+    links[j].setAttribute('data-nav-close','1');
+    links[j].addEventListener('click',navCloseMenu);
+  }
+  if(!document.__navKeys){
+    document.__navKeys=1;
+    document.addEventListener('keydown',function(e){
+      if(e.key!=='Escape' && e.keyCode!==27) return;
+      if(!navMenuOpen()) return;
+      navCloseMenu();
+      var h=navHamburgerEl();
+      if(h && h.focus) h.focus();       /* 焦點唔會丟失 */
+    });
+  }
+}
+if(document.readyState==='loading'){
+  document.addEventListener('DOMContentLoaded',navInit);
+}else{
+  navInit();
+}
+window.addEventListener('resize',function(){
+  if(navIsMobile()){
+    var bs=document.querySelectorAll('.nav-links .nav-parent');
+    for(var i=0;i<bs.length;i++) navAccordionFor(bs[i]);
+  }else{
+    navCloseAll();
+    navDropAccordions();      /* 轉桌面時徹底清走，唔留低多餘的 flex item */
+    navCloseMenu();
+  }
+});
+
+</script>
 <script>
 function toggleNavPanel(btn){
+  if(navIsMobile()){ navToggleAccordion(btn); return; }
   var box=document.getElementById('navPanels'); if(!box) return;
   var id=btn.getAttribute('data-panel');
   var open=box.getAttribute('data-open');

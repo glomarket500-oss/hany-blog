@@ -15,6 +15,7 @@
   <meta name="article:section" content="AI科技">
   <meta name="article:tag" content="AI-eSIM,Token經濟,電信運營商,算力,中國移動">
   <link rel="canonical" href="https://www.glomarket.online/post-2026-10-04-ai-esim-token入口.html">
+  <link rel="stylesheet" href="/site.css">
   <style>
     :root {
       --bg: #fafafa; --bg-elevated: #fff; --text: #1a1a1a; --text-secondary: #555;
@@ -61,7 +62,75 @@
   </style>
 </head>
 <body>
-<nav><div class="container"><a href="/" class="logo">鄭哥<span>Hany</span></a><div class="nav-links"><a href="/">首頁</a><a href="/about.html">關於</a><a href="/blog.html" class="active">點評</a><a href="/contact.html">聯繫</a><button class="lang-btn" onclick="toggleLang()">EN</button></div></div></nav>
+<nav>
+
+    <div class="container">
+
+      <div class="logo">鄭哥 / Hany</div>
+
+      <button class="hamburger" type="button" aria-label="選單" aria-expanded="false" onclick="var w=document.getElementById('navWrapper');var o=w.classList.toggle('open');this.setAttribute('aria-expanded',o?'true':'false');">☰</button>
+      <div class="nav-wrapper" id="navWrapper">
+        <div class="nav-links">
+
+          <a href="index.html" class="active"><span class="cn">首頁</span><span class="en">Home</span></a>
+
+          <button type="button" class="nav-parent" data-panel="articles" onclick="toggleNavPanel(this)" aria-expanded="false"><span class="cn">文章</span><span class="en">Articles</span> <span class="caret">▼</span></button>
+
+          <button type="button" class="nav-parent" data-panel="reviews" onclick="toggleNavPanel(this)" aria-expanded="false"><span class="cn">點評</span><span class="en">Reviews</span> <span class="caret">▼</span></button>
+
+          <button type="button" class="nav-parent" data-panel="topics" onclick="toggleNavPanel(this)" aria-expanded="false"><span class="cn">專題</span><span class="en">Collections</span> <span class="caret">▼</span></button><button type="button" class="nav-parent" data-panel="search" onclick="toggleNavPanel(this)" aria-expanded="false"><span class="cn">搜尋</span><span class="en">Search</span> <span class="caret">▼</span></button>
+          <button type="button" class="nav-parent" data-panel="about" onclick="toggleNavPanel(this)" aria-expanded="false"><span class="cn">關於</span><span class="en">About</span> <span class="caret">▼</span></button>
+
+          <button type="button" class="nav-parent" data-panel="links" onclick="toggleNavPanel(this)" aria-expanded="false"><span class="cn">連結</span><span class="en">Links</span> <span class="caret">▼</span></button>
+
+          <a href="contact.html"><span class="cn">聯繫</span><span class="en">Contact</span></a>
+
+          <button class="lang-toggle" onclick="toggleLang()" id="langBtn">EN</button>
+
+        </div>
+      </div>
+
+    </div>
+
+  <div class="nav-panels" id="navPanels" data-open="">
+  <div class="nav-panel" data-id="articles" style="display:none">
+    <div class="inner">
+      <div class="panel-title"><span class="cn">文章</span><span class="en">Articles</span></div>
+      <a href="blog.html"><span class="cn">全部文章</span><span class="en">All articles</span></a>
+      <a href="search.html?q=外貿"><span class="cn">外貿故事</span><span class="en">Trade stories</span></a>
+      <a href="search.html?q=AI"><span class="cn">AI 點評</span><span class="en">AI</span></a>
+      <a href="search.html?q=城市"><span class="cn">城市觀察</span><span class="en">City notes</span></a>
+      <a href="search.html?q=文化"><span class="cn">文化</span><span class="en">Culture</span></a>
+      <a href="search.html?q=行業"><span class="cn">行業觀察</span><span class="en">Industry</span></a>
+      <a href="search.html?q=產品"><span class="cn">產品創新</span><span class="en">Products</span></a>
+    </div>
+  </div>
+  <div class="nav-panel" data-id="reviews" style="display:none">
+    <div class="inner">
+      <div class="panel-title"><span class="cn">點評</span><span class="en">Reviews</span></div>
+      <a href="xhs.html"><span class="cn">全部點評</span><span class="en">All reviews</span></a>
+      <a href="search.html?q=AI"><span class="cn">AI 點評</span><span class="en">AI</span></a>
+      <a href="search.html?q=外銷"><span class="cn">外銷點評</span><span class="en">Export</span></a>
+      <a href="search.html?q=茶"><span class="cn">茶葉點評</span><span class="en">Tea</span></a>
+      <a href="search.html?q=文化"><span class="cn">文化點評</span><span class="en">Culture</span></a>
+      <a href="search.html?q=行業"><span class="cn">行業觀察</span><span class="en">Industry</span></a>
+    </div>
+  </div>
+  <div class="nav-panel" data-id="topics" style="display:none"><div class="inner"><div class="panel-title"><span class="cn">專題</span><span class="en">Collections</span></div><a href="topics.html"><span class="cn">全部主題</span><span class="en">All topics</span></a><a href="topics.html#trade"><span class="cn">外貿實戰</span><span class="en">Trade</span></a><a href="topics.html#ai"><span class="cn">AI 與算力</span><span class="en">AI &amp; compute</span></a><a href="topics.html#products"><span class="cn">產品回憶</span><span class="en">Products</span></a><a href="topics.html#people"><span class="cn">人物故事</span><span class="en">People</span></a><a href="topics.html#industry"><span class="cn">行業觀察</span><span class="en">Industry</span></a><a href="topics.html#city"><span class="cn">城市觀察</span><span class="en">City notes</span></a><a href="topics.html#culture"><span class="cn">文化與歷史</span><span class="en">Culture</span></a><a href="topics.html#affairs"><span class="cn">時事點評</span><span class="en">Current affairs</span></a><a href="topics.html#tea"><span class="cn">茶葉點評</span><span class="en">Tea</span></a><a href="topics.html#life"><span class="cn">人生感悟</span><span class="en">Life</span></a><a href="products.html"><span class="cn">產品回憶專題</span><span class="en">Product memories</span></a></div></div><div class="nav-panel" data-id="search" style="display:none"><div class="inner"><div class="panel-title"><span class="cn">搜尋</span><span class="en">Search</span></div><form action="search.html" method="get" style="width:100%;display:flex;gap:8px;margin:4px 0 8px"><input type="search" name="q" placeholder="打關鍵字，例如：土耳其、AI 算力…" style="flex:1;min-width:0;padding:9px 13px;border:1px solid var(--border-light);border-radius:8px;font-size:.88rem;font-family:inherit;outline:none;box-sizing:border-box"><button type="submit" style="padding:9px 18px;border:none;border-radius:8px;background:var(--accent);color:#fff;font-size:.85rem;font-weight:600;cursor:pointer;font-family:inherit">搜尋</button></form><a href="search.html"><span class="cn">去搜尋頁</span><span class="en">Open search page</span></a><a href="topics.html"><span class="cn">按主題瀏覽</span><span class="en">Browse by topic</span></a></div></div><div class="nav-panel" data-id="about" style="display:none"><div class="inner"><div class="panel-title"><span class="cn">關於</span><span class="en">About</span></div><a href="about.html"><span class="cn">關於鄭哥</span><span class="en">About Hany</span></a><a href="about.html#business"><span class="cn">我做緊乜</span><span class="en">What I do</span></a><a href="about.html#invest"><span class="cn">我投資年輕創業者</span><span class="en">I back young founders</span></a><a href="products.html"><span class="cn">產品回憶</span><span class="en">Product memories</span></a><a href="contact.html"><span class="cn">聯繫鄭哥</span><span class="en">Contact</span></a><a href="/handsome/"><span class="cn">HANDSOME 訂造奢侈品</span><span class="en">HANDSOME (a brand I invested in)</span></a></div></div><div class="nav-panel" data-id="links" style="display:none">
+    <div class="inner">
+      <div class="panel-title"><span class="cn">連結</span><span class="en">Links</span></div>
+      <a href="links.html"><span class="cn">全部連結</span><span class="en">All links</span></a>
+      <a href="xhs.html"><span class="cn">小紅書</span><span class="en">Xiaohongshu</span></a>
+      <a href="youtube.html"><span class="cn">YouTube</span><span class="en">YouTube</span></a>
+      <a href="linkedin.html"><span class="cn">LinkedIn</span><span class="en">LinkedIn</span></a>
+      <a href="facebook.html"><span class="cn">Facebook</span><span class="en">Facebook</span></a>
+      <a href="instagram.html"><span class="cn">Instagram</span><span class="en">Instagram</span></a>
+      <a href="tiktok.html"><span class="cn">TikTok</span><span class="en">TikTok</span></a>
+      <a href="twitter.html"><span class="cn">X / Twitter</span><span class="en">X / Twitter</span></a>
+    </div>
+  </div>
+</div>
+  </nav>
 <article>
   <div class="container">
     <header class="post-header">
@@ -290,6 +359,248 @@ WhatsApp（美國）：+1 (562) 550-9968
 <script>
 function toggleLang() {
   document.body.classList.toggle('lang-en');
+}
+
+
+
+
+/* 由選單推導漢堡按鈕狀態：即使頁面自己的 inline onclick 中途干預，最後都一致。 */
+
+/* 取得（首次會建立）某個一級項目對應的內聯手風琴容器。 */
+
+
+/* 手機：切換單一項目的內聯展開。 */
+
+
+
+
+/* 漢堡按鈕：由本程式獨佔。
+   用 capture 階段攔截，順序係 capture -> target，所以頁面自己那個
+   onclick="toggleMobileMenu()"（或者 inline onclick）永遠唔會執行，
+   亦唔會被重複 toggle 兩次。唔需要等 DOMContentLoaded，就算某頁面有語法
+   錯誤令後面整段 script 唔執行，只要呢段跑到就得。
+   （實情：facebook / instagram / linkedin / tiktok / twitter 五頁的主要
+   inline script 有一句 `function copyXhs(this){` 語法錯誤，令成段 script 由頭
+   到尾都唔執行 -> toggleMobileMenu 從未定義 -> 點漢堡按鈕完全冇反應。） */
+
+
+/* 兜底：個別頁面自己仲會叫 toggleMobileMenu()（inline onclick、舊快取），
+   定義一個同名 function，令佢哋指向同一套邏輯而唔係 ReferenceError。 */
+
+
+/* 轉桌面：徹底清理手機狀態。手風琴容器要拆走，唔可以只係靠 CSS 收埋 ——
+   桌面 .nav-links 係 flex row，多一個 100% 闊的 flex item 會撐散整個導航條。 */
+function navDropAccordions(){
+  var accs=document.querySelectorAll('.nav-accordion');
+  for(var i=0;i<accs.length;i++){
+    if(accs[i].parentNode) accs[i].parentNode.removeChild(accs[i]);
+  }
+}
+
+if(document.readyState==='loading'){
+  document.addEventListener('DOMContentLoaded',navInit);
+}else{
+  navInit();
+}
+window.addEventListener('resize',function(){
+  if(navIsMobile()){
+    var bs=document.querySelectorAll('.nav-links .nav-parent');
+    for(var i=0;i<bs.length;i++) navAccordionFor(bs[i]);
+  }else{
+    navCloseAll();
+    navDropAccordions();      /* 轉桌面時徹底清走，唔留低多餘的 flex item */
+    navCloseMenu();
+  }
+});
+
+
+</script>
+<script>
+/* ===== 手機導航內聯手風琴（2026-10-08）=====
+   修復三件事：
+   1) 手機點一級項目（文章／點評／專題／搜尋／關於／連結）時，toggleNavPanel() 會開
+      .nav-panels，而 site.css 的 nav:has(.nav-panels.open) .nav-wrapper.open{display:none}
+      會連整個漢堡選單一齊隱藏 —— 二級連結就變成一個脫離選單、被 flex 壓到只剩
+      58px 闊的長面板（實測 320px／375px）。該規則已移除。
+   2) 16 頁（about / blog / contact / 6 個社交頁 / products / search / topics / xhs）
+      的漢堡按鈕 onclick="toggleMobileMenu()"，但呢個 function 從來冇定義過，
+      點一下直接 ReferenceError，選單完全開唔到。下面的 navInit() 會直接綁定
+      點擊事件（唔再靠 inline onclick），所以全部頁面都由同一段程式控制。
+   3) 鍵盤：Escape 同時收埋選單同手風琴，焦點交返漢堡按鈕。
+
+   注意：呢段註解唔可以出現 HTML 標籤寫法（例如 script 的開標籤），
+   否則 HTML parser 會提早結束呢個 inline script，後面全部程式都唔會執行。
+
+   手機（≤768px）：一級項目在選單內、按鈕正下方展開自己的二級連結，再點收埋。
+   桌面（≥769px）：完全保留原本 .nav-panels 面板機制，一行都唔改。 */
+function navIsMobile(){
+  return window.matchMedia && window.matchMedia('(max-width:768px)').matches;
+}
+function navWrapperEl(){ return document.getElementById('navWrapper'); }
+function navHamburgerEl(){ return document.querySelector('.hamburger'); }
+function navMenuOpen(){
+  var w=navWrapperEl();
+  return !!(w && (' '+w.className+' ').indexOf(' open ')>-1);
+}
+/* 由選單推導漢堡按鈕狀態：即使頁面自己的 inline onclick 中途干預，最後都一致。 */
+function navSyncMenu(){
+  var h=navHamburgerEl();
+  if(h && h.getAttribute('aria-expanded')!==null){
+    h.setAttribute('aria-expanded', navMenuOpen()?'true':'false');
+  }
+}
+/* 取得（首次會建立）某個一級項目對應的內聯手風琴容器。 */
+function navAccordionFor(btn){
+  var panel=btn.parentNode;
+  while(panel && !(panel.className||'').match(/(^|\s)nav-links(\s|$)/)) panel=panel.parentNode;
+  if(!panel) return null;
+  var id=btn.getAttribute('data-panel');
+  var acc=panel.querySelector('.nav-accordion[data-panel="'+id+'"]');
+  if(!acc){
+    var src=document.querySelector('.nav-panel[data-id="'+id+'"]');
+    if(!src) return null;
+    acc=document.createElement('div');
+    acc.className='nav-accordion';
+    acc.setAttribute('data-panel',id);
+    if(btn.nextSibling) panel.insertBefore(acc,btn.nextSibling);
+    else panel.appendChild(acc);
+    /* 面板裡的 .panel-title 會重複一級項目名稱，抽走。 */
+    var tmp=document.createElement('div');
+    tmp.innerHTML=src.innerHTML;
+    var titles=tmp.querySelectorAll('.panel-title');
+    for(var t=0;t<titles.length;t++) titles[t].parentNode.removeChild(titles[t]);
+    while(tmp.firstChild) acc.appendChild(tmp.firstChild);
+  }
+  return acc;
+}
+function navSetExpanded(btn,on){
+  btn.setAttribute('aria-expanded', on?'true':'false');
+  var acc=navAccordionFor(btn);
+  if(acc){ if(on) acc.classList.add('open'); else acc.classList.remove('open'); }
+}
+/* 手機：切換單一項目的內聯展開。 */
+function navToggleAccordion(btn){
+  var acc=navAccordionFor(btn);
+  if(!acc) return;
+  var on=!acc.classList.contains('open');
+  navSetExpanded(btn,on);
+  try{ acc.scrollIntoView({block:'nearest'}); }catch(e){}
+}
+function navCloseAll(){
+  var bs=document.querySelectorAll('.nav-links .nav-parent');
+  for(var i=0;i<bs.length;i++) navSetExpanded(bs[i],false);
+}
+function navCloseMenu(){
+  var w=navWrapperEl(), h=navHamburgerEl();
+  if(w) w.className=(' '+w.className+' ').replace(' open ',' ').replace(/\s+/g,' ').replace(/^ | $/g,'');
+  navSyncMenu();
+  navCloseAll();
+}
+function navOpenMenu(){
+  var w=navWrapperEl();
+  if(w && (' '+w.className+' ').indexOf(' open ')<0) w.className=(w.className+' open').replace(/\s+/g,' ').replace(/^ | $/g,'');
+  navSyncMenu();
+}
+/* 漢堡按鈕：由本程式獨佔。
+   用 capture 階段攔截，順序係 capture -> target，所以頁面自己那個
+   onclick="toggleMobileMenu()"（或者 inline onclick）永遠唔會執行，
+   亦唔會被重複 toggle 兩次。唔需要等 DOMContentLoaded，就算某頁面有語法
+   錯誤令後面整段 script 唔執行，只要呢段跑到就得。
+   （實情：facebook / instagram / linkedin / tiktok / twitter 五頁的主要
+   inline script 有一句 `function copyXhs(this){` 語法錯誤，令成段 script 由頭
+   到尾都唔執行 -> toggleMobileMenu 從未定義 -> 點漢堡按鈕完全冇反應。） */
+function navToggleMenu(){
+  if(navMenuOpen()) navCloseMenu(); else navOpenMenu();
+}
+function navBindMenu(){
+  if(document.__navMenuBound) return;
+  document.__navMenuBound=1;
+  document.addEventListener('click',function(e){
+    var h=e.target && e.target.closest ? e.target.closest('.hamburger') : null;
+    if(!h) return;
+    e.preventDefault();
+    if(e.stopPropagation) e.stopPropagation();
+    navToggleMenu();
+  },true);
+}
+/* 兜底：個別頁面自己仲會叫 toggleMobileMenu()（inline onclick、舊快取），
+   定義一個同名 function，令佢哋指向同一套邏輯而唔係 ReferenceError。 */
+function toggleMobileMenu(){ navToggleMenu(); }
+function navCloseMenuIfOpen(){
+  if(navMenuOpen()) navCloseMenu();
+}
+/* 轉桌面：徹底清理手機狀態。手風琴容器要拆走，唔可以只係靠 CSS 收埋 ——
+   桌面 .nav-links 係 flex row，多一個 100% 闊的 flex item 會撐散整個導航條。 */
+function navDropAccordions(){
+  var accs=document.querySelectorAll('.nav-accordion');
+  for(var i=0;i<accs.length;i++){
+    if(accs[i].parentNode) accs[i].parentNode.removeChild(accs[i]);
+  }
+}
+function navInit(){
+  navBindMenu();                        /* 唔加 media guard：桌面按鈕本身係隱藏 */
+  if(!navIsMobile()){ navDropAccordions(); return; }   /* 桌面：面板機制照舊，唔建手風琴 */
+  var bs=document.querySelectorAll('.nav-links .nav-parent');
+  for(var i=0;i<bs.length;i++) navAccordionFor(bs[i]);
+  /* 點任何真正的連結就跟住收起選單，唔會困住用戶。
+     注意一：手風琴容器裡的二級連結唔會被綁，否則一開手風琴就會連選單一齊消失。
+     注意二：一級項目係 button.nav-parent，佢哋唔可以被綁 ——
+     佢哋係 .nav-links 的直接子項，用 `.nav-links > *` 之類的寫法會連按鈕一齊中，
+     結果點「文章」即刻又被 navCloseMenu() 收埋（實測過，手風琴永遠開唔到）。 */
+  var links=document.querySelectorAll('.nav-links > a, .nav-links .lang-btn, .nav-links .lang-toggle, .nav-panels a');
+  for(var j=0;j<links.length;j++){
+    if(links[j].getAttribute('data-nav-close')) continue;
+    links[j].setAttribute('data-nav-close','1');
+    links[j].addEventListener('click',navCloseMenu);
+  }
+  if(!document.__navKeys){
+    document.__navKeys=1;
+    document.addEventListener('keydown',function(e){
+      if(e.key!=='Escape' && e.keyCode!==27) return;
+      if(!navMenuOpen()) return;
+      navCloseMenu();
+      var h=navHamburgerEl();
+      if(h && h.focus) h.focus();       /* 焦點唔會丟失 */
+    });
+  }
+}
+if(document.readyState==='loading'){
+  document.addEventListener('DOMContentLoaded',navInit);
+}else{
+  navInit();
+}
+window.addEventListener('resize',function(){
+  if(navIsMobile()){
+    var bs=document.querySelectorAll('.nav-links .nav-parent');
+    for(var i=0;i<bs.length;i++) navAccordionFor(bs[i]);
+  }else{
+    navCloseAll();
+    navDropAccordions();      /* 轉桌面時徹底清走，唔留低多餘的 flex item */
+    navCloseMenu();
+  }
+});
+
+</script>
+<script>
+function toggleNavPanel(btn){
+  if(navIsMobile()){ navToggleAccordion(btn); return; }
+  var box=document.getElementById('navPanels'); if(!box) return;
+  var id=btn.getAttribute('data-panel');
+  var open=box.getAttribute('data-open');
+  var parents=document.querySelectorAll('.nav-parent');
+  if(open===id){
+    box.classList.remove('open'); box.setAttribute('data-open','');
+    for(var i=0;i<parents.length;i++) parents[i].setAttribute('aria-expanded','false');
+    return;
+  }
+  var panels=box.querySelectorAll('.nav-panel');
+  for(var j=0;j<panels.length;j++){
+    panels[j].style.display=(panels[j].getAttribute('data-id')===id?'block':'none');
+  }
+  box.classList.add('open'); box.setAttribute('data-open',id);
+  for(var k=0;k<parents.length;k++){
+    parents[k].setAttribute('aria-expanded', parents[k]===btn?'true':'false');
+  }
 }
 </script>
 </body>

@@ -57,6 +57,12 @@ nav a{color:var(--text-secondary);text-decoration:none;padding:8px 14px;border-r
 nav{background:var(--bg-elevated);border-bottom:1px solid var(--border-light);position:sticky;top:0;z-index:100;}
 nav .container{position:relative;}
 
+/* 14. 手風琴容器的預設狀態：任何寬度都收起。
+   不可以只寫在 max-width:768px 裡面 —— 手風琴是 JS 建的，
+   如果建在桌面寬度下而又只有手機才有 display:none，
+   它就會當成一般 flex item 遒入桌面導航條。 */
+.nav-accordion{display:none;width:100%;box-sizing:border-box;background:var(--bg);border-bottom:1px solid var(--border-light);}
+
 /* ==========================================================================
    手機版面修復（2026-10-08）— 只修破版，唔改設計、唔改色、唔改文案
    --------------------------------------------------------------------------
@@ -93,18 +99,18 @@ img{max-width:100%;height:auto;}
 @media (max-width:768px){
   /* 5. nav 唔再鎖死 56px 高；選單變成絕對定位下拉，唔會影響文流。 */
   nav .container{height:auto;min-height:56px;}
-  .hamburger{display:block;flex:0 0 auto;padding:11px 12px;min-height:44px;}
-  .nav-wrapper{display:none;position:absolute;top:100%;left:0;right:0;
+  .hamburger{display:block !important;flex:0 0 auto;padding:11px 12px !important;min-width:44px;min-height:44px;}
+  .nav-wrapper{display:none !important;position:absolute !important;top:100% !important;left:0 !important;right:0 !important;
     max-height:calc(100vh - 56px);overflow-x:hidden;overflow-y:auto;
     -webkit-overflow-scrolling:touch;
     background:var(--bg-elevated);border-top:1px solid var(--border-light);
     box-shadow:0 6px 18px rgba(0,0,0,.10);z-index:20;}
-  .nav-wrapper.open{display:block;}
+  .nav-wrapper.open{display:block !important;}
 
   /* 6. 選單一列一項，48px 高。呢兩條用 nav 提高 specificity，
         以蓋過各頁 inline <style> 冇 media query 的 .nav-links{gap:24px}
         同 white-space:nowrap。 */
-  nav .nav-links{flex-direction:column;align-items:stretch;gap:0;padding:6px 0;flex-wrap:nowrap;}
+  nav .nav-links{display:flex;flex-direction:column;align-items:stretch;gap:0;padding:6px 0;flex-wrap:nowrap;}
   nav .nav-links>a,
   nav .nav-links .nav-parent,
   nav .nav-links .lang-btn,
@@ -127,8 +133,57 @@ img{max-width:100%;height:auto;}
   /* 9. 內文目錄連結的點擊區域。 */
   .toc-box a{display:block;padding:9px 0;min-height:44px;}
 
-  /* 10. 漢堡選單同「文章／點評／專題」下拉面板唔會互相蓋住
-        （面板係在文流之內，會被絕對定位的選單蓋住）。
-        瀏覽器唔支援 :has() 時自動忽略，行為同修復前一樣。 */
-  nav:has(.nav-panels.open) .nav-wrapper.open{display:none;}
+  /* 10.（已移除）原本這裡有一條
+        nav:has(.nav-panels.open) .nav-wrapper.open{display:none;}
+        用意係唔想絕對定位的漢堡選單蓋住下拉面板。但係 toggleNavPanel() 一開面板
+        就會同時開 .nav-panels，於是呢條規則會連整個漢堡選單一齊隱藏 ——
+        founder 見到嘅「点击进去出现第二级链接都没有显示」就係呢條規則造成：
+        選單消失，只剩低一個脫離選單、貼在文流裡面嘅面板。
+        改為用下面 11/12 的內聯手風琴（accordion），選單同二級連結在同一棵樹之內，
+        兩者唔會再互相遮蓋，所以呢條規則唔需要存在。 */
+
+  /* 11. 手機版內聯手風琴：一級項目（文章／點評／專題／搜尋／關於／連結）點一下就
+        在選單內、按鈕正下方展開自己的二級連結，唔會跳轉、唔會彈出另一個面板。
+        - 面板內容由 JS 複製入 .nav-accordion（唔改動 .nav-panels 本身），
+          所以 ≥769px 的桌面面板機制完全唔受影響。
+        - .nav-accordion 係 .nav-links（flex column）的直接子項，會自然佔滿一行，
+          並把下方項目推落去。
+        - 用 flex-start 對齊，令 <a> 唔會被 flex 拉闊或壓扁。
+        注意：基本 .nav-accordion{display:none} 寫在 media query 外面（見下面 14），
+        否則桌面一旦建立了容器就會顯示出來，反而搞亂桌面導航。 */
+  .nav-accordion.open{display:block;padding:4px 0 10px;}
+  .nav-accordion>*{box-sizing:border-box;max-width:100%;}
+
+  /* 11a. 二級連結：足夠大的點擊區（≥44px），長標題換行而唔會撐爆版面。 */
+  nav .nav-accordion a{display:flex;align-items:center;min-height:44px;
+    padding:10px 24px 10px 34px;margin:0;border-radius:0;font-size:.9rem;
+    line-height:1.5;color:var(--text-secondary);text-decoration:none;
+    white-space:normal;overflow-wrap:break-word;word-break:break-word;
+    border-bottom:1px solid transparent;}
+  nav .nav-accordion a:hover,nav .nav-accordion a:active{color:var(--accent);}
+  /* 一級標題（複製過來的 .panel-title）當做小標籤。 */
+  nav .nav-accordion .panel-title{width:auto;padding:8px 24px 2px 34px;
+    font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--text-muted);}
+
+  /* 11b. 搜尋面板裡面有一個 <form>，用 flex 排好輸入框同按鈕，320px 都唔會爆。 */
+  nav .nav-accordion form{display:flex;gap:8px;width:auto;margin:6px 24px 6px 34px;
+    flex-wrap:wrap;}
+  nav .nav-accordion form input{flex:1 1 120px;min-width:0;}
+  nav .nav-accordion form button{flex:0 0 auto;}
+
+  /* 11c. 手風琴展開時角標轉向（aria-expanded 已由 JS 同步）。 */
+  nav .nav-links .nav-parent[aria-expanded="true"]{color:var(--accent);}
+  nav .nav-links .nav-parent[aria-expanded="true"] .caret{transform:rotate(180deg);}
+
+  /* 12. 手機版確保回退：面板本身在手機一律唔顯示（內容已複製入選單），
+        就算舊頁面／舊快取漏了 JS，都唔會再出現一個脫離選單的長面板。 */
+  nav .nav-panels{display:none !important;}
+
+  /* 13. 語言掣：各頁 inline 用 .lang-toggle 帶深色底，在淺色選單裡面會被拉成
+        一整條深色橫條（實測 375px 見到）。統一成跟其他選單項一致的外觀。
+        .lang-btn（site.css 自己的寫法）保持不變。 */
+  nav .nav-links .lang-toggle{background:var(--bg-elevated);color:var(--text-secondary);
+    border:none;border-radius:0;font-size:.95rem;font-weight:400;}
+  nav .nav-links .lang-toggle:hover{color:var(--accent);}
 }
