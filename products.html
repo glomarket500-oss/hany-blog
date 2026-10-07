@@ -12,15 +12,15 @@
 
   <!-- ===== SEO ===== -->
 
-  <title>搜尋文章 | 鄭哥 Hany</title>
+  <title>產品回憶 | 鄭哥 Hany</title>
 
-  <meta name="description" content="搜尋鄭哥 Hany 全部文章：26 年外貿實戰、產品創新、跨境電商、AI 算力與城市觀察的第一手記錄，可依標題、分類與正文即時過濾。">>
+  <meta name="description" content="26 年外貿生涯裡親手做過的產品：2005 年手錶手機、2006 年四頻老人機、專利與設計背後的故事。">
 
   <meta name="keywords" content="鄭哥Hany文章,AI算力,跨境電商,產品創新,00後創業,手錶手機,Amazon,TikTok,英偉達服務器">
 
   <meta name="author" content="鄭哥 / Hany">
 
-  <link rel="canonical" href="https://www.glomarket.online/search.html">
+  <link rel="canonical" href="https://www.glomarket.online/products.html">
 
   
 
@@ -294,42 +294,9 @@ body.show-en .cn-inline { display:none; }
 .social-links a{color:#444;text-decoration:none;font-size:.82rem;padding:6px 12px;border:1px solid #e0e0e0;border-radius:6px;background:#fff;transition:all .2s;box-sizing:border-box;min-width:0;flex-shrink:1;white-space:nowrap}
 .social-links a:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
 .copyright{font-size:.82rem;color:#999;margin-top:8px;padding:0 24px}
-.search-page{padding:40px 0 56px}
-.search-inner{max-width:720px;margin:0 auto;padding:0 24px;box-sizing:border-box}
-.search-page .eyebrow{color:var(--accent);font-weight:700;letter-spacing:.14em;
-  text-transform:uppercase;font-size:.68rem}
-.search-page h1{font-size:1.28rem;margin:8px 0 0;letter-spacing:-.01em;line-height:1.3}
-.search-lede{color:var(--text-secondary);margin-top:7px;font-size:.87rem;line-height:1.65}
-.search-box{display:flex;gap:8px;margin:18px 0 8px}
-.search-box input{flex:1;min-width:0;padding:10px 14px;border:1px solid var(--border-light);
-  border-radius:9px;font-size:.9rem;font-family:inherit;outline:none;
-  background:var(--bg-elevated);box-sizing:border-box}
-.search-box input:focus{border-color:var(--accent)}
-.search-box button{padding:10px 20px;border:none;border-radius:9px;background:var(--accent);
-  color:#fff;font-size:.87rem;font-weight:600;cursor:pointer;font-family:inherit;
-  white-space:nowrap}
-.search-box button:hover{opacity:.9}
-.search-count{font-size:.78rem;color:var(--text-muted);margin:0 0 20px}
-#results .post-card{padding:18px 20px;margin-bottom:12px}
-#results .post-card h3{font-size:.99rem;margin:5px 0 7px;line-height:1.4}
-#results .post-card h3 a{color:inherit;text-decoration:none}
-#results .post-card h3 a:hover{color:var(--accent)}
-#results .post-excerpt{font-size:.85rem;color:var(--text-secondary);margin:0 0 8px;
-  line-height:1.65}
-#results .read-more{font-size:.83rem;color:var(--accent);font-weight:600;
-  text-decoration:none}
-#results .post-date,#results .post-tag{font-size:.74rem}
-
-@media (max-width:640px){
-  .search-page{padding:28px 0 40px}
-  .search-page h1{font-size:1.12rem}
-  .search-box{flex-direction:column}
-  .search-box button{width:100%}
-}
+img { max-width: 100%; height: auto; }
 </style>
 </head>
-
-
 
 <body>
 
@@ -353,11 +320,12 @@ body.show-en .cn-inline { display:none; }
 
           <button type="button" class="nav-parent" data-panel="reviews" onclick="toggleNavPanel(this)" aria-expanded="false"><span class="cn">點評</span><span class="en">Reviews</span> <span class="caret">▼</span></button>
 
+          <a href="search.html"><span class="cn">搜尋</span><span class="en">Search</span></a>
           <a href="about.html"><span class="cn">關於</span><span class="en">About</span></a>
 
           <button type="button" class="nav-parent" data-panel="links" onclick="toggleNavPanel(this)" aria-expanded="false"><span class="cn">連結</span><span class="en">Links</span> <span class="caret">▼</span></button>
 
-          <button type="button" class="nav-parent" data-panel="topics" onclick="toggleNavPanel(this)" aria-expanded="false"><span class="cn">專題</span><span class="en">Collections</span> <span class="caret">▼</span></button><a href="contact.html"><span class="cn">聯繫</span><span class="en">Contact</span></a>
+          <a href="contact.html"><span class="cn">聯繫</span><span class="en">Contact</span></a>
 
           <button class="lang-toggle" onclick="toggleLang()" id="langBtn">EN</button>
 
@@ -391,7 +359,7 @@ body.show-en .cn-inline { display:none; }
       <a href="search.html?q=行業"><span class="cn">行業觀察</span><span class="en">Industry</span></a>
     </div>
   </div>
-  <div class="nav-panel" data-id="topics" style="display:none"><div class="inner"><div class="panel-title"><span class="cn">專題</span><span class="en">Collections</span></div><a href="topics.html"><span class="cn">全部主題</span><span class="en">All topics</span></a><a href="topics.html#trade"><span class="cn">外貿實戰</span><span class="en">Trade stories</span></a><a href="topics.html#ai"><span class="cn">AI 與算力</span><span class="en">AI & compute</span></a><a href="topics.html#cities"><span class="cn">城市觀察</span><span class="en">City notes</span></a><a href="topics.html#culture"><span class="cn">文化與歷史</span><span class="en">Culture & history</span></a><a href="topics.html#product"><span class="cn">產品創新</span><span class="en">Product</span></a><a href="topics.html#life"><span class="cn">人生感悟</span><span class="en">Life</span></a><a href="products.html"><span class="cn">產品回憶</span><span class="en">Product memories</span></a></div></div><div class="nav-panel" data-id="links" style="display:none">
+  <div class="nav-panel" data-id="links" style="display:none">
     <div class="inner">
       <div class="panel-title"><span class="cn">連結</span><span class="en">Links</span></div>
       <a href="links.html"><span class="cn">全部連結</span><span class="en">All links</span></a>
@@ -405,22 +373,7 @@ body.show-en .cn-inline { display:none; }
     </div>
   </div>
 </div>
-  </nav>
-<main class="search-page">
-  <div class="search-inner">
-    <div class="eyebrow">Search</div>
-    <h1>搵文章</h1>
-    <p class="search-lede">打關鍵字，即時過濾全站文章。可搜標題、分類、正文。</p>
-    <div class="search-box">
-      <input id="q" type="search" placeholder="例如：土耳其、AI 算力、老人機…"
-             oninput="run()" autocomplete="off">
-      <button onclick="run()">搜尋</button>
-    </div>
-    <p class="search-count" id="count">載入索引中…</p>
-    <div id="results"></div>
-  </div>
-</main>
-<footer class="social-footer">
+  </nav><main class="search-page"><div class="search-inner" style="max-width:820px"><div class="eyebrow">Collections</div><h1>產品回憶</h1><p class="search-lede">26 年做過嘅產品，背後都有一個故事。呢個專題把它哋串起來。</p><p style="color:var(--text-muted)">暫無文章。</p></div></main><footer class="social-footer">
 
     <div class="container">
 
@@ -505,72 +458,6 @@ function toggleNavPanel(btn){
     parents[k].setAttribute('aria-expanded', parents[k]===btn?'true':'false');
   }
 }
-</script>
-<script>
-var IDX = null;
-
-function loadIndex(){
-  fetch('/search-index.json')
-    .then(function(r){ if(!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-    .then(function(j){
-      IDX = j;
-      var q = document.getElementById('q');
-      if(q) q.focus();
-      var n = document.getElementById('count');
-      if(n) n.textContent = '共 ' + j.length + ' 篇文章可搜尋';
-      var m = location.search.match(/[?&]q=([^&]*)/);
-      if(m && m[1] && q){ q.value = decodeURIComponent(m[1].replace(/\+/g,' ')); run(); }
-    })
-    .catch(function(e){
-      var n = document.getElementById('count');
-      if(n) n.textContent = '索引載入失敗（' + e.message + '）。請重新載入頁面，或直接去文章列表。';
-    });
-}
-
-function esc2(s){
-  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
-                  .replace(/"/g,'&quot;');
-}
-
-function run(){
-  var box = document.getElementById('results');
-  if(!box) return;
-  var q = document.getElementById('q');
-  var v = q ? q.value.trim().toLowerCase() : '';
-  if(!IDX || !v){ box.innerHTML = ''; return; }
-  var terms = v.split(/\s+/).filter(Boolean);
-  var hits = IDX.map(function(a){
-    var title = (a.t || '').toLowerCase();
-    var hay = (a.t + ' ' + a.e + ' ' + a.s + ' ' + a.x + ' ' + a.b).toLowerCase();
-    var score = 0;
-    terms.forEach(function(term){
-      if(title.indexOf(term) >= 0) score += 10;
-      else if(hay.indexOf(term) >= 0) score += 1;
-    });
-    return { a: a, s: score };
-  }).filter(function(h){ return h.s > 0; })
-    .sort(function(x, y){ return y.s - x.s; })
-    .slice(0, 40);
-
-  if(!hits.length){
-    box.innerHTML = '<p style="color:var(--text-muted);padding:8px 0">冇搵到相關文章，試下其他關鍵字。</p>';
-    return;
-  }
-  box.innerHTML = hits.map(function(h){
-    var a = h.a;
-    return '<article class="post-card">'
-      + '<div class="post-meta-top">'
-      + (a.d ? '<span class="post-date">' + esc2(a.d) + '</span>' : '')
-      + (a.s ? '<span class="post-tag">' + esc2(a.s) + '</span>' : '')
-      + '</div>'
-      + '<h3><a href="' + esc2(a.f) + '">' + esc2(a.t) + '</a></h3>'
-      + (a.x ? '<p class="post-excerpt">' + esc2(a.x) + '</p>' : '')
-      + '<a class="read-more" href="' + esc2(a.f) + '">閱讀全文 →</a>'
-      + '</article>';
-  }).join('');
-}
-
-loadIndex();
 </script>
 </body>
 
