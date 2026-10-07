@@ -108,6 +108,11 @@
     .nav-panels a { font-size:.9rem; color:var(--text-secondary); text-decoration:none;
       padding:5px 0; border-bottom:1px solid transparent; }
     .nav-panels a:hover { color:var(--accent); border-bottom-color:var(--accent); }
+
+    /* 英文標題：與 article h1 外觀一致，但不佔用第二個 h1（SEO） */
+    article h2.post-title-en { font-size:1.8rem; margin-bottom:16px; line-height:1.4;
+      color:#1a1a2e; font-weight:700; }
+    @media (max-width:640px){ article h2.post-title-en { font-size:1.5rem; } }
 </style>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -309,7 +314,7 @@ WhatsApp: +852 6641 7912<br>
 
     <div class="en">
       <blockquote class="zhengge-pingdian"><strong>[ZHENG GE REVIEW]</strong> Column: Hany Blog Review</blockquote>
-      <h1>"A Box of Mooncakes to Germany: Frank's Email 17 Years Later"</h1>
+      <h2 class="post-title-en">"A Box of Mooncakes to Germany: Frank's Email 17 Years Later"</h2>
 <figure class="post-figure">
   <img src="hany-moon-germany-cover.webp" alt="Cover: A faded Polaroid from 2009 Guangzhou" loading="lazy" width="1024" height="576">
   <figcaption><span class="cn">封面：2009 年廣州越秀嘅一張舊合照</span><span class="en">Cover: A faded Polaroid from 2009 Guangzhou Yuexiu</span><br><em>Image AI-assisted (Z-Image-Turbo)</em></figcaption>

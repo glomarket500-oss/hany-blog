@@ -110,6 +110,11 @@
     .nav-panels a { font-size:.9rem; color:var(--text-secondary); text-decoration:none;
       padding:5px 0; border-bottom:1px solid transparent; }
     .nav-panels a:hover { color:var(--accent); border-bottom-color:var(--accent); }
+
+    /* 英文標題：與 article h1 外觀一致，但不佔用第二個 h1（SEO） */
+    article h2.post-title-en { font-size:1.8rem; margin-bottom:16px; line-height:1.4;
+      color:#1a1a2e; font-weight:700; }
+    @media (max-width:640px){ article h2.post-title-en { font-size:1.5rem; } }
 </style>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -571,7 +576,7 @@ WhatsApp: +852 6641 7912<br>
 
     <div class="en">
       <blockquote class="zhengge-pingdian"><strong>[ZHENG GE REVIEW]</strong> Column: Hany Blog Review</blockquote>
-      <h1>"Doubao Phone Goes Official" — GUI Fallback + AI-Office Subscriptions. A Gen-Xer's Take.</h1>
+      <h2 class="post-title-en">"Doubao Phone Goes Official" — GUI Fallback + AI-Office Subscriptions. A Gen-Xer's Take.</h2>
 <figure class="post-figure">
   <img src="hany-doubao-gui-cover.webp" alt="Cover: Doubao phone GUI fallback AI office" loading="lazy" width="1024" height="576">
   <figcaption><span class="cn">封面：豆包手機「轉正」GUI 兜底 AI 辦公養家</span><span class="en">Cover: Doubao phone "goes official" — GUI fallback plus AI office</span><br><em>Image AI-assisted (Z-Image-Turbo)</em></figcaption>

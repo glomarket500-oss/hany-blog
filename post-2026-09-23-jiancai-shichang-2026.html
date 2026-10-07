@@ -85,6 +85,11 @@
     .nav-panels a { font-size:.9rem; color:var(--text-secondary); text-decoration:none;
       padding:5px 0; border-bottom:1px solid transparent; }
     .nav-panels a:hover { color:var(--accent); border-bottom-color:var(--accent); }
+
+    /* 英文標題：與 article h1 外觀一致，但不佔用第二個 h1（SEO） */
+    article h2.post-title-en { font-size:1.8rem; margin-bottom:16px; line-height:1.4;
+      color:#1a1a2e; font-weight:700; }
+    @media (max-width:640px){ article h2.post-title-en { font-size:1.5rem; } }
 </style>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -208,7 +213,7 @@ WhatsApp: +852 6641 7912<br>
 
     <div class="en">
       <blockquote class="zhengge-pingdian"><strong>[ZHENG GE REVIEW]</strong> Column: Hany Blog Review</blockquote>
-      <h1>Real-Estate Cold Hit Our Hardware Shop — Three Days Earlier, Beijing Already Knew</h1>
+      <h2 class="post-title-en">Real-Estate Cold Hit Our Hardware Shop — Three Days Earlier, Beijing Already Knew</h2>
 <figure class="post-figure">
   <img src="hany-jiancai-shichang-2026-cover.webp" alt="Cover: Kowloon building-materials shop" loading="lazy" width="1024" height="576">
   <figcaption><span class="cn">封面：建材市場陳老闆嘅門窗五金鋪</span><span class="en">Cover: Mr. Chen's door-handle and hardware shop</span><br><em>Image AI-assisted (Z-Image-Turbo)</em></figcaption>
