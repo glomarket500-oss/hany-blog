@@ -182,7 +182,7 @@ footer a:hover{color:var(--accent)}
 .strip-links{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;font-size:.84rem}
 .strip-links a{color:var(--accent);border-bottom:1px solid transparent}
 .strip-links a:hover{border-bottom-color:var(--accent)}
-.maker-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.maker-strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
 .maker-thumb{display:flex;flex-direction:column;gap:10px}
 /* 肖像原圖只有 215–384px（見 scripts/make_partners.py，永不放大），
    而 `make_partners.py` 已經把每張肖像切成圓形並補上卡片底色，
@@ -216,6 +216,8 @@ footer a:hover{color:var(--accent)}
   filter:saturate(.92)}
 .maker-card .body{padding:20px 20px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
 .maker-card .who{font-size:1.02rem;font-weight:700}
+/* 合夥人姓名（2026-10 創辦人指示可以刊登）。有姓名嘅卡才會出呢一行。 */
+.maker-card .pname{font-size:1.24rem;font-weight:800;letter-spacing:-.01em;line-height:1.2}
 .maker-card .where{font-size:.82rem;color:var(--accent);font-weight:650;letter-spacing:.03em}
 .maker-card .disc{font-size:.86rem;color:var(--ink);font-weight:600}
 .maker-card p.intro{font-size:.88rem;color:var(--muted)}
@@ -281,6 +283,60 @@ footer a:hover{color:var(--accent)}
 .slot-cap .what{font-size:.82rem;color:var(--muted)}
 .slot-cap .when{font-size:.78rem;color:var(--accent);font-weight:600;
   font-variant-numeric:tabular-nums}
+
+/* ---------- 緊湊合夥人卡 / 工作室卡（2026-10 版面改版）----------
+   創辦人指示：呢一欄同工作室嗰邊資訊太多，要做細。
+   原則：一屏睇晒 → 詳情收進卡內 <details>，一按即見。
+   頭像顯示 ~72–96px（原圖 160px = 2× retina），所以設硬上限唔會撐大。 */
+.maker-grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+.region-grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.mini-card,.maker-card{display:flex;flex-direction:column;background:var(--surface);
+  border:1px solid var(--line);border-radius:var(--radius-sm);overflow:hidden;
+  transition:.2s}
+.mini-card:hover,.maker-card:hover{box-shadow:var(--shadow);transform:translateY(-1px)}
+.mc-head{display:flex;align-items:center;gap:12px;padding:14px 14px 0}
+.mc-id{min-width:0}
+.maker-card img.avatar{width:76px;height:76px;max-width:76px;flex:none;
+  border-radius:50%;object-fit:cover;background:#eceae5;filter:saturate(.92)}
+.maker-thumb img{width:76px;height:76px;max-width:76px;margin:0 auto 4px;
+  border-radius:50%;object-fit:cover;background:#eceae5;filter:saturate(.92)}
+.maker-card .body,.mini-card .body{padding:10px 14px 14px;display:flex;
+  flex-direction:column;gap:6px;flex:1}
+.maker-card .pname{font-size:1.02rem;font-weight:800;letter-spacing:-.01em;line-height:1.2}
+.maker-card .where,.mini-card .where{font-size:.72rem;color:var(--accent);font-weight:650;
+  letter-spacing:.05em;text-transform:uppercase}
+.maker-card .brief{font-size:.82rem;color:var(--ink);line-height:1.45}
+.maker-card .contact{font-size:.76rem;color:var(--muted);margin:0;
+  overflow-wrap:anywhere}
+.mini-card .cap{font-size:.82rem;color:var(--ink);font-weight:600;
+  font-variant-numeric:tabular-nums}
+.mini-card .city{font-size:.78rem;color:var(--muted);line-height:1.4}
+/* 卡內 <details>：唔跟頁面層 <details> 嘅大內距 */
+.maker-card details,.mini-card details{border:0;background:transparent;margin-top:2px}
+.maker-card details summary,.mini-card details summary{padding:6px 0;font-size:.76rem;
+  font-weight:650;color:var(--accent);letter-spacing:.02em}
+.maker-card details summary::after,.mini-card details summary::after{content:"+";
+  float:right;color:var(--muted);font-weight:400}
+.maker-card details[open] summary::after,.mini-card details[open] summary::after{content:"–"}
+.maker-card details .ans,.mini-card details .ans{padding:0 0 6px;color:var(--muted);
+  font-size:.78rem;line-height:1.55}
+.maker-card .tags{margin:2px 0 4px}
+.maker-card .tag,.mini-card .tag{font-size:.66rem;padding:2px 8px}
+.maker-card .slots{margin-top:2px;padding-top:6px;gap:4px}
+.maker-card .slots li{font-size:.76rem;gap:8px}
+.maker-card .slots li span:first-child{min-width:92px}
+.mini-card .slots{margin-top:4px;padding-top:6px;gap:4px}
+.mini-card .slots li{font-size:.76rem;gap:8px;display:flex}
+.mini-card .slots li span:first-child{min-width:88px;color:var(--ink);flex:none}
+.region-h h3{font-size:.68rem;letter-spacing:.18em}
+.region-h{padding:10px 16px}
+.region{border:0;background:transparent;margin-bottom:26px}
+.region-h{background:transparent;border-bottom:1px solid var(--line)}
+@media(max-width:640px){
+  .maker-grid,.region-grid{grid-template-columns:1fr}
+  .maker-card img.avatar,.maker-thumb img{width:64px;height:64px;max-width:64px}
+}
+
 .clips{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 .clip{display:flex;flex-direction:column}
 .clip video,.clip .clip-empty{width:100%;aspect-ratio:16/9;border-radius:var(--radius);
