@@ -2,7 +2,16 @@
    由各頁原本的 inline <style> 抽出，讓瀏覽器跨頁快取。 */
 
 *{margin:0;padding:0;box-sizing:border-box;}
+.author-card h4{font-size:1rem;margin-bottom:6px;}
+.author-card img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0;}
+.author-card p{font-size:0.88rem;color:var(--text-secondary);line-height:1.6;}
+.author-card{background:var(--bg-elevated);border:1px solid var(--border-light);border-radius:var(--radius);padding:28px;margin-top:32px;display:flex;gap:20px;align-items:flex-start;}
+.container{max-width:720px;margin:0 auto;padding:0 24px;}
 .en{display:none;}
+.lang-btn{background:none;border:1px solid var(--border-light);padding:6px 14px;border-radius:6px;cursor:pointer;font-size:0.85rem;margin-left:8px;}
+.logo span{color:var(--accent);}
+.logo{font-weight:700;color:var(--text);text-decoration:none;font-size:1.1rem;}
+.nav-links{display:flex;gap:6px;align-items:center;}
 .nav-panels .inner{max-width:1100px;margin:0 auto;padding:16px 24px 20px;display:flex;flex-wrap:wrap;gap:8px 20px;}
 .nav-panels .panel-title{width:100%;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:2px;}
 .nav-panels a:hover{color:var(--accent);border-bottom-color:var(--accent);}
@@ -13,5 +22,36 @@
 .nav-parent:hover,.nav-parent[aria-expanded="true"]{color:var(--accent);background:var(--accent-light);}
 .nav-parent[aria-expanded="true"] .caret{transform:rotate(180deg);}
 .nav-parent{background:none;border:none;padding:8px 12px;font:inherit;font-size:.88rem;color:var(--text-secondary);cursor:pointer;border-radius:8px;display:inline-flex;align-items:center;gap:5px;transition:all .18s;}
+.post-content blockquote::before{content:'\201C';position:absolute;left:14px;top:6px;font-size:2.4rem;color:var(--accent);opacity:.45;font-family:Georgia,serif}
+.post-content blockquote{border-left:4px solid var(--accent);padding:16px 24px;margin:1.5em 0;background:var(--accent-light);border-radius:0 var(--radius-sm) var(--radius-sm) 0;font-style:italic;}
+.post-content blockquote{position:relative;border-left:none;background:#fff7f3;border-radius:0 12px 12px 0;padding:20px 26px 20px 52px;margin:2em 0;font-style:normal;font-size:1.02rem;line-height:1.9;color:#4a3a32}
+.post-content h2{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang HK','Noto Sans TC',sans-serif;font-size:1.32rem;font-weight:700;line-height:1.5;margin:2.4em 0 .9em;padding:0 0 0 14px;border-left:4px solid var(--accent);border-bottom:none;letter-spacing:0}
+.post-content h2{font-size:1.3rem;font-weight:600;margin:2em 0 0.8em;padding-bottom:8px;border-bottom:2px solid var(--accent-light);}
+.post-content img{max-width:100%;border-radius:var(--radius);margin:1.5em 0;box-shadow:var(--shadow);}
+.post-content p{margin-bottom:1.4em;}
+.post-content p{margin:0 0 1.5em}
+.post-content strong{color:var(--accent);}
+.post-content>p:first-of-type::first-letter{font-size:1.9em;font-weight:700;line-height:1;float:left;margin:.08em .12em 0 0;color:var(--accent)}
+.post-content{font-family:Georgia,'Times New Roman','Noto Serif TC','Songti TC','SimSun',serif;font-size:1.08rem;line-height:2.0;letter-spacing:.015em;color:#2b2b2b;text-align:justify;max-width:42em;margin:0 auto}
+.post-content{font-size:1.05rem;line-height:1.9;}
+.post-footer .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;}
+.post-footer .tag{background:#f5f5f5;padding:4px 12px;border-radius:4px;font-size:0.8rem;color:var(--text-secondary);}
+.post-footer p{color:var(--text-muted);font-size:0.9rem;}
+.post-footer{margin-top:48px;padding-top:32px;border-top:1px solid var(--border-light);}
+.post-header h1{font-family:Georgia,'Noto Serif TC','Songti TC',serif;font-size:1.72rem;line-height:1.45;letter-spacing:0}
+.post-header h1{font-size:1.7rem;font-weight:700;line-height:1.4;margin-bottom:16px;letter-spacing:-0.3px;}
+.post-header{margin-bottom:40px;padding-bottom:32px;border-bottom:1px solid var(--border-light);}
+.post-meta .tag{background:var(--accent-light);color:var(--accent);padding:3px 12px;border-radius:20px;font-weight:500;}
+.post-meta{display:flex;gap:16px;align-items:center;flex-wrap:wrap;color:var(--text-muted);font-size:0.85rem;}
+:root{--bg:#fafafa;--bg-elevated:#fff;--text:#1a1a1a;--text-secondary:#555;--text-muted:#888;--accent:#c41e3a;--accent-light:#fef2f2;--border-light:#eee;--border:#ddd;--radius:12px;--radius-sm:8px;--shadow:0 1px 3px rgba(0,0,0,0.04);--shadow-hover:0 8px 24px rgba(0,0,0,0.08);}
+@media(max-width:640px){.post-content{font-size:1.0rem;line-height:1.95}.post-header h1{font-size:1.38rem}.post-content>p:first-of-type::first-letter{font-size:1.7em}}
+article{padding:48px 0 64px;}
 body.show-en .cn{display:none;}
 body.show-en .en{display:block;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans TC','PingFang TC',sans-serif;background:var(--bg);color:var(--text);line-height:1.8;}
+footer p{font-size:0.82rem;color:var(--text-muted);}
+footer{background:var(--bg-elevated);border-top:1px solid var(--border-light);padding:32px 0;text-align:center;margin-top:64px;}
+nav .container{display:flex;justify-content:space-between;align-items:center;height:56px;}
+nav a:hover,nav a.active{color:var(--accent);background:var(--accent-light);}
+nav a{color:var(--text-secondary);text-decoration:none;padding:8px 14px;border-radius:6px;font-size:0.88rem;transition:all 0.2s;}
+nav{background:var(--bg-elevated);border-bottom:1px solid var(--border-light);position:sticky;top:0;z-index:100;}
