@@ -208,35 +208,37 @@
 </head>
 
 <style>
-.search-box{display:flex;gap:10px;margin:24px 0 10px}
-.search-box input{flex:1;padding:14px 18px;border:1px solid var(--border-light);
-  border-radius:10px;font-size:1rem;font-family:inherit;outline:none}
+/* 搜尋頁版面（2026-10-07 重排）：內容收在 760px 容器內，不再滿版 */
+.search-page{padding:48px 0 64px}
+.search-inner{max-width:760px;margin:0 auto;padding:0 24px;box-sizing:border-box}
+.search-page .eyebrow{color:var(--accent);font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;font-size:.72rem}
+.search-page h1{font-size:1.55rem;margin:10px 0 0;letter-spacing:-.01em}
+.search-lede{color:var(--text-secondary);margin-top:8px;font-size:.95rem;line-height:1.7}
+.search-box{display:flex;gap:10px;margin:22px 0 10px}
+.search-box input{flex:1;min-width:0;padding:12px 16px;border:1px solid var(--border-light);
+  border-radius:10px;font-size:.95rem;font-family:inherit;outline:none;
+  background:var(--bg-elevated);box-sizing:border-box}
 .search-box input:focus{border-color:var(--accent)}
-.search-box button{padding:14px 26px;border:none;border-radius:10px;background:var(--accent);
-  color:#fff;font-size:.95rem;font-weight:600;cursor:pointer;font-family:inherit}
-.search-count{font-size:.85rem;color:var(--text-muted);margin-bottom:26px}
-
-    /* 圖片安全重置：未設寬度的圖片不再撐爆版面（2026-10-07） */
-    img { max-width: 100%; height: auto; }
-
-    /* ===== 導航就地展開（2026-10-07） ===== */
-    .nav-parent { background:none; border:none; padding:8px 12px; font:inherit;
-      font-size:.88rem; color:var(--text-secondary); cursor:pointer; border-radius:8px;
-      display:inline-flex; align-items:center; gap:5px; transition:all .18s; }
-    .nav-parent:hover, .nav-parent[aria-expanded="true"] { color:var(--accent);
-      background:var(--accent-light); }
-    .nav-parent .caret { font-size:.58rem; opacity:.65; transition:transform .2s; }
-    .nav-parent[aria-expanded="true"] .caret { transform:rotate(180deg); }
-    .nav-panels { display:none; background:var(--bg-elevated);
-      border-top:1px solid var(--border-light); }
-    .nav-panels.open { display:block; }
-    .nav-panels .inner { max-width:1100px; margin:0 auto; padding:16px 24px 20px;
-      display:flex; flex-wrap:wrap; gap:8px 20px; }
-    .nav-panels .panel-title { width:100%; font-size:.72rem; letter-spacing:.14em;
-      text-transform:uppercase; color:var(--text-muted); margin-bottom:2px; }
-    .nav-panels a { font-size:.9rem; color:var(--text-secondary); text-decoration:none;
-      padding:5px 0; border-bottom:1px solid transparent; }
-    .nav-panels a:hover { color:var(--accent); border-bottom-color:var(--accent); }
+.search-box button{padding:12px 24px;border:none;border-radius:10px;background:var(--accent);
+  color:#fff;font-size:.92rem;font-weight:600;cursor:pointer;font-family:inherit;
+  white-space:nowrap}
+.search-box button:hover{opacity:.9}
+.search-count{font-size:.84rem;color:var(--text-muted);margin-bottom:24px}
+#results .post-card{padding:22px 24px;margin-bottom:14px}
+#results .post-card h3{font-size:1.05rem;margin:6px 0 8px;line-height:1.4}
+#results .post-card h3 a{color:inherit;text-decoration:none}
+#results .post-card h3 a:hover{color:var(--accent)}
+#results .post-excerpt{font-size:.92rem;color:var(--text-secondary);margin:0 0 10px;
+  line-height:1.7}
+#results .read-more{font-size:.88rem;color:var(--accent);font-weight:600;
+  text-decoration:none}
+@media (max-width:640px){
+  .search-page{padding:32px 0 48px}
+  .search-page h1{font-size:1.32rem}
+  .search-box{flex-direction:column}
+  .search-box button{width:100%}
+}
 </style>
 <body>
 
@@ -295,13 +297,11 @@
   </div>
 </div>
   </nav>
-<main class="xhs-page">
-  <section style="padding:44px 0 20px">
-    <div class="eyebrow" style="color:var(--accent);font-weight:700;letter-spacing:.14em;
-         text-transform:uppercase;font-size:.74rem">Search</div>
-    <h1 style="font-size:1.8rem;margin:12px 0 0">搵文章</h1>
-    <p style="color:var(--text-secondary);margin-top:10px">
-      打關鍵字，即時過濾全站文章。可搜標題、分類、正文。</p>
+<main class="search-page">
+  <div class="search-inner">
+    <div class="eyebrow">Search</div>
+    <h1>搵文章</h1>
+    <p class="search-lede">打關鍵字，即時過濾全站文章。可搜標題、分類、正文。</p>
     <div class="search-box">
       <input id="q" type="search" placeholder="例如：土耳其、AI 算力、老人機…"
              oninput="run()" autocomplete="off">
@@ -309,7 +309,7 @@
     </div>
     <p class="search-count" id="count">載入索引中…</p>
     <div id="results"></div>
-  </section>
+  </div>
 </main>
 <footer class="social-footer">
     <div class="container">
