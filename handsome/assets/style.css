@@ -332,6 +332,21 @@ footer a:hover{color:var(--accent)}
 .region-h{padding:10px 16px}
 .region{border:0;background:transparent;margin-bottom:26px}
 .region-h{background:transparent;border-bottom:1px solid var(--line)}
+
+/* ---------- 工作室卡縮圖（2026-10 創辦人指示：加濃縮圖）----------
+   縮圖只係一個細磚，唔係主視覺：3:2、中央裁切、唔會撐高張卡。
+   合夥人肖像用圓形，站內配圖用方角，字磚用最克制嘅排版處理 ——
+   三種都佔同一個位、同一個高度，所以格仔睇落一致。 */
+.mini-card .thumb{width:100%;aspect-ratio:3/2;object-fit:cover;object-position:center;
+  background:#eceae5;border-radius:0;display:block}
+.mini-card img.thumb.round{aspect-ratio:3/2;object-fit:cover;object-position:center}
+.mini-card .thumb.tile{display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:4px;background:#f2f0ec;border-bottom:1px solid var(--line)}
+.mini-card .thumb.tile .tile-code{font-size:1.05rem;font-weight:800;letter-spacing:.14em;
+  color:var(--accent)}
+.mini-card .thumb.tile .tile-name{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted)}
+.mini-card .body{padding:10px 14px 14px}
 @media(max-width:640px){
   .maker-grid,.region-grid{grid-template-columns:1fr}
   .maker-card img.avatar,.maker-thumb img{width:64px;height:64px;max-width:64px}
