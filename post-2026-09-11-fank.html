@@ -246,6 +246,15 @@
       .nav-links > a, .nav-links .nav-parent { font-size: .82rem; padding: 7px 4px; }
       .nav-links .lang-toggle { padding: 6px 10px; font-size: .78rem; }
     }
+
+    /* ===== 導航不換行保險（2026-10-07） ===== */
+    @media (min-width: 769px) {
+      .nav-wrapper { overflow-x: auto; scrollbar-width: none; }
+      .nav-wrapper::-webkit-scrollbar { display: none; }
+      .nav-links { flex-wrap: nowrap; }
+      .nav-links > a, .nav-links .nav-parent, .nav-links .lang-toggle {
+        white-space: nowrap; flex: 0 0 auto; }
+    }
 </style>
 </head>
 
@@ -266,7 +275,7 @@
           <button type="button" class="nav-parent" data-panel="reviews" onclick="toggleNavPanel(this)" aria-expanded="false"><span class="cn">點評</span><span class="en">Reviews</span> <span class="caret">▼</span></button>
 
           <button type="button" class="nav-parent" data-panel="topics" onclick="toggleNavPanel(this)" aria-expanded="false"><span class="cn">專題</span><span class="en">Collections</span> <span class="caret">▼</span></button><a href="search.html"><span class="cn">搜尋</span><span class="en">Search</span></a>
-          <a href="about.html"><span class="cn">關於</span><span class="en">About</span></a>
+          <button type="button" class="nav-parent" data-panel="about" onclick="toggleNavPanel(this)" aria-expanded="false"><span class="cn">關於</span><span class="en">About</span> <span class="caret">▼</span></button>
 
           <button type="button" class="nav-parent" data-panel="links" onclick="toggleNavPanel(this)" aria-expanded="false"><span class="cn">連結</span><span class="en">Links</span> <span class="caret">▼</span></button>
 
@@ -302,7 +311,7 @@
       <a href="search.html?q=行業"><span class="cn">行業觀察</span><span class="en">Industry</span></a>
     </div>
   </div>
-  <div class="nav-panel" data-id="topics" style="display:none"><div class="inner"><div class="panel-title"><span class="cn">專題</span><span class="en">Collections</span></div><a href="topics.html"><span class="cn">全部主題</span><span class="en">All topics</span></a><a href="topics.html#trade"><span class="cn">外貿實戰</span><span class="en">Trade</span></a><a href="topics.html#ai"><span class="cn">AI 與算力</span><span class="en">AI &amp; compute</span></a><a href="topics.html#products"><span class="cn">產品回憶</span><span class="en">Products</span></a><a href="topics.html#people"><span class="cn">人物故事</span><span class="en">People</span></a><a href="topics.html#industry"><span class="cn">行業觀察</span><span class="en">Industry</span></a><a href="topics.html#city"><span class="cn">城市觀察</span><span class="en">City notes</span></a><a href="topics.html#culture"><span class="cn">文化與歷史</span><span class="en">Culture</span></a><a href="topics.html#affairs"><span class="cn">時事點評</span><span class="en">Current affairs</span></a><a href="topics.html#tea"><span class="cn">茶葉點評</span><span class="en">Tea</span></a><a href="topics.html#life"><span class="cn">人生感悟</span><span class="en">Life</span></a><a href="products.html"><span class="cn">產品回憶專題</span><span class="en">Product memories</span></a></div></div><div class="nav-panel" data-id="links" style="display:none">
+  <div class="nav-panel" data-id="topics" style="display:none"><div class="inner"><div class="panel-title"><span class="cn">專題</span><span class="en">Collections</span></div><a href="topics.html"><span class="cn">全部主題</span><span class="en">All topics</span></a><a href="topics.html#trade"><span class="cn">外貿實戰</span><span class="en">Trade</span></a><a href="topics.html#ai"><span class="cn">AI 與算力</span><span class="en">AI &amp; compute</span></a><a href="topics.html#products"><span class="cn">產品回憶</span><span class="en">Products</span></a><a href="topics.html#people"><span class="cn">人物故事</span><span class="en">People</span></a><a href="topics.html#industry"><span class="cn">行業觀察</span><span class="en">Industry</span></a><a href="topics.html#city"><span class="cn">城市觀察</span><span class="en">City notes</span></a><a href="topics.html#culture"><span class="cn">文化與歷史</span><span class="en">Culture</span></a><a href="topics.html#affairs"><span class="cn">時事點評</span><span class="en">Current affairs</span></a><a href="topics.html#tea"><span class="cn">茶葉點評</span><span class="en">Tea</span></a><a href="topics.html#life"><span class="cn">人生感悟</span><span class="en">Life</span></a><a href="products.html"><span class="cn">產品回憶專題</span><span class="en">Product memories</span></a></div></div><div class="nav-panel" data-id="search" style="display:none"><div class="inner"><div class="panel-title"><span class="cn">搜尋</span><span class="en">Search</span></div><form action="search.html" method="get" style="width:100%;display:flex;gap:8px;margin:4px 0 8px"><input type="search" name="q" placeholder="打關鍵字，例如：土耳其、AI 算力…" style="flex:1;min-width:0;padding:9px 13px;border:1px solid var(--border-light);border-radius:8px;font-size:.88rem;font-family:inherit;outline:none;box-sizing:border-box"><button type="submit" style="padding:9px 18px;border:none;border-radius:8px;background:var(--accent);color:#fff;font-size:.85rem;font-weight:600;cursor:pointer;font-family:inherit">搜尋</button></form><a href="search.html"><span class="cn">去搜尋頁</span><span class="en">Open search page</span></a><a href="topics.html"><span class="cn">按主題瀏覽</span><span class="en">Browse by topic</span></a></div></div><div class="nav-panel" data-id="about" style="display:none"><div class="inner"><div class="panel-title"><span class="cn">關於</span><span class="en">About</span></div><a href="about.html"><span class="cn">關於鄭哥</span><span class="en">About Hany</span></a><a href="about.html#business"><span class="cn">我做緊乜</span><span class="en">What I do</span></a><a href="about.html#invest"><span class="cn">我投資年輕創業者</span><span class="en">I back young founders</span></a><a href="products.html"><span class="cn">產品回憶</span><span class="en">Product memories</span></a><a href="contact.html"><span class="cn">聯繫鄭哥</span><span class="en">Contact</span></a><a href="/handsome/"><span class="cn">HANDSOME 訂造奢侈品</span><span class="en">HANDSOME (a brand I invested in)</span></a></div></div><div class="nav-panel" data-id="links" style="display:none">
     <div class="inner">
       <div class="panel-title"><span class="cn">連結</span><span class="en">Links</span></div>
       <a href="links.html"><span class="cn">全部連結</span><span class="en">All links</span></a>

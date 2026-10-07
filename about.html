@@ -269,6 +269,15 @@ body.show-en .cn-inline { display:none; }
       .nav-links > a, .nav-links .nav-parent { font-size: .82rem; padding: 7px 4px; }
       .nav-links .lang-toggle { padding: 6px 10px; font-size: .78rem; }
     }
+
+    /* ===== 導航不換行保險（2026-10-07） ===== */
+    @media (min-width: 769px) {
+      .nav-wrapper { overflow-x: auto; scrollbar-width: none; }
+      .nav-wrapper::-webkit-scrollbar { display: none; }
+      .nav-links { flex-wrap: nowrap; }
+      .nav-links > a, .nav-links .nav-parent, .nav-links .lang-toggle {
+        white-space: nowrap; flex: 0 0 auto; }
+    }
 </style>
 </head>
 
