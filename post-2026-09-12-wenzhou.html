@@ -70,22 +70,87 @@
     .xhs-bottom-btn{padding:10px 18px;border-radius:10px;font-size:.88rem;text-decoration:none;font-weight:500;display:inline-block}
     .xhs-bottom-btn-primary{background:#ff2442;color:#fff}
     .xhs-bottom-btn-secondary{background:#fff;color:#ff2442;border:1px solid #ff2442}
-  </style>
+  
+    /* ===== 導航就地展開（2026-10-07） ===== */
+    .nav-parent { background:none; border:none; padding:8px 12px; font:inherit;
+      font-size:.88rem; color:var(--text-secondary); cursor:pointer; border-radius:8px;
+      display:inline-flex; align-items:center; gap:5px; transition:all .18s; }
+    .nav-parent:hover, .nav-parent[aria-expanded="true"] { color:var(--accent);
+      background:var(--accent-light); }
+    .nav-parent .caret { font-size:.58rem; opacity:.65; transition:transform .2s; }
+    .nav-parent[aria-expanded="true"] .caret { transform:rotate(180deg); }
+    .nav-panels { display:none; background:var(--bg-elevated);
+      border-top:1px solid var(--border-light); }
+    .nav-panels.open { display:block; }
+    .nav-panels .inner { max-width:1100px; margin:0 auto; padding:16px 24px 20px;
+      display:flex; flex-wrap:wrap; gap:8px 20px; }
+    .nav-panels .panel-title { width:100%; font-size:.72rem; letter-spacing:.14em;
+      text-transform:uppercase; color:var(--text-muted); margin-bottom:2px; }
+    .nav-panels a { font-size:.9rem; color:var(--text-secondary); text-decoration:none;
+      padding:5px 0; border-bottom:1px solid transparent; }
+    .nav-panels a:hover { color:var(--accent); border-bottom-color:var(--accent); }
+</style>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<script type="speculationrules">
+{"prerender":[{"where":{"and":[
+  {"href_matches":"/*"},
+  {"not":{"href_matches":"/cdn-cgi/*"}},
+  {"not":{"selector_matches":"[target=_blank]"}}
+]},"eagerness":"moderate"}]}
+</script>
 </head>
 <body>
 <nav><div class="container"><a href="index.html" class="logo">鄭哥<span>/ Hany</span></a><div class="nav-links">
           <a href="index.html"><span class="cn">首頁</span><span class="en">Home</span></a>
-          <a href="blog.html" class="active"><span class="cn">文章</span><span class="en">Articles</span></a>
-          <a href="xhs.html"><span class="cn">點評</span><span class="en">Reviews</span></a>
+          <button type="button" class="nav-parent" data-panel="articles" aria-expanded="false"><span class="cn">文章</span><span class="en">Articles</span> <span class="caret">▼</span></button>
+          <button type="button" class="nav-parent" data-panel="reviews" aria-expanded="false"><span class="cn">點評</span><span class="en">Reviews</span> <span class="caret">▼</span></button>
           <a href="search.html"><span class="cn">搜尋</span><span class="en">Search</span></a>
           <a href="about.html"><span class="cn">關於</span><span class="en">About</span></a>
-          <a href="links.html"><span class="cn">連結</span><span class="en">Links</span></a>
+          <button type="button" class="nav-parent" data-panel="links" aria-expanded="false"><span class="cn">連結</span><span class="en">Links</span> <span class="caret">▼</span></button>
           <a href="contact.html"><span class="cn">聯繫</span><span class="en">Contact</span></a>
           <button class="lang-btn" onclick="toggleLang()" id="langBtn">EN</button>
-        </div></div></nav>
+        </div></div><div class="nav-panels" id="navPanels" data-open="">
+  <div class="nav-panel" data-id="articles" style="display:none">
+    <div class="inner">
+      <div class="panel-title"><span class="cn">文章</span><span class="en">Articles</span></div>
+      <a href="blog.html"><span class="cn">全部文章</span><span class="en">All articles</span></a>
+      <a href="search.html?q=外貿"><span class="cn">外貿故事</span><span class="en">Trade stories</span></a>
+      <a href="search.html?q=AI"><span class="cn">AI 點評</span><span class="en">AI</span></a>
+      <a href="search.html?q=城市"><span class="cn">城市觀察</span><span class="en">City notes</span></a>
+      <a href="search.html?q=文化"><span class="cn">文化</span><span class="en">Culture</span></a>
+      <a href="search.html?q=行業"><span class="cn">行業觀察</span><span class="en">Industry</span></a>
+      <a href="search.html?q=產品"><span class="cn">產品創新</span><span class="en">Products</span></a>
+    </div>
+  </div>
+  <div class="nav-panel" data-id="reviews" style="display:none">
+    <div class="inner">
+      <div class="panel-title"><span class="cn">點評</span><span class="en">Reviews</span></div>
+      <a href="xhs.html"><span class="cn">全部點評</span><span class="en">All reviews</span></a>
+      <a href="search.html?q=AI"><span class="cn">AI 點評</span><span class="en">AI</span></a>
+      <a href="search.html?q=外銷"><span class="cn">外銷點評</span><span class="en">Export</span></a>
+      <a href="search.html?q=茶"><span class="cn">茶葉點評</span><span class="en">Tea</span></a>
+      <a href="search.html?q=文化"><span class="cn">文化點評</span><span class="en">Culture</span></a>
+      <a href="search.html?q=行業"><span class="cn">行業觀察</span><span class="en">Industry</span></a>
+    </div>
+  </div>
+  <div class="nav-panel" data-id="links" style="display:none">
+    <div class="inner">
+      <div class="panel-title"><span class="cn">連結</span><span class="en">Links</span></div>
+      <a href="links.html"><span class="cn">全部連結</span><span class="en">All links</span></a>
+      <a href="xhs.html"><span class="cn">小紅書</span><span class="en">Xiaohongshu</span></a>
+      <a href="youtube.html"><span class="cn">YouTube</span><span class="en">YouTube</span></a>
+      <a href="linkedin.html"><span class="cn">LinkedIn</span><span class="en">LinkedIn</span></a>
+      <a href="facebook.html"><span class="cn">Facebook</span><span class="en">Facebook</span></a>
+      <a href="instagram.html"><span class="cn">Instagram</span><span class="en">Instagram</span></a>
+      <a href="tiktok.html"><span class="cn">TikTok</span><span class="en">TikTok</span></a>
+      <a href="twitter.html"><span class="cn">X / Twitter</span><span class="en">X / Twitter</span></a>
+    </div>
+  </div>
+</div>
+  </nav>
 <article><div class="container">
   <header class="post-header">
     <img src="hany-wenzhou-cover.webp" alt="温州女人 买工厂" style="width:100%; border-radius:12px; margin-bottom:24px;">
@@ -153,5 +218,27 @@
 function toggleLang(){document.body.classList.toggle('show-en');var btn=document.getElementById('langBtn');if(btn)btn.textContent=document.body.classList.contains('show-en')?'中':'EN';}
 </script>
 
+
+<script>
+function toggleNavPanel(btn){
+  var box=document.getElementById('navPanels'); if(!box) return;
+  var id=btn.getAttribute('data-panel');
+  var open=box.getAttribute('data-open');
+  var parents=document.querySelectorAll('.nav-parent');
+  if(open===id){
+    box.classList.remove('open'); box.setAttribute('data-open','');
+    for(var i=0;i<parents.length;i++) parents[i].setAttribute('aria-expanded','false');
+    return;
+  }
+  var panels=box.querySelectorAll('.nav-panel');
+  for(var j=0;j<panels.length;j++){
+    panels[j].style.display=(panels[j].getAttribute('data-id')===id?'block':'none');
+  }
+  box.classList.add('open'); box.setAttribute('data-open',id);
+  for(var k=0;k<parents.length;k++){
+    parents[k].setAttribute('aria-expanded', parents[k]===btn?'true':'false');
+  }
+}
+</script>
 </body>
 </html>
