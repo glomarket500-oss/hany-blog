@@ -288,12 +288,12 @@ body.show-en .cn-inline { display:none; }
     }
 .comments h2 { font-size: 1.3rem; font-weight: 600; margin-bottom: 24px; }
 .social-footer{background:#f0f0f5;padding:40px 0 32px;text-align:center;margin-top:48px;border-top:1px solid var(--border);overflow:hidden}
-.social-footer h3{font-size:0.95rem;margin-bottom:18px;color:#444;font-weight:600}
+
 .social-footer .container{max-width:960px;box-sizing:border-box}
-.social-links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;align-items:stretch;margin:0 auto 20px;padding:0 16px;max-width:720px;box-sizing:border-box}
-.social-links a{flex:0 1 calc(25% - 8px);display:flex;align-items:center;justify-content:center;gap:6px;color:#444;text-decoration:none;font-size:.83rem;padding:11px 8px;border:1px solid #e0e0e0;border-radius:9px;background:#fff;transition:all .2s;box-sizing:border-box;white-space:nowrap}
-.social-links a:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
-    .social-links a{flex:0 1 calc(50% - 5px);font-size:.8rem;padding:10px 6px}@media (max-width:420px){.social-links a{flex:0 1 100%;}}
+
+
+
+    @media (max-width:420px){}
 .copyright{font-size:.82rem;color:#999;margin-top:8px;padding:0 24px}
 .search-page{padding:40px 0 56px}
 .search-inner{max-width:720px;margin:0 auto;padding:0 24px;box-sizing:border-box}
@@ -350,6 +350,27 @@ body.show-en .cn-inline { display:none; }
       .nav-links { flex-wrap: nowrap; }
       .nav-links > a, .nav-links .nav-parent, .nav-links .lang-toggle {
         white-space: nowrap; flex: 0 0 auto; }
+    }
+    /* ===== 社群 footer 排列（2026-10-07 修正：先前漏了 media query 外層） ===== */
+    .social-footer h3 { font-size: .95rem; margin-bottom: 20px; color: #444;
+      font-weight: 600; }
+    .social-links { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;
+      align-items: stretch; margin: 0 auto 22px; padding: 0 16px; max-width: 780px;
+      box-sizing: border-box; }
+    .social-links a { flex: 0 1 calc(25% - 9px); display: flex; align-items: center;
+      justify-content: center; gap: 7px; color: #444; text-decoration: none;
+      font-size: .85rem; padding: 12px 10px; border: 1px solid #e0e0e0; border-radius: 10px;
+      background: #fff; transition: all .2s; box-sizing: border-box; white-space: nowrap;
+      line-height: 1.3; }
+    .social-links a:hover { color: var(--accent); border-color: var(--accent);
+      transform: translateY(-1px); box-shadow: 0 3px 10px rgba(0,0,0,.05); }
+    @media (max-width: 700px) {
+      .social-links { max-width: 520px; gap: 10px; }
+      .social-links a { flex: 0 1 calc(50% - 5px); font-size: .8rem; padding: 11px 8px; }
+    }
+    @media (max-width: 420px) {
+      .social-links { max-width: 320px; }
+      .social-links a { flex: 0 1 100%; }
     }
 </style>
 </head>
