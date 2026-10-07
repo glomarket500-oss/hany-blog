@@ -1,0 +1,17 @@
+/* 鄭哥 Hany 博客共用樣式
+   由各頁原本的 inline <style> 抽出，讓瀏覽器跨頁快取。 */
+
+*{margin:0;padding:0;box-sizing:border-box;}
+.en{display:none;}
+.nav-panels .inner{max-width:1100px;margin:0 auto;padding:16px 24px 20px;display:flex;flex-wrap:wrap;gap:8px 20px;}
+.nav-panels .panel-title{width:100%;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:2px;}
+.nav-panels a:hover{color:var(--accent);border-bottom-color:var(--accent);}
+.nav-panels a{font-size:.9rem;color:var(--text-secondary);text-decoration:none;padding:5px 0;border-bottom:1px solid transparent;}
+.nav-panels.open{display:block;}
+.nav-panels{display:none;background:var(--bg-elevated);border-top:1px solid var(--border-light);}
+.nav-parent .caret{font-size:.58rem;opacity:.65;transition:transform .2s;}
+.nav-parent:hover,.nav-parent[aria-expanded="true"]{color:var(--accent);background:var(--accent-light);}
+.nav-parent[aria-expanded="true"] .caret{transform:rotate(180deg);}
+.nav-parent{background:none;border:none;padding:8px 12px;font:inherit;font-size:.88rem;color:var(--text-secondary);cursor:pointer;border-radius:8px;display:inline-flex;align-items:center;gap:5px;transition:all .18s;}
+body.show-en .cn{display:none;}
+body.show-en .en{display:block;}

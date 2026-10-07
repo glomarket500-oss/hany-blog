@@ -44,79 +44,7 @@
   <meta property="article:tag" content="2009年外貿">
   <meta property="article:tag" content="外貿老炮兒">
 
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family: 'Noto Sans TC', -apple-system, 'PingFang HK', 'Microsoft JhengHei', sans-serif; background:#f5f5f7; color:#1a1a2e; line-height:1.75; }
-    .container { max-width:880px; margin:0 auto; padding:0 24px; }
-
-    nav { background:#fff; border-bottom:1px solid #e8e8ed; padding:14px 0; position:sticky; top:0; z-index:100; }
-    nav .container { display:flex; justify-content:space-between; align-items:center; }
-    .logo { font-size:1.05rem; font-weight:700; color:#1a1a2e; }
-    .nav-links { display:flex; align-items:center; gap:24px; }
-    nav a { text-decoration:none; color:#444; font-size:0.9rem; }
-    nav a:hover, nav a.active { color:#e94560; }
-    .lang-toggle { cursor:pointer; font-size:0.75rem; background:#1a1a2e; color:#fff; padding:5px 12px; border-radius:4px; border:none; }
-
-    article { background:#fff; padding:48px 32px; margin:32px 0; border-radius:12px; border:1px solid #e8e8ed; }
-    article h1 { font-size:1.8rem; margin-bottom:16px; line-height:1.4; color:#1a1a2e; }
-    article h2 { font-size:1.4rem; margin:36px 0 16px; padding-bottom:8px; border-bottom:2px solid #f0f0f5; color:#1a1a2e; }
-    article h3 { font-size:1.1rem; margin:24px 0 12px; color:#444; }
-    article p { margin-bottom:14px; font-size:0.98rem; }
-    article strong { color:#1a1a2e; font-weight:600; }
-    article ul { margin:12px 0 18px 24px; }
-    article li { margin-bottom:6px; font-size:0.95rem; }
-    article hr { border:none; border-top:1px solid #e8e8ed; margin:32px 0; }
-    article blockquote { background:#fafafa; border-left:4px solid #e94560; padding:14px 18px; margin:18px 0; color:#444; font-size:0.95rem; }
-    article blockquote.zhengge-pingdian { background:#fff5f5; border-left:4px solid #e94560; font-weight:600; color:#1a1a2e; }
-
-    .post-figure { margin:28px 0; }
-    .post-figure img { width:100%; height:auto; border-radius:8px; display:block; }
-    .post-figure figcaption { text-align:center; font-size:0.85rem; color:#888; margin-top:10px; line-height:1.5; }
-
-    .ok { color:#27ae60; font-weight:bold; }
-    .warn { color:#e67e22; font-weight:bold; }
-
-    footer { background:#f0f0f5; padding:32px 0; text-align:center; margin-top:32px; }
-    footer p { font-size:0.82rem; color:#999; }
-
-    .en { display:none; }
-    body.show-en .en { display:block; }
-    body.show-en .cn { display:none; }
-    .en-inline { display:none; }
-    body.show-en .en-inline { display:inline; }
-    body.show-en .cn-inline { display:none; }
-
-    @media (max-width:640px) {
-      article { padding:32px 20px; }
-      article h1 { font-size:1.5rem; }
-      article h2 { font-size:1.2rem; }
-      .nav-links { gap:14px; }
-    }
   
-    /* ===== 導航就地展開（2026-10-07） ===== */
-    .nav-parent { background:none; border:none; padding:8px 12px; font:inherit;
-      font-size:.88rem; color:var(--text-secondary); cursor:pointer; border-radius:8px;
-      display:inline-flex; align-items:center; gap:5px; transition:all .18s; }
-    .nav-parent:hover, .nav-parent[aria-expanded="true"] { color:var(--accent);
-      background:var(--accent-light); }
-    .nav-parent .caret { font-size:.58rem; opacity:.65; transition:transform .2s; }
-    .nav-parent[aria-expanded="true"] .caret { transform:rotate(180deg); }
-    .nav-panels { display:none; background:var(--bg-elevated);
-      border-top:1px solid var(--border-light); }
-    .nav-panels.open { display:block; }
-    .nav-panels .inner { max-width:1100px; margin:0 auto; padding:16px 24px 20px;
-      display:flex; flex-wrap:wrap; gap:8px 20px; }
-    .nav-panels .panel-title { width:100%; font-size:.72rem; letter-spacing:.14em;
-      text-transform:uppercase; color:var(--text-muted); margin-bottom:2px; }
-    .nav-panels a { font-size:.9rem; color:var(--text-secondary); text-decoration:none;
-      padding:5px 0; border-bottom:1px solid transparent; }
-    .nav-panels a:hover { color:var(--accent); border-bottom-color:var(--accent); }
-
-    /* 英文標題：與 article h1 外觀一致，但不佔用第二個 h1（SEO） */
-    article h2.post-title-en { font-size:1.8rem; margin-bottom:16px; line-height:1.4;
-      color:#1a1a2e; font-weight:700; }
-    @media (max-width:640px){ article h2.post-title-en { font-size:1.5rem; } }
-</style>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -128,6 +56,51 @@
   {"not":{"selector_matches":"[target=_blank]"}}
 ]},"eagerness":"moderate"}]}
 </script>
+<link rel="stylesheet" href="/site.css">
+<style>
+body { font-family: 'Noto Sans TC', -apple-system, 'PingFang HK', 'Microsoft JhengHei', sans-serif; background:#f5f5f7; color:#1a1a2e; line-height:1.75; }
+.container { max-width:880px; margin:0 auto; padding:0 24px; }
+nav { background:#fff; border-bottom:1px solid #e8e8ed; padding:14px 0; position:sticky; top:0; z-index:100; }
+nav .container { display:flex; justify-content:space-between; align-items:center; }
+.logo { font-size:1.05rem; font-weight:700; color:#1a1a2e; }
+.nav-links { display:flex; align-items:center; gap:24px; }
+nav a { text-decoration:none; color:#444; font-size:0.9rem; }
+nav a:hover, nav a.active { color:#e94560; }
+.lang-toggle { cursor:pointer; font-size:0.75rem; background:#1a1a2e; color:#fff; padding:5px 12px; border-radius:4px; border:none; }
+article { background:#fff; padding:48px 32px; margin:32px 0; border-radius:12px; border:1px solid #e8e8ed; }
+article h1 { font-size:1.8rem; margin-bottom:16px; line-height:1.4; color:#1a1a2e; }
+article h2 { font-size:1.4rem; margin:36px 0 16px; padding-bottom:8px; border-bottom:2px solid #f0f0f5; color:#1a1a2e; }
+article h3 { font-size:1.1rem; margin:24px 0 12px; color:#444; }
+article p { margin-bottom:14px; font-size:0.98rem; }
+article strong { color:#1a1a2e; font-weight:600; }
+article ul { margin:12px 0 18px 24px; }
+article li { margin-bottom:6px; font-size:0.95rem; }
+article hr { border:none; border-top:1px solid #e8e8ed; margin:32px 0; }
+article blockquote { background:#fafafa; border-left:4px solid #e94560; padding:14px 18px; margin:18px 0; color:#444; font-size:0.95rem; }
+article blockquote.zhengge-pingdian { background:#fff5f5; border-left:4px solid #e94560; font-weight:600; color:#1a1a2e; }
+.post-figure { margin:28px 0; }
+.post-figure img { width:100%; height:auto; border-radius:8px; display:block; }
+.post-figure figcaption { text-align:center; font-size:0.85rem; color:#888; margin-top:10px; line-height:1.5; }
+.ok { color:#27ae60; font-weight:bold; }
+.warn { color:#e67e22; font-weight:bold; }
+footer { background:#f0f0f5; padding:32px 0; text-align:center; margin-top:32px; }
+footer p { font-size:0.82rem; color:#999; }
+.en-inline { display:none; }
+body.show-en .en-inline { display:inline; }
+body.show-en .cn-inline { display:none; }
+
+
+    @media (max-width:640px) {
+      article { padding:32px 20px; }
+      article h1 { font-size:1.5rem; }
+      article h2 { font-size:1.2rem; }
+      .nav-links { gap:14px; }
+    }
+article h2.post-title-en { font-size:1.8rem; margin-bottom:16px; line-height:1.4;
+      color:#1a1a2e; font-weight:700; }
+
+    @media (max-width:640px){ article h2.post-title-en { font-size:1.5rem; } }
+</style>
 </head>
 <body>
 

@@ -10,122 +10,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="鄭哥 Hany">
 <meta name="description" content="90年代大學畢業，做過教師、翻譯、外貿電子家電、服裝鞋履、珠寶電車、教育培訓。而家喺七善門科技搞光伏賣AI算力，投資00後創新創業。唔係工程師，係幫老闆將技術變成錢嘅人。">
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family: 'Noto Sans SC', -apple-system, 'PingFang HK', sans-serif; background:#f5f5f7; color:#1a1a2e; line-height:1.7; }
-    .container { max-width:840px; margin:0 auto; padding:0 24px; }
-    
-    /* === 導航 === */
-    nav { background:#fff; border-bottom:1px solid #e8e8ed; padding:14px 0; position:sticky; top:0; z-index:100; }
-    nav .container { display:flex; justify-content:space-between; align-items:center; }
-    .logo { font-size:1.05rem; font-weight:700; letter-spacing:0.5px; color:#1a1a2e; }
-    .logo span { font-weight:400; font-size:0.75rem; color:#999; margin-left:6px; }
-    .nav-links { display:flex; align-items:center; gap:24px; }
-    nav a { text-decoration:none; color:#444; font-size:0.9rem; transition:color 0.2s; }
-    nav a:hover { color:#e94560; }
-    nav a.active { color:#e94560; font-weight:500; }
-    .lang-toggle { cursor:pointer; font-size:0.75rem; background:#1a1a2e; color:#fff; padding:5px 12px; border-radius:4px; border:none; }
-    
-    /* === Hero === */
-    header { background:#1a1a2e; color:#fff; padding:100px 0 80px; position:relative; overflow:hidden; }
-    header::before { content:''; position:absolute; top:-50%; right:-20%; width:500px; height:500px; background:rgba(233,69,96,0.08); border-radius:50%; }
-    header .container { position:relative; z-index:1; }
-    .hero-tag { display:inline-block; font-size:0.75rem; color:#e94560; border:1px solid rgba(233,69,96,0.4); padding:4px 14px; border-radius:20px; margin-bottom:20px; letter-spacing:1px; }
-    .en .hero-tag { font-size:0.7rem; }
-    header h1 { font-size:2.8rem; font-weight:400; margin-bottom:16px; line-height:1.2; }
-    header h1 .en { font-size:1.8rem; display:block; margin-top:8px; }
-    .hero-sub { font-size:1.15rem; color:rgba(255,255,255,0.65); max-width:560px; margin-bottom:28px; line-height:1.6; }
-    .hero-quote { font-size:1.05rem; color:rgba(255,255,255,0.55); border-left:2px solid #e94560; padding-left:18px; max-width:520px; line-height:1.6; }
-    
-    /* === Stats === */
-    .stats { background:#fff; border-bottom:1px solid #e8e8ed; padding:40px 0; }
-    .stats-grid { display:grid; grid-template-columns:repeat(4, 1fr); gap:20px; text-align:center; }
-    .stat-item h3 { font-size:1.6rem; font-weight:600; color:#1a1a2e; margin-bottom:4px; }
-    .stat-item p { font-size:0.8rem; color:#888; }
-    
-    /* === 核心內容 === */
-    .section { padding:72px 0; }
-    .section-alt { background:#fff; }
-    .section-title { font-size:1.6rem; margin-bottom:8px; }
-    .section-sub { color:#888; font-size:0.95rem; margin-bottom:40px; }
-    
-    /* === 三件事 === */
-    .cards { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:24px; }
-    .card { background:#fff; border-radius:12px; padding:32px; border:1px solid #e8e8ed; transition:box-shadow 0.3s, transform 0.2s; }
-    .card:hover { box-shadow:0 8px 30px rgba(0,0,0,0.06); transform:translateY(-2px); }
-    .card-icon { font-size:1.8rem; margin-bottom:16px; }
-    .card h3 { font-size:1.1rem; margin-bottom:12px; color:#1a1a2e; }
-    .card p { color:#666; font-size:0.9rem; line-height:1.7; }
-    .card .tag { display:inline-block; background:#f0f0f5; padding:4px 12px; border-radius:20px; font-size:0.78rem; margin-top:16px; color:#666; }
-    
-    /* === 文章 === */
-    .post-list { background:#fff; border-radius:12px; border:1px solid #e8e8ed; overflow:hidden; }
-    .post-item { display:flex; padding:24px; border-bottom:1px solid #f0f0f5; transition:background 0.2s; }
-    .post-item:hover { background:#fafafa; }
-    .post-item:last-child { border-bottom:none; }
-    .post-num { font-size:0.75rem; color:#ccc; font-weight:600; min-width:36px; padding-top:4px; }
-    .post-body { flex:1; }
-    .post-body h4 { font-size:1.05rem; margin-bottom:6px; color:#1a1a2e; font-weight:500; }
-    .post-body h4 a { text-decoration:none; color:inherit; }
-    .post-body h4 a:hover { color:#e94560; }
-    .post-body .en-title { font-size:0.9rem; color:#999; margin-bottom:8px; }
-    .post-meta { font-size:0.82rem; color:#aaa; }
-    .post-meta span { margin-right:16px; }
-    .post-meta .tag { background:#f5f5f7; padding:2px 10px; border-radius:4px; font-size:0.75rem; }
-    
-    /* === CTA === */
-    .cta-section { background:#1a1a2e; color:#fff; padding:60px 0; text-align:center; }
-    .cta-section h2 { font-size:1.5rem; margin-bottom:12px; font-weight:400; }
-    .cta-section p { color:rgba(255,255,255,0.5); font-size:0.95rem; margin-bottom:24px; }
-    .cta-btn { display:inline-block; background:#e94560; color:#fff; padding:14px 36px; border-radius:6px; text-decoration:none; font-size:0.95rem; transition:background 0.2s; }
-    .cta-btn:hover { background:#d13a54; }
-    
-    /* === Footer === */
-    footer { background:#f0f0f5; padding:32px 0; text-align:center; }
-    footer p { font-size:0.82rem; color:#999; }
-    footer a { color:#888; text-decoration:none; }
-    
-    /* === 中英文切換 === */
-    .en { display:none; }
-    body.show-en .en { display:block; }
-    body.show-en .cn { display:none; }
-    body.show-en .en-inline { display:inline; }
-    body.show-en .cn-inline { display:none; }
-    .en-inline, .cn-inline { display:inline; }
-    
-    @media (max-width:640px) {
-      header { padding:60px 0 50px; }
-      header h1 { font-size:2rem; }
-      header h1 .en { font-size:1.3rem; }
-      .stats-grid { grid-template-columns:repeat(2, 1fr); }
-      .nav-links { gap:14px; }
-      nav a { font-size:0.82rem; }
-      .post-item { flex-direction:column; }
-      .post-num { margin-bottom:8px; }
-    }
   
-    /* 圖片安全重置：未設寬度的圖片不再撐爆版面（2026-10-07） */
-    img { max-width: 100%; height: auto; }
-
-    /* ===== 導航就地展開（2026-10-07） ===== */
-    .nav-parent { background:none; border:none; padding:8px 12px; font:inherit;
-      font-size:.88rem; color:var(--text-secondary); cursor:pointer; border-radius:8px;
-      display:inline-flex; align-items:center; gap:5px; transition:all .18s; }
-    .nav-parent:hover, .nav-parent[aria-expanded="true"] { color:var(--accent);
-      background:var(--accent-light); }
-    .nav-parent .caret { font-size:.58rem; opacity:.65; transition:transform .2s; }
-    .nav-parent[aria-expanded="true"] .caret { transform:rotate(180deg); }
-    .nav-panels { display:none; background:var(--bg-elevated);
-      border-top:1px solid var(--border-light); }
-    .nav-panels.open { display:block; }
-    .nav-panels .inner { max-width:1100px; margin:0 auto; padding:16px 24px 20px;
-      display:flex; flex-wrap:wrap; gap:8px 20px; }
-    .nav-panels .panel-title { width:100%; font-size:.72rem; letter-spacing:.14em;
-      text-transform:uppercase; color:var(--text-muted); margin-bottom:2px; }
-    .nav-panels a { font-size:.9rem; color:var(--text-secondary); text-decoration:none;
-      padding:5px 0; border-bottom:1px solid transparent; }
-    .nav-panels a:hover { color:var(--accent); border-bottom-color:var(--accent); }
-</style>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -139,6 +24,81 @@
 ]},"eagerness":"moderate"}]}
 </script>
 <link rel="alternate" type="application/rss+xml" title="鄭哥 Hany — 生意筆記" href="/rss.xml">
+<link rel="stylesheet" href="/site.css">
+<style>
+body { font-family: 'Noto Sans SC', -apple-system, 'PingFang HK', sans-serif; background:#f5f5f7; color:#1a1a2e; line-height:1.7; }
+.container { max-width:840px; margin:0 auto; padding:0 24px; }
+nav { background:#fff; border-bottom:1px solid #e8e8ed; padding:14px 0; position:sticky; top:0; z-index:100; }
+nav .container { display:flex; justify-content:space-between; align-items:center; }
+.logo { font-size:1.05rem; font-weight:700; letter-spacing:0.5px; color:#1a1a2e; }
+.logo span { font-weight:400; font-size:0.75rem; color:#999; margin-left:6px; }
+.nav-links { display:flex; align-items:center; gap:24px; }
+nav a { text-decoration:none; color:#444; font-size:0.9rem; transition:color 0.2s; }
+nav a:hover { color:#e94560; }
+nav a.active { color:#e94560; font-weight:500; }
+.lang-toggle { cursor:pointer; font-size:0.75rem; background:#1a1a2e; color:#fff; padding:5px 12px; border-radius:4px; border:none; }
+header { background:#1a1a2e; color:#fff; padding:100px 0 80px; position:relative; overflow:hidden; }
+header::before { content:''; position:absolute; top:-50%; right:-20%; width:500px; height:500px; background:rgba(233,69,96,0.08); border-radius:50%; }
+header .container { position:relative; z-index:1; }
+.hero-tag { display:inline-block; font-size:0.75rem; color:#e94560; border:1px solid rgba(233,69,96,0.4); padding:4px 14px; border-radius:20px; margin-bottom:20px; letter-spacing:1px; }
+.en .hero-tag { font-size:0.7rem; }
+header h1 { font-size:2.8rem; font-weight:400; margin-bottom:16px; line-height:1.2; }
+header h1 .en { font-size:1.8rem; display:block; margin-top:8px; }
+.hero-sub { font-size:1.15rem; color:rgba(255,255,255,0.65); max-width:560px; margin-bottom:28px; line-height:1.6; }
+.hero-quote { font-size:1.05rem; color:rgba(255,255,255,0.55); border-left:2px solid #e94560; padding-left:18px; max-width:520px; line-height:1.6; }
+.stats { background:#fff; border-bottom:1px solid #e8e8ed; padding:40px 0; }
+.stats-grid { display:grid; grid-template-columns:repeat(4, 1fr); gap:20px; text-align:center; }
+.stat-item h3 { font-size:1.6rem; font-weight:600; color:#1a1a2e; margin-bottom:4px; }
+.stat-item p { font-size:0.8rem; color:#888; }
+.section { padding:72px 0; }
+.section-alt { background:#fff; }
+.section-title { font-size:1.6rem; margin-bottom:8px; }
+.section-sub { color:#888; font-size:0.95rem; margin-bottom:40px; }
+.cards { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:24px; }
+.card { background:#fff; border-radius:12px; padding:32px; border:1px solid #e8e8ed; transition:box-shadow 0.3s, transform 0.2s; }
+.card:hover { box-shadow:0 8px 30px rgba(0,0,0,0.06); transform:translateY(-2px); }
+.card-icon { font-size:1.8rem; margin-bottom:16px; }
+.card h3 { font-size:1.1rem; margin-bottom:12px; color:#1a1a2e; }
+.card p { color:#666; font-size:0.9rem; line-height:1.7; }
+.card .tag { display:inline-block; background:#f0f0f5; padding:4px 12px; border-radius:20px; font-size:0.78rem; margin-top:16px; color:#666; }
+.post-list { background:#fff; border-radius:12px; border:1px solid #e8e8ed; overflow:hidden; }
+.post-item { display:flex; padding:24px; border-bottom:1px solid #f0f0f5; transition:background 0.2s; }
+.post-item:hover { background:#fafafa; }
+.post-item:last-child { border-bottom:none; }
+.post-num { font-size:0.75rem; color:#ccc; font-weight:600; min-width:36px; padding-top:4px; }
+.post-body { flex:1; }
+.post-body h4 { font-size:1.05rem; margin-bottom:6px; color:#1a1a2e; font-weight:500; }
+.post-body h4 a { text-decoration:none; color:inherit; }
+.post-body h4 a:hover { color:#e94560; }
+.post-body .en-title { font-size:0.9rem; color:#999; margin-bottom:8px; }
+.post-meta { font-size:0.82rem; color:#aaa; }
+.post-meta span { margin-right:16px; }
+.post-meta .tag { background:#f5f5f7; padding:2px 10px; border-radius:4px; font-size:0.75rem; }
+.cta-section { background:#1a1a2e; color:#fff; padding:60px 0; text-align:center; }
+.cta-section h2 { font-size:1.5rem; margin-bottom:12px; font-weight:400; }
+.cta-section p { color:rgba(255,255,255,0.5); font-size:0.95rem; margin-bottom:24px; }
+.cta-btn { display:inline-block; background:#e94560; color:#fff; padding:14px 36px; border-radius:6px; text-decoration:none; font-size:0.95rem; transition:background 0.2s; }
+.cta-btn:hover { background:#d13a54; }
+footer { background:#f0f0f5; padding:32px 0; text-align:center; }
+footer p { font-size:0.82rem; color:#999; }
+footer a { color:#888; text-decoration:none; }
+body.show-en .en-inline { display:inline; }
+body.show-en .cn-inline { display:none; }
+.en-inline, .cn-inline { display:inline; }
+
+    
+    @media (max-width:640px) {
+      header { padding:60px 0 50px; }
+      header h1 { font-size:2rem; }
+      header h1 .en { font-size:1.3rem; }
+      .stats-grid { grid-template-columns:repeat(2, 1fr); }
+      .nav-links { gap:14px; }
+      nav a { font-size:0.82rem; }
+      .post-item { flex-direction:column; }
+      .post-num { margin-bottom:8px; }
+    }
+img { max-width: 100%; height: auto; }
+</style>
 </head>
 <body>
 
