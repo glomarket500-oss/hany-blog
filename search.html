@@ -208,34 +208,35 @@
 </head>
 
 <style>
-/* 搜尋頁版面（2026-10-07 重排）：內容收在 760px 容器內，不再滿版 */
-.search-page{padding:48px 0 64px}
-.search-inner{max-width:760px;margin:0 auto;padding:0 24px;box-sizing:border-box}
+/* 搜尋頁版面（2026-10-07）：760px 容器 + 緊湊字級 */
+.search-page{padding:40px 0 56px}
+.search-inner{max-width:720px;margin:0 auto;padding:0 24px;box-sizing:border-box}
 .search-page .eyebrow{color:var(--accent);font-weight:700;letter-spacing:.14em;
-  text-transform:uppercase;font-size:.72rem}
-.search-page h1{font-size:1.55rem;margin:10px 0 0;letter-spacing:-.01em}
-.search-lede{color:var(--text-secondary);margin-top:8px;font-size:.95rem;line-height:1.7}
-.search-box{display:flex;gap:10px;margin:22px 0 10px}
-.search-box input{flex:1;min-width:0;padding:12px 16px;border:1px solid var(--border-light);
-  border-radius:10px;font-size:.95rem;font-family:inherit;outline:none;
+  text-transform:uppercase;font-size:.68rem}
+.search-page h1{font-size:1.28rem;margin:8px 0 0;letter-spacing:-.01em;line-height:1.3}
+.search-lede{color:var(--text-secondary);margin-top:7px;font-size:.87rem;line-height:1.65}
+.search-box{display:flex;gap:8px;margin:18px 0 8px}
+.search-box input{flex:1;min-width:0;padding:10px 14px;border:1px solid var(--border-light);
+  border-radius:9px;font-size:.9rem;font-family:inherit;outline:none;
   background:var(--bg-elevated);box-sizing:border-box}
 .search-box input:focus{border-color:var(--accent)}
-.search-box button{padding:12px 24px;border:none;border-radius:10px;background:var(--accent);
-  color:#fff;font-size:.92rem;font-weight:600;cursor:pointer;font-family:inherit;
+.search-box button{padding:10px 20px;border:none;border-radius:9px;background:var(--accent);
+  color:#fff;font-size:.87rem;font-weight:600;cursor:pointer;font-family:inherit;
   white-space:nowrap}
 .search-box button:hover{opacity:.9}
-.search-count{font-size:.84rem;color:var(--text-muted);margin-bottom:24px}
-#results .post-card{padding:22px 24px;margin-bottom:14px}
-#results .post-card h3{font-size:1.05rem;margin:6px 0 8px;line-height:1.4}
+.search-count{font-size:.78rem;color:var(--text-muted);margin:0 0 20px}
+#results .post-card{padding:18px 20px;margin-bottom:12px}
+#results .post-card h3{font-size:.99rem;margin:5px 0 7px;line-height:1.4}
 #results .post-card h3 a{color:inherit;text-decoration:none}
 #results .post-card h3 a:hover{color:var(--accent)}
-#results .post-excerpt{font-size:.92rem;color:var(--text-secondary);margin:0 0 10px;
-  line-height:1.7}
-#results .read-more{font-size:.88rem;color:var(--accent);font-weight:600;
+#results .post-excerpt{font-size:.85rem;color:var(--text-secondary);margin:0 0 8px;
+  line-height:1.65}
+#results .read-more{font-size:.83rem;color:var(--accent);font-weight:600;
   text-decoration:none}
+#results .post-date,#results .post-tag{font-size:.74rem}
 @media (max-width:640px){
-  .search-page{padding:32px 0 48px}
-  .search-page h1{font-size:1.32rem}
+  .search-page{padding:28px 0 40px}
+  .search-page h1{font-size:1.12rem}
   .search-box{flex-direction:column}
   .search-box button{width:100%}
 }
