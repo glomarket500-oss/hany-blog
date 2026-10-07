@@ -113,6 +113,9 @@ img.shot.hero{border-radius:var(--radius);box-shadow:var(--shadow)}
 
 .page-h1{font-size:clamp(1.4rem,3vw,2rem);letter-spacing:-.02em;
   font-weight:700;line-height:1.25;margin:0}
+.tbl td, .tbl th { font-variant-numeric: tabular-nums; }
+.tbl tr.best-for td { background: var(--accent-soft); font-weight: 500; }
+.tbl tr.best-for td:first-child { color: var(--accent); }
 .swatch{height:7px;width:100%;display:flex}
 .swatch i{flex:1}
 
