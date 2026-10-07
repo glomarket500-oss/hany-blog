@@ -1149,6 +1149,21 @@ body.show-en .cn-inline { display:none; }
 img { max-width: 100%; height: auto; }
 .xhs-cover { overflow: hidden; }
 .xhs-cover img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+    /* ===== 導航不再被擠壓換行（2026-10-07） ===== */
+    .logo { white-space: nowrap; flex: 0 0 auto; }
+    .nav-links > a, .nav-links .nav-parent, .nav-links .lang-toggle { white-space: nowrap; }
+    @media (min-width: 769px) {
+      .nav-wrapper { flex: 1 1 auto; min-width: 0; justify-content: flex-end; }
+      .nav-links { flex-wrap: nowrap; gap: 14px; }
+      .nav-links > a, .nav-links .nav-parent, .nav-links .lang-toggle {
+        flex: 0 0 auto; font-size: .88rem; padding: 8px 6px; }
+    }
+    @media (min-width: 769px) and (max-width: 1200px) {
+      .nav-links { gap: 7px; }
+      .nav-links > a, .nav-links .nav-parent { font-size: .82rem; padding: 7px 4px; }
+      .nav-links .lang-toggle { padding: 6px 10px; font-size: .78rem; }
+    }
 </style>
 </head>
 
