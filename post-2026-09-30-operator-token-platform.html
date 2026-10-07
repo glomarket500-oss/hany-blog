@@ -188,367 +188,157 @@
     }
 </style>
 
-</head>
-<body>
 
-<nav>
-
-  <div class="container">
-
-    <a href="index.html" class="logo">鄭哥<span>/ Hany</span></a>
-
-    <button class="hamburger" type="button" aria-label="選單" aria-expanded="false" onclick="var w=document.getElementById('navWrapper');var o=w.classList.toggle('open');this.setAttribute('aria-expanded',o?'true':'false');">☰</button>
-    <div class="nav-wrapper" id="navWrapper">
-      <div class="nav-links">
-
-          <a href="index.html"><span class="cn">首頁</span><span class="en">Home</span></a>
-
-          <button type="button" class="nav-parent" data-panel="articles" onclick="toggleNavPanel(this)" aria-expanded="false"><span class="cn">文章</span><span class="en">Articles</span> <span class="caret">▼</span></button>
-
-          <button type="button" class="nav-parent" data-panel="reviews" onclick="toggleNavPanel(this)" aria-expanded="false"><span class="cn">點評</span><span class="en">Reviews</span> <span class="caret">▼</span></button>
-
-          <button type="button" class="nav-parent" data-panel="topics" onclick="toggleNavPanel(this)" aria-expanded="false"><span class="cn">專題</span><span class="en">Collections</span> <span class="caret">▼</span></button><button type="button" class="nav-parent" data-panel="search" onclick="toggleNavPanel(this)" aria-expanded="false"><span class="cn">搜尋</span><span class="en">Search</span> <span class="caret">▼</span></button>
-          <button type="button" class="nav-parent" data-panel="about" onclick="toggleNavPanel(this)" aria-expanded="false"><span class="cn">關於</span><span class="en">About</span> <span class="caret">▼</span></button>
-
-          <button type="button" class="nav-parent" data-panel="links" onclick="toggleNavPanel(this)" aria-expanded="false"><span class="cn">連結</span><span class="en">Links</span> <span class="caret">▼</span></button>
-
-          <a href="contact.html"><span class="cn">聯繫</span><span class="en">Contact</span></a>
-
-          <button class="lang-btn" onclick="toggleLang()" id="langBtn">EN</button>
-
-        </div>
-    </div>
-
-  </div>
-
-<div class="nav-panels" id="navPanels" data-open="">
-  <div class="nav-panel" data-id="articles" style="display:none">
-    <div class="inner">
-      <div class="panel-title"><span class="cn">文章</span><span class="en">Articles</span></div>
-      <a href="blog.html"><span class="cn">全部文章</span><span class="en">All articles</span></a>
-      <a href="search.html?q=外貿"><span class="cn">外貿故事</span><span class="en">Trade stories</span></a>
-      <a href="search.html?q=AI"><span class="cn">AI 點評</span><span class="en">AI</span></a>
-      <a href="search.html?q=城市"><span class="cn">城市觀察</span><span class="en">City notes</span></a>
-      <a href="search.html?q=文化"><span class="cn">文化</span><span class="en">Culture</span></a>
-      <a href="search.html?q=行業"><span class="cn">行業觀察</span><span class="en">Industry</span></a>
-      <a href="search.html?q=產品"><span class="cn">產品創新</span><span class="en">Products</span></a>
-    </div>
-  </div>
-  <div class="nav-panel" data-id="reviews" style="display:none">
-    <div class="inner">
-      <div class="panel-title"><span class="cn">點評</span><span class="en">Reviews</span></div>
-      <a href="xhs.html"><span class="cn">全部點評</span><span class="en">All reviews</span></a>
-      <a href="search.html?q=AI"><span class="cn">AI 點評</span><span class="en">AI</span></a>
-      <a href="search.html?q=外銷"><span class="cn">外銷點評</span><span class="en">Export</span></a>
-      <a href="search.html?q=茶"><span class="cn">茶葉點評</span><span class="en">Tea</span></a>
-      <a href="search.html?q=文化"><span class="cn">文化點評</span><span class="en">Culture</span></a>
-      <a href="search.html?q=行業"><span class="cn">行業觀察</span><span class="en">Industry</span></a>
-    </div>
-  </div>
-  <div class="nav-panel" data-id="topics" style="display:none"><div class="inner"><div class="panel-title"><span class="cn">專題</span><span class="en">Collections</span></div><a href="topics.html"><span class="cn">全部主題</span><span class="en">All topics</span></a><a href="topics.html#trade"><span class="cn">外貿實戰</span><span class="en">Trade</span></a><a href="topics.html#ai"><span class="cn">AI 與算力</span><span class="en">AI &amp; compute</span></a><a href="topics.html#products"><span class="cn">產品回憶</span><span class="en">Products</span></a><a href="topics.html#people"><span class="cn">人物故事</span><span class="en">People</span></a><a href="topics.html#industry"><span class="cn">行業觀察</span><span class="en">Industry</span></a><a href="topics.html#city"><span class="cn">城市觀察</span><span class="en">City notes</span></a><a href="topics.html#culture"><span class="cn">文化與歷史</span><span class="en">Culture</span></a><a href="topics.html#affairs"><span class="cn">時事點評</span><span class="en">Current affairs</span></a><a href="topics.html#tea"><span class="cn">茶葉點評</span><span class="en">Tea</span></a><a href="topics.html#life"><span class="cn">人生感悟</span><span class="en">Life</span></a><a href="products.html"><span class="cn">產品回憶專題</span><span class="en">Product memories</span></a></div></div><div class="nav-panel" data-id="search" style="display:none"><div class="inner"><div class="panel-title"><span class="cn">搜尋</span><span class="en">Search</span></div><form action="search.html" method="get" style="width:100%;display:flex;gap:8px;margin:4px 0 8px"><input type="search" name="q" placeholder="打關鍵字，例如：土耳其、AI 算力…" style="flex:1;min-width:0;padding:9px 13px;border:1px solid var(--border-light);border-radius:8px;font-size:.88rem;font-family:inherit;outline:none;box-sizing:border-box"><button type="submit" style="padding:9px 18px;border:none;border-radius:8px;background:var(--accent);color:#fff;font-size:.85rem;font-weight:600;cursor:pointer;font-family:inherit">搜尋</button></form><a href="search.html"><span class="cn">去搜尋頁</span><span class="en">Open search page</span></a><a href="topics.html"><span class="cn">按主題瀏覽</span><span class="en">Browse by topic</span></a></div></div><div class="nav-panel" data-id="about" style="display:none"><div class="inner"><div class="panel-title"><span class="cn">關於</span><span class="en">About</span></div><a href="about.html"><span class="cn">關於鄭哥</span><span class="en">About Hany</span></a><a href="about.html#business"><span class="cn">我做緊乜</span><span class="en">What I do</span></a><a href="about.html#invest"><span class="cn">我投資年輕創業者</span><span class="en">I back young founders</span></a><a href="products.html"><span class="cn">產品回憶</span><span class="en">Product memories</span></a><a href="contact.html"><span class="cn">聯繫鄭哥</span><span class="en">Contact</span></a><a href="/handsome/"><span class="cn">HANDSOME 訂造奢侈品</span><span class="en">HANDSOME (a brand I invested in)</span></a></div></div><div class="nav-panel" data-id="links" style="display:none">
-    <div class="inner">
-      <div class="panel-title"><span class="cn">連結</span><span class="en">Links</span></div>
-      <a href="links.html"><span class="cn">全部連結</span><span class="en">All links</span></a>
-      <a href="xhs.html"><span class="cn">小紅書</span><span class="en">Xiaohongshu</span></a>
-      <a href="youtube.html"><span class="cn">YouTube</span><span class="en">YouTube</span></a>
-      <a href="linkedin.html"><span class="cn">LinkedIn</span><span class="en">LinkedIn</span></a>
-      <a href="facebook.html"><span class="cn">Facebook</span><span class="en">Facebook</span></a>
-      <a href="instagram.html"><span class="cn">Instagram</span><span class="en">Instagram</span></a>
-      <a href="tiktok.html"><span class="cn">TikTok</span><span class="en">TikTok</span></a>
-      <a href="twitter.html"><span class="cn">X / Twitter</span><span class="en">X / Twitter</span></a>
-    </div>
-  </div>
-</div>
-  </nav>
-
-<article>
-  <div class="container">
-        <header class="post-header">
-      <figure class="post-figure">
-  <img src="hany-operator-token-cover.webp" alt="運營商Token平台" loading="lazy" width="1024" height="576" style="width:100%;border-radius:12px;margin-bottom:24px;">
-  <figcaption>封面：運營商Token平台<br><em>圖片由 AI輔助創作（Z-Image-Turbo）</em></figcaption>
-</figure>
-      <h1><span class="cn">兩個月近30億Token貸落地：運營商Token平台最值錢的模塊還沒人做出來｜鄭哥點評</span><span class="en">$3B Token Loans in 2 Months — The Most Valuable Module of Telecom Token Platform Hasn't Been Built Yet</span></h1>
-      <div class="post-meta">
-        <time datetime="2026-10-08T02:38:53+08:00"><span class="cn">2026年9月30日</span><span class="en">Sep 30, 2026</span></time>
-        <span class="tag"><span class="cn">AI點評</span><span class="en">AI Review</span></span>
-        <span class="tag"><span class="cn">運營商Token</span><span class="en">Telecom Token</span></span>
-        <span class="tag"><span class="cn">AI算力</span><span class="en">AI Compute</span></span>
-      </div>
-    </header>
-
-    <div class="cn post-content">
-      <blockquote class="zhengge-pingdian"><span class="cn">【鄭哥點評】</span><span class="en">【ZHENG GE REVIEW】</span></blockquote>
-
-<p>我做生意26年，見過無數次「電信運營商轉型」。</p>
-
-<p>2000年代，佢哋靠語音通話食糊；2010年代，佢哋靠流量食糊；2020年代，佢哋靠寬帶食糊。</p>
-
-<p>每一次都有人話：「運營商係管道，好快被顛覆。」</p>
-
-<p>每一次，運營商都找到新嘅計費單位，繼續生存。</p>
-
-<p>今次，佢哋揀咗Token。</p>
-
-<h2>第一幕：兩個月30億Token貸——風係點樣吹起嘅</h2>
-
-<p>2026年5月16日至17日，三大運營商相繼推出Token套餐：</p>
-
-<p>中國電信：9.9元/月/1000萬Tokens、29.9元/4000萬、49.9元/8000萬</p>
-
-<p>中國移動：上海移動1元兌40萬Tokens，北京移動5.99元算力次包+24.99元月包</p>
-
-<p>中國聯通：上海聯通免費發放3000萬Tokens測試額度，湖北聯通多檔Token Plan</p>
-
-<p>兩個月內，多個省市級分公司已啟動市場化落地實踐。</p>
-
-<p><strong>運營商已經落場，唔再係概念階段。</strong></p>
-
-<h2>第二幕：Token係乜嘢——用我哋做外貿嘅語言嚟解釋</h2>
-
-<p>Token（詞元）係AI時代處理信息嘅基本計量單位。</p>
-
-<p>語音時代：賣分鐘數——我哋打電話，電信公司按分鐘收費。</p>
-
-<p>流量時代：賣GB——我哋上網，按流量收費。</p>
-
-<p>AI時代：賣Token——我哋問AI問題，按Token消耗收費。</p>
-
-<p>本質完全一樣——<strong>把稀缺嘅數字能力打包成標準化服務，賣俾用戶。</strong></p>
-
-<p>國家數據局2026年3月正式將Token定位為「智能時代的價值錨點」。</p>
-
-<h2>第三幕：運營商嘅護城河——Cloud廠商冇嘅嘢</h2>
-
-<p>有人話：「運營商做Token，只係變相賣流量，冇乜特別。」</p>
-
-<p>我話你知：呢個觀點睇漏咗三樣嘢。</p>
-
-<p><strong>第一：網絡層面嘅確定性服務。</strong></p>
-
-<p>當模型部署喺運營商自有數據中心，用戶通過運營商網絡訪問，可以喺網絡層面進行端到端優化——低時延、高穩定性。</p>
-
-<p>呢個係任何純Cloud廠商或AI公司都唔具備嘅條件。</p>
-
-<p><strong>第二：18億個人用戶+7300萬政企客戶嘅銷售觸達網絡。</strong></p>
-
-<p>我哋做貿易嘅知道：最難嘅唔係產品，而係分銷渠道。</p>
-
-<p>運營商唔使重新搭建渠道，佢哋嘅門市、App、客服，已經覆蓋晒中國每一個角落。</p>
-
-<p><strong>第三：數十年的套餐運營經驗。</strong></p>
-
-<p>電信套餐設計、分級定價、預付費模式——呢啲運營商已經玩咗幾十年，经验丰富。</p>
-
-<h2>第四幕：最大嘅問題——最值錢嘅模塊仲未做出嚟</h2>
-
-<p>但係，我今次要潑冷水。</p>
-
-<p>呢篇新聞標題話：「兩個月近30億Token貸落地」——但係問題在於：</p>
-
-<p><strong>呢30億Token，運營商只係賺咗個「辛苦錢」——卖緊係Token同質化產品，唔係差异化價值。</strong></p>
-
-<p>點解咁講？</p>
-
-<p>因為而家運營商賣嘅Token，價格比直接去DeepSeek等模型廠商度高50倍：</p>
-
-<ul>
-  <li>中國電信：9.9元/1000萬Tokens，即0.99元/百萬Tokens</li>
-  <li>DeepSeek V4 Flash（緩存命中）：0.02元/百萬Tokens</li>
-</ul>
-
-<p><strong>價差50倍，用戶遲早醒水。</strong></p>
-
-<p>運營商嘅真正價值，唔喺於「賣Token」，而喺於：</p>
-
-<p><strong>能不能做出「網絡+算力+應用」一體化嘅封閉生態——令用戶為呢個生態付費，而唔係為Token本身付費。</strong></p>
-
-<p>呢個先至係最值錢嘅模塊，而家仲冇人做到。</p>
-
-<h2>第五幕：電信轉型嘅啟示——從「管道」到「生態」</h2>
-
-<p>中國電信董事長柯瑞文嘅說法好清楚：</p>
-
-<blockquote>「Token經營的本質，就係為用戶提供AI服務，搭建算力建網、平台調度、數據積累、模型研發、應用落地五層一體化全棧閉環能力。」</blockquote>
-
-<p>呢個方向係啱嘅，但係執行層面挑戰極大。</p>
-
-<p>問題唔喺技術，而喺：</p>
-
-<ul>
-  <li>運營商嘅組織架構，係為咗電信網絡設計，唔係為咗AI應用生態設計</li>
-  <li>運營商嘅人才結構，係電信工程師為主，唔係AI應用開發者為主</li>
-  <li>運營商嘅文化，係電信公司文化，唔係互聯網公司文化</li>
-</ul>
-
-<p><strong>要轉型做AI生態，運營商需要嘅唔只係技術，而係整個組織基因嘅重構。</strong></p>
-
-<h2>鄭哥三句話</h2>
-
-<p><strong>第一句：運營商賣Token，方向正確，但執行係大考驗。</strong> 佢哋有網絡優勢、用戶優勢、渠道優勢——但係做AI生態，需要嘅係互聯網思維，而唔係電信思維。從「管道」到「生態」，呢個跳躍唔係加幾條產品線就做到，而係需要整個組織基因重構。</p>
-
-<p><strong>第二句：單賣Token係辛苦錢，生態先至係核心價值。</strong> 當用戶可以直接去DeepSeek、Kimi等模型廠商購買更平嘅Token，運營商嘅競爭力必須來自差异化——網絡確定性服務、行業定制解決方案、封閉生態體驗。冇呢啲，運營商就只係貴價中間商。</p>
-
-<p><strong>第三句：我哋做貿易嘅，可以點樣利用呢個趨勢？</strong> 運營商嘅渠道能力，係我哋出海嘅工具。如果能夠搭上運營商嘅AI+出海生態，可能比我哋自己搭建渠道更有效率。但係要小心——選擇平台，先睇佢嘅生態封閉程度，越封閉越值錢，越開放越快被淘汰。</p>
-
-<blockquote>兩個月近30億Token貸落地，說明運營商已經正式進入AI變現時代。但係呢30億只係「辛苦錢」——單賣Token係初級階段，「網絡+算力+應用」一體化生態先至係最值錢嘅模塊，而家仲冇人做出嚟。運營商有優勢，但基因重構係最大挑戰。</blockquote>
-
-<div class="post-footer">
-  <p><span class="cn">發布於 2026年9月30日 | 鄭哥 Hany</span><span class="en">Published 2026-09-30 | Hany</span></p>
-  <div class="tags">
-    <span class="tag">#運營商Token</span>
-    <span class="tag">#AI算力</span>
-    <span class="tag">#中國電信</span>
-    <span class="tag">#數字經濟</span>
-    <span class="tag">#鄭哥Hany</span>
-  </div>
-</div>
-
-<div class="author-card">
-  <img src="hany-portrait.webp" alt="鄭哥 Hany">
-  <div>
-    <h4><span class="cn">關於作者</span><span class="en">About the Author</span></h4>
-    <p><span class="cn">鄭哥，90年代大學畢業，26年橫跨電子，家電、服裝、珠寶、教育、AI算力多個行業。做過中學教師、翻譯、外贸，現在搞七善門科技和星辰算力。口頭禪：「點解唔得？」</span><span class="en">Hany, university grad from the 90s, 26 years across electronics, appliances, fashion, jewelry, education, and AI compute. Former teacher, translator, trader. Now running Qishanmen Tech and Star Compute. Catchphrase: "Why not?"</span></p>
-  </div>
-</div>
-
-<div class="next-post">
-  <p><a href="blog.html"><span class="cn">← 返回文章列表</span><span class="en">← Back to all posts</span></a></p>
-</div>
-
-    </div>
-
-    <div class="en post-content">
-
-<p>After 26 years in business, I've seen countless "telecom operator transformations."</p>
-
-<p>In the 2000s, they made money from voice calls; in the 2010s, from data; in the 2020s, from broadband.</p>
-
-<p>Every time, people said: "Operators are just pipes, they'll be disrupted soon."</p>
-
-<p>Every time, operators found a new billing unit and survived.</p>
-
-<p>This time, they chose Token.</p>
-
-<h2>Act 1: $3B Token Loans in 2 Months — How the Wind Started Blowing</h2>
-
-<p>May 16-17, 2026, the three major operators launched Token packages:</p>
-
-<p>China Telecom: 9.9 yuan/month per 10M Tokens, 29.9 yuan/40M, 49.9 yuan/80M</p>
-
-<p>China Mobile: Shanghai 1 yuan for 400K Tokens, Beijing 5.99 yuan compute add-on + 24.99 yuan monthly</p>
-
-<p>China Unicom: Shanghai giving away 30M Tokens free for testing, Hubei with multiple Token plans</p>
-
-<p><strong>Operators have entered the game, no longer just concept stage.</strong></p>
-
-<h2>Act 2: What is Token — Explained in Our Trade Language</h2>
-
-<p>Token is the basic unit of measurement for AI-era information processing.</p>
-
-<p>Essentially the same — <strong>packaging scarce digital capability into standardized service and selling to users.</strong></p>
-
-<p>The National Data Bureau officially designated Token as the "value anchor of the intelligent era" in March 2026.</p>
-
-<h2>Act 3: Operators' Moat — What Cloud Vendors Don't Have</h2>
-
-<p><strong>First: Network-level deterministic service.</strong> When models deploy in operators' own data centers, end-to-end optimization at the network level is possible.</p>
-
-<p><strong>Second: 1.8B individual users + 73M enterprise clients.</strong> Their stores, apps, and customer service already cover every corner of China.</p>
-
-<p><strong>Third: Decades of package operation experience.</strong></p>
-
-<h2>Act 4: The Biggest Problem — The Most Valuable Module Hasn't Been Built</h2>
-
-<p><strong>These $3B Tokens, operators only earned "hard work money" — selling homogeneous Token products, not differentiated value.</strong></p>
-
-<p>Current operator Token prices are 50x higher than buying directly from DeepSeek:</p>
-
-<ul>
-  <li>China Telecom: 0.99 yuan/million Tokens</li>
-  <li>DeepSeek V4 Flash (cache hit): 0.02 yuan/million Tokens</li>
-</ul>
-
-<p><strong>Operators' real value is in building an integrated "network + compute + application" closed ecosystem.</strong></p>
-
-<h2>Act 5: Telecom Transformation Lessons — From "Pipes" to "Ecosystem"</h2>
-
-<p>China Telecom Chairman Ke Ruiwen: "Token operation's essence is providing AI services to users, building five-layer integrated full-stack closed-loop capability."</p>
-
-<p>The problem isn't technology — it's organizational gene restructuring.</p>
-
-<h2>Zheng Ge's Three Points</h2>
-
-<p><strong>Point 1: Operators selling Token, direction correct, but execution is a major test.</strong></p>
-
-<p><strong>Point 2: Selling Token alone is hard work money, ecosystem is core value.</strong></p>
-
-<p><strong>Point 3: How can traders leverage this trend?</strong> Operators' channel capability is our tool for going overseas.</p>
-
-<blockquote>$3B Token loans in 2 months shows operators have officially entered the AI monetization era. But these $3B are just "hard work money" — the most valuable module, nobody built it yet.</blockquote>
-
-<div class="post-footer">
-  <p><span class="cn">發布於 2026年9月30日 | 鄭哥 Hany</span><span class="en">Published 2026-09-30 | Hany</span></p>
-  <div class="tags">
-    <span class="tag">#TelecomToken</span>
-    <span class="tag">#AICompute</span>
-    <span class="tag">#ChinaTelecom</span>
-    <span class="tag">#DigitalEconomy</span>
-    <span class="tag">#ZhengGeHany</span>
-  </div>
-</div>
-
-<div class="author-card">
-  <img src="hany-portrait.webp" alt="鄭哥 Hany">
-  <div>
-    <h4><span class="cn">關於作者</span><span class="en">About the Author</span></h4>
-    <p><span class="cn">鄭哥，90年代大學畢業，26年橫跨電子，家電、服裝、珠寶、教育、AI算力多個行業。做過中學教師、翻譯、外贸，現在搞七善門科技和星辰算力。口頭禪：「點解唔得？」</span><span class="en">Hany, university grad from the 90s, 26 years across electronics, appliances, fashion, jewelry, education, and AI compute. Former teacher, translator, trader. Now running Qishanmen Tech and Star Compute.</span></p>
-  </div>
-</div>
-
-<div class="next-post">
-  <p><a href="blog.html"><span class="cn">← 返回文章列表</span><span class="en">← Back to all posts</span></a></p>
-</div>
-
-    </div>
-  </div>
-</article>
-
-<footer>
-
-  <div class="container">
-
-    <p class="cn"><a href="xhs.html" style="color:#ff2442;text-decoration:none;">📕 小紅書同步</a> · © 2026 鄭哥 Hany · 七善門科技 · 星辰算力</p>
-
-    <p class="en"><a href="xhs.html" style="color:#ff2442;text-decoration:none;">📕 RED Sync</a> · © 2026 Hany · Qishanmen Tech · Star Compute</p>
-
-  </div>
-
-</footer>
-
-<script>
-
-  function toggleLang() {
-
-    document.body.classList.toggle('show-en');
-
-    const btn = document.getElementById('langBtn');
-
-    btn.textContent = document.body.classList.contains('show-en') ? '中' : 'EN';
-
-    localStorage.setItem('lang', document.body.classList.contains('show-en') ? 'en' : 'cn');
-
-  }
-
-  if (localStorage.getItem('lang') === 'en') {
-
-    document.body.classList.add('show-en');
-
-    document.getElementById('langBtn').textContent = '中';
-
-  }
-
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<script type="speculationrules">
+{"prerender":[{"where":{"and":[
+  {"href_matches":"/*"},
+  {"not":{"href_matches":"/cdn-cgi/*"}},
+  {"not":{"selector_matches":"[target=_blank]"}}
+]},"eagerness":"moderate"}]}
 </script>
+<link rel="stylesheet" href="/site.css">
+<style>
+.post-meta time { font-family: 'SF Mono', monospace; }
+.post-content h3 { font-size: 1.1rem; font-weight: 600; margin: 1.8em 0 0.6em; color: var(--accent); }
+.post-content hr { border: none; border-top: 1px solid var(--border-light); margin: 2em 0; }
+.post-content ul { margin: 1em 0 1.5em 1.5em; }
+.post-content li { margin-bottom: 0.5em; }
+.next-post { margin-top: 40px; padding: 24px; background: var(--bg-elevated); border: 1px solid var(--border-light); border-radius: var(--radius); }
+.next-post a { color: var(--accent); text-decoration: none; font-weight: 600; }
+.next-post a:hover { text-decoration: underline; }
 
-</body>
-</html>
+
+    
+
+    @media (max-width: 640px) {
+
+      .post-header h1 { font-size: 1.4rem; }
+
+      .author-card { flex-direction: column; text-align: center; }
+
+      .author-card img { margin: 0 auto; }
+
+    }
+.xhs-bottom-card{
+
+      background:linear-gradient(135deg,#fff5f5 0%,#ffe8eb 100%);
+
+      border:1px solid #ffcdd2;
+
+      border-left:5px solid #ff2442;
+
+      border-radius:12px;
+
+      padding:24px 28px;
+
+      margin:40px auto;
+
+      max-width:760px;
+
+      box-shadow:0 2px 8px rgba(255,36,66,.06);
+
+    }
+.xhs-bottom-tag{
+
+      display:inline-block;
+
+      background:#ff2442;
+
+      color:#fff;
+
+      font-size:.78rem;
+
+      padding:4px 12px;
+
+      border-radius:10px;
+
+      margin-bottom:12px;
+
+      font-weight:600;
+
+      letter-spacing:.5px;
+
+    }
+.xhs-bottom-card h4{font-size:1.1rem;color:#222;margin-bottom:10px;font-weight:600}
+.xhs-bottom-card p{font-size:.92rem;color:#555;line-height:1.7;margin-bottom:16px}
+.xhs-bottom-actions{display:flex;gap:10px;flex-wrap:wrap}
+.xhs-bottom-btn{
+
+      padding:10px 18px;
+
+      border-radius:10px;
+
+      font-size:.88rem;
+
+      text-decoration:none;
+
+      font-weight:500;
+
+      transition:opacity .2s;
+
+      display:inline-block;
+
+    }
+.xhs-bottom-btn:hover{opacity:.85}
+.xhs-bottom-btn-primary{background:#ff2442;color:#fff}
+.xhs-bottom-btn-secondary{background:#fff;color:#ff2442;border:1px solid #ff2442}
+
+
+    @media(max-width:640px){
+
+      .xhs-bottom-card{padding:20px;margin:30px 16px}
+
+      .xhs-bottom-btn{flex:1;text-align:center}
+
+    }
+.post-content h3{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang HK','Noto Sans TC',sans-serif;font-size:1.08rem;font-weight:700;margin:1.8em 0 .6em;color:var(--accent)}
+.post-content strong{color:#a31226}
+.post-content hr{border:none;margin:2.4em 0;text-align:center}
+.post-content hr::after{content:'···';letter-spacing:.6em;color:#c9c9c9;font-size:1.1rem}
+.post-content ul,.post-content ol{margin:1em 0 1.6em 1.4em;line-height:1.95}
+.post-content li{margin-bottom:.55em}
+.post-content figure{margin:2em 0}
+.post-content figure img{width:100%;border-radius:12px;margin:0;box-shadow:0 4px 18px rgba(0,0,0,.08)}
+.post-content figcaption{text-align:center;font-size:.82rem;color:var(--text-muted);margin-top:10px;font-family:-apple-system,'Segoe UI','PingFang HK',sans-serif}
+.post-content details{background:#fff;border:1px solid var(--border-light);border-radius:10px;padding:14px 18px;margin:.8em 0;font-size:.98rem;font-family:-apple-system,'Segoe UI','PingFang HK',sans-serif}
+.post-content details summary{cursor:pointer;font-weight:600}
+.post-content details p{margin:.8em 0 0;font-size:.95rem}
+#read-progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:200}
+.toc-box{background:var(--bg-elevated);border:1px solid var(--border-light);border-radius:12px;padding:18px 22px;margin:0 0 2em;font-family:-apple-system,'Segoe UI','PingFang HK',sans-serif;font-size:.92rem}
+.toc-box b{display:block;margin-bottom:8px}
+.toc-box a{color:var(--text-secondary);text-decoration:none;display:block;padding:3px 0}
+.toc-box a:hover{color:var(--accent)}
+.cta-whatsapp{background:linear-gradient(135deg,#1a1a2e,#2d2d44);color:#fff;border-radius:12px;padding:26px;margin:2.5em 0 0;text-align:center;font-family:-apple-system,'Segoe UI','PingFang HK',sans-serif}
+.cta-whatsapp a{display:inline-block;margin-top:12px;background:#25D366;color:#fff;padding:10px 28px;border-radius:8px;text-decoration:none;font-weight:600}
+#toTop{position:fixed;right:18px;bottom:18px;width:42px;height:42px;border-radius:50%;border:1px solid var(--border);background:#fff;font-size:1.1rem;cursor:pointer;display:none;z-index:200;box-shadow:0 4px 14px rgba(0,0,0,.1)}
+
+    /* ===== 導航不再被擠壓換行（2026-10-07） ===== */
+    .logo { white-space: nowrap; flex: 0 0 auto; }
+    .nav-links > a, .nav-links .nav-parent, .nav-links .lang-toggle { white-space: nowrap; }
+    @media (min-width: 769px) {
+      .nav-wrapper { flex: 1 1 auto; min-width: 0; justify-content: flex-end; }
+      .nav-links { flex-wrap: nowrap; gap: 14px; }
+      .nav-links > a, .nav-links .nav-parent, .nav-links .lang-toggle {
+        flex: 0 0 auto; font-size: .88rem; padding: 8px 6px; }
+    }
+    @media (min-width: 769px) and (max-width: 1200px) {
+      .nav-links { gap: 7px; }
+      .nav-links > a, .nav-links .nav-parent { font-size: .82rem; padding: 7px 4px; }
+      .nav-links .lang-toggle { padding: 6px 10px; font-size: .78rem; }
+    }
+
+    /* ===== 導航不換行保險（2026-10-07） ===== */
+    @media (min-width: 769px) {
+      .nav-wrapper { overflow-x: auto; scrollbar-width: none; }
+      .nav-wrapper::-webkit-scrollbar { display: none; }
+      .nav-links { flex-wrap: nowrap; }
+      .nav-links > a, .nav-links .nav-parent, .nav-links .lang-toggle {
+        white-space: nowrap; flex: 0 0 auto; }
+    }
+</style>
+
+</head>
