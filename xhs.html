@@ -1153,7 +1153,14 @@
 
 
 
-  </style>
+  
+    /* 圖片安全重置：未設寬度的圖片不再撐爆版面（2026-10-07） */
+    img { max-width: 100%; height: auto; }
+
+    /* .xhs-cover 是 div，object-fit 對它無效；真正的限制要加在裡面的 img 上 */
+    .xhs-cover { overflow: hidden; }
+    .xhs-cover img { display: block; width: 100%; height: 100%; object-fit: cover; }
+</style>
 
 
 
