@@ -11,7 +11,7 @@
   <meta property="og:url" content="https://www.glomarket.online/post-2026-10-09-shengyi-nan-zuodaofeng.html">
   <meta property="og:image" content="https://www.glomarket.online/hany-shengyi-nan-zuodaofeng-cover.webp">
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2026-10-09T04:12:59+08:00">
+  <meta property="article:published_time" content="2026-10-09T04:11:23+08:00">
   <meta property="article:tag" content="創業">
   <meta property="article:tag" content="生意">
   <meta property="article:tag" content="低價策略">
@@ -31,7 +31,7 @@
     "@type": "BlogPosting",
     "headline": "生意難做？那係你冇搵到罅隙——從一碗五銀炒粉講起",
     "description": "喺法國小鎮宵夜檔，鄭哥同肥叔傾偈，拆解五銀低價引流策略嘅真相。",
-    "datePublished": "2026-10-09T04:12:59+08:00",
+    "datePublished": "2026-10-09T04:11:23+08:00",
     "author": {"@type": "Person", "name": "鄭哥"},
     "image": "https://www.glomarket.online/hany-shengyi-nan-zuodaofeng-cover.webp"
   }
@@ -43,47 +43,86 @@
 
   <link rel="stylesheet" href="/site.css">
   <style>
-  .post-header {text-align:center; padding:40px 20px 20px}
-  .post-header h1 {font-size:1.8em; margin-bottom:8px}
-  .post-meta {color:#888; font-size:0.9em; margin-bottom:20px}
-  .post-figure {margin:24px auto; max-width:900px}
-  .post-figure img {width:100%; border-radius:12px}
-  .post-figure figcaption {text-align:center; font-size:0.85em; color:#666; margin-top:8px}
-  .cn {}
-  .en {margin-top:40px; padding-top:20px; border-top:1px dashed #ccc}
-  .post-footer {margin-top:40px; padding:20px; text-align:center; color:#888; font-size:0.85em}
-  blockquote {background:#f9f9f9; border-left:4px solid #c0392b; padding:12px 20px; margin:20px 0; font-size:1.05em}
-  table {width:100%; border-collapse:collapse; margin:16px 0}
-  th,td {border:1px solid #ddd; padding:8px 12px; text-align:left}
-  th {background:#f5f5f5}
-  .table-scroll {overflow-x:auto}
+  :root {
+    --bg: #fafafa; --bg-elevated: #ffffff; --text: #1a1a1a; --text-secondary: #555555; --text-muted: #888888;
+    --accent: #c41e3a; --accent-light: rgba(196,30,58,0.08); --border: #e8e8e8; --border-light: #f0f0f0;
+    --radius: 12px; --radius-sm: 8px; --shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.02);
+    --shadow-hover: 0 4px 16px rgba(0,0,0,0.06), 0 12px 40px rgba(0,0,0,0.04); --max-width: 720px;
+  }
+  html { scroll-behavior:smooth; }
+  body { background:var(--bg); color:var(--text); font-family:Georgia,'Noto Serif TC','Songti TC',serif; line-height:1.7; margin:0; }
+  a { color:var(--accent); text-decoration:none; }
+  a:hover { text-decoration:underline; }
+  .container { max-width:var(--max-width); margin:0 auto; padding:0 20px; }
+  nav { background:#fff; border-bottom:1px solid var(--border); padding:12px 0; position:sticky; top:0; z-index:100; }
+  nav .container { display:flex; align-items:center; justify-content:space-between; }
+  nav a { color:var(--text); font-weight:600; }
+  nav a:hover { text-decoration:none; color:var(--accent); }
+  .hamburger { display:none; }
+  article { padding:48px 0 64px; }
+  .post-header { text-align:center; padding:40px 0 32px; }
+  .post-header img { max-width:100%; border-radius:12px; margin-bottom:12px; }
+  .post-header h1 { font-family:Georgia,'Noto Serif TC','Songti TC',serif; font-size:1.72rem; line-height:1.45; letter-spacing:0; margin:12px 0 8px; }
+  .post-meta { color:var(--text-muted); font-size:0.88rem; margin-top:8px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap; align-items:center; }
+  .post-meta .tag { background:var(--accent-light); color:var(--accent); padding:2px 10px; border-radius:20px; font-size:0.8rem; }
+  .post-content { font-size:1.05rem; }
+  .post-content p { margin:0 0 1.2em; }
+  .post-content h2 { font-size:1.25rem; margin:2em 0 0.8em; border-bottom:1px solid var(--border); padding-bottom:6px; }
+  .post-content blockquote { background:var(--accent-light); border-left:4px solid var(--accent); padding:14px 20px; margin:20px 0; border-radius:0 var(--radius) var(--radius) 0; }
+  .post-content blockquote p { margin:0; }
+  .post-figure { margin:28px auto; max-width:760px; }
+  .post-figure img { width:100%; border-radius:var(--radius); display:block; }
+  .post-figure figcaption { text-align:center; font-size:0.83rem; color:var(--text-muted); margin-top:8px; line-height:1.5; }
+  .cn { margin-bottom:32px; }
+  .en { margin-top:0; border-top:1px solid var(--border); padding-top:32px; }
+  .post-footer { margin-top:48px; padding-top:24px; border-top:1px solid var(--border); text-align:center; color:var(--text-muted); font-size:0.85rem; }
+  .post-footer .tags { margin-top:12px; display:flex; gap:8px; justify-content:center; flex-wrap:wrap; }
+  .post-footer .tag { background:var(--accent-light); color:var(--accent); padding:3px 12px; border-radius:20px; font-size:0.8rem; }
+  footer { background:#fff; border-top:1px solid var(--border); padding:24px 0; text-align:center; color:var(--text-muted); font-size:0.82rem; margin-top:40px; }
+  @media(max-width:600px) { .post-header h1 { font-size:1.4rem; } .post-content { font-size:1rem; } }
   </style>
 </head>
 <body>
-<nav class="nav-wrapper">
-  <a href="/" class="nav-logo">鄭哥</a>
-  <div class="hamburger" onclick="document.querySelector('body').classList.toggle('show-nav')">☰</div>
-  <div class="nav-links">
-    <a href="/">首頁</a>
-    <a href="/blog.html">點評</a>
-    <a href="/about.html">關於</a>
-  </div>
-</nav>
 
-<main>
-<div class="post-header">
-  <h1>生意難做？那係你冇搵到罅隙——從一碗五銀炒粉講起</h1>
-  <div class="post-meta">欄目：鄭哥博客點評 &nbsp;|&nbsp; 發布：2026-10-09T04:12:59+08:00</div>
-</div>
+  <nav>
+    <div class="container">
+      <a href="index.html" class="logo">鄭哥 / Hany</a>
+      <div class="nav-links">
+        <a href="/">首頁</a>
+        <a href="/blog.html">點評</a>
+        <a href="/about.html">關於</a>
+      </div>
+      <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Open menu">☰</button>
+    </div>
+  </nav>
 
-<div class="cn">
+<article>
+  <div class="container">
+
+    <header class="post-header">
+      <img src="https://www.glomarket.online/hany-shengyi-nan-zuodaofeng-cover.webp" alt="生意難做？那係你冇搵到罅隙——從一碗五銀炒粉講起">
+      <p style="text-align:center;font-size:.8rem;color:#888;margin-top:-8px;">
+        <span class="cn">圖片由 AI輔助創作（Z-Image-Turbo）</span>
+        <span class="en">Image by AI (Z-Image-Turbo)</span>
+      </p>
+      <h1><span class="cn">生意難做？那係你冇搵到罅隙——從一碗五銀炒粉講起</span><span class="en">Business So Hard? Find the Gap — A Story of 5-Yuan Fried Noodles</span></h1>
+      <div class="post-meta">
+        <time datetime="2026-10-09T04:11:23+08:00"><span class="cn">2026年10月9日</span><span class="en">Oct 9, 2026</span></time>
+        <span class="tag"><span class="cn">創業</span><span class="en">Startup</span></span>
+        <span class="tag"><span class="cn">餐飲</span><span class="en">F&amp;B</span></span>
+        <span class="tag"><span class="cn">低價策略</span><span class="en">Low-Price</span></span>
+      </div>
+    </header>
+
+    <div class="post-content">
+
+      <div class="cn">
 
 
-  <figure class="post-figure">
-    <img src="hany-shengyi-nan-zuodaofeng-cover.webp" alt="封面：法國小鎮深夜街頭，肥叔炒粉檔閃耀着溫暖嘅灯光" loading="lazy" width="1024" height="576">
-    <figcaption>封面：法國小鎮深夜街頭，肥叔炒粉檔閃耀着溫暖嘅灯光<br><em>圖片由 AI輔助創作（Z-Image-Turbo）</em></figcaption>
-  </figure>
-
+      <figure class="post-figure">
+        <img src="hany-shengyi-nan-zuodaofeng-cover.webp" alt="封面：法國小鎮深夜街頭，肥叔炒粉檔閃耀着溫暖嘅灯光" loading="lazy" width="1024" height="576">
+        <figcaption>封面：法國小鎮深夜街頭，肥叔炒粉檔閃耀着溫暖嘅灯光<br><em>圖片由 AI輔助創作（Z-Image-Turbo）</em></figcaption>
+      </figure>
 
 <p>喺法國一個小鎮、11月9號，瞓唔着，我揸單車出去食宵夜。</p>
 
@@ -102,11 +141,10 @@
 <h2>肥叔點評：五個破綻</h2>
 
 
-  <figure class="post-figure">
-    <img src="hany-shengyi-nan-zuodaofeng-scene1.webp" alt="場景1：肥叔大火快炒，鑊氣冲上天花板" loading="lazy" width="1024" height="576">
-    <figcaption>場景1：肥叔大火快炒，鑊氣冲上天花板<br><em>圖片由 AI輔助創作（Z-Image-Turbo）</em></figcaption>
-  </figure>
-
+      <figure class="post-figure">
+        <img src="hany-shengyi-nan-zuodaofeng-scene1.webp" alt="場景1：肥叔大火快炒，鑊氣冲上天花板" loading="lazy" width="1024" height="576">
+        <figcaption>場景1：肥叔大火快炒，鑊氣冲上天花板<br><em>圖片由 AI輔助創作（Z-Image-Turbo）</em></figcaption>
+      </figure>
 
 <p>呢個兄弟，個腦已經轉起來喇。比好多日日嗌「生意難做」嘅人強。因為佢至少喺度睇、喺度問、喺度諗、喺度拆。但老細一路笑，都唔係笑佢儍，而係笑佢仲未算清灶頭前嗰本數。</p>
 
@@ -117,11 +155,10 @@
 <h2>第二：1000份唔係嗌出嚟，係炒出嚟</h2>
 
 
-  <figure class="post-figure">
-    <img src="hany-shengyi-nan-zuodaofeng-scene2.webp" alt="場景2：五銀低價招牌 vs 隔篱十二銀" loading="lazy" width="1024" height="576">
-    <figcaption>場景2：五銀低價招牌 vs 隔篱十二銀<br><em>圖片由 AI輔助創作（Z-Image-Turbo）</em></figcaption>
-  </figure>
-
+      <figure class="post-figure">
+        <img src="hany-shengyi-nan-zuodaofeng-scene2.webp" alt="場景2：五銀低價招牌 vs 隔籬十二銀" loading="lazy" width="1024" height="576">
+        <figcaption>場景2：五銀低價招牌 vs 隔籬十二銀<br><em>圖片由 AI輔助創作（Z-Image-Turbo）</em></figcaption>
+      </figure>
 
 <p>一份炒粉一兩分鐘，1000份幾十個鐘，一個煲一個人做唔晒。宵夜兩三個鐘，能賣100到200份已經好犀利。規模靠出餐速度、備料、動線、人手、供應鏈。先唔好諗一萬份，先諗一晚100份穩唔穩。</p>
 
@@ -140,11 +177,10 @@
 <h2>如果係我，我會咁樣幹</h2>
 
 
-  <figure class="post-figure">
-    <img src="hany-shengyi-nan-zuodaofeng-scene3.webp" alt="場景3：蜜雪冰城：低價背後嘅加盟帝國" loading="lazy" width="1024" height="576">
-    <figcaption>場景3：蜜雪冰城：低價背後嘅加盟帝國<br><em>圖片由 AI輔助創作（Z-Image-Turbo）</em></figcaption>
-  </figure>
-
+      <figure class="post-figure">
+        <img src="hany-shengyi-nan-zuodaofeng-scene3.webp" alt="場景3：蜜雪冰城：低價背後嘅加盟帝國" loading="lazy" width="1024" height="576">
+        <figcaption>場景3：蜜雪冰城：低價背後嘅加盟帝國<br><em>圖片由 AI輔助創作（Z-Image-Turbo）</em></figcaption>
+      </figure>
 
 <ol>
 <li><strong>先擺一週快閃</strong>，淨係做一個品類，限量100份，每晚兩鐘</li>
@@ -157,11 +193,10 @@
 <h2>結論</h2>
 
 
-  <figure class="post-figure">
-    <img src="hany-shengyi-nan-zuodaofeng-scene4.webp" alt="場景4：商業計劃書：數據驅動嘅決策" loading="lazy" width="1024" height="576">
-    <figcaption>場景4：商業計劃書：數據驅動嘅決策<br><em>圖片由 AI輔助創作（Z-Image-Turbo）</em></figcaption>
-  </figure>
-
+      <figure class="post-figure">
+        <img src="hany-shengyi-nan-zuodaofeng-scene4.webp" alt="場景4：商業計劃書：數據驅動嘅決策" loading="lazy" width="1024" height="576">
+        <figcaption>場景4：商業計劃書：數據驅動嘅決策<br><em>圖片由 AI輔助創作（Z-Image-Turbo）</em></figcaption>
+      </figure>
 
 <p>創業唔係冇機會，係好多人淨係睇到「生意難做」，冇睇到「罅隙喺邊」。生意難做，難嘅係用老辦法做老生意；機會好搵，好嘅係用新腦袋切老罅隙。</p>
 
@@ -172,22 +207,20 @@
 <p>想創業嘅人，唔好睇唔到希望。希望唔喺天上，喺街頭，喺灶頭，喺人哋笑你之後你仲能不能把數算明白。</p>
 
 
-  <figure class="post-figure">
-    <img src="hany-portrait.webp" alt="鄭哥 Hany" loading="lazy" width="1024" height="576">
-    <figcaption>鄭哥 Hany — 鄭哥博客點評</figcaption>
-  </figure>
+      <figure class="post-figure">
+        <img src="hany-portrait.webp" alt="鄭哥 Hany" loading="lazy" width="1024" height="576">
+        <figcaption>鄭哥 Hany — 鄭哥博客點評</figcaption>
+      </figure>
+
+      </div>
+
+      <div class="en">
 
 
-</div>
-
-<div class="en">
-
-
-  <figure class="post-figure">
-    <img src="hany-shengyi-nan-zuodaofeng-cover.webp" alt="Cover: Late night French town street, Feishu's fried noodle stall glowing with warm light" loading="lazy" width="1024" height="576">
-    <figcaption>Cover: Late night French town street, Feishu's fried noodle stall glowing with warm light<br><em>Image by AI (Z-Image-Turbo)</em></figcaption>
-  </figure>
-
+      <figure class="post-figure">
+        <img src="hany-shengyi-nan-zuodaofeng-cover.webp" alt="Cover: Late night French town street, Feishu's fried noodle stall glowing with warm light" loading="lazy" width="1024" height="576">
+        <figcaption>Cover: Late night French town street, Feishu's fried noodle stall glowing with warm light<br><em>Image by AI (Z-Image-Turbo)</em></figcaption>
+      </figure>
 
 <p>In a small French town, November 9th, I couldn't sleep, so I rode my bike out for a late-night snack.</p>
 
@@ -206,32 +239,30 @@
 <h2>Five Blind Spots</h2>
 
 
-  <figure class="post-figure">
-    <img src="hany-shengyi-nan-zuodaofeng-scene1.webp" alt="Scene 1: Feishu stir-frying over high flame, wok sparks flying" loading="lazy" width="1024" height="576">
-    <figcaption>Scene 1: Feishu stir-frying over high flame, wok sparks flying<br><em>Image by AI (Z-Image-Turbo)</em></figcaption>
-  </figure>
-
+      <figure class="post-figure">
+        <img src="hany-shengyi-nan-zuodaofeng-scene1.webp" alt="Scene 1: Feishu stir-frying over high flame, wok sparks flying" loading="lazy" width="1024" height="576">
+        <figcaption>Scene 1: Feishu stir-frying over high flame, wok sparks flying<br><em>Image by AI (Z-Image-Turbo)</em></figcaption>
+      </figure>
 
 <p>This guy's mind is already turning. Compared to those who just complain "business is hard" every day, he's already ahead — because he's at least observing, asking questions, thinking, and dissecting. But the vendor kept laughing, not at his foolishness, but at how he still hasn't counted the costs in front of the stove.</p>
 
 <h2>One: Ingredients Cost Three to Four Yuan — But That's Not All</h2>
 
-<p>Ingredients at three to four yuan, selling at five, looks like one yuan profit. But gas, packaging, stall fees, utilities, waste,城管, hygiene inspections, platform commissions, labor — all cost money. Not counting your own labor isn't freedom, it's unpaid labor. Hiring help, even a hundred yuan per night, divided across 100 plates, adds two yuan per plate — instantly underwater. Low price is fine, but there must be back-end profit behind it.</p>
+<p>Ingredients at three to four yuan, selling at five, looks like one yuan profit. But gas, packaging, stall fees, utilities, waste, inspections, platform commissions, labor — all cost money. Not counting your own labor isn't freedom, it's unpaid labor. Hiring help, even a hundred yuan per night, divided across 100 plates, adds two yuan per plate — instantly underwater. Low price is fine, but there must be back-end profit behind it.</p>
 
 <h2>Two: A Thousand Plates Can't Be Shouted Into Existence</h2>
 
 
-  <figure class="post-figure">
-    <img src="hany-shengyi-nan-zuodaofeng-scene2.webp" alt="Scene 2: Five-yuan price board vs competitor's twelve yuan" loading="lazy" width="1024" height="576">
-    <figcaption>Scene 2: Five-yuan price board vs competitor's twelve yuan<br><em>Image by AI (Z-Image-Turbo)</em></figcaption>
-  </figure>
+      <figure class="post-figure">
+        <img src="hany-shengyi-nan-zuodaofeng-scene2.webp" alt="Scene 2: Five-yuan price board vs competitor's twelve yuan" loading="lazy" width="1024" height="576">
+        <figcaption>Scene 2: Five-yuan price board vs competitor's twelve yuan<br><em>Image by AI (Z-Image-Turbo)</em></figcaption>
+      </figure>
 
-
-<p>One plate of fried noodles takes one to two minutes. A thousand plates is dozens of hours. One wok, one person, can't handle it. Late-night window is two to three hours. Selling 100 to 200 plates in that window is already impressive. Scale depends on cooking speed, prep workflow, staffing, and supply chain. Don't dream of ten thousand plates — first make sure 100 plates per night is stable.</p>
+<p>One plate of fried noodles takes one to two minutes. A thousand plates is dozens of hours. One wok, one person, can't handle it. Late-night window is two to three hours. Selling 100 to 200 plates in that window is already impressive. Don't dream of ten thousand plates — first make sure 100 plates per night is stable.</p>
 
 <h2>Three: Low Price Attracts Bargain Hunters, Not Loyal Customers</h2>
 
-<p>You sell at five yuan, neighbors charge twelve. Customers come — but they might only buy the five-yuan item and leave. Real health is: five-yuan congee and noodles as the fishing lure, eight to twelve yuan sides, drinks, and add-ons as profit items. Make money on the backend, not by losing money on excitement.</p>
+<p>You sell at five yuan, neighbors charge twelve. Customers come — but they might only buy the five-yuan item and leave. Real health is: five-yuan congee and noodles as the fishing lure, eight to twelve yuan sides, drinks, and add-ons as profit items.</p>
 
 <h2>Four: Revenue Is Not Profit, Let Alone VC Money</h2>
 
@@ -244,11 +275,10 @@
 <h2>If It Were Me, Here's What I'd Do</h2>
 
 
-  <figure class="post-figure">
-    <img src="hany-shengyi-nan-zuodaofeng-scene3.webp" alt="Scene 3: Mixue Bingcheng: the franchise empire behind rock-bottom prices" loading="lazy" width="1024" height="576">
-    <figcaption>Scene 3: Mixue Bingcheng: the franchise empire behind rock-bottom prices<br><em>Image by AI (Z-Image-Turbo)</em></figcaption>
-  </figure>
-
+      <figure class="post-figure">
+        <img src="hany-shengyi-nan-zuodaofeng-scene3.webp" alt="Scene 3: Mixue Bingcheng: the franchise empire behind rock-bottom prices" loading="lazy" width="1024" height="576">
+        <figcaption>Scene 3: Mixue Bingcheng: the franchise empire behind rock-bottom prices<br><em>Image by AI (Z-Image-Turbo)</em></figcaption>
+      </figure>
 
 <ol>
 <li><strong>Run a one-week flash popup</strong>, one category only, 100 plates limit, two hours per night</li>
@@ -261,11 +291,10 @@
 <h2>Conclusion</h2>
 
 
-  <figure class="post-figure">
-    <img src="hany-shengyi-nan-zuodaofeng-scene4.webp" alt="Scene 4: Business plan: data-driven decision making" loading="lazy" width="1024" height="576">
-    <figcaption>Scene 4: Business plan: data-driven decision making<br><em>Image by AI (Z-Image-Turbo)</em></figcaption>
-  </figure>
-
+      <figure class="post-figure">
+        <img src="hany-shengyi-nan-zuodaofeng-scene4.webp" alt="Scene 4: Business plan: data-driven decision making" loading="lazy" width="1024" height="576">
+        <figcaption>Scene 4: Business plan: data-driven decision making<br><em>Image by AI (Z-Image-Turbo)</em></figcaption>
+      </figure>
 
 <p>Entrepreneurship isn't without opportunity — it's that most people only see "business is hard," not "where is the gap?" Business is hard when you use old methods for old businesses; opportunity is real when you use a new brain to find old gaps.</p>
 
@@ -276,18 +305,34 @@
 <p>For those who want to start a business — don't lose sight of hope. Hope isn't in the sky, it's on the street, at the stove, in whether you can still make the numbers add up after everyone laughs at you.</p>
 
 
-  <figure class="post-figure">
-    <img src="hany-portrait.webp" alt="Zheng Ge Hany" loading="lazy" width="1024" height="576">
-    <figcaption>Zheng Ge Hany — Hany Blog</figcaption>
-  </figure>
+      <figure class="post-figure">
+        <img src="hany-portrait.webp" alt="Zheng Ge Hany" loading="lazy" width="1024" height="576">
+        <figcaption>Zheng Ge Hany — Hany Blog</figcaption>
+      </figure>
 
+      </div>
 
-</div>
+    </div>
 
-</main>
+    <footer class="post-footer">
+      <p><span class="cn">發布於 2026年10月9日 | 鄭哥 Hany</span><span class="en">Published 2026-10-09 | Hany</span></p>
+      <div class="tags">
+        <span class="tag">#創業</span>
+        <span class="tag">#生意</span>
+        <span class="tag">#低價策略</span>
+        <span class="tag">#餐飲</span>
+        <span class="tag">#Startup</span>
+        <span class="tag">#F&amp;B</span>
+      </div>
+    </footer>
 
-<footer class="post-footer">
-  <p>鄭哥博客點評 · 版權所有 · 轉載請註出處</p>
+  </div>
+</article>
+
+<footer>
+  <div class="container">
+    <p>鄭哥博客點評 · 版權所有</p>
+  </div>
 </footer>
 
 </body>
