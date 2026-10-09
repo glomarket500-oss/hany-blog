@@ -296,11 +296,15 @@ footer a:hover{color:var(--accent)}
 .founder-figure figcaption{font-size:.78rem;color:var(--muted);margin-top:10px;
   text-align:center;max-width:52ch;margin-left:auto;margin-right:auto}
 
-/* 首頁創辦人條帶：獨立 class，日後要整條抽走只需要刪 <section> 同下面三段 CSS。 */
+/* 首頁創辦人條帶：獨立 class，日後要整條抽走只需要刪 <section> 同下面三段 CSS。
+   條帶圖 founder-hasam-strip.webp 係 650×560（1.161:1），由海報裁出「兩個人嘅臉」，
+   所以容器比例要跟返張圖（aspect-ratio 只用嚟按比例縮放，唔會再裁走臉），
+   舊寫法固定 height:172px 會把近方形嘅圖壓成全景橫條，手機上兩張臉都會被切一半。 */
 .founder-strip{display:flex;gap:22px;align-items:center;margin-top:26px;padding:18px;
   background:var(--surface);border:1px solid var(--line);border-radius:var(--radius)}
-.founder-strip img{width:132px;height:132px;max-width:132px;flex:none;object-fit:cover;
-  object-position:center 32%;border-radius:var(--radius-sm);background:#eceae5}
+.founder-strip img{width:auto;height:132px;max-width:100%;flex:none;aspect-ratio:650/560;
+  object-fit:cover;object-position:center 30%;border-radius:var(--radius-sm);
+  background:#eceae5}
 .founder-strip .fs-body{min-width:0}
 .founder-strip .fs-kicker{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
   color:var(--accent);font-weight:650}
@@ -309,7 +313,7 @@ footer a:hover{color:var(--accent)}
 @media(max-width:900px){.founder-grid{grid-template-columns:1fr;gap:30px}
   .founder-poster{max-width:420px;margin:0 auto}}
 @media(max-width:640px){.founder-strip{flex-direction:column;align-items:flex-start;gap:14px}
-  .founder-strip img{width:100%;max-width:100%;height:172px;object-position:center 34%}
+  .founder-strip img{width:100%;height:auto;max-width:260px}
   .founder-facts li{flex-direction:column;gap:0}}
 
 /* ---------- 直播 / 短片 ---------- */
