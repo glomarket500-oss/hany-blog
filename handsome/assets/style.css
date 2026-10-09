@@ -262,6 +262,50 @@ footer a:hover{color:var(--accent)}
   .maker-strip{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.strip.s3,.strip.s4,.maker-strip{grid-template-columns:1fr}}
 
+/* ---------- 創辦人（about.html 主圖 ＋ index.html 條帶，2026-10）----------
+   海報係創辦人提供嘅品牌素材（940×1672，9:16 直幅），
+   轉成 WebP 時只縮到 800 闊（scripts 外一次性處理，永不放大）。
+   兩欄：文字在左（DOM 首位，窄螢幕收起時文字先出現），海報在右。
+   海報有 800px 硬上限，所以闊螢幕都唔會被撐大過原圖。 */
+.founder-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,380px);
+  gap:44px;align-items:start}
+.founder-copy{min-width:0}
+.founder-copy h2{margin-bottom:14px}
+.founder-copy p{color:var(--muted);margin-top:14px;max-width:64ch}
+.founder-copy p:first-of-type{margin-top:0}
+.founder-copy .founder-lede{color:var(--ink);font-size:1.06rem;max-width:56ch}
+.founder-role{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--accent);font-weight:650}
+.founder-name{font-size:1.5rem;font-weight:800;letter-spacing:-.02em;line-height:1.2;
+  margin-top:6px}
+.founder-facts{list-style:none;margin:20px 0 0;padding-top:16px;display:grid;gap:8px;
+  border-top:1px dashed var(--line)}
+.founder-facts li{display:flex;gap:12px;font-size:.86rem;color:var(--muted)}
+.founder-facts li span:first-child{flex:none;min-width:96px;color:var(--ink);font-weight:650}
+.founder-poster{min-width:0}
+.founder-poster img,.founder-figure img{width:100%;max-width:min(100%,800px);height:auto;
+  margin:0 auto;display:block;border-radius:var(--radius);border:1px solid var(--line);
+  background:#fff;box-shadow:var(--shadow)}
+.founder-figure{margin:0}
+.founder-figure figcaption{font-size:.78rem;color:var(--muted);margin-top:10px;
+  text-align:center;max-width:52ch;margin-left:auto;margin-right:auto}
+
+/* 首頁創辦人條帶：獨立 class，日後要整條抽走只需要刪 <section> 同下面三段 CSS。 */
+.founder-strip{display:flex;gap:22px;align-items:center;margin-top:26px;padding:18px;
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius)}
+.founder-strip img{width:132px;height:132px;max-width:132px;flex:none;object-fit:cover;
+  object-position:center 32%;border-radius:var(--radius-sm);background:#eceae5}
+.founder-strip .fs-body{min-width:0}
+.founder-strip .fs-kicker{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--accent);font-weight:650}
+.founder-strip .fs-line{font-size:.95rem;margin-top:6px;max-width:68ch}
+.founder-strip .strip-links{margin-top:8px}
+@media(max-width:900px){.founder-grid{grid-template-columns:1fr;gap:30px}
+  .founder-poster{max-width:420px;margin:0 auto}}
+@media(max-width:640px){.founder-strip{flex-direction:column;align-items:flex-start;gap:14px}
+  .founder-strip img{width:100%;max-width:100%;height:172px;object-position:center 34%}
+  .founder-facts li{flex-direction:column;gap:0}}
+
 /* ---------- 直播 / 短片 ---------- */
 .slot-box{position:relative;aspect-ratio:16/9;width:100%;border-radius:var(--radius);
   overflow:hidden;background:#e9e7e2;border:1px solid var(--line);
