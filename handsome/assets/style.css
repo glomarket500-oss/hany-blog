@@ -371,7 +371,7 @@ footer a:hover{color:var(--accent)}
   font-variant-numeric:tabular-nums}
 
 /* ---------- 緊湊合夥人卡（2026-10 版面改版）----------
-   創辦人指示：師傅呢一欄資訊太多，要做細。
+   創辦人指示：工匠呢一欄資訊太多，要做細。
    原則：一屏睇晒 → 詳情收進卡內 <details>，一按即見。
    頭像顯示 ~72–96px（原圖 160px = 2× retina），所以設硬上限唔會撐大。 */
 .maker-grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
