@@ -24,18 +24,23 @@ body.lang-cn .t-cn.block{display:block}
 body.lang-cn .t-en.block{display:none}
 
 /* ---------- nav ---------- */
-/* 導覽有 7 個項目。--nav-fs / --nav-pad 係為此降下來的，
+/* 導覽有 8 個項目。--nav-fs / --nav-pad 係為此降下來的，
    目的：在 1120px 容器、品牌 + 語言鍵同行的情況下仍然單行不折行，無需下拉選單。 */
 :root{--nav-fs:.78rem;--nav-pad:6px}
 header.top{position:sticky;top:0;z-index:50;background:rgba(247,246,243,.88);
   backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
-/* 2026-10：品牌 logo 由 CSS 文字（HAND<em>SOME</em>）換成創辦人供應嘅字標圖。
-   高度 13px 令字標闊約 118px，同原本文字版（約 95–105px）差唔多，唔會逼爆導覽。
-   width/height 屬性寫住圖嘅真實像素（480×53），只為保留長闊比、避免載入時跳位；
-   實際顯示尺寸由呢兩條 CSS 決定。 */
+/* 2026-10：品牌 logo 由 CSS 文字（HAND<em>SOME</em>）換成創辦人供應嘅圖。
+   2026-10 第二次：創辦人睇完上線頁首話「这个地方也是需要换上」——頁首淨係字標唔夠，
+   要有**完整標記**。但疊起來嘅 lockup（logo-lockup.webp，300×153）喺 64px 高嘅
+   頁首太高大，所以改用**橫向排列**：左邊方形 H monogram、右邊字標，垂直居中。
+   圖檔 400×56，由 scripts/make_lockup_h.py 產生（裁切去水印 + 反混合去底）。
+   高 28px（= 顯示 2×）→ monogram 顯示 28px、字標 cap 18px（同 monogram 內框 H 光學對齊）。
+   width/height 屬性寫住圖嘅真實像素，只為保留長闊比、避免載入時跳位。
+   品牌闊 400/56×28 = 200px；上線版純字標係 height:13px → 118px，
+   所以闊咗 82px，但 1072px 內容區仍然綽綽有餘（實測見 docs/占位清单.md）。 */
 .brand{white-space:nowrap;display:flex;align-items:center}
-.brand img{display:block;height:13px;width:auto}
+.brand img{display:block;height:28px;width:auto}
 .brand-lock img{display:block;width:150px;height:auto;max-width:100%}
 nav.main{display:flex;gap:1px;flex-wrap:nowrap;align-items:center}
 nav.main a{padding:8px var(--nav-pad);border-radius:8px;font-size:var(--nav-fs);
@@ -126,6 +131,23 @@ img.shot.hero{border-radius:var(--radius);box-shadow:var(--shadow)}
 .hero-copy{min-width:0}
 @media(max-width:820px){.hero-grid{grid-template-columns:1fr;gap:34px}}
 
+/* 2026-10：about 頁「Where we make」原本係全寬 .shot-wrap —— 1072×804 嘅一幅巨圖，
+   標題喺圖下面。訪客要先睇一大張唔知係乜嘅相，再捲落去先知係乜。創辦人問
+   「这个图片是不是排版不对，看起来很大，你推荐一下怎么样处理图片和文字的问题」。
+   修正：改成兩欄（圖 | 標題同正文），正文垂直居中對住圖。
+   獨立 .split 而唔重用 .hero-grid：hero-grid 係 1.05fr/.95fr，圖只有 537px，
+   低過要求嘅 550–600px；.split 用 1.15fr/.85fr → 內容區 1072px 時圖闊 589px。
+   單欄斷點同 .hero-grid 一致（820px）。DOM 次序刻意係「圖先、文字後」，
+   所以收窄到單欄時自然係圖喺上、標題同正文喺下。 */
+.split{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+/* 兩欄裡面 .sec-head 再食 44px 下邊距就會頂歪垂直居中，所以喺 .split 內取消，
+   段寬亦唔再受 64ch 限制（欄本身已經窄過 64ch）。 */
+.split .sec-head{margin-bottom:0;max-width:none}
+/* 原本 CTA 用 inline style="margin-top:0"（因為上面嘅 .sec-head 已經有 44px 下邊距）。
+   依家個 44px 由呢條規則接手，inline style 已經移除。 */
+.split + .cta{margin-top:44px}
+@media(max-width:820px){.split{grid-template-columns:1fr;gap:34px}}
+
 .page-h1{font-size:clamp(1.4rem,3vw,2rem);letter-spacing:-.02em;
   font-weight:700;line-height:1.25;margin:0}
 .tbl td, .tbl th { font-variant-numeric: tabular-nums; }
@@ -176,7 +198,7 @@ footer a:hover{color:var(--accent)}
    但 ≤640px 頁首本身已經變多行（導覽 order:3 換行落下面），
    所以喺呢個闊度把新字標放返出嚟，第一行 = 字標 + 語言鍵。 */
 @media(max-width:640px){header.top .brand{display:flex}
-  .brand img{height:12px}
+  .brand img{height:24px}
   .g3,.g4,.g2,.fgrid{grid-template-columns:1fr}
   nav.main{width:100%;order:3;justify-content:flex-start;flex-wrap:wrap;gap:2px}
   .top .wrap{height:auto;padding-top:12px;padding-bottom:12px;flex-wrap:wrap}
