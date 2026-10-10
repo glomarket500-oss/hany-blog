@@ -18,12 +18,19 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="index,follow">
 <link rel="stylesheet" href="/handsome/assets/style.css">
+<!-- 2026-10：HANDSOME 自己嘅圖示（喺 /handsome/ 之下），唔會覆蓋部落格根目錄
+     嘅 favicon.ico / favicon-32.png / favicon-192.png / apple-touch-icon.png。
+     圖示由新 logo 嘅 monogram 產生，底色用站台 --bg，所以喺任何 tab 底色都睇得清。 -->
+<link rel="icon" type="image/png" sizes="32x32" href="/handsome/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/handsome/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/handsome/apple-touch-icon.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"HANDSOME","url":"https://www.glomarket.online/handsome","isPartOf":{"@type":"WebSite","name":"HANDSOME","url":"https://www.glomarket.online/handsome/"}}</script>
 </head>
 <body>
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="/handsome/index.html">HAND<em>SOME</em></a>
+    <a class="brand" href="/handsome/index.html"><img src="/handsome/assets/images/logo-wordmark.webp"
+       alt="HANDSOME" width="480" height="53"></a>
     <nav class="main">
       <a href="/handsome/index.html" class="on"><span class="t-en">Home</span><span class="t-cn">首頁</span></a>
       <a href="/handsome/shop.html"><span class="t-en">Shop</span><span class="t-cn">系列</span></a>
@@ -226,7 +233,12 @@
   <div class="wrap">
     <div class="fgrid">
       <div>
-        <div class="brand" style="margin-bottom:12px">HAND<em>SOME</em></div>
+        <!-- 2026-10：頁尾品牌原本係兩截文字，依家換成完整 lockup（monogram + 字標）。
+             頁尾有足夠垂直空間，所以用 lockup 而唔係純字標——咁樣 monogram 先會露面。 -->
+        <div class="brand-lock" style="margin-bottom:14px">
+          <img src="/handsome/assets/images/logo-lockup.webp" alt="HANDSOME"
+               width="300" height="153">
+        </div>
         <p style="color:var(--muted);font-size:.9rem;max-width:38ch">
           <span class="t-en">Bespoke phone cases built around three materials: aramid fiber, full-grain leather, and engineered drop protection.</span><span class="t-cn">專注三種材質的訂造奢侈品：芳綸纖維、頭層皮革，以及工程化防摔結構。</span>
         </p>

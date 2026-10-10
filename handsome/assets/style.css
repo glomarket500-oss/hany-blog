@@ -30,8 +30,13 @@ body.lang-cn .t-en.block{display:none}
 header.top{position:sticky;top:0;z-index:50;background:rgba(247,246,243,.88);
   backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
-.brand{font-weight:800;letter-spacing:.16em;font-size:.95rem;white-space:nowrap}
-.brand em{font-style:normal;color:var(--accent)}
+/* 2026-10：品牌 logo 由 CSS 文字（HAND<em>SOME</em>）換成創辦人供應嘅字標圖。
+   高度 13px 令字標闊約 118px，同原本文字版（約 95–105px）差唔多，唔會逼爆導覽。
+   width/height 屬性寫住圖嘅真實像素（480×53），只為保留長闊比、避免載入時跳位；
+   實際顯示尺寸由呢兩條 CSS 決定。 */
+.brand{white-space:nowrap;display:flex;align-items:center}
+.brand img{display:block;height:13px;width:auto}
+.brand-lock img{display:block;width:150px;height:auto;max-width:100%}
 nav.main{display:flex;gap:1px;flex-wrap:nowrap;align-items:center}
 nav.main a{padding:8px var(--nav-pad);border-radius:8px;font-size:var(--nav-fs);
   white-space:nowrap;color:var(--muted);transition:.18s}
@@ -167,7 +172,12 @@ footer a:hover{color:var(--accent)}
 @media(max-width:1180px){:root{--nav-fs:.74rem;--nav-pad:5px}}
 @media(max-width:1040px){:root{--nav-fs:.7rem;--nav-pad:4px}}
 @media(max-width:880px){header.top .brand{display:none}}
-@media(max-width:640px){.g3,.g4,.g2,.fgrid{grid-template-columns:1fr}
+/* 2026-10：641–880px 係「單行導覽」，冇位擺 logo，所以照舊收埋；
+   但 ≤640px 頁首本身已經變多行（導覽 order:3 換行落下面），
+   所以喺呢個闊度把新字標放返出嚟，第一行 = 字標 + 語言鍵。 */
+@media(max-width:640px){header.top .brand{display:flex}
+  .brand img{height:12px}
+  .g3,.g4,.g2,.fgrid{grid-template-columns:1fr}
   nav.main{width:100%;order:3;justify-content:flex-start;flex-wrap:wrap;gap:2px}
   .top .wrap{height:auto;padding-top:12px;padding-bottom:12px;flex-wrap:wrap}
   h1{font-size:1.85rem}}
