@@ -2,6 +2,12 @@
    由各頁原本的 inline <style> 抽出，讓瀏覽器跨頁快取。 */
 
 *{margin:0;padding:0;box-sizing:border-box;}
+/* 黏性導覽高 85px（56px 容器 + 上下 14px padding + 1px 底線），實測 375–1280px
+   各寬度、各頁皆相同；面板展開時會增至 188px，但跳去 #anchor 會先收起面板，
+   所以以收起後的高度為準。加 17px 呼吸位，令目標頂邊不會被導覽蓋住。
+   site.css 在每頁 inline <style> 之前載入，所以個別頁面若有自己的
+   scroll-margin-top，仍以該頁的數值為準（topics.html / products.html 已同步調為 102px）。 */
+html { scroll-padding-top: 102px; }
 .author-card h4{font-size:1rem;margin-bottom:6px;}
 .author-card img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0;}
 .author-card p{font-size:0.88rem;color:var(--text-secondary);line-height:1.6;}
