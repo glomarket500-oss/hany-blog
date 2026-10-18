@@ -13,6 +13,12 @@ html { scroll-padding-top: 102px; }
 .author-card p{font-size:0.88rem;color:var(--text-secondary);line-height:1.6;}
 .author-card{background:var(--bg-elevated);border:1px solid var(--border-light);border-radius:var(--radius);padding:28px;margin-top:32px;display:flex;gap:20px;align-items:flex-start;}
 .container{max-width:720px;margin:0 auto;padding:0 24px;}
+/* 2026-10-18：文章頁用 .search-page > .search-inner 包住正文，但那 5 頁只在 inline
+   寫了 max-width:820px，冇 margin:0 auto，令 820px 闊的欄在寬螢幕鎖死在左邊、
+   右邊留一大片空白（視窗 ≤800px 時才看似正常）。search.html 自己已寫 margin:0 auto，
+   所以只有文章頁受影響。呢條規則補回置中，同時防止日後新文章再犯。 */
+.search-page .search-inner{margin-left:auto;margin-right:auto;}
+
 .en{display:none;}
 .lang-btn{background:none;border:1px solid var(--border-light);padding:6px 14px;border-radius:6px;cursor:pointer;font-size:0.85rem;margin-left:8px;}
 .logo span{color:var(--accent);}
