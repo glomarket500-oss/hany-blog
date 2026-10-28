@@ -215,7 +215,6 @@ footer p{color:var(--muted);font-size:.86rem;max-width:40ch}
 footer a{color:var(--muted);font-size:.86rem;display:block;padding:4px 0}
 footer a:hover{color:var(--ink)}
 footer h4{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
-.ai-note{margin-top:26px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.78rem}
 .copy{margin-top:18px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
   color:var(--muted);font-size:.78rem}
 
