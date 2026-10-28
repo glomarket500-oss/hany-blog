@@ -1,4 +1,4 @@
-/* HASAM — founder site */
+/* ALAN — founder site */
 :root{
   --bg:#f7f6f3; --surface:#fff; --ink:#14151a; --muted:#6f7076;
   --line:#e5e2db; --accent:#c2410c; --accent-soft:#fdf1ea;
@@ -62,6 +62,21 @@ nav.main a.on{color:var(--ink);font-weight:650}
 
 .now-card{border:1px solid rgba(247,246,243,.18);border-radius:var(--radius);
   padding:22px;background:rgba(255,255,255,.04)}
+.hero-portrait{margin:0;border-radius:var(--radius);overflow:hidden;
+  border:1px solid rgba(247,246,243,.18);background:rgba(255,255,255,.04)}
+.hero-portrait img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;display:block}
+.hero-portrait figcaption{padding:14px 16px;border-top:1px solid rgba(247,246,243,.14);
+  font-size:.76rem;color:rgba(247,246,243,.62);display:flex;align-items:baseline;
+  justify-content:space-between;gap:12px}
+.hero-portrait figcaption strong{color:#f7f6f3;font-size:.86rem;letter-spacing:.04em}
+.portrait-card{margin:0;border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;background:var(--surface)}
+.portrait-card img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
+.portrait-card figcaption{padding:12px 16px;border-top:1px solid var(--line);
+  font-size:.76rem;color:var(--muted);display:flex;justify-content:space-between;gap:12px}
+.about-aside{display:grid;gap:16px}
+.hero-side{display:grid;gap:14px;align-content:center}
+.hero-note{font-size:.8rem;color:rgba(247,246,243,.58);line-height:1.5}
 .now-card .label{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(247,246,243,.55);
   font-weight:700;margin-bottom:16px}
 .now-item{display:flex;align-items:center;gap:14px;padding:12px 0;border-top:1px solid rgba(247,246,243,.12)}
