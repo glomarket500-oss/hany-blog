@@ -3,87 +3,87 @@
     {
       "source": "/handsome",
       "destination": "/handsome/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/index.html",
       "destination": "/handsome/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/shop.html",
       "destination": "/handsome/shop.html",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/aramid.html",
       "destination": "/handsome/aramid.html",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/leather.html",
       "destination": "/handsome/leather.html",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/shield.html",
       "destination": "/handsome/shield.html",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/materials.html",
       "destination": "/handsome/materials.html",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/craftsmen.html",
       "destination": "/handsome/craftsmen.html",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/craft.html",
       "destination": "/handsome/craft.html",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/compare.html",
       "destination": "/handsome/compare.html",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/faq.html",
       "destination": "/handsome/faq.html",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/about.html",
       "destination": "/handsome/about.html",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/contact.html",
       "destination": "/handsome/contact.html",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/shipping.html",
       "destination": "/handsome/shipping.html",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/live.html",
       "destination": "/handsome/live.html",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/launch.html",
       "destination": "/handsome/launch.html",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/assets/:path*",
       "destination": "/handsome/assets/:path*",
-      "permanent": true
+      "statusCode": 301
     }
   ]
 }
