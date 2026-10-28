@@ -1,0 +1,89 @@
+{
+  "redirects": [
+    {
+      "source": "/handsome",
+      "destination": "/handsome/",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/handsome/",
+      "permanent": true
+    },
+    {
+      "source": "/shop.html",
+      "destination": "/handsome/shop.html",
+      "permanent": true
+    },
+    {
+      "source": "/aramid.html",
+      "destination": "/handsome/aramid.html",
+      "permanent": true
+    },
+    {
+      "source": "/leather.html",
+      "destination": "/handsome/leather.html",
+      "permanent": true
+    },
+    {
+      "source": "/shield.html",
+      "destination": "/handsome/shield.html",
+      "permanent": true
+    },
+    {
+      "source": "/materials.html",
+      "destination": "/handsome/materials.html",
+      "permanent": true
+    },
+    {
+      "source": "/craftsmen.html",
+      "destination": "/handsome/craftsmen.html",
+      "permanent": true
+    },
+    {
+      "source": "/craft.html",
+      "destination": "/handsome/craft.html",
+      "permanent": true
+    },
+    {
+      "source": "/compare.html",
+      "destination": "/handsome/compare.html",
+      "permanent": true
+    },
+    {
+      "source": "/faq.html",
+      "destination": "/handsome/faq.html",
+      "permanent": true
+    },
+    {
+      "source": "/about.html",
+      "destination": "/handsome/about.html",
+      "permanent": true
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/handsome/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/shipping.html",
+      "destination": "/handsome/shipping.html",
+      "permanent": true
+    },
+    {
+      "source": "/live.html",
+      "destination": "/handsome/live.html",
+      "permanent": true
+    },
+    {
+      "source": "/launch.html",
+      "destination": "/handsome/launch.html",
+      "permanent": true
+    },
+    {
+      "source": "/assets/:path*",
+      "destination": "/handsome/assets/:path*",
+      "permanent": true
+    }
+  ]
+}
