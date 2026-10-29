@@ -232,6 +232,49 @@ footer h4{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:v
 .copy{margin-top:18px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
   color:var(--muted);font-size:.78rem}
 
+/* story / second note */
+.story-hero{position:relative;padding:92px 0 48px;background:linear-gradient(180deg,#f7f6f3 0%,#f1ede4 100%);overflow:hidden}
+.story-hero::after{content:"02";position:absolute;right:-10px;top:-30px;font-family:Georgia,serif;
+  font-size:clamp(11rem,24vw,24rem);line-height:1;color:rgba(194,65,12,.055);pointer-events:none}
+.story-hero .wrap{position:relative;z-index:1}
+.story-kicker{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);
+  font-weight:700;margin-bottom:26px}
+.story-title{font-family:"Songti SC","STSong","SimSun","Noto Serif SC",Georgia,serif;
+  font-size:clamp(3rem,8.4vw,6.6rem);line-height:.94;letter-spacing:-.055em;font-weight:600;margin:0}
+.story-title .t-cn{display:block}
+.story-dek{font-family:"Songti SC","STSong","SimSun",Georgia,serif;font-size:clamp(1.05rem,1.8vw,1.4rem);
+  color:var(--muted);margin:24px 0 12px}
+.story-byline{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.story-cover{margin:0;background:#0e0f12}
+.story-cover img{width:100%;max-height:70vh;object-fit:cover;display:block}
+.story-cover figcaption{max-width:var(--max);margin:0 auto;padding:11px 20px;
+  font-size:.7rem;letter-spacing:.06em;color:#9da2aa;background:#0e0f12}
+.story-body{padding:58px 20px 10px}
+.story-body-inner{max-width:700px;margin:0 auto}
+.story-body p{font-family:"Songti SC","STSong","SimSun","Noto Serif SC",Georgia,serif;
+  font-size:1.03rem;line-height:2.05;color:#2b2c31;margin:0 0 24px}
+.story-epigraph{font-size:1.05rem!important;color:var(--accent)!important;letter-spacing:.04em;
+  border-left:2px solid var(--accent);padding-left:18px;margin-bottom:26px!important}
+.story-lede{font-size:1.18rem!important;line-height:1.95!important;color:#1b1c21!important}
+.story-body .dropcap::first-letter{float:left;font-size:4.5em;line-height:.78;padding:7px 12px 0 0;
+  color:var(--accent);font-family:Georgia,"Songti SC",serif}
+.story-chapter{display:flex;align-items:baseline;gap:14px;border-top:1px solid var(--line);
+  margin:52px 0 24px;padding-top:20px;font-family:"Songti SC","STSong","SimSun",Georgia,serif;
+  font-size:1.55rem;font-weight:600;letter-spacing:-.02em;color:var(--ink)}
+.story-num{font-family:Georgia,serif;font-size:.7rem;letter-spacing:.16em;color:var(--accent);
+  font-weight:700;flex:0 0 auto}
+.story-figure{margin:40px -80px;max-width:860px}
+.story-figure img{width:100%;border-radius:4px;border:1px solid rgba(20,21,26,.08)}
+.story-figure figcaption{font-size:.7rem;letter-spacing:.07em;color:var(--muted);margin-top:10px;line-height:1.6}
+.story-pull{font-family:"Songti SC","STSong","SimSun",Georgia,serif;
+  font-size:clamp(1.5rem,3vw,2.15rem);line-height:1.38;color:var(--ink);
+  border-left:3px solid var(--accent);padding:8px 0 8px 26px;margin:44px 0;letter-spacing:-.02em}
+.story-pull::before{content:"“";color:var(--accent);font-size:1.5em;line-height:0;
+  vertical-align:-.32em;margin-right:4px}
+.story-end{text-align:center;color:var(--accent);font-size:1.1rem;letter-spacing:.35em;margin:52px 0 20px}
+.story-en{max-width:700px;margin:0 auto;padding:0 20px 40px}
+.story-en p{font-family:Georgia,"Songti SC",serif;font-size:1rem;line-height:1.9;color:#2b2c31;margin:0 0 20px}
+
 @media(max-width:940px){
   .hero-grid,.split{grid-template-columns:1fr;gap:34px}
   .vrow{grid-template-columns:1fr}
@@ -256,6 +299,17 @@ footer h4{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:v
   .langbtn{padding:6px 12px}
 }
 @media(max-width:640px){
+  .story-hero{padding:62px 0 34px}
+  .story-hero::after{font-size:9rem;top:-8px;right:-4px}
+  .story-title{font-size:clamp(2.7rem,12vw,4.2rem)}
+  .story-dek{font-size:1.02rem}
+  .story-cover img{max-height:52vh}
+  .story-body{padding-top:38px}
+  .story-body p{font-size:.98rem;line-height:1.98}
+  .story-lede{font-size:1.06rem!important}
+  .story-chapter{font-size:1.28rem;margin-top:40px}
+  .story-figure{margin:32px 0}
+  .story-pull{font-size:1.32rem;padding-left:18px;margin:34px 0}
   .hero{padding:60px 0 52px}
   .strip .wrap{grid-template-columns:1fr;gap:12px}
   section{padding:60px 0}
