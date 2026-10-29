@@ -164,6 +164,48 @@ try {
     document.getElementById('langBtn').textContent = 'EN';
   }
 } catch(e) {}
+/* cursor stars: desktop / fine pointer only */
+(function(){
+  try {
+    if (!window.matchMedia || !matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (window.__starTrail) return;
+    window.__starTrail = true;
+    var lead = document.createElement('span');
+    lead.className = 'star-cursor'; lead.textContent = '✦';
+    document.body.appendChild(lead);
+    var colors = ['#ffd43b', '#ff5a1f', '#8ed1fc', '#ffb7c5'];
+    var tx = 0, ty = 0, lx = 0, ly = 0, active = false, last = 0;
+    document.addEventListener('pointermove', function(e){
+      tx = e.clientX; ty = e.clientY;
+      if (!active) { lx = tx; ly = ty; active = true; lead.classList.add('on'); }
+      var now = performance.now();
+      if (now - last < 32) return;
+      last = now;
+      if (document.querySelectorAll('.star-trail').length > 24) return;
+      var s = document.createElement('span');
+      s.className = 'star-trail'; s.textContent = '✦';
+      s.style.left = tx + 'px'; s.style.top = ty + 'px';
+      s.style.color = colors[Math.floor(Math.random() * colors.length)];
+      s.style.fontSize = (12 + Math.random() * 9) + 'px';
+      s.style.setProperty('--dx', (Math.random() * 40 - 20) + 'px');
+      s.style.setProperty('--dy', (-6 - Math.random() * 30) + 'px');
+      s.style.setProperty('--rot', (Math.random() * 160 - 80) + 'deg');
+      document.body.appendChild(s);
+      s.addEventListener('animationend', function(){ s.remove(); });
+    }, { passive: true });
+    document.addEventListener('mouseout', function(e){
+      if (!e.relatedTarget) { active = false; lead.classList.remove('on'); }
+    });
+    (function loop(){
+      if (active) {
+        lx += (tx - lx) * 0.18; ly += (ty - ly) * 0.18;
+        lead.style.transform = 'translate(' + lx + 'px,' + ly + 'px) translate(-50%,-50%)';
+      }
+      requestAnimationFrame(loop);
+    })();
+  } catch (e) {}
+})();
 </script>
 </body>
 </html>

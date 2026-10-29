@@ -371,6 +371,19 @@ footer .brand{font-weight:900}
 .article .body figure img{border:2px solid var(--ink)}
 .timeline li{border-bottom-color:var(--line)}
 .timeline .what a{border-bottom-color:var(--accent)}
+/* cursor stars */
+.star-cursor{position:fixed;left:0;top:0;z-index:9998;pointer-events:none;
+  font-size:22px;line-height:1;color:var(--yellow);
+  filter:drop-shadow(2px 2px 0 var(--ink));opacity:0;transition:opacity .2s}
+.star-cursor.on{opacity:1}
+.star-trail{position:fixed;left:0;top:0;z-index:9999;pointer-events:none;
+  line-height:1;will-change:transform,opacity;filter:drop-shadow(1px 1px 0 var(--ink));
+  animation:starTrail .9s cubic-bezier(.2,.7,.3,1) forwards}
+@keyframes starTrail{
+  0%{opacity:1;transform:translate(-50%,-50%) scale(.55) rotate(0)}
+  100%{opacity:0;transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy)))
+    scale(1.35) rotate(var(--rot))}
+}
 
 @media(max-width:940px){
   .hero-grid,.split{grid-template-columns:1fr;gap:34px}
