@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Alan 内容后台</title>
+<style>
+:root{--bg:#f7f6f3;--surface:#fff;--ink:#14151a;--muted:#6f7076;--line:#e5e2db;
+  --accent:#c2410c;--accent-soft:#fdf1ea;--ok:#166534;--err:#b91c1c;--max:1040px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC","PingFang SC",sans-serif;line-height:1.6}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:20;background:rgba(247,246,243,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+header .wrap{height:62px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.brand{font-weight:800;letter-spacing:.2em;font-size:.95rem}
+.brand span{color:var(--accent)}
+header a.back{font-size:.82rem;color:var(--muted)}
+h1{font-size:clamp(1.7rem,3.4vw,2.4rem);line-height:1.15;letter-spacing:-.03em;margin:34px 0 6px;font-weight:650;font-family:Georgia,"Songti SC","Noto Serif SC",serif}
+.lede{color:var(--muted);font-size:.95rem;margin:0 0 24px;max-width:70ch}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;margin-bottom:18px}
+.card h2{font-size:1.02rem;margin:0 0 14px;letter-spacing:-.01em}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
+.field.full{grid-column:1/-1}
+label{font-size:.78rem;color:var(--muted);font-weight:650}
+input,textarea,select{width:100%;border:1px solid var(--line);border-radius:9px;padding:10px 12px;
+  font:inherit;font-size:.92rem;background:#fff;color:var(--ink)}
+textarea{min-height:120px;resize:vertical}
+textarea.body{min-height:260px;font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;font-size:.88rem;line-height:1.65}
+input:focus,textarea:focus{outline:2px solid var(--accent-soft);border-color:var(--accent)}
+.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.check{display:flex;align-items:center;gap:8px;font-size:.8rem;color:var(--muted)}
+.check input{width:auto}
+button{border:0;border-radius:999px;padding:11px 18px;font:inherit;font-size:.86rem;font-weight:700;cursor:pointer}
+.btn{background:var(--ink);color:#fff}
+.btn:hover{background:var(--accent)}
+.btn-ghost{background:#fff;border:1px solid var(--line);color:var(--ink)}
+.btn-accent{background:var(--accent);color:#fff}
+button:disabled{opacity:.45;cursor:not-allowed}
+.note{background:var(--accent-soft);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:12px 16px;font-size:.84rem;color:#3a2a22}
+.warn{background:#fff7ed;border:1px solid #fed7aa;border-radius:12px;padding:14px 16px;font-size:.82rem;color:#7c2d12}
+.status{font-size:.84rem;margin-top:10px;white-space:pre-wrap}
+.status.ok{color:var(--ok)}
+.status.err{color:var(--err)}
+.preview{margin-top:18px}
+.preview .box{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px;max-height:520px;overflow:auto}
+.preview h1{font-size:1.6rem;margin:0 0 8px}
+.preview h2{font-size:1.12rem;margin:20px 0 6px}
+.preview p{font-size:.9rem;color:#2c2d33;margin:0 0 12px}
+.toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:16px}
+.small{font-size:.76rem;color:var(--muted)}
+code{background:#f1f0ed;padding:1px 5px;border-radius:5px;font-size:.82em}
+@media(max-width:720px){
+  .grid{grid-template-columns:1fr}
+  .card{padding:18px;border-radius:13px}
+  h1{margin-top:24px}
+  .toolbar .row{width:100%}
+  .toolbar button{flex:1}
+}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="brand" href="/">ALAN<span>.</span></a>
+  <a class="back" href="/notes/">查看笔记 →</a>
+</div></header>
+<main class="wrap">
+  <h1>内容后台</h1>
+  <p class="lede">写一篇新笔记，点发布后会提交到 GitHub，Vercel 自动部署（约 15–60 秒）。支持电脑和手机浏览器。</p>
+
+  <div class="warn">
+    <strong>令牌说明：</strong>建议在 GitHub 建一个 <b>Fine-grained token</b>，只选仓库 <code>glomarket500-oss/hany-blog</code>，
+    权限只给 <b>Contents: Read and write</b>。令牌只存在你本机浏览器（可选保存），只会直接发给 <code>api.github.com</code>，不会经过本站服务器。
+    不要使用主账号全权限 token；泄露就立刻撤销。
+  </div>
+
+  <div class="card" style="margin-top:18px">
+    <h2>1. 连接 GitHub</h2>
+    <div class="field">
+      <label for="token">GitHub Fine-grained token</label>
+      <input id="token" type="password" autocomplete="off" placeholder="github_pat_... 或 ghp_...">
+    </div>
+    <div class="row">
+      <button class="btn-ghost" id="testBtn" type="button">测试连接</button>
+      <label class="check"><input id="remember" type="checkbox"> 在本机记住令牌</label>
+      <span class="small" id="connState">未连接</span>
+    </div>
+    <div class="status" id="connMsg"></div>
+  </div>
+
+  <div class="card">
+    <h2>2. 写笔记</h2>
+    <div class="grid">
+      <div class="field"><label for="titleCn">标题（中文）</label><input id="titleCn" placeholder="例：我为什么先做手机壳"></div>
+      <div class="field"><label for="titleEn">标题（英文）</label><input id="titleEn" placeholder="English title"></div>
+      <div class="field"><label for="slug">网址 slug</label><input id="slug" placeholder="my-first-note（小写字母/数字/-）"></div>
+      <div class="field"><label for="date">月份</label><input id="date" type="month"></div>
+      <div class="field"><label for="excerptCn">摘要（中文）</label><textarea id="excerptCn" style="min-height:80px"></textarea></div>
+      <div class="field"><label for="excerptEn">摘要（英文）</label><textarea id="excerptEn" style="min-height:80px"></textarea></div>
+    </div>
+    <div class="field">
+      <label for="bodyCn">正文（中文，Markdown：## 小标题、空行分段、**加粗**）</label>
+      <textarea class="body" id="bodyCn" placeholder="## 一、..."></textarea>
+    </div>
+    <div class="field">
+      <label for="bodyEn">英文正文（可选；留空则英文版只显示一句“This note is in Chinese.”）</label>
+      <textarea class="body" id="bodyEn" placeholder="Optional English translation/summary"></textarea>
+    </div>
+    <div class="toolbar">
+      <div class="row">
+        <button class="btn-ghost" id="previewBtn" type="button">预览</button>
+        <button class="btn-accent" id="publishBtn" type="button">发布到网站</button>
+      </div>
+      <span class="small">发布后自动更新 /notes/、首页、sitemap</span>
+    </div>
+    <div class="status" id="pubMsg"></div>
+  </div>
+
+  <div class="card preview" id="previewCard" style="display:none">
+    <h2>预览</h2>
+    <div class="box" id="previewBox"></div>
+  </div>
+
+  <p class="small" style="padding-bottom:40px">
+    注意：这是轻量后台，目前只支持文字；图片上传和草稿箱可以下一版加。
+  </p>
+</main>
+<script>
+const REPO = "glomarket500-oss/hany-blog";
+const BRANCH = "main";
+const PREFIX = "handsome";
+const SITE = "https://www.gulangma.com";
+const $ = (id) => document.getElementById(id);
+let TOKEN = "";
+
+function setStatus(el, text, cls) {
+  el.textContent = text || "";
+  el.className = "status" + (cls ? " " + cls : "");
+}
+function utf8ToB64(str) {
+  const bytes = new TextEncoder().encode(str);
+  let bin = "";
+  bytes.forEach((b) => { bin += String.fromCharCode(b); });
+  return btoa(bin);
+}
+function b64ToUtf8(b64) {
+  const bin = atob((b64 || "").replace(/\n/g, ""));
+  const bytes = Uint8Array.from(bin, (c) => c.charCodeAt(0));
+  return new TextDecoder().decode(bytes);
+}
+async function gh(path, opts) {
+  opts = opts || {};
+  const headers = {
+    "Authorization": "Bearer " + TOKEN,
+    "Accept": "application/vnd.github+json",
+    "Content-Type": "application/json"
+  };
+  const res = await fetch("https://api.github.com" + path, {
+    method: opts.method || "GET",
+    headers,
+    body: opts.body ? JSON.stringify(opts.body) : undefined
+  });
+  if (!res.ok) {
+    let t = await res.text();
+    throw new Error("GitHub " + res.status + ": " + t.slice(0, 240));
+  }
+  return res.json();
+}
+function encPath(p) { return p.split("/").map(encodeURIComponent).join("/"); }
+async function getFile(path) {
+  const r = await gh("/repos/" + REPO + "/contents/" + encPath(PREFIX + "/" + path) + "?ref=" + BRANCH);
+  return { text: b64ToUtf8(r.content), sha: r.sha, path };
+}
+async function commitFiles(files, message) {
+  const ref = await gh("/repos/" + REPO + "/git/ref/heads/" + BRANCH);
+  const head = ref.object.sha;
+  const hc = await gh("/repos/" + REPO + "/git/commits/" + head);
+  const baseTree = hc.tree.sha;
+  const entries = [];
+  for (const f of files) {
+    const blob = await gh("/repos/" + REPO + "/git/blobs", {
+      method: "POST",
+      body: { content: utf8ToB64(f.text), encoding: "base64" }
+    });
+    entries.push({ path: PREFIX + "/" + f.path, mode: "100644", type: "blob", sha: blob.sha });
+  }
+  const tree = await gh("/repos/" + REPO + "/git/trees", {
+    method: "POST",
+    body: { base_tree: baseTree, tree: entries }
+  });
+  const commit = await gh("/repos/" + REPO + "/git/commits", {
+    method: "POST",
+    body: { message: message, tree: tree.sha, parents: [head] }
+  });
+  await gh("/repos/" + REPO + "/git/refs/heads/" + BRANCH, {
+    method: "PATCH",
+    body: { sha: commit.sha, force: false }
+  });
+  return commit.sha;
+}
+
+function esc(s) {
+  return String(s || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+function inline(s) {
+  return esc(s).replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+}
+function mdToHtml(md) {
+  const lines = String(md || "").replace(/\r/g, "").split("\n");
+  const out = [];
+  let para = [];
+  const flush = () => {
+    if (para.length) { out.push("<p>" + inline(para.join(" ")) + "</p>"); para = []; }
+  };
+  for (const raw of lines) {
+    const s = raw.trim();
+    if (!s) { flush(); continue; }
+    if (s.startsWith("### ")) { flush(); out.push("<h3>" + inline(s.slice(4)) + "</h3>"); }
+    else if (s.startsWith("## ")) { flush(); out.push("<h2>" + inline(s.slice(3)) + "</h2>"); }
+    else if (s.startsWith("# ")) { flush(); out.push("<h2>" + inline(s.slice(2)) + "</h2>"); }
+    else { para.push(s); }
+  }
+  flush();
+  return out.join("\n");
+}
+
+function slugify(s) {
+  return String(s || "").toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60);
+}
+function dateDisplay(month) {
+  return String(month || "").replace("-", " · ");
+}
+function noteRow(d) {
+  return `    <a class="note-row" href="/notes/${esc(d.slug)}/">
+      <div class="date">${esc(dateDisplay(d.date))}</div>
+      <div>
+        <h3 class="serif">${esc(d.titleEn || d.titleCn)}</h3>
+        <p>${esc(d.excerptEn || d.excerptCn)}</p>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+`;
+}
+function insertNote(html, d) {
+  if (html.indexOf(`href="/notes/${d.slug}/"`) !== -1) return html;
+  const marker = "<!-- NOTES_START -->";
+  if (html.indexOf(marker) === -1) throw new Error("找不到笔记载入点（NOTES_START）");
+  return html.replace(marker, marker + "\n" + noteRow(d));
+}
+function addSitemap(xml, d) {
+  const loc = `${SITE}/notes/${d.slug}/`;
+  if (xml.indexOf(loc) !== -1) return xml;
+  const entry = `  <url><loc>${loc}</loc><lastmod>${new Date().toISOString().slice(0, 10)}</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>\n`;
+  return xml.replace("</urlset>", entry + "</urlset>");
+}
+
+function buildArticle(template, d) {
+  const doc = new DOMParser().parseFromString(template, "text/html");
+  const canon = SITE + "/notes/" + d.slug + "/";
+  doc.title = (d.titleEn || d.titleCn) + " — Alan";
+  const setMeta = (sel, val) => { const el = doc.querySelector(sel); if (el) el.setAttribute("content", val); };
+  setMeta('meta[name="description"]', d.excerptEn || d.excerptCn);
+  setMeta('meta[property="og:title"]', d.titleEn || d.titleCn);
+  setMeta('meta[property="og:description"]', d.excerptEn || d.excerptCn);
+  setMeta('meta[property="og:url"]', canon);
+  const canonical = doc.querySelector('link[rel="canonical"]');
+  if (canonical) canonical.setAttribute("href", canon);
+  const h1 = doc.querySelector(".article h1");
+  if (h1) {
+    const en = h1.querySelector(".t-en"), cn = h1.querySelector(".t-cn");
+    if (en) en.textContent = d.titleEn || d.titleCn;
+    if (cn) cn.textContent = d.titleCn || d.titleEn;
+  }
+  const dek = doc.querySelector(".article .dek");
+  if (dek) {
+    const en = dek.querySelector(".t-en"), cn = dek.querySelector(".t-cn");
+    if (en) en.textContent = d.excerptEn || d.excerptCn;
+    if (cn) cn.textContent = d.excerptCn || d.excerptEn;
+  }
+  const meta = doc.querySelector(".article .meta");
+  if (meta) meta.innerHTML = `<span class="t-en">Notes · ${esc(dateDisplay(d.date))}</span><span class="t-cn">笔记 · ${esc(dateDisplay(d.date))}</span>`;
+  const cnBody = doc.querySelector(".body .t-cn.block");
+  if (cnBody) cnBody.innerHTML = mdToHtml(d.bodyCn);
+  const enBody = doc.querySelector(".body .t-en.block");
+  if (enBody) enBody.innerHTML = d.bodyEn ? mdToHtml(d.bodyEn) : "<p>The full note is in Chinese. Switch to 中文 at the top to read it.</p>";
+  return "<!DOCTYPE html>\n" + doc.documentElement.outerHTML;
+}
+
+async function testConn() {
+  TOKEN = $("token").value.trim();
+  if (!TOKEN) { setStatus($("connMsg"), "请先填 token。", "err"); return false; }
+  setStatus($("connMsg"), "测试中…");
+  try {
+    const me = await gh("/user");
+    const repo = await gh("/repos/" + REPO);
+    setStatus($("connMsg"), "已连接：" + me.login + " / " + repo.full_name, "ok");
+    $("connState").textContent = "已连接";
+    if ($("remember").checked) localStorage.setItem("alan-admin-token", TOKEN);
+    else localStorage.removeItem("alan-admin-token");
+    return true;
+  } catch (e) {
+    setStatus($("connMsg"), e.message, "err");
+    $("connState").textContent = "连接失败";
+    return false;
+  }
+}
+
+function collect() {
+  const d = {
+    titleCn: $("titleCn").value.trim(),
+    titleEn: $("titleEn").value.trim(),
+    slug: $("slug").value.trim(),
+    date: $("date").value,
+    excerptCn: $("excerptCn").value.trim(),
+    excerptEn: $("excerptEn").value.trim(),
+    bodyCn: $("bodyCn").value.trim(),
+    bodyEn: $("bodyEn").value.trim()
+  };
+  if (!d.titleCn && !d.titleEn) throw new Error("请填标题。");
+  if (!d.bodyCn) throw new Error("中文正文不能为空。");
+  if (!d.slug) d.slug = slugify(d.titleEn) || ("note-" + new Date().toISOString().slice(0, 10).replace(/-/g, ""));
+  if (!/^[a-z0-9][a-z0-9-]*$/.test(d.slug)) throw new Error("slug 只能用小写字母、数字、-。");
+  if (!d.date) d.date = new Date().toISOString().slice(0, 7);
+  return d;
+}
+
+function preview() {
+  try {
+    const d = collect();
+    $("previewBox").innerHTML = `<h1>${esc(d.titleCn || d.titleEn)}</h1><p class="small">${esc(dateDisplay(d.date))}</p>` + mdToHtml(d.bodyCn);
+    $("previewCard").style.display = "block";
+    $("previewCard").scrollIntoView({ behavior: "smooth", block: "start" });
+  } catch (e) { setStatus($("pubMsg"), e.message, "err"); }
+}
+
+async function publish() {
+  setStatus($("pubMsg"), "发布中…");
+  try {
+    TOKEN = $("token").value.trim();
+    if (!TOKEN) throw new Error("请先填 GitHub token 并测试连接。");
+    const d = collect();
+    const tpl = await getFile("notes/first-article/index.html");
+    const notes = await getFile("notes/index.html");
+    const home = await getFile("index.html");
+    const sm = await getFile("sitemap.xml");
+    const article = buildArticle(tpl.text, d);
+    const notesNew = insertNote(notes.text, d);
+    const homeNew = insertNote(home.text, d);
+    const smNew = addSitemap(sm.text, d);
+    const sha = await commitFiles([
+      { path: "notes/" + d.slug + "/index.html", text: article },
+      { path: "notes/index.html", text: notesNew },
+      { path: "index.html", text: homeNew },
+      { path: "sitemap.xml", text: smNew }
+    ], "note: " + (d.titleEn || d.titleCn));
+    setStatus($("pubMsg"), "已发布 commit " + sha.slice(0, 10) + "\n线上地址：" + SITE + "/notes/" + d.slug + "/\nVercel 约 15–60 秒完成部署。", "ok");
+  } catch (e) {
+    setStatus($("pubMsg"), e.message, "err");
+  }
+}
+
+window.addEventListener("DOMContentLoaded", function () {
+  const saved = localStorage.getItem("alan-admin-token");
+  if (saved) { $("token").value = saved; $("remember").checked = true; TOKEN = saved; }
+  $("date").value = new Date().toISOString().slice(0, 7);
+  $("testBtn").addEventListener("click", testConn);
+  $("previewBtn").addEventListener("click", preview);
+  $("publishBtn").addEventListener("click", publish);
+});
+</script>
+</body>
+</html>
