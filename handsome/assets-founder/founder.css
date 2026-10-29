@@ -27,7 +27,7 @@ body.lang-cn .t-en.block{display:none}
 header.top{position:sticky;top:0;z-index:50;background:rgba(247,246,243,.92);
   backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:18px}
-.brand{font-weight:800;letter-spacing:.22em;font-size:.95rem}
+.brand{font-weight:800;letter-spacing:.04em;font-size:.98rem}
 .brand span{color:var(--accent)}
 nav.main{display:flex;gap:2px;align-items:center;position:absolute;left:50%;transform:translateX(-50%)}
 nav.main a{position:relative;padding:9px 12px;border-radius:8px;font-size:.82rem;

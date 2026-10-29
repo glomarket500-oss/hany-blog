@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>Alan 内容后台</title>
+<title>Alan Lin 内容后台</title>
 <style>
 :root{--bg:#f7f6f3;--surface:#fff;--ink:#14151a;--muted:#6f7076;--line:#e5e2db;
   --accent:#c2410c;--accent-soft:#fdf1ea;--ok:#166534;--err:#b91c1c;--max:820px}
@@ -14,7 +14,7 @@ a{color:inherit}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
 header{position:sticky;top:0;z-index:20;background:rgba(247,246,243,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 header .wrap{height:58px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.brand{font-weight:800;letter-spacing:.2em;font-size:.92rem}
+.brand{font-weight:800;letter-spacing:.04em;font-size:.96rem}
 .brand span{color:var(--accent)}
 header a{font-size:.8rem;color:var(--muted)}
 h1{font-size:1.7rem;line-height:1.2;letter-spacing:-.03em;margin:28px 0 4px;font-weight:650}
@@ -68,7 +68,7 @@ textarea.advbody{min-height:90px;font-size:.86rem}
 </head>
 <body>
 <header><div class="wrap">
-  <a class="brand" href="/">ALAN<span>.</span></a>
+  <a class="brand" href="/">Alan Lin<span>.</span></a>
   <a href="/notes/">查看笔记 →</a>
 </div></header>
 <main class="wrap">
@@ -283,7 +283,7 @@ function imageHtml(d, images, dataUrls) {
 function buildArticle(template, d, images) {
   const doc = new DOMParser().parseFromString(template, "text/html");
   const canon = SITE + "/notes/" + d.slug + "/";
-  doc.title = (d.titleEn || d.titleCn) + " — Alan";
+  doc.title = (d.titleEn || d.titleCn) + " — Alan Lin";
   const setMeta = (sel, val) => { const el = doc.querySelector(sel); if (el) el.setAttribute("content", val); };
   setMeta('meta[name="description"]', d.excerptEn || d.excerptCn);
   setMeta('meta[property="og:title"]', d.titleEn || d.titleCn);
