@@ -7,126 +7,137 @@
 <title>Alan 内容后台</title>
 <style>
 :root{--bg:#f7f6f3;--surface:#fff;--ink:#14151a;--muted:#6f7076;--line:#e5e2db;
-  --accent:#c2410c;--accent-soft:#fdf1ea;--ok:#166534;--err:#b91c1c;--max:1040px}
+  --accent:#c2410c;--accent-soft:#fdf1ea;--ok:#166534;--err:#b91c1c;--max:820px}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC","PingFang SC",sans-serif;line-height:1.6}
 a{color:inherit}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
 header{position:sticky;top:0;z-index:20;background:rgba(247,246,243,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-header .wrap{height:62px;display:flex;align-items:center;justify-content:space-between;gap:14px}
-.brand{font-weight:800;letter-spacing:.2em;font-size:.95rem}
+header .wrap{height:58px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{font-weight:800;letter-spacing:.2em;font-size:.92rem}
 .brand span{color:var(--accent)}
-header a.back{font-size:.82rem;color:var(--muted)}
-h1{font-size:clamp(1.7rem,3.4vw,2.4rem);line-height:1.15;letter-spacing:-.03em;margin:34px 0 6px;font-weight:650;font-family:Georgia,"Songti SC","Noto Serif SC",serif}
-.lede{color:var(--muted);font-size:.95rem;margin:0 0 24px;max-width:70ch}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;margin-bottom:18px}
-.card h2{font-size:1.02rem;margin:0 0 14px;letter-spacing:-.01em}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+header a{font-size:.8rem;color:var(--muted)}
+h1{font-size:1.7rem;line-height:1.2;letter-spacing:-.03em;margin:28px 0 4px;font-weight:650}
+.lede{color:var(--muted);font-size:.9rem;margin:0 0 20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:14px}
+.card h2{font-size:.98rem;margin:0 0 12px}
 .field{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
-.field.full{grid-column:1/-1}
 label{font-size:.78rem;color:var(--muted);font-weight:650}
-input,textarea,select{width:100%;border:1px solid var(--line);border-radius:9px;padding:10px 12px;
-  font:inherit;font-size:.92rem;background:#fff;color:var(--ink)}
-textarea{min-height:120px;resize:vertical}
-textarea.body{min-height:260px;font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;font-size:.88rem;line-height:1.65}
+input,textarea{width:100%;border:1px solid var(--line);border-radius:9px;padding:11px 12px;
+  font:inherit;font-size:.95rem;background:#fff;color:var(--ink)}
 input:focus,textarea:focus{outline:2px solid var(--accent-soft);border-color:var(--accent)}
-.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.check{display:flex;align-items:center;gap:8px;font-size:.8rem;color:var(--muted)}
-.check input{width:auto}
-button{border:0;border-radius:999px;padding:11px 18px;font:inherit;font-size:.86rem;font-weight:700;cursor:pointer}
+#title{font-size:1.05rem;font-weight:600}
+#body{min-height:300px;line-height:1.7;resize:vertical}
+button{border:0;border-radius:999px;padding:12px 20px;font:inherit;font-size:.9rem;font-weight:700;cursor:pointer}
 .btn{background:var(--ink);color:#fff}
 .btn:hover{background:var(--accent)}
 .btn-ghost{background:#fff;border:1px solid var(--line);color:var(--ink)}
 .btn-accent{background:var(--accent);color:#fff}
+.btn-accent:hover{background:#9a3412}
 button:disabled{opacity:.45;cursor:not-allowed}
-.note{background:var(--accent-soft);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:12px 16px;font-size:.84rem;color:#3a2a22}
-.warn{background:#fff7ed;border:1px solid #fed7aa;border-radius:12px;padding:14px 16px;font-size:.82rem;color:#7c2d12}
+.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .status{font-size:.84rem;margin-top:10px;white-space:pre-wrap}
 .status.ok{color:var(--ok)}
 .status.err{color:var(--err)}
-.preview{margin-top:18px}
-.preview .box{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px;max-height:520px;overflow:auto}
-.preview h1{font-size:1.6rem;margin:0 0 8px}
-.preview h2{font-size:1.12rem;margin:20px 0 6px}
-.preview p{font-size:.9rem;color:#2c2d33;margin:0 0 12px}
-.toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:16px}
 .small{font-size:.76rem;color:var(--muted)}
-code{background:#f1f0ed;padding:1px 5px;border-radius:5px;font-size:.82em}
-@media(max-width:720px){
-  .grid{grid-template-columns:1fr}
-  .card{padding:18px;border-radius:13px}
-  h1{margin-top:24px}
-  .toolbar .row{width:100%}
-  .toolbar button{flex:1}
+.warn{background:#fff7ed;border:1px solid #fed7aa;border-radius:10px;padding:12px 14px;font-size:.8rem;color:#7c2d12}
+.hidden{display:none}
+details{border-top:1px solid var(--line);margin-top:14px;padding-top:12px}
+summary{cursor:pointer;font-size:.82rem;color:var(--muted);font-weight:650}
+.adv{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.adv .full{grid-column:1/-1}
+textarea.advbody{min-height:90px;font-size:.86rem}
+#thumbs{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.thumb{position:relative;width:86px;height:86px;border:1px solid var(--line);border-radius:9px;overflow:hidden;background:#f1f0ed}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.thumb button{position:absolute;top:2px;right:2px;width:22px;height:22px;padding:0;border-radius:50%;background:rgba(20,21,26,.75);color:#fff;font-size:13px;line-height:1;display:flex;align-items:center;justify-content:center}
+.preview{border:1px solid var(--line);border-radius:10px;padding:14px;margin-top:12px;background:#fff;max-height:420px;overflow:auto}
+.preview h2{font-size:1.2rem;margin:12px 0 8px}
+.preview p{font-size:.9rem;color:#2c2d33;margin:0 0 10px;white-space:pre-wrap}
+.preview img{max-width:100%;border-radius:8px;margin:8px 0}
+.sticky{position:sticky;bottom:0;background:rgba(247,246,243,.95);backdrop-filter:blur(10px);padding:10px 0 14px;border-top:1px solid var(--line);margin-top:10px}
+@media(max-width:620px){
+  .adv{grid-template-columns:1fr}
+  .card{padding:15px;border-radius:12px}
+  #body{min-height:240px}
+  .toolbar{position:fixed;left:0;right:0;bottom:0;z-index:30;background:#fff;border-top:1px solid var(--line);padding:10px 18px;display:flex;gap:8px}
+  .toolbar .btn{flex:1}
+  body{padding-bottom:76px}
 }
 </style>
 </head>
 <body>
 <header><div class="wrap">
   <a class="brand" href="/">ALAN<span>.</span></a>
-  <a class="back" href="/notes/">查看笔记 →</a>
+  <a href="/notes/">查看笔记 →</a>
 </div></header>
 <main class="wrap">
-  <h1>内容后台</h1>
-  <p class="lede">写一篇新笔记，点发布后会提交到 GitHub，Vercel 自动部署（约 15–60 秒）。支持电脑和手机浏览器。</p>
+  <h1>发笔记</h1>
+  <p class="lede">只填标题、正文；图片可选。发布后自动更新文章、笔记列表、首页和 sitemap，约 15–60 秒上线。</p>
 
-  <div class="warn">
-    <strong>令牌说明：</strong>建议在 GitHub 建一个 <b>Fine-grained token</b>，只选仓库 <code>glomarket500-oss/hany-blog</code>，
-    权限只给 <b>Contents: Read and write</b>。令牌只存在你本机浏览器（可选保存），只会直接发给 <code>api.github.com</code>，不会经过本站服务器。
-    不要使用主账号全权限 token；泄露就立刻撤销。
-  </div>
-
-  <div class="card" style="margin-top:18px">
-    <h2>1. 连接 GitHub</h2>
-    <div class="field">
-      <label for="token">GitHub Fine-grained token</label>
-      <input id="token" type="password" autocomplete="off" placeholder="github_pat_... 或 ghp_...">
+  <section id="setup">
+    <div class="warn">
+      <strong>第一次用：</strong>粘贴 GitHub token，点「连接」。建议用 Fine-grained token，只给 <code>glomarket500-oss/hany-blog</code> 的 <b>Contents: Read and write</b>。token 只存本机浏览器，直接发给 GitHub，不经过本站服务器。
     </div>
-    <div class="row">
-      <button class="btn-ghost" id="testBtn" type="button">测试连接</button>
-      <label class="check"><input id="remember" type="checkbox"> 在本机记住令牌</label>
-      <span class="small" id="connState">未连接</span>
-    </div>
-    <div class="status" id="connMsg"></div>
-  </div>
-
-  <div class="card">
-    <h2>2. 写笔记</h2>
-    <div class="grid">
-      <div class="field"><label for="titleCn">标题（中文）</label><input id="titleCn" placeholder="例：我为什么先做手机壳"></div>
-      <div class="field"><label for="titleEn">标题（英文）</label><input id="titleEn" placeholder="English title"></div>
-      <div class="field"><label for="slug">网址 slug</label><input id="slug" placeholder="my-first-note（小写字母/数字/-）"></div>
-      <div class="field"><label for="date">月份</label><input id="date" type="month"></div>
-      <div class="field"><label for="excerptCn">摘要（中文）</label><textarea id="excerptCn" style="min-height:80px"></textarea></div>
-      <div class="field"><label for="excerptEn">摘要（英文）</label><textarea id="excerptEn" style="min-height:80px"></textarea></div>
-    </div>
-    <div class="field">
-      <label for="bodyCn">正文（中文，Markdown：## 小标题、空行分段、**加粗**）</label>
-      <textarea class="body" id="bodyCn" placeholder="## 一、..."></textarea>
-    </div>
-    <div class="field">
-      <label for="bodyEn">英文正文（可选；留空则英文版只显示一句“This note is in Chinese.”）</label>
-      <textarea class="body" id="bodyEn" placeholder="Optional English translation/summary"></textarea>
-    </div>
-    <div class="toolbar">
-      <div class="row">
-        <button class="btn-ghost" id="previewBtn" type="button">预览</button>
-        <button class="btn-accent" id="publishBtn" type="button">发布到网站</button>
+    <div class="card" style="margin-top:12px">
+      <h2>连接 GitHub</h2>
+      <div class="field">
+        <label for="token">GitHub token</label>
+        <input id="token" type="password" autocomplete="off" placeholder="github_pat_... 或 ghp_...">
       </div>
-      <span class="small">发布后自动更新 /notes/、首页、sitemap</span>
+      <div class="row">
+        <button class="btn" id="connectBtn" type="button">连接</button>
+        <label class="small"><input id="remember" type="checkbox" checked> 在本机记住</label>
+      </div>
+      <div class="status" id="connMsg"></div>
+      <p class="small" style="margin:10px 0 0">生成入口：GitHub → Settings → Developer settings → Personal access tokens → Fine-grained tokens。</p>
     </div>
-    <div class="status" id="pubMsg"></div>
+  </section>
+
+  <div id="connectedBar" class="hidden small" style="margin:0 0 12px">
+    <span id="who"></span> · <a href="#" id="changeTokenBtn">更换 token</a>
   </div>
 
-  <div class="card preview" id="previewCard" style="display:none">
-    <h2>预览</h2>
-    <div class="box" id="previewBox"></div>
-  </div>
+  <section id="editor" class="hidden">
+    <div class="card">
+      <div class="field">
+        <label for="title">标题</label>
+        <input id="title" placeholder="例：我为什么先做手机壳">
+      </div>
+      <div class="field">
+        <label for="body">正文</label>
+        <textarea id="body" placeholder="直接写。空行分段；## 小标题；**加粗**。"></textarea>
+      </div>
+      <div class="field">
+        <label for="images">图片（可选，最多 6 张，会自动附在正文末尾）</label>
+        <input id="images" type="file" accept="image/*" multiple>
+        <div id="thumbs"></div>
+      </div>
+      <details>
+        <summary>更多设置（可选）</summary>
+        <div class="adv">
+          <div class="field"><label for="slug">网址 slug</label><input id="slug" placeholder="留空自动生成"></div>
+          <div class="field"><label for="date">月份</label><input id="date" type="month"></div>
+          <div class="field full"><label for="titleEn">英文标题</label><input id="titleEn" placeholder="留空用中文标题"></div>
+          <div class="field full"><label for="bodyEn">英文正文（可选）</label><textarea class="advbody" id="bodyEn" placeholder="不填则英文版显示一句“This note is in Chinese.”"></textarea></div>
+        </div>
+      </details>
+      <div class="row" style="margin-top:12px">
+        <button class="btn-ghost" id="previewBtn" type="button">预览</button>
+      </div>
+      <div class="preview hidden" id="previewCard">
+        <h2 id="prevTitle"></h2>
+        <div id="prevBody"></div>
+      </div>
+      <div class="status" id="pubMsg"></div>
+    </div>
+  </section>
 
-  <p class="small" style="padding-bottom:40px">
-    注意：这是轻量后台，目前只支持文字；图片上传和草稿箱可以下一版加。
-  </p>
+  <div class="toolbar hidden" id="toolbar">
+    <button class="btn-accent" id="publishBtn" type="button">发布到网站</button>
+  </div>
 </main>
+
 <script>
 const REPO = "glomarket500-oss/hany-blog";
 const BRANCH = "main";
@@ -134,10 +145,14 @@ const PREFIX = "handsome";
 const SITE = "https://www.gulangma.com";
 const $ = (id) => document.getElementById(id);
 let TOKEN = "";
+let IMAGES = [];
 
-function setStatus(el, text, cls) {
+function status(el, text, cls) {
   el.textContent = text || "";
   el.className = "status" + (cls ? " " + cls : "");
+}
+function esc(s) {
+  return String(s || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 }
 function utf8ToB64(str) {
   const bytes = new TextEncoder().encode(str);
@@ -150,45 +165,50 @@ function b64ToUtf8(b64) {
   const bytes = Uint8Array.from(bin, (c) => c.charCodeAt(0));
   return new TextDecoder().decode(bytes);
 }
+async function blobToB64(blob) {
+  const buf = await blob.arrayBuffer();
+  let bin = "";
+  new Uint8Array(buf).forEach((b) => { bin += String.fromCharCode(b); });
+  return btoa(bin);
+}
 async function gh(path, opts) {
   opts = opts || {};
-  const headers = {
-    "Authorization": "Bearer " + TOKEN,
-    "Accept": "application/vnd.github+json",
-    "Content-Type": "application/json"
-  };
   const res = await fetch("https://api.github.com" + path, {
     method: opts.method || "GET",
-    headers,
+    headers: {
+      "Authorization": "Bearer " + TOKEN,
+      "Accept": "application/vnd.github+json",
+      "Content-Type": "application/json"
+    },
     body: opts.body ? JSON.stringify(opts.body) : undefined
   });
   if (!res.ok) {
-    let t = await res.text();
-    throw new Error("GitHub " + res.status + ": " + t.slice(0, 240));
+    const t = await res.text();
+    throw new Error("GitHub " + res.status + "：" + t.slice(0, 220));
   }
   return res.json();
 }
 function encPath(p) { return p.split("/").map(encodeURIComponent).join("/"); }
 async function getFile(path) {
   const r = await gh("/repos/" + REPO + "/contents/" + encPath(PREFIX + "/" + path) + "?ref=" + BRANCH);
-  return { text: b64ToUtf8(r.content), sha: r.sha, path };
+  return { text: b64ToUtf8(r.content), sha: r.sha };
 }
 async function commitFiles(files, message) {
   const ref = await gh("/repos/" + REPO + "/git/ref/heads/" + BRANCH);
   const head = ref.object.sha;
   const hc = await gh("/repos/" + REPO + "/git/commits/" + head);
-  const baseTree = hc.tree.sha;
   const entries = [];
   for (const f of files) {
+    const content = f.base64 ? f.base64 : utf8ToB64(f.text);
     const blob = await gh("/repos/" + REPO + "/git/blobs", {
       method: "POST",
-      body: { content: utf8ToB64(f.text), encoding: "base64" }
+      body: { content: content, encoding: "base64" }
     });
     entries.push({ path: PREFIX + "/" + f.path, mode: "100644", type: "blob", sha: blob.sha });
   }
   const tree = await gh("/repos/" + REPO + "/git/trees", {
     method: "POST",
-    body: { base_tree: baseTree, tree: entries }
+    body: { base_tree: hc.tree.sha, tree: entries }
   });
   const commit = await gh("/repos/" + REPO + "/git/commits", {
     method: "POST",
@@ -201,12 +221,6 @@ async function commitFiles(files, message) {
   return commit.sha;
 }
 
-function esc(s) {
-  return String(s || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
-}
-function inline(s) {
-  return esc(s).replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
-}
 function mdToHtml(md) {
   const lines = String(md || "").replace(/\r/g, "").split("\n");
   const out = [];
@@ -225,16 +239,21 @@ function mdToHtml(md) {
   flush();
   return out.join("\n");
 }
-
+function inline(s) {
+  return esc(s).replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+}
 function slugify(s) {
   return String(s || "").toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60);
 }
-function dateDisplay(month) {
-  return String(month || "").replace("-", " · ");
+function monthNow() { return new Date().toISOString().slice(0, 7); }
+function dateLabel(m) { return String(m || "").replace("-", " · "); }
+function autoSlug(titleEn) {
+  return slugify(titleEn) || ("note-" + new Date().toISOString().slice(0, 10).replace(/-/g, "") + "-" + String(new Date().getHours()).padStart(2, "0") + String(new Date().getMinutes()).padStart(2, "0"));
 }
+
 function noteRow(d) {
   return `    <a class="note-row" href="/notes/${esc(d.slug)}/">
-      <div class="date">${esc(dateDisplay(d.date))}</div>
+      <div class="date">${esc(dateLabel(d.date))}</div>
       <div>
         <h3 class="serif">${esc(d.titleEn || d.titleCn)}</h3>
         <p>${esc(d.excerptEn || d.excerptCn)}</p>
@@ -244,9 +263,9 @@ function noteRow(d) {
 `;
 }
 function insertNote(html, d) {
-  if (html.indexOf(`href="/notes/${d.slug}/"`) !== -1) return html;
+  if (html.indexOf(`href="/notes/${d.slug}/"`) !== -1) throw new Error("这个 slug 已经存在，请换一个。");
   const marker = "<!-- NOTES_START -->";
-  if (html.indexOf(marker) === -1) throw new Error("找不到笔记载入点（NOTES_START）");
+  if (html.indexOf(marker) === -1) throw new Error("找不到笔记载入点。");
   return html.replace(marker, marker + "\n" + noteRow(d));
 }
 function addSitemap(xml, d) {
@@ -255,8 +274,13 @@ function addSitemap(xml, d) {
   const entry = `  <url><loc>${loc}</loc><lastmod>${new Date().toISOString().slice(0, 10)}</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>\n`;
   return xml.replace("</urlset>", entry + "</urlset>");
 }
-
-function buildArticle(template, d) {
+function imageHtml(d, images, dataUrls) {
+  return images.map((im, i) => {
+    const src = dataUrls ? im.dataUrl : `/assets-founder/notes/${d.slug}/img-${i + 1}.webp`;
+    return `<figure><img src="${src}" alt="${esc(im.name)}" loading="lazy"><figcaption>${esc(im.name)}</figcaption></figure>`;
+  }).join("");
+}
+function buildArticle(template, d, images) {
   const doc = new DOMParser().parseFromString(template, "text/html");
   const canon = SITE + "/notes/" + d.slug + "/";
   doc.title = (d.titleEn || d.titleCn) + " — Alan";
@@ -280,94 +304,166 @@ function buildArticle(template, d) {
     if (cn) cn.textContent = d.excerptCn || d.excerptEn;
   }
   const meta = doc.querySelector(".article .meta");
-  if (meta) meta.innerHTML = `<span class="t-en">Notes · ${esc(dateDisplay(d.date))}</span><span class="t-cn">笔记 · ${esc(dateDisplay(d.date))}</span>`;
+  if (meta) meta.innerHTML = `<span class="t-en">Notes · ${esc(dateLabel(d.date))}</span><span class="t-cn">笔记 · ${esc(dateLabel(d.date))}</span>`;
+  const imgHtml = images && images.length ? imageHtml(d, images) : "";
   const cnBody = doc.querySelector(".body .t-cn.block");
-  if (cnBody) cnBody.innerHTML = mdToHtml(d.bodyCn);
+  if (cnBody) cnBody.innerHTML = mdToHtml(d.bodyCn) + imgHtml;
   const enBody = doc.querySelector(".body .t-en.block");
-  if (enBody) enBody.innerHTML = d.bodyEn ? mdToHtml(d.bodyEn) : "<p>The full note is in Chinese. Switch to 中文 at the top to read it.</p>";
+  if (enBody) enBody.innerHTML = (d.bodyEn ? mdToHtml(d.bodyEn) : "<p>The full note is in Chinese. Switch to 中文 at the top to read it.</p>") + imgHtml;
   return "<!DOCTYPE html>\n" + doc.documentElement.outerHTML;
 }
 
-async function testConn() {
+async function connect(silent) {
   TOKEN = $("token").value.trim();
-  if (!TOKEN) { setStatus($("connMsg"), "请先填 token。", "err"); return false; }
-  setStatus($("connMsg"), "测试中…");
+  if (!TOKEN) { if (!silent) status($("connMsg"), "请先填 token。", "err"); return false; }
+  if (!silent) status($("connMsg"), "连接中…");
   try {
     const me = await gh("/user");
     const repo = await gh("/repos/" + REPO);
-    setStatus($("connMsg"), "已连接：" + me.login + " / " + repo.full_name, "ok");
-    $("connState").textContent = "已连接";
+    status($("connMsg"), "已连接：" + me.login + " / " + repo.full_name, "ok");
+    $("who").textContent = "已连接 " + me.login;
+    $("setup").classList.add("hidden");
+    $("connectedBar").classList.remove("hidden");
+    $("editor").classList.remove("hidden");
+    $("toolbar").classList.remove("hidden");
     if ($("remember").checked) localStorage.setItem("alan-admin-token", TOKEN);
     else localStorage.removeItem("alan-admin-token");
     return true;
   } catch (e) {
-    setStatus($("connMsg"), e.message, "err");
-    $("connState").textContent = "连接失败";
+    $("setup").classList.remove("hidden");
+    $("connectedBar").classList.add("hidden");
+    $("editor").classList.add("hidden");
+    $("toolbar").classList.add("hidden");
+    if (!silent) status($("connMsg"), e.message, "err");
     return false;
   }
 }
 
 function collect() {
-  const d = {
-    titleCn: $("titleCn").value.trim(),
-    titleEn: $("titleEn").value.trim(),
-    slug: $("slug").value.trim(),
-    date: $("date").value,
-    excerptCn: $("excerptCn").value.trim(),
-    excerptEn: $("excerptEn").value.trim(),
-    bodyCn: $("bodyCn").value.trim(),
+  const titleCn = $("title").value.trim();
+  const bodyCn = $("body").value.trim();
+  if (!titleCn) throw new Error("请填标题。");
+  if (!bodyCn) throw new Error("请写正文。");
+  const date = $("date").value || monthNow();
+  const titleEn = $("titleEn").value.trim() || titleCn;
+  const slugRaw = $("slug").value.trim();
+  const slug = slugRaw ? slugify(slugRaw) : autoSlug(titleEn);
+  if (!/^[a-z0-9][a-z0-9-]*$/.test(slug)) throw new Error("slug 只能用小写字母、数字、-。");
+  const plain = bodyCn.replace(/[#*>`\-]/g, "").replace(/\s+/g, " ").trim();
+  return {
+    titleCn, titleEn, slug, date,
+    excerptCn: plain.slice(0, 80),
+    excerptEn: plain.slice(0, 80),
+    bodyCn,
     bodyEn: $("bodyEn").value.trim()
   };
-  if (!d.titleCn && !d.titleEn) throw new Error("请填标题。");
-  if (!d.bodyCn) throw new Error("中文正文不能为空。");
-  if (!d.slug) d.slug = slugify(d.titleEn) || ("note-" + new Date().toISOString().slice(0, 10).replace(/-/g, ""));
-  if (!/^[a-z0-9][a-z0-9-]*$/.test(d.slug)) throw new Error("slug 只能用小写字母、数字、-。");
-  if (!d.date) d.date = new Date().toISOString().slice(0, 7);
-  return d;
+}
+
+function renderThumbs() {
+  $("thumbs").innerHTML = IMAGES.map((im, i) =>
+    `<div class="thumb"><img src="${im.dataUrl}" alt=""><button type="button" data-i="${i}" aria-label="删除">×</button></div>`
+  ).join("");
+  $("thumbs").querySelectorAll("button").forEach((b) => {
+    b.addEventListener("click", () => { IMAGES.splice(Number(b.dataset.i), 1); renderThumbs(); });
+  });
+}
+async function imageToWebp(file) {
+  const bitmap = await createImageBitmap(file);
+  const maxW = 1600;
+  const scale = Math.min(1, maxW / bitmap.width);
+  const canvas = document.createElement("canvas");
+  canvas.width = Math.round(bitmap.width * scale);
+  canvas.height = Math.round(bitmap.height * scale);
+  const ctx = canvas.getContext("2d");
+  ctx.drawImage(bitmap, 0, 0, canvas.width, canvas.height);
+  const blob = await new Promise((resolve) => canvas.toBlob(resolve, "image/webp", 0.84));
+  return blob || await new Promise((resolve) => canvas.toBlob(resolve, "image/jpeg", 0.86));
+}
+async function addImages(files) {
+  for (const file of Array.from(files)) {
+    if (IMAGES.length >= 6) { status($("pubMsg"), "最多 6 张图片。", "err"); break; }
+    if (!file.type.startsWith("image/")) continue;
+    try {
+      const blob = await imageToWebp(file);
+      const dataUrl = await new Promise((r) => { const fr = new FileReader(); fr.onload = () => r(fr.result); fr.readAsDataURL(blob); });
+      IMAGES.push({ name: file.name.replace(/\.[^.]+$/, ""), blob, dataUrl });
+      renderThumbs();
+    } catch (e) {
+      status($("pubMsg"), "图片处理失败：" + e.message, "err");
+    }
+  }
 }
 
 function preview() {
   try {
     const d = collect();
-    $("previewBox").innerHTML = `<h1>${esc(d.titleCn || d.titleEn)}</h1><p class="small">${esc(dateDisplay(d.date))}</p>` + mdToHtml(d.bodyCn);
-    $("previewCard").style.display = "block";
-    $("previewCard").scrollIntoView({ behavior: "smooth", block: "start" });
-  } catch (e) { setStatus($("pubMsg"), e.message, "err"); }
+    $("prevTitle").textContent = d.titleCn;
+    $("prevBody").innerHTML = mdToHtml(d.bodyCn) + imageHtml(d, IMAGES, true);
+    $("previewCard").classList.remove("hidden");
+  } catch (e) { status($("pubMsg"), e.message, "err"); }
 }
 
 async function publish() {
-  setStatus($("pubMsg"), "发布中…");
+  status($("pubMsg"), "发布中…");
+  $("publishBtn").disabled = true;
   try {
-    TOKEN = $("token").value.trim();
-    if (!TOKEN) throw new Error("请先填 GitHub token 并测试连接。");
+    TOKEN = $("token").value.trim() || localStorage.getItem("alan-admin-token") || "";
+    if (!TOKEN) throw new Error("请先连接 GitHub。");
     const d = collect();
     const tpl = await getFile("notes/first-article/index.html");
     const notes = await getFile("notes/index.html");
     const home = await getFile("index.html");
     const sm = await getFile("sitemap.xml");
-    const article = buildArticle(tpl.text, d);
+    const article = buildArticle(tpl.text, d, IMAGES);
     const notesNew = insertNote(notes.text, d);
     const homeNew = insertNote(home.text, d);
     const smNew = addSitemap(sm.text, d);
-    const sha = await commitFiles([
+    const files = [
       { path: "notes/" + d.slug + "/index.html", text: article },
       { path: "notes/index.html", text: notesNew },
       { path: "index.html", text: homeNew },
       { path: "sitemap.xml", text: smNew }
-    ], "note: " + (d.titleEn || d.titleCn));
-    setStatus($("pubMsg"), "已发布 commit " + sha.slice(0, 10) + "\n线上地址：" + SITE + "/notes/" + d.slug + "/\nVercel 约 15–60 秒完成部署。", "ok");
+    ];
+    for (let i = 0; i < IMAGES.length; i++) {
+      const base64 = await blobToB64(IMAGES[i].blob);
+      files.push({ path: "assets-founder/notes/" + d.slug + "/img-" + (i + 1) + ".webp", base64: base64 });
+    }
+    const sha = await commitFiles(files, "note: " + (d.titleEn || d.titleCn));
+    status($("pubMsg"), "已发布！\n" + SITE + "/notes/" + d.slug + "/\n约 15–60 秒上线。commit " + sha.slice(0, 8), "ok");
+    $("title").value = "";
+    $("body").value = "";
+    $("bodyEn").value = "";
+    $("slug").value = "";
+    $("titleEn").value = "";
+    IMAGES = [];
+    renderThumbs();
   } catch (e) {
-    setStatus($("pubMsg"), e.message, "err");
+    status($("pubMsg"), e.message, "err");
+  } finally {
+    $("publishBtn").disabled = false;
   }
 }
 
 window.addEventListener("DOMContentLoaded", function () {
+  $("date").value = monthNow();
   const saved = localStorage.getItem("alan-admin-token");
-  if (saved) { $("token").value = saved; $("remember").checked = true; TOKEN = saved; }
-  $("date").value = new Date().toISOString().slice(0, 7);
-  $("testBtn").addEventListener("click", testConn);
+  if (saved) { $("token").value = saved; connect(true); }
+  $("connectBtn").addEventListener("click", () => connect(false));
+  $("changeTokenBtn").addEventListener("click", (e) => {
+    e.preventDefault();
+    localStorage.removeItem("alan-admin-token");
+    $("setup").classList.remove("hidden");
+    $("connectedBar").classList.add("hidden");
+    $("editor").classList.add("hidden");
+    $("toolbar").classList.add("hidden");
+    $("token").value = "";
+  });
+  $("images").addEventListener("change", (e) => { addImages(e.target.files); e.target.value = ""; });
   $("previewBtn").addEventListener("click", preview);
   $("publishBtn").addEventListener("click", publish);
+  document.addEventListener("keydown", (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key === "Enter") { e.preventDefault(); publish(); }
+  });
 });
 </script>
 </body>

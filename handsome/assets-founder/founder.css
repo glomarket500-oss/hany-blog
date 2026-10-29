@@ -189,6 +189,9 @@ h3{font-size:1.08rem;font-weight:700;letter-spacing:-.01em}
 .article .dek{font-size:1.08rem;color:var(--muted);margin-bottom:34px}
 .article .body p{margin-bottom:22px;font-size:1.02rem;color:#2c2d33}
 .article .body h2{font-size:1.35rem;margin:34px 0 12px}
+.article .body figure{margin:26px 0}
+.article .body img{border-radius:12px;border:1px solid var(--line)}
+.article .body figcaption{font-size:.78rem;color:var(--muted);margin-top:8px}
 .pull{border-left:3px solid var(--accent);background:var(--accent-soft);padding:16px 20px;
   border-radius:0 10px 10px 0;font-size:.94rem;margin:28px 0}
 .article .now-box{margin-top:38px;border:1px solid var(--line);border-radius:var(--radius);
