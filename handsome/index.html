@@ -23,14 +23,19 @@
 <body><header class="top">
   <div class="wrap">
     <a class="brand serif" href="/">ALAN<span>.</span></a>
-    <nav class="main">
+    <nav class="main" id="siteNav">
       <a href="/" class="on"><span class="t-en">Home</span><span class="t-cn">首页</span></a>
       <a href="/about/"><span class="t-en">About</span><span class="t-cn">关于</span></a>
       <a href="/ventures/"><span class="t-en">Ventures</span><span class="t-cn">项目</span></a>
       <a href="/notes/"><span class="t-en">Notes</span><span class="t-cn">笔记</span></a>
       <a href="/contact/"><span class="t-en">Contact</span><span class="t-cn">联系</span></a>
     </nav>
-    <button class="langbtn" id="langBtn" onclick="toggleLang()">中文</button>
+    <div class="nav-actions">
+      <button class="langbtn" id="langBtn" onclick="toggleLang()">中文</button>
+      <button class="menubtn" id="menuBtn" aria-label="Menu" aria-expanded="false" aria-controls="siteNav" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </header>
 
@@ -200,6 +205,23 @@ function toggleLang(){
   document.getElementById('langBtn').textContent = cn ? 'EN' : '中文';
   try { localStorage.setItem('alan-lang', cn ? 'cn' : 'en'); } catch(e) {}
 }
+function toggleMenu(force){
+  var h = document.querySelector('header.top');
+  if (!h) return;
+  var open = (typeof force === 'boolean') ? force : !h.classList.contains('nav-open');
+  h.classList.toggle('nav-open', open);
+  var b = document.getElementById('menuBtn');
+  if (b) b.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+document.addEventListener('click', function(e){
+  if (!e.target.closest('header.top')) toggleMenu(false);
+});
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape') toggleMenu(false);
+});
+document.querySelectorAll('#siteNav a').forEach(function(a){
+  a.addEventListener('click', function(){ toggleMenu(false); });
+});
 try {
   if (localStorage.getItem('alan-lang') === 'cn') {
     document.body.classList.add('lang-cn');
