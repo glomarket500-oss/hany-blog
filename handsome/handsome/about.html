@@ -28,12 +28,30 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"HANDSOME","url":"https://www.gulangma.com/handsome","isPartOf":{"@type":"WebSite","name":"HANDSOME","url":"https://www.gulangma.com/handsome/"}}</script>
 </head>
 <body>
-<div class="promo">Free shipping · Made in small batches</div>
-<header class="top">
+<div class="promo"><span class="parrow">‹</span><span>Free shipping · Made in small batches</span><span class="parrow">›</span></div>
+<header class="top" id="siteHeader">
   <div class="wrap">
+    <div class="hleft">
+      <button class="icobtn" id="navBtn" onclick="toggleNav()" aria-label="Menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <a class="icobtn" href="shop.html" aria-label="Search">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5L21 21"/></svg>
+      </a>
+    </div>
     <a class="brand" href="index.html"><img src="assets/images/logo-lockup-h.webp"
        alt="HANDSOME" width="400" height="56"></a>
-    <nav class="main">
+    <div class="hright">
+      <a class="icobtn" href="contact.html" aria-label="Account">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>
+      </a>
+      <button class="langbtn" id="langBtn" onclick="toggleLang()">中文</button>
+      <a class="icobtn" href="shop.html" aria-label="Shop">
+        <svg viewBox="0 0 24 24"><path d="M6 8h12l1 13H5L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+      </a>
+    </div>
+  </div>
+  <nav class="main" id="mainNav">
       <a href="index.html"><span class="t-en">Home</span><span class="t-cn">首頁</span></a>
       <a href="shop.html"><span class="t-en">Shop</span><span class="t-cn">系列</span></a>
       <a href="materials.html"><span class="t-en">Materials</span><span class="t-cn">材質</span></a>
@@ -42,10 +60,7 @@
       <a href="launch.html"><span class="t-en">Launch</span><span class="t-cn">首批</span></a>
       <a href="about.html" class="on"><span class="t-en">About</span><span class="t-cn">關於</span></a>
       <a href="contact.html"><span class="t-en">Contact</span><span class="t-cn">聯絡</span></a>
-    </nav>
-    <a class="shopbtn" href="shop.html"><span class="t-en">Shop</span><span class="t-cn">選購</span></a>
-    <button class="langbtn" id="langBtn" onclick="toggleLang()">中文</button>
-  </div>
+  </nav>
 </header>
 
 <div class="wrap"><div class="crumb"><a href="index.html"><span class="t-en">Home</span><span class="t-cn">首頁</span></a> / <span class="t-en">About</span><span class="t-cn">關於</span></div></div>
@@ -164,6 +179,18 @@ function toggleLang(){
   document.getElementById('langBtn').textContent = cn ? 'EN' : '中文';
   try { localStorage.setItem('hs-lang', cn ? 'cn' : 'en'); } catch(e) {}
 }
+function toggleNav(force){
+  var h = document.getElementById('siteHeader'); if (!h) return;
+  var open = (typeof force === 'boolean') ? force : !h.classList.contains('nav-open');
+  h.classList.toggle('nav-open', open);
+  var b = document.getElementById('navBtn');
+  if (b) b.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+document.addEventListener('click', function(e){
+  if (e.target.closest('#mainNav')) { toggleNav(false); return; }
+  if (!e.target.closest('#siteHeader')) toggleNav(false);
+});
+document.addEventListener('keydown', function(e){ if (e.key === 'Escape') toggleNav(false); });
 try {
   if (localStorage.getItem('hs-lang') === 'cn') {
     document.body.classList.add('lang-cn');
