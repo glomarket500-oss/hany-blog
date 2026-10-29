@@ -287,6 +287,91 @@ footer h4{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:v
 .story-en{max-width:700px;margin:0 auto;padding:0 20px 40px}
 .story-en p{font-family:Georgia,"Songti SC",serif;font-size:1rem;line-height:1.9;color:#2b2c31;margin:0 0 20px}
 
+/* ── 2026-10-30 cartoon skin ───────────────────────────────── */
+:root{--bg:#fff8ea;--surface:#fffdf7;--ink:#1b1b1f;--muted:#6b6357;--line:#e8dcc8;
+  --accent:#ff5a1f;--accent-soft:#ffe3d1;--yellow:#ffd43b;--blue:#8ed1fc;
+  --mint:#9ee7c0;--pink:#ffb7c5;--radius:20px}
+body{background-color:var(--bg);
+  background-image:radial-gradient(rgba(27,27,31,.075) 1px,transparent 1px);background-size:18px 18px}
+header.top{background:rgba(255,248,234,.94);border-bottom:2px solid var(--ink)}
+.brand{letter-spacing:.02em;font-weight:900}
+nav.main a{font-weight:700}
+nav.main a.on{background:var(--yellow);color:var(--ink);border:2px solid var(--ink);
+  border-radius:999px;padding:6px 14px;box-shadow:2px 2px 0 var(--ink)}
+nav.main a.on::after{display:none}
+.langbtn,.menubtn{border:2px solid var(--ink);box-shadow:2px 2px 0 var(--ink);background:#fff}
+.langbtn:hover{transform:translate(-1px,-1px);box-shadow:3px 3px 0 var(--ink);border-color:var(--ink)}
+.hero{background:linear-gradient(135deg,#fff8ea 0%,#ffefd0 100%);color:var(--ink);
+  padding:78px 0 68px;border-bottom:2px solid var(--ink)}
+.hero::after{content:"";position:absolute;right:-120px;top:-140px;width:460px;height:460px;
+  border-radius:50%;background:radial-gradient(circle,var(--blue),transparent 68%);opacity:.55;pointer-events:none}
+.hero::before{content:"";position:absolute;left:-120px;bottom:-160px;width:380px;height:380px;
+  border-radius:50%;background:radial-gradient(circle,var(--yellow),transparent 66%);opacity:.8;pointer-events:none}
+.hero h1 em{font-style:normal;color:var(--accent);text-decoration:underline;
+  text-decoration-color:var(--yellow);text-decoration-thickness:7px;text-underline-offset:6px}
+.hero .lede{color:#4e4739}
+.hero-grid{position:relative;z-index:1}
+.doodle{position:absolute;pointer-events:none;z-index:0}
+.doodle-star{left:4%;top:16%;width:54px;transform:rotate(-12deg)}
+.doodle-squiggle{right:4%;bottom:12%;width:120px;transform:rotate(8deg)}
+.hero-sticker{position:absolute;right:5%;top:20px;z-index:2;background:var(--yellow);
+  border:2px solid var(--ink);border-radius:999px;padding:6px 13px;font-weight:900;
+  font-size:.72rem;letter-spacing:.08em;transform:rotate(4deg);box-shadow:2px 2px 0 var(--ink)}
+.btn{border:2px solid var(--ink);box-shadow:3px 3px 0 var(--ink);font-weight:800;padding:11px 20px}
+.btn:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--ink)}
+.btn-light{background:var(--yellow);color:var(--ink)}
+.btn-light:hover{background:var(--yellow);color:var(--ink)}
+.btn-ghost-light{background:#fff;color:var(--ink);border-color:var(--ink)}
+.btn-ghost-light:hover{border-color:var(--ink);background:#fff}
+.btn-solid{background:var(--ink);color:#fff}
+.btn-ghost{background:#fff;border:2px solid var(--ink);box-shadow:3px 3px 0 var(--ink)}
+.hero-portrait{position:relative;border:3px solid var(--ink);border-radius:24px;box-shadow:8px 8px 0 var(--ink);
+  transform:rotate(2deg);background:#fff;max-width:340px;overflow:visible}
+.hero-portrait img{border-radius:21px 21px 0 0}
+.hero-portrait figcaption{border-top:2px solid var(--ink);color:var(--ink);background:#fffaf0;
+  border-radius:0 0 21px 21px}
+.hero-portrait figcaption strong{color:var(--ink);font-weight:900}
+.portrait-sticker{position:absolute;top:-14px;right:-14px;z-index:3;width:52px;height:52px;
+  border-radius:50%;background:var(--pink);border:2px solid var(--ink);box-shadow:2px 2px 0 var(--ink);
+  display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1rem;transform:rotate(8deg)}
+.hero-note{color:#5b5244}
+.strip{background:var(--yellow);border-bottom:2px solid var(--ink)}
+.strip .item .k{color:#3a3428}
+.strip .item .v{font-weight:800}
+section.alt{background:#fff3dd;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+.sec-head .kicker{display:inline-block;background:#fff;border:2px solid var(--ink);
+  border-radius:999px;padding:5px 12px;box-shadow:2px 2px 0 var(--ink);color:var(--ink);
+  letter-spacing:.14em;transform:rotate(-1deg)}
+.sec-head .kicker::before{content:"✦";margin-right:6px;color:var(--accent)}
+.vrow,.vcard,.pcard{border:2px solid var(--ink);border-radius:22px;box-shadow:6px 6px 0 var(--ink);
+  background:#fff;overflow:hidden}
+.vrow:hover,.vcard:hover,.pcard:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--ink)}
+.vrow .vmedia{border-right:2px solid var(--ink)}
+.vrow .vbody{padding:30px}
+.pill{border:2px solid var(--ink);font-weight:800;letter-spacing:.1em}
+.pill.live{background:var(--yellow);color:var(--ink)}
+.pill.dev{background:#fff;color:var(--muted)}
+.note-row{border:2px solid var(--ink);border-radius:18px;background:#fff;
+  box-shadow:5px 5px 0 var(--ink);padding:14px 16px;margin-bottom:14px;transition:.18s}
+.note-row:first-of-type{border-top:2px solid var(--ink)}
+.note-row:last-child{border-bottom:2px solid var(--ink)}
+.note-row:hover{transform:translate(-1px,-1px);box-shadow:7px 7px 0 var(--ink)}
+.note-thumb{border:2px solid var(--ink);border-radius:10px}
+.note-row h3{font-weight:700}
+.cta-band{background:var(--yellow);color:var(--ink);border-top:2px solid var(--ink);
+  border-bottom:2px solid var(--ink)}
+.cta-band h2{color:var(--ink)}
+.cta-band p{color:#4e4739}
+.cta-band .btn-light{background:var(--ink);color:#fff}
+footer{border-top:2px solid var(--ink);background:#fffaf0}
+footer .brand{font-weight:900}
+.page-hero{border-bottom:2px solid var(--ink);
+  background:linear-gradient(135deg,#fff8ea,#ffefd0)}
+.page-hero h1{text-shadow:3px 3px 0 rgba(255,212,59,.55)}
+.article .body figure img{border:2px solid var(--ink)}
+.timeline li{border-bottom-color:var(--line)}
+.timeline .what a{border-bottom-color:var(--accent)}
+
 @media(max-width:940px){
   .hero-grid,.split{grid-template-columns:1fr;gap:34px}
   .vrow{grid-template-columns:1fr}
@@ -298,6 +383,9 @@ footer h4{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:v
 @media(max-width:760px){
   .top .wrap{height:60px;padding:0 18px;flex-wrap:nowrap}
   .hero-portrait{max-width:320px;margin:0 auto}
+  .doodle{display:none}
+  .hero-sticker{top:12px;right:14px;font-size:.64rem;padding:5px 10px}
+  .portrait-sticker{width:42px;height:42px;top:-10px;right:-10px;font-size:.82rem}
   .menubtn{display:inline-flex}
   nav.main{display:none;position:absolute;top:100%;left:0;right:0;transform:none;
     flex-direction:column;align-items:stretch;gap:2px;padding:10px 18px 16px;
