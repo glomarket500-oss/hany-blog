@@ -46,9 +46,10 @@
         <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>
       </a>
       <button class="langbtn" id="langBtn" onclick="toggleLang()">中文</button>
-      <a class="icobtn" href="shop.html" aria-label="Shop">
+      <button class="icobtn cartbtn" id="cartBtn" onclick="openCart()" aria-label="Bag">
         <svg viewBox="0 0 24 24"><path d="M6 8h12l1 13H5L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
-      </a>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
     </div>
   </div>
   <nav class="main" id="mainNav">
@@ -70,8 +71,31 @@
       <h1 class="page-h1"><span class="t-en">All cases</span><span class="t-cn">全部型號</span></h1>
       <p><span class="t-en">Three materials, one standard. Prices are in USD.</span><span class="t-cn">三種材質，同一個標準。價格為美元。</span></p>
     </div>
-    <div class="grid g3">
-      <a class="card" href="aramid.html">
+    <div class="filterbar" id="filterBar">
+      <div class="fgroup"><span>Material</span>
+        <button class="chip on" data-filter="all">All</button>
+        <button class="chip" data-filter="aramid">Aramid</button>
+        <button class="chip" data-filter="leather">Leather</button>
+        <button class="chip" data-filter="shield">Drop</button>
+      </div>
+      <div class="fgroup"><span>Model</span>
+        <select id="modelFilter">
+          <option value="all">All models</option>
+          <option value="iPhone 15 / 16 / 17">iPhone 15 / 16 / 17</option>
+          <option value="Samsung S24 / S25">Samsung S24 / S25</option>
+        </select>
+      </div>
+      <div class="fgroup"><span>Sort</span>
+        <select id="sortFilter">
+          <option value="featured">Featured</option>
+          <option value="price-asc">Price: low to high</option>
+          <option value="price-desc">Price: high to low</option>
+        </select>
+      </div>
+      <span class="filter-count" id="filterCount">3 of 3 collections</span>
+    </div>
+    <div class="grid g3" id="shopGrid">
+      <a class="card" href="aramid.html" data-material="aramid" data-price="119">
         <div class="shot-wrap"><img src="assets/images/aramid-01.webp" alt="Aramid Fiber phone case / 芳綸纖維手機殼" loading="lazy"><span class="caption">0.7 mm · 12 g · MagSafe</span></div>
         <div class="body">
           <h3><span class="t-en">Aramid Fiber</span><span class="t-cn">芳綸纖維</span></h3>
@@ -79,7 +103,7 @@
           <div class="price">$119 – $149<small><span class="t-en">Free worldwide shipping — insured and tracked</span><span class="t-cn">全球免運——已投保並可追蹤</span></small></div>
         </div>
       </a>
-      <a class="card" href="leather.html">
+      <a class="card" href="leather.html" data-material="leather" data-price="189">
         <div class="shot-wrap"><img src="assets/images/leather-01.webp" alt="Leather phone case / 皮革手機殼" loading="lazy"><span class="caption">Full-grain · Ages with you</span></div>
         <div class="body">
           <h3><span class="t-en">Leather</span><span class="t-cn">皮革</span></h3>
@@ -87,7 +111,7 @@
           <div class="price">$189 – $259<small><span class="t-en">Free worldwide shipping — insured and tracked</span><span class="t-cn">全球免運——已投保並可追蹤</span></small></div>
         </div>
       </a>
-      <a class="card" href="shield.html">
+      <a class="card" href="shield.html" data-material="shield" data-price="119">
         <div class="shot-wrap"><img src="assets/images/shield-01.webp" alt="Drop Protection phone case / 防摔手機殼" loading="lazy"><span class="caption">MIL-STD-810G target · Air corners</span></div>
         <div class="body">
           <h3><span class="t-en">Drop Protection</span><span class="t-cn">防摔</span></h3>
@@ -172,6 +196,16 @@
     <div class="note"><span class="t-en">Why there are four tiers and not one price: at 3.2 hours of hand work per leather piece and a master's hourly cost of about US$30, the labour alone is roughly US$97, and variable cost lands near US$169. A $39 case would lose about US$100 on every unit. So the tiers are not marketing decoration — they are the arithmetic, published.</span><span class="t-cn">點解要分四層而唔係一個價：每個皮殼 3.2 小時手工，名匠工時成本約 US$30，單人工已經約 US$97，加埋變動成本接近 US$169。一個 39 美元嘅殼，每件要蝕約 US$100。所以呢四層唔係市場包裝——佢係盤數，公開畀你睇。</span></div>
   </div>
 </section>
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+  <div class="cart-head"><h3>Your bag</h3><button class="cart-close" onclick="closeCart()" aria-label="Close">×</button></div>
+  <div class="cart-items" id="cartItems"><div class="cart-empty">Your bag is empty.</div></div>
+  <div class="cart-foot">
+    <div class="cart-total"><span>Subtotal</span><span id="cartTotal">$0</span></div>
+    <a class="btn btn-solid" id="cartCheckout" href="mailto:glomarket500@gmail.com?subject=Order%20request">Request order</a>
+    <p style="font-size:.66rem;color:#888;margin-top:9px;line-height:1.5">Checkout is by email for now. We confirm model, finish and shipping before payment.</p>
+  </div>
+</aside>
 <footer>
   <div class="wrap">
     <div class="fgrid">
@@ -229,6 +263,84 @@ document.addEventListener('click', function(e){
   if (!e.target.closest('#siteHeader')) toggleNav(false);
 });
 document.addEventListener('keydown', function(e){ if (e.key === 'Escape') toggleNav(false); });
+/* bag */
+function readCart(){ try { return JSON.parse(localStorage.getItem('hs-cart') || '[]'); } catch(e) { return []; } }
+function saveCart(c){ try { localStorage.setItem('hs-cart', JSON.stringify(c)); } catch(e) {} renderCart(); }
+function cartQty(c){ return c.reduce(function(n,x){ return n + (Number(x.qty) || 1); }, 0); }
+function escHtml(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(m){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]; }); }
+function updateCartCount(){ var n = cartQty(readCart()); var el = document.getElementById('cartCount'); if (el) el.textContent = n; }
+function openCart(){ document.body.classList.add('cart-open'); var d=document.getElementById('cartDrawer'); if(d)d.setAttribute('aria-hidden','false'); renderCart(); }
+function closeCart(){ document.body.classList.remove('cart-open'); var d=document.getElementById('cartDrawer'); if(d)d.setAttribute('aria-hidden','true'); }
+function addToBag(btn){
+  var box = btn.closest('.buybox');
+  var item = {
+    key: btn.dataset.key, name: btn.dataset.name, price: Number(btn.dataset.price) || 0,
+    img: btn.dataset.img,
+    model: box && box.querySelector('.buy-model') ? box.querySelector('.buy-model').value : '',
+    finish: box && box.querySelector('.buy-finish') ? box.querySelector('.buy-finish').value : '',
+    qty: box && box.querySelector('.buy-qty') ? Number(box.querySelector('.buy-qty').value) : 1
+  };
+  var cart = readCart();
+  var hit = -1;
+  for (var i=0;i<cart.length;i++) { if (cart[i].key===item.key && cart[i].model===item.model && cart[i].finish===item.finish) { hit=i; break; } }
+  if (hit >= 0) cart[hit].qty = Number(cart[hit].qty) + item.qty; else cart.push(item);
+  saveCart(cart); openCart();
+}
+function removeCartItem(i){ var c=readCart(); c.splice(i,1); saveCart(c); }
+function renderCart(){
+  var cart = readCart(), box = document.getElementById('cartItems'), total = 0;
+  if (!box) return;
+  if (!cart.length) box.innerHTML = '<div class="cart-empty">Your bag is empty.</div>';
+  else box.innerHTML = cart.map(function(it, i){
+    var line = (Number(it.price)||0) * (Number(it.qty)||1); total += line;
+    return '<div class="cart-item"><div class="ci-img" style="background-image:url(' + escHtml(it.img) + ')"></div>' +
+      '<div><h4>' + escHtml(it.name) + '</h4><p>' + escHtml(it.model) + ' · ' + escHtml(it.finish) +
+      '</p><div class="ci-price">$' + line + ' · Qty ' + (Number(it.qty)||1) + '</div></div>' +
+      '<button class="cart-remove" onclick="removeCartItem(' + i + ')" aria-label="Remove">×</button></div>';
+  }).join('');
+  var t = document.getElementById('cartTotal'); if (t) t.textContent = '$' + total;
+  var co = document.getElementById('cartCheckout');
+  if (co) {
+    var lines = cart.map(function(it){ return (Number(it.qty)||1) + ' × ' + it.name + ' — ' + it.model + ' / ' + it.finish; }).join('\n');
+    co.href = 'mailto:glomarket500@gmail.com?subject=' + encodeURIComponent('Order request') + '&body=' + encodeURIComponent(lines || 'Hello HANDSOME,');
+  }
+  updateCartCount();
+}
+document.querySelectorAll('.buy-add').forEach(function(b){ b.addEventListener('click', function(){ addToBag(b); }); });
+/* shop filters */
+(function(){
+  var bar = document.getElementById('filterBar');
+  if (!bar) return;
+  var grid = document.getElementById('shopGrid'); if (!grid) return;
+  var cards = Array.prototype.slice.call(grid.querySelectorAll('.card'));
+  var chip = bar.querySelectorAll('.chip');
+  var sort = document.getElementById('sortFilter');
+  var count = document.getElementById('filterCount');
+  var model = document.getElementById('modelFilter');
+  var active = 'all';
+  function apply(){
+    var shown = 0;
+    cards.forEach(function(c){
+      var ok = active === 'all' || c.dataset.material === active;
+      c.style.display = ok ? '' : 'none';
+      if (ok) shown++;
+    });
+    if (sort) {
+      cards.sort(function(a,b){
+        if (sort.value === 'price-asc') return Number(a.dataset.price) - Number(b.dataset.price);
+        if (sort.value === 'price-desc') return Number(b.dataset.price) - Number(a.dataset.price);
+        return 0;
+      });
+      cards.forEach(function(c){ grid.appendChild(c); });
+    }
+    if (count) count.textContent = shown + ' of ' + cards.length + ' collections' + (model && model.value !== 'all' ? ' · ' + model.value : '');
+  }
+  chip.forEach(function(b){ b.addEventListener('click', function(){ chip.forEach(function(x){ x.classList.remove('on'); }); b.classList.add('on'); active = b.dataset.filter; apply(); }); });
+  if (sort) sort.addEventListener('change', apply);
+  if (model) model.addEventListener('change', apply);
+  apply();
+})();
+updateCartCount();
 try {
   if (localStorage.getItem('hs-lang') === 'cn') {
     document.body.classList.add('lang-cn');
