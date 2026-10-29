@@ -236,7 +236,15 @@ footer h4{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:v
 .story-hero{position:relative;padding:92px 0 48px;background:linear-gradient(180deg,#f7f6f3 0%,#f1ede4 100%);overflow:hidden}
 .story-hero::after{content:"02";position:absolute;right:-10px;top:-30px;font-family:Georgia,serif;
   font-size:clamp(11rem,24vw,24rem);line-height:1;color:rgba(194,65,12,.055);pointer-events:none}
+.story-hero.first::after{content:"01"}
 .story-hero .wrap{position:relative;z-index:1}
+.story-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) clamp(220px,24vw,300px);gap:46px;align-items:end}
+.story-thumb{margin:0;justify-self:end;width:100%;max-width:300px}
+.story-thumb img{display:block;width:100%;height:auto;aspect-ratio:1;max-height:300px;
+  object-fit:cover;border:1px solid rgba(20,21,26,.14);
+  box-shadow:0 18px 44px rgba(20,21,26,.12);transform:rotate(1.2deg)}
+.story-thumb figcaption{font-size:.64rem;letter-spacing:.08em;color:var(--muted);
+  margin-top:10px;text-align:right;line-height:1.6}
 .story-kicker{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);
   font-weight:700;margin-bottom:26px}
 .story-title{font-family:"Songti SC","STSong","SimSun","Noto Serif SC",Georgia,serif;
@@ -301,6 +309,10 @@ footer h4{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:v
 @media(max-width:640px){
   .story-hero{padding:62px 0 34px}
   .story-hero::after{font-size:9rem;top:-8px;right:-4px}
+  .story-hero-grid{grid-template-columns:1fr;gap:22px}
+  .story-thumb{max-width:168px;justify-self:start}
+  .story-thumb img{max-height:168px}
+  .story-thumb figcaption{text-align:left}
   .story-title{font-size:clamp(2.7rem,12vw,4.2rem)}
   .story-dek{font-size:1.02rem}
   .story-cover img{max-height:52vh}
