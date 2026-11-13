@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+
+<html lang="zh-HK">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+
+  <!-- ===== SEO ===== -->
+  <!-- ===== SEO ===== -->
+
+  <title>建站選型：坑唔在模板，在「你改唔到」 | 鄭哥 Hany</title>
+  <meta name="description" content="一篇講「SaaS 建站 SEO 避坑」的文章，技術判斷七成對，但用兩個查無出處的精確數字（收錄成功率跌四成、冗餘代碼加 15% 慢 20%）去撐氣勢，最後落到自家產品。鄭哥點評：方向對唔等於數字真；模板可以換，權限換唔返。">
+  <meta name="keywords" content="鄭哥Hany,SaaS建站,SEO,canonical,robots,sitemap,選型,軟文,獨立站">
+  <meta name="author" content="鄭哥 / Hany">
+  <link rel="canonical" href="https://www.glomarket.online/post-2026-11-13-saas-seo-trap.html">
+  <meta property="og:title" content="建站選型：坑唔在模板，在「你改唔到」">
+  <meta property="og:description" content="一篇講「SaaS 建站 SEO 避坑」的文章，技術判斷七成對，但用兩個查無出處的精確數字（收錄成功率跌四成、冗餘代碼加 15% 慢 20%）去撐氣勢，最後落到自家產品。鄭哥點評：方向對唔等於數字真；模板可以換，權限換唔返。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.glomarket.online/post-2026-11-13-saas-seo-trap.html">
+  <meta property="og:image" content="https://www.glomarket.online/hany-saas-cover.webp">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="576">
+  <meta property="og:locale" content="zh_HK">
+  <meta property="og:site_name" content="鄭哥 Hany">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="建站選型：坑唔在模板，在「你改唔到」">
+  <meta name="twitter:description" content="一篇講「SaaS 建站 SEO 避坑」的文章，技術判斷七成對，但用兩個查無出處的精確數字（收錄成功率跌四成、冗餘代碼加 15% 慢 20%）去撐氣勢，最後落到自家產品。鄭哥點評：方向對唔等於數字真；模板可以換，權限換唔返。">
+  <meta name="twitter:image" content="https://www.glomarket.online/hany-saas-cover.webp">
+  <meta property="article:published_time" content="2026-11-13T19:30:00+08:00">
+  <meta property="article:section" content="建站與流量">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "建站選型：坑唔在模板，在「你改唔到」",
+    "description": "一篇講「SaaS 建站 SEO 避坑」的文章，技術判斷七成對，但用兩個查無出處的精確數字（收錄成功率跌四成、冗餘代碼加 15% 慢 20%）去撐氣勢，最後落到自家產品。鄭哥點評：方向對唔等於數字真；模板可以換，權限換唔返。",
+    "datePublished": "2026-11-14T00:48:04+08:00",
+    "dateModified": "2026-11-14T00:48:04+08:00",
+    "author": {"@type": "Person", "name": "鄭哥 / Hany"},
+    "publisher": {"@type": "Organization", "name": "鄭哥 Hany"},
+    "image": "https://www.glomarket.online/hany-saas-cover.webp",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.glomarket.online/post-2026-11-13-saas-seo-trap.html"},
+    "inLanguage": "zh-HK",
+    "articleSection": "建站與流量"
+  }
+  </script>
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<script type="speculationrules">
+{"prerender":[{"where":{"and":[
+  {"href_matches":"/*"},
+  {"not":{"href_matches":"/cdn-cgi/*"}},
+  {"not":{"selector_matches":"[target=_blank]"}}
+]},"eagerness":"moderate"}]}
+</script>
+<link rel="alternate" type="application/rss+xml" title="鄭哥 Hany — 生意筆記" href="/rss.xml">
+<link rel="stylesheet" href="/site.css">
+<style>
+:root {
+
+      --bg: #fafafa; --bg-elevated: #ffffff; --text: #1a1a1a; --text-secondary: #555555; --text-muted: #888888;
+
+      --accent: #c41e3a; --accent-light: rgba(196,30,58,0.08); --border: #e8e8e8; --border-light: #f0f0f0;
+
+      --radius: 12px; --radius-sm: 8px; --shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.02);
+
+      --shadow-hover: 0 4px 16px rgba(0,0,0,0.06), 0 12px 40px rgba(0,0,0,0.04); --max-width: 720px;
+
+    }
+html { scroll-behavior:smooth; }
+body {
+
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', 'PingFang HK', 'Noto Sans SC', sans-serif;
+
+      background: var(--bg); color: var(--text); line-height: 1.75; font-size: 16px; -webkit-font-smoothing: antialiased;
+
+    }
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+nav { background:#fff; border-bottom:1px solid #e8e8ed; padding:14px 0; position:sticky; top:0; z-index:1000; }
+nav .container { display:flex; justify-content:space-between; align-items:center; position:relative; }
+.logo { font-size:1.05rem; font-weight:700; color:#1a1a2e; }
+.hamburger { display:none; background:none; border:none; font-size:1.5rem; cursor:pointer; padding:4px 8px; }
+.nav-wrapper { display:flex; align-items:center; }
+.nav-links { display:flex; align-items:center; gap:20px; }
+nav a { text-decoration:none; color:#444; font-size:0.9rem; transition:color 0.2s; }
+nav a:hover, nav a.active { color:#e94560; }
+
+
+
+
+        
+
+    @media (max-width:768px) {
+
+      .hamburger { display:block; }
+
+      .nav-wrapper { display:none; position:absolute; top:100%; left:0; right:0; background:#fff; border-top:1px solid #e8e8ed; box-shadow:0 4px 12px rgba(0,0,0,.08); }
+
+      .nav-wrapper.open { display:block; }
+
+      .nav-links { flex-direction:column; align-items:stretch; gap:0; padding:8px 0; }
+
+      .nav-links > a, .lang-toggle { padding:12px 24px; border-bottom:1px solid #f0f0f5; width:100%; text-align:left; }
+
+      .nav-links > a:last-of-type { border-bottom:none; }
+
+      .lang-toggle { border-radius:0; }
+
+    }
+header { background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%); color: #fff; padding: 80px 0 60px; text-align:center; position: relative; overflow: hidden; }
+header::before { content:''; position:absolute; top: -30%; right: -10%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(196,30,58,0.15) 0%, transparent 70%); border-radius: 50%; }
+header .container { position:relative; z-index: 1; }
+header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.5px; }
+header h1 .en { font-size: 1.3rem; font-weight: 400; opacity: 0.7; display:block; margin-top: 8px; }
+header p { color: rgba(255,255,255,0.55); max-width: 480px; margin: 0 auto; font-size: 0.95rem; line-height: 1.7; }
+.section { padding: 56px 0; }
+.section-alt { background: var(--bg-elevated); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); }
+.section-header { margin-bottom: 32px; }
+.section-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.3px; }
+.section-sub { color: var(--text-muted); font-size: 0.95rem; }
+.post-list { display: flex; flex-direction: column; gap: 16px; }
+.post-card { background: var(--bg-elevated); border-radius: var(--radius); border: 1px solid var(--border-light); padding: 28px; transition: all 0.3s ease; }
+.post-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); border-color: var(--border); }
+.post-card:last-child { margin-bottom: 0; }
+.post-meta-top { display:flex; align-items:center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+.post-date { font-size: 0.8rem; color: var(--text-muted); font-family: 'SF Mono', monospace; }
+.post-tag { background: var(--accent-light); color: var(--accent); padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 500; }
+.post-card h3 { font-size: 1.15rem; margin-bottom: 8px; font-weight: 600; line-height: 1.4; }
+.post-card h3 a { text-decoration:none; color: var(--text); transition: color 0.2s; }
+.post-card h3 a:hover { color: var(--accent); }
+.post-card .en-title { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 10px; line-height: 1.5; }
+.post-card .excerpt { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px; }
+.post-card .read-more { font-size: 0.88rem; color: var(--accent); text-decoration:none; font-weight: 500; }
+.post-card .read-more:hover { text-decoration: underline; }
+.note-card {
+
+      background: linear-gradient(135deg, #fff5f5 0%, #fff0f0 100%);
+
+      border: 1px solid #ffe0e0; border-radius: var(--radius); padding: 20px 24px; margin: 20px 0; position: relative;
+
+    }
+.note-card::before { content: ''; position: absolute; top: 0; left: 24px; width: 60px; height: 4px; background: var(--accent); border-radius: 0 0 4px 4px; }
+.note-card h4 { font-size: 0.95rem; color: var(--accent); margin-bottom: 8px; font-weight: 600; }
+.note-card p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; }
+.category-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+.category-tag { background: var(--bg-elevated); border: 1px solid var(--border-light); padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; color: var(--text-secondary); cursor: pointer; transition: all 0.2s; }
+.category-tag:hover, .category-tag.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.cta-section { background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%); color: #fff; padding: 48px 0; text-align:center; position: relative; overflow: hidden; }
+.cta-section::before { content:''; position:absolute; bottom: -50%; left: -20%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(196,30,58,0.12) 0%, transparent 70%); border-radius: 50%; }
+.cta-section .container { position: relative; z-index: 1; }
+.cta-section h2 { font-size: 1.3rem; margin-bottom: 10px; font-weight: 600; }
+.cta-section p { color: rgba(255,255,255,0.5); font-size: 0.9rem; margin-bottom: 20px; }
+.cta-btn { display:inline-flex; align-items:center; gap: 8px; background: var(--accent); color: #fff; padding: 12px 28px; border-radius: var(--radius-sm); text-decoration:none; font-size: 0.9rem; font-weight: 500; transition: all 0.2s; }
+.cta-btn:hover { background: #a31830; transform: translateY(-1px); }
+footer { background: var(--bg-elevated); border-top: 1px solid var(--border-light); padding: 32px 0; text-align:center; }
+body.show-en .en-inline { display:inline; }
+body.show-en .cn-inline { display:none; }
+.en-inline, .cn-inline { display:inline; }
+
+
+    
+
+    @media (max-width: 640px) {
+
+      header h1 { font-size: 1.7rem; }
+
+      header h1 .en { font-size: 1.1rem; }
+
+      .post-card { padding: 20px; }
+
+    }
+.comments h2 { font-size: 1.3rem; font-weight: 600; margin-bottom: 24px; }
+.social-footer{background:#f0f0f5;padding:40px 0 32px;text-align:center;margin-top:48px;border-top:1px solid var(--border);overflow:hidden}
+
+.social-footer .container{max-width:960px;box-sizing:border-box}
+
+
+
+    @media (max-width:420px){}
+.copyright{font-size:.82rem;color:#999;margin-top:8px;padding:0 24px}
+img { max-width: 100%; height: auto; }
+
+    /* ===== 導航不再被擠壓換行（2026-10-07） ===== */
+    .logo { white-space: nowrap; flex: 0 0 auto; }
+    .nav-links > a, .nav-links .nav-parent, .nav-links .lang-toggle { white-space: nowrap; }
+    @media (min-width: 769px) {
+      .nav-wrapper { flex: 1 1 auto; min-width: 0; justify-content: flex-end; }
+      .nav-links { flex-wrap: nowrap; gap: 14px; }
+      .nav-links > a, .nav-links .nav-parent, .nav-links .lang-toggle {
+        flex: 0 0 auto; font-size: .88rem; padding: 8px 6px; }
+    }
+    @media (min-width: 769px) and (max-width: 1200px) {
+      .nav-links { gap: 7px; }
+      .nav-links > a, .nav-links .nav-parent { font-size: .82rem; padding: 7px 4px; }
+      .nav-links .lang-toggle { padding: 6px 10px; font-size: .78rem; }
+    }
+
+    /* ===== 導航不換行保險（2026-10-07） ===== */
+    @media (min-width: 769px) {
+      .nav-wrapper { overflow-x: auto; scrollbar-width: none; }
+      .nav-wrapper::-webkit-scrollbar { display: none; }
+      .nav-links { flex-wrap: nowrap; }
+      .nav-links > a, .nav-links .nav-parent, .nav-links .lang-toggle {
+        white-space: nowrap; flex: 0 0 auto; }
+    }
+    /* ===== 社交 footer 排列（2026-10-07 修正：先前漏了 media query 外層） ===== */
+    .social-footer h3 { font-size: .95rem; margin-bottom: 20px; color: #444;
+      font-weight: 600; }
+    .social-links { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;
+      align-items: stretch; margin: 0 auto 22px; padding: 0 16px; max-width: 780px;
+      box-sizing: border-box; }
+    .social-links a { flex: 0 1 calc(25% - 9px); display: flex; align-items: center;
+      justify-content: center; gap: 7px; color: #444; text-decoration: none;
+      font-size: .85rem; padding: 12px 10px; border: 1px solid #e0e0e0; border-radius: 10px;
+      background: #fff; transition: all .2s; box-sizing: border-box; white-space: nowrap;
+      line-height: 1.3; }
+    .social-links a:hover { color: var(--accent); border-color: var(--accent);
+      transform: translateY(-1px); box-shadow: 0 3px 10px rgba(0,0,0,.05); }
+    @media (max-width: 700px) {
+      .social-links { max-width: 520px; gap: 10px; }
+      .social-links a { flex: 0 1 calc(50% - 5px); font-size: .8rem; padding: 11px 8px; }
+    }
+    @media (max-width: 420px) {
+      .social-links { max-width: 320px; }
+      .social-links a { flex: 0 1 100%; }
+    }
+
+/* 本篇新增：正文配圖、圖說、資料卡、上／下一篇（site.css 未定義，故寫在頁面 <style> 內） */
+.post-figure{margin:28px auto;max-width:760px;}
+.post-figure img{width:100%;height:auto;border-radius:var(--radius);display:block;box-shadow:var(--shadow);}
+.post-figure figcaption{text-align:center;font-size:.83rem;color:var(--text-muted);margin-top:10px;line-height:1.6;}
+.fact-block{margin:2.2em 0;border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;background:var(--bg-elevated);}
+.fact-block h2{margin:0 0 12px;padding:0;border:none;font-size:1.05rem;}
+.fact-block table{width:100%;border-collapse:collapse;}
+.fact-block th,.fact-block td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--border-light);font-size:.92rem;vertical-align:top;}
+.fact-block th{width:32%;color:var(--text-muted);font-weight:600;white-space:nowrap;}
+.fact-block tr:last-child th,.fact-block tr:last-child td{border-bottom:none;}
+.prev-next{display:flex;flex-wrap:wrap;gap:14px;margin:2.6em 0 0;}
+.prev-next a{flex:1 1 240px;display:block;padding:16px 18px;border:1px solid var(--border-light);border-radius:var(--radius);text-decoration:none;background:var(--bg-elevated);}
+.prev-next a:hover{border-color:var(--accent);}
+.prev-next .pn-label{display:block;font-size:.75rem;color:var(--text-muted);margin-bottom:6px;}
+.prev-next .pn-title{display:block;font-size:.95rem;color:var(--text);line-height:1.5;}
+
+/* 本篇新增：來源連結還長，手機上唔好爆出版面 */
+.src{font-size:.85rem;color:var(--text-muted);margin:12px 0 0;}
+.src a{color:var(--accent);word-break:break-all;overflow-wrap:anywhere;}
+</style>
+
+
+</head>
+
+<body>
+
+<nav>
+
+    <div class="container">
+
+      <a href="index.html" class="logo">鄭哥 / Hany</a>
+
+      <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Open menu">☰</button>
+
+      <div class="nav-wrapper" id="navWrapper">
+
+        <div class="nav-links">
+
+          <a href="index.html"><span class="cn">首頁</span><span class="en">Home</span></a>
+
+          <button type="button" class="nav-parent" data-panel="articles" onclick="toggleNavPanel(this)" aria-expanded="false"><span class="cn">文章</span><span class="en">Articles</span> <span class="caret">▼</span></button>
+
+          <button type="button" class="nav-parent" data-panel="reviews" onclick="toggleNavPanel(this)" aria-expanded="false"><span class="cn">點評</span><span class="en">Reviews</span> <span class="caret">▼</span></button>
+
+          <button type="button" class="nav-parent" data-panel="topics" onclick="toggleNavPanel(this)" aria-expanded="false"><span class="cn">專題</span><span class="en">Collections</span> <span class="caret">▼</span></button><button type="button" class="nav-parent" data-panel="search" onclick="toggleNavPanel(this)" aria-expanded="false"><span class="cn">搜尋</span><span class="en">Search</span> <span class="caret">▼</span></button>
+          <button type="button" class="nav-parent" data-panel="about" onclick="toggleNavPanel(this)" aria-expanded="false"><span class="cn">關於</span><span class="en">About</span> <span class="caret">▼</span></button>
+
+          <button type="button" class="nav-parent" data-panel="links" onclick="toggleNavPanel(this)" aria-expanded="false"><span class="cn">連結</span><span class="en">Links</span> <span class="caret">▼</span></button>
+
+          <a href="contact.html"><span class="cn">聯繫</span><span class="en">Contact</span></a>
+
+          <button class="lang-toggle" onclick="toggleLang()" id="langBtn">EN</button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  <div class="nav-panels" id="navPanels" data-open="">
+  <div class="nav-panel" data-id="articles" style="display:none">
+    <div class="inner">
+      <div class="panel-title"><span class="cn">文章</span><span class="en">Articles</span></div>
+      <a href="blog.html"><span class="cn">全部文章</span><span class="en">All articles</span></a>
+      <a href="search.html?q=外貿"><span class="cn">外貿故事</span><span class="en">Trade stories</span></a>
+      <a href="search.html?q=AI"><span class="cn">AI 點評</span><span class="en">AI</span></a>
+      <a href="search.html?q=城市"><span class="cn">城市觀察</span><span class="en">City notes</span></a>
+      <a href="search.html?q=文化"><span class="cn">文化</span><span class="en">Culture</span></a>
+      <a href="search.html?q=行業"><span class="cn">行業觀察</span><span class="en">Industry</span></a>
+      <a href="search.html?q=產品"><span class="cn">產品創新</span><span class="en">Products</span></a>
+    </div>
+  </div>
+  <div class="nav-panel" data-id="reviews" style="display:none">
+    <div class="inner">
+      <div class="panel-title"><span class="cn">點評</span><span class="en">Reviews</span></div>
+      <a href="xhs.html"><span class="cn">全部點評</span><span class="en">All reviews</span></a>
+      <a href="search.html?q=AI"><span class="cn">AI 點評</span><span class="en">AI</span></a>
+      <a href="search.html?q=外銷"><span class="cn">外銷點評</span><span class="en">Export</span></a>
+      <a href="search.html?q=茶"><span class="cn">茶葉點評</span><span class="en">Tea</span></a>
+      <a href="search.html?q=文化"><span class="cn">文化點評</span><span class="en">Culture</span></a>
+      <a href="search.html?q=行業"><span class="cn">行業觀察</span><span class="en">Industry</span></a>
+    </div>
+  </div>
+  <div class="nav-panel" data-id="topics" style="display:none"><div class="inner"><div class="panel-title"><span class="cn">專題</span><span class="en">Collections</span></div><a href="topics.html"><span class="cn">全部主題</span><span class="en">All topics</span></a><a href="topics.html#trade"><span class="cn">外貿實戰</span><span class="en">Trade</span></a><a href="topics.html#ai"><span class="cn">AI 與算力</span><span class="en">AI &amp; compute</span></a><a href="topics.html#products"><span class="cn">產品回憶</span><span class="en">Products</span></a><a href="topics.html#people"><span class="cn">人物故事</span><span class="en">People</span></a><a href="topics.html#industry"><span class="cn">行業觀察</span><span class="en">Industry</span></a><a href="topics.html#city"><span class="cn">城市觀察</span><span class="en">City notes</span></a><a href="topics.html#culture"><span class="cn">文化與歷史</span><span class="en">Culture</span></a><a href="topics.html#affairs"><span class="cn">時事點評</span><span class="en">Current affairs</span></a><a href="topics.html#tea"><span class="cn">茶葉點評</span><span class="en">Tea</span></a><a href="topics.html#life"><span class="cn">人生感悟</span><span class="en">Life</span></a><a href="products.html"><span class="cn">產品回憶專題</span><span class="en">Product memories</span></a></div></div><div class="nav-panel" data-id="search" style="display:none"><div class="inner"><div class="panel-title"><span class="cn">搜尋</span><span class="en">Search</span></div><form action="search.html" method="get" style="width:100%;display:flex;gap:8px;margin:4px 0 8px"><input type="search" name="q" placeholder="打關鍵字，例如：土耳其、AI 算力…" style="flex:1;min-width:0;padding:9px 13px;border:1px solid var(--border-light);border-radius:8px;font-size:.88rem;font-family:inherit;outline:none;box-sizing:border-box"><button type="submit" style="padding:9px 18px;border:none;border-radius:8px;background:var(--accent);color:#fff;font-size:.85rem;font-weight:600;cursor:pointer;font-family:inherit">搜尋</button></form><a href="search.html"><span class="cn">去搜尋頁</span><span class="en">Open search page</span></a><a href="topics.html"><span class="cn">按主題瀏覽</span><span class="en">Browse by topic</span></a></div></div><div class="nav-panel" data-id="about" style="display:none"><div class="inner"><div class="panel-title"><span class="cn">關於</span><span class="en">About</span></div><a href="about.html"><span class="cn">關於鄭哥</span><span class="en">About Hany</span></a><a href="about.html#business"><span class="cn">我做緊乜</span><span class="en">What I do</span></a><a href="about.html#invest"><span class="cn">我投資年輕創業者</span><span class="en">I back young founders</span></a><a href="products.html"><span class="cn">產品回憶</span><span class="en">Product memories</span></a><a href="contact.html"><span class="cn">聯繫鄭哥</span><span class="en">Contact</span></a><a href="/handsome/"><span class="cn">HANDSOME 訂造奢侈品</span><span class="en">HANDSOME (a brand I invested in)</span></a></div></div><div class="nav-panel" data-id="links" style="display:none">
+    <div class="inner">
+      <div class="panel-title"><span class="cn">連結</span><span class="en">Links</span></div>
+      <a href="links.html"><span class="cn">全部連結</span><span class="en">All links</span></a>
+      <a href="xhs.html"><span class="cn">小紅書</span><span class="en">Xiaohongshu</span></a>
+      <a href="youtube.html"><span class="cn">YouTube</span><span class="en">YouTube</span></a>
+      <a href="linkedin.html"><span class="cn">LinkedIn</span><span class="en">LinkedIn</span></a>
+      <a href="facebook.html"><span class="cn">Facebook</span><span class="en">Facebook</span></a>
+      <a href="instagram.html"><span class="cn">Instagram</span><span class="en">Instagram</span></a>
+      <a href="tiktok.html"><span class="cn">TikTok</span><span class="en">TikTok</span></a>
+      <a href="twitter.html"><span class="cn">X / Twitter</span><span class="en">X / Twitter</span></a>
+    </div>
+  </div>
+</div>
+  
+  </nav>
+
+<main class="search-page"><div class="search-inner" style="max-width:820px"><article>
+  <div class="container">
+    <header class="post-header">
+      <h1><span class="cn">建站選型：坑唔在模板，在「你改唔到」</span><span class="en">Choosing a Website Builder: The Trap Isn't the Template, It's What You Can't Change</span></h1>
+      <div class="post-meta">
+        <time datetime="2026-11-14T00:48:04+08:00"><span class="cn">2026年11月13日</span><span class="en">Nov 13, 2026</span></time>
+        <span class="tag"><span class="cn">建站與流量</span><span class="en">Web &amp; SEO</span></span>
+        <span class="tag"><span class="cn">深圳・全國</span><span class="en">Shenzhen &amp; nationwide</span></span>
+      </div>
+    </header>
+
+        <div class="post-content">
+
+      <div class="cn">
+
+      <figure class="post-figure">
+        <img src="hany-saas-cover.webp" alt="封面：夜晚書桌上開住一部筆記本電腦，屏幕微光照住旁邊一杯茶，前景深色木桌，右下角平坦深色" loading="lazy" width="1024" height="576">
+        <figcaption>封面：夜晚書桌上開住一部筆記本電腦，屏幕微光照住旁邊一杯茶，前景深色木桌，右下角平坦深色<br><span class="cn">圖片由 AI輔助創作（Kolors）</span><span class="en">Image by AI (Kolors)</span></figcaption>
+      </figure>
+      <blockquote>【鄭哥點評】欄目：鄭哥博客點評｜日期：2026-11-13</blockquote>
+
+      <p>前排睇到一篇講「SaaS 建站 SEO 避坑」嘅文章，頭半篇我一路睇一路點頭，睇到最後一段，發現原來係賣嘢。我唔反對人賣嘢——我自己都賣嘢——但呢種寫法值得拆一拆：邊幾句係真技術判斷，邊幾句係用嚟撐氣勢嘅假數字。</p>
+
+      <figure class="post-figure">
+        <img src="hany-saas-scene1.webp" alt="場景一：一排排一模一樣嘅方格展示櫃，每格放住同一款產品，燈光冷白，右下角平坦深色" loading="lazy" width="1024" height="576">
+        <figcaption>圖：模板化本身唔係罪，罪在一模一樣。<br><span class="cn">圖片由 AI輔助創作（Kolors）</span><span class="en">Image by AI (Kolors)</span></figcaption>
+      </figure>
+      <h2>一、真嘅部分：模板、代碼、權限，呢三樣真係會卡死人</h2>
+
+      <p>先講對嘅。文章話通用 SaaS 產品有三大結構性問題：模板固化、代碼封閉、權限鎖死。呢三樣，我一個都唔會駁。</p>
+
+      <p>因為 canonical 標籤、301 跳轉、404 頁、robots.txt、sitemap 呢啲嘢，全部喺「網站根目錄」同「頁面頭部」呢兩個層次——唔開放畀你，你就算有幾好嘅內容策略，都只係喺一堆你改唔到嘅結構上面貼圖文。</p>
+
+      <p>我自家個站就係反面例子：每一頁嘅 canonical、結構化數據、sitemap 同站內搜尋索引，都係我自己產生、自己推上去嘅。所以「改一個標籤」對我嚟講係五分鐘嘅事；對一個模板站嚟講，係「對唔住，呢個要等產品部排期」。呢個差距，唔係錢嘅差距，係權限嘅差距。</p>
+
+      <p>百度搜索資源平台嘅《搜索資源平台使用指南》講得好清楚：抓取診斷、sitemap 提交、robots 設置，都係站長自己喺後台做嘅基本動作。問題係——如果平台唔畀你碰根目錄，呢啲官方工具你用都無從用起。</p>
+
+      <p>來源：百度搜索資源平台《搜索資源平台使用指南》｜<a href="https://ziyuan.baidu.com/college/articleinfo?id=3329">https://ziyuan.baidu.com/college/articleinfo?id=3329</a></p>
+
+      <figure class="post-figure">
+        <img src="hany-saas-scene2.webp" alt="場景二：白牆上一塊寫滿數字嘅白板，部分數字被擦到模糊，右下角平坦深色" loading="lazy" width="1024" height="576">
+        <figcaption>圖：精確到小數，唔等於有調研。<br><span class="cn">圖片由 AI輔助創作（Kolors）</span><span class="en">Image by AI (Kolors)</span></figcaption>
+      </figure>
+      <h2>二、唔真嘅部分：兩個「精確到小數」嘅數字</h2>
+
+      <p>文章有兩句，我睇完停低咗。第一句：「行業數據顯示，同模板站點佔比過高時，域名整體原創度評分會持續走低，新頁面收錄成功率下降 40% 以上。」第二句：「實測數據顯示，頁面冗餘代碼每增加 15%，頁面加載速度下降 20%。」</p>
+
+      <p>兩句都寫住「行業數據顯示」同「實測數據顯示」。但樣本幾大？邊個測？口徑係乜？全部冇。一篇三千字嘅文章，用兩個咁精確嘅數字，卻一個出處都唔畀。</p>
+
+      <p>我嘅判斷係：方向可能對，數字係作出嚟嘅。冗餘代碼確實拖慢頁面，同質化模板確實有風險——呢啲都合邏輯；但「跌四成」「慢兩成」呢種精確度，冇公開研究支撐得起。</p>
+
+      <p>呢個係內容行業嘅通病：用一個唔存在嘅數字，去支撐一個大致正確嘅方向。讀者事後記住嘅係個數字，唔係個方向——而個數字，係假嘅。</p>
+
+      <p>來源：今日頭條《SaaS建站SEO避坑：模板固化、代碼封閉等常見選型誤區拆解》（卡皮巴拉在野區），2026-10-19｜<a href="https://www.toutiao.com/article/7698322190105592355/">https://www.toutiao.com/article/7698322190105592355/</a></p>
+
+      <figure class="post-figure">
+        <img src="hany-saas-scene3.webp" alt="場景三：一張對比表格貼在牆上，四行格子，最後一行被紅色筆圈住，右下角平坦深色" loading="lazy" width="1024" height="576">
+        <figcaption>圖：四行對比表，最後一行永遠係答案。<br><span class="cn">圖片由 AI輔助創作（Kolors）</span><span class="en">Image by AI (Kolors)</span></figcaption>
+      </figure>
+      <h2>三、最要留意：文章最後落到邊個平台</h2>
+
+      <p>文章中段做咗一個「主流建站平台 SEO 能力橫向對比」，四行表格：兩個平台寫到中規中矩，另外兩個名字——彼確定制、廷書建站——公開資料幾乎查唔到，一個被評「基礎適配」、一個被評「高度適配但只適配大型企業」。</p>
+
+      <p>跟住結論自然出現：通用輕量平台有短板，高端定制太貴，於是「某平台在同價位產品中具備突出優勢」。</p>
+
+      <p>呢個結構我太熟：先立一個標準（模板自由度、代碼權限、根目錄部署），再用對比表做排除法，最後只剩一個選項。唔係罪——但你睇嘅時候要清楚，自己睇緊嘅係評測，定係廣告。</p>
+
+      <p>順帶講一句：Bing 官方嘅站長指引（Bing Webmaster Tools Help）講嘅係內容質量、可抓取性、清晰結構呢類基本要求，從來冇一條講「模板同質化會令收錄率跌四成」——因為呢個數字唔存在於任何官方文件。</p>
+
+      <p>來源：Bing Webmaster Tools Help《Bing Webmaster Tools - Help Documentation》｜<a href="https://www.bing.com/webmasters/help/webmasters-guidelines-30fba23a">https://www.bing.com/webmasters/help/webmasters-guidelines-30fba23a</a></p>
+
+      <figure class="post-figure">
+        <img src="hany-saas-scene4.webp" alt="場景四：一張清單紙放在桌上，四行手寫項目，旁邊一支筆，右下角平坦深色" loading="lazy" width="1024" height="576">
+        <figcaption>圖：簽約前試三分鐘，好過睇四十頁 PPT。<br><span class="cn">圖片由 AI輔助創作（Kolors）</span><span class="en">Image by AI (Kolors)</span></figcaption>
+      </figure>
+      <h2>四、選型真正要問嘅四個問題</h2>
+
+      <p>第一，我改唔改得到 canonical、301、404？呢三樣係收錄嘅地基。改唔到，你唔係喺優化，你係喺修補。</p>
+
+      <p>第二，我碰唔碰得到根目錄？robots.txt、sitemap、搜索引擎嘅站點驗證檔，全部要放喺根目錄。碰唔到，官方站長工具一半功能你用唔到。</p>
+
+      <p>第三，我走嘅時候，資料帶唔帶得走？文章講「數據遷移壁壘」呢一點，係全文最值錢嘅一句。我見過太多公司，SEO 做得唔錯，想換站先發現文章、URL 結構、收錄記錄全部攞唔走，幾年功夫一夜清零。</p>
+
+      <p>第四，收費版解鎖嘅係「功能」定係「權限」？功能可以等——少一個表單、少一個模板，你照樣做生意；權限決定生死——改唔到 canonical，你嘅內容寫得再好都上唔到位。</p>
+
+      <p>來源：今日頭條《SaaS建站SEO避坑：模板固化、代碼封閉等常見選型誤區拆解》（卡皮巴拉在野區），2026-10-19｜<a href="https://www.toutiao.com/article/7698322190105592355/">https://www.toutiao.com/article/7698322190105592355/</a></p>
+
+      <figure class="post-figure">
+        <img src="hany-saas-scene5.webp" alt="場景五：一個行李箱半開，裡面整齊放住硬碟同文件夾，旁邊一道半開的門，右下角平坦深色" loading="lazy" width="1024" height="576">
+        <figcaption>場景五：一個行李箱半開，裡面整齊放住硬碟同文件夾，旁邊一道半開的門，右下角平坦深色<br><span class="cn">圖片由 AI輔助創作（Kolors）</span><span class="en">Image by AI (Kolors)</span></figcaption>
+      </figure>
+      <h2>五、鄭哥點評</h2>
+
+      <p>呢篇文章嘅技術判斷七成對，但佢用一個唔存在嘅精確數字，去支撐一個大致正確嘅方向。呢個組合最難防——因為你反駁唔到方向，又驗證唔到數字。</p>
+
+      <p>選型唔係揀最強，係揀你三年後走得甩嗰個。今日最強嘅功能，明年就係標配；今日鎖死嘅權限，三年後仍然鎖死。</p>
+
+      <p>所以簽約前，唔好睇 PPT，叫對方開個後台帳號畀你試三件事：改一個 canonical、傳一個 robots.txt、導出一份內容。三分鐘試完，好過聽四十頁承諾。</p>
+
+      <p>最後一句：模板可以換，權限換唔返。你唔需要一個完美嘅建站工具，你需要一個唔會綁死你嘅工具。</p>
+
+      </div>
+
+      <div class="en">
+
+      <figure class="post-figure">
+        <img src="hany-saas-cover.webp" alt="Cover: a laptop open on a desk at night, its screen light falling on a cup of tea beside it, dark wooden desk in the foreground, the bottom right corner plain dark surface, realistic photograph" loading="lazy" width="1024" height="576">
+        <figcaption>Cover: a laptop open on a desk at night, its screen light falling on a cup of tea beside it, dark wooden desk in the foreground, the bottom right corner plain dark surface, realistic photograph<br><span class="cn">圖片由 AI輔助創作（Kolors）</span><span class="en">Image by AI (Kolors)</span></figcaption>
+      </figure>
+      <blockquote>\[Zheng Ge's Take\] Column: Zheng Ge's blog commentary | Date: 2026-11-13</blockquote>
+
+      <p>I read an article recently about avoiding SEO traps when building a site on a SaaS platform. For the first half I was nodding along; by the last section I realised it was a sales piece. I have nothing against selling - I sell things myself - but the way it is built deserves taking apart: which sentences are real technical judgement, and which are invented numbers used for momentum.</p>
+
+      <figure class="post-figure">
+        <img src="hany-saas-scene1.webp" alt="Scene 1: rows of identical display cubicles each holding the same product, cold white light, dark plain floor in the bottom right corner, realistic photograph" loading="lazy" width="1024" height="576">
+        <figcaption>Templating is not the sin; sameness is.<br><span class="cn">圖片由 AI輔助創作（Kolors）</span><span class="en">Image by AI (Kolors)</span></figcaption>
+      </figure>
+      <h2>1. The true part: templates, code and permissions really do strangle a site</h2>
+
+      <p>Let me start with what is right. The article says generic SaaS builders carry three structural problems: frozen templates, closed code and locked permissions. I would not argue with any of the three.</p>
+
+      <p>The reason is that canonical tags, 301 redirects, 404 pages, robots.txt and sitemaps all sit at two levels - the site root and the page head. If those are not open to you, then no matter how good your content strategy is, you are pasting text and pictures onto a structure you cannot change.</p>
+
+      <p>My own site is the counter-example: every page's canonical, its structured data, the sitemap and the on-site search index are generated and pushed by me. Changing a tag takes five minutes. On a template platform it takes a ticket and a product roadmap. That gap is not a gap in money, it is a gap in permission.</p>
+
+      <p>Baidu's Search Resource Platform guide is explicit that crawl diagnostics, sitemap submission and robots settings are basic chores a site owner performs in the console. The catch: if the platform will not let you touch the root directory, none of those official tools are available to you at all.</p>
+
+      <p>Source: 百度搜索資源平台《搜索資源平台使用指南》 | <a href="https://ziyuan.baidu.com/college/articleinfo?id=3329">https://ziyuan.baidu.com/college/articleinfo?id=3329</a></p>
+
+      <figure class="post-figure">
+        <img src="hany-saas-scene2.webp" alt="Scene 2: a whiteboard covered in numbers on a plain wall, some of them half-erased and smudged, dark plain floor in the bottom right corner, realistic photograph" loading="lazy" width="1024" height="576">
+        <figcaption>Precision to the decimal point is not the same as research.<br><span class="cn">圖片由 AI輔助創作（Kolors）</span><span class="en">Image by AI (Kolors)</span></figcaption>
+      </figure>
+      <h2>2. The untrue part: two figures precise to the percentage point</h2>
+
+      <p>Two sentences made me stop. The first: 'Industry data shows that when too many sites share one template, a domain's overall originality score keeps falling and the success rate for indexing new pages drops by more than 40 per cent.' The second: 'Measured data shows that for every 15 per cent increase in redundant code, page load speed falls by 20 per cent.'</p>
+
+      <p>Both are introduced as industry data and measured data. How large was the sample? Who measured it? What was the method? Nothing. A three-thousand-character article spends two figures of that precision and offers not one source.</p>
+
+      <p>My reading: the direction may be right, the numbers are invented. Redundant code does slow pages down; template homogeneity is a real risk. Both are logical. But 'down 40 per cent' and 'slower by 20 per cent' is a level of precision no public study can support.</p>
+
+      <p>This is a habit of the content industry: use a number that does not exist to prop up a direction that is broadly correct. The reader remembers the number, not the direction - and the number is fake.</p>
+
+      <p>Source: 今日頭條《SaaS建站SEO避坑：模板固化、代碼封閉等常見選型誤區拆解》（卡皮巴拉在野區），2026-10-19 | <a href="https://www.toutiao.com/article/7698322190105592355/">https://www.toutiao.com/article/7698322190105592355/</a></p>
+
+      <figure class="post-figure">
+        <img src="hany-saas-scene3.webp" alt="Scene 3: a comparison table pinned to a wall with four rows of boxes, the last row circled in red ink, dark plain floor in the bottom right corner, realistic photograph" loading="lazy" width="1024" height="576">
+        <figcaption>In a four-row comparison table, the last row is always the answer.<br><span class="cn">圖片由 AI輔助創作（Kolors）</span><span class="en">Image by AI (Kolors)</span></figcaption>
+      </figure>
+      <h2>3. The part to watch most: where the article ends up</h2>
+
+      <p>Halfway through, the piece runs a 'side-by-side comparison of SEO capability across mainstream builders' with four rows: two platforms described in moderate terms, and two names - Beique Custom and Tingshu - for which almost nothing can be found publicly, one judged 'basic', the other 'highly capable but only for large enterprises'.</p>
+
+      <p>Then the conclusion arrives on its own: generic lightweight platforms have shortcomings, high-end custom work is too expensive, and therefore 'one platform holds a clear advantage at the same price point'.</p>
+
+      <p>I know this structure well: establish the criteria (template freedom, code access, root deployment), use a comparison table to eliminate options, leave exactly one. There is no crime in it - but when you read it you should know whether you are reading a review or an advertisement.</p>
+
+      <p>One footnote: Bing's official webmaster guidance talks about content quality, crawlability and clear structure. Not one line says template homogeneity cuts indexing rates by forty per cent - because that figure does not exist in any official document.</p>
+
+      <p>Source: Bing Webmaster Tools Help《Bing Webmaster Tools - Help Documentation》 | <a href="https://www.bing.com/webmasters/help/webmasters-guidelines-30fba23a">https://www.bing.com/webmasters/help/webmasters-guidelines-30fba23a</a></p>
+
+      <figure class="post-figure">
+        <img src="hany-saas-scene4.webp" alt="Scene 4: a checklist on paper on a desk with four handwritten lines, a pen beside it, dark plain surface in the bottom right corner, realistic photograph" loading="lazy" width="1024" height="576">
+        <figcaption>Three minutes of testing beats forty slides of deck.<br><span class="cn">圖片由 AI輔助創作（Kolors）</span><span class="en">Image by AI (Kolors)</span></figcaption>
+      </figure>
+      <h2>4. The four questions that actually decide the choice</h2>
+
+      <p>First: can I change canonical, 301 and 404? Those three are the foundation of indexing. If I cannot change them, I am not optimising, I am patching.</p>
+
+      <p>Second: can I reach the root directory? robots.txt, sitemaps and search-engine verification files all have to live there. If I cannot reach it, half the official webmaster tools are closed to me.</p>
+
+      <p>Third: when I leave, can I take the data? The article's point about a migration barrier is the most valuable line in it. I have seen too many companies doing decent SEO discover that when they want to switch platforms, the articles, URL structure and indexing history cannot be exported - years of work reset overnight.</p>
+
+      <p>Fourth: does the paid tier unlock features or permissions? Features can wait - one fewer form, one fewer template, and you still trade. Permissions decide whether you live: if you cannot touch canonical, no amount of good writing will rank.</p>
+
+      <p>Source: 今日頭條《SaaS建站SEO避坑：模板固化、代碼封閉等常見選型誤區拆解》（卡皮巴拉在野區），2026-10-19 | <a href="https://www.toutiao.com/article/7698322190105592355/">https://www.toutiao.com/article/7698322190105592355/</a></p>
+
+      <figure class="post-figure">
+        <img src="hany-saas-scene5.webp" alt="Scene 5: a half-open suitcase with hard drives and folders packed neatly inside, a door standing ajar beside it, dark plain floor in the bottom right corner, realistic photograph" loading="lazy" width="1024" height="576">
+        <figcaption>Scene 5: a half-open suitcase with hard drives and folders packed neatly inside, a door standing ajar beside it, dark plain floor in the bottom right corner, realistic photograph<br><span class="cn">圖片由 AI輔助創作（Kolors）</span><span class="en">Image by AI (Kolors)</span></figcaption>
+      </figure>
+      <h2>5. Zheng Ge's Take</h2>
+
+      <p>Seventy per cent of this article's technical judgement is right, but it props a broadly correct direction on a precise number that does not exist. That combination is the hardest to defend against, because you cannot argue with the direction and you cannot verify the number.</p>
+
+      <p>Choosing a platform is not about picking the strongest one; it is about picking the one you can walk away from in three years. Today's best feature is next year's standard. Today's locked permission is still locked in three years.</p>
+
+      <p>So before signing, skip the deck. Ask for a trial account and test three things: change a canonical, upload a robots.txt, export your content. Three minutes of testing beats forty slides of promises.</p>
+
+      <p>One last line: a template can be replaced, a permission cannot be taken back. You do not need a perfect website builder. You need one that will not tie you down.</p>
+
+      </div>
+
+    </div>
+
+    <nav class="prev-next">
+      <a href="blog.html" class="pn-card pn-prev">
+        <span class="pn-label"><span class="cn">← 最新文章列表</span><span class="en">← All posts</span></span>
+        <span class="pn-title"><span class="cn">返回文章列表</span><span class="en">Back to all posts</span></span>
+      </a>
+      <a href="topics.html#business" class="pn-card pn-next">
+        <span class="pn-label"><span class="cn">相關閱讀</span><span class="en">Related</span></span>
+        <span class="pn-title"><span class="cn">《商業模式：更多同類文章》</span><span class="en">Business models: more like this</span></span>
+      </a>
+    </nav>
+
+    <div class="post-footer">
+      <p><span class="cn">發布於 2026年11月13日 | 鄭哥 Hany</span><span class="en">Published 2026-11-13 | Hany</span></p>
+      <div class="tags">
+        <span class="tag"><span class="cn">#建站</span><span class="en">#WebBuild</span></span>
+        <span class="tag"><span class="cn">#SEO</span><span class="en">#SEO</span></span>
+        <span class="tag"><span class="cn">#選型</span><span class="en">#Selection</span></span>
+        <span class="tag"><span class="cn">#鄭哥點評</span><span class="en">#ZhengGeTake</span></span>
+      </div>
+    </div>
+
+    <div class="author-card">
+      <img src="hany-portrait.webp" alt="鄭哥 Hany">
+      <div>
+        <h4><span class="cn">關於作者</span><span class="en">About the Author</span></h4>
+        <p><span class="cn">鄭哥，90年代大學畢業，26年橫跨電子、家電、服裝、珠寶、教育、AI算力多個行業。做過中學教師、翻譯、外貿，現在搞七善門科技和星辰算力。口頭禪：「點解唔得？」</span><span class="en">Hany, university grad from the 90s, 26 years across electronics, appliances, fashion, jewelry, education, and AI compute. Former teacher, translator, trader. Now running Qishanmen Tech and Star Compute. Catchphrase: "Why not?"</span></p>
+      </div>
+    </div>
+
+    <div class="next-post">
+      <p><span class="cn">📖 推薦閱讀：</span><span class="en">📖 Read next:</span></p>
+      <p><a href="blog.html"><span class="cn">← 返回文章列表</span><span class="en">← Back to all posts</span></a></p>
+    </div>
+  </div>
+</article></div></main>
+
+<footer class="social-footer">
+
+    <div class="container">
+
+      <h3><span class="cn">鄭哥社群 / Follow on Social</span><span class="en">Follow Hany on Social</span></h3>
+
+      <div class="social-links">
+
+        <a href="xhs.html">📕 小紅書 Xiaohongshu</a>
+
+        <a href="youtube.html">📺 YouTube</a>
+
+        <a href="linkedin.html">💼 LinkedIn</a>
+
+        <a href="facebook.html">📘 Facebook</a>
+
+        <a href="instagram.html">📸 Instagram</a>
+
+        <a href="tiktok.html">🎵 TikTok</a>
+
+        <a href="twitter.html">🐦 Twitter / X</a>
+
+      </div>
+
+      <p class="copyright">© 2026 鄭哥 / Hany · 七善門科技 · 星辰算力 · 香港旺角</p>
+
+    </div>
+
+  </footer>
+
+
+
+
+
+  <script>
+
+    function toggleLang() {
+
+      document.body.classList.toggle('show-en');
+
+      const btn = document.getElementById('langBtn');
+
+      btn.textContent = document.body.classList.contains('show-en') ? '中' : 'EN';
+
+      localStorage.setItem('lang', document.body.classList.contains('show-en') ? 'en' : 'cn');
+
+    }
+
+
+
+    if (localStorage.getItem('lang') === 'en') {
+
+      document.body.classList.add('show-en');
+
+      const langBtn = document.getElementById('langBtn');
+
+      if (langBtn) langBtn.textContent = '中';
+
+    }
+
+  </script>
+
+
+
+<script>
+/* ===== 手機導航內聯手風琴（2026-10-08）=====
+   修復三件事：
+   1) 手機點一級項目（文章／點評／專題／搜尋／關於／連結）時，toggleNavPanel() 會開
+      .nav-panels，而 site.css 的 nav:has(.nav-panels.open) .nav-wrapper.open{display:none}
+      會連整個漢堡選單一齊隱藏 —— 二級連結就變成一個脫離選單、被 flex 壓到只剩
+      58px 闊的長面板（實測 320px／375px）。該規則已移除。
+   2) 16 頁（about / blog / contact / 6 個社交頁 / products / search / topics / xhs）
+      的漢堡按鈕 onclick="toggleMobileMenu()"，但呢個 function 從來冇定義過，
+      點一下直接 ReferenceError，選單完全開唔到。下面的 navInit() 會直接綁定
+      點擊事件（唔再靠 inline onclick），所以全部頁面都由同一段程式控制。
+   3) 鍵盤：Escape 同時收埋選單同手風琴，焦點交返漢堡按鈕。
+
+   注意：呢段註解唔可以出現 HTML 標籤寫法（例如 script 的開標籤），
+   否則 HTML parser 會提早結束呢個 inline script，後面全部程式都唔會執行。
+
+   手機（≤768px）：一級項目在選單內、按鈕正下方展開自己的二級連結，再點收埋。
+   桌面（≥769px）：完全保留原本 .nav-panels 面板機制，一行都唔改。 */
+function navIsMobile(){
+  return window.matchMedia && window.matchMedia('(max-width:768px)').matches;
+}
+function navWrapperEl(){ return document.getElementById('navWrapper'); }
+function navHamburgerEl(){ return document.querySelector('.hamburger'); }
+function navMenuOpen(){
+  var w=navWrapperEl();
+  return !!(w && (' '+w.className+' ').indexOf(' open ')>-1);
+}
+/* 由選單推導漢堡按鈕狀態：即使頁面自己的 inline onclick 中途干預，最後都一致。 */
+function navSyncMenu(){
+  var h=navHamburgerEl();
+  if(h && h.getAttribute('aria-expanded')!==null){
+    h.setAttribute('aria-expanded', navMenuOpen()?'true':'false');
+  }
+}
+/* 取得（首次會建立）某個一級項目對應的內聯手風琴容器。 */
+function navAccordionFor(btn){
+  var panel=btn.parentNode;
+  while(panel && !(panel.className||'').match(/(^|\s)nav-links(\s|$)/)) panel=panel.parentNode;
+  if(!panel) return null;
+  var id=btn.getAttribute('data-panel');
+  var acc=panel.querySelector('.nav-accordion[data-panel="'+id+'"]');
+  if(!acc){
+    var src=document.querySelector('.nav-panel[data-id="'+id+'"]');
+    if(!src) return null;
+    acc=document.createElement('div');
+    acc.className='nav-accordion';
+    acc.setAttribute('data-panel',id);
+    if(btn.nextSibling) panel.insertBefore(acc,btn.nextSibling);
+    else panel.appendChild(acc);
+    /* 面板裡的 .panel-title 會重複一級項目名稱，抽走。 */
+    var tmp=document.createElement('div');
+    tmp.innerHTML=src.innerHTML;
+    var titles=tmp.querySelectorAll('.panel-title');
+    for(var t=0;t<titles.length;t++) titles[t].parentNode.removeChild(titles[t]);
+    while(tmp.firstChild) acc.appendChild(tmp.firstChild);
+  }
+  return acc;
+}
+function navSetExpanded(btn,on){
+  btn.setAttribute('aria-expanded', on?'true':'false');
+  var acc=navAccordionFor(btn);
+  if(acc){ if(on) acc.classList.add('open'); else acc.classList.remove('open'); }
+}
+/* 手機：切換單一項目的內聯展開。 */
+function navToggleAccordion(btn){
+  var acc=navAccordionFor(btn);
+  if(!acc) return;
+  var on=!acc.classList.contains('open');
+  navSetExpanded(btn,on);
+  try{ acc.scrollIntoView({block:'nearest'}); }catch(e){}
+}
+function navCloseAll(){
+  var bs=document.querySelectorAll('.nav-links .nav-parent');
+  for(var i=0;i<bs.length;i++) navSetExpanded(bs[i],false);
+}
+function navCloseMenu(){
+  var w=navWrapperEl(), h=navHamburgerEl();
+  if(w) w.className=(' '+w.className+' ').replace(' open ',' ').replace(/\s+/g,' ').replace(/^ | $/g,'');
+  navSyncMenu();
+  navCloseAll();
+}
+function navOpenMenu(){
+  var w=navWrapperEl();
+  if(w && (' '+w.className+' ').indexOf(' open ')<0) w.className=(w.className+' open').replace(/\s+/g,' ').replace(/^ | $/g,'');
+  navSyncMenu();
+}
+/* 漢堡按鈕：由本程式獨佔。
+   用 capture 階段攔截，順序係 capture -> target，所以頁面自己那個
+   onclick="toggleMobileMenu()"（或者 inline onclick）永遠唔會執行，
+   亦唔會被重複 toggle 兩次。唔需要等 DOMContentLoaded，就算某頁面有語法
+   錯誤令後面整段 script 唔執行，只要呢段跑到就得。
+   （實情：facebook / instagram / linkedin / tiktok / twitter 五頁的主要
+   inline script 有一句 `function copyXhs(this){` 語法錯誤，令成段 script 由頭
+   到尾都唔執行 -> toggleMobileMenu 從未定義 -> 點漢堡按鈕完全冇反應。） */
+function navToggleMenu(){
+  if(navMenuOpen()) navCloseMenu(); else navOpenMenu();
+}
+function navBindMenu(){
+  if(document.__navMenuBound) return;
+  document.__navMenuBound=1;
+  document.addEventListener('click',function(e){
+    var h=e.target && e.target.closest ? e.target.closest('.hamburger') : null;
+    if(!h) return;
+    e.preventDefault();
+    if(e.stopPropagation) e.stopPropagation();
+    navToggleMenu();
+  },true);
+}
+/* 兜底：個別頁面自己仲會叫 toggleMobileMenu()（inline onclick、舊快取），
+   定義一個同名 function，令佢哋指向同一套邏輯而唔係 ReferenceError。 */
+function toggleMobileMenu(){ navToggleMenu(); }
+function navCloseMenuIfOpen(){
+  if(navMenuOpen()) navCloseMenu();
+}
+/* 轉桌面：徹底清理手機狀態。手風琴容器要拆走，唔可以只係靠 CSS 收埋 ——
+   桌面 .nav-links 係 flex row，多一個 100% 闊的 flex item 會撐散整個導航條。 */
+function navDropAccordions(){
+  var accs=document.querySelectorAll('.nav-accordion');
+  for(var i=0;i<accs.length;i++){
+    if(accs[i].parentNode) accs[i].parentNode.removeChild(accs[i]);
+  }
+}
+function navInit(){
+  navBindMenu();                        /* 唔加 media guard：桌面按鈕本身係隱藏 */
+  if(!navIsMobile()){ navDropAccordions(); return; }   /* 桌面：面板機制照舊，唔建手風琴 */
+  var bs=document.querySelectorAll('.nav-links .nav-parent');
+  for(var i=0;i<bs.length;i++) navAccordionFor(bs[i]);
+  /* 點任何真正的連結就跟住收起選單，唔會困住用戶。
+     注意一：手風琴容器裡的二級連結唔會被綁，否則一開手風琴就會連選單一齊消失。
+     注意二：一級項目係 button.nav-parent，佢哋唔可以被綁 ——
+     佢哋係 .nav-links 的直接子項，用 `.nav-links > *` 之類的寫法會連按鈕一齊中，
+     結果點「文章」即刻又被 navCloseMenu() 收埋（實測過，手風琴永遠開唔到）。 */
+  var links=document.querySelectorAll('.nav-links > a, .nav-links .lang-btn, .nav-links .lang-toggle, .nav-panels a');
+  for(var j=0;j<links.length;j++){
+    if(links[j].getAttribute('data-nav-close')) continue;
+    links[j].setAttribute('data-nav-close','1');
+    links[j].addEventListener('click',navCloseMenu);
+  }
+  if(!document.__navKeys){
+    document.__navKeys=1;
+    document.addEventListener('keydown',function(e){
+      if(e.key!=='Escape' && e.keyCode!==27) return;
+      if(!navMenuOpen()) return;
+      navCloseMenu();
+      var h=navHamburgerEl();
+      if(h && h.focus) h.focus();       /* 焦點唔會丟失 */
+    });
+  }
+}
+if(document.readyState==='loading'){
+  document.addEventListener('DOMContentLoaded',navInit);
+}else{
+  navInit();
+}
+window.addEventListener('resize',function(){
+  if(navIsMobile()){
+    var bs=document.querySelectorAll('.nav-links .nav-parent');
+    for(var i=0;i<bs.length;i++) navAccordionFor(bs[i]);
+  }else{
+    navCloseAll();
+    navDropAccordions();      /* 轉桌面時徹底清走，唔留低多餘的 flex item */
+    navCloseMenu();
+  }
+});
+
+</script>
+<script>
+function toggleNavPanel(btn){
+  if(navIsMobile()){ navToggleAccordion(btn); return; }
+  var box=document.getElementById('navPanels'); if(!box) return;
+  var id=btn.getAttribute('data-panel');
+  var open=box.getAttribute('data-open');
+  var parents=document.querySelectorAll('.nav-parent');
+  if(open===id){
+    box.classList.remove('open'); box.setAttribute('data-open','');
+    for(var i=0;i<parents.length;i++) parents[i].setAttribute('aria-expanded','false');
+    return;
+  }
+  var panels=box.querySelectorAll('.nav-panel');
+  for(var j=0;j<panels.length;j++){
+    panels[j].style.display=(panels[j].getAttribute('data-id')===id?'block':'none');
+  }
+  box.classList.add('open'); box.setAttribute('data-open',id);
+  for(var k=0;k<parents.length;k++){
+    parents[k].setAttribute('aria-expanded', parents[k]===btn?'true':'false');
+  }
+}
+</script>
+</body>
+
+</html>
