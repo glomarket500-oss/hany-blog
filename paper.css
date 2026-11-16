@@ -1,16 +1,16 @@
 /* ============================================================
-   paper.css v3 — 笔记体 · 书卷气（2026-11-16）
-   v2 → v3 的改动：
-     · 正文中文改宋体（书感），字号 17px / 行高 1.95
-     · 段落首行缩进 2em（中文书籍习惯），首段不缩并做首字下沉
-     · 章节编号放大变淡，作为装饰性字标
-     · 引用块给引号装饰、加大字号与留白
-     · 插图加纸色内衬 + 细边，像贴上去的照片
-     · 顶栏加 3px 渐变细带，页脚加分割线
+   paper.css v8 — 杂志艺术版（2026-11-16）
+   这一版不是「干净」，是「设计过」：
+     · 纸卡带极细纸纹与左侧竖排栏目标签（marginalia）
+     · 章节标题上方 ✦ 装饰 + 描边大编号（outline numeral）
+     · 导语段放大斜体，像杂志引言
+     · 插图加暖调滤镜、双层投影、白边，像贴上去的照片
+     · 引用块做成拉引（pull quote）：大号斜体 + 顶部粗线
+     · 刊头两侧 bookend 细线，页脚做成 colophon 式小字
    ============================================================ */
 
 :root {
-  --bg: #f6f2ea;
+  --bg: #f4efe6;
   --paper: #fffdf8;
   --text: #14131a;
   --ink: #14131a;
@@ -20,14 +20,14 @@
   --accent-warm: #d98452;
   --accent-light: #f7e9df;
   --accent-soft: #f7e9df;
-  --border: #e3dbcd;
+  --border: #e0d7c6;
   --border-light: #efe8dc;
-  --radius: 6px;
+  --radius: 8px;
   --radius-sm: 4px;
-  --shadow: 0 1px 2px rgba(60, 45, 25, .05), 0 22px 50px rgba(60, 45, 25, .07);
-  --shadow-hover: 0 2px 6px rgba(60, 45, 25, .07), 0 30px 64px rgba(60, 45, 25, .11);
-  --max-width: 748px;
-  --serif: "Songti SC", "Source Han Serif SC", "Noto Serif SC", "SimSun", Georgia, "Times New Roman", serif;
+  --shadow: 0 1px 1px rgba(60, 45, 25, .05), 0 26px 60px rgba(60, 45, 25, .09);
+  --shadow-hover: 0 2px 6px rgba(60, 45, 25, .07), 0 34px 72px rgba(60, 45, 25, .12);
+  --max-width: 720px;
+  --serif: "Songti SC", "Source Han Serif SC", "Noto Serif SC", "SimSun", Georgia, serif;
   --sans: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 
@@ -37,188 +37,235 @@ body {
   font-family: var(--sans);
   background-color: var(--bg);
   background-image:
-    radial-gradient(1200px 420px at 12% -8%, rgba(217, 132, 82, .10), transparent 62%),
-    radial-gradient(900px 380px at 92% 2%, rgba(122, 141, 160, .08), transparent 58%);
-  background-repeat: no-repeat;
-  border-top: 3px solid transparent;
-  border-image: linear-gradient(90deg, var(--accent), var(--accent-warm) 55%, #7a8da0) 1;
+    radial-gradient(1100px 420px at 8% -6%, rgba(217, 132, 82, .13), transparent 60%),
+    radial-gradient(900px 360px at 96% 4%, rgba(110, 130, 150, .10), transparent 56%),
+    repeating-linear-gradient(0deg, rgba(90, 70, 40, .012) 0 1px, transparent 1px 4px);
+  background-repeat: no-repeat, no-repeat, repeat;
   color: var(--text);
   font-size: 16.5px;
   line-height: 1.82;
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
 }
 
-::selection { background: #f2d9c8; color: #14131a; }
+::selection { background: #f0d3bf; color: #14131a; }
 .container { max-width: var(--max-width); }
 nav .container, footer .container, .site-footer .container { max-width: 1120px; }
 
 nav {
-  background: rgba(246, 242, 234, .82);
-  backdrop-filter: saturate(140%) blur(8px);
+  background: rgba(244, 239, 230, .84);
+  backdrop-filter: saturate(140%) blur(10px);
   border-bottom: 1px solid var(--border-light);
 }
-
-/* ---------------- 标题 ---------------- */
-header h1, article h1, .post-title {
+nav a, nav .container > a, nav .nav-parent {
   font-family: var(--serif);
-  font-size: clamp(2.05rem, 5.2vw, 3.15rem);
-  line-height: 1.14;
-  letter-spacing: -.012em;
+  letter-spacing: .07em;
+  font-size: .95rem;
+}
+
+/* ============ 刊头：两侧 bookend 细线 ============ */
+header h1, article h1, .post-title {
+  position: relative;
+  font-family: var(--serif);
+  font-size: clamp(2.1rem, 5.4vw, 3.3rem);
+  line-height: 1.12;
+  letter-spacing: -.014em;
   font-weight: 700;
-  margin-bottom: 16px;
+  margin: 26px 0 14px;
   text-wrap: balance;
 }
 header h1::after, article h1::after, .post-title::after {
   content: "";
   display: block;
-  width: 54px; height: 3px;
-  margin-top: 20px;
+  width: 64px; height: 3px;
+  margin: 20px auto 0;
   background: linear-gradient(90deg, var(--accent), var(--accent-warm));
   border-radius: 2px;
 }
 header h1 .en, article h1 .en {
   font-family: var(--serif);
   font-style: italic;
-  font-size: clamp(.92rem, 1.5vw, 1.1rem);
+  font-size: clamp(.92rem, 1.5vw, 1.08rem);
   font-weight: 400;
-  letter-spacing: .01em;
-  opacity: .66;
-  margin-top: 14px;
+  letter-spacing: .015em;
+  opacity: .62;
+  margin-top: 16px;
 }
 
-/* ---------------- 章节：装饰性编号 ---------------- */
-.post-content, .post-body { counter-reset: sec; }
-.post-content h2, .post-body h2 {
-  font-family: var(--serif);
-  font-size: clamp(1.42rem, 2.6vw, 1.86rem);
-  line-height: 1.3;
-  letter-spacing: -.008em;
-  font-weight: 700;
-  margin: 50px 0 18px;
-  padding-top: 20px;
-  border-top: 1px solid var(--border-light);
-  counter-increment: sec;
-  text-wrap: balance;
+/* ============ 纸卡 + 左侧竖排栏目标签 ============ */
+article > .container {
+  position: relative;
+  background: var(--paper);
+  background-image: repeating-linear-gradient(0deg, rgba(120, 95, 60, .014) 0 1px, transparent 1px 4px);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  box-shadow: var(--shadow);
+  padding: 48px 52px 60px 66px;
+  margin-top: 30px;
 }
-.post-content h2::before, .post-body h2::before {
-  content: counter(sec, decimal-leading-zero);
-  display: inline-block;
-  font-family: var(--sans);
-  font-size: .58em;
-  font-weight: 800;
-  letter-spacing: .18em;
+article > .container::before {
+  content: "鄭哥 · 備忘";
+  position: absolute;
+  left: 22px; top: 74px;
+  writing-mode: vertical-rl;
+  font-family: var(--serif);
+  font-size: .72rem;
+  letter-spacing: .42em;
   color: rgba(184, 68, 42, .55);
-  margin-right: .85em;
-  vertical-align: .26em;
 }
-.post-content h3, .post-body h3 {
-  font-family: var(--serif);
-  font-size: 1.16rem;
-  letter-spacing: 0;
-  margin: 32px 0 10px;
+article > .container::after {
+  content: "";
+  position: absolute;
+  left: 48px; top: 44px; bottom: 44px;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, var(--border), transparent);
 }
 
-/* ---------------- 正文：宋体 + 首行缩进 + 首字下沉 ---------------- */
+/* ============ 元信息：书目行 ============ */
+.post-meta, .article-meta, .meta {
+  font-size: .7rem;
+  letter-spacing: .2em;
+  color: var(--text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 9px 0;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  margin: 18px 0 26px;
+}
+
+/* ============ 正文：宋体 + 首行缩进 + 首字下沉 ============ */
 .post-content p, .post-body p {
   font-family: var(--serif);
   font-size: 17px;
-  line-height: 1.95;
-  margin-bottom: 20px;
-  color: #2b2822;
+  line-height: 1.98;
+  margin-bottom: 21px;
+  color: #2a2721;
   text-indent: 2em;
   text-align: justify;
   text-justify: inter-ideograph;
 }
-.post-content p:first-of-type, .post-body p:first-of-type {
-  text-indent: 0;
-}
+.post-content p:first-of-type, .post-body p:first-of-type { text-indent: 0; }
 .post-content p:first-of-type::first-letter,
 .post-body p:first-of-type::first-letter {
   float: left;
   font-family: var(--serif);
-  font-size: 2.75em;
-  line-height: .92;
-  padding: .06em .12em 0 0;
+  font-size: 3.1em;
+  line-height: .88;
+  padding: .05em .14em 0 0;
   color: var(--accent);
+  text-shadow: 1px 1px 0 rgba(184, 68, 42, .12);
 }
 .post-content p:last-child { margin-bottom: 0; }
 
-.post-meta, .meta, .post-date, .published, .article-meta {
-  font-size: .72rem;
-  letter-spacing: .16em;
-  color: var(--text-muted);
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(184, 68, 42, .28); }
+a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(184, 68, 42, .26); }
 a:hover { border-bottom-color: var(--accent); }
 
-/* ---------------- 插图：照片贴在纸上 ---------------- */
+/* ============ 章节：✦ + 描边大编号 ============ */
+.post-content, .post-body { counter-reset: sec; }
+.post-content h2, .post-body h2 {
+  position: relative;
+  font-family: var(--serif);
+  font-size: clamp(1.45rem, 2.7vw, 1.9rem);
+  line-height: 1.32;
+  letter-spacing: -.006em;
+  font-weight: 700;
+  margin: 54px 0 20px;
+  padding-top: 26px;
+  counter-increment: sec;
+  text-wrap: balance;
+}
+.post-content h2::before, .post-body h2::before {
+  content: "✦";
+  position: absolute;
+  left: 0; top: 0;
+  font-size: .78rem;
+  color: var(--accent-warm);
+  letter-spacing: 0;
+}
+.post-content h2::after, .post-body h2::after {
+  content: counter(sec, decimal-leading-zero);
+  position: absolute;
+  right: 0; top: -6px;
+  font-family: var(--serif);
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(184, 68, 42, .22);
+  pointer-events: none;
+}
+.post-content h3, .post-body h3 {
+  font-family: var(--serif);
+  font-size: 1.16rem;
+  margin: 34px 0 10px;
+}
+
+/* ============ 拉引（pull quote） ============ */
+.post-content blockquote, .post-body blockquote {
+  position: relative;
+  margin: 34px 0;
+  padding: 22px 0 6px;
+  border: none;
+  border-top: 2px solid var(--accent);
+  background: none;
+  color: #3d372c;
+  font-family: var(--serif);
+  font-size: 1.18rem;
+  font-style: italic;
+  line-height: 1.7;
+  text-indent: 0;
+}
+.post-content blockquote::after, .post-body blockquote::after {
+  content: "";
+  display: block;
+  margin-top: 16px;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ============ 插图：贴上去的照片 ============ */
 .post-figure {
-  margin: 38px auto;
-  max-width: 748px;
-  background: var(--paper);
-  padding: 11px 11px 8px;
-  border: 1px solid rgba(60, 45, 25, .09);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  margin: 40px auto;
+  max-width: 100%;
+  background: #fff;
+  padding: 13px 13px 9px;
+  border: 1px solid rgba(60, 45, 25, .10);
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(60, 45, 25, .08), 0 18px 34px rgba(60, 45, 25, .10);
 }
 .post-figure img {
   width: 100%; height: auto; display: block;
-  border-radius: var(--radius-sm);
+  border-radius: 1px;
+  filter: saturate(1.04) contrast(1.02) sepia(.03);
 }
-figcaption, .post-figure figcaption {
+.post-figure figcaption {
   margin-top: 11px;
-  font-size: .78rem;
-  line-height: 1.68;
+  font-family: var(--sans);
+  font-size: .75rem;
+  line-height: 1.66;
   font-style: italic;
-  letter-spacing: .01em;
+  letter-spacing: .02em;
   color: var(--text-muted);
   text-align: center;
   text-indent: 0;
 }
 
-/* ---------------- 引用 / 来源：书页批注感 ---------------- */
-blockquote {
-  position: relative;
-  margin: 28px 0;
-  padding: 4px 0 4px 22px;
-  border-left: 2px solid var(--accent-warm);
-  background: none;
-  border-radius: 0;
-  color: #55503f;
-  font-family: var(--serif);
-  font-size: .96rem;
-  font-style: italic;
-  line-height: 1.8;
-  text-indent: 0;
-}
-blockquote::before {
-  content: "「";
-  position: absolute;
-  left: -2px; top: -14px;
-  font-size: 1.5rem;
-  color: rgba(184, 68, 42, .38);
-}
-
-/* ---------------- 标签 ---------------- */
+/* ============ 标签：细描边小印 ============ */
 .tag {
   display: inline-block;
-  padding: 4px 12px;
-  border-radius: 999px;
+  padding: 3px 11px;
+  border-radius: 1px;
   background: transparent;
   color: var(--text-muted);
-  font-size: .75rem;
+  font-size: .72rem;
   font-weight: 600;
-  letter-spacing: .08em;
+  letter-spacing: .12em;
   margin: 0 8px 8px 0;
   border: 1px solid var(--border);
 }
 .tag:hover { color: var(--accent); border-color: var(--accent-warm); }
 
-/* ---------------- 列表页 ---------------- */
+/* ============ 列表页：编号 + 细条 ============ */
 .post-card, .card {
   position: relative;
   background: transparent;
@@ -226,112 +273,29 @@ blockquote::before {
   border-bottom: 1px solid var(--border-light);
   border-radius: 0;
   box-shadow: none;
-  padding: 24px 0 22px 18px;
-  transition: padding-left .2s ease;
+  padding: 26px 0 24px 20px;
+  transition: padding-left .22s ease;
+  counter-increment: none;
 }
 .post-card::before, .card::before {
   content: "";
   position: absolute;
-  left: 0; top: 26px; bottom: 26px;
+  left: 0; top: 28px; bottom: 28px;
   width: 2px;
   background: var(--border);
   transition: background .2s ease, width .2s ease;
 }
-.post-card:hover, .card:hover { transform: none; padding-left: 24px; }
+.post-card:hover, .card:hover { transform: none; padding-left: 27px; }
 .post-card:hover::before, .card:hover::before { background: var(--accent); width: 3px; }
 .post-card h2, .post-card h3, .post-card .card-title {
   font-family: var(--serif);
   letter-spacing: -.008em;
+  border: none;
+  padding-top: 0;
+  margin: 0 0 10px;
 }
-.post-card .en-title { font-style: italic; }
-
-/* ---------------- 上下篇 ---------------- */
-.prev-next { border-top: 1px solid var(--border-light); }
-.prev-next a { border-bottom: none; color: var(--text); }
-.prev-next a:hover { color: var(--accent); }
-
-/* ---------------- 页脚 ---------------- */
-footer, .site-footer {
-  border-top: 1px solid var(--border);
-  margin-top: 56px;
-  padding-top: 28px;
-  color: var(--text-muted);
-  font-size: .86rem;
-}
-
-/* ---------------- 中英对照 ---------------- */
-.en-inline, .en { opacity: .76; }
-body.show-en .cn-inline { display: none; }
-
-/* ---------------- 手机 ---------------- */
-@media (max-width: 640px) {
-  body { font-size: 16px; }
-  header h1, article h1, .post-title { font-size: 1.78rem; }
-  header h1::after, article h1::after { margin-top: 14px; width: 42px; }
-  .post-content h2, .post-body h2 { font-size: 1.3rem; margin-top: 36px; }
-  .post-content p, .post-body p { font-size: 16.5px; line-height: 1.9; text-indent: 0; }
-  .post-content p:first-of-type::first-letter { font-size: 2.4em; }
-  .container { padding: 0 18px; }
-  .post-figure { padding: 7px 7px 5px; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  * { transition: none !important; }
-  html { scroll-behavior: auto; }
-}
-
-/* ---------------- v4：正文变成「一张纸」 ---------------- */
-article > .container {
-  background: var(--paper);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  box-shadow: var(--shadow);
-  padding: 44px 48px 56px;
-  margin-top: 26px;
-}
-/* 导航：衬线小字，字距拉开，像刊头 */
-nav a, nav .container > a, nav .nav-parent {
-  font-family: var(--serif);
-  letter-spacing: .06em;
-  font-size: .95rem;
-}
-nav .container > a:first-child { font-weight: 700; letter-spacing: .1em; }
-/* 元信息：上下细线，像书目行 */
-.post-meta, .article-meta {
-  padding: 10px 0;
-  border-top: 1px solid var(--border-light);
-  border-bottom: 1px solid var(--border-light);
-  margin: 18px 0 22px;
-}
-/* 章节编号更含蓄 */
-.post-content h2::before, .post-body h2::before {
-  font-size: .52em;
-  color: rgba(184, 68, 42, .42);
-  letter-spacing: .22em;
-  margin-right: .95em;
-}
-@media (max-width: 640px) {
-  article > .container { padding: 26px 18px 34px; border-radius: 6px; margin-top: 14px; }
-}
-
-/* ---------------- v5：封面头图软边 + 刊头细节 ---------------- */
-.post-header {
-  border-radius: 8px;
-  overflow: hidden;
-  margin-bottom: 6px;
-}
-.post-header + * { margin-top: 18px; }
-nav .container::after {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 0; right: 0; bottom: -1px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(184,68,42,.35), transparent);
-}
-nav .container { position: relative; }
-
-/* ---------------- v6：列表卡片回到无衬线、不缩进、不做首字下沉 ---------------- */
+.post-card h2::before, .post-card h2::after,
+.post-card h3::before, .post-card h3::after { content: none; }
 .post-card p, .card p, .post-card .excerpt, .post-card .desc {
   font-family: var(--sans);
   font-size: .96rem;
@@ -341,13 +305,41 @@ nav .container { position: relative; }
   color: #45403a;
   margin-bottom: 12px;
 }
-.post-card p::first-letter, .card p::first-letter { font-size: 1em; float: none; color: inherit; }
-.post-card h2, .post-card h3, .post-card .card-title {
-  text-indent: 0;
-  border-top: none;
-  padding-top: 0;
-  margin: 0 0 10px;
+.post-card p::first-letter { font-size: 1em; float: none; color: inherit; }
+.post-card .en-title { font-style: italic; }
+
+/* ============ 上下篇 / 页脚 colophon ============ */
+.prev-next { border-top: 1px solid var(--border-light); }
+.prev-next a { border-bottom: none; color: var(--text); }
+.prev-next a:hover { color: var(--accent); }
+
+footer, .site-footer {
+  border-top: 1px solid var(--border);
+  margin-top: 64px;
+  padding-top: 26px;
+  color: var(--text-muted);
+  font-size: .78rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
 }
-.post-card h2::before, .post-card h3::before, .card h2::before { content: none; }
-/* 列表页大标题区（深色 banner）也压一下圆角，别太硬 */
-.post-card:first-child { border-top: 1px solid var(--border-light); }
+
+/* ============ 中英对照 ============ */
+.en-inline, .en { opacity: .74; }
+body.show-en .cn-inline { display: none; }
+
+/* ============ 手机 ============ */
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+  header h1, article h1, .post-title { font-size: 1.8rem; }
+  article > .container { padding: 28px 20px 36px; margin-top: 16px; }
+  article > .container::before, article > .container::after { display: none; }
+  .post-content p, .post-body p { font-size: 16.5px; line-height: 1.92; text-indent: 0; }
+  .post-content p:first-of-type::first-letter { font-size: 2.5em; }
+  .post-content h2::after, .post-body h2::after { font-size: 2.4rem; top: -2px; }
+  .post-figure { padding: 8px 8px 6px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+  html { scroll-behavior: auto; }
+}
