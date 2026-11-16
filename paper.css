@@ -175,12 +175,13 @@ a:hover { border-bottom-color: var(--accent); }
   text-wrap: balance;
 }
 .post-content h2::before, .post-body h2::before {
-  content: "✦";
+  content: "";
   position: absolute;
-  left: 0; top: 0;
-  font-size: .78rem;
-  color: var(--accent-warm);
-  letter-spacing: 0;
+  left: 2px; top: 4px;
+  width: 9px; height: 9px;
+  background: var(--accent-warm);
+  transform: rotate(45deg);
+  opacity: .85;
 }
 .post-content h2::after, .post-body h2::after {
   content: counter(sec, decimal-leading-zero);
@@ -191,7 +192,7 @@ a:hover { border-bottom-color: var(--accent); }
   font-weight: 700;
   line-height: 1;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(184, 68, 42, .22);
+  -webkit-text-stroke: 1px rgba(184, 68, 42, .34);
   pointer-events: none;
 }
 .post-content h3, .post-body h3 {
