@@ -166,10 +166,10 @@ a:hover { border-bottom-color: var(--accent); }
 .post-content, .post-body { counter-reset: sec; }
 .post-content h2, .post-body h2 {
   position: relative;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='46' height='7' viewBox='0 0 46 7'%3E%3Cpath d='M0 3.5 Q 11.5 0.5 23 3.5 T 46 3.5' fill='none' stroke='%23ddcfb8' stroke-width='1.1' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34' height='9' viewBox='0 0 34 9'%3E%3Cpath d='M0 4.5 Q 8.5 0.5 17 4.5 T 34 4.5' fill='none' stroke='%23d3bf9f' stroke-width='1.4' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x;
   background-repeat: repeat-x;
   background-position: left top;
-  background-size: 46px 7px;
+  background-size: 34px 9px;
   font-family: var(--serif);
   font-size: clamp(1.45rem, 2.7vw, 1.9rem);
   line-height: 1.32;
@@ -227,9 +227,9 @@ a:hover { border-bottom-color: var(--accent); }
   display: block;
   margin-top: 18px;
   height: 7px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='46' height='7' viewBox='0 0 46 7'%3E%3Cpath d='M0 3.5 Q 11.5 0.5 23 3.5 T 46 3.5' fill='none' stroke='%23ddcfb8' stroke-width='1.1' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34' height='9' viewBox='0 0 34 9'%3E%3Cpath d='M0 4.5 Q 8.5 0.5 17 4.5 T 34 4.5' fill='none' stroke='%23d3bf9f' stroke-width='1.4' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x;
   background-repeat: repeat-x;
-  background-size: 46px 7px;
+  background-size: 34px 9px;
 }
 
 /* ============ 插图：贴上去的照片 ============ */
