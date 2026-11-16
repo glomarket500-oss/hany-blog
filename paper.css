@@ -1,0 +1,166 @@
+/* ============================================================
+   paper.css — 全站「笔记体」皮肤（2026-11-16）
+   参照 gulangma.com 的编辑感：暖纸底 + 窄栏 + 大标题 + 焦橙强调
+   作用方式：只覆盖变量与排版，不动结构与脚本。
+   放在 <style> 之后加载，同权重即可生效。
+   ============================================================ */
+
+:root {
+  /* 底色与墨色：暖纸而不是纯白 */
+  --bg: #f7f6f3;
+  --bg-elevated: #fffdf9;
+  --surface: #fffdf9;
+  --text: #14151a;
+  --ink: #14151a;
+  --text-secondary: #3b3c42;
+  --text-muted: #6f7076;
+
+  /* 强调色：焦橙，替掉原来的正红 */
+  --accent: #c2410c;
+  --accent-light: #fdf1ea;
+  --accent-soft: #fdf1ea;
+  --border: #e5e2db;
+  --border-light: #eeeae3;
+
+  --radius: 16px;
+  --radius-sm: 10px;
+  --shadow: 0 1px 2px rgba(20, 21, 26, .04), 0 18px 40px rgba(20, 21, 26, .06);
+  --shadow-hover: 0 2px 6px rgba(20, 21, 26, .06), 0 24px 54px rgba(20, 21, 26, .10);
+  --max-width: 760px;
+
+  --font-sans: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.78;
+  font-size: 16.5px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* 导航、页脚这类外围可以宽，正文窄 */
+nav .container, footer .container, .site-footer .container { max-width: 1120px; }
+.container { max-width: var(--max-width); }
+
+/* ---------- 标题：编辑感的字号与字距 ---------- */
+header h1, article h1, .post-title {
+  font-size: clamp(2rem, 4.8vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: -.032em;
+  font-weight: 650;
+  margin-bottom: 14px;
+  text-wrap: balance;
+}
+header h1 .en, article h1 .en {
+  font-size: clamp(.95rem, 1.6vw, 1.15rem);
+  font-weight: 400;
+  letter-spacing: 0;
+  opacity: .62;
+  margin-top: 12px;
+}
+
+article h2, .post-body h2 {
+  font-size: clamp(1.45rem, 2.6vw, 1.95rem);
+  line-height: 1.15;
+  letter-spacing: -.022em;
+  font-weight: 620;
+  margin: 40px 0 14px;
+  text-wrap: balance;
+}
+article h3, .post-body h3 {
+  font-size: 1.18rem;
+  letter-spacing: -.012em;
+  margin: 30px 0 10px;
+}
+
+/* ---------- 正文 ---------- */
+article p, .post-body p {
+  margin-bottom: 18px;
+  color: #2c2d33;
+}
+article p:last-child { margin-bottom: 0; }
+
+/* 元信息：小字、字距拉开、全大写感（中文不转写，只拉字距） */
+.post-meta, .meta, .post-date, .published, .article-meta {
+  font-size: .74rem;
+  letter-spacing: .12em;
+  color: var(--text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { text-decoration: underline; }
+
+/* ---------- 图 ---------- */
+.post-figure { margin: 32px auto; max-width: 760px; }
+.post-figure img {
+  width: 100%; height: auto; display: block;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+figcaption, .post-figure figcaption {
+  margin-top: 10px;
+  font-size: .78rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* ---------- 来源行 ---------- */
+blockquote {
+  margin: 22px 0;
+  padding: 12px 16px;
+  border-left: 3px solid var(--accent);
+  background: var(--accent-soft);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  color: #4a4b52;
+  font-size: .92rem;
+}
+
+/* ---------- 标签 ---------- */
+.tag {
+  display: inline-block;
+  padding: 4px 11px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: .78rem;
+  font-weight: 600;
+  margin: 0 6px 8px 0;
+  border: 1px solid #f3ddcd;
+}
+
+/* ---------- 卡片（列表页） ---------- */
+.post-card, .card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: box-shadow .22s ease, transform .22s ease;
+}
+.post-card:hover, .card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+/* ---------- 上一篇 / 下一篇 ---------- */
+.prev-next a, .pn-title { color: var(--text); }
+.prev-next a:hover { color: var(--accent); }
+
+/* ---------- 中英对照 ---------- */
+.en-inline, .en { opacity: .78; }
+body.show-en .cn-inline { display: none; }
+
+/* ---------- 移动端 ---------- */
+@media (max-width: 640px) {
+  body { font-size: 16px; line-height: 1.72; }
+  header h1, article h1, .post-title { font-size: 1.72rem; }
+  article h2, .post-body h2 { font-size: 1.32rem; margin-top: 32px; }
+  .container { padding: 0 18px; }
+}
