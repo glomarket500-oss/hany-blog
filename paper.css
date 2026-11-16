@@ -313,3 +313,20 @@ article h2::before, .post-body h2::before {
 @media (max-width: 640px) {
   article > .container { padding: 26px 18px 34px; border-radius: 6px; margin-top: 14px; }
 }
+
+/* ---------------- v5：封面头图软边 + 刊头细节 ---------------- */
+.post-header {
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+.post-header + * { margin-top: 18px; }
+nav .container::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0; right: 0; bottom: -1px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(184,68,42,.35), transparent);
+}
+nav .container { position: relative; }
