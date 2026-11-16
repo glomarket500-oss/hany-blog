@@ -279,3 +279,37 @@ body.show-en .cn-inline { display: none; }
   * { transition: none !important; }
   html { scroll-behavior: auto; }
 }
+
+/* ---------------- v4：正文变成「一张纸」 ---------------- */
+article > .container {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  padding: 44px 48px 56px;
+  margin-top: 26px;
+}
+/* 导航：衬线小字，字距拉开，像刊头 */
+nav a, nav .container > a, nav .nav-parent {
+  font-family: var(--serif);
+  letter-spacing: .06em;
+  font-size: .95rem;
+}
+nav .container > a:first-child { font-weight: 700; letter-spacing: .1em; }
+/* 元信息：上下细线，像书目行 */
+.post-meta, .article-meta {
+  padding: 10px 0;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  margin: 18px 0 22px;
+}
+/* 章节编号更含蓄 */
+article h2::before, .post-body h2::before {
+  font-size: .52em;
+  color: rgba(184, 68, 42, .42);
+  letter-spacing: .22em;
+  margin-right: .95em;
+}
+@media (max-width: 640px) {
+  article > .container { padding: 26px 18px 34px; border-radius: 6px; margin-top: 14px; }
+}
