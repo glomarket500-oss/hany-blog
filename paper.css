@@ -1,10 +1,12 @@
 /* ============================================================
-   paper.css v2 — 笔记体 · 编辑感（2026-11-16）
-   参照 gulangma.com 的编辑构图，再加书卷气：
-     · 暖纸底 + 极淡双色晕（不靠外链图片，境内不卡）
-     · 标题衬线、正文无衬线：中文标题走宋体系
-     · 章节自动编号 01 / 02 / 03
-     · 首字下沉、短焦橙分隔线、相框式插图
+   paper.css v3 — 笔记体 · 书卷气（2026-11-16）
+   v2 → v3 的改动：
+     · 正文中文改宋体（书感），字号 17px / 行高 1.95
+     · 段落首行缩进 2em（中文书籍习惯），首段不缩并做首字下沉
+     · 章节编号放大变淡，作为装饰性字标
+     · 引用块给引号装饰、加大字号与留白
+     · 插图加纸色内衬 + 细边，像贴上去的照片
+     · 顶栏加 3px 渐变细带，页脚加分割线
    ============================================================ */
 
 :root {
@@ -38,6 +40,8 @@ body {
     radial-gradient(1200px 420px at 12% -8%, rgba(217, 132, 82, .10), transparent 62%),
     radial-gradient(900px 380px at 92% 2%, rgba(122, 141, 160, .08), transparent 58%);
   background-repeat: no-repeat;
+  border-top: 3px solid transparent;
+  border-image: linear-gradient(90deg, var(--accent), var(--accent-warm) 55%, #7a8da0) 1;
   color: var(--text);
   font-size: 16.5px;
   line-height: 1.82;
@@ -46,18 +50,16 @@ body {
 }
 
 ::selection { background: #f2d9c8; color: #14131a; }
-
 .container { max-width: var(--max-width); }
 nav .container, footer .container, .site-footer .container { max-width: 1120px; }
 
-/* 导航：纸色半透明 + 细线 */
 nav {
   background: rgba(246, 242, 234, .82);
   backdrop-filter: saturate(140%) blur(8px);
   border-bottom: 1px solid var(--border-light);
 }
 
-/* ---------------- 标题：衬线 + 焦橙短线 ---------------- */
+/* ---------------- 标题 ---------------- */
 header h1, article h1, .post-title {
   font-family: var(--serif);
   font-size: clamp(2.05rem, 5.2vw, 3.15rem);
@@ -70,8 +72,7 @@ header h1, article h1, .post-title {
 header h1::after, article h1::after, .post-title::after {
   content: "";
   display: block;
-  width: 54px;
-  height: 3px;
+  width: 54px; height: 3px;
   margin-top: 20px;
   background: linear-gradient(90deg, var(--accent), var(--accent-warm));
   border-radius: 2px;
@@ -86,49 +87,59 @@ header h1 .en, article h1 .en {
   margin-top: 14px;
 }
 
-/* 章节：自动编号 + 上方留白 */
+/* ---------------- 章节：装饰性编号 ---------------- */
 article, .post-body { counter-reset: sec; }
 article h2, .post-body h2 {
   font-family: var(--serif);
   font-size: clamp(1.42rem, 2.6vw, 1.86rem);
-  line-height: 1.28;
+  line-height: 1.3;
   letter-spacing: -.008em;
   font-weight: 700;
-  margin: 46px 0 16px;
-  padding-top: 18px;
+  margin: 50px 0 18px;
+  padding-top: 20px;
   border-top: 1px solid var(--border-light);
   counter-increment: sec;
   text-wrap: balance;
 }
 article h2::before, .post-body h2::before {
   content: counter(sec, decimal-leading-zero);
+  display: inline-block;
   font-family: var(--sans);
-  font-size: .62em;
-  font-weight: 700;
-  letter-spacing: .14em;
-  color: var(--accent);
-  margin-right: .7em;
-  vertical-align: .22em;
+  font-size: .58em;
+  font-weight: 800;
+  letter-spacing: .18em;
+  color: rgba(184, 68, 42, .55);
+  margin-right: .85em;
+  vertical-align: .26em;
 }
 article h3, .post-body h3 {
   font-family: var(--serif);
   font-size: 1.16rem;
   letter-spacing: 0;
-  margin: 30px 0 10px;
+  margin: 32px 0 10px;
 }
 
-/* ---------------- 正文：首字下沉 ---------------- */
+/* ---------------- 正文：宋体 + 首行缩进 + 首字下沉 ---------------- */
 article p, .post-body p {
-  margin-bottom: 19px;
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.95;
+  margin-bottom: 20px;
   color: #2b2822;
+  text-indent: 2em;
+  text-align: justify;
+  text-justify: inter-ideograph;
+}
+article p:first-of-type, .post-body p:first-of-type {
+  text-indent: 0;
 }
 article p:first-of-type::first-letter,
 .post-body p:first-of-type::first-letter {
   float: left;
   font-family: var(--serif);
-  font-size: 3.15em;
-  line-height: .88;
-  padding: .04em .1em 0 0;
+  font-size: 2.75em;
+  line-height: .92;
+  padding: .06em .12em 0 0;
   color: var(--accent);
 }
 article p:last-child { margin-bottom: 0; }
@@ -144,42 +155,55 @@ article p:last-child { margin-bottom: 0; }
 a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(184, 68, 42, .28); }
 a:hover { border-bottom-color: var(--accent); }
 
-/* ---------------- 插图：相框式 ---------------- */
-.post-figure { margin: 36px auto; max-width: 748px; }
-.post-figure img {
-  width: 100%; height: auto; display: block;
-  border-radius: var(--radius-sm);
-  border: 1px solid rgba(60, 45, 25, .10);
-}
+/* ---------------- 插图：照片贴在纸上 ---------------- */
 .post-figure {
+  margin: 38px auto;
+  max-width: 748px;
   background: var(--paper);
-  padding: 9px 9px 6px;
+  padding: 11px 11px 8px;
+  border: 1px solid rgba(60, 45, 25, .09);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
+.post-figure img {
+  width: 100%; height: auto; display: block;
+  border-radius: var(--radius-sm);
+}
 figcaption, .post-figure figcaption {
-  margin-top: 10px;
+  margin-top: 11px;
   font-size: .78rem;
-  line-height: 1.62;
+  line-height: 1.68;
   font-style: italic;
   letter-spacing: .01em;
   color: var(--text-muted);
   text-align: center;
+  text-indent: 0;
 }
 
-/* ---------------- 来源行：细线斜体，不要色块 ---------------- */
+/* ---------------- 引用 / 来源：书页批注感 ---------------- */
 blockquote {
-  margin: 24px 0;
-  padding: 2px 0 2px 18px;
+  position: relative;
+  margin: 28px 0;
+  padding: 4px 0 4px 22px;
   border-left: 2px solid var(--accent-warm);
   background: none;
   border-radius: 0;
-  color: #5c554a;
-  font-size: .92rem;
+  color: #55503f;
+  font-family: var(--serif);
+  font-size: .96rem;
   font-style: italic;
+  line-height: 1.8;
+  text-indent: 0;
+}
+blockquote::before {
+  content: "「";
+  position: absolute;
+  left: -2px; top: -14px;
+  font-size: 1.5rem;
+  color: rgba(184, 68, 42, .38);
 }
 
-/* ---------------- 标签：细描边、宽字距 ---------------- */
+/* ---------------- 标签 ---------------- */
 .tag {
   display: inline-block;
   padding: 4px 12px;
@@ -194,7 +218,7 @@ blockquote {
 }
 .tag:hover { color: var(--accent); border-color: var(--accent-warm); }
 
-/* ---------------- 列表页：无框卡片，左侧细条 ---------------- */
+/* ---------------- 列表页 ---------------- */
 .post-card, .card {
   position: relative;
   background: transparent;
@@ -203,7 +227,7 @@ blockquote {
   border-radius: 0;
   box-shadow: none;
   padding: 24px 0 22px 18px;
-  transition: padding-left .2s ease, color .2s ease;
+  transition: padding-left .2s ease;
 }
 .post-card::before, .card::before {
   content: "";
@@ -221,10 +245,19 @@ blockquote {
 }
 .post-card .en-title { font-style: italic; }
 
-/* ---------------- 上一篇 / 下一篇 ---------------- */
+/* ---------------- 上下篇 ---------------- */
 .prev-next { border-top: 1px solid var(--border-light); }
 .prev-next a { border-bottom: none; color: var(--text); }
 .prev-next a:hover { color: var(--accent); }
+
+/* ---------------- 页脚 ---------------- */
+footer, .site-footer {
+  border-top: 1px solid var(--border);
+  margin-top: 56px;
+  padding-top: 28px;
+  color: var(--text-muted);
+  font-size: .86rem;
+}
 
 /* ---------------- 中英对照 ---------------- */
 .en-inline, .en { opacity: .76; }
@@ -232,13 +265,14 @@ body.show-en .cn-inline { display: none; }
 
 /* ---------------- 手机 ---------------- */
 @media (max-width: 640px) {
-  body { font-size: 16px; line-height: 1.76; }
+  body { font-size: 16px; }
   header h1, article h1, .post-title { font-size: 1.78rem; }
   header h1::after, article h1::after { margin-top: 14px; width: 42px; }
-  article h2, .post-body h2 { font-size: 1.3rem; margin-top: 34px; }
-  article p:first-of-type::first-letter { font-size: 2.6em; }
+  article h2, .post-body h2 { font-size: 1.3rem; margin-top: 36px; }
+  article p, .post-body p { font-size: 16.5px; line-height: 1.9; text-indent: 0; }
+  article p:first-of-type::first-letter { font-size: 2.4em; }
   .container { padding: 0 18px; }
-  .post-figure { padding: 6px 6px 4px; }
+  .post-figure { padding: 7px 7px 5px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
