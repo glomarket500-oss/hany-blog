@@ -166,17 +166,17 @@ a:hover { border-bottom-color: var(--accent); }
 .post-content, .post-body { counter-reset: sec; }
 .post-content h2, .post-body h2 {
   position: relative;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34' height='9' viewBox='0 0 34 9'%3E%3Cpath d='M0 4.5 Q 8.5 0.5 17 4.5 T 34 4.5' fill='none' stroke='%23d3bf9f' stroke-width='1.4' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='14' viewBox='0 0 44 14'%3E%3Cpath d='M0 7 Q 11 1 22 7 T 44 7' fill='none' stroke='%23c9b291' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x;
   background-repeat: repeat-x;
   background-position: left top;
-  background-size: 34px 9px;
+  background-size: 44px 14px;
   font-family: var(--serif);
   font-size: clamp(1.45rem, 2.7vw, 1.9rem);
   line-height: 1.32;
   letter-spacing: -.006em;
   font-weight: 700;
   margin: 58px 0 20px;
-  padding-top: 30px;
+  padding-top: 34px;
   counter-increment: sec;
   text-wrap: balance;
 }
@@ -226,10 +226,10 @@ a:hover { border-bottom-color: var(--accent); }
   content: "";
   display: block;
   margin-top: 18px;
-  height: 7px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34' height='9' viewBox='0 0 34 9'%3E%3Cpath d='M0 4.5 Q 8.5 0.5 17 4.5 T 34 4.5' fill='none' stroke='%23d3bf9f' stroke-width='1.4' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x;
+  height: 14px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='14' viewBox='0 0 44 14'%3E%3Cpath d='M0 7 Q 11 1 22 7 T 44 7' fill='none' stroke='%23c9b291' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x;
   background-repeat: repeat-x;
-  background-size: 34px 9px;
+  background-size: 44px 14px;
 }
 
 /* ============ 插图：贴上去的照片 ============ */
