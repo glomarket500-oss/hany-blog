@@ -76,10 +76,12 @@ header h1, article h1, .post-title {
 header h1::after, article h1::after, .post-title::after {
   content: "";
   display: block;
-  width: 64px; height: 3px;
-  margin: 20px auto 0;
-  background: linear-gradient(90deg, var(--accent), var(--accent-warm));
-  border-radius: 2px;
+  width: 168px; height: 12px;
+  margin: 22px auto 0;
+  background-image: radial-gradient(circle at 50% 100%, transparent 6.6px,
+    rgba(217, 132, 82, .85) 6.6px 7.9px, transparent 8.1px);
+  background-repeat: repeat-x;
+  background-size: 24px 12px;
 }
 header h1 .en, article h1 .en {
   font-family: var(--serif);
@@ -166,10 +168,10 @@ a:hover { border-bottom-color: var(--accent); }
 .post-content, .post-body { counter-reset: sec; }
 .post-content h2, .post-body h2 {
   position: relative;
-  background-image: radial-gradient(circle at 50% 100%, transparent 6px, #d3bf9f 6px 7.2px, transparent 7.4px);
+  background-image: radial-gradient(circle at 50% 100%, transparent 6.6px, #cbb392 6.6px 7.9px, transparent 8.1px);
   background-repeat: repeat-x;
   background-position: left top;
-  background-size: 20px 10px;
+  background-size: 24px 12px;
   font-family: var(--serif);
   font-size: clamp(1.45rem, 2.7vw, 1.9rem);
   line-height: 1.32;
@@ -227,9 +229,9 @@ a:hover { border-bottom-color: var(--accent); }
   display: block;
   margin-top: 18px;
   height: 10px;
-  background-image: radial-gradient(circle at 50% 100%, transparent 6px, #d3bf9f 6px 7.2px, transparent 7.4px);
+  background-image: radial-gradient(circle at 50% 100%, transparent 6.6px, #cbb392 6.6px 7.9px, transparent 8.1px);
   background-repeat: repeat-x;
-  background-size: 20px 10px;
+  background-size: 24px 12px;
 }
 
 /* ============ 插图：贴上去的照片 ============ */
