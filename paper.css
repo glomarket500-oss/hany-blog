@@ -120,7 +120,7 @@ article h3, .post-body h3 {
 }
 
 /* ---------------- 正文：宋体 + 首行缩进 + 首字下沉 ---------------- */
-article p, .post-body p {
+article:not(.post-card) p, .post-body p {
   font-family: var(--serif);
   font-size: 17px;
   line-height: 1.95;
@@ -130,10 +130,10 @@ article p, .post-body p {
   text-align: justify;
   text-justify: inter-ideograph;
 }
-article p:first-of-type, .post-body p:first-of-type {
+article:not(.post-card) p:first-of-type, .post-body p:first-of-type {
   text-indent: 0;
 }
-article p:first-of-type::first-letter,
+article:not(.post-card) p:first-of-type::first-letter,
 .post-body p:first-of-type::first-letter {
   float: left;
   font-family: var(--serif);
@@ -142,7 +142,7 @@ article p:first-of-type::first-letter,
   padding: .06em .12em 0 0;
   color: var(--accent);
 }
-article p:last-child { margin-bottom: 0; }
+article:not(.post-card) p:last-child { margin-bottom: 0; }
 
 .post-meta, .meta, .post-date, .published, .article-meta {
   font-size: .72rem;
@@ -269,7 +269,7 @@ body.show-en .cn-inline { display: none; }
   header h1, article h1, .post-title { font-size: 1.78rem; }
   header h1::after, article h1::after { margin-top: 14px; width: 42px; }
   article h2, .post-body h2 { font-size: 1.3rem; margin-top: 36px; }
-  article p, .post-body p { font-size: 16.5px; line-height: 1.9; text-indent: 0; }
+  article:not(.post-card) p, .post-body p { font-size: 16.5px; line-height: 1.9; text-indent: 0; }
   article p:first-of-type::first-letter { font-size: 2.4em; }
   .container { padding: 0 18px; }
   .post-figure { padding: 7px 7px 5px; }
@@ -330,3 +330,24 @@ nav .container::after {
   background: linear-gradient(90deg, transparent, rgba(184,68,42,.35), transparent);
 }
 nav .container { position: relative; }
+
+/* ---------------- v6：列表卡片回到无衬线、不缩进、不做首字下沉 ---------------- */
+.post-card p, .card p, .post-card .excerpt, .post-card .desc {
+  font-family: var(--sans);
+  font-size: .96rem;
+  line-height: 1.78;
+  text-indent: 0;
+  text-align: left;
+  color: #45403a;
+  margin-bottom: 12px;
+}
+.post-card p::first-letter, .card p::first-letter { font-size: 1em; float: none; color: inherit; }
+.post-card h2, .post-card h3, .post-card .card-title {
+  text-indent: 0;
+  border-top: none;
+  padding-top: 0;
+  margin: 0 0 10px;
+}
+.post-card h2::before, .post-card h3::before, .card h2::before { content: none; }
+/* 列表页大标题区（深色 banner）也压一下圆角，别太硬 */
+.post-card:first-child { border-top: 1px solid var(--border-light); }
