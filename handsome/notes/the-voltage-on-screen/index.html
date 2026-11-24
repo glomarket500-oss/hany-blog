@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Voltage on the Screen — Alan Lin</title>
+<meta name="description" content="从 11 月 24 日 Anker 在日本开卖的 100W 带屏旅行充电头说起：为什么同一台充电器在 100V 和 220V 的墙上会变成两台，屏幕显示的其实是电压区，以及荣耀 120W 规格表里那两段数字。">
+<link rel="canonical" href="https://www.gulangma.com/notes/the-voltage-on-screen/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Voltage on the Screen — Alan Lin">
+<meta property="og:description" content="从 11 月 24 日 Anker 在日本开卖的 100W 带屏旅行充电头说起：为什么同一台充电器在 100V 和 220V 的墙上会变成两台，屏幕显示的其实是电压区，以及荣耀 120W 规格表里那两段数字。">
+<meta property="og:image" content="https://www.gulangma.com/assets-founder/the-voltage-on-screen-cover.webp">
+<meta property="og:url" content="https://www.gulangma.com/notes/the-voltage-on-screen/">
+<meta property="og:site_name" content="Alan Lin">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index,follow">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets-founder/founder.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Alan Lin","givenName":"Alan","familyName":"Lin","jobTitle":"Founder","url":"https://www.gulangma.com/","worksFor":{"@type":"Organization","name":"HANDSOME"}}</script>
+</head>
+<body><header class="top">
+  <div class="wrap">
+    <a class="brand serif" href="/">Alan Lin<span>.</span></a>
+    <nav class="main" id="siteNav">
+      <a href="/"><span class="t-en">Home</span><span class="t-cn">首页</span></a>
+      <a href="/about/"><span class="t-en">About</span><span class="t-cn">关于</span></a>
+      <a href="/ventures/"><span class="t-en">Ventures</span><span class="t-cn">项目</span></a>
+      <a href="/notes/" class="on"><span class="t-en">Notes</span><span class="t-cn">笔记</span></a>
+      <a href="/contact/"><span class="t-en">Contact</span><span class="t-cn">联系</span></a>
+    </nav>
+    <div class="nav-actions">
+      <button class="langbtn" id="langBtn" onclick="toggleLang()">中文</button>
+      <button class="menubtn" id="menuBtn" aria-label="Menu" aria-expanded="false" aria-controls="siteNav" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<section class="story-hero">
+  <div class="wrap">
+    <p class="story-kicker"><span class="t-en">Notes · 2026 · 11 · Ninth essay</span><span class="t-cn">笔记 · 2026 · 11 · 第九篇</span></p>
+    <h1 class="story-title">
+      <span class="t-en">The Voltage<br>On the Screen</span><span class="t-cn">屏幕上那 100 伏<br>是墙的事</span>
+    </h1>
+    <p class="story-dek"><span class="t-en">On 24 November Anker Japan put a 1.3-inch screen on a travel plug. The number that matters on it is not 100W.</span><span class="t-cn">11 月 24 日，Anker 日本把一块 1.3 英寸的屏装进了旅行插头。屏上最要紧的数不是 100W。</span></p>
+    <p class="story-byline"><span class="t-en">Words / Alan Lin · 16</span><span class="t-cn">文 / Alan Lin · 16 岁</span></p>
+    <p class="story-time"><span class="t-en">Published 2026-11-25 09:45:00</span><span class="t-cn">发布于 2026-11-25 09:45:00</span></p>
+  </div>
+</section>
+<figure class="story-cover">
+  <img src="/assets-founder/the-voltage-on-screen-cover.webp" alt="A compact travel charger with international plug pins on a light wooden desk beside a coiled braided cable" width="1600" height="1000" loading="eager">
+  <figcaption><span class="t-en">Concept scene: one block, three plug shapes, and a wall that decides the rest.</span><span class="t-cn">场景概念图：一台机器，三种插脚，剩下的由墙决定。</span></figcaption>
+</figure>
+<article class="story-body">
+  <div class="story-body-inner t-cn block"><p class="story-epigraph">11 月 24 日，Anker 日本上架了一台名字很长的东西：Anker Nano Universal Charger（4-in-1, 100W, Display）。11,990 日元。今天零时刚过，日本几家的促销稿把首销价改成了 9,592 日元，八折，到 12 月 7 日 23 时 59 分。</p>
+<p class="story-lede">参数摆出来是这样：三个 USB-C 加一个 USB-A，C1 和 C2 单口都是 100W，C3 是 15W，A 口 12W，四个口同时用合计也是 100W。262 克，95 × 50 × 40 毫米。机身里收了 A、C、G 三种插脚，覆盖两百多个国家和地区。正面一块 1.3 英寸的屏。</p>
+<p class="dropcap">输入那一栏写的是 100–275V，2.1A，50/60Hz。</p>
+<p>我盯着「输入电压」这四个字看了很久。这是我在一个充电头的页面上，第一次看到它主动承认一件事：它给出来的数，取决于你把它插在哪面墙上。</p>
+<h2 class="story-chapter"><span class="story-num">01</span><span>屏上最没用的一行，是功率</span></h2>
+<p>100W 这个数字，你买之前就知道了。买它就是给笔记本供电，笔记本要 100W，充电头给 100W，这笔交易在你付款那一刻就成立了。你不需要一块屏再告诉你一次。</p>
+<p>屏幕真正在说别的事。</p>
+<p>它把电从抽象变成读数：这一路进来是多少伏，机器有没有识别到异常电压，温度爬到哪一格。这台机器标了 320V 的过压保护，检测到异常直接断电。它还会认连接的线材，一根只能跑 3A 的线插上去，屏幕比你先知道。</p>
+<p>一块 1.3 英寸的屏，加一颗驱动它的 MCU，物料成本不高。但它换来的东西挺贵：它把「我不知道它在干什么」这件事消掉了。</p>
+<p>我做手机壳的时候最怕的不是壳不好，是客户不知道它好在哪里。一个 89 元的壳和一个 39 元的壳，区别在做工里：镜头圈有没有倒角、按键位置的段差是 0.2 还是 0.5 毫米、四角有没有加厚。这些东西摸得到，但讲不出来。所以做壳的人一直在干同一件事——把看不见的东西变得看得见、摸得着。</p>
+<p>充电头这几年也在干这件事。指示灯是第一代，数码管是第二代，彩屏是第三代。</p>
+<h2 class="story-chapter"><span class="story-num">02</span><span>荣耀那张规格表，把同一台充电器写成了两台</span></h2>
+<p>11 月 23 日，荣耀 700 系列发布会上，一起出现的还有一只充电头：荣耀超级快充双口充电器 GaN（Max 120W）。103.9 克，折叠插脚，随机一条一米 C 线，支持苹果 AVS 动态快充 60W，单口最高 120W，也认 65W 给电脑。</p>
+<p>它的规格表是分两段写的。</p>
+<p>第一段，输入 200–240V：单口 PDO 到 20V 3.25A，SCP 和 UFCS 到（5.5–20）V 6A，双口是 100W 加 20W。</p>
+<p>第二段，输入 100–130V：单口最高 20V 3A，双口 20W 加 20W。</p>
+<p>同一台机器，同一块氮化镓，同一颗协议芯片，同一个外壳。插在上海的墙上是 120W 的双口充，插在东京或者洛杉矶的墙上，是 20W 加 20W。</p>
+<p>这不是缩水，是算术。功率等于电压乘电流，而电流被一头限住：插座、插脚、线径、输入端的器件。这台机器输入端写着 2.5A，2.5A 乘 100V 是 250W 的理论天花板，扣掉效率、扣掉待机、扣掉多口分配，落到每个口上就剩那么点；2.5A 乘 220V 是 550W，120W 轻轻松松。</p>
+<p>所以两家都把输入电压写进规格表，是有原因的。那是整张表里唯一一个跟你「在哪儿」有关的数字。</p>
+<h2 class="story-chapter"><span class="story-num">03</span><span>屏幕测的不是充电器，是墙</span></h2>
+<p>大部分人以为充电头是个固定值：买 100W 的，到处都能 100W。</p>
+<p>不是。日本是 100V，美国是 120V，中国 220V，英国 230V。频率也有 50Hz 和 60Hz 两种。老房子、酒店、机场、民宿，插座的电压还能再飘一点。你在一间开了三十年空调的酒店房间里插上去，墙给你的可能是 218V，也可能是 232V。</p>
+<p>以前要知道这件事，得拿万用表。现在它印在一块 1.3 英寸的屏上。</p>
+<p>这块屏的意义不在于好看，在于它把责任划清楚了。充电头给不出足功率的时候，以前用户的判断永远是「这东西坏了」；现在屏幕上写着输入电压，写着温度，用户能自己看明白：不是它坏了，是这面墙本来就只有这么多。</p>
+<p>我做过生意，知道这门课有多贵。客户投诉的时候，最怕的不是产品有问题，是你没法证明问题不在你这边。</p>
+<h2 class="story-chapter"><span class="story-num">04</span><span>插头是模具的事，电压是电的事</span></h2>
+<p>这台机器的三种插脚靠一个滑动旋钮切换，一次只能伸一种，其余的被机械结构锁死。</p>
+<p>为什么要做互锁？因为安全。两种插脚同时伸在外面，插进任何一个孔，都可能让火线和零线接到不该接的地方。这个设计不是聪明，是必须。</p>
+<p>形状这件事，靠模具就能解决。一副模具决定插脚的位置、行程、锁止手感，公差给到 0.1 毫米，插上去就紧。我们做壳的也是这套：模具决定孔位和倒角，材料决定摔下去那一下。前者做错了是报废，后者做错了是退货。</p>
+<p>但电压不是模具能解决的。它要靠输入端的器件和固件：宽压输入的电容、整流桥、PFC 电路、协议芯片的判断逻辑。模具管「插得进去」，芯片和固件管「插进去之后给多少、什么时候停」。</p>
+<p>这两件事分开以后，一台充电头才可能既长得像旅行插头，又干着电源适配器的活。</p>
+<p>还有一件小事：它没有 Type I，也就是澳洲、新西兰那两片斜插脚。产品页老老实实写了「不覆盖」。这一点我挺在意——写清楚不支持的，比含糊过去的值钱。</p>
+<h2 class="story-chapter"><span class="story-num">05</span><span>同一台机器，卖两次</span></h2>
+<p>这台机器不是第一次上架。</p>
+<p>美国 9 月就卖过一轮，79.99 美元。日本等到 11 月 24 日，晚了两个半月。中间隔的不是船期，是一整套东西：电气用品安全法的技术基准、日文说明书、包装上的额定标示、本地保修落地、渠道账期。Anker 给的是 18 个月质保，会员再叠 6 个月。</p>
+<p>上一代是 Anker Nano 旅行适配器（5-in-1, 20W），128 克，没有屏。这一代 262 克，重量翻了一倍，换来 100W 和一块屏。</p>
+<p>262 克放在登机箱里不算轻。但如果它替代的是一个 100W 电源适配器加一个转换插头加一根线，这笔账就反过来算了。做产品定价的人天天在这道题上打转：不是比单件轻重，是比「它顶掉了几件东西」。</p>
+<h2 class="story-chapter"><span class="story-num">06</span><span>我 16 岁，做的是同一门生意</span></h2>
+<p>我 16 岁，做手机壳。手机壳这个品类没给我什么大道理，只给了我一件事：客户愿意付钱的，永远是他能感知到的那部分。</p>
+<p>镜头圈倒角 0.3 毫米，他讲不出这个数，但他摸两秒就知道这壳不便宜。按键位置硬了一点，他不知道硬在哪，但他按下去会觉得这东西不值。这些误差都在毫米以下，全都不出现在参数表上。</p>
+<p>一块显示输入电压的屏，是同一套逻辑的另一个版本。它不提升功率，不改善效率，它只是把电在做的事摊开给你看。</p>
+<p>当然，屏也是代价。多一个零件，多一道贴合工序，多一个会坏的部件，多一层良率损耗。做产品的人必须回答一个问题：读数换来的信任，值不值得多一个故障点。</p>
+<p>我的答案是值。因为信任买不到，故障点可以修。</p>
+<p>11 月 24 日那块屏上，最要紧的一行不是 100W。是它告诉你，你这面墙给的是多少。</p>
+<p>文 / Alan Lin · 16 岁</p></div>
+</article>
+<div class="story-en t-en block">
+  <p>On 24 November Anker Japan listed the Anker Nano Universal Charger (4-in-1, 100W, Display) at 11,990 yen. By the early hours of 25 November, Japanese outlets had the launch price at 9,592 yen, a 20% cut running until 7 December.</p>
+  <p>Three USB-C ports and one USB-A, 100W from either C1 or C2 alone, 100W total across four ports, 262 grams, and a 1.3-inch screen on the front. The input line reads 100–275V, 2.1A, 50/60Hz.</p>
+  <p>That input line is the interesting part. It is the first time a charger page has openly admitted that the number it delivers depends on the wall you plug it into.</p>
+  <p>Honor's GaN Max 120W, launched alongside the Honor 700 series on 23 November, prints the same admission in two blocks: at 200–240V input, one port reaches 120W and two ports split 100W plus 20W; at 100–130V input, one port tops out at 20V 3A and two ports split 20W plus 20W. Same charger, same gallium nitride, two different products depending on the country.</p>
+  <p>Power is voltage times current, and current is capped by the socket, the pins, the wiring and the parts at the input. A 2.5A input at 100V leaves 250W of theoretical ceiling; at 220V it leaves 550W. The screen is simply the first place an ordinary buyer can see which wall they are standing at.</p>
+  <p>Written by Alan Lin, 16.</p>
+</div>
+<div class="wrap" style="padding-bottom:70px">
+  <div class="cta" style="margin-top:0">
+    <a class="btn btn-solid" href="/contact/"><span class="t-en">Talk to me</span><span class="t-cn">联系我</span></a>
+    <a class="btn btn-ghost" href="/notes/"><span class="t-en">All notes</span><span class="t-cn">全部笔记</span></a>
+  </div>
+</div>
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="brand serif" href="/">Alan Lin</a>
+        <p><span class="t-en">Sixteen. Building consumer brands and software for global markets. HANDSOME, LUMIKEY and XINGCHEN are the first three ventures.</span><span class="t-cn">十六岁。做面向全球市场的消费品牌与软件。HANDSOME、LUMIKEY 与 XINGCHEN 是前三个项目。</span></p>
+      </div>
+      <div>
+        <h4><span class="t-en">Site</span><span class="t-cn">站点</span></h4>
+        <a href="/"><span class="t-en">Home</span><span class="t-cn">首页</span></a>
+        <a href="/about/"><span class="t-en">About</span><span class="t-cn">关于</span></a>
+        <a href="/ventures/"><span class="t-en">Ventures</span><span class="t-cn">项目</span></a>
+        <a href="/notes/"><span class="t-en">Notes</span><span class="t-cn">笔记</span></a>
+        <a href="/contact/"><span class="t-en">Contact</span><span class="t-cn">联系</span></a>
+      </div>
+      <div>
+        <h4><span class="t-en">Elsewhere</span><span class="t-cn">别处</span></h4>
+        <a href="/handsome/"><span class="t-en">HANDSOME — phone cases</span><span class="t-cn">HANDSOME — 手机壳</span></a>
+        <a href="https://lumikeyskin.com/" target="_blank" rel="noopener"><span class="t-en">LUMIKEY — cosmetics OEM/ODM</span><span class="t-cn">LUMIKEY — 化妆品 OEM/ODM</span></a>
+        <a href="https://xingchenovo.com" target="_blank" rel="noopener"><span class="t-en">XINGCHEN — AI content software</span><span class="t-cn">XINGCHEN — AI 内容软件</span></a>
+        <a href="/notes/"><span class="t-en">Notes</span><span class="t-cn">笔记</span></a>
+        <a href="/contact/"><span class="t-en">Contact</span><span class="t-cn">联系</span></a>
+      </div>
+    </div>
+    <div class="copy">
+      <span><span class="t-en">© 2026 Alan Lin. All rights reserved.</span><span class="t-cn">© 2026 Alan Lin。保留所有权利。</span></span>
+      <span><span class="t-en">Built for the long term.</span><span class="t-cn">为长期而做。</span></span>
+    </div>
+  </div>
+</footer>
+<script>
+function toggleLang(){
+  var cn = document.body.classList.toggle('lang-cn');
+  document.getElementById('langBtn').textContent = cn ? 'EN' : '中文';
+  try { localStorage.setItem('alan-lang', cn ? 'cn' : 'en'); } catch(e) {}
+}
+function toggleMenu(force){
+  var h = document.querySelector('header.top');
+  if (!h) return;
+  var open = (typeof force === 'boolean') ? force : !h.classList.contains('nav-open');
+  h.classList.toggle('nav-open', open);
+  var b = document.getElementById('menuBtn');
+  if (b) b.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+document.addEventListener('click', function(e){
+  if (!e.target.closest('header.top')) toggleMenu(false);
+});
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape') toggleMenu(false);
+});
+document.querySelectorAll('#siteNav a').forEach(function(a){
+  a.addEventListener('click', function(){ toggleMenu(false); });
+});
+try {
+  if (localStorage.getItem('alan-lang') === 'cn') {
+    document.body.classList.add('lang-cn');
+    document.getElementById('langBtn').textContent = 'EN';
+  }
+} catch(e) {}
+/* cursor stars: desktop / fine pointer only */
+(function(){
+  try {
+    if (!window.matchMedia || !matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (window.__starTrail) return;
+    window.__starTrail = true;
+    var lead = document.createElement('span');
+    lead.className = 'star-cursor'; lead.textContent = '✦';
+    document.body.appendChild(lead);
+    var colors = ['#ffd43b', '#ff5a1f', '#8ed1fc', '#ffb7c5'];
+    var tx = 0, ty = 0, lx = 0, ly = 0, active = false, last = 0;
+    document.addEventListener('pointermove', function(e){
+      tx = e.clientX; ty = e.clientY;
+      if (!active) { lx = tx; ly = ty; active = true; lead.classList.add('on'); }
+      var now = performance.now();
+      if (now - last < 32) return;
+      last = now;
+      if (document.querySelectorAll('.star-trail').length > 24) return;
+      var s = document.createElement('span');
+      s.className = 'star-trail'; s.textContent = '✦';
+      s.style.left = tx + 'px'; s.style.top = ty + 'px';
+      s.style.color = colors[Math.floor(Math.random() * colors.length)];
+      s.style.fontSize = (12 + Math.random() * 9) + 'px';
+      s.style.setProperty('--dx', (Math.random() * 40 - 20) + 'px');
+      s.style.setProperty('--dy', (-6 - Math.random() * 30) + 'px');
+      s.style.setProperty('--rot', (Math.random() * 160 - 80) + 'deg');
+      document.body.appendChild(s);
+      s.addEventListener('animationend', function(){ s.remove(); });
+    }, { passive: true });
+    document.addEventListener('mouseout', function(e){
+      if (!e.relatedTarget) { active = false; lead.classList.remove('on'); }
+    });
+    (function loop(){
+      if (active) {
+        lx += (tx - lx) * 0.18; ly += (ty - ly) * 0.18;
+        lead.style.transform = 'translate(' + lx + 'px,' + ly + 'px) translate(-50%,-50%)';
+      }
+      requestAnimationFrame(loop);
+    })();
+  } catch (e) {}
+})();
+</script>
+</body>
+</html>
