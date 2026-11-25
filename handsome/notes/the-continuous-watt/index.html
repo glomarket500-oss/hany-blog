@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Three Minutes of Peak — 涵哥（Alan）</title>
+<meta name="description" content="从 11 月 25 日 Elecom「Next Li+」电池与 GaN Core 65W 充电器发布会说起：大功率充电宝的持续输出、热降额、多口分配、PD3.1 EPR 与 UFCS、100Wh 航空线与安全成本。">
+<link rel="canonical" href="https://www.gulangma.com/notes/the-continuous-watt/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Three Minutes of Peak — 涵哥（Alan）">
+<meta property="og:description" content="从 11 月 25 日 Elecom「Next Li+」电池与 GaN Core 65W 充电器发布会说起：大功率充电宝的持续输出、热降额、多口分配、PD3.1 EPR 与 UFCS、100Wh 航空线与安全成本。">
+<meta property="og:image" content="https://www.gulangma.com/assets-founder/the-continuous-watt-cover.webp">
+<meta property="og:url" content="https://www.gulangma.com/notes/the-continuous-watt/">
+<meta property="og:site_name" content="Alan Lin">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index,follow">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets-founder/founder.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Alan Lin","givenName":"Alan","familyName":"Lin","jobTitle":"Founder","url":"https://www.gulangma.com/","worksFor":{"@type":"Organization","name":"HANDSOME"}}</script>
+</head>
+<body><header class="top">
+  <div class="wrap">
+    <a class="brand serif" href="/">Alan Lin<span>.</span></a>
+    <nav class="main" id="siteNav">
+      <a href="/"><span class="t-en">Home</span><span class="t-cn">首页</span></a>
+      <a href="/about/"><span class="t-en">About</span><span class="t-cn">关于</span></a>
+      <a href="/ventures/"><span class="t-en">Ventures</span><span class="t-cn">项目</span></a>
+      <a href="/notes/" class="on"><span class="t-en">Notes</span><span class="t-cn">笔记</span></a>
+      <a href="/contact/"><span class="t-en">Contact</span><span class="t-cn">联系</span></a>
+    </nav>
+    <div class="nav-actions">
+      <button class="langbtn" id="langBtn" onclick="toggleLang()">中文</button>
+      <button class="menubtn" id="menuBtn" aria-label="Menu" aria-expanded="false" aria-controls="siteNav" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<section class="story-hero">
+  <div class="wrap">
+    <p class="story-kicker"><span class="t-en">Notes · 2026 · 11 · Twelfth essay</span><span class="t-cn">笔记 · 2026 · 11 · 第十二篇</span></p>
+    <h1 class="story-title">
+      <span class="t-en">Three Minutes of Peak<br>The Rest Is Sustained</span><span class="t-cn">峰值三分钟<br>剩下叫持续功率</span>
+    </h1>
+    <p class="story-dek"><span class="t-en">On 25 November Elecom capped a 5,000mAh cell at 22.5W and sold a 65W charger on staying cool. Heat is the real cost line.</span><span class="t-cn">11 月 25 日，Elecom 一边把一块五千毫安压在 22.5W，一边把「不烫」做成 65W 充电器的卖点。热才是这条线真正的成本项。</span></p>
+    <p class="story-byline"><span class="t-en">Words / Alan Lin · 16</span><span class="t-cn">文 / Alan Lin · 16 岁</span></p>
+    <p class="story-time"><span class="t-en">Published 2026-11-25 15:20:00</span><span class="t-cn">发布于 2026-11-25 15:20:00</span></p>
+  </div>
+</section>
+<figure class="story-cover">
+  <img src="/assets-founder/the-continuous-watt-cover.webp" alt="A matte black power bank with a coiled USB-C cable on plain light linen" width="1600" height="1000" loading="eager">
+  <figcaption><span class="t-en">Concept scene: the cable is where the watt number first gets tested.</span><span class="t-cn">场景概念图：瓦数第一个受考验的地方，往往是那根线。</span></figcaption>
+</figure>
+<article class="story-body">
+  <div class="story-body-inner t-cn block"><p class="story-epigraph">11 月 25 日上午十一点，东京有一场发布会。Elecom 把两块东西摆上台：一块五千毫安的移动电源 DE-C100-5K，和一台 65W 的 USB-C 充电器 ACDC-PD13365BK。日本媒体把发布会里的一句话直接拎成了标题——「安全でも高ければ普及しない」，安全的东西如果太贵，就普及不了。说这句话的是他们的开发负责人。</p>
+<p class="story-lede">我在深圳这边看到这条的时候是下午。桌上正摆着客户上周寄回来的一块样机，两万毫安，标 140W，外壳侧面有一道很浅的鼓起。我把它翻过来看了一眼铭牌，又翻回正面，然后继续看那条新闻。两块东西隔着一个海，讲的是同一件事：瓦数是最容易被写在包装上的那个数，也是最容易在手里被打回原形的那个数。</p>
+<h2 class="story-chapter"><span class="story-num">01</span><span>五千毫安，22.5W，值得开一场发布会</span></h2>
+<p class="dropcap">先把 Elecom 那台看清楚。容量五千毫安，USB-C 加 USB-A 各一个口，单口最大 22.5W，C 口走 PPS 能到 20W，两个口同时用合计只有 15W，输入 18W，充满大概两个半小时。110 克，10.6 毫米厚，六个配色。</p>
+<p>按现在货架上的说法，这是一台很不起眼的机器。五千毫安，22.5W，国内同价位随便一台都写 30W、写 33W。它凭什么开发布会？</p>
+<p>凭的是电芯。他们把电池从里到外改了三处：铝箔和隔膜上加陶瓷涂层，让正负极不容易直接碰上；电解液里加不燃性添加剂，把热稳定性和界面稳定性往上提；隔膜换成高温下也不容易收缩变形的耐热材料。单节电芯配两套保护电路，不是一套。循环按一千次算，到五百次左右，机身上的灯会提醒你该换了。电芯本身过的是中国今年四月开始执行的新规 CCC 认证，日本厂商为此专门换了供应商。</p>
+<p>这三处改动，没有一处会出现在参数表上。陶瓷涂层不加容量，不燃添加剂不加功率，耐热隔膜不加充电速度。它们只做一件事：把「起火」这个概率往下压。</p>
+<p>所以那台机器卖 5980 日元，限量 4980。开发负责人自己也知道这个价格不便宜，才说出那句「安全但太贵就普及不了」。这句话不是谦辞，是这条产品线最实在的困境：安全是有成本的，成本是要有人付的。</p>
+<p>我把发布会那张图放大了看。五千毫安的机器，六个配色，其中一个叫「しろちゃん」，是只白猫的名字。一台专门为了防起火重做电芯的机器，同时还认真挑了一只猫来当配色名。这两件事放在一起看，你就知道它不是给极客做的，是给普通人的包包做的。</p>
+<figure class="story-figure"><img src="/assets-founder/the-continuous-watt-scene1.webp" alt="黑色充电宝与一根盘好的线，放在米白色布面上" loading="eager"><figcaption><span class="t-en">A black power bank and a coiled cable on off-white cloth</span><span class="t-cn">黑色充电宝与一根盘好的线，放在米白色布面上</span></figcaption></figure>
+<h2 class="story-chapter"><span class="story-num">02</span><span>同一天那台 65W，卖点是「不烫」</span></h2>
+<p>同场发布的另一台更有意思。ACDC-PD13365BK，65W 的 USB-C 充电器，用的是一颗叫 GaN Core 的新 IC，和一家日本电源技术厂商合作开发。它的宣传重点不是「更小」，是「不会因为发热而掉功率」。体积比一般 65W 小一半，重量 93 克，掉了四成。</p>
+<p>我做配件这几年，见过太多 65W。它们几乎都能在插上去的头三十秒跑到 65W，然后在二十分钟后悄悄滑到 45W、40W。用户不会去看功率计，用户只会觉得「怎么充得慢了」。发热降额不是故障，是保护，但它也确实是一个没写在包装上的折扣。</p>
+<p>Elecom 把「不烫」当成卖点，等于承认了一件事：这条线真正的成本项不是芯片，是热。热从哪来？从电流过电阻来。65W 在 20V 上是 3.25A，在 5V 上是 13A，同样一根线，后者的线损是前者的十几倍。所以工程上一直把电压往上顶，把电流压住。这是所有快充的共同逻辑，也是 PD3.1 后来一定要走 EPR 的原因。</p>
+<p>一家公司，同一天，一边把电池的输出压在 22.5W，一边把「不要热」做成充电器的核心卖点。这两件事放在一起，比任何参数表都清楚：功率是被热管着的。</p>
+<h2 class="story-chapter"><span class="story-num">03</span><span>峰值写在包装上，持续功率写在散热里</span></h2>
+<p>我给笔记本供电这一档，是从 60W 开始算的。60W 能让一台轻薄本维持电量不掉，100W 往上才谈得上边用边充，140W 是现在高端轻薄本的原装档。</p>
+<p>问题是，包装上写的 140W，和插上笔记本两小时里实际给出的功率，通常不是一个数。</p>
+<p>原因很朴素：电芯放电会热。热量堆在电芯里，温度上去，保护逻辑就把电流收回来。收回来多少，取决于三件事。</p>
+<p>第一件是电芯怎么排。同样两万毫安，可以做四颗五千毫安并联，也可以做六颗三千三百毫安并联。并联数多，单颗承担的电流小，内阻损耗按电流的平方走，发热明显低；但颗数多，意味着更多的连接片、更复杂的均衡、更高的装配成本，也多一处可能失效的焊点。第二件是热怎么走。外壳是塑料还是铝，里面贴不贴石墨片，电芯和壳之间留不留导热路径，这些在爆炸图上看不出来，在手里能感觉出来——一块真能持续输出 100W 的机器，连续跑一小时是温的，不是烫的。第三件是固件怎么降。降得早，机器凉，用户体验差；降得晚，机器热，安全余量小。这个斜率是工程师一条一条试出来的，试一次要烧掉一片板子。</p>
+<p>我没有实验室，也不打算编一条温度曲线出来骗人。我只能说一件我能确认的事：一块标 140W 的机器，如果外壳在半小时后烫得握不住，那它的 140W 就是三十秒的事。</p>
+<h2 class="story-chapter"><span class="story-num">04</span><span>多口不是加法，是固件里的一次排序</span></h2>
+<p>客户最容易误会的地方在这里。他们看参数表，看到「140W」，看到「三个口」，很自然地以为 140W 分给三个口，一个口还能拿四十多。</p>
+<p>实际上不是分，是排。</p>
+<p>一块机器的总输出能力，受限于电芯能放出的功率和内部升降压电路的总容量。三个口同时插上，固件要决定：C1 让不让位、给笔记本留多少、手机那边认哪个协议、A 口是不是降到 5V 慢充。这些判断写在固件里，不同厂商写的顺序不一样，用户的感受也不一样——同样是「三口同时」，有的机器笔记本还能拿 65W，有的直接掉到 45W。</p>
+<p>这里面有一笔实打实的成本：每个口要独立升降压，就要多一套 MOS、电感和控制环路。三个口都做独立，BOM 直接上去，板子也变大，而板子变大又跟「薄」打架。</p>
+<p>所以当我看到 11 月 24 日华为在 Mate X8 发布会上那台四十瓦的一万毫安，规格里明写「不支持两个接口同时输出」「不支持边充边放」，我一点都不觉得它缩水。反过来，这是我最愿意看到的一种写法：它把取舍写在明面上，而不是让你买回去自己发现。</p>
+<p>参数表上少一行，比说明书里多一页要诚实。做 B2B 的都懂这个道理——客户退货不会因为「参数低」，只会因为「和我想的不一样」。</p>
+<figure class="story-figure"><img src="/assets-founder/the-continuous-watt-scene2.webp" alt="立在浅木台面上的充电宝，一根编织线从顶部垂下" loading="eager"><figcaption><span class="t-en">The same bank on a pale wooden surface, a braided cable hanging from the top</span><span class="t-cn">立在浅木台面上的充电宝，一根编织线从顶部垂下</span></figcaption></figure>
+<h2 class="story-chapter"><span class="story-num">05</span><span>PD3.1 EPR 和 UFCS，走的是两条路</span></h2>
+<p>这两年被问得最多的两个词，我想把它们讲清楚，因为它们解决的不是同一个问题。</p>
+<p>PD3.1 的 EPR，是把电压继续往上顶。以前 PD 最高 20V，5A 的线材上限摆在那里，功率就卡在 100W。EPR 把档位加到 28V、36V、48V，于是 28V×5A 就是 140W，48V×5A 就是 240W。所以 140W 以上这条线，绕不开三件事：设备要支持 EPR、线材要带 E-Marker 芯片标明自己能过 5A、充电器要能在 28V 上稳定输出。少一样，功率就掉回去。</p>
+<p>顺便说一个细节：华为那台四十瓦的机器，内置线里也塞了 E-Marker 芯片，接口上还有 NTC 测温。四十瓦用不到 5A，它装 E-Marker 不是为了跑满功率，是为了让两端能正确识别这根线到底是什么、能承受什么。线材不被识别，系统就只敢按保守档走——这也是很多人「换根线就变慢」的真实原因，不是线坏了，是线不会说话。</p>
+<p>UFCS 走的是另一条路。它不追求最高瓦数，追求的是跨品牌：华为的头给小米的手机充，也能快起来。国内推这套融合快充，本质上是在解决协议割据，把 30W 到 40W 这一档做成通用件。它对普通用户的意义，其实比 240W 大得多——大部分人手上的设备，根本吃不到 140W。</p>
+<p>两条路的成本不一样。EPR 要更强的同步整流、更严的安规间距、更贵的线；UFCS 要做多协议兼容，测试矩阵一下就铺开。每多认一家协议，就要多跑一轮兼容性测试，认证要重测，固件要重发。这些钱不进参数表，进的是售价。</p>
+<h2 class="story-chapter"><span class="story-num">06</span><span>100Wh 那条线，和「谁承担」</span></h2>
+<p>机场安检那道线画在 100Wh。低于这条线，随身携带基本没障碍；100Wh 到 160Wh 之间，要航司批准；再往上就别想了，托运也不行。这条规定跟瓦数无关，只跟能量有关，所以一块标 250W 的机器，只要能量压在 97Wh，它照样能上飞机。</p>
+<p>我见过一个数字，记得很清楚。充电头网在 11 月 5 日那篇统计里写，截至 10 月底，26 个品牌拿到了 85 张新国标 3C 证书，覆盖 140 个型号，部分产品的额定能量做到 97.36Wh，输出功率做到 250W。</p>
+<p>97.36。离 100 只剩 2.64Wh。</p>
+<p>这不是做不到更大，是刻意压在这条线上。多出来的那 2.64Wh，在工程上不是没有，是不划算：一旦超过 100Wh，产品就从「随身带」变成「要申报」，渠道、详情页、客服话术全都要改。所以工程师把能量卡死在线上，把功率往另一个方向抬。</p>
+<p>这也是为什么我越来越觉得，大功率充电宝这个品类的竞争，早就不在「多少瓦」上了。真正的分水岭是四件事：持续输出能撑多久、多口怎么排、证书和追溯能不能查、出了问题谁承担。</p>
+<p>最后一件最要命。一块机器卖两百多，出一次事，赔的不是两百多。召回、下架、检测、渠道退货、品牌折价，这些钱在出厂那一刻就已经被算进成本里了——只不过算得准的公司，把它摊到每一台上；算不准的，等出事再摊。Elecom 那句「安全但太贵就普及不了」，说的就是这个：安全成本不会消失，它只会选择由谁付。</p>
+<p>我十六岁，做这行没几年，实验室也没有。我能做的判断很有限：包装上那个瓦数，是三十秒的事；能撑住两小时的那个数，才是我敢交给客户的数。</p>
+<p>文 / 涵哥（Alan）· 16 岁</p></div>
+</article>
+
+<div class="wrap" style="padding-bottom:70px">
+  <div class="cta" style="margin-top:0">
+    <a class="btn btn-solid" href="/contact/"><span class="t-en">Talk to me</span><span class="t-cn">联系我</span></a>
+    <a class="btn btn-ghost" href="/notes/"><span class="t-en">All notes</span><span class="t-cn">全部笔记</span></a>
+  </div>
+</div>
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="brand serif" href="/">Alan Lin</a>
+        <p><span class="t-en">Sixteen. Building consumer brands and software for global markets. HANDSOME, LUMIKEY and XINGCHEN are the first three ventures.</span><span class="t-cn">十六岁。做面向全球市场的消费品牌与软件。HANDSOME、LUMIKEY 与 XINGCHEN 是前三个项目。</span></p>
+      </div>
+      <div>
+        <h4><span class="t-en">Site</span><span class="t-cn">站点</span></h4>
+        <a href="/"><span class="t-en">Home</span><span class="t-cn">首页</span></a>
+        <a href="/about/"><span class="t-en">About</span><span class="t-cn">关于</span></a>
+        <a href="/ventures/"><span class="t-en">Ventures</span><span class="t-cn">项目</span></a>
+        <a href="/notes/"><span class="t-en">Notes</span><span class="t-cn">笔记</span></a>
+        <a href="/contact/"><span class="t-en">Contact</span><span class="t-cn">联系</span></a>
+      </div>
+      <div>
+        <h4><span class="t-en">Elsewhere</span><span class="t-cn">别处</span></h4>
+        <a href="/handsome/"><span class="t-en">HANDSOME — phone cases</span><span class="t-cn">HANDSOME — 手机壳</span></a>
+        <a href="https://lumikeyskin.com/" target="_blank" rel="noopener"><span class="t-en">LUMIKEY — cosmetics OEM/ODM</span><span class="t-cn">LUMIKEY — 化妆品 OEM/ODM</span></a>
+        <a href="https://xingchenovo.com" target="_blank" rel="noopener"><span class="t-en">XINGCHEN — AI content software</span><span class="t-cn">XINGCHEN — AI 内容软件</span></a>
+        <a href="/notes/"><span class="t-en">Notes</span><span class="t-cn">笔记</span></a>
+        <a href="/contact/"><span class="t-en">Contact</span><span class="t-cn">联系</span></a>
+      </div>
+    </div>
+    <div class="copy">
+      <span><span class="t-en">© 2026 Alan Lin. All rights reserved.</span><span class="t-cn">© 2026 Alan Lin。保留所有权利。</span></span>
+      <span><span class="t-en">Built for the long term.</span><span class="t-cn">为长期而做。</span></span>
+    </div>
+  </div>
+</footer>
+<script>
+function toggleLang(){
+  var cn = document.body.classList.toggle('lang-cn');
+  document.getElementById('langBtn').textContent = cn ? 'EN' : '中文';
+  try { localStorage.setItem('alan-lang', cn ? 'cn' : 'en'); } catch(e) {}
+}
+function toggleMenu(force){
+  var h = document.querySelector('header.top');
+  if (!h) return;
+  var open = (typeof force === 'boolean') ? force : !h.classList.contains('nav-open');
+  h.classList.toggle('nav-open', open);
+  var b = document.getElementById('menuBtn');
+  if (b) b.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+document.addEventListener('click', function(e){
+  if (!e.target.closest('header.top')) toggleMenu(false);
+});
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape') toggleMenu(false);
+});
+document.querySelectorAll('#siteNav a').forEach(function(a){
+  a.addEventListener('click', function(){ toggleMenu(false); });
+});
+try {
+  if (localStorage.getItem('alan-lang') === 'cn') {
+    document.body.classList.add('lang-cn');
+    document.getElementById('langBtn').textContent = 'EN';
+  }
+} catch(e) {}
+/* cursor stars: desktop / fine pointer only */
+(function(){
+  try {
+    if (!window.matchMedia || !matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (window.__starTrail) return;
+    window.__starTrail = true;
+    var lead = document.createElement('span');
+    lead.className = 'star-cursor'; lead.textContent = '✦';
+    document.body.appendChild(lead);
+    var colors = ['#ffd43b', '#ff5a1f', '#8ed1fc', '#ffb7c5'];
+    var tx = 0, ty = 0, lx = 0, ly = 0, active = false, last = 0;
+    document.addEventListener('pointermove', function(e){
+      tx = e.clientX; ty = e.clientY;
+      if (!active) { lx = tx; ly = ty; active = true; lead.classList.add('on'); }
+      var now = performance.now();
+      if (now - last < 32) return;
+      last = now;
+      if (document.querySelectorAll('.star-trail').length > 24) return;
+      var s = document.createElement('span');
+      s.className = 'star-trail'; s.textContent = '✦';
+      s.style.left = tx + 'px'; s.style.top = ty + 'px';
+      s.style.color = colors[Math.floor(Math.random() * colors.length)];
+      s.style.fontSize = (12 + Math.random() * 9) + 'px';
+      s.style.setProperty('--dx', (Math.random() * 40 - 20) + 'px');
+      s.style.setProperty('--dy', (-6 - Math.random() * 30) + 'px');
+      s.style.setProperty('--rot', (Math.random() * 160 - 80) + 'deg');
+      document.body.appendChild(s);
+      s.addEventListener('animationend', function(){ s.remove(); });
+    }, { passive: true });
+    document.addEventListener('mouseout', function(e){
+      if (!e.relatedTarget) { active = false; lead.classList.remove('on'); }
+    });
+    (function loop(){
+      if (active) {
+        lx += (tx - lx) * 0.18; ly += (ty - ly) * 0.18;
+        lead.style.transform = 'translate(' + lx + 'px,' + ly + 'px) translate(-50%,-50%)';
+      }
+      requestAnimationFrame(loop);
+    })();
+  } catch (e) {}
+})();
+</script>
+</body>
+</html>
