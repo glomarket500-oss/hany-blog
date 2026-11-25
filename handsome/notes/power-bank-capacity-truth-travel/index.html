@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Capacity Number That Is Not There — 涵哥（Alan）</title>
+<meta name="description" content="从 11 月 24 日静安抽查名单里一台机器上的三个容量数字说起：毫安时、瓦时、额定容量，以及 100Wh 天花板与多设备差旅场景。">
+<link rel="canonical" href="https://www.gulangma.com/notes/power-bank-capacity-truth-travel/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Capacity Number That Is Not There — 涵哥（Alan）">
+<meta property="og:description" content="从 11 月 24 日静安抽查名单里一台机器上的三个容量数字说起：毫安时、瓦时、额定容量，以及 100Wh 天花板与多设备差旅场景。">
+<meta property="og:image" content="https://www.gulangma.com/assets-founder/power-bank-capacity-truth-travel-cover.webp">
+<meta property="og:url" content="https://www.gulangma.com/notes/power-bank-capacity-truth-travel/">
+<meta property="og:site_name" content="Alan Lin">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index,follow">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets-founder/founder.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Alan Lin","givenName":"Alan","familyName":"Lin","jobTitle":"Founder","url":"https://www.gulangma.com/","worksFor":{"@type":"Organization","name":"HANDSOME"}}</script>
+</head>
+<body><header class="top">
+  <div class="wrap">
+    <a class="brand serif" href="/">Alan Lin<span>.</span></a>
+    <nav class="main" id="siteNav">
+      <a href="/"><span class="t-en">Home</span><span class="t-cn">首页</span></a>
+      <a href="/about/"><span class="t-en">About</span><span class="t-cn">关于</span></a>
+      <a href="/ventures/"><span class="t-en">Ventures</span><span class="t-cn">项目</span></a>
+      <a href="/notes/" class="on"><span class="t-en">Notes</span><span class="t-cn">笔记</span></a>
+      <a href="/contact/"><span class="t-en">Contact</span><span class="t-cn">联系</span></a>
+    </nav>
+    <div class="nav-actions">
+      <button class="langbtn" id="langBtn" onclick="toggleLang()">中文</button>
+      <button class="menubtn" id="menuBtn" aria-label="Menu" aria-expanded="false" aria-controls="siteNav" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<section class="story-hero">
+  <div class="wrap">
+    <p class="story-kicker"><span class="t-en">Notes · 2026 · 11 · Twelfth essay</span><span class="t-cn">笔记 · 2026 · 11 · 第十二篇</span></p>
+    <h1 class="story-title">
+      <span class="t-en">The Capacity Number That Is Not There</span><span class="t-cn">毫安时不是那块电池的全部</span>
+    </h1>
+    <p class="story-dek"><span class="t-en">On 24 November a Shanghai inspection listed one bank as 20000mAh, 74Wh and 12000mAh rated. Three numbers, one battery.</span><span class="t-cn">11 月 24 日的一份抽查名单里，一台机器上写着三个容量数字。</span></p>
+    <p class="story-byline"><span class="t-en">Words / Alan Lin · 16</span><span class="t-cn">文 / Alan Lin · 16 岁</span></p>
+    <p class="story-time"><span class="t-en">Published 2026-11-25 18:30:00</span><span class="t-cn">发布于 2026-11-25 18:30:00</span></p>
+  </div>
+</section>
+<figure class="story-cover">
+  <img src="/assets-founder/power-bank-capacity-truth-travel-cover.webp" alt="A large portable power bank on a wooden desk charging a laptop, a tablet and a phone" width="1600" height="1000" loading="eager">
+  <figcaption><span class="t-en">Concept scene: one battery, three devices, and the number that actually decides.</span><span class="t-cn">场景概念图：一块电池、三台设备，和那个真正做决定的数字。</span></figcaption>
+</figure>
+<article class="story-body">
+  <div class="story-body-inner t-cn block"><p class="story-epigraph">11 月 24 日，上海市静安区市场监督管理局公布了一批监督抽查结果，电源适配器、快充充电器、锂离子蓄电池、移动电源一共抽了 12 批次，全部合格。名单是公开的，我把它当资料看，看到两台移动电源的铭牌时停了一下。</p>
+<p class="story-lede">一块是 TDX 铁达信 X-201C，铭牌上写着三行：电池能量 20000mAh 3.7V/74Wh；额定容量 12000mAh（5V-2A）。</p>
+<p class="dropcap">另一块是 MINISO C111，同样三行：10000mAh/3.85V/38.5Wh；额定容量 6000mAh（5V-2A）。</p>
+<p>同一台机器上，三个完全不同的容量数字。这不是铭牌写错了，是这门生意从一开始就把三个概念摞在一起，然后大多数只看第一个。</p>
+<p>我 16 岁，做手机壳，也管过充电宝的货。这篇文章我想把这三个数字拆开讲清楚，因为它们决定一件事：你带它出门，能不能过安检，能充几次电，是不是买亏了。</p>
+<h2 class="story-chapter"><span class="story-num">01</span><span>20000mAh 不是 20000mAh</span></h2>
+<p>先把第一个事实钉死：20000mAh 这个数字，说的是电池内部电芯的电荷量，不是它实际能给手机的东西。</p>
+<p>按静安那份名单，铁达信 X-201C 电池能量 20000mAh、3.7V，换算成能量是 74Wh。而它标称的额定容量是 12000mAh（5V-2A）——就是说，当它从 5V 的口输出时，实际能给手机的是 12000mAh 这个量级。</p>
+<p>差出来的那 8000mAh 去哪了？一部分是升压损耗。电芯是 3.7V，手机充电是 5V，中间要升压，升压有转换效率，这部分能量变成热。还有一部分是放电平台、内阻、保护电路自己的耗电。</p>
+<p>这不是某一台机器的问题。MINISO 那块 10000mAh、3.85V、38.5Wh，额定容量 6000mAh。iQOO 自带线数显移动电源 20000 66W，2026 年 11 月 16 日开售，首销价 229 元，铭牌上也是三个数：内置两颗 10000mAh 电芯、等效 20000mAh、额定容量 12000mAh（5V3A）、电池能量 74Wh。</p>
+<p>所以「20000mAh 能充两万」这句宣传语，从物理上就不成立。它说的是电芯电荷量，能喂给手机的大约是六成。</p>
+<h2 class="story-chapter"><span class="story-num">02</span><span>真正决定能不能出门的，是瓦时不是毫安时</span></h2>
+<p>如果毫安时只影响你充几次，那瓦时影响的是你过不过得了安检。</p>
+<p>民航的规矩写得很清楚：随身携带的充电宝，额定能量不超过 100Wh 的，直接带；超过 100Wh 但不超过 160Wh 的，要航空公司批准，而且每人最多带两块；超过 160Wh 的，禁止随身携带或托运。</p>
+<p>注意，安检看的是瓦时，不是毫安时。这就带来一个几乎所有大容量买家都会踩的坑。</p>
+<p>按 3.7V 折算，30000mAh 是 111Wh，已经过了 100Wh 那条线。你买了「30000mAh 超大容量」，到了安检口才发现要航空公司点头，而且限两块。他不是买错产品，是买错场景。</p>
+<p>所以现在主打差旅的大容量，都把能量往 100Wh 以内压。iQOO 那块 74Wh，稳稳在线内；华为 11 月 25 日今天发售的自带线全能充移动电源（66W 12000），12000mAh，标称能量也在百瓦时以内。它们不是碰巧，是算好了站住的。</p>
+<p>我的判断是：差旅向的大容量移动电源，大概率会继续把标称能量压在 100Wh 以内，哪怕毫安时数字因此不好看。成立条件是民航这条规则不动；反向信号是某家开始公开宣传「超过 100Wh 也能带」并且真这么卖——那说明规则变了，或者它打算赌安检口没人较真。</p>
+<figure class="story-figure"><img src="/assets-founder/power-bank-capacity-truth-travel-scene1.webp" alt="场景概念图：一块电池、三台设备，真正做决定的是瓦时那条线。" loading="eager"><figcaption><span class="t-en">Concept scene: one battery, three devices — the line that decides is the watt-hour.</span><span class="t-cn">场景概念图：一块电池、三台设备，真正做决定的是瓦时那条线。</span></figcaption></figure>
+<h2 class="story-chapter"><span class="story-num">03</span><span>多设备同时充，先看功率再看容量</span></h2>
+<p>大容量产品最爱讲的场景是「一块电池，同时喂笔记本、平板、手机」。这句宣传语在详情页上很漂亮，在实际使用里要先问一句：你的输出功率够不够。</p>
+<p>给笔记本充电看的是功率和协议，不是容量。一块 20000mAh、单口只有 30W 的机器，插上轻薄本只能维持不掉电，充不进去；客户会以为坏了，其实是选型问题。</p>
+<p>多口同时输出的情况更实在。iQOO 那块支持三口同充，但它也把额定容量写在铭牌上、把总输出参数写清楚；华为 66W 12000 是双向 66W，自带线端口内置 NTC 温控监测。这些不是巧合——多口同时满功率这件事，物理上很难同时成立，因为三路升压同时工作，损耗变成热，挤在同一个越来越小的壳子里。</p>
+<p>我判断一台多口大容量产品靠不靠谱，只看三个数：单口最大输出、多口同时输出时每口降到多少、满载一小时后外壳最热点多少度。第三个数字，供应商十有八九给不出来。给不出来的，我会认为它大概率没测过——成立条件是没有独立第三方报告佐证；反向信号是它主动晒出带日期和机构的满载温升曲线。</p>
+<h2 class="story-chapter"><span class="story-num">04</span><span>差旅真实场景：不是没电，是翻包和安检</span></h2>
+<p>我自己出差带充电宝，最怕的从来不是没电，是两件事：翻包，和过安检被拦。</p>
+<p>翻包这件事很小。一根线塞在包底，跟钥匙缠在一起，你要花四十秒把它解开。人在赶高铁的时候，四十秒能让人对整台机器产生怨气。所以华为 11 月 25 日今天发售的这款 66W 12000 把线做在机身上——液态硅胶自带线，隐在机身里，磁吸卡槽，一拉即充、一吸归位，厚度 15.6mm，重约 236g，还有鸿蒙智慧数显，补电时能在手机上直接看充电宝剩多少电。它卖 329 元，比一块 20000mAh 的便宜货贵，但贵在「不用想」三个字上。</p>
+<p>安检这件事更大。民航从 2025 年 6 月 28 日起，没有 3C 标识、标识不清晰、属于被召回型号或批次的充电宝，一律不能带上境内航班。也就是说，差旅向的机器，3C 标不能是印上去的装饰，得是真的。iQOO 那块写着通过 3C 认证、可携带登机；华为 66W 12000 也标了 3C 认证。这不是卖点，是入场券。</p>
+<p>我的判断是：差旅向大容量移动电源，大概率会把手感、自带线、数显和 3C 标识做成标配，而不是选配。成立条件是安检执行力度不放松；反向信号是市面上重新出现大把「无 3C 标但标称超大容量」的廉价机还卖得动——那说明安检这条线在松动，或者买家还没被拦过。</p>
+<figure class="story-figure"><img src="/assets-founder/power-bank-capacity-truth-travel-scene2.webp" alt="场景概念图：充电宝躺在安检托盘里，这是它真正要过的关。" loading="eager"><figcaption><span class="t-en">Concept scene: the power bank in the security tray — the real checkpoint.</span><span class="t-cn">场景概念图：充电宝躺在安检托盘里，这是它真正要过的关。</span></figcaption></figure>
+<h2 class="story-chapter"><span class="story-num">05</span><span>虚标不是故事，是检测报告里的事实</span></h2>
+<p>容量虚标这件事，我有一次真实的、可查的旁证。</p>
+<p>2026 年 11 月 6 日，福建省消费者权益保护委员会联合宁夏回族自治区消费者协会，发布了一份 30 款主流移动电源的比较试验结果。样品以普通消费者身份从福建、宁夏两地的线下商店和网购平台随机购买，单价从 45 元到 220 元。检测前筛查里，1 款多电芯样品因涉嫌假冒被移送相关部门，有效样品 29 款；29 款安全性能都合格、没有起火爆炸，但有 6 款常温下实测有效输出容量没达到标称额定容量，涉及 iWALK 爱沃可和南孚旗下品牌传应。</p>
+<p>6 款里，有品牌、有价格带、有检测机构、有发布日期。这告诉我一件事：虚标在这个品类不是极端个案，是稳定存在的一层。</p>
+<p>再看新国标。GB 47372-2026《移动电源安全技术规范》，2026 年 3 月 31 日公开发布，2027 年 4 月 1 日实施，是移动电源第一个专用强制性国家标准，新增了钢针刺穿电芯不起火、不爆炸的针刺试验，还补了容量标识、自带线、循环寿命这些充电宝特有的项目。2026 年 11 月 23 日，安克宣布成为首批通过这个新国标 3C 认证的厂商之一，机身铭牌上的二维码扫一下能直接跳到认证信息页。</p>
+<p>我的判断是：从 2027 年 4 月 1 日起，没有 3C 标的移动电源大概率不能合法生产、销售、进口，也带不上境内航班；靠「标称容量翻倍、实测缩水」卖货的小厂，大概率会被挤出差旅向和品牌向渠道。成立条件是标准如期实施、执法不停；反向信号是过渡期后市面上仍能买到大量无标大容量廉价机且平台不处置——那说明执行打了折扣。</p>
+<h2 class="story-chapter"><span class="story-num">06</span><span>价格带在往哪走</span></h2>
+<p>最后说说钱。这一档的价格带，我看到的其实是两条线。</p>
+<p>一条是「能上飞机的快充大容量」。iQOO 20000 66W 首销 229 元，74Wh、三口同充、19 重保护、3C 认证；华为 12000 66W 卖 329 元，贵了 100 元，换来更薄更轻、自带线、鸿蒙数显。贵 100 块买的是「不用想」和「更轻」，不是多 8000mAh。</p>
+<p>另一条是「便宜大碗」。45 到 220 元的区间里，就有那 6 款虚标样品的影子。便宜是真的，容量缩水也是真的。</p>
+<p>我的判断是：这一档的价格带，大概率会继续分化——品牌向越来越像手机配件（轻薄、数显、自带线、认证齐全），白牌向继续卷毫安时数字和低价。中间地带（20000mAh、没数显、没自带线、没认证）大概率会越来越难卖，因为它两头不靠。成立条件是消费者开始会看瓦时、会扫码核验认证；反向信号是「20000mAh 无认证机」的搜索和销量占比不降反升——那说明大部分人还是只看第一个数字。</p>
+<p>我管货的时候吃过这个亏。一个客户拿着「20000mAh」的宣传页跟我砍价，我指给他看铭牌上的额定容量，他愣了两秒，说那我不如买块小的。你看，三个数字摞在那里，大多数人只看了第一个。谁能把第二个和第三个讲清楚，谁就把这门生意的信息差赚走了。</p>
+<p>文 / 涵哥（Alan）· 16 岁</p></div>
+</article>
+
+<div class="wrap" style="padding-bottom:70px">
+  <div class="cta" style="margin-top:0">
+    <a class="btn btn-solid" href="/contact/"><span class="t-en">Talk to me</span><span class="t-cn">联系我</span></a>
+    <a class="btn btn-ghost" href="/notes/"><span class="t-en">All notes</span><span class="t-cn">全部笔记</span></a>
+  </div>
+</div>
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="brand serif" href="/">Alan Lin</a>
+        <p><span class="t-en">Sixteen. Building consumer brands and software for global markets. HANDSOME, LUMIKEY and XINGCHEN are the first three ventures.</span><span class="t-cn">十六岁。做面向全球市场的消费品牌与软件。HANDSOME、LUMIKEY 与 XINGCHEN 是前三个项目。</span></p>
+      </div>
+      <div>
+        <h4><span class="t-en">Site</span><span class="t-cn">站点</span></h4>
+        <a href="/"><span class="t-en">Home</span><span class="t-cn">首页</span></a>
+        <a href="/about/"><span class="t-en">About</span><span class="t-cn">关于</span></a>
+        <a href="/ventures/"><span class="t-en">Ventures</span><span class="t-cn">项目</span></a>
+        <a href="/notes/"><span class="t-en">Notes</span><span class="t-cn">笔记</span></a>
+        <a href="/contact/"><span class="t-en">Contact</span><span class="t-cn">联系</span></a>
+      </div>
+      <div>
+        <h4><span class="t-en">Elsewhere</span><span class="t-cn">别处</span></h4>
+        <a href="/handsome/"><span class="t-en">HANDSOME — phone cases</span><span class="t-cn">HANDSOME — 手机壳</span></a>
+        <a href="https://lumikeyskin.com/" target="_blank" rel="noopener"><span class="t-en">LUMIKEY — cosmetics OEM/ODM</span><span class="t-cn">LUMIKEY — 化妆品 OEM/ODM</span></a>
+        <a href="https://xingchenovo.com" target="_blank" rel="noopener"><span class="t-en">XINGCHEN — AI content software</span><span class="t-cn">XINGCHEN — AI 内容软件</span></a>
+        <a href="/notes/"><span class="t-en">Notes</span><span class="t-cn">笔记</span></a>
+        <a href="/contact/"><span class="t-en">Contact</span><span class="t-cn">联系</span></a>
+      </div>
+    </div>
+    <div class="copy">
+      <span><span class="t-en">© 2026 Alan Lin. All rights reserved.</span><span class="t-cn">© 2026 Alan Lin。保留所有权利。</span></span>
+      <span><span class="t-en">Built for the long term.</span><span class="t-cn">为长期而做。</span></span>
+    </div>
+  </div>
+</footer>
+<script>
+function toggleLang(){
+  var cn = document.body.classList.toggle('lang-cn');
+  document.getElementById('langBtn').textContent = cn ? 'EN' : '中文';
+  try { localStorage.setItem('alan-lang', cn ? 'cn' : 'en'); } catch(e) {}
+}
+function toggleMenu(force){
+  var h = document.querySelector('header.top');
+  if (!h) return;
+  var open = (typeof force === 'boolean') ? force : !h.classList.contains('nav-open');
+  h.classList.toggle('nav-open', open);
+  var b = document.getElementById('menuBtn');
+  if (b) b.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+document.addEventListener('click', function(e){
+  if (!e.target.closest('header.top')) toggleMenu(false);
+});
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape') toggleMenu(false);
+});
+document.querySelectorAll('#siteNav a').forEach(function(a){
+  a.addEventListener('click', function(){ toggleMenu(false); });
+});
+try {
+  if (localStorage.getItem('alan-lang') === 'cn') {
+    document.body.classList.add('lang-cn');
+    document.getElementById('langBtn').textContent = 'EN';
+  }
+} catch(e) {}
+/* cursor stars: desktop / fine pointer only */
+(function(){
+  try {
+    if (!window.matchMedia || !matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (window.__starTrail) return;
+    window.__starTrail = true;
+    var lead = document.createElement('span');
+    lead.className = 'star-cursor'; lead.textContent = '✦';
+    document.body.appendChild(lead);
+    var colors = ['#ffd43b', '#ff5a1f', '#8ed1fc', '#ffb7c5'];
+    var tx = 0, ty = 0, lx = 0, ly = 0, active = false, last = 0;
+    document.addEventListener('pointermove', function(e){
+      tx = e.clientX; ty = e.clientY;
+      if (!active) { lx = tx; ly = ty; active = true; lead.classList.add('on'); }
+      var now = performance.now();
+      if (now - last < 32) return;
+      last = now;
+      if (document.querySelectorAll('.star-trail').length > 24) return;
+      var s = document.createElement('span');
+      s.className = 'star-trail'; s.textContent = '✦';
+      s.style.left = tx + 'px'; s.style.top = ty + 'px';
+      s.style.color = colors[Math.floor(Math.random() * colors.length)];
+      s.style.fontSize = (12 + Math.random() * 9) + 'px';
+      s.style.setProperty('--dx', (Math.random() * 40 - 20) + 'px');
+      s.style.setProperty('--dy', (-6 - Math.random() * 30) + 'px');
+      s.style.setProperty('--rot', (Math.random() * 160 - 80) + 'deg');
+      document.body.appendChild(s);
+      s.addEventListener('animationend', function(){ s.remove(); });
+    }, { passive: true });
+    document.addEventListener('mouseout', function(e){
+      if (!e.relatedTarget) { active = false; lead.classList.remove('on'); }
+    });
+    (function loop(){
+      if (active) {
+        lx += (tx - lx) * 0.18; ly += (ty - ly) * 0.18;
+        lead.style.transform = 'translate(' + lx + 'px,' + ly + 'px) translate(-50%,-50%)';
+      }
+      requestAnimationFrame(loop);
+    })();
+  } catch (e) {}
+})();
+</script>
+</body>
+</html>
