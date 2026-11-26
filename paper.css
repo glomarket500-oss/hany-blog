@@ -377,3 +377,21 @@ body.show-en .cn-inline { display: none; }
   font-family: inherit;
   font-weight: inherit;
 }
+
+/* ============ 修正：卡片標題唔應該有底線 ============
+   paper.css 的 `a { border-bottom: 1px solid … }` 係為正文連結而設，
+   但佢同时套用到列表卡片的標題連結，令每張卡標題都有一條底線。
+   `.prev-next a` 已有豁免，這裡補上卡片標題同列表頁標題。 */
+.post-card h2 a,
+.post-card h3 a,
+.post-card h4 a,
+.post-card .card-title a,
+.card h2 a,
+.card h3 a,
+.card h4 a,
+.card .card-title a,
+.post-item h2 a,
+.post-item h3 a,
+.post-item h4 a {
+  border-bottom: none;
+}
