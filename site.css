@@ -239,3 +239,10 @@ body .post-figure {
 nav .container {
   max-width: 960px;
 }
+
+/* ============ search-inner 放寬（文章頁外框） ============
+   文章頁的 markup 是 <div class="search-inner" style="max-width:820px">，
+   inline style 只有 !important 蓋得過。放寬到 960px，同首頁一致。 */
+body .search-inner {
+  max-width: 960px !important;
+}
