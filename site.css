@@ -217,3 +217,25 @@ img{max-width:100%;height:auto;}
     box-shadow: 0 18px 40px -18px rgba(60, 45, 25, .28);
   }
 }
+
+/* ============ 統一版面寬度：文章頁同首頁一致 ============
+   每篇文章頁的 <style> 都在 :root 寫死 --max-width:720px，
+   再用 .container{max-width:var(--max-width)} 套用，所以內容只有 672px，
+   在 1221px 螢幕上左右各留 275px 空白，看起來「縮在中间」。
+   改 101 頁的 inline style 唔現實，這裡用高一級選擇器（body .container）
+   一次覆蓋全部，包括首頁、列表頁、文章頁 —— 全站 960px。
+   --max-width 變數保留不動，只繞過佢。 */
+body .container {
+  max-width: 960px;
+}
+
+/* 配圖原本在文章頁 inline 被限在 760px，放寬後會比正文窄，看起來唔齊。
+   這裡解除上限，跟隨容器寬度。 */
+body .post-figure {
+  max-width: 100%;
+}
+
+/* nav 的 container 跟內容對齊（原本 1120px 比內容寬，視覺上唔齊） */
+nav .container {
+  max-width: 960px;
+}
