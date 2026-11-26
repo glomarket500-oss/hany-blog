@@ -199,3 +199,21 @@ img{max-width:100%;height:auto;}
     border:none;border-radius:0;font-size:.95rem;font-weight:400;}
   nav .nav-links .lang-toggle:hover{color:var(--accent);}
 }
+
+/* ============ 修正：下拉面板唔應該推低頁面 ============
+   .nav-panels 原本冇 position，喺正常文檔流裡面。
+   點「文章▾」等一級項目時 .nav-panels.open{display:block} 會令 sticky nav
+   變高，整頁內容被推低 —— 用戶見到「跳變」。
+   改為絕對定位，覆蓋在內容之上，唔再影響版面高度。
+   nav 本身係 position:sticky（已定位），所以絕對定位以此為參照。
+   手機版 .nav-panels 本身 display:none !important，不受影響。 */
+@media (min-width: 769px) {
+  .nav-panels {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    box-shadow: 0 18px 40px -18px rgba(60, 45, 25, .28);
+  }
+}
