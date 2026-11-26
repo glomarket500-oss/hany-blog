@@ -360,3 +360,20 @@ body.show-en .cn-inline { display: none; }
   * { transition: none !important; }
   html { scroll-behavior: auto; }
 }
+
+/* ============ 修正：列表摘要唔應該有首字下沉 ============
+   index.html 用 <div class="post-body"> 做卡片內容容器，
+   同文章正文的 .post-body 撞名，導致 .post-body p:first-of-type::first-letter
+   把卡片摘要第一個字放大成 3.1em 紅色。
+   以下選擇器同上面那條同級（0,2,2），但排在後面，所以勝出。 */
+.post-body p.post-excerpt::first-letter {
+  float: none;
+  font-size: 1em;
+  line-height: inherit;
+  color: inherit;
+  padding: 0;
+  margin: 0;
+  text-shadow: none;
+  font-family: inherit;
+  font-weight: inherit;
+}
