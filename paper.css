@@ -403,12 +403,28 @@ body.show-en .cn-inline { display: none; }
    用 :has() 判斷，文章頁冇 .post-list，所以完全不受影響。
    瀏覽器唔支援 :has() 時，會沿用上面的 720px，安全降級。 */
 body:has(.post-list) .container {
-  max-width: 1000px;
+  max-width: 960px;
 }
 
 /* 列表頁在窄螢幕維持原本行為 */
 @media (max-width: 1000px) {
   body:has(.post-list) .container {
     max-width: var(--max-width);
+  }
+}
+
+/* ============ 桌面 nav 字級放大 ============
+   各頁 inline style 把 nav 壓到 .82rem（13px）、語言掣 .78rem（12.5px），
+   paper.css 想用 .95rem 但優先級不足被蓋過。
+   這裡用高一級的選擇器（nav .nav-links …）覆蓋，只在桌面生效。 */
+@media (min-width: 769px) {
+  nav .nav-links > a,
+  nav .nav-links .nav-parent,
+  nav .nav-links .lang-toggle {
+    font-size: 1rem;
+    padding: 8px 11px;
+  }
+  nav .nav-parent .caret {
+    font-size: .66rem;
   }
 }
