@@ -395,3 +395,20 @@ body.show-en .cn-inline { display: none; }
 .post-item h4 a {
   border-bottom: none;
 }
+
+/* ============ 列表頁放寬 ============
+   文章頁維持 --max-width:720px（一行 30–40 字，好讀）。
+   但列表頁（blog / topics / products / search，即含 .post-list 的頁面）
+   在桌面用 720px 太窄，左右各留 375px 空白。這裡只對這些頁面放寬到 1000px。
+   用 :has() 判斷，文章頁冇 .post-list，所以完全不受影響。
+   瀏覽器唔支援 :has() 時，會沿用上面的 720px，安全降級。 */
+body:has(.post-list) .container {
+  max-width: 1000px;
+}
+
+/* 列表頁在窄螢幕維持原本行為 */
+@media (max-width: 1000px) {
+  body:has(.post-list) .container {
+    max-width: var(--max-width);
+  }
+}
