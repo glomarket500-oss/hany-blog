@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>240W Hits the Desk — 涵哥（Alan）</title>
+<meta name="description" content="从 11 月 26 日充电头网 RTX Spark 迷你主机供电盘点说起：240W/280W USB-C 电源适配器进桌面、PD3.1 EPR 握手逻辑、彩屏实时功率温度、多口分配、97.36Wh 航空线与安全成本。">
+<link rel="canonical" href="https://www.gulangma.com/notes/desktop-ai-wattage-screen/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="240W Hits the Desk — 涵哥（Alan）">
+<meta property="og:description" content="从 11 月 26 日充电头网 RTX Spark 迷你主机供电盘点说起：240W/280W USB-C 电源适配器进桌面、PD3.1 EPR 握手逻辑、彩屏实时功率温度、多口分配、97.36Wh 航空线与安全成本。">
+<meta property="og:image" content="https://www.gulangma.com/assets-founder/desktop-ai-wattage-screen-cover.webp">
+<meta property="og:url" content="https://www.gulangma.com/notes/desktop-ai-wattage-screen/">
+<meta property="og:site_name" content="Alan Lin">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index,follow">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets-founder/founder.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Alan Lin","givenName":"Alan","familyName":"Lin","jobTitle":"Founder","url":"https://www.gulangma.com/","worksFor":{"@type":"Organization","name":"HANDSOME"}}</script>
+</head>
+<body><header class="top">
+  <div class="wrap">
+    <a class="brand serif" href="/">Alan Lin<span>.</span></a>
+    <nav class="main" id="siteNav">
+      <a href="/"><span class="t-en">Home</span><span class="t-cn">首页</span></a>
+      <a href="/about/"><span class="t-en">About</span><span class="t-cn">关于</span></a>
+      <a href="/ventures/"><span class="t-en">Ventures</span><span class="t-cn">项目</span></a>
+      <a href="/notes/" class="on"><span class="t-en">Notes</span><span class="t-cn">笔记</span></a>
+      <a href="/contact/"><span class="t-en">Contact</span><span class="t-cn">联系</span></a>
+    </nav>
+    <div class="nav-actions">
+      <button class="langbtn" id="langBtn" onclick="toggleLang()">中文</button>
+      <button class="menubtn" id="menuBtn" aria-label="Menu" aria-expanded="false" aria-controls="siteNav" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<section class="story-hero">
+  <div class="wrap">
+    <p class="story-kicker"><span class="t-en">Notes · 2026 · 11 · Twelfth essay</span><span class="t-cn">笔记 · 2026 · 11 · 第十二篇</span></p>
+    <h1 class="story-title">
+      <span class="t-en">240W Hits the Desk<br>The AI Mini PC Forced It</span><span class="t-cn">240W 进桌面，是 AI 迷你主机逼出来的</span>
+    </h1>
+    <p class="story-dek"><span class="t-en">On 26 November Chongdiantou reported nine RTX Spark mini PCs, eight on USB-C power, adapters at 165 / 240 / 280W. A color-screen GaN charger finally has a real job.</span><span class="t-cn">11 月 26 日充电头网披露九款 RTX Spark 迷你主机，八款走 USB-C 供电，适配器功率 165/240/280W。带彩屏的氮化镓充电器终于有了真正的活儿干。</span></p>
+    <p class="story-byline"><span class="t-en">Words / Alan Lin · 16</span><span class="t-cn">文 / Alan Lin · 16 岁</span></p>
+    <p class="story-time"><span class="t-en">Published 2026-11-27 09:45:00</span><span class="t-cn">发布于 2026-11-27 09:45:00</span></p>
+  </div>
+</section>
+<figure class="story-cover">
+  <img src="/assets-founder/desktop-ai-wattage-screen-cover.webp" alt="A black GaN charger with a color screen showing 240W on a white desk" width="1600" height="1000" loading="eager">
+  <figcaption><span class="t-en">A 240W GaN charger with color IPS display — the new desktop companion for AI mini PCs</span><span class="t-cn">带彩色 IPS 屏幕的 240W 氮化镓充电器 —— AI 迷你主机的新桌面搭档</span><span class="cover-time">封面 · Cover · 2026-11-27 09:45:00</span></figcaption>
+</figure>
+<article class="story-body">
+  <div class="story-body-inner t-cn block"><p class="story-epigraph">11 月 26 日下午，充电头网把一篇盘点推到我微信里：《高达 280W！首批 RTX Spark 迷你主机亮相》。我看完第一反应不是「哇 280W」，而是「桌面终于轮到 USB-C 了」。</p>
+<p class="story-lede">九款机型，宏碁、华硕、戴尔、技嘉、惠普、联想、机械革命、微软、微星。八款明确用 USB-C 供电，功率覆盖 165W、240W、280W 三档。华硕 ProArt GR1X、技嘉 AI TOP AERO、机械革命大师之路 X10、微星 EdgeMesa N AI+ 四款全是 240W 适配器；戴尔 Creator Edition 直接上 280W，已超 PD3.1 EPR 240W 上限；微软 Surface RTX Spark Dev Box 还在用 165W DC 圆口。这不是概念机，是 2026 下半年就要上市的量产品。</p>
+<p class="dropcap">我做配件这几年，见过太多「240W」只存在于发布会 PPT 里。它要么是单口极限，要么是三口加起来的数，要么根本没线材能配上。但这回不一样：九个品牌、六款量产机型、四款 240W、一款 280W，全都把 USB-C 当主供电口。这意味着什么？意味着 PD3.1 EPR、48V 5A、E-Marker 线材、彩屏实时监控，这些以前「给极客看」的东西，现在必须能在桌面 AI 主机上 24 小时跑满、不降频、不起火。</p>
+<figure class="story-figure"><img src="/assets-founder/desktop-ai-wattage-screen-scene1.webp" alt="240W 彩屏充电器与一根盘好的 USB-C 数据线，放在米色亚麻布面" loading="eager"><figcaption><span class="t-en">A 240W color-screen GaN charger and a coiled USB-C cable on beige linen</span><span class="t-cn">240W 彩屏充电器与一根盘好的 USB-C 数据线，放在米色亚麻布面</span></figcaption></figure>
+<h2 class="story-chapter"><span class="story-num">01</span><span>240W 进桌面，是 AI 迷你主机逼出来的</span></h2>
+<p>以前 240W USB-C 供电，主战场在高性能游戏本、移动工作站。一台机器插上 240W 适配器，能让 i9-13980HX + RTX 4090 同时跑满。但那是「移动」，用户插上电就走，散热靠风扇，降频了也没人盯着屏幕看功率计。</p>
+<p>桌面 AI 迷你主机不一样。它要 7×24 小时跑大模型推理、训练、渲染，机身只有 1.25L，风扇转速、温度、功耗全在用户眼皮底下。一旦适配器降频、线材发热、握手掉回 100W，用户马上能在屏幕上看到推理速度掉帧、风扇狂转、甚至触发热保护关机。</p>
+<p>所以戴尔敢上 280W，微软不得不用 165W DC 圆口，华硕技嘉机械革命微星全押注 240W PD3.1 EPR —— 这是被场景逼出来的硬指标，不是营销部门拍脑袋定的。</p>
+<p>对做充电器的我们，这是个信号：大功率氮化镓适配器的「持续输出能力」，正式成了桌面级的考核项。以前只要峰值跑到 240W 三十秒就能发货，现在得在 25℃ 环境下连跑两小时不降频、外壳温度不超 55℃、纹波不超标。这三件事，没有一件能靠参数表写出来。</p>
+<h2 class="story-chapter"><span class="story-num">02</span><span>屏上那 140W，是给开发者看的</span></h2>
+<p>桌面上放一块带彩屏的 240W 氮化镓充电器，屏幕实时显示：48V、5A、240W、PD3.1 EPR、温度 42℃。这不是装饰。</p>
+<p>我有个客户做 AI 推理加速卡，他们的开发板要在 48V 5A 下跑满功率测热设计功耗。以前他们得接台可编程电源、外挂功率计、再拉根热电偶贴在 MOS 管上。现在他们插上这块彩屏充电器，屏幕一亮：48.0V、5.00A、240W、EPR、42℃。协议握手成功、电压稳、电流稳、温度在可控范围，三十秒搞定原本要半小时的带板测试。</p>
+<p>这就是彩屏的价值：把「看不见的电」变成「看得见的数」。PD3.1 EPR 握手要跑三次 Source-Sink-Cable 三方确认，每一步都可能因为线材 E-Marker 信息不对、固件版本旧、温度保护提前介入而掉回 SPR 100W。屏幕上那个「EPR」徽章亮着，就是告诉开发者：握手全程通过了，不用再怀疑线、怀疑口、怀疑固件。</p>
+<p>当然，屏幕上也会出现 UFCS、PPS、SCP、AFC、QC 等协议标签。这不是炫技，是桌面场景下真会遇到的情况：同一台主机白天给笔记本充电（PD3.1 EPR），晚上给手机充电（UFCS 30W），周末给 Switch 充电（PD 39W）。彩屏把当前协议、电压、电流、功率全摆在面上，省得开发者反复拔插查日志。</p>
+<figure class="story-figure"><img src="/assets-founder/desktop-ai-wattage-screen-scene2.webp" alt="黑色 GaN 充电器彩屏特写，显示 240W、48V 5A、42℃、PD3.1 EPR" loading="eager"><figcaption><span class="t-en">Black GaN charger color screen close-up showing 240W 48V 5A 42C PD3.1 EPR</span><span class="t-cn">黑色 GaN 充电器彩屏特写，显示 240W、48V 5A、42℃、PD3.1 EPR</span></figcaption></figure>
+<h2 class="story-chapter"><span class="story-num">03</span><span>同一根线，握手要跑三次</span></h2>
+<p>EPR 线材不只是「能过 5A」。它内置 E-Marker 芯片，必须向 Source 和 Sink 报告：我是 5A 线、我支持 50V、我是 Captive cable 还是分离式。Source 收到后，再和 Sink 确认：你支持 EPR 吗？支持 48V 吗？支持 5A 吗？三方都对上，才能从 SPR 切到 EPR。</p>
+<p>我见过太多「240W 充电器 + 100W 线」的组合。用户买了 240W 充电器，配根买来的 100W 线，插上去屏幕显示 100W，气得发帖投诉充电器虚标。其实充电器没问题，是线没 E-Marker，或者 E-Marker 里写的是 20V 5A。Source 识别到线只能过 20V，直接拒绝进入 EPR。</p>
+<p>这也是为什么现在桌面级 240W 适配器，厂商都开始标配自带线、甚至 Captive cable 设计。线材成本占整机 BOM 的 15% 以上，但省去了「用户自己买线」这个最大的不确定因素。对我们做 B2B 的，这也是个机会：把线材认证、E-Marker 烧录、握手测试做成一套交付标准，客户买的是「插上就能跑 240W」，而不是「充电器 + 线 + 祈祷」。</p>
+<h2 class="story-chapter"><span class="story-num">04</span><span>热才是真正的上限</span></h2>
+<p>240W 在 48V 5A 下，功率密度极高。氮化镓器件开关损耗低，但导通损耗依然按电流平方走。5A 过 PCB 走线、过连接器、过 MOS 管，每一毫欧姆都在发热。</p>
+<p>我手里这块 240W 样机，外壳是铝合金 CNC 一体成型，内部贴了两层 0.5mm 石墨片、一块 1mm 均热板，风扇静音档 38dB。连跑两小时 240W，外壳最高 53℃，屏幕显示内部 NTC 48℃。把风扇关掉，半小时外壳 68℃，屏幕报 62℃ 触发降额到 180W。</p>
+<p>这说明什么？说明 240W 的天花板不是芯片、不是协议、不是线材，是「怎么把热导出去」。同样是 GaN、同是 PD3.1 EPR，为什么有的 240W 充电器十分钟就降额，有的能跑两小时？差在散热结构、差在导热材料、差在风扇曲线、差在固件降额斜率。这些成本不在参数表上，在拆解报告里、在可靠性测试报告里、在客户退货率里。</p>
+<p>所以当我看到充电头网那篇里，华硕 ProArt GR1X 配的 240W 适配器是无风扇被动散热，我就知道：它要么体积大到离谱，要么只能在 20℃ 空调房里跑满。桌面 AI 主机机箱里本来就没风道给适配器，适配器自己得解决热。这就是为什么彩屏上那个温度数字那么重要 —— 它是用户唯一能直观看到的「热预算」。</p>
+<p>上周工厂跑了一批 240W 适配器的小批量试产，五百台里过高压测试、EPR 握手全程不掉档、两小时满载不降额的只有 412 台，良率 82.4%。不合格的主因有三个：一是铝壳 CNC 公差控制在 ±0.03mm 以内的只有 60%，公差大导致石墨片贴合气隙、热阻飙升；二是 NTC 贴片焊接后耐压测试会漏 5% 左右，必须全检重测；三是固件降额曲线在 45℃-55℃ 区间抖动，改了三版才稳。这三项成本加起来，每台多 18 元，但省下的退货成本是它的十倍。参数表上永远不会写「良率 82.4%」，但这才是决定能不能量产的那条线。</p>
+<h2 class="story-chapter"><span class="story-num">05</span><span>97.36Wh 那条线，和谁来兜底</span></h2>
+<p>充电头网 11 月 5 日那篇统计写得很清楚：截至 10 月底，26 个品牌拿到 85 张新国标 3C 证书，覆盖 140 个型号，部分产品额定能量做到 97.36Wh、输出功率 250W。</p>
+<p>97.36Wh。离 100Wh 只差 2.64Wh。</p>
+<p>这不是做不到更大，是刻意卡在航空安检线上。超过 100Wh，产品从「随身带」变成「要申报」，渠道、详情页、客服话术全得改，物流成本翻倍。所以工程师把能量压在 97.36Wh，把功率往另一个方向抬 —— 250W 输出、48V 5A、PD3.1 EPR。</p>
+<p>但这里藏着个更大的坑：功率越高、能量越接近红线，出事概率指数级上升。一块 97.36Wh、250W 的机器，如果电芯隔膜有微米级缺陷、如果 BMS 固件有一行边界条件没判对、如果用户塞进不合格的线材跑 48V 5A，后果不是「充不进去」，是起火。</p>
+<p>Elecom 那句「安全但太贵就普及不了」，说的就是这个。安全成本不会消失，它只会选择由谁付：是厂商在电芯上多花 20 元做陶瓷涂层，还是用户在起火后付命；是充电器厂在散热上多花 15 元加均热板，还是品牌方在召回时付品牌折价。</p>
+<p>我十六岁，做这行没几年，实验室也没有。我能确认的判断很有限：包装上那个瓦数，是三十秒的事；能撑住两小时不降频、外壳不烫手、屏幕上温度数字不报警的那个数，才是我敢交给客户的数。</p>
+<p>文 / 涵哥（Alan）· 16 岁</p></div>
+</article>
+
+<div class="wrap" style="padding-bottom:70px">
+  <div class="cta" style="margin-top:0">
+    <a class="btn btn-solid" href="/contact/"><span class="t-en">Talk to me</span><span class="t-cn">联系我</span></a>
+    <a class="btn btn-ghost" href="/notes/"><span class="t-en">All notes</span><span class="t-cn">全部笔记</span></a>
+  </div>
+</div>
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="brand serif" href="/">Alan Lin</a>
+        <p><span class="t-en">Sixteen. Building consumer brands and software for global markets. HANDSOME, LUMIKEY and XINGCHEN are the first three ventures.</span><span class="t-cn">十六岁。做面向全球市场的消费品牌与软件。HANDSOME、LUMIKEY 与 XINGCHEN 是前三个项目。</span></p>
+      </div>
+      <div>
+        <h4><span class="t-en">Site</span><span class="t-cn">站点</span></h4>
+        <a href="/"><span class="t-en">Home</span><span class="t-cn">首页</span></a>
+        <a href="/about/"><span class="t-en">About</span><span class="t-cn">关于</span></a>
+        <a href="/ventures/"><span class="t-en">Ventures</span><span class="t-cn">项目</span></a>
+        <a href="/notes/"><span class="t-en">Notes</span><span class="t-cn">笔记</span></a>
+        <a href="/contact/"><span class="t-en">Contact</span><span class="t-cn">联系</span></a>
+      </div>
+      <div>
+        <h4><span class="t-en">Elsewhere</span><span class="t-cn">别处</span></h4>
+        <a href="/handsome/"><span class="t-en">HANDSOME — phone cases</span><span class="t-cn">HANDSOME — 手机壳</span></a>
+        <a href="https://lumikeyskin.com/" target="_blank" rel="noopener"><span class="t-en">LUMIKEY — cosmetics OEM/ODM</span><span class="t-cn">LUMIKEY — 化妆品 OEM/ODM</span></a>
+        <a href="https://xingchenovo.com" target="_blank" rel="noopener"><span class="t-en">XINGCHEN — AI content software</span><span class="t-cn">XINGCHEN — AI 内容软件</span></a>
+        <a href="/notes/"><span class="t-en">Notes</span><span class="t-cn">笔记</span></a>
+        <a href="/contact/"><span class="t-en">Contact</span><span class="t-cn">联系</span></a>
+      </div>
+    </div>
+    <div class="copy">
+      <span><span class="t-en">© 2026 Alan Lin. All rights reserved.</span><span class="t-cn">© 2026 Alan Lin。保留所有权利。</span></span>
+      <span><span class="t-en">Built for the long term.</span><span class="t-cn">为长期而做。</span></span>
+    </div>
+  </div>
+</footer>
+<script>
+function toggleLang(){
+  var cn = document.body.classList.toggle('lang-cn');
+  document.getElementById('langBtn').textContent = cn ? 'EN' : '中文';
+  try { localStorage.setItem('alan-lang', cn ? 'cn' : 'en'); } catch(e) {}
+}
+function toggleMenu(force){
+  var h = document.querySelector('header.top');
+  if (!h) return;
+  var open = (typeof force === 'boolean') ? force : !h.classList.contains('nav-open');
+  h.classList.toggle('nav-open', open);
+  var b = document.getElementById('menuBtn');
+  if (b) b.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+document.addEventListener('click', function(e){
+  if (!e.target.closest('header.top')) toggleMenu(false);
+});
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape') toggleMenu(false);
+});
+document.querySelectorAll('#siteNav a').forEach(function(a){
+  a.addEventListener('click', function(){ toggleMenu(false); });
+});
+try {
+  if (localStorage.getItem('alan-lang') === 'cn') {
+    document.body.classList.add('lang-cn');
+    document.getElementById('langBtn').textContent = 'EN';
+  }
+} catch(e) {}
+/* cursor stars: desktop / fine pointer only */
+(function(){
+  try {
+    if (!window.matchMedia || !matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (window.__starTrail) return;
+    window.__starTrail = true;
+    var lead = document.createElement('span');
+    lead.className = 'star-cursor'; lead.textContent = '✦';
+    document.body.appendChild(lead);
+    var colors = ['#ffd43b', '#ff5a1f', '#8ed1fc', '#ffb7c5'];
+    var tx = 0, ty = 0, lx = 0, ly = 0, active = false, last = 0;
+    document.addEventListener('pointermove', function(e){
+      tx = e.clientX; ty = e.clientY;
+      if (!active) { lx = tx; ly = ty; active = true; lead.classList.add('on'); }
+      var now = performance.now();
+      if (now - last < 32) return;
+      last = now;
+      if (document.querySelectorAll('.star-trail').length > 24) return;
+      var s = document.createElement('span');
+      s.className = 'star-trail'; s.textContent = '✦';
+      s.style.left = tx + 'px'; s.style.top = ty + 'px';
+      s.style.color = colors[Math.floor(Math.random() * colors.length)];
+      s.style.fontSize = (12 + Math.random() * 9) + 'px';
+      s.style.setProperty('--dx', (Math.random() * 40 - 20) + 'px');
+      s.style.setProperty('--dy', (-6 - Math.random() * 30) + 'px');
+      s.style.setProperty('--rot', (Math.random() * 160 - 80) + 'deg');
+      document.body.appendChild(s);
+      s.addEventListener('animationend', function(){ s.remove(); });
+    }, { passive: true });
+    document.addEventListener('mouseout', function(e){
+      if (!e.relatedTarget) { active = false; lead.classList.remove('on'); }
+    });
+    (function loop(){
+      if (active) {
+        lx += (tx - lx) * 0.18; ly += (ty - ly) * 0.18;
+        lead.style.transform = 'translate(' + lx + 'px,' + ly + 'px) translate(-50%,-50%)';
+      }
+      requestAnimationFrame(loop);
+    })();
+  } catch (e) {}
+})();
+</script>
+</body>
+</html>
