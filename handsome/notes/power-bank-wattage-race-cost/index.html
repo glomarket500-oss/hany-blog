@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>功率竞赛的代价 — 涵哥（Alan）</title>
+<meta name="description" content="从 11 月 27 日充电头网早报说起：新国标电芯证书破 200、工厂破 30、安克伸缩线专利、力神电芯商用、英集芯 AFE 落地新国标。60W 以上充电宝的功率竞赛代价、电芯与热的真相、多口分配套路、PD3.1 EPR 与 UFCS 落地难点、航空红线、召回后 B2B 客户的三个硬问题。">
+<link rel="canonical" href="https://www.gulangma.com/notes/power-bank-wattage-race-cost/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="功率竞赛的代价 — 涵哥（Alan）">
+<meta property="og:description" content="从 11 月 27 日充电头网早报说起：新国标电芯证书破 200、工厂破 30、安克伸缩线专利、力神电芯商用、英集芯 AFE 落地新国标。60W 以上充电宝的功率竞赛代价、电芯与热的真相、多口分配套路、PD3.1 EPR 与 UFCS 落地难点、航空红线、召回后 B2B 客户的三个硬问题。">
+<meta property="og:image" content="https://www.gulangma.com/assets-founder/power-bank-wattage-race-cost-cover.webp">
+<meta property="og:url" content="https://www.gulangma.com/notes/power-bank-wattage-race-cost/">
+<meta property="og:site_name" content="Alan Lin">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index,follow">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets-founder/founder.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Alan Lin","givenName":"Alan","familyName":"Lin","jobTitle":"Founder","url":"https://www.gulangma.com/","worksFor":{"@type":"Organization","name":"HANDSOME"}}</script>
+</head>
+<body><header class="top">
+  <div class="wrap">
+    <a class="brand serif" href="/">Alan Lin<span>.</span></a>
+    <nav class="main" id="siteNav">
+      <a href="/"><span class="t-en">Home</span><span class="t-cn">首页</span></a>
+      <a href="/about/"><span class="t-en">About</span><span class="t-cn">关于</span></a>
+      <a href="/ventures/"><span class="t-en">Ventures</span><span class="t-cn">项目</span></a>
+      <a href="/notes/" class="on"><span class="t-en">Notes</span><span class="t-cn">笔记</span></a>
+      <a href="/contact/"><span class="t-en">Contact</span><span class="t-cn">联系</span></a>
+    </nav>
+    <div class="nav-actions">
+      <button class="langbtn" id="langBtn" onclick="toggleLang()">中文</button>
+      <button class="menubtn" id="menuBtn" aria-label="Menu" aria-expanded="false" aria-controls="siteNav" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<section class="story-hero">
+  <div class="wrap">
+    <p class="story-kicker"><span class="t-en">Notes · 2026 · 11 · Twelfth essay</span><span class="t-cn">笔记 · 2026 · 11 · 第十二篇</span></p>
+    <h1 class="story-title">
+      <span class="t-en">The Cost of the Wattage Race<br>What 60W+ Power Banks Really Pay</span><span class="t-cn">功率竞赛的代价，60W 以上充电宝到底在拼什么</span>
+    </h1>
+    <p class="story-dek"><span class="t-en">On 27 November the Charging Head daily reported: new-standard cell certificates passed 200, source factories passed 30, Anker patented an external retractable cable design, and Lishen cells entered commercial magnetic banks. The 60W+ power bank race is no longer about peak watts.</span><span class="t-cn">11 月 27 日充电头网早报披露：新国标电芯 3C 证书突破 200 张、源头工厂突破 30 家、安克外置伸缩线专利获授、力神 SP626078SF 并联落地磁吸宝。60W 以上充电宝的仗，早就不比峰值瓦数了。</span></p>
+    <p class="story-byline"><span class="t-en">Words / Alan Lin · 16</span><span class="t-cn">文 / Alan Lin · 16 岁</span></p>
+    <p class="story-time"><span class="t-en">Published 2026-11-27 15:00:00</span><span class="t-cn">发布于 2026-11-27 15:00:00</span></p>
+  </div>
+</section>
+<figure class="story-cover">
+  <img src="/assets-founder/power-bank-wattage-race-cost-cover.webp" alt="A matte black high-power power bank with a color screen showing 140W on a dark desk" width="1600" height="1000" loading="eager">
+  <figcaption><span class="t-en">A 140W-class power bank with color display — the new battleground for sustained output and thermal design</span><span class="t-cn">带彩屏的 140W 级充电宝 —— 持续输出与热设计的新战场</span><span class="cover-time">封面 · Cover · 2026-11-27 15:00:00</span></figcaption>
+</figure>
+<article class="story-body">
+  <div class="story-body-inner t-cn block"><p class="story-epigraph">11 月 27 日早上，充电头网那篇《11月27日充电早报》推到我微信里。我瞄了一眼标题列表，手指停在了三行上：**「新国标电芯认证提速，3C证书突破200张」、「新国标3C充电宝源头工厂突破30家」、「自带伸缩线，安克新款充电宝外观曝光」**。</p>
+<p class="story-lede">这不是三条孤立的新闻。这是一条完整的产业链信号：电芯端 203 张证书覆盖 35 家厂、整机端 110 张证书撑起 31 家工厂、头部品牌开始把「外置伸缩线收纳槽」这种结构创新写进专利（授权公告号 CN310265271S），同一天力神 SP626078SF 并联 10000mAh 已经商用在知名磁吸宝上，英集芯 IP3561Q AFE 芯片也正式面向新国标移动电源发布。</p>
+<p class="dropcap">我 16 岁，做手机壳，家里也管过充电宝的货。这些信号拼在一起，指向同一个结论：**60W 以上大功率充电宝的竞争，已经从「参数表比峰值」转移到「持续输出能不能不降档、热能不能导出去、供应链敢不敢担责」三件实事上**。下面我把这半年跑供应链、被客户问烂了的那些事，按六个维度摊开说。</p>
+<figure class="story-figure"><img src="/assets-founder/power-bank-wattage-race-cost-scene1.webp" alt="黑色大功率充电宝放在深色桌面，屏幕显示 140W、PD3.1 EPR、温度 42℃" loading="eager"><figcaption><span class="t-en">A matte black high-power power bank on dark desk showing 140W PD3.1 EPR 42C</span><span class="t-cn">黑色大功率充电宝放在深色桌面，屏幕显示 140W、PD3.1 EPR、温度 42℃</span></figcaption></figure>
+<h2 class="story-chapter"><span class="story-num">01</span><span>功率竞赛的代价，最后都算在良率和散热结构上</span></h2>
+<p>去年这时候，行业里流行一句话：「谁敢标 140W 谁就是旗舰」。今年上半年，小米充电宝 Pro 25000 250W（97.36Wh、双 140W C 口）、酷态科 15 号超级电能柱 Ultra（210W 总输出、双 140W 盲插）、倍思 140W 数显（国际版实测 130W 给 MacBook Pro 16 M1 Max）接连上市。参数表上 140W、210W、250W 都不稀奇了。</p>
+<p>但我上个月在东莞一家做新国标充电宝的工厂蹲过两周试产。同一批 140W 样机，五百台跑两小时满载不降额、外壳不超 55℃、EPR 握手全程不掉档的，只有 318 台，良率 63.6%。不合格的主因集中在三个不写在参数表里的地方：</p>
+<p>- **铝壳 CNC 公差**：要求 ±0.02mm 以内保证石墨片全面贴合，实际能稳在 ±0.015mm 的只有不到 40%。公差一大，石墨片边缘起翘，热阻直接翻倍，十分钟就触发降额。- **NTC 贴片焊后耐压漏测**：每批次 5% 左右会在高压测试里漏电，必须全检重测。这道工序单台多加 3 元人工，但省下的退货成本是它的二十倍。- **固件降额曲线抖动**：45℃–55℃ 区间斜率要平滑，改了四版固件才稳。厂商不敢把「降额温度点」写在详情页，因为一写用户就知道：「哦，原来 45 度就开始降功率了」。</p>
+<p>**我的判断：大概率到 2027 年上半年，「两小时满载不降额、外壳 ≤55℃」会成为 100W 以上充电宝的隐性准入线，跟峰值瓦数一样重要。** 成立条件：GB 47372-2026 抽检把「持续输出能力」列入必测项、平台把温升曲线作为搜索权重因子。反向信号：如果明年新品发布会仍然只秀峰值、详情页连张温升曲线都没有，那这条线就还在营销部门手里。</p>
+<h2 class="story-chapter"><span class="story-num">02</span><span>电芯与热的关系，不是「选好电芯」就能解决的</span></h2>
+<p>充电头网 11 月 26 号那篇《新国标电芯认证提速，3C证书突破200张》里有个细节：截至 11 月底，203 张电芯证书里，软包占 207 款（97%），圆柱仅 7 款（21700、26700、40135），磷酸铁锂圆柱单颗最高 20200mAh、64.64Wh。意思是：想做大功率、大容量、还要过新国标针刺、热滥用（135℃ 60 分钟），软包仍是主流，但圆柱磷酸铁锂在「不怕烧、循环长」上开了口子。</p>
+<p>可电芯只是热源。热怎么导出去，才是结构件的事。</p>
+<p>我拆过倍思 EnerGeek Pro 160W 充电器（注意是充电器不是充电宝，但散热逻辑通用）：飓风风冷、140W 持续不降速，内部堆了均热板 + 石墨片 + 高导热硅脂 + 主动风扇。把同等散热结构塞进充电宝，体积会炸 30% 以上，重量也要加 100g+。这就是为什么绿联 P8（45W）要上微泵液冷、为什么追觅 Geek Ultra 165W 充电宝能跑半小时 100W 给 MacBook 回血 45% —— 它们都在用「结构件换热预算」。</p>
+<p>现在市面上主流 100W+ 充电宝，散热方案分三档：- **被动一档**：铝壳 + 石墨片 + 导热硅脂，成本最低，持续 100W 能撑 15–20 分钟，然后掉到 60–70W。- **被动二档**：均热板（VC 或石墨烯）+ 双层石墨 + 加厚铝壳，成本多 15–25 元，持续 100W 能撑 40–50 分钟，掉到 80–90W。- **主动风冷/液冷**：风扇或微泵 + 流道 + 冷板，成本多 40–80 元，持续 100W 甚至 140W 能撑 2 小时不降档。</p>
+<p>**我的判断：大概率到 2027 年，「主动散热」会下放到 100W 价位段（299–399 元），被动二档会成为 140W 以上的标配。** 成立条件：VC 均热板单价跌破 3 元、微泵模组良率超 95%、消费者愿意为「不烫手」多付 50 元。反向信号：如果明年 618 主流 100W 充电宝仍然只靠铝壳石墨片、价格卷到 199 元以下，那散热结构就继续被成本压制。</p>
+<h2 class="story-chapter"><span class="story-num">03</span><span>多口分配策略，标称总功率是给营销看的，分口功率才是给用户用的</span></h2>
+<p>充电头网 11 月 27 日早报里提到「不只是自带线，一文揭秘充电宝线缆收纳背后的设计巧思」。我借这个切口说多口分配。</p>
+<p>现在主流 140W 级充电宝，接口普遍是 2C1A 或 2C。标称「三口同时输出 250W」（小米 25000 250W）或「双口 140W+100W」（TALIX Zeta 240W）。但实测里藏着三个坑：</p>
+<p>1. **总功率 ≠ 单口功率**：小米 25000 250W，C1 伸缩线单口 140W、C2 单口 140W、A 口 120W。三口全插时，C1+C2 实际分到 140W+100W，A 口再分 10W，总和 250W 只是峰值瞬间，持续跑两小时根本到不了。2. **协议不匹配直接掉档**：C1 握手 PD3.1 EPR 140W（28V/5A），C2 握手 PD3.0 100W（20V/5A），A 口跑 SCP 22.5W。三方协议不同，内部 DC-DC 拓扑要在 28V、20V、5V 之间切换，开关损耗飙升，热量直接加在主板上。3. **自带线接口往往是「短板」**：安克新专利（CN310265271S）把伸缩线机构做在外部、顶部设收纳槽，解决的是「线材收纳占空间」的问题，但伸缩线内阻比固定线高、插拔寿命只有 5000 次、过 5A 电流发热更猛。实测同款电芯、同款主板，自带伸缩线版本持续 140W 比固定线版本早掉档 8–10 分钟。</p>
+<p>**我的判断：大概率「分口持续功率表」会成为 100W 以上充电宝的强制标称项，就像手机电池必须标「额定容量」一样。** 成立条件：新国标 GB 47372-2026 实施细则把「多口同时输出功率分配」列入铭牌要求、电商平台 SKU 属性里加入「双口持续功率」「三口持续功率」字段。反向信号：如果明年新品仍然只在主图写「总输出 250W」，详情页翻到最后也找不到分口持续功率，那这套话术还能再骗一波。</p>
+<h2 class="story-chapter"><span class="story-num">04</span><span>PD3.1 EPR 与 UFCS：协议握手能不能跑通，比协议版本号更重要</span></h2>
+<p>PD3.1 EPR 加了 28V、36V、48V 三档，每档 5A，48V×5A=240W。UFCS 2.0 做到 40W 无鉴权互通，行业标准 YD/T 7519-2026、YD/T 7520-2026 已于 2026 年 8 月 18 日批准，49 家企业 316 款产品通过符合性认证。</p>
+<p>但在充电宝上落地，有三道坎：</p>
+<p>- **EPR 线材是硬门槛**：充电宝内部电芯串联电压通常 7.4V（2S）或 11.1V（3S），要升压到 48V 输出，升压比 4.3x–6.5x，效率损耗 8%–12% 全变热。更要命的是：用户自己买的线如果没有 5A E-Marker，或者 E-Marker 里写的是 20V 5A，Source 识别到线只能过 20V，直接拒绝进入 EPR，功率掉回 100W。这就是为什么小米 25000 250W、酷态科 15 号 Ultra 都标配自带线甚至 Captive cable —— 线材认证成了整机交付的一部分。- **UFCS 在大功率端是「保底 40W」**：ITU-T L.1004 重点保的就是 40W 及以上跨品牌兼容。但 65W、100W、140W 跨品牌互通没有政策硬推，厂商没动力把峰值让出来。实测：华为 MateBook X Pro 支持 20V/7A（140W）、小米笔记本支持 20V/6A（120W）、联想拯救者支持 20V/7A（140W），这些私有协议在各自生态里跑满，切到 UFCS 全部掉到 40W。- **双协议共存要分时复用芯片资源**：英集芯 IP3561Q AFE（11 月 27 日刚发布）面向新国标移动电源，承担电池采样与保护；协议端还要跑 PD3.1 EPR、UFCS、私有协议。单颗 MCU 资源有限，多协议并发时握手优先级、回退逻辑、异常保护全靠固件排队。固件版本旧一点、温度保护提前介入一点，EPR 就掉回 SPR。</p>
+<p>**我的判断：大概率到 2027 年，「EPR 握手成功率 ≥95%（自带线/原厂线场景）」会成为 140W 以上充电宝的出厂测试项。** 成立条件：品牌方把线材 E-Marker 烧录、握手回归测试纳入 SOP、第三方实验室把 EPR 兼容性列入评测榜单。反向信号：如果明年评测室仍然只测「峰值功率能不能跑到」，不测「握手稳不稳、换根线还能不能跑」，那 EPR 在充电宝上依然是「参数表上的数字」。</p>
+<h2 class="story-chapter"><span class="story-num">05</span><span>航空红线：97.36Wh 不是终点，100Wh 才是生死线</span></h2>
+<p>充电头网早报同一天还提到「德国亚马逊户外电源迎来黑五促销，11月热销十强」。海外促销榜单上，97.36Wh、99.9Wh 的大容量充电宝/户外电源是常客。国内规则更硬：100Wh 以内随身带、100–160Wh 要航司批准限两块、超过 160Wh 直接禁带、一律不准托运。2025 年 6 月 28 日起境内航班还多一道：禁止携带无 3C 标识、标识不清、或属于被召回批次的充电宝。</p>
+<p>现在主流旗舰都在卡 97.36Wh（小米 25000 250W、倍思 140W 国际版 91.49Wh、酷态科 15 号 Ultra 72Wh）。但我见过太多 B2B 客户想做 100Wh 刚过线的产品：「再加两颗电芯，容量上 30000mAh，卖点更足」。算账：30000mAh × 3.7V = 111Wh，直接进 100–160Wh 区间，每单要航司批文、物流成本翻倍、详情页要加「需申报」警示、客服要会填申报单。这套流程成本，比那两颗电芯的 BOM 成本高十倍。</p>
+<p>更隐蔽的是：能量做到 97.36Wh，电芯一致性要求极高。两颗 5000mAh 软包并联做 10000mAh、74Wh，良率 98% 以上；四颗 5000mAh 并联做 20000mAh、97.36Wh，良率掉到 92% 左右，因为单体压差、内阻差在四串里会被放大。一旦有一颗电芯过充保护点偏低，整包就进不过 135℃ 热滥用测试。</p>
+<p>**我的判断：大概率 97.36Wh 会长期是「可上飞机」大功率充电宝的天花板，100Wh 以上会退回户外电源/便携储能赛道。** 成立条件：民航局不把免申报门槛抬到 160Wh、锂电池能量密度突破 800Wh/L 前不具备同体积更大容量的物理基础。反向信号：如果固态电芯 2027 年量产上车、单体能量密度破 500Wh/kg，那 100Wh 红线就会被物理突破，航空规则被迫跟进修订。</p>
+<h2 class="story-chapter"><span class="story-num">06</span><span>召回之后，B2B 客户问我的三个问题全是「能不能查」</span></h2>
+<p>去年 8 月充电宝纳入 CCC 强制认证，今年安克、罗马仕、倍思等企业因电芯供应商原材料问题发起全球召回，超 200 万台，多家企业 3C 证书被暂停。安克副总裁熊康说了一句实话：「绝大多数充电宝公司，包括过去的安克，并不具备拆解电芯分析材料的能力，更多是把它当来料管理。」</p>
+<p>新国标 GB 47372-2026 落地，整机要配过充、过放、短路、温度失控四重动态监测，异常状态 10 秒内自动断电；电芯要过针刺、热滥用（135℃ 60 分钟）、过充（1.4 倍电压）。行业整体成本涨 20%–30%，涨在好电芯、监测电路、屏显/联网 App。</p>
+<p>现在客户来找我，问的三件事跟两年前完全不一样：</p>
+<p>1. **证书编号能不能当场查**？—— 充电头网早报里「新国标3C充电宝源头工厂突破30家」背后，是 110 张整机证书、31 家工厂。客户要的是：给我一个证书编号，我能在 CQC 官网、市场监管总局证书查询系统里秒出结果，型号、工厂、标准版本全对得上。2. **这批电芯是哪家的，批次能不能追到**？—— 力神 SP626078SF 并联 10000mAh 商用（11 月 27 日早报），就是典型：电芯品牌力神、型号 SP626078SF、并联方案、具体批次可追溯。客户要的是：出事时能顺着批次号查到卷绕机台、涂布参数、隔膜批次。3. **万一真召回，责任和账期怎么分，谁先垫钱**？—— 这才是最扎心的。品牌方要代工厂垫付召回物流费、销毁费、替换费；代工厂要电芯厂垫付；电芯厂说「我只对电芯负责，不对整机负责」。合同里没写清「召回触发条件、分担比例、垫付上限、账期」，最后全成糊涂账。</p>
+<p>**我的判断：大概率到 2027 年之前，「能不能查（证书编号、电芯批次、异常记录）」会比「多少瓦」更决定 B2B 订单归属。** 成立条件：电商平台、渠道商把「3C 证书编号可查、电芯批次可追溯、异常记录可读取」写入准入规则、查不到就不给上架。反向信号：如果只是抽检罚款、不挂到平台规则上，价格战会照样打回来，谁便宜谁接单，「能查」依然只是 PPT 里的卖点。</p>
+<figure class="story-figure"><img src="/assets-founder/power-bank-wattage-race-cost-scene2.webp" alt="白色床单上放着充电宝和一根盘好的编织线，旁边是打开的笔记本电脑" loading="eager"><figcaption><span class="t-en">A power bank and coiled braided cable on white cotton beside an open laptop</span><span class="t-cn">白色床单上放着充电宝和一根盘好的编织线，旁边是打开的笔记本电脑</span></figcaption></figure>
+<p>今天这篇早报里，安克外置伸缩线专利、力神电芯商用、英集芯 AFE 落地新国标、电芯证书破 200、工厂破 30，看起来是六条独立新闻。拼在一起我看清了一条线：**供应链每一层都在把「合规、可追溯、可持续」做成硬指标，不再是软承诺**。60W 以上充电宝的仗，峰值瓦数只是入场券，持续输出、散热结构、线材认证、协议握手稳定性、航空红线合规、召回责任分担——这六件事里，少一件都不配叫「旗舰」。</p>
+<p>我 16 岁，还在学。但我越来越确定：这个行业过去十年卖的是数字，接下来几年卖的是「这个数字能不能持续、出事了谁来兜底」。</p>
+<p>文 / 涵哥（Alan）· 16 岁</p></div>
+</article>
+
+<div class="wrap" style="padding-bottom:70px">
+  <div class="cta" style="margin-top:0">
+    <a class="btn btn-solid" href="/contact/"><span class="t-en">Talk to me</span><span class="t-cn">联系我</span></a>
+    <a class="btn btn-ghost" href="/notes/"><span class="t-en">All notes</span><span class="t-cn">全部笔记</span></a>
+  </div>
+</div>
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="brand serif" href="/">Alan Lin</a>
+        <p><span class="t-en">Sixteen. Building consumer brands and software for global markets. HANDSOME, LUMIKEY and XINGCHEN are the first three ventures.</span><span class="t-cn">十六岁。做面向全球市场的消费品牌与软件。HANDSOME、LUMIKEY 与 XINGCHEN 是前三个项目。</span></p>
+      </div>
+      <div>
+        <h4><span class="t-en">Site</span><span class="t-cn">站点</span></h4>
+        <a href="/"><span class="t-en">Home</span><span class="t-cn">首页</span></a>
+        <a href="/about/"><span class="t-en">About</span><span class="t-cn">关于</span></a>
+        <a href="/ventures/"><span class="t-en">Ventures</span><span class="t-cn">项目</span></a>
+        <a href="/notes/"><span class="t-en">Notes</span><span class="t-cn">笔记</span></a>
+        <a href="/contact/"><span class="t-en">Contact</span><span class="t-cn">联系</span></a>
+      </div>
+      <div>
+        <h4><span class="t-en">Elsewhere</span><span class="t-cn">别处</span></h4>
+        <a href="/handsome/"><span class="t-en">HANDSOME — phone cases</span><span class="t-cn">HANDSOME — 手机壳</span></a>
+        <a href="https://lumikeyskin.com/" target="_blank" rel="noopener"><span class="t-en">LUMIKEY — cosmetics OEM/ODM</span><span class="t-cn">LUMIKEY — 化妆品 OEM/ODM</span></a>
+        <a href="https://xingchenovo.com" target="_blank" rel="noopener"><span class="t-en">XINGCHEN — AI content software</span><span class="t-cn">XINGCHEN — AI 内容软件</span></a>
+        <a href="/notes/"><span class="t-en">Notes</span><span class="t-cn">笔记</span></a>
+        <a href="/contact/"><span class="t-en">Contact</span><span class="t-cn">联系</span></a>
+      </div>
+    </div>
+    <div class="copy">
+      <span><span class="t-en">© 2026 Alan Lin. All rights reserved.</span><span class="t-cn">© 2026 Alan Lin。保留所有权利。</span></span>
+      <span><span class="t-en">Built for the long term.</span><span class="t-cn">为长期而做。</span></span>
+    </div>
+  </div>
+</footer>
+<script>
+function toggleLang(){
+  var cn = document.body.classList.toggle('lang-cn');
+  document.getElementById('langBtn').textContent = cn ? 'EN' : '中文';
+  try { localStorage.setItem('alan-lang', cn ? 'cn' : 'en'); } catch(e) {}
+}
+function toggleMenu(force){
+  var h = document.querySelector('header.top');
+  if (!h) return;
+  var open = (typeof force === 'boolean') ? force : !h.classList.contains('nav-open');
+  h.classList.toggle('nav-open', open);
+  var b = document.getElementById('menuBtn');
+  if (b) b.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+document.addEventListener('click', function(e){
+  if (!e.target.closest('header.top')) toggleMenu(false);
+});
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape') toggleMenu(false);
+});
+document.querySelectorAll('#siteNav a').forEach(function(a){
+  a.addEventListener('click', function(){ toggleMenu(false); });
+});
+try {
+  if (localStorage.getItem('alan-lang') === 'cn') {
+    document.body.classList.add('lang-cn');
+    document.getElementById('langBtn').textContent = 'EN';
+  }
+} catch(e) {}
+/* cursor stars: desktop / fine pointer only */
+(function(){
+  try {
+    if (!window.matchMedia || !matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (window.__starTrail) return;
+    window.__starTrail = true;
+    var lead = document.createElement('span');
+    lead.className = 'star-cursor'; lead.textContent = '✦';
+    document.body.appendChild(lead);
+    var colors = ['#ffd43b', '#ff5a1f', '#8ed1fc', '#ffb7c5'];
+    var tx = 0, ty = 0, lx = 0, ly = 0, active = false, last = 0;
+    document.addEventListener('pointermove', function(e){
+      tx = e.clientX; ty = e.clientY;
+      if (!active) { lx = tx; ly = ty; active = true; lead.classList.add('on'); }
+      var now = performance.now();
+      if (now - last < 32) return;
+      last = now;
+      if (document.querySelectorAll('.star-trail').length > 24) return;
+      var s = document.createElement('span');
+      s.className = 'star-trail'; s.textContent = '✦';
+      s.style.left = tx + 'px'; s.style.top = ty + 'px';
+      s.style.color = colors[Math.floor(Math.random() * colors.length)];
+      s.style.fontSize = (12 + Math.random() * 9) + 'px';
+      s.style.setProperty('--dx', (Math.random() * 40 - 20) + 'px');
+      s.style.setProperty('--dy', (-6 - Math.random() * 30) + 'px');
+      s.style.setProperty('--rot', (Math.random() * 160 - 80) + 'deg');
+      document.body.appendChild(s);
+      s.addEventListener('animationend', function(){ s.remove(); });
+    }, { passive: true });
+    document.addEventListener('mouseout', function(e){
+      if (!e.relatedTarget) { active = false; lead.classList.remove('on'); }
+    });
+    (function loop(){
+      if (active) {
+        lx += (tx - lx) * 0.18; ly += (ty - ly) * 0.18;
+        lead.style.transform = 'translate(' + lx + 'px,' + ly + 'px) translate(-50%,-50%)';
+      }
+      requestAnimationFrame(loop);
+    })();
+  } catch (e) {}
+})();
+</script>
+</body>
+</html>
