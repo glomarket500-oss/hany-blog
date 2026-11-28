@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>做手机壳的人，去做充电头了 — 涵哥（Alan）</title>
+<meta name="description" content="从 11 月 28 日充电头网对图拉斯小冰块 MAX 60W（CQ35）的拆解说起：双层注塑外壳、零拔模角、南芯 SC3107FC 全集成氮化镓主控、L 形双板堆叠、45W 持续与 60W 峰值，以及壳厂进电源这道门为什么现在才开。">
+<link rel="canonical" href="https://www.gulangma.com/notes/case-maker-charger-shell/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="做手机壳的人，去做充电头了 — 涵哥（Alan）">
+<meta property="og:description" content="从 11 月 28 日充电头网对图拉斯小冰块 MAX 60W（CQ35）的拆解说起：双层注塑外壳、零拔模角、南芯 SC3107FC 全集成氮化镓主控、L 形双板堆叠、45W 持续与 60W 峰值，以及壳厂进电源这道门为什么现在才开。">
+<meta property="og:image" content="https://www.gulangma.com/assets-founder/case-maker-charger-shell-cover.webp">
+<meta property="og:url" content="https://www.gulangma.com/notes/case-maker-charger-shell/">
+<meta property="og:site_name" content="Alan Lin">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index,follow">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets-founder/founder.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Alan Lin","givenName":"Alan","familyName":"Lin","jobTitle":"Founder","url":"https://www.gulangma.com/","worksFor":{"@type":"Organization","name":"HANDSOME"}}</script>
+</head>
+<body><header class="top">
+  <div class="wrap">
+    <a class="brand serif" href="/">Alan Lin<span>.</span></a>
+    <nav class="main" id="siteNav">
+      <a href="/"><span class="t-en">Home</span><span class="t-cn">首页</span></a>
+      <a href="/about/"><span class="t-en">About</span><span class="t-cn">关于</span></a>
+      <a href="/ventures/"><span class="t-en">Ventures</span><span class="t-cn">项目</span></a>
+      <a href="/notes/" class="on"><span class="t-en">Notes</span><span class="t-cn">笔记</span></a>
+      <a href="/contact/"><span class="t-en">Contact</span><span class="t-cn">联系</span></a>
+    </nav>
+    <div class="nav-actions">
+      <button class="langbtn" id="langBtn" onclick="toggleLang()">中文</button>
+      <button class="menubtn" id="menuBtn" aria-label="Menu" aria-expanded="false" aria-controls="siteNav" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<section class="story-hero">
+  <div class="wrap">
+    <p class="story-kicker"><span class="t-en">Notes · 2026 · 11 · Twelfth essay</span><span class="t-cn">笔记 · 2026 · 11 · 第十二篇</span></p>
+    <h1 class="story-title">
+      <span class="t-en">The Case Maker Went And Built A Charger</span><span class="t-cn">做手机壳的人，去做充电头了</span>
+    </h1>
+    <p class="story-dek"><span class="t-en">On 28 November Chongdiantou published a teardown of the TORRAS Ice Cube MAX 60W (model CQ35). The two most interesting pages are the shell ones.</span><span class="t-cn">11 月 28 日充电头网放出图拉斯小冰块 MAX 60W（型号 CQ35）的拆解报告。整篇最值得看的，不是电路，是外壳那两页。</span></p>
+    <p class="story-byline"><span class="t-en">Words / Alan Lin · 16</span><span class="t-cn">文 / Alan Lin · 16 岁</span></p>
+    <p class="story-time"><span class="t-en">Published 2026-11-28 09:45:00</span><span class="t-cn">发布于 2026-11-28 09:45:00</span></p>
+  </div>
+</section>
+<figure class="story-cover">
+  <img src="/assets-founder/case-maker-charger-shell-cover.webp" alt="A cube-shaped translucent GaN wall charger with one USB-C port on white linen" width="1600" height="1000" loading="eager">
+  <figcaption><span class="t-en">A translucent cube wall charger — the shell language borrowed from phone cases</span><span class="t-cn">冰透立方体充电器 —— 从手机壳借来的外壳语言</span><span class="cover-time">封面 · Cover · 2026-11-28 09:45:00</span></figcaption>
+</figure>
+<article class="story-body">
+  <div class="story-body-inner t-cn block"><p class="story-epigraph">11 月 28 日，充电头网放出一篇拆解：《拆解报告：图拉斯小冰块 MAX 60W 氮化镓充电器》。型号 CQ35，单 USB-C 口，标称最大 60W，实测 41.57 × 36.32 × 36.90 毫米，80.0 克。</p>
+<p class="story-lede">我把这篇从第一页翻到最后一页，停下来最久的不是电路，是外壳那两页。</p>
+<p class="dropcap">拆开之后能看见壳体切面：外层是一层高透的冰感塑料，里面套着一层灰色的阻燃 PC 内胆。充电头网的原话是「双层壳体结构」。这句话在电源行业里没什么稀奇，可在我这个天天跟手机壳打交道的人眼里，它太熟了。手机壳做双层，是为了防摔、为了手感、为了让透明层不黄；充电头做双层，本来只需要一层能过灼热丝测试的阻燃壳就够了。</p>
+<p>多出来的那一层，是拿来「看」和「摸」的。</p>
+<h2 class="story-chapter"><span class="story-num">01</span><span>今天这份拆解，最不像电源的是外壳那两页</span></h2>
+<p>拆解报告里，真正讲电源的部分其实很扎实。主控是南芯科技的 SC3107FC，一颗全集成氮化镓主控芯片；次级同步整流用芯唐微的 XTMT10N123L，输出端 VBUS 开关是 AOS 的 AON7544，耐压 30V、导通电阻 4.1 毫欧；高压侧两颗东佳 400V 47μF 电解，次级一颗东佳 25V 820μF 固态；安规 Y 电容是特锐祥的 TMY1102M，400V、1000pF；输入端还塞了一颗特锐祥 TN1R5M5A 的贴片 NTC，用来压插电瞬间的浪涌。充电头网自己写，到这篇为止累计拆过的充电器超过 1500 款。</p>
+<p>这是一份标准的、内行看了会点头的用料单。可它解决不了我今天真正想不通的那个问题：一块 60W 的充电头，为什么长成了一块冰。</p>
+<p>铭牌上写得清清楚楚：输入 100–240V，输出 5V/3A、9V/3A、12V/3A、15V/3A、20V/3A，再加一档 9–15V/3A，AVS 15–20V/2.25A，最大输出功率 60W。协议测出来是 QC3.0、FCP、SCP、AFC、PD3.2 60W、DCP、Apple 2.4A，PDO 报文里五档固定电压加一组 9–20V 的 AVS、一组 5–11V 4A 的 PPS。</p>
+<p>这些数字，没有一行需要外壳透明。</p>
+<h2 class="story-chapter"><span class="story-num">02</span><span>2019 年那个决定：壳厂为什么要碰电源</span></h2>
+<p>图拉斯这个牌子，在我这行里是老熟人。2012 年在深圳创立，2013 年靠一款森系列 iPad 皮套起量，2014 年做 iPhone 6 的透系列软壳，在苹果生态的壳膜里一路做到亚马逊几个站点的销量第一。真正做到充电头，是 2019 年才下的决定，2020 年小冰块系列才上市。</p>
+<p>2026 年 7 月 3 日，天下网商发过一篇对图拉斯品牌主理人秦小华的专访。里面有一段我印象很深，他讲当年为什么敢进充电头这个已经很挤的品类：市面上的充电头大多体积大，很少有人去琢磨怎么把它做小；另一头，充电头发烫是用户最直接的顾虑，他们担心「过热会把设备充坏」。所以他们从「低温」切进去，用户摸到充电头是凉的，这本身就是一种心理安全感。</p>
+<p>同一段里，秦小华提到工艺：通过「零拔模角」和「双层一体注塑」，让产品在视觉上像一块小冰块。</p>
+<p>零拔模角、双层一体注塑 —— 这八个字，是注塑模具的语言，不是开关电源的语言。</p>
+<figure class="story-figure"><img src="/assets-founder/case-maker-charger-shell-scene1.webp" alt="冰透立方体充电器与一根盘好的 USB-C 线，摊在米色亚麻布上" loading="eager"><figcaption><span class="t-en">A translucent cube charger beside a coiled USB-C cable on beige linen</span><span class="t-cn">冰透立方体充电器与一根盘好的 USB-C 线，摊在米色亚麻布上</span></figcaption></figure>
+<p>我在工厂里听过太多遍「拔模角」。塑料件从模具里顶出来，侧壁必须留一点斜度，不然粘模、拉花、顶白。这个斜度通常是 0.5 度到 2 度，肉眼看不出来，但它决定了你手里那块壳的侧面是笔直的还是微微收的。做手机壳的人天天跟这个斜度较劲，因为壳的侧面是最容易被手指摸到的地方，多 1 度，握感就变。</p>
+<p>电源厂不较这个劲。电源厂较的是变压器绕组的层间电容、是 Y 电容的漏电流、是满载两小时的壳温。他们的模具只要保证装配公差和阻燃等级，侧面有点斜度无所谓，反正外面还要贴标签。</p>
+<p>所以当我看到「零拔模角」这四个字被写进一款充电器的卖点时，我知道这不是一家电源公司在做产品定义，这是一家壳公司在做产品定义。</p>
+<h2 class="story-chapter"><span class="story-num">03</span><span>零拔模角、双层一体注塑：壳的手艺怎么变成卖点</span></h2>
+<p>这里面有个很硬的门槛，很多人以为只是好看。</p>
+<p>零拔模角意味着这个立方体的四个侧面是绝对垂直的，模具开合时没有斜度帮忙脱模，只能靠顶针、靠抛光、靠模温控制，靠把每一处的收缩率算准。这一套做不好，出来的件侧面会有拉丝，或者四个角的高度对不齐。手机壳行业愿意为这个付学费，是因为壳是「贴身物件」，用户每天摸几十次，一点毛刺都能被指出来。充电头在传统定义里是「插座上的黑方块」，摸的次数少得多。</p>
+<p>图拉斯把这个成本花在了充电头上，等于把充电头从「插座上的黑方块」重新定义成「桌上的物件」。这一步走了六年，从小冰块一代做到现在这篇拆解里的 MAX。</p>
+<p>大概率会继续发生的事：接下来一年，中高端 60W 以上的氮化镓充电头里，把外壳工艺当主卖点的比例会明显上升，而不是继续只比体积和瓦数。成立条件是 PD3.2 SPR AVS 这类协议把「能不能满速充 iPhone 18」变成公共能力 —— 协议一旦变成大家都有，差异就只能往外观、手感、屏幕、配色上找。反向信号也很清楚：如果哪天主流品牌的新品发布会上，外壳工艺又退回成一句「磨砂黑」，只讲功率和价格，那说明这条路的溢价被渠道打穿了。</p>
+<p>大概率不会发生的事：壳厂把这套工艺做成壁垒，让电源厂追不上。模具可以买，抛光可以外包，配色可以抄。真正的壁垒不在模具本身，在这家公司愿不愿意为一个充电头开三套模、报废前一万件。</p>
+<h2 class="story-chapter"><span class="story-num">04</span><span>80 克，41 毫米：L 形双板是模具给的题</span></h2>
+<p>拆解里另一个细节，我盯着看了很久：垂直 L 形双 PCB 小板堆叠，PCBA 模块实测 35.63 × 29.05 × 29.17 毫米。</p>
+<p>为什么要把电路板做成 L 形，而不是常规的一块平板？</p>
+<p>因为壳体给了硬约束。外壳是一个接近 41 毫米见方的立方体，插脚要能折叠、收纳后与壳体齐平，插脚根部还得有一圈灰色绝缘包胶护套 —— 这是新国标对插脚的要求。这几件事占掉了输入端一大块空间，剩下的空间变成一个不规则的腔体，一块平板放不进去，只能拆成两块小板，垂直叠着，再用支架固定。</p>
+<p>换句话说，是产品定义（我要一个立方体、要折叠脚、要没有分模线）先把模具的形状定死了，然后结构工程师拿着这个形状去找电路方案。传统电源厂是反过来的：先定拓扑、定散热、定板子尺寸，最后套一个尽量小的壳。</p>
+<figure class="story-figure"><img src="/assets-founder/case-maker-charger-shell-scene2.webp" alt="冰透充电器与一块素色手机壳摆在浅色木桌上" loading="eager"><figcaption><span class="t-en">A translucent charger and a plain phone case on a pale wood desk</span><span class="t-cn">冰透充电器与一块素色手机壳摆在浅色木桌上</span></figcaption></figure>
+<p>这就是壳厂进电源的真实姿势：不是从电路往里做，是从外形往里挤。挤得进去，是因为现在的电源方案够集成 —— 南芯 SC3107FC 这种把氮化镓功率管和控制器封在一颗里的主控，把初级侧从一堆分立器件压缩成了一个模块。没有这种集成度，L 形双板根本塞不下 60W。</p>
+<p>我押这一句：未来两年，充电头的结构设计权会从电源方案商手里，往产品公司和模具厂手里挪一部分。成立条件是集成度继续往上走，把初级侧和次级侧的器件数量再砍一轮；一旦砍到「一颗主控 + 一颗同步整流 + 一圈外围」就能跑 65W，那外形怎么定，就真的只取决于谁敢开模。反向信号是：如果明年出现的新品，体积和形状都还跟着参考设计走，说明方案商给的公版壳还是主流，结构设计权没挪。</p>
+<h2 class="story-chapter"><span class="story-num">05</span><span>铭牌写 60W，拆解看到 45W：谁在算这笔账</span></h2>
+<p>这篇拆解里最容易被忽略的一句，是「USB-C 口支持 45W 持续输出与 60W DPS 动态峰值功率」。</p>
+<p>60W 写在铭牌上，也写在商品标题里。45W 是它能够长时间稳住的数。</p>
+<p>我不打算在这里展开讲峰值和持续的区别，那是散热和固件的事，讲多了像在挑刺。我想讲的是另一个层面：一个壳厂出身的品牌，为什么敢把「最大值」放在最显眼的位置，而把「持续值」放在拆解的第三页。</p>
+<p>因为这本来就是壳行业的算法。手机壳的卖点是「2.7 毫米的支架环」「110 吨冲压」「0.02 毫米平整度公差」—— 这些都是在极限状态下最好看的数，用户拿到手不会去测。电源行业的算法不一样，电源的用户会拿功率计测，会看满载两小时掉不掉功率，会因为 5W 的落差在论坛里吵三百楼。</p>
+<p>这两套算法现在撞在同一台机器上了。</p>
+<p>大概率会发生：这类「峰值写在标题、持续写在说明书」的产品会越来越多，而且不太会被大规模投诉，因为绝大多数人充手机根本跑不到 45W 持续。成立条件是用电器本身吃不掉这么多功率 —— 手机 60W 峰值只维持十几分钟，之后自然掉到 25W 上下。反向信号是：一旦笔记本用户成为这类小体积头的主力买家，持续功率就会被拉到台面上，因为笔记本是要连续跑一两个小时的，掉功率会立刻被感知。那时候谁在标题里只写峰值，谁就会先挨骂。</p>
+<p>大概率不会发生：这类产品会因为这一个数字被判定为虚假宣传。铭牌写了 AVS 15–20V/2.25A、写了最大 60W，法务上是站得住的。用户的火气最终不会落在合规上，只会落在复购上。</p>
+<h2 class="story-chapter"><span class="story-num">06</span><span>我敢押的几句，和什么算我错</span></h2>
+<p>我做手机壳这几年，最怕听到一句话：「这个我们也能做。」</p>
+<p>壳这个品类被这句话杀过一轮。2019 年之后，国内消费者对手机壳的心理价位被平台教育成 9 块 9、19 块 9，高端壳市场被冲得很厉害。图拉斯那几年靠 2016 年就开始的出海扛住了，这是 7 月那篇专访里秦小华自己讲的。同一套逻辑现在正发生在充电头上：能做的人越来越多，能卖出溢价的越来越少。</p>
+<p>所以我押三句。</p>
+<p>第一句：充电头的下一轮分化，不在瓦数，在「物件感」。谁能把它做成一个愿意摆在桌上、愿意拍照的东西，谁就能拿到比同类高 30% 以上的价格。成立条件是它得先过协议关 —— PD3.2、AVS、PPS 一个都不能少，缺一个就只是个好看的砖头。反向信号是渠道把这类产品打成「9 块 9 包邮」的引流品，一旦出现在首页的秒杀位上，溢价就到头了。</p>
+<p>第二句：外壳工艺会成为中高端充电头的标配叙事，但不会成为护城河。理由前面说过，模具买得到。真正的护城河是「敢为一个配件开三套模」这件事背后的组织能力 —— 它没法抄。反向信号是：如果明年几家主力和田玉一样的品牌，都拿出同款冰透双层壳，且价格只差二十块，那说明这套叙事已经被稀释，得换下一个故事。</p>
+<p>第三句：这个品类最终会往「屏」上走，但屏不是给极客看的。今天这篇的主角没有屏，可同一个赛道里，带彩屏、带 App、带 OTA 的产品已经铺开了。我押屏的价值不在显示功率，在于它是一个「这机器还活着、还在被维护」的信号。成立条件是厂商真的持续推固件；反向信号是买到手三个月再没更新过一次，那这块屏就是个耗电的装饰。</p>
+<p>最后一句给自己：我今天说的这些，全都建立在一份 11 月 28 日的拆解报告上，和一篇 7 月 3 日的品牌专访上。数字是别人拆出来的，判断是我自己的。押错了，我认。</p>
+<p>文 / 涵哥（Alan）· 16 岁</p></div>
+</article>
+
+<div class="wrap" style="padding-bottom:70px">
+  <div class="cta" style="margin-top:0">
+    <a class="btn btn-solid" href="/contact/"><span class="t-en">Talk to me</span><span class="t-cn">联系我</span></a>
+    <a class="btn btn-ghost" href="/notes/"><span class="t-en">All notes</span><span class="t-cn">全部笔记</span></a>
+  </div>
+</div>
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="brand serif" href="/">Alan Lin</a>
+        <p><span class="t-en">Sixteen. Building consumer brands and software for global markets. HANDSOME, LUMIKEY and XINGCHEN are the first three ventures.</span><span class="t-cn">十六岁。做面向全球市场的消费品牌与软件。HANDSOME、LUMIKEY 与 XINGCHEN 是前三个项目。</span></p>
+      </div>
+      <div>
+        <h4><span class="t-en">Site</span><span class="t-cn">站点</span></h4>
+        <a href="/"><span class="t-en">Home</span><span class="t-cn">首页</span></a>
+        <a href="/about/"><span class="t-en">About</span><span class="t-cn">关于</span></a>
+        <a href="/ventures/"><span class="t-en">Ventures</span><span class="t-cn">项目</span></a>
+        <a href="/notes/"><span class="t-en">Notes</span><span class="t-cn">笔记</span></a>
+        <a href="/contact/"><span class="t-en">Contact</span><span class="t-cn">联系</span></a>
+      </div>
+      <div>
+        <h4><span class="t-en">Elsewhere</span><span class="t-cn">别处</span></h4>
+        <a href="/handsome/"><span class="t-en">HANDSOME — phone cases</span><span class="t-cn">HANDSOME — 手机壳</span></a>
+        <a href="https://lumikeyskin.com/" target="_blank" rel="noopener"><span class="t-en">LUMIKEY — cosmetics OEM/ODM</span><span class="t-cn">LUMIKEY — 化妆品 OEM/ODM</span></a>
+        <a href="https://xingchenovo.com" target="_blank" rel="noopener"><span class="t-en">XINGCHEN — AI content software</span><span class="t-cn">XINGCHEN — AI 内容软件</span></a>
+        <a href="/notes/"><span class="t-en">Notes</span><span class="t-cn">笔记</span></a>
+        <a href="/contact/"><span class="t-en">Contact</span><span class="t-cn">联系</span></a>
+      </div>
+    </div>
+    <div class="copy">
+      <span><span class="t-en">© 2026 Alan Lin. All rights reserved.</span><span class="t-cn">© 2026 Alan Lin。保留所有权利。</span></span>
+      <span><span class="t-en">Built for the long term.</span><span class="t-cn">为长期而做。</span></span>
+    </div>
+  </div>
+</footer>
+<script>
+function toggleLang(){
+  var cn = document.body.classList.toggle('lang-cn');
+  document.getElementById('langBtn').textContent = cn ? 'EN' : '中文';
+  try { localStorage.setItem('alan-lang', cn ? 'cn' : 'en'); } catch(e) {}
+}
+function toggleMenu(force){
+  var h = document.querySelector('header.top');
+  if (!h) return;
+  var open = (typeof force === 'boolean') ? force : !h.classList.contains('nav-open');
+  h.classList.toggle('nav-open', open);
+  var b = document.getElementById('menuBtn');
+  if (b) b.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+document.addEventListener('click', function(e){
+  if (!e.target.closest('header.top')) toggleMenu(false);
+});
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape') toggleMenu(false);
+});
+document.querySelectorAll('#siteNav a').forEach(function(a){
+  a.addEventListener('click', function(){ toggleMenu(false); });
+});
+try {
+  if (localStorage.getItem('alan-lang') === 'cn') {
+    document.body.classList.add('lang-cn');
+    document.getElementById('langBtn').textContent = 'EN';
+  }
+} catch(e) {}
+/* cursor stars: desktop / fine pointer only */
+(function(){
+  try {
+    if (!window.matchMedia || !matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (window.__starTrail) return;
+    window.__starTrail = true;
+    var lead = document.createElement('span');
+    lead.className = 'star-cursor'; lead.textContent = '✦';
+    document.body.appendChild(lead);
+    var colors = ['#ffd43b', '#ff5a1f', '#8ed1fc', '#ffb7c5'];
+    var tx = 0, ty = 0, lx = 0, ly = 0, active = false, last = 0;
+    document.addEventListener('pointermove', function(e){
+      tx = e.clientX; ty = e.clientY;
+      if (!active) { lx = tx; ly = ty; active = true; lead.classList.add('on'); }
+      var now = performance.now();
+      if (now - last < 32) return;
+      last = now;
+      if (document.querySelectorAll('.star-trail').length > 24) return;
+      var s = document.createElement('span');
+      s.className = 'star-trail'; s.textContent = '✦';
+      s.style.left = tx + 'px'; s.style.top = ty + 'px';
+      s.style.color = colors[Math.floor(Math.random() * colors.length)];
+      s.style.fontSize = (12 + Math.random() * 9) + 'px';
+      s.style.setProperty('--dx', (Math.random() * 40 - 20) + 'px');
+      s.style.setProperty('--dy', (-6 - Math.random() * 30) + 'px');
+      s.style.setProperty('--rot', (Math.random() * 160 - 80) + 'deg');
+      document.body.appendChild(s);
+      s.addEventListener('animationend', function(){ s.remove(); });
+    }, { passive: true });
+    document.addEventListener('mouseout', function(e){
+      if (!e.relatedTarget) { active = false; lead.classList.remove('on'); }
+    });
+    (function loop(){
+      if (active) {
+        lx += (tx - lx) * 0.18; ly += (ty - ly) * 0.18;
+        lead.style.transform = 'translate(' + lx + 'px,' + ly + 'px) translate(-50%,-50%)';
+      }
+      requestAnimationFrame(loop);
+    })();
+  } catch (e) {}
+})();
+</script>
+</body>
+</html>
