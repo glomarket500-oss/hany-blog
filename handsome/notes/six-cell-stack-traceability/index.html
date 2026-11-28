@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>六颗电芯排成一串|才顶上 250W — 涵哥（Alan）</title>
+<meta name="description" content="2026 年 11 月 28 日的拆解显示，250W 充电宝靠六颗 4150mAh 电芯串联成 23.46V。讲清高压电芯的代价、串联一致性、多口分时账与 100Wh 航空红线。">
+<link rel="canonical" href="https://www.gulangma.com/notes/six-cell-stack-traceability/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="六颗电芯排成一串|才顶上 250W — 涵哥（Alan）">
+<meta property="og:description" content="2026 年 11 月 28 日的拆解显示，250W 充电宝靠六颗 4150mAh 电芯串联成 23.46V。讲清高压电芯的代价、串联一致性、多口分时账与 100Wh 航空红线。">
+<meta property="og:image" content="https://www.gulangma.com/assets-founder/six-cell-stack-traceability-cover.webp">
+<meta property="og:url" content="https://www.gulangma.com/notes/six-cell-stack-traceability/">
+<meta property="og:site_name" content="Alan Lin">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index,follow">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets-founder/founder.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Alan Lin","givenName":"Alan","familyName":"Lin","jobTitle":"Founder","url":"https://www.gulangma.com/","worksFor":{"@type":"Organization","name":"HANDSOME"}}</script>
+</head>
+<body><header class="top">
+  <div class="wrap">
+    <a class="brand serif" href="/">Alan Lin<span>.</span></a>
+    <nav class="main" id="siteNav">
+      <a href="/"><span class="t-en">Home</span><span class="t-cn">首页</span></a>
+      <a href="/about/"><span class="t-en">About</span><span class="t-cn">关于</span></a>
+      <a href="/ventures/"><span class="t-en">Ventures</span><span class="t-cn">项目</span></a>
+      <a href="/notes/" class="on"><span class="t-en">Notes</span><span class="t-cn">笔记</span></a>
+      <a href="/contact/"><span class="t-en">Contact</span><span class="t-cn">联系</span></a>
+    </nav>
+    <div class="nav-actions">
+      <button class="langbtn" id="langBtn" onclick="toggleLang()">中文</button>
+      <button class="menubtn" id="menuBtn" aria-label="Menu" aria-expanded="false" aria-controls="siteNav" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<section class="story-hero essay">
+  <div class="wrap">
+    <p class="story-kicker"><span class="t-en">Notes · 2026 · 11 · Twelfth essay</span><span class="t-cn">笔记 · 2026 · 11 · 第十二篇</span></p>
+    <h1 class="story-title">
+      <span class="t-en">Six Cells in a Row — What 250W Actually Costs</span><span class="t-cn">六颗电芯排成一串<br>才顶上 250W</span>
+    </h1>
+    <p class="story-dek"><span class="t-en">A teardown published today shows why a 250W power bank is not a board story. It is a cell-arrangement story.</span><span class="t-cn">今天这份拆解说明了一件事：250W 的充电宝不是一个电路板的故事，是六颗电芯怎么排队的故事。</span></p>
+    <p class="story-byline"><span class="t-en">Words / Alan Lin · 16</span><span class="t-cn">文 / Alan Lin · 16 岁</span></p>
+    <p class="story-time"><span class="t-en">Published 2026-11-28 15:04:47</span><span class="t-cn">发布于 2026-11-28 15:04:47</span></p>
+  </div>
+</section>
+<figure class="story-cover">
+  <img src="/assets-founder/six-cell-stack-traceability-cover.webp" alt="一块白色移动电源立在浅灰色布面上，旁边一根盘好的白色编织线" width="1600" height="1000" loading="eager">
+  <figcaption><span class="t-en">Cover · 2026-11-28 15:04:47</span><span class="t-cn">封面 · Cover · 2026-11-28 15:04:47</span><span class="cover-time">封面 · Cover · 2026-11-28 15:04:47</span></figcaption>
+</figure>
+<article class="story-body">
+  <div class="story-body-inner t-cn block"><h2 class="story-chapter"><span class="story-num">01</span><span>今天这份拆解，我先记下的不是 250 瓦</span></h2>
+<p class="dropcap">2026 年 11 月 28 日早上八点多，咖啡放在桌角，我点开充电头网刚更新的那条：《六颗 ATL 新国标电芯，撑起小米旗舰充电宝 250W 快充》。标题里 250W 很响，我眼睛停在前两个字上——六颗。</p>
+<p>稿子里写得很细：被拆的是小米充电宝 Pro 25000，型号 P25，里面六颗 ATL 宁德新能源 584592 软包电芯串联，单颗标称 3.91 伏、4150 毫安时、16.3 瓦时，六颗串成一组 23.46 伏、4150 毫安时、整机额定能量 97.36 瓦时的电池组。电芯表面印着 CCC 和 CE，新国标证书编号 2026100916004188，2026 年 7 月 21 日签发，充电限制电压 4.5 伏。</p>
+<p>我桌上有一本用了三年的方格本，专门记客户的退货理由。我把 250W 那三个字划掉，改写了一行：这不是一块板子做出来的功率，是六颗电芯排成一队做出来的功率。</p>
+<p>前年有个做跨境电商的客户，拿着一台标 100W 的样机来找我，说怎么也跑不满。拆开一看，电池组是两串，升压模块热得像铁板，跑到七十多瓦就开始掉。那天我第一次意识到，充电宝的功率先被电池组定死，再被电路板兑现。今天这条稿子只是把同一件事写在了更贵的机器上。</p>
+<h2 class="story-chapter"><span class="story-num">02</span><span>六串 23.46 伏，是把电流先按下去</span></h2>
+<p>很多人看充电宝只看瓦，我习惯先算电流。</p>
+<p>同样输出 250 瓦，电池组电压 23.46 伏，电池这一侧的电流大约 10.7 安；如果还是常见的两串 7.82 伏，就得跑到 32 安左右。三倍的电流差，落到实物上就是三件完全不同的活：极耳要更宽、镍片要更厚、保护管要并联、连接器和弹片要重新选型。每一项都在加成本，也都在加发热。</p>
+<p>所以六串不是一个为了好看的参数。它把电流按下去，让升压比变小，让转换效率留在能接受的范围里，也让整机的热不至于堆在一个点上。拆解里能看到两路双向同步升降压加一路同步降压的三路架构，配的是六串专用保护芯片和成对的保护管——这套配置本身就是在伺候 23.46 伏这个电压平台。</p>
+<p>我的判断是：大概率到 2027 年底，150 瓦以上的充电宝会普遍往四串、五串、六串走，两串并联靠堆电流硬顶的做法会退回 65 瓦以下。这个判断成立的条件有两个：电芯一致性要做到很窄的压差，BMS 得是真串数方案而不是拿并联方案改个丝印。</p>
+<p>反向信号也很清楚。如果明年市场上出现一批 200 瓦以上、仍然是两串并联、实测连续满载温升还压在合理区间的机器，那我这套&quot;高压平台是必经之路&quot;的说法就得改。真到那天我第一个改口，因为工程上能绕过去的路，商业上一定会有人去绕。</p>
+<h2 class="story-chapter"><span class="story-num">03</span><span>4.5 伏这条充电上限，是拿循环寿命换的</span></h2>
+<figure class="story-figure"><img src="/assets-founder/six-cell-stack-traceability-scene1.webp" alt="一排竖起来的电芯，顶端是正极，每节 3.91 伏" loading="eager"><figcaption><span class="t-en">Cells standing in a row, 3.91V each</span><span class="t-cn">一排竖起来的电芯，顶端是正极，每节 3.91 伏</span></figcaption></figure>
+<p>3.91 伏标称、4.5 伏充电限制，这组数字放在一起就有意思了。常规体系充到 4.2 伏或者 4.35 伏就停，它敢往上再走一截，同样体积里就能多塞一点能量。</p>
+<p>多出来的这部分不是白拿的。正极电位拉高，电解液的氧化副反应会加快，产气和界面劣化都跟着来；充到高位再叠上 250 瓦的放电电流，电芯内部的锂离子迁移压力比慢充大得多，析锂的窗口也就被推开了。析锂一旦发生，容量掉得快是小事，长出锂枝晶才是安全问题。</p>
+<p>这也是为什么新版强制标准 GB 47372-2026 里，除了针刺，还专门加了循环老化之后的析锂检测。这份标准 2026 年 3 月 31 日发布，2027 年 4 月 1 日实施，留了十二个月过渡期，ATL 本身也是起草单位之一。标准把话说到这个份上，意思很直白：不要只看新机能不能过测试，要看用了一年之后还安不安全。</p>
+<p>我的押注是：高压电芯配 250 瓦这个组合，头两年大规模出问题的地方不会是冒烟起火，而是&quot;用了没多久容量掉得比预期快&quot;。成立条件：厂商愿意在高温段把截止电压压下来，做温度补偿充电，并且肯把循环数据交出来。反向信号：如果一年后大量用户反馈这类旗舰机循环几百次就明显衰减、而厂商集体把建议使用年限标得很短，那说明高压这条路在这个价位还没走通，下一代大概率会退回 4.35 伏体系换寿命。</p>
+<h2 class="story-chapter"><span class="story-num">04</span><span>串联最怕的不是过流，是有一颗先掉队</span></h2>
+<p>六颗串在一起，放电时谁先到截止电压，整组就得停。这是木桶，最短的那块板决定整桶水。所以串联方案最贵的从来不是功率器件，是一致性。</p>
+<p>今天这条稿子最值钱的一句话，其实不是 250W，是这句：产品支持连接电脑，在网页端就能查到电芯厂商、电池健康度、循环次数，还能分别看内部六颗电芯的实时电压、生产日期和独立编码。</p>
+<p>这句话翻译成工厂语言就是：每一颗电芯都能被单独点名。以前一致性是产线自己心里有数的事，现在变成用户能看见的事。拆解里那些泡棉隔离、阻燃防撞框架、极耳和极板区的绝缘青稞纸、独立 BMS 小板，都是为了同一件事——别让一颗电芯的异常拖垮整组。</p>
+<p>我做贸易这些年，B2B 客户问的问题很少是&quot;峰值多少瓦&quot;。他们真正在意的是三件：出了批次问题能不能定位到具体哪一批、能不能拿出证书编号让人查、换货的时候能不能说清是设计问题还是使用问题。可追溯不是加分项，是能不能进渠道的入场券。</p>
+<p>所以我押这一条：大概率 2027 年 4 月新标准正式实施后，采购合同里会多出一行&quot;须提供唯一性编码查询入口&quot;。成立条件：平台端开始拿编码做准入，比如共享充电、企业集采、跨境平台上架审核。反向信号：如果到了 2027 年下半年，渠道仍然只认一枚 3C 标、没人真的去扫码查，那编码就只是印在壳上的一行字，我这句判断就作废。</p>
+<h2 class="story-chapter"><span class="story-num">05</span><span>250 瓦是三口分时账，协议握不上就是 45 瓦</span></h2>
+<figure class="story-figure"><img src="/assets-founder/six-cell-stack-traceability-scene2.webp" alt="四台移动电源并排立在浅灰色的台面前" loading="eager"><figcaption><span class="t-en">Four power banks side by side</span><span class="t-cn">四台移动电源并排立在浅灰色的台面前</span></figcaption></figure>
+<p>拆解里的接口配置是三口：一根自带伸缩 C 线、一个独立 C 口、一个 A 口；两个 C 口单口都能到 140 瓦并且双向，A 口最高 120 瓦，三口同时输出的峰值是 250 瓦。</p>
+<p>我会把这句念给每一个客户听：250 瓦是三口加起来的峰值，不是每个口都能同时跑满。设备插得越多，分到每一口的功率就越低，这是所有多口方案共同的逻辑，不是某一家偷工减料。真正该问的是分配表——两台笔记本加一台手机同时插，C1 还剩多少。</p>
+<p>再往下是协议。这台机器在 C 口上给了 28 伏 5 安的固定档，还给了 15 到 28 伏的 AVS 可调档，PPS 也在。笔记本要吃 20 伏 5 安或者 28 伏 5 安才肯快充，手机要 PPS 的低压大电流才不烫。对面设备如果只认别家的私有协议，握手谈不下来，250 瓦的机器也可能只给到 45 瓦、65 瓦。功率是双方谈出来的，不是单方面宣布的。</p>
+<p>我的判断：大概率 2027 年之前，&quot;标称总功率&quot;会从卖点变成被追问的项，评测和用户会开始盯&quot;两口同时插，C1 还剩多少瓦&quot;这种具体问题。成立条件：第三方评测把多口分配表做成标准测试项，像今天这类拆解一样把每一档都测出来。反向信号：如果厂商主动公开分配矩阵、并且成为行业惯例，那这个争议会自己消失——那时候标称功率反而会变成可信数字。</p>
+<h2 class="story-chapter"><span class="story-num">06</span><span>97.36 瓦时不是设计值，是 100 瓦时反推出来的</span></h2>
+<p>六颗乘 16.3 瓦时，算出来是 97.8 瓦时；按 23.46 伏乘 4.15 安时，是 97.36 瓦时。差的那一点是单颗标注的四舍五入。真正值得看的是它离 100 瓦时只差 2.64 瓦时。</p>
+<p>这不是巧合。民航口径看的是瓦时，不看毫安时：100 瓦时以内可以随身带上飞机，100 到 160 瓦时要经承运人批准，超过 160 瓦时禁止携带。所以&quot;25000 毫安时&quot;这个容量，是被 100 瓦时这条线反算出来的上限，不是工程师随手挑的好数字。谁想再往上做到 27000、30000 毫安时，就跨到了要批准的那一侧，出差的人会直接用脚投票。</p>
+<p>规则这一侧还在收紧。2026 年 3 月 29 日起，澳门配合国际民航组织的新规定，出境航空乘客只可随身携带最多两个行动电源，而且严禁在飞行期间给行动电源充电。这条对产品设计的含义很实在：以后不是&quot;带一个够不够&quot;，而是&quot;带的这两个必须个个能打&quot;，一个顶两个用，高功率和多设备分配的价值反而被规则放大了。</p>
+<p>同一天还有另一条新闻可以对照：乔威电源代工的荣耀 Life Boost 22.5W 自带线 10000 上架，到手价 149 元，型号 PPC1022R，3C 证书 2026010914899625，2026 年 10 月 13 日取得含 GB 47372-2026 的认证。149 元和 999 元摆在一起，是两个完全不同的生意：前者卖的是&quot;够用、便宜、能过检&quot;，后者卖的是&quot;一台顶三台、还要看得见电池状态&quot;。</p>
+<p>我敢押的最后一句是：大概率大功率充电宝会分成两条互不干扰的路，一条往 200 元以上、带屏幕和可追溯、服务差旅和创作者；另一条守在 150 元以下、拼渠道和认证成本。中间那档&quot;参数很猛但没有可查的数据&quot;的机器，会最先被渠道挤掉。成立条件：新标准过渡期结束后，渠道端真的执行编码与证书核查。反向信号：如果 2027 年下半年白牌机照旧在货架上卖、没人查编码，那中间这档还能活很久，我这句话就得收回去。</p>
+<p>文 / 涵哥（Alan）· 16 岁</p></div>
+</article>
+
+<div class="wrap" style="padding-bottom:70px">
+  <div class="cta" style="margin-top:0">
+    <a class="btn btn-solid" href="/contact/"><span class="t-en">Talk to me</span><span class="t-cn">联系我</span></a>
+    <a class="btn btn-ghost" href="/notes/"><span class="t-en">All notes</span><span class="t-cn">全部笔记</span></a>
+  </div>
+</div>
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="brand serif" href="/">Alan Lin</a>
+        <p><span class="t-en">Sixteen. Building consumer brands and software for global markets. HANDSOME, LUMIKEY and XINGCHEN are the first three ventures.</span><span class="t-cn">十六岁。做面向全球市场的消费品牌与软件。HANDSOME、LUMIKEY 与 XINGCHEN 是前三个项目。</span></p>
+      </div>
+      <div>
+        <h4><span class="t-en">Site</span><span class="t-cn">站点</span></h4>
+        <a href="/"><span class="t-en">Home</span><span class="t-cn">首页</span></a>
+        <a href="/about/"><span class="t-en">About</span><span class="t-cn">关于</span></a>
+        <a href="/ventures/"><span class="t-en">Ventures</span><span class="t-cn">项目</span></a>
+        <a href="/notes/"><span class="t-en">Notes</span><span class="t-cn">笔记</span></a>
+        <a href="/contact/"><span class="t-en">Contact</span><span class="t-cn">联系</span></a>
+      </div>
+      <div>
+        <h4><span class="t-en">Elsewhere</span><span class="t-cn">别处</span></h4>
+        <a href="/handsome/"><span class="t-en">HANDSOME — phone cases</span><span class="t-cn">HANDSOME — 手机壳</span></a>
+        <a href="https://lumikeyskin.com/" target="_blank" rel="noopener"><span class="t-en">LUMIKEY — cosmetics OEM/ODM</span><span class="t-cn">LUMIKEY — 化妆品 OEM/ODM</span></a>
+        <a href="https://xingchenovo.com" target="_blank" rel="noopener"><span class="t-en">XINGCHEN — AI content software</span><span class="t-cn">XINGCHEN — AI 内容软件</span></a>
+        <a href="/notes/"><span class="t-en">Notes</span><span class="t-cn">笔记</span></a>
+        <a href="/contact/"><span class="t-en">Contact</span><span class="t-cn">联系</span></a>
+      </div>
+    </div>
+    <div class="copy">
+      <span><span class="t-en">© 2026 Alan Lin. All rights reserved.</span><span class="t-cn">© 2026 Alan Lin。保留所有权利。</span></span>
+      <span><span class="t-en">Built for the long term.</span><span class="t-cn">为长期而做。</span></span>
+    </div>
+  </div>
+</footer>
+<script>
+function toggleLang(){
+  var cn = document.body.classList.toggle('lang-cn');
+  document.getElementById('langBtn').textContent = cn ? 'EN' : '中文';
+  try { localStorage.setItem('alan-lang', cn ? 'cn' : 'en'); } catch(e) {}
+}
+function toggleMenu(force){
+  var h = document.querySelector('header.top');
+  if (!h) return;
+  var open = (typeof force === 'boolean') ? force : !h.classList.contains('nav-open');
+  h.classList.toggle('nav-open', open);
+  var b = document.getElementById('menuBtn');
+  if (b) b.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+document.addEventListener('click', function(e){
+  if (!e.target.closest('header.top')) toggleMenu(false);
+});
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape') toggleMenu(false);
+});
+document.querySelectorAll('#siteNav a').forEach(function(a){
+  a.addEventListener('click', function(){ toggleMenu(false); });
+});
+try {
+  if (localStorage.getItem('alan-lang') === 'cn') {
+    document.body.classList.add('lang-cn');
+    document.getElementById('langBtn').textContent = 'EN';
+  }
+} catch(e) {}
+/* cursor stars: desktop / fine pointer only */
+(function(){
+  try {
+    if (!window.matchMedia || !matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (window.__starTrail) return;
+    window.__starTrail = true;
+    var lead = document.createElement('span');
+    lead.className = 'star-cursor'; lead.textContent = '✦';
+    document.body.appendChild(lead);
+    var colors = ['#ffd43b', '#ff5a1f', '#8ed1fc', '#ffb7c5'];
+    var tx = 0, ty = 0, lx = 0, ly = 0, active = false, last = 0;
+    document.addEventListener('pointermove', function(e){
+      tx = e.clientX; ty = e.clientY;
+      if (!active) { lx = tx; ly = ty; active = true; lead.classList.add('on'); }
+      var now = performance.now();
+      if (now - last < 32) return;
+      last = now;
+      if (document.querySelectorAll('.star-trail').length > 24) return;
+      var s = document.createElement('span');
+      s.className = 'star-trail'; s.textContent = '✦';
+      s.style.left = tx + 'px'; s.style.top = ty + 'px';
+      s.style.color = colors[Math.floor(Math.random() * colors.length)];
+      s.style.fontSize = (12 + Math.random() * 9) + 'px';
+      s.style.setProperty('--dx', (Math.random() * 40 - 20) + 'px');
+      s.style.setProperty('--dy', (-6 - Math.random() * 30) + 'px');
+      s.style.setProperty('--rot', (Math.random() * 160 - 80) + 'deg');
+      document.body.appendChild(s);
+      s.addEventListener('animationend', function(){ s.remove(); });
+    }, { passive: true });
+    document.addEventListener('mouseout', function(e){
+      if (!e.relatedTarget) { active = false; lead.classList.remove('on'); }
+    });
+    (function loop(){
+      if (active) {
+        lx += (tx - lx) * 0.18; ly += (ty - ly) * 0.18;
+        lead.style.transform = 'translate(' + lx + 'px,' + ly + 'px) translate(-50%,-50%)';
+      }
+      requestAnimationFrame(loop);
+    })();
+  } catch (e) {}
+})();
+</script>
+</body>
+</html>
